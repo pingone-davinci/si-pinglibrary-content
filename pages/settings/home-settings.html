@@ -1,0 +1,32 @@
+
+<div id="pageDiv">
+  <span class="xsmall">Saved to browser local storage</span>
+  <hr>
+    <fieldset name="home" id="settings">
+      <div class="input-container">
+        <input id="name" type="text" placeholder=" " value="">
+        <label>Name</label>
+      </div>
+      <div class="input-container">
+        <input id="email" type="text" placeholder=" " value="">
+        <label>Email</label>
+     </div>
+    </fieldset>
+</div>
+
+<div id="scriptDiv">
+  <script>
+    const home_init = function () {
+      console.log("pagescript - home_init()")
+
+      const fieldset = document.getElementById("settings");
+
+      fieldset.onchange = saveFieldsetToLocalStorage;
+
+      populateFieldsetFromLocalStorage();
+    }
+
+    home_init();
+  </script>
+</div>
+
