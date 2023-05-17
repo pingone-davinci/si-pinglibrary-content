@@ -6,7 +6,6 @@
   </div>
   <p>
   <div class="centered">
-
     <fieldset name="pingone" id="settings" class="hide">
       <div class="input-container">
         <input id="envNickname" type="text" placeholder=" " value="">
@@ -14,7 +13,7 @@
       </div>
       <div class="select line-border">
         <select id="region" class="field-gray-background">
-          <option value="" disabled>PingOne Region</option>
+          <option value="" disabled>Select a PingOne Region</option>
           <option value="com">NorthAmerica (US)</option>
           <option value="ca">NorthAmerica (Canada)</option>
           <option value="eu">Europe</option>
@@ -22,16 +21,16 @@
         </select>
       </div>
       <div class="input-container">
-        <input id="envId" type="text" placeholder=" " value="">
+        <input id="envId" type="text" placeholder=" " onchange="validateUUIDv4(event);" value="">
         <label>PingOne Environment ID</label>
       </div>
       <h3 class="left">Worker App</h3>
       <div class="input-container">
-        <input id="clientId" type="text" placeholder=" " value="">
+        <input id="clientId" type="text" placeholder=" " onchange="validateUUIDv4(event);" value="">
         <label>PingOne Client ID</label>
       </div>
       <div class="input-container">
-        <input id="clientSecret" type="password" placeholder=" " value="">
+        <input id="clientSecret" type="password" placeholder=" " onchange="validateLength(event, 64);" value="">
         <label>PingOne Client Secret</label>
       </div>
       <div class="mt mb center">
@@ -41,37 +40,8 @@
       </div>
     </fieldset>
 
-    <div id="pingoneDetails" class="hide">
-    </div>
-
-
-    <div id="pingoneEnvSelection" class="hide">
-      <h3 class="left">PingOne Environment</h3>
-      <div class="select line-border">
-        <select id="pingoneEnvSelect" onchange="selectEnvironment(event);">
-        </select>
-      </div>
-    </div>
-    <div id="pingoneEnvResourceSelection" class="mt-l hide">
-      <h3 class="left">PingOne Resource</h3>
-      <div class="select line-border">
-        <select id="pingoneEnvResourceSelect" onchange="selectEnvironmentResource(event);">
-
-        </select>
-      </div>
-    </div>
-    <div id="pingoneResourceDetails" class="code-block-with-header left hide">
-      <div class="header">
-        <div id="pingoneResourceDetailsTitle" class="title">PingOne Resource</div>
-        <div>
-          <button class="copy-btn" onclick="copyCodeBlock(event);">Copy</button>
-        </div>
-      </div>
-      <pre>
-          <code id="pingoneCodeDetails" class="hljs language-go">
-          </code>
-      </pre>
-    </div>
+  </div>
+  <div id="pingoneServices" class="serviceCards" class="hide">
   </div>
 </div>
 
