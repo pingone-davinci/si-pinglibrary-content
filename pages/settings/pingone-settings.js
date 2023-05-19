@@ -57,6 +57,7 @@ const clearAndSetRows = function (id, enableCheck) {
 }
 
 const showEnvironment = async function (nickname) {
+  nickname = unescape(nickname);
   hideAllDivs();
   PingOne.clear();
   const environment = app.SETTINGS.getProperty("pingone").find((d) => d.envNickname === nickname);
@@ -100,6 +101,7 @@ const addEnvironment = function () {
 }
 
 const editEnvironment = function (id) {
+  id = unescape(id);
   console.log("In editEvironment()...");
   PingOne.clear();
   hideAllDivs();
@@ -169,6 +171,7 @@ const loginDavinci = async function (pingOne) {
 }
 
 const refreshPingOneServices = function () {
+  clearAlert();
   clearElementHTML("pingoneServices");
   const pingoneServices = document.getElementById("pingoneServices");
 
@@ -194,12 +197,16 @@ const refreshPingOneServices = function () {
       });
 
       products.forEach((p) => {
-        if (p.type !== "PING_ONE_BASE") {
-          const svc = new PingOneService(p.type);
-          const card = svc.getCard();
-          if (card) {
-            pingoneServices.appendChild(card);
+        try {
+          if (p.type !== "PING_ONE_BASE") {
+            const svc = new PingOneService(p.type);
+            const card = svc.getCard();
+            if (card) {
+              pingoneServices.appendChild(card);
+            }
           }
+        } catch (err) {
+          redAlert(`No PingOne Service card found for '${p.type}'`)
         }
       });
     }
@@ -234,13 +241,13 @@ function refreshPingOneTable() {
     table += `
       <tr id = "nickname-${admEnv.envNickname}" >
         <td style="border: 0px;" >
-          <span class="fa-stack" onclick="showEnvironment('${admEnv.envNickname}');">
+          <span class="fa-stack" onclick="showEnvironment('${escape(admEnv.envNickname)}');">
             <i class="fa fa-square-o fa-stack-2x fa-inverse" style="color: #f5f5f5;"></i>
             <!-- <i class="fa fa-check fa-stack-1x fa-inverse" style="color: #white;"></i> -->
           </span>
         </td>
         <td style="border: 0px;" >
-          <span class="fa-stack" onclick="editEnvironment('${admEnv.envNickname}');">
+          <span class="fa-stack" onclick="editEnvironment('${escape(admEnv.envNickname)}');">
             <i class="fa fa-square fa-stack-2x fa-inverse" style="color: #4287f5;"></i>
             <i class="fa fa-pencil fa-stack-1x fa-inverse" style="color: white;"></i>
           </span>
