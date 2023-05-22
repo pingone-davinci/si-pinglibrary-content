@@ -3,6 +3,7 @@
 
 const hideAllDivs = async function () {
   hideElement("settings");
+  hideElement("pingoneServiceIcons");
   hideElement("pingoneServices");
 }
 
@@ -83,6 +84,10 @@ const selectEnvironment = function (event) {
 
   const environment = pingone.getEnvironment(id);
   pingone.activeEnv = environment;
+  if (pingone.activeDavinciEnv) {
+    pingone.activeDavinciEnv.selectedCompany = environment.id;
+    pingone.activeDavinciEnv.selectedCompanyName = environment.name;
+  }
   console.log("After set...")
   console.dir(pingone);
   refreshPingOneTable();
@@ -173,15 +178,11 @@ const loginDavinci = async function (pingOne) {
 const refreshPingOneServices = function () {
   clearAlert();
   clearElementHTML("pingoneServices");
+  clearElementHTML("pingoneServiceIcons");
   const pingoneServices = document.getElementById("pingoneServices");
+  const pingoneServiceIcons = document.getElementById("pingoneServiceIcons");
 
   if (pingone) {
-    const service = new PingOneService("PING_ONE_BASE");
-    const card = service.getCard();
-    if (card) {
-      pingoneServices.appendChild(card);
-    }
-
     const envDetail = pingone.api.environments.find((e) =>
       e.id === pingone.activeEnv?.id);
 
@@ -196,9 +197,43 @@ const refreshPingOneServices = function () {
         }
       });
 
+      for (const p of products) {
+        if (p.type !== "PING_ONE_BASE" && p.type !== "PING_ONE_DAVINCI") {
+          try {
+            const service = new PingOneService(p.type);
+            pingoneServiceIcons.appendChild(createElement("img", "service-icon", `${service.info.icon}`));
+            pingoneServiceIcons.title = service.info.name;
+          }
+          catch (err) {
+            redAlert(`No PingOne Service card found for '${p.type}'`)
+          }
+        }
+      }
+
+
+      const service = new PingOneService("PING_ONE_BASE");
+      const card = service.getCard();
+      if (card) {
+        pingoneServices.appendChild(card);
+      }
+
+      // const envDetail = pingone.api.environments.find((e) =>
+      //   e.id === pingone.activeEnv?.id);
+
+      // if (envDetail) {
+      //   const products = envDetail.bom.products.sort((a, b) => {
+      //     if (a.type === "PING_ONE_DAVINCI") {
+      //       return -1;
+      //     } else if (b.type === "PING_ONE_DAVINCI") {
+      //       return 1;
+      //     } else {
+      //       return a.type.localeCompare(b.type); // sort alphabetically
+      //     }
+      //   });
+
       products.forEach((p) => {
         try {
-          if (p.type !== "PING_ONE_BASE") {
+          if (p.type === "PING_ONE_DAVINCI") {
             const svc = new PingOneService(p.type);
             const card = svc.getCard();
             if (card) {
@@ -216,6 +251,7 @@ const refreshPingOneServices = function () {
       pingoneBaseSelectEnv.addEventListener("change", selectEnvironment);
     }
 
+    showElement("pingoneServiceIcons")
     showElement("pingoneServices")
   }
 }
