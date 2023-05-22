@@ -184,7 +184,7 @@ const refreshPingOneServices = function () {
 
   if (pingone) {
     const envDetail = pingone.api.environments.find((e) =>
-      e.id === pingone.activeEnv?.id);
+      e.id === (pingone.activeEnv?.id || pingone.envId));
 
     if (envDetail) {
       const products = envDetail.bom.products.sort((a, b) => {
@@ -216,20 +216,6 @@ const refreshPingOneServices = function () {
       if (card) {
         pingoneServices.appendChild(card);
       }
-
-      // const envDetail = pingone.api.environments.find((e) =>
-      //   e.id === pingone.activeEnv?.id);
-
-      // if (envDetail) {
-      //   const products = envDetail.bom.products.sort((a, b) => {
-      //     if (a.type === "PING_ONE_DAVINCI") {
-      //       return -1;
-      //     } else if (b.type === "PING_ONE_DAVINCI") {
-      //       return 1;
-      //     } else {
-      //       return a.type.localeCompare(b.type); // sort alphabetically
-      //     }
-      //   });
 
       products.forEach((p) => {
         try {
