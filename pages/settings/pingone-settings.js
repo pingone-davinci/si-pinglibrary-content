@@ -14,23 +14,6 @@ const saveEnvironment = async function () {
   showEnvironment(fieldsetValues.envNickname);
 }
 
-const validateUUIDv4 = function (event) {
-  if (!event.target.value.isValidUUIDv4()) {
-    redAlert(`'${event.target.parentNode.innerText}' must be a valid UUID"`);
-  } else {
-    clearAlert();
-  }
-}
-
-const validateLength = function (event, len) {
-  if (!(event.target.value?.length == len)) {
-    redAlert(`'${event.target.parentNode.innerText}' is invalid length`);
-  } else {
-    clearAlert();
-  }
-}
-
-
 const clearAndSetRows = function (id, enableCheck) {
   const updateCheckbox = function (element, mode = "CHECK") {
     if (!element) {
@@ -96,7 +79,6 @@ const selectEnvironment = function (event) {
 }
 
 const addEnvironment = function () {
-  console.log("In addEnvironment()...");
   PingOne.clear();
   hideAllDivs();
   clearAndSetRows(undefined, false);
@@ -107,7 +89,6 @@ const addEnvironment = function () {
 
 const editEnvironment = function (id) {
   id = unescape(id);
-  console.log("In editEvironment()...");
   PingOne.clear();
   hideAllDivs();
   clearAndSetRows(id, false);
@@ -135,44 +116,6 @@ const deleteEnvironment = function () {
   clearFieldsetItems();
   hideAllDivs();
   refreshPingOneTable();
-}
-
-String.prototype.mask = function (start = 3, end = 3, mask = "*") {
-  if (start + end > this.length) return this;
-  return this.substring(0, start)
-    + mask.repeat(this.length - start - end)
-    + this.substring(this.length - end);
-}
-
-const loginDavinci = async function (pingOne) {
-  const davinciEnvId = pingone.activeEnv.id;
-  const username = getElementValue("davinciUsername");
-  const password = getElementValue("davinciPassword");
-  console.log(pingone);
-
-  if (!davinciEnvId) {
-    redAlert("DaVinci Tenent not selected")
-    return;
-  }
-
-  if (!username || !password) {
-    redAlert("Username/Password not provided")
-    return;
-  }
-
-  clearAlert();
-
-  loadingSpinner("Authentiating to PingOne/DaVinci...");
-  try {
-    await pingone.dvlogin(davinciEnvId, username, password);
-    console.log(pingone);
-    refreshPingOneServices();
-  } catch (err) {
-    console.log(err);
-    redAlert("Unable to login")
-  } finally {
-    removeSpinner();
-  }
 }
 
 const refreshPingOneServices = function () {
@@ -246,12 +189,12 @@ function refreshPingOneTable() {
   const admEnvs = app.SETTINGS.getProperty("pingone");
   // If number of enviroments == 0 or missing, replace with a message to add environments
   if (!admEnvs || admEnvs.length === 0) {
-    setElementHTML("environment-table", "Press the <strong>Add Admin Enviroment</strong> button to add settings for a PingOne Environment");
+    setElementHTML("environment-table", "");
     return;
   }
 
   let table = `
-    <table id="form-table" style="table-layout: auto;" width="95%" align="center" >
+    <table id="form-table" style="table-layout: auto;">
       <tr>
         <th width="1%"></th>
         <th width="1%"></th>

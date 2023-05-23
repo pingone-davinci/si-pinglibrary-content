@@ -1,74 +1,24 @@
 <div id="pageDiv">
-  <hr>
-  <fieldset name="terraformer" id="settings">
-    <h3 class="left">PingOne Administrative Environment</h3>
-    <p>Select a PingOne admimistrative environment and login.<br>
-      <br>
-      <i class="fa fa-info-circle" style="color: #7f9cf4;"></i> If you don't see your environment
-      listed, please add it to your <a
-        href="https://dev.pingdesigner.com/share/35c035d0-bd57-4675-a985-5db7721b6156">Ping Design Library Settings</a>.
-    </p>
-    <div class="select line-border">
-      <select id="pingoneAdminEnvSelect" onchange="showElement('identifyAdminEnvironment')">
-      </select>
-    </div>
+  <div id="terraformer"></div>
 
-    <div id="identifyAdminEnvironment" class="hide">
-      <div class="input-container">
-        <input id="username" type="text" placeholder=" " value="">
-        <label>Username</label>
-      </div>
-      <div class="input-container">
-        <input id="password" type="password" placeholder=" " value="">
-        <label>Password</label>
-      </div>
-      <button id="login-pingone-button" class="action-button mb-l blue">Login to PingOne
-        Admin
-      </button>
-    </div>
-
-    <div id="identifyTargetEnvironment" class="hide">
-      <h3 class="left">DaVinci Target Environment</h3>
-      <p>Select a DaVinci target environment to generate a Terraform plan.<br>
-        <br>
-        <i class="fa fa-info-circle" style="color: #7f9cf4;"></i>
-        If you don't see your environment
-        listed, ensure the administrative user above has access to desired environment.
-      </p>
-      <div class="select line-border">
-        <select id="pingoneTargetEnvSelect" onchange="showElement('terraformer-button');">
-        </select>
-      </div>
-      <input id="davinciRegion" type="hidden" placeholder=" " value="" />
-      <input id="davinciAccessToken" type="hidden" placeholder=" " value="" />
-      <button id="terraformer-button" class="action-button mt-l blue hide">Download Terraform Plan</button>
-
-      <div class="hide" id="terraform-instructions-div">
-        <div class="code-block-with-header half-width">
-          <div class="header">
-            <div class="title">Instructions - Terraform plan to validate</div>
-            <div>
-              <button class="copy-btn" onclick="copyCodeBlock(event)">Copy</button>
-            </div>
-          </div>
-          <pre><code class="hljs language-undefined" id="terraform-instructions">
-
-        </code></pre>
+  <div class="hide" id="terraform-instructions-div">
+    <div class="code-block-with-header half-width">
+      <div class="header">
+        <div class="title">Instructions - Terraform plan to validate</div>
+        <div>
+          <button class="copy-btn" onclick="copyCodeBlock(event)">Copy</button>
         </div>
-
       </div>
+      <pre>
+        <code class="hljs language-undefined" id="terraform-instructions"></code>
+      </pre>
     </div>
-
-  </fieldset>
+  </div>
 </div>
 
 <div id="scriptDiv">
   <script>
-
-
-    const terraformerApi = async function (envValues) {
-
-      // console.table(envValues);
+    const terraformerApi = async function () {
       const epoch = (new Date()).getTime();
       const zipFileName = "terraform-" + epoch;
 
@@ -78,18 +28,17 @@
           method: "POST",
           responseType: "blob", // This is a browser side call
           body: JSON.stringify({
-            "companyId": envValues.pingoneTargetEnvSelect,
+            "companyId": pingone.envId,
             "name": zipFileName,
             "terraformProviderVars": {
-              "PINGONE_USERNAME": envValues.username,
-              "PINGONE_PASSWORD": envValues.password,
-              "PINGONE_REGION": envValues.davinciRegion,
-              "PINGONE_ENVIRONMENT_ID": envValues.pingoneAdminEnvSelect
+              "PINGONE_DAVINCI_ACCESS_TOKEN": pingone.activeDavinciEnv.access_token,
+              "PINGONE_REGION": getDaVinciRegion(pingone.region),
+              "PINGONE_ENVIRONMENT_ID": pingone.activeDavinciEnv.selectedCompany
             }
           }),
           headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer " + envValues.davinciAccessToken
+            "Authorization": "Bearer " + pingone.activeDavinciEnv.access_token
           }
         });
 
@@ -164,22 +113,39 @@ terraform plan`;
     }
 
     const callTerraformer = function () {
-      const fieldset = getFieldset();
-      const fieldsetValues = getFieldsetInputs(fieldset.id);
+      // const fieldset = getFieldset();
+      // const fieldsetValues = getFieldsetInputs(fieldset.id);
 
       // console.table(fieldsetValues);
-      blueAlert("Exporting your DaVinci into Terraform Plan...")
-      terraformerApi(fieldsetValues);
+      blueAlert("Exporting your DaVinci resources into Terraform Plan...")
+      terraformerApi();
     }
 
     const terraformer_init = function () {
-      console.log("pagescript - terraformer_init()")
+      console.log("pagescript - terraformer_init()");
 
-      fillAdminEnvSelectOptions()
+      const terraformer = document.getElementById("terraformer");
 
-      document.getElementById("terraformer-button").onclick = callTerraformer;
-      document.getElementById("login-pingone-button").onclick = loginDaVinci;
-      document.getElementById("username").value = app.SETTINGS.getProperty("home.email") || "";
+
+      // Create message (or future dropdown) for Environment we are importing into
+      if (pingone?.activeDavinciEnv) {
+        const h3 = createElement("h3");
+        h3.innerText = `Davinci Company: ${pingone.activeDavinciEnv.selectedCompanyName}`;
+        terraformer.appendChild(h3);
+
+        terraformer.appendChild(
+          buildActionButton("Downlaod Terraform Plans", "", function () { callTerraformer() }));
+
+      } else {
+        terraformer.appendChild(
+          buildActionButton(`Select an Environment`, "", applyFindAndRender("35c035d0-bd57-4675-a985-5db7721b6156")));
+      }
+
+      // fillAdminEnvSelectOptions()
+
+      // document.getElementById("terraformer-button").onclick = callTerraformer;
+      // document.getElementById("login-pingone-button").onclick = loginDaVinci;
+      // document.getElementById("username").value = app.SETTINGS.getProperty("home.email") || "";
     }
 
     terraformer_init();
