@@ -228,6 +228,24 @@ function refreshPingOneTable() {
   setElementHTML("environment-table", table)
 }
 
+
+const validateUUIDv4 = function (event) {
+  if (!event.target.value.isValidUUIDv4()) {
+    redAlert(`'${event.target.parentNode.innerText}' must be a valid UUID"`);
+  } else {
+    clearAlert();
+  }
+}
+
+const validateLength = function (event, len) {
+  if (!(event.target.value?.length == len)) {
+    redAlert(`'${event.target.parentNode.innerText}' is invalid length`);
+  } else {
+    clearAlert();
+  }
+}
+
+
 async function pingone_init() {
   // Whatever
   console.log("pagescript - pingone_init()")
