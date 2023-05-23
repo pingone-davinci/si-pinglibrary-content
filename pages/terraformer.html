@@ -1,0 +1,153 @@
+<div id="pageDiv">
+  <div id="terraformer"></div>
+
+  <div class="hide" id="terraform-instructions-div">
+    <div class="code-block-with-header half-width">
+      <div class="header">
+        <div class="title">Instructions - Terraform plan to validate</div>
+        <div>
+          <button class="copy-btn" onclick="copyCodeBlock(event)">Copy</button>
+        </div>
+      </div>
+      <pre>
+        <code class="hljs language-undefined" id="terraform-instructions"></code>
+      </pre>
+    </div>
+  </div>
+</div>
+
+<div id="scriptDiv">
+  <script>
+    const terraformerApi = async function () {
+      const epoch = (new Date()).getTime();
+      const zipFileName = "terraform-" + epoch;
+
+      loadingSpinner("Generating Terraform...");
+      const response = await fetch(`/api/terraformer`,
+        {
+          method: "POST",
+          responseType: "blob", // This is a browser side call
+          body: JSON.stringify({
+            "companyId": pingone.envId,
+            "name": zipFileName,
+            "terraformProviderVars": {
+              "PINGONE_DAVINCI_ACCESS_TOKEN": pingone.activeDavinciEnv.access_token,
+              "PINGONE_REGION": getDaVinciRegion(pingone.region),
+              "PINGONE_ENVIRONMENT_ID": pingone.activeDavinciEnv.selectedCompany
+            }
+          }),
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + pingone.activeDavinciEnv.access_token
+          }
+        });
+
+      console.log(response);
+
+      const blob = await response.blob();
+      // const filename = zipFileName + '.zip';
+
+      // Create download link
+      const downloadLink = document.createElement('a');
+      downloadLink.href = window.URL.createObjectURL(blob);
+      downloadLink.download = zipFileName + ".zip";
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+
+      const terraformInstructions = document.getElementById("terraform-instructions");
+      terraformInstructions.innerText = `cd ~/Downloads
+unzip ${zipFileName}.zip
+cd ${zipFileName}
+terraform init
+terraform plan`;
+      showElement("terraform-instructions-div");
+      hideElement('modalBackdrop');
+    }
+
+    const fillAdminEnvSelectOptions = function () {
+      const envs = app.SETTINGS.getProperty("pingone");
+      // console.table(envs)
+
+      const pingoneAdminEnvSelect = document.getElementById("pingoneAdminEnvSelect");
+
+      let options = `<option value="" disabled selected>Select admin environment</option>`;
+      envs.forEach((e) => {
+        options +=
+          `<option value="${e.envId}">${e.envNickname}</option >`;
+      });
+      pingoneAdminEnvSelect.innerHTML = options;
+    }
+
+    const loginDaVinci = async function () {
+      hideElement("identifyTargetEnvironment");
+      hideElement("terraformer-button");
+      const id = getElementValue("pingoneAdminEnvSelect");
+
+      const env = app.SETTINGS.getProperty("pingone").find((e) => e.envId === id);
+
+      loadingSpinner("Logging In...");
+      const dvEnv = await dvlogin(env.envId, getPingOneRegion(env.region), getElementValue("username"), getElementValue("password"));
+      hideElement('modalBackdrop');
+
+      if (dvEnv.companies) {
+        showElement("identifyTargetEnvironment")
+        document.getElementById("davinciRegion").value = getDaVinciRegion(env.region);
+        document.getElementById("davinciAccessToken").value = dvEnv["accessToken"];
+        let options = `<option value="" disabled selected>Select target environment</option>`;
+
+        for (const name in dvEnv.companies) {
+          if (name != "") {
+            const envId = dvEnv.companies[name];
+            options += `<option value="${envId}">${name}</option >`;
+          }
+        }
+        const pingoneTargetEnvSelect = document.getElementById("pingoneTargetEnvSelect");
+
+        pingoneTargetEnvSelect.innerHTML = options;
+      } else if (!dvEnv.accessToken) {
+        redAlert("Unable to authenticate")
+      } else {
+        redAlert("No DaVinci tenants found")
+      }
+    }
+
+    const callTerraformer = function () {
+      // const fieldset = getFieldset();
+      // const fieldsetValues = getFieldsetInputs(fieldset.id);
+
+      // console.table(fieldsetValues);
+      blueAlert("Exporting your DaVinci resources into Terraform Plan...")
+      terraformerApi();
+    }
+
+    const terraformer_init = function () {
+      console.log("pagescript - terraformer_init()");
+
+      const terraformer = document.getElementById("terraformer");
+
+
+      // Create message (or future dropdown) for Environment we are importing into
+      if (pingone?.activeDavinciEnv) {
+        const h3 = createElement("h3");
+        h3.innerText = `Davinci Company: ${pingone.activeDavinciEnv.selectedCompanyName}`;
+        terraformer.appendChild(h3);
+
+        terraformer.appendChild(
+          buildActionButton("Downlaod Terraform Plans", "", function () { callTerraformer() }));
+
+      } else {
+        terraformer.appendChild(
+          buildActionButton(`Select an Environment`, "", applyFindAndRender("35c035d0-bd57-4675-a985-5db7721b6156")));
+      }
+
+      // fillAdminEnvSelectOptions()
+
+      // document.getElementById("terraformer-button").onclick = callTerraformer;
+      // document.getElementById("login-pingone-button").onclick = loginDaVinci;
+      // document.getElementById("username").value = app.SETTINGS.getProperty("home.email") || "";
+    }
+
+    terraformer_init();
+  </script>
+</div>
