@@ -147,7 +147,7 @@ const refreshPingOneServices = function () {
       }
 
       if (pingone.activeEnv) {
-        for (const p of products) {
+        products.forEach((p) => {
           if (p.type !== "PING_ONE_BASE" && p.type !== "PING_ONE_DAVINCI") {
             try {
               const service = new PingOneService(p.type);
@@ -155,22 +155,16 @@ const refreshPingOneServices = function () {
               pingoneServiceIcons.title = service.info.name;
             }
             catch (err) {
-              redAlert(`No PingOne Service card found for '${p.type}'`)
+              yellowAlert(`No PingOne Service found for '${p.type}'`)
             }
           }
-        }
 
-        products.forEach((p) => {
-          try {
-            if (p.type === "PING_ONE_DAVINCI") {
-              const svc = new PingOneService(p.type);
-              const card = svc.getCard();
-              if (card) {
-                pingoneServices.appendChild(card);
-              }
+          if (p.type === "PING_ONE_DAVINCI") {
+            const svc = new PingOneService(p.type);
+            const card = svc.getCard();
+            if (card) {
+              pingoneServices.appendChild(card);
             }
-          } catch (err) {
-            redAlert(`No PingOne Service card found for '${p.type}'`)
           }
         });
       }
