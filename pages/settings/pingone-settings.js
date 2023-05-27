@@ -71,8 +71,6 @@ const selectEnvironment = function (event) {
     pingone.activeDavinciEnv.selectedCompany = environment.id;
     pingone.activeDavinciEnv.selectedCompanyName = environment.name;
   }
-  console.log("After set...")
-  console.dir(pingone);
   refreshPingOneTable();
   clearAndSetRows(pingone?.envNickname, true);
   refreshPingOneServices();
