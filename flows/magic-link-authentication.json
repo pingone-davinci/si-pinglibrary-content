@@ -1,7 +1,7 @@
 {
   "flows": [
     {
-      "companyId": "fc0efbbe-c3d8-4670-b643-3344bb47bbcd",
+      "companyId": "0637006e-f744-4453-97aa-f7c78b62535a",
       "authTokenExpireIds": [],
       "connectorIds": [
         "flowConnector",
@@ -11,14 +11,14 @@
         "errorConnector",
         "variablesConnector"
       ],
-      "createdDate": 1689872775119,
-      "currentVersion": 4,
+      "createdDate": 1690298712291,
+      "currentVersion": 2,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
-      "description": "Imported on Thu Jul 20 2023 12:00:48 GMT+0000 (Coordinated Universal Time)",
+      "description": "Imported on Tue Jul 25 2023 15:24:25 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
-      "name": "DVF-12 PingOne Authentication with Magic Link",
-      "publishedVersion": 3,
+      "name": "PingOne Authentication with Magic Link",
+      "publishedVersion": 1,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
@@ -39,9 +39,10 @@
         "customTitle": "Magic Link Authentication",
         "logLevel": 2
       },
-      "updatedDate": 1689872775125,
-      "flowId": "5ac39c2fc5f50b3478f1952cd282b25d",
-      "versionId": 4,
+      "timeouts": "null",
+      "updatedDate": 1690298712296,
+      "flowId": "e31ce2dfcf00d6c6da0f0a7883c76148",
+      "versionId": 2,
       "graphData": {
         "elements": {
           "nodes": [
@@ -65,8 +66,8 @@
                 }
               },
               "position": {
-                "x": 750,
-                "y": 420
+                "x": 724,
+                "y": 424
               },
               "group": "nodes",
               "removed": false,
@@ -81,7 +82,7 @@
               "data": {
                 "id": "mna3qmkufn",
                 "nodeType": "CONNECTION",
-                "connectionId": "7702c9e25321bb6f6983ddea0ac950d2",
+                "connectionId": "12d7974fa97bfe1aba2076f4a38e2897",
                 "connectorId": "flowConnector",
                 "name": "Flow Conductor",
                 "label": "Flow [2023-02-06]",
@@ -91,8 +92,8 @@
                 "properties": {
                   "subFlowId": {
                     "value": {
-                      "label": "Magic Link Subflow DVF-12",
-                      "value": "492b1f4eda5dde444a101024372a08f0"
+                      "label": "Magic Link Subflow",
+                      "value": "aeec73897da184ca3fda6e27dff2cb68"
                     }
                   },
                   "subFlowVersionId": {
@@ -122,8 +123,8 @@
                 }
               },
               "position": {
-                "x": 1260,
-                "y": 420
+                "x": 1234,
+                "y": 424
               },
               "group": "nodes",
               "removed": false,
@@ -149,8 +150,8 @@
                 }
               },
               "position": {
-                "x": 1380,
-                "y": 420
+                "x": 1354,
+                "y": 424
               },
               "group": "nodes",
               "removed": false,
@@ -199,8 +200,8 @@
                 "status": "configured"
               },
               "position": {
-                "x": 240,
-                "y": 210
+                "x": 214,
+                "y": 214
               },
               "group": "nodes",
               "removed": false,
@@ -255,8 +256,8 @@
                 "status": "configured"
               },
               "position": {
-                "x": 510,
-                "y": 300
+                "x": 484,
+                "y": 304
               },
               "group": "nodes",
               "removed": false,
@@ -312,8 +313,8 @@
                 "idUnique": "sq8z2scnhi"
               },
               "position": {
-                "x": 1140,
-                "y": 330
+                "x": 1110,
+                "y": 300
               },
               "group": "nodes",
               "removed": false,
@@ -369,8 +370,8 @@
                 "idUnique": "j0327j05r1"
               },
               "position": {
-                "x": 1440,
-                "y": 510
+                "x": 1414,
+                "y": 514
               },
               "group": "nodes",
               "removed": false,
@@ -426,8 +427,8 @@
                 "idUnique": "5845t37dl0"
               },
               "position": {
-                "x": 1440,
-                "y": 330
+                "x": 1410,
+                "y": 300
               },
               "group": "nodes",
               "removed": false,
@@ -521,8 +522,8 @@
                 "idUnique": "pl05yk6egm"
               },
               "position": {
-                "x": 630,
-                "y": 420
+                "x": 604,
+                "y": 424
               },
               "group": "nodes",
               "removed": false,
@@ -567,8 +568,8 @@
                 "idUnique": "nfw5wfs9fm"
               },
               "position": {
-                "x": 1560,
-                "y": 600
+                "x": 1534,
+                "y": 604
               },
               "group": "nodes",
               "removed": false,
@@ -615,8 +616,8 @@
                 }
               },
               "position": {
-                "x": 930,
-                "y": 420
+                "x": 904,
+                "y": 424
               },
               "group": "nodes",
               "removed": false,
@@ -639,8 +640,8 @@
                 }
               },
               "position": {
-                "x": 1050,
-                "y": 420
+                "x": 1024,
+                "y": 424
               },
               "group": "nodes",
               "removed": false,
@@ -672,8 +673,8 @@
                 }
               },
               "position": {
-                "x": 1260,
-                "y": 600
+                "x": 1234,
+                "y": 604
               },
               "group": "nodes",
               "removed": false,
@@ -713,8 +714,8 @@
                 }
               },
               "position": {
-                "x": 330,
-                "y": 420
+                "x": 304,
+                "y": 424
               },
               "group": "nodes",
               "removed": false,
@@ -731,8 +732,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 480,
-                "y": 420
+                "x": 454,
+                "y": 424
               },
               "group": "nodes",
               "removed": false,
@@ -780,8 +781,8 @@
                 "idUnique": "fnryk13gci"
               },
               "position": {
-                "x": 1560,
-                "y": 420
+                "x": 1534,
+                "y": 424
               },
               "group": "nodes",
               "removed": false,
@@ -1004,27 +1005,11 @@
         }
       },
       "flowColor": "#ff661c",
-      "savedDate": 1689872775029,
+      "savedDate": 1690298712240,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1689867510672,
-          "customerId": "f3e47d945ae971a4b4142ec75012d155",
-          "fields": {
-            "type": "string",
-            "displayName": "",
-            "mutable": true,
-            "min": 0,
-            "max": 2000
-          },
-          "type": "property",
-          "visibility": "private",
-          "name": "notificationLogo##SK##flowInstance",
-          "companyId": "fc0efbbe-c3d8-4670-b643-3344bb47bbcd"
-        },
-        {
-          "context": "flowInstance",
-          "createdDate": 1688146039155,
+          "createdDate": 1690198332966,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -1035,11 +1020,26 @@
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
-          "companyId": "fc0efbbe-c3d8-4670-b643-3344bb47bbcd"
+          "companyId": "0637006e-f744-4453-97aa-f7c78b62535a"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1689260649292,
+          "createdDate": 1690298665763,
+          "fields": {
+            "type": "string",
+            "displayName": "",
+            "mutable": true,
+            "min": 0,
+            "max": 2000
+          },
+          "type": "property",
+          "visibility": "private",
+          "name": "notificationLogo##SK##flowInstance",
+          "companyId": "0637006e-f744-4453-97aa-f7c78b62535a"
+        },
+        {
+          "context": "flowInstance",
+          "createdDate": 1690224068829,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -1050,14 +1050,14 @@
           "type": "property",
           "visibility": "private",
           "name": "populationId##SK##flowInstance",
-          "companyId": "fc0efbbe-c3d8-4670-b643-3344bb47bbcd"
+          "companyId": "0637006e-f744-4453-97aa-f7c78b62535a"
         }
       ],
       "connections": [],
-      "parentFlowId": "5ac39c2fc5f50b3478f1952cd282b25d"
+      "parentFlowId": "e31ce2dfcf00d6c6da0f0a7883c76148"
     },
     {
-      "companyId": "fc0efbbe-c3d8-4670-b643-3344bb47bbcd",
+      "companyId": "0637006e-f744-4453-97aa-f7c78b62535a",
       "authTokenExpireIds": [],
       "connectorIds": [
         "flowConnector",
@@ -1068,10 +1068,10 @@
         "functionsConnector",
         "pingOneSSOConnector"
       ],
-      "createdDate": 1689866716836,
-      "currentVersion": 11,
+      "createdDate": 1690298665461,
+      "currentVersion": 1,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
-      "description": "Imported on Thu Jul 20 2023 12:00:47 GMT+0000 (Coordinated Universal Time)",
+      "description": "Imported on Tue Jul 25 2023 15:24:25 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -1100,8 +1100,8 @@
       },
       "isInputSchemaSaved": true,
       "isOutputSchemaSaved": false,
-      "name": "Magic Link Subflow DVF-12",
-      "publishedVersion": 10,
+      "name": "Magic Link Subflow",
+      "publishedVersion": 1,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
@@ -1116,9 +1116,10 @@
         "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png",
         "customTitle": "Magic Link Authentication"
       },
-      "updatedDate": 1689866716844,
-      "flowId": "492b1f4eda5dde444a101024372a08f0",
-      "versionId": 11,
+      "timeouts": "null",
+      "updatedDate": 1690298665658,
+      "flowId": "aeec73897da184ca3fda6e27dff2cb68",
+      "versionId": 1,
       "graphData": {
         "elements": {
           "nodes": [
@@ -1126,7 +1127,7 @@
               "data": {
                 "id": "df26chrsox",
                 "nodeType": "CONNECTION",
-                "connectionId": "7702c9e25321bb6f6983ddea0ac950d2",
+                "connectionId": "12d7974fa97bfe1aba2076f4a38e2897",
                 "connectorId": "flowConnector",
                 "name": "Flow Conductor",
                 "label": "Flow Connector",
@@ -1160,7 +1161,7 @@
               "data": {
                 "id": "41xyrmh5iy",
                 "nodeType": "CONNECTION",
-                "connectionId": "7702c9e25321bb6f6983ddea0ac950d2",
+                "connectionId": "12d7974fa97bfe1aba2076f4a38e2897",
                 "connectorId": "flowConnector",
                 "name": "Flow Conductor",
                 "label": "Flow Connector",
@@ -1237,7 +1238,7 @@
               "data": {
                 "id": "fy5swslv5o",
                 "nodeType": "CONNECTION",
-                "connectionId": "9012d2638f4a07785a655ed7559075f8",
+                "connectionId": "97b00dfb5cfb5fe0d54d63b983ade8f4",
                 "connectorId": "challengeConnector",
                 "name": "Challenge",
                 "label": "Challenge",
@@ -1346,7 +1347,7 @@
               "data": {
                 "id": "k6cepp845o",
                 "nodeType": "CONNECTION",
-                "connectionId": "9d244db5517cdd12745010907cc05dbe",
+                "connectionId": "cacf3d2861657174d93cbf445d55797a",
                 "connectorId": "notificationsConnector",
                 "name": "PingOne Notifications",
                 "label": "PingOne Notifications",
@@ -1802,7 +1803,7 @@
               "data": {
                 "id": "0kjuaaufrp",
                 "nodeType": "CONNECTION",
-                "connectionId": "9012d2638f4a07785a655ed7559075f8",
+                "connectionId": "97b00dfb5cfb5fe0d54d63b983ade8f4",
                 "connectorId": "challengeConnector",
                 "name": "Challenge",
                 "label": "Challenge [2023-02-06]",
@@ -2760,11 +2761,11 @@
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1689866716511,
+      "savedDate": 1690298665289,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1688146039155,
+          "createdDate": 1690198332966,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -2775,11 +2776,11 @@
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
-          "companyId": "fc0efbbe-c3d8-4670-b643-3344bb47bbcd"
+          "companyId": "0637006e-f744-4453-97aa-f7c78b62535a"
         }
       ]
     }
   ],
-  "companyId": "fc0efbbe-c3d8-4670-b643-3344bb47bbcd",
+  "companyId": "0637006e-f744-4453-97aa-f7c78b62535a",
   "customerId": "f3e47d945ae971a4b4142ec75012d155"
 }
