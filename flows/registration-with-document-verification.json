@@ -1,5 +1,5 @@
 {
-  "companyId": "fc0efbbe-c3d8-4670-b643-3344bb47bbcd",
+  "companyId": "50451ff2-2ed6-4c10-90ed-0e138623955c",
   "authTokenExpireIds": [],
   "connectorIds": [
     "httpConnector",
@@ -11,11 +11,11 @@
     "pingOneSSOConnector",
     "errorConnector"
   ],
-  "createdDate": 1689868411766,
-  "currentVersion": 26,
+  "createdDate": 1690809175538,
+  "currentVersion": 102,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "deployedDate": 1689868414868,
-  "description": "Imported on Thu Jul 13 2023 15:04:09 GMT+0000 (Coordinated Universal Time)",
+  "deployedDate": 1690809177930,
+  "description": "Imported on Tue Jul 11 2023 19:08:11 GMT+0000 (Coordinated Universal Time)",
   "flowStatus": "enabled",
   "inputSchemaCompiled": {
     "parameters": {
@@ -28,24 +28,25 @@
   "isInputSchemaSaved": false,
   "isOutputSchemaSaved": false,
   "name": "Registration with PingOne Verify",
-  "publishedVersion": 26,
+  "publishedVersion": 102,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": "",
     "intermediateLoadingScreenHTML": "",
-    "displayNodeIDs": true,
+    "useBetaAlgorithm": true,
+    "debugMode": true,
     "useCustomCSS": true,
-    "css": ".companyLogo {\n    /* Ping Logo  */\n    content: url(\"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\");\n    height: 65px;\n    width: 65px;\n}\n",
     "cssLinks": [
       "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css",
       "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.7/icons.css"
     ],
-    "customTitle": "Registration with PingOne Verify",
-    "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
+    "css": ".companyLogo {\n    /* Ping Logo  */\n    content: url(\"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\");\n    width: 65px;\n    height: 65px;\n}\n",
+    "logLevel": 2
   },
-  "updatedDate": 1689868414869,
-  "flowId": "fb40d2fbb657153b651db09764c06988",
-  "versionId": 26,
+  "timeouts": "null",
+  "updatedDate": 1690809177930,
+  "flowId": "fa3b0375be751accd378f20f362b1944",
+  "versionId": 102,
   "graphData": {
     "elements": {
       "nodes": [
@@ -56,8 +57,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1653.515611379374,
-            "y": 1138.4861586546508
+            "x": 1613.2114388928562,
+            "y": 1110.7357448114747
           },
           "group": "nodes",
           "removed": false,
@@ -86,8 +87,8 @@
             }
           },
           "position": {
-            "x": 1816.1564911871812,
-            "y": 1138.4861586546508
+            "x": 1798.3340630281018,
+            "y": 1110.7357448114747
           },
           "group": "nodes",
           "removed": false,
@@ -136,8 +137,8 @@
             "isDisabled": false
           },
           "position": {
-            "x": 1517.981544872868,
-            "y": 813.2043990390364
+            "x": 1480.9809930819663,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -162,8 +163,8 @@
             }
           },
           "position": {
-            "x": 704.7771458338315,
-            "y": 813.2043990390364
+            "x": 766.9365857031611,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -180,8 +181,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1030.058905449446,
-            "y": 813.2043990390364
+            "x": 1057.8435664871188,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -196,7 +197,7 @@
           "data": {
             "id": "4wpvjpua5o",
             "nodeType": "CONNECTION",
-            "connectionId": "0e6f2a42638b0306448cd85eeb1186f2",
+            "connectionId": "bf613d45e4d21bf1a5e61c91532c2597",
             "connectorId": "pingOneVerifyConnector",
             "name": "PingOne Verify",
             "label": "PingOne Verify Test 6",
@@ -206,15 +207,12 @@
             "properties": {
               "userId": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"userId\",\n        \"data\": \"{{local.7xz03oh8uz.payload.output.userId}}\",\n        \"tooltip\": \"{{local.7xz03oh8uz.payload.output.userId}}\",\n        \"children\": [\n          {\n            \"text\": \"userId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Create Verify Transaction"
               }
             }
           },
           "position": {
-            "x": 623.4567059299279,
-            "y": 813.2043990390364
+            "x": 634.7061398922713,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -229,7 +227,7 @@
           "data": {
             "id": "l2lzdd3hoy",
             "nodeType": "CONNECTION",
-            "connectionId": "0e6f2a42638b0306448cd85eeb1186f2",
+            "connectionId": "bf613d45e4d21bf1a5e61c91532c2597",
             "connectorId": "pingOneVerifyConnector",
             "name": "PingOne Verify",
             "label": "PingOne Verify Test 6",
@@ -242,15 +240,12 @@
               },
               "userId": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"userId\",\n        \"data\": \"{{local.7xz03oh8uz.payload.output.userId}}\",\n        \"tooltip\": \"{{local.7xz03oh8uz.payload.output.userId}}\",\n        \"children\": [\n          {\n            \"text\": \"userId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Read Transaction"
               }
             }
           },
           "position": {
-            "x": 1246.9134118598558,
-            "y": 813.2043990390364
+            "x": 1216.5201014601867,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -267,8 +262,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1355.3406650650606,
-            "y": 813.2043990390364
+            "x": 1322.3044581088984,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -283,7 +278,7 @@
           "data": {
             "id": "jj14bg47nq",
             "nodeType": "CONNECTION",
-            "connectionId": "0e6f2a42638b0306448cd85eeb1186f2",
+            "connectionId": "bf613d45e4d21bf1a5e61c91532c2597",
             "connectorId": "pingOneVerifyConnector",
             "name": "PingOne Verify",
             "label": "PingOne Verify Test 6",
@@ -295,9 +290,6 @@
               },
               "userId": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"userId\",\n        \"data\": \"{{local.7xz03oh8uz.payload.output.userId}}\",\n        \"tooltip\": \"{{local.7xz03oh8uz.payload.output.userId}}\",\n        \"children\": [\n          {\n            \"text\": \"userId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Read Gov't ID"
               }
             },
             "idUnique": "nkbh0b54v1",
@@ -305,8 +297,8 @@
             "isDisabled": false
           },
           "position": {
-            "x": 1816.1564911871812,
-            "y": 813.2043990390364
+            "x": 1798.3340630281018,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -323,8 +315,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1653.515611379374,
-            "y": 813.2043990390364
+            "x": 1613.2114388928562,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -339,7 +331,7 @@
           "data": {
             "id": "yzukzyiodh",
             "nodeType": "CONNECTION",
-            "connectionId": "0e6f2a42638b0306448cd85eeb1186f2",
+            "connectionId": "bf613d45e4d21bf1a5e61c91532c2597",
             "connectorId": "pingOneVerifyConnector",
             "name": "PingOne Verify",
             "label": "PingOne Verify Test 6",
@@ -355,17 +347,14 @@
               },
               "globalVariableMapping": {
                 "value": []
-              },
-              "nodeTitle": {
-                "value": "Extract Metadata"
               }
             },
             "idUnique": "eq8n1mdvbb",
             "isDisabled": false
           },
           "position": {
-            "x": 2141.4382508027957,
-            "y": 813.2043990390364
+            "x": 2115.6871329742376,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -382,8 +371,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1978.7973709949886,
-            "y": 813.2043990390364
+            "x": 1957.0105980011697,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -409,52 +398,10 @@
               "saveVariables": {
                 "value": [
                   {
-                    "name": "populationId",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"177d6cde-eb74-4ee6-be19-935709b571e1\"\n      }\n    ]\n  }\n]",
-                    "key": 0.9673372774789002,
-                    "type": "string",
-                    "label": "populationId (string - flowInstance)"
-                  },
-                  {
                     "name": "companyName",
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Ping Identity\"\n      }\n    ]\n  }\n]",
                     "key": 0.8558926100565449,
                     "label": "companyName (string - flowInstance)",
-                    "type": "string"
-                  },
-                  {
-                    "name": "origin",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"auth.pingone.com\"\n      }\n    ]\n  }\n]",
-                    "key": 0.38383064124643007,
-                    "label": "origin (string - flowInstance)",
-                    "type": "string"
-                  },
-                  {
-                    "name": "originURL",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://auth.pingone.com\"\n      }\n    ]\n  }\n]",
-                    "key": 0.3895964400152929,
-                    "label": "originURL (string - flowInstance)",
-                    "type": "string"
-                  },
-                  {
-                    "name": "relyingParty",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"PingOne\"\n      }\n    ]\n  }\n]",
-                    "key": 0.8294031869442895,
-                    "label": "relyingParty (string - flowInstance)",
-                    "type": "string"
-                  },
-                  {
-                    "name": "relyingPartyId",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"auth.pingone.com\"\n      }\n    ]\n  }\n]",
-                    "key": 0.33706413004714153,
-                    "label": "relyingPartyId (string - flowInstance)",
-                    "type": "string"
-                  },
-                  {
-                    "name": "flowDocsURL",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
-                    "key": 0.8153538352277487,
-                    "label": "flowDocsURL (string - flowInstance)",
                     "type": "string"
                   }
                 ]
@@ -469,8 +416,8 @@
             "idUnique": "a99irgrtx7"
           },
           "position": {
-            "x": 325.28175961561453,
-            "y": 325.28175961561453
+            "x": 343.7991591083136,
+            "y": 370.2452482704916
           },
           "group": "nodes",
           "removed": false,
@@ -519,8 +466,8 @@
             "status": "configured"
           },
           "position": {
-            "x": 216.8545064104097,
-            "y": 162.64087980780727
+            "x": 211.56871329742376,
+            "y": 211.56871329742376
           },
           "group": "nodes",
           "removed": false,
@@ -612,7 +559,7 @@
                 ]
               },
               "customHTML": {
-                "value": "<div class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">Verify User Data</h1>\n                <p class=\"text-muted text-center\">Please review the information collected.</p>\n                <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                <form id=\"successfulRegistrationForm\" data-id=\"successfulRegistrationForm\">\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" placeholder=\"First Name\" autocomplete=\"off\"\n                            data-id=\"firstName-input\" id=\"firstName\" name=\"firstName\" readonly />\n                        <label class=\"form-label\" for=\"firstName\">First Name</label>\n                    </div>\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" placeholder=\"Last Name\" autocomplete=\"off\"\n                            data-id=\"lastName-input\" id=\"lastName\" name=\"lastName\" readonly />\n                        <label class=\"form-label\" for=\"lastName\">Last Name</label>\n                    </div>\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" data-id=\"streetAddress-input\" id=\"streetAddress\" name=\"streetAddress\"\n                            placeholder=\"Street Address\" autocomplete=\"off\" />\n                        <label class=\"form-label\" for=\"streetAddress\">Street Address</label>\n                    </div>\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" data-id=\"city-input\" id=\"city\" name=\"city\"\n                            placeholder=\"City\" autocomplete=\"off\" readonly />\n                        <label class=\"form-label\" for=\"city\">City</label>\n                    </div>\n                   <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" data-id=\"state-input\" id=\"state\" name=\"state\"\n                            placeholder=\"State\" autocomplete=\"off\" readonly />\n                        <label class=\"form-label\" for=\"state\">State</label>\n                    </div>\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" data-id=\"zipCode-input\" id=\"zipCode\" name=\"zipCode\"\n                            placeholder=\"Zip Code\" autocomplete=\"off\" readonly />\n                        <label class=\"form-label\" for=\"zipCode\">Zip Code</label>\n                    </div>\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" data-id=\"country-input\" id=\"country\" name=\"country\"\n                            placeholder=\"Country\" autocomplete=\"off\" readonly />\n                        <label class=\"form-label\" for=\"country\">Country</label>\n                    </div>                \n                    <div class=\"d-flex flex-column\">\n                        <button data-id=\"submit-button\" type=\"submit\" class=\"btn btn-primary mb-3\"\n                            data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"successfulRegistrationForm\"\n                            data-skbuttonvalue=\"NEXT\" id=\"btnCreate\">\n                            Continue\n                        </button>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+                "value": "<div class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">Verified User Data</h1>\n                <p class=\"text-muted text-center\">Please review the information collected.</p>\n                <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                <form id=\"successfulRegistrationForm\" data-id=\"successfulRegistrationForm\">\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" placeholder=\"First Name\" autocomplete=\"off\"\n                            data-id=\"firstName-input\" id=\"firstName\" name=\"firstName\" readonly />\n                        <label class=\"form-label\" for=\"firstName\">First Name</label>\n                    </div>\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" placeholder=\"Last Name\" autocomplete=\"off\"\n                            data-id=\"lastName-input\" id=\"lastName\" name=\"lastName\" readonly />\n                        <label class=\"form-label\" for=\"lastName\">Last Name</label>\n                    </div>\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" data-id=\"streetAddress-input\" id=\"streetAddress\" name=\"streetAddress\"\n                            placeholder=\"Street Address\" autocomplete=\"off\" />\n                        <label class=\"form-label\" for=\"streetAddress\">Street Address</label>\n                    </div>\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" data-id=\"city-input\" id=\"city\" name=\"city\"\n                            placeholder=\"City\" autocomplete=\"off\" readonly />\n                        <label class=\"form-label\" for=\"city\">City</label>\n                    </div>\n                   <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" data-id=\"state-input\" id=\"state\" name=\"state\"\n                            placeholder=\"State\" autocomplete=\"off\" readonly />\n                        <label class=\"form-label\" for=\"state\">State</label>\n                    </div>\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" data-id=\"zipCode-input\" id=\"zipCode\" name=\"zipCode\"\n                            placeholder=\"Zip Code\" autocomplete=\"off\" readonly />\n                        <label class=\"form-label\" for=\"zipCode\">Zip Code</label>\n                    </div>\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" data-id=\"country-input\" id=\"country\" name=\"country\"\n                            placeholder=\"Country\" autocomplete=\"off\" readonly />\n                        <label class=\"form-label\" for=\"country\">Country</label>\n                    </div>                \n                    <div class=\"d-flex flex-column\">\n                        <button data-id=\"submit-button\" type=\"submit\" class=\"btn btn-primary mb-3\"\n                            data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"successfulRegistrationForm\"\n                            data-skbuttonvalue=\"NEXT\" id=\"btnCreate\">\n                            Continue\n                        </button>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
               },
               "customCSS": {
                 "value": ".companyLogo {\r\n    /* Ping Logo  */\r\n    content: url(\"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\");\r\n    width: 65px;\r\n    height: 65px;\r\n}"
@@ -625,120 +572,8 @@
             "idUnique": "i750r1wtru"
           },
           "position": {
-            "x": 2439.613197117109,
-            "y": 813.2043990390364
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "n45fvwbon5",
-            "nodeType": "CONNECTION",
-            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
-            "connectorId": "httpConnector",
-            "name": "Http",
-            "label": "Http",
-            "status": "configured",
-            "capabilityName": "customHTMLTemplate",
-            "type": "trigger",
-            "properties": {
-              "title": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Document Verification\"\n      }\n    ]\n  }\n]"
-              },
-              "subtitle": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please have a valid government ID ready for identity verification.\"\n      }\n    ]\n  }\n]"
-              },
-              "pollingMessage": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Waiting for you to complete verification and gather all extracted information:\"\n      }\n    ]\n  }\n]"
-              },
-              "qrUrl": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"qrUrl\",\n        \"data\": \"{{local.4wpvjpua5o.payload.output.transaction.qrUrl}}\",\n        \"tooltip\": \"{{local.4wpvjpua5o.payload.output.transaction.qrUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"qrUrl\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "webVerificationUrl": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"webVerificationUrl\",\n        \"data\": \"{{local.4wpvjpua5o.payload.output.transaction.webVerificationUrl}}\",\n        \"tooltip\": \"{{local.4wpvjpua5o.payload.output.transaction.webVerificationUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"webVerificationUrl\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "webVerificationCode": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"webVerificationCode\",\n        \"data\": \"{{local.4wpvjpua5o.payload.output.transaction.webVerificationCode}}\",\n        \"tooltip\": \"{{local.4wpvjpua5o.payload.output.transaction.webVerificationCode}}\",\n        \"children\": [\n          {\n            \"text\": \"webVerificationCode\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "messageTitle": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please Verify yourself\"\n      }\n    ]\n  }\n]"
-              },
-              "message": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:i585p7f1n8\",\n        \"url\": \"generatedQr\",\n        \"data\": \"{{local.9mth1vknb1.payload.output.generatedQr}}\",\n        \"tooltip\": \"{{local.9mth1vknb1.payload.output.generatedQr}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.9mth1vknb1.payload.output.generatedQr}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n\\nVerify Code: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:f93w9r1ccf\",\n        \"url\": \"webVerificationCode\",\n        \"data\": \"{{local.f7rajqo8ws.payload.output.rawResponse.body.webVerificationCode}}\",\n        \"tooltip\": \"{{local.f7rajqo8ws.payload.output.rawResponse.body.webVerificationCode}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.f7rajqo8ws.payload.output.rawResponse.body.webVerificationCode}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n\\n\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrZXJyb3JtZXNzYWdlIiAgY2xhc3M9IiIgZXJyb3JJZD0iIg==###eyJuYW1lIjoic2tlcnJvcm1lc3NhZ2UiLCJvcHRpb25zIjp7ImNsYXNzIjoiIiwiZXJyb3JJZCI6IiJ9LCJjb21wb25lbnRQcm9wcyI6eyJjbGFzcyI6eyJuYW1lIjoiY2xhc3MiLCJkaXNwbGF5TmFtZSI6IkNsYXNzIn0sImVycm9ySWQiOnsibmFtZSI6ImVycm9ySWQiLCJkaXNwbGF5TmFtZSI6IklEIG9mIGlucHV0IGZpZWxkIGFzc29jaWF0ZWQgd2l0aCBlcnJvciBtZXNzYWdlIn19fQ==]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skerrormessage\",\n        \"children\": [\n          {\n            \"text\": \"skerrormessage\"\n          }\n        ],\n        \"component\": \"skerrormessage\",\n        \"options\": {\n          \"class\": \"\",\n          \"errorId\": \"\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"Class\"\n          },\n          \"errorId\": {\n            \"name\": \"errorId\",\n            \"displayName\": \"ID of input field associated with error message\"\n          }\n        },\n        \"tooltip\": \"{{component.skerrormessage}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Display Verify QR"
-              },
-              "nodeDescription": {
-                "value": "Process the transaction"
-              },
-              "showFooter": {
-                "value": false
-              },
-              "enablePolling": {
-                "value": true
-              },
-              "pollChallengeStatus": {
-                "value": false
-              },
-              "customHTML": {
-                "value": "<div\n   class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n   <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n         <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n            <h1 class=\"text-center mb-4\">{{title}}</h1>\n            <p class=\"text-muted text-center\">{{subtitle}}</p>\n            <div class=\"row p-2 row justify-content-center\"> \n               <img src=\"{{qrUrl}}\"  class=\"w-50 mx-auto mt-4 mb-4 p-1 border border-info border-3 rounded card-img-top\" alt=\"Verify QR Code\" />\n               <p class=\"text-muted text-center\"> Scan this QR Code with your mobile phone and follow the instructions. </p>\n               <div class=\"d-flex flex-row align-items-center my-4\">\n                  <hr class=\"flex-grow-1\" />\n                  <span class=\"fs-5 fw-bold px-3\">OR</span>\n                  <hr class=\"flex-grow-1\" />\n               </div>\n               <p class=\"text-center\"><a href=\"{{webVerificationUrl}}&dt=1\" target=\"_blank\">Click on this link on your Mobile or Desktop browser. </a></p>\n               <p class=\"text-muted text-center\"> Check that your phone shows the same Verification code as below: </p>\n               <div class=\"text-center\">\n                  <label class=\"text-center\">Verification Code </label>\n                  <button class=\"btn btn-outline-dark ms-3\"><strong> {{webVerificationCode}} </strong> </button>\n               </div>\n               <div class=\"card-footer mt-3\">\n                  <div class=\"row text-center py-2\">{{pollingMessage}}\n                     <span>[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iMjAwMCIgcG9sbFJldHJpZXM9IjkwIiBwb2xsQ2hhbGxlbmdlU3RhdHVzPSJmYWxzZSI=###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6MjAwMCwicG9sbFJldHJpZXMiOiI5MCIsInBvbGxDaGFsbGVuZ2VTdGF0dXMiOiJmYWxzZSJ9LCJjb21wb25lbnRQcm9wcyI6eyJjbGFzcyI6eyJuYW1lIjoiY2xhc3MiLCJkaXNwbGF5TmFtZSI6IkNTUyBDbGFzcyJ9LCJwb2xsSW50ZXJ2YWwiOnsibmFtZSI6InBvbGxJbnRlcnZhbCIsImRpc3BsYXlOYW1lIjoiUG9sbCBJbnRlcnZhbCIsInZhbHVlIjoyMDAwfSwicG9sbFJldHJpZXMiOnsibmFtZSI6InBvbGxSZXRyaWVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIFJldHJpZXMiLCJ2YWx1ZSI6NjB9LCJwb2xsQ2hhbGxlbmdlU3RhdHVzIjp7Im5hbWUiOiJwb2xsQ2hhbGxlbmdlU3RhdHVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIENoYWxsZW5nZSBTdGF0dXMiLCJ0eXBlIjoic2VsZWN0IiwidmFsdWUiOiJ0cnVlIiwib3B0aW9ucyI6W3sibmFtZSI6IlRydWUiLCJ2YWx1ZSI6InRydWUifSx7Im5hbWUiOiJGYWxzZSIsInZhbHVlIjoiZmFsc2UifV19fX0=]]]</span>\n                  </div>\n               </div>\n            </div>\n         </div>\n      </div>\n   </div>\n</div>"
-              },
-              "customScript": {
-                "value": ""
-              },
-              "formFieldsList": {
-                "value": [
-                  {
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "propertyName": "buttonValue"
-                  }
-                ]
-              },
-              "sktemplate": {
-                "uiId": "e6e1bb56db7fa43d0bb18721a55fc694",
-                "createdDate": 1687889267333,
-                "customerId": "f3e47d945ae971a4b4142ec75012d155",
-                "description": "",
-                "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        },\n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        },\n        \"qrUrl\": {\n            \"type\": \"string\",\n            \"displayName\": \"QR URL\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"qrUrl\"\n        },\n\t\t\"webVerificationUrl\": {\n            \"type\": \"string\",\n            \"displayName\": \"Web Verification URL\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"webVerificationUrl\"\n        },\n\t\t\"webVerificationCode\": {\n            \"type\": \"string\",\n            \"displayName\": \"Web Verification Code\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"webVerificationCode\"\n        }\n    }\n}",
-                "name": "VerifyPolling",
-                "outputSchema": {},
-                "script": "",
-                "style": "",
-                "template": "",
-                "updatedDate": 1687889792920,
-                "validationRules": [],
-                "version": "1.0",
-                "visibility": "private",
-                "companyId": "edcc3f46-49cc-4176-bfcb-849afb268c1b",
-                "value": "e6e1bb56db7fa43d0bb18721a55fc694"
-              },
-              "inputSchema": {
-                "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        },\n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        },\n        \"qrUrl\": {\n            \"type\": \"string\",\n            \"displayName\": \"QR URL\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"qrUrl\"\n        },\n\t\t\"webVerificationUrl\": {\n            \"type\": \"string\",\n            \"displayName\": \"Web Verification URL\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"webVerificationUrl\"\n        },\n\t\t\"webVerificationCode\": {\n            \"type\": \"string\",\n            \"displayName\": \"Web Verification Code\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"webVerificationCode\"\n        }\n    }\n}"
-              },
-              "outputSchema": {
-                "value": {}
-              },
-              "customCSS": {
-                "value": ""
-              },
-              "validationRules": {
-                "value": []
-              }
-            },
-            "idUnique": "lioyckru5o"
-          },
-          "position": {
-            "x": 894.52483894294,
-            "y": 813.2043990390364
+            "x": 2406.5941137581954,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -755,8 +590,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 460.8158261221206,
-            "y": 325.28175961561453
+            "x": 449.58351575702545,
+            "y": 370.2452482704916
           },
           "group": "nodes",
           "removed": false,
@@ -773,8 +608,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 433.7090128208194,
-            "y": 813.2043990390364
+            "x": 449.58351575702545,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -789,7 +624,7 @@
           "data": {
             "id": "7xz03oh8uz",
             "nodeType": "CONNECTION",
-            "connectionId": "99806421b6fb529532061c6f31749694",
+            "connectionId": "40308198837a97ff2be91afcc974d267",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -806,8 +641,8 @@
             }
           },
           "position": {
-            "x": 325.28175961561453,
-            "y": 813.2043990390364
+            "x": 343.7991591083136,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -864,8 +699,8 @@
             "idUnique": "pl05yk6egm"
           },
           "position": {
-            "x": 921.6316522442412,
-            "y": 325.28175961561453
+            "x": 634.7061398922713,
+            "y": 370.2452482704916
           },
           "group": "nodes",
           "removed": false,
@@ -883,8 +718,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1057.1657187507474,
-            "y": 325.28175961561453
+            "x": 766.9365857031611,
+            "y": 370.2452482704916
           },
           "group": "nodes",
           "removed": false,
@@ -911,25 +746,19 @@
                 "value": []
               },
               "population": {
-                "value": "usePopulationId"
+                "value": "a43c5835-9068-4497-922b-ec3191fc9dac"
               },
               "username": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.rhhei5p4gu.payload.output.username}}\",\n        \"tooltip\": \"{{local.rhhei5p4gu.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
               "email": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.rhhei5p4gu.payload.output.username}}\",\n        \"tooltip\": \"{{local.rhhei5p4gu.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "populationId": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"populationId\",\n        \"data\": \"{{global.variables.populationId}}\",\n        \"tooltip\": \"{{global.variables.populationId}}\",\n        \"children\": [\n          {\n            \"text\": \"populationId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Create PingOne User"
               }
             }
           },
           "position": {
-            "x": 1219.8065985585545,
-            "y": 325.28175961561453
+            "x": 925.613120676229,
+            "y": 370.2452482704916
           },
           "group": "nodes",
           "removed": false,
@@ -952,8 +781,8 @@
             }
           },
           "position": {
-            "x": 1355.3406650650606,
-            "y": 325.28175961561453
+            "x": 1057.8435664871188,
+            "y": 370.2452482704916
           },
           "group": "nodes",
           "removed": false,
@@ -978,15 +807,12 @@
             "properties": {
               "errorMessage": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.2xqxrvuay6.payload.error.message}}\",\n        \"tooltip\": \"{{local.2xqxrvuay6.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "User create error"
               }
             }
           },
           "position": {
-            "x": 1517.981544872868,
-            "y": 487.9226394234218
+            "x": 1216.5201014601867,
+            "y": 528.9217832435594
           },
           "group": "nodes",
           "removed": false,
@@ -1001,7 +827,7 @@
           "data": {
             "id": "sauy5271a5",
             "nodeType": "CONNECTION",
-            "connectionId": "99806421b6fb529532061c6f31749694",
+            "connectionId": "40308198837a97ff2be91afcc974d267",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -1021,8 +847,8 @@
             }
           },
           "position": {
-            "x": 1517.981544872868,
-            "y": 325.28175961561453
+            "x": 1216.5201014601867,
+            "y": 370.2452482704916
           },
           "group": "nodes",
           "removed": false,
@@ -1071,8 +897,8 @@
             "status": "configured"
           },
           "position": {
-            "x": 216.8545064104097,
-            "y": 650.5635192312291
+            "x": 211.56871329742376,
+            "y": 634.7061398922713
           },
           "group": "nodes",
           "removed": false,
@@ -1115,15 +941,12 @@
               },
               "family": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"lastName\",\n        \"data\": \"{{local.jj14bg47nq.payload.output.governmentID._embedded.verifiedData[0].data.lastName}}\",\n        \"tooltip\": \"{{local.jj14bg47nq.payload.output.governmentID._embedded.verifiedData[0].data.lastName}}\",\n        \"children\": [\n          {\n            \"text\": \"lastName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Update user account"
               }
             }
           },
           "position": {
-            "x": 3035.963089745736,
-            "y": 813.2043990390364
+            "x": 3014.8541644882885,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -1188,8 +1011,8 @@
             "idUnique": "jaoj1zkyq2"
           },
           "position": {
-            "x": 2737.788143431422,
-            "y": 813.2043990390364
+            "x": 2697.5010945421527,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -1206,8 +1029,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 2575.1472636236153,
-            "y": 813.2043990390364
+            "x": 2538.824559569085,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -1224,8 +1047,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 2819.108583335326,
-            "y": 813.2043990390364
+            "x": 2803.285451190865,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -1242,8 +1065,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 2249.8655040080007,
-            "y": 813.2043990390364
+            "x": 2221.4714896229493,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -1315,8 +1138,8 @@
             "isDisabled": false
           },
           "position": {
-            "x": 623.4567059299279,
-            "y": 1409.554291667663
+            "x": 634.7061398922713,
+            "y": 1401.6427255954325
           },
           "group": "nodes",
           "removed": false,
@@ -1371,8 +1194,8 @@
             "idUnique": "012d2dxhji"
           },
           "position": {
-            "x": 1246.9134118598558,
-            "y": 1409.554291667663
+            "x": 1216.5201014601867,
+            "y": 1401.6427255954325
           },
           "group": "nodes",
           "removed": false,
@@ -1389,8 +1212,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 704.7771458338315,
-            "y": 1409.554291667663
+            "x": 740.4904965409831,
+            "y": 1401.6427255954325
           },
           "group": "nodes",
           "removed": false,
@@ -1442,8 +1265,8 @@
             }
           },
           "position": {
-            "x": 894.52483894294,
-            "y": 1409.554291667663
+            "x": 925.613120676229,
+            "y": 1401.6427255954325
           },
           "group": "nodes",
           "removed": false,
@@ -1469,8 +1292,8 @@
             }
           },
           "position": {
-            "x": 1030.058905449446,
-            "y": 1409.554291667663
+            "x": 1057.8435664871188,
+            "y": 1401.6427255954325
           },
           "group": "nodes",
           "removed": false,
@@ -1520,8 +1343,8 @@
             "idUnique": "4r0s4hprcd"
           },
           "position": {
-            "x": 216.8545064104097,
-            "y": 1246.9134118598558
+            "x": 211.56871329742376,
+            "y": 1216.5201014601867
           },
           "group": "nodes",
           "removed": false,
@@ -1536,7 +1359,7 @@
           "data": {
             "id": "li3riizer1",
             "nodeType": "CONNECTION",
-            "connectionId": "99806421b6fb529532061c6f31749694",
+            "connectionId": "40308198837a97ff2be91afcc974d267",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -1554,8 +1377,8 @@
             "idUnique": "mrseg62vk2"
           },
           "position": {
-            "x": 325.28175961561453,
-            "y": 1409.554291667663
+            "x": 343.7991591083136,
+            "y": 1401.6427255954325
           },
           "group": "nodes",
           "removed": false,
@@ -1580,15 +1403,12 @@
             "properties": {
               "errorMessage": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Passwords do not match.\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Password mismatch"
               }
             }
           },
           "position": {
-            "x": 1246.9134118598558,
-            "y": 1626.4087980780728
+            "x": 1216.5201014601867,
+            "y": 1613.2114388928562
           },
           "group": "nodes",
           "removed": false,
@@ -1605,8 +1425,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 433.7090128208194,
-            "y": 1409.554291667663
+            "x": 449.58351575702545,
+            "y": 1401.6427255954325
           },
           "group": "nodes",
           "removed": false,
@@ -1656,8 +1476,8 @@
             "idUnique": "fml70ge3fw"
           },
           "position": {
-            "x": 216.8545064104097,
-            "y": 1734.8360512832776
+            "x": 238.01480245960173,
+            "y": 1718.995795541568
           },
           "group": "nodes",
           "removed": false,
@@ -1672,7 +1492,7 @@
           "data": {
             "id": "d7182w3e5w",
             "nodeType": "CONNECTION",
-            "connectionId": "99806421b6fb529532061c6f31749694",
+            "connectionId": "40308198837a97ff2be91afcc974d267",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -1690,8 +1510,8 @@
             "idUnique": "90afoieeyy"
           },
           "position": {
-            "x": 298.17494631431333,
-            "y": 1897.476931091085
+            "x": 317.35306994613563,
+            "y": 1877.6723305146359
           },
           "group": "nodes",
           "removed": false,
@@ -1736,8 +1556,8 @@
             "idUnique": "88t3s8eqy4"
           },
           "position": {
-            "x": 623.4567059299279,
-            "y": 1897.476931091085
+            "x": 634.7061398922713,
+            "y": 1877.6723305146359
           },
           "group": "nodes",
           "removed": false,
@@ -1754,8 +1574,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 406.6021995195182,
-            "y": 1897.476931091085
+            "x": 423.1374265948475,
+            "y": 1877.6723305146359
           },
           "group": "nodes",
           "removed": false,
@@ -1778,8 +1598,8 @@
             }
           },
           "position": {
-            "x": 1355.3406650650606,
-            "y": 1409.554291667663
+            "x": 1322.3044581088984,
+            "y": 1401.6427255954325
           },
           "group": "nodes",
           "removed": false,
@@ -1794,7 +1614,7 @@
           "data": {
             "id": "enxq9fn9qt",
             "nodeType": "CONNECTION",
-            "connectionId": "99806421b6fb529532061c6f31749694",
+            "connectionId": "40308198837a97ff2be91afcc974d267",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -1808,8 +1628,8 @@
             }
           },
           "position": {
-            "x": 1517.981544872868,
-            "y": 1409.554291667663
+            "x": 1480.9809930819663,
+            "y": 1401.6427255954325
           },
           "group": "nodes",
           "removed": false,
@@ -1827,8 +1647,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 3144.3903429509405,
-            "y": 813.2043990390364
+            "x": 3120.638521137,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -1843,7 +1663,7 @@
           "data": {
             "id": "srdnrm8j4s",
             "nodeType": "CONNECTION",
-            "connectionId": "99806421b6fb529532061c6f31749694",
+            "connectionId": "40308198837a97ff2be91afcc974d267",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -1860,8 +1680,8 @@
             }
           },
           "position": {
-            "x": 3307.031222758748,
-            "y": 813.2043990390364
+            "x": 3279.3150561100683,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -1886,16 +1706,13 @@
             "properties": {
               "errorMessage": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.xycpn6dvdc.payload.error.message}}\",\n        \"tooltip\": \"{{local.xycpn6dvdc.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Error setting password"
               }
             },
             "idUnique": "mw54qaum73"
           },
           "position": {
-            "x": 1517.981544872868,
-            "y": 1626.4087980780728
+            "x": 1480.9809930819663,
+            "y": 1613.2114388928562
           },
           "group": "nodes",
           "removed": false,
@@ -1943,8 +1760,8 @@
             "idUnique": "88t3s8eqy4"
           },
           "position": {
-            "x": 1816.1564911871812,
-            "y": 975.8452788468436
+            "x": 1798.3340630281018,
+            "y": 952.0592098384069
           },
           "group": "nodes",
           "removed": false,
@@ -1961,8 +1778,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1653.515611379374,
-            "y": 975.8452788468436
+            "x": 1613.2114388928562,
+            "y": 952.0592098384069
           },
           "group": "nodes",
           "removed": false,
@@ -2018,8 +1835,8 @@
             "idUnique": "d2mbrib33f"
           },
           "position": {
-            "x": 243.9613197117109,
-            "y": 704.7771458338315
+            "x": 238.01480245960173,
+            "y": 687.5983182166271
           },
           "group": "nodes",
           "removed": false,
@@ -2075,8 +1892,8 @@
             "idUnique": "d2mbrib33f"
           },
           "position": {
-            "x": 243.9613197117109,
-            "y": 1301.1270384624581
+            "x": 264.4608916217797,
+            "y": 1295.8583689467205
           },
           "group": "nodes",
           "removed": false,
@@ -2089,81 +1906,7 @@
         },
         {
           "data": {
-            "id": "lgj0fm5iiw",
-            "nodeType": "CONNECTION",
-            "connectionId": "de650ca45593b82c49064ead10b9fe17",
-            "connectorId": "functionsConnector",
-            "name": "Functions",
-            "label": "Functions",
-            "status": "configured",
-            "capabilityName": "customFunction",
-            "type": "trigger",
-            "properties": {
-              "leftValueA": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"populationId\",\n        \"data\": \"{{global.variables.populationId}}\",\n        \"tooltip\": \"{{global.variables.populationId}}\",\n        \"children\": [\n          {\n            \"text\": \"populationId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "checkNullORUndefined": {
-                "value": true
-              },
-              "nodeTitle": {
-                "value": "Flow Configuration Check"
-              },
-              "variableInputList": {
-                "value": [
-                  {
-                    "name": "requiredVariable",
-                    "preferredDataType": "string",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"populationId\",\n        \"data\": \"{{global.variables.populationId}}\",\n        \"tooltip\": \"{{global.variables.populationId}}\",\n        \"children\": [\n          {\n            \"text\": \"populationId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  }
-                ]
-              },
-              "code": {
-                "value": "module.exports = a = async ({params}) => {\n\tlet requiredVariable = params.requiredVariable;\n\n\tif (! requiredVariable) {\n\t\treturn false;\n\t}\n\n\treturn \n}"
-              }
-            }
-          },
-          "position": {
-            "x": 623.4567059299279,
-            "y": 325.28175961561453
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "k5d00l2qc6",
-            "nodeType": "EVAL",
-            "properties": {
-              "undefined": {
-                "value": "allTriggersTrue"
-              },
-              "66aez1vhow": {
-                "value": "anyTriggersFalse"
-              }
-            }
-          },
-          "position": {
-            "x": 758.990772436434,
-            "y": 325.28175961561453
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "66aez1vhow",
+            "id": "fme5dfbuhm",
             "nodeType": "CONNECTION",
             "connectionId": "867ed4363b2bc21c860085ad2baa817d",
             "connectorId": "httpConnector",
@@ -2173,8 +1916,44 @@
             "capabilityName": "customHTMLTemplate",
             "type": "trigger",
             "properties": {
+              "title": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Verify Your Identity\"\n      }\n    ]\n  }\n]"
+              },
+              "subtitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please have a valid government ID ready for identity verification.\"\n      }\n    ]\n  }\n]"
+              },
+              "pollingMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Waiting for you to complete verification\"\n      }\n    ]\n  }\n]"
+              },
+              "webVerificationCode": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"webVerificationCode\",\n        \"data\": \"{{local.4wpvjpua5o.payload.output.transaction.webVerificationCode}}\",\n        \"tooltip\": \"{{local.4wpvjpua5o.payload.output.transaction.webVerificationCode}}\",\n        \"children\": [\n          {\n            \"text\": \"webVerificationCode\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please Verify yourself\"\n      }\n    ]\n  }\n]"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:i585p7f1n8\",\n        \"url\": \"generatedQr\",\n        \"data\": \"{{local.9mth1vknb1.payload.output.generatedQr}}\",\n        \"tooltip\": \"{{local.9mth1vknb1.payload.output.generatedQr}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.9mth1vknb1.payload.output.generatedQr}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n\\nVerify Code: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:f93w9r1ccf\",\n        \"url\": \"webVerificationCode\",\n        \"data\": \"{{local.f7rajqo8ws.payload.output.rawResponse.body.webVerificationCode}}\",\n        \"tooltip\": \"{{local.f7rajqo8ws.payload.output.rawResponse.body.webVerificationCode}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.f7rajqo8ws.payload.output.rawResponse.body.webVerificationCode}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n\\n\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrZXJyb3JtZXNzYWdlIiAgY2xhc3M9IiIgZXJyb3JJZD0iIg==###eyJuYW1lIjoic2tlcnJvcm1lc3NhZ2UiLCJvcHRpb25zIjp7ImNsYXNzIjoiIiwiZXJyb3JJZCI6IiJ9LCJjb21wb25lbnRQcm9wcyI6eyJjbGFzcyI6eyJuYW1lIjoiY2xhc3MiLCJkaXNwbGF5TmFtZSI6IkNsYXNzIn0sImVycm9ySWQiOnsibmFtZSI6ImVycm9ySWQiLCJkaXNwbGF5TmFtZSI6IklEIG9mIGlucHV0IGZpZWxkIGFzc29jaWF0ZWQgd2l0aCBlcnJvciBtZXNzYWdlIn19fQ==]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skerrormessage\",\n        \"children\": [\n          {\n            \"text\": \"skerrormessage\"\n          }\n        ],\n        \"component\": \"skerrormessage\",\n        \"options\": {\n          \"class\": \"\",\n          \"errorId\": \"\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"Class\"\n          },\n          \"errorId\": {\n            \"name\": \"errorId\",\n            \"displayName\": \"ID of input field associated with error message\"\n          }\n        },\n        \"tooltip\": \"{{component.skerrormessage}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Display Verify QR"
+              },
+              "nodeDescription": {
+                "value": "Process the transaction"
+              },
+              "showFooter": {
+                "value": false
+              },
+              "enablePolling": {
+                "value": true
+              },
+              "pollChallengeStatus": {
+                "value": false
+              },
               "customHTML": {
-                "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n        <h1 class=\"text-center mb-4\">Flow Configuration Error</h1>\n        <p class=\"text-muted text-center\">Please set the {{missingVarDisplayName}}\n          <strong>({{missingVarPropertyName}})</strong> instance variable prior to running this demo flow.</p>\n      </div>\n    </div>\n  </div>\n</div>"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div\\nclass=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n    <div class=\\\"mh-100\\\" style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img class=\\\"companyLogo align-self-center mb-5\\\" alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" />\\n                <h1 id=\\\"header\\\" class=\\\"text-center mb-4\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"title\",\n        \"data\": \"{{title}}\",\n        \"tooltip\": \"{{title}}\",\n        \"children\": [\n          {\n            \"text\": \"{{title}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                    Scan this QR Code with your mobile phone and follow the instructions.\\n                </p>\\n                <div class=\\\"row p-2 row justify-content-center\\\">\\n                    <img alt=\\\"Verify QR Code\\\" class=\\\"w-50 mx-auto my-2 p-4 border border-gray border-2\\\" src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"qrUrl\",\n        \"data\": \"{{qrUrl}}\",\n        \"tooltip\": \"{{qrUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"{{qrUrl}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" />\\n                </div>\\n                <div class=\\\"d-flex flex-row align-items-center my-4\\\">\\n                    <hr class=\\\"flex-grow-1\\\" />\\n                    <span class=\\\"fs-5 fw-bold px-3\\\">OR</span>\\n                    <hr class=\\\"flex-grow-1\\\" />\\n                </div>\\n                <a href=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"webVerificationUrl\",\n        \"data\": \"{{webVerificationUrl}}\",\n        \"tooltip\": \"{{webVerificationUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"{{webVerificationUrl}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"&dt=1\\\" class=\\\"btn btn-outline-primary\\\" target=\\\"_blank\\\">Verify with Your Browser</a>\\n                <div class=\\\"text-center mt-5\\\">\\n                    <p class=\\\"mb-2 fw-bold\\\">Verification Code</p>\\n                    <p class=\\\"fs-1 mb-3\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"webVerificationCode\",\n        \"data\": \"{{webVerificationCode}}\",\n        \"tooltip\": \"{{webVerificationCode}}\",\n        \"children\": [\n          {\n            \"text\": \"{{webVerificationCode}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</p>\\n                    <p class=\\\"text-muted\\\">Check that your phone shows the same verification code.</p>\\n                </div>\\n                <div data-skcomponent=\\\"skerror\\\" class=\\\"text-center sk-alert sk-alert-danger text-danger\\\" data-skvisibility=\\\"\\\"></div>\\n                \\n                <div class=\\\"text-center\\\" >\\n                    <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iMjAwMCIgcG9sbFJldHJpZXM9IjIwIiBwb2xsQ2hhbGxlbmdlU3RhdHVzPSJmYWxzZSI=###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6MjAwMCwicG9sbFJldHJpZXMiOiIyMCIsInBvbGxDaGFsbGVuZ2VTdGF0dXMiOiJmYWxzZSJ9LCJjb21wb25lbnRQcm9wcyI6eyJjbGFzcyI6eyJuYW1lIjoiY2xhc3MiLCJkaXNwbGF5TmFtZSI6IkNTUyBDbGFzcyJ9LCJwb2xsSW50ZXJ2YWwiOnsibmFtZSI6InBvbGxJbnRlcnZhbCIsImRpc3BsYXlOYW1lIjoiUG9sbCBJbnRlcnZhbCIsInZhbHVlIjoyMDAwfSwicG9sbFJldHJpZXMiOnsibmFtZSI6InBvbGxSZXRyaWVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIFJldHJpZXMiLCJ2YWx1ZSI6NjB9LCJwb2xsQ2hhbGxlbmdlU3RhdHVzIjp7Im5hbWUiOiJwb2xsQ2hhbGxlbmdlU3RhdHVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIENoYWxsZW5nZSBTdGF0dXMiLCJ0eXBlIjoic2VsZWN0IiwidmFsdWUiOiJ0cnVlIiwib3B0aW9ucyI6W3sibmFtZSI6IlRydWUiLCJ2YWx1ZSI6InRydWUifSx7Im5hbWUiOiJGYWxzZSIsInZhbHVlIjoiZmFsc2UifV19fX0=]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skpolling\",\n        \"children\": [\n          {\n            \"text\": \"skpolling\"\n          }\n        ],\n        \"component\": \"skpolling\",\n        \"options\": {\n          \"class\": \"\",\n          \"pollInterval\": 2000,\n          \"pollRetries\": \"20\",\n          \"pollChallengeStatus\": \"false\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"CSS Class\"\n          },\n          \"pollInterval\": {\n            \"name\": \"pollInterval\",\n            \"displayName\": \"Poll Interval\",\n            \"value\": 2000\n          },\n          \"pollRetries\": {\n            \"name\": \"pollRetries\",\n            \"displayName\": \"Poll Retries\",\n            \"value\": 60\n          },\n          \"pollChallengeStatus\": {\n            \"name\": \"pollChallengeStatus\",\n            \"displayName\": \"Poll Challenge Status\",\n            \"type\": \"select\",\n            \"value\": \"true\",\n            \"options\": [\n              {\n                \"name\": \"True\",\n                \"value\": \"true\"\n              },\n              {\n                \"name\": \"False\",\n                \"value\": \"false\"\n              }\n            ]\n          }\n        },\n        \"tooltip\": \"{{component.skpolling}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n                    <p class=\\\"text-muted mt-2 fs-5\\\">\\n                        \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"pollingMessage\",\n        \"data\": \"{{pollingMessage}}\",\n        \"tooltip\": \"{{pollingMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"{{pollingMessage}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n                    </p>\\n                </div>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"\n      }\n    ]\n  }\n]"
+              },
+              "customScript": {
+                "value": ""
               },
               "formFieldsList": {
                 "value": [
@@ -2185,35 +1964,26 @@
                   }
                 ]
               },
-              "nodeTitle": {
-                "value": "Error Message"
-              },
-              "nodeDescription": {
-                "value": "Configuration value not set error"
-              },
-              "backgroundColor": {
-                "value": "#ffc8c1ff"
-              },
               "sktemplate": {
-                "uiId": "4283c0de636208a4273efe1c9fda225f",
-                "createdDate": 1678116166705,
+                "uiId": "e6e1bb56db7fa43d0bb18721a55fc694",
+                "createdDate": 1687889267333,
                 "customerId": "f3e47d945ae971a4b4142ec75012d155",
                 "description": "",
-                "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"missingVarDisplayName\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Missing Variable Display Name\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"missingVarDisplayName\"\n\t\t},\n\t\t\"missingVarPropertyName\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Missing Variable Property Name\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"missingVarPropertyName\"\n\t\t}\n\t}\n}",
-                "name": "Error Template",
+                "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        },\n        \"qrUrl\": {\n            \"type\": \"string\",\n            \"displayName\": \"QR URL\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"qrUrl\"\n        },\n\t\t\"webVerificationUrl\": {\n            \"type\": \"string\",\n            \"displayName\": \"Web Verification URL\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"webVerificationUrl\"\n        },\n\t\t\"webVerificationCode\": {\n            \"type\": \"string\",\n            \"displayName\": \"Web Verification Code\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"webVerificationCode\"\n        }\n    }\n}",
+                "name": "VerifyPolling",
                 "outputSchema": {},
                 "script": "",
                 "style": "",
                 "template": "",
-                "updatedDate": 1678116321755,
+                "updatedDate": 1687889792920,
                 "validationRules": [],
                 "version": "1.0",
                 "visibility": "private",
-                "companyId": "ee43f700-c751-494d-9dbf-70946a85b328",
-                "value": "4283c0de636208a4273efe1c9fda225f"
+                "companyId": "edcc3f46-49cc-4176-bfcb-849afb268c1b",
+                "value": "e6e1bb56db7fa43d0bb18721a55fc694"
               },
               "inputSchema": {
-                "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"missingVarDisplayName\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Missing Variable Display Name\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"missingVarDisplayName\"\n\t\t},\n\t\t\"missingVarPropertyName\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Missing Variable Property Name\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"missingVarPropertyName\"\n\t\t}\n\t}\n}"
+                "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        },\n        \"qrUrl\": {\n            \"type\": \"string\",\n            \"displayName\": \"QR URL\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"qrUrl\"\n        },\n\t\t\"webVerificationUrl\": {\n            \"type\": \"string\",\n            \"displayName\": \"Web Verification URL\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"webVerificationUrl\"\n        },\n\t\t\"webVerificationCode\": {\n            \"type\": \"string\",\n            \"displayName\": \"Web Verification Code\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"webVerificationCode\"\n        }\n    }\n}"
               },
               "outputSchema": {
                 "value": {}
@@ -2221,24 +1991,21 @@
               "customCSS": {
                 "value": ""
               },
-              "customScript": {
-                "value": ""
-              },
               "validationRules": {
                 "value": []
               },
-              "missingVarDisplayName": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"PingOne Population Id\"\n      }\n    ]\n  }\n]"
+              "qrUrl": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"qrUrl\",\n        \"data\": \"{{local.4wpvjpua5o.payload.output.transaction.qrUrl}}\",\n        \"tooltip\": \"{{local.4wpvjpua5o.payload.output.transaction.qrUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"qrUrl\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
-              "missingVarPropertyName": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"populationId\"\n      }\n    ]\n  }\n]"
+              "webVerificationUrl": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"webVerificationUrl\",\n        \"data\": \"{{local.4wpvjpua5o.payload.output.transaction.webVerificationUrl}}\",\n        \"tooltip\": \"{{local.4wpvjpua5o.payload.output.transaction.webVerificationUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"webVerificationUrl\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               }
             },
-            "idUnique": "3nm07rhtek"
+            "idUnique": "b9it33hy0o"
           },
           "position": {
-            "x": 921.6316522442412,
-            "y": 515.029452724723
+            "x": 925.613120676229,
+            "y": 793.3826748653391
           },
           "group": "nodes",
           "removed": false,
@@ -2253,9 +2020,9 @@
       "edges": [
         {
           "data": {
-            "id": "m1a8f8tlql",
-            "source": "lgj0fm5iiw",
-            "target": "k5d00l2qc6"
+            "id": "1w9f138gi3",
+            "source": "rplbnbi7qw",
+            "target": "gf4zrp49t5"
           },
           "position": {
             "x": 0,
@@ -2272,9 +2039,9 @@
         },
         {
           "data": {
-            "id": "lkuukcr5oo",
-            "source": "64amy2x44y",
-            "target": "lgj0fm5iiw"
+            "id": "9jgg9z0l51",
+            "source": "xycpn6dvdc",
+            "target": "0tj4webw3m"
           },
           "position": {
             "x": 0,
@@ -2671,9 +2438,9 @@
         },
         {
           "data": {
-            "id": "4r0oupom6k",
-            "source": "p3s9od95nf",
-            "target": "sr5e8hdvg5"
+            "id": "4olxce34g2",
+            "source": "64amy2x44y",
+            "target": "rhhei5p4gu"
           },
           "position": {
             "x": 0,
@@ -2748,13 +2515,14 @@
         },
         {
           "data": {
-            "id": "fyxaz84hld",
-            "source": "n45fvwbon5",
-            "target": "1lwojlotuf"
+            "id": "sfz6fitzhg",
+            "source": "phkjwwt286",
+            "target": "p3s9od95nf",
+            "multiValueSourceId": "ha6wi8ad4z"
           },
           "position": {
-            "x": 0,
-            "y": 0
+            "x": 64,
+            "y": 92
           },
           "group": "edges",
           "removed": false,
@@ -2824,9 +2592,9 @@
         },
         {
           "data": {
-            "id": "nxipqhk1xw",
-            "source": "0o85xdaduo",
-            "target": "n45fvwbon5"
+            "id": "4r0oupom6k",
+            "source": "p3s9od95nf",
+            "target": "sr5e8hdvg5"
           },
           "position": {
             "x": 0,
@@ -3034,9 +2802,9 @@
         },
         {
           "data": {
-            "id": "1w9f138gi3",
-            "source": "rplbnbi7qw",
-            "target": "gf4zrp49t5"
+            "id": "iuuxa077qr",
+            "source": "0o85xdaduo",
+            "target": "fme5dfbuhm"
           },
           "position": {
             "x": 0,
@@ -3053,67 +2821,9 @@
         },
         {
           "data": {
-            "id": "9jgg9z0l51",
-            "source": "xycpn6dvdc",
-            "target": "0tj4webw3m"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "sfz6fitzhg",
-            "source": "phkjwwt286",
-            "target": "p3s9od95nf",
-            "multiValueSourceId": "ha6wi8ad4z"
-          },
-          "position": {
-            "x": 64,
-            "y": 92
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "2y7a7zj24l",
-            "source": "k5d00l2qc6",
-            "target": "66aez1vhow"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "gx3ttebxv2",
-            "source": "k5d00l2qc6",
-            "target": "rhhei5p4gu"
+            "id": "07qacuks18",
+            "source": "fme5dfbuhm",
+            "target": "1lwojlotuf"
           },
           "position": {
             "x": 0,
@@ -3149,11 +2859,11 @@
   },
   "inputSchema": [],
   "flowColor": "#E3F0FF",
-  "savedDate": 1689868411383,
+  "savedDate": 1690809174647,
   "variables": [
     {
       "context": "flowInstance",
-      "createdDate": 1688146039155,
+      "createdDate": 1689078102606,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -3164,52 +2874,7 @@
       "type": "property",
       "visibility": "private",
       "name": "companyName##SK##flowInstance",
-      "companyId": "fc0efbbe-c3d8-4670-b643-3344bb47bbcd"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1688583668210,
-      "fields": {
-        "type": "string",
-        "displayName": "FIDO2 origin",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "origin##SK##flowInstance",
-      "companyId": "fc0efbbe-c3d8-4670-b643-3344bb47bbcd"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1689260649292,
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "populationId##SK##flowInstance",
-      "companyId": "fc0efbbe-c3d8-4670-b643-3344bb47bbcd"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1688583668209,
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "relyingParty##SK##flowInstance",
-      "companyId": "fc0efbbe-c3d8-4670-b643-3344bb47bbcd"
+      "companyId": "50451ff2-2ed6-4c10-90ed-0e138623955c"
     }
   ],
   "connections": []
