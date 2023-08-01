@@ -11,10 +11,11 @@
     "pingOneSSOConnector",
     "errorConnector"
   ],
-  "createdDate": 1690823082416,
-  "currentVersion": 30,
+  "createdDate": 1690889880967,
+  "currentVersion": 43,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "description": "PingOne user creation with government ID verification",
+  "deployedDate": 1690889884518,
+  "description": "Imported on Thu Jul 13 2023 15:04:09 GMT+0000 (Coordinated Universal Time)",
   "flowStatus": "enabled",
   "inputSchemaCompiled": {
     "parameters": {
@@ -27,7 +28,7 @@
   "isInputSchemaSaved": false,
   "isOutputSchemaSaved": false,
   "name": "Registration with PingOne Verify",
-  "publishedVersion": 29,
+  "publishedVersion": 43,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": "",
@@ -43,9 +44,9 @@
     "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
   },
   "timeouts": "null",
-  "updatedDate": 1690823082454,
+  "updatedDate": 1690889884519,
   "flowId": "fb40d2fbb657153b651db09764c06988",
-  "versionId": 30,
+  "versionId": 43,
   "graphData": {
     "elements": {
       "nodes": [
@@ -174,7 +175,12 @@
         {
           "data": {
             "id": "0q2zegje8q",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "properties": {
+              "t3873bmee9": {
+                "value": "anyTriggersFalse"
+              }
+            }
           },
           "position": {
             "x": 1049.757917477076,
@@ -203,6 +209,9 @@
             "properties": {
               "userId": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"userId\",\n        \"data\": \"{{local.85g8t6bdy8.payload.output.userId}}\",\n        \"tooltip\": \"{{local.85g8t6bdy8.payload.output.userId}}\",\n        \"children\": [\n          {\n            \"text\": \"userId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Create Verify Transaction"
               }
             }
           },
@@ -236,6 +245,9 @@
               },
               "userId": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"userId\",\n        \"data\": \"{{local.85g8t6bdy8.payload.output.userId}}\",\n        \"tooltip\": \"{{local.85g8t6bdy8.payload.output.userId}}\",\n        \"children\": [\n          {\n            \"text\": \"userId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Read Verify Transaction"
               }
             }
           },
@@ -286,6 +298,9 @@
               },
               "userId": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"userId\",\n        \"data\": \"{{local.85g8t6bdy8.payload.output.userId}}\",\n        \"tooltip\": \"{{local.85g8t6bdy8.payload.output.userId}}\",\n        \"children\": [\n          {\n            \"text\": \"userId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Read Government ID"
               }
             },
             "idUnique": "nkbh0b54v1",
@@ -343,6 +358,9 @@
               },
               "globalVariableMapping": {
                 "value": []
+              },
+              "nodeTitle": {
+                "value": "Read Metadata"
               }
             },
             "idUnique": "eq8n1mdvbb",
@@ -367,8 +385,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1959.259180613894,
-            "y": 779.365650058022
+            "x": 1890,
+            "y": 780
           },
           "group": "nodes",
           "removed": false,
@@ -749,6 +767,9 @@
               },
               "email": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.ntn2iu9orl.payload.output.username}}\",\n        \"tooltip\": \"{{local.ntn2iu9orl.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Create User"
               }
             }
           },
@@ -803,6 +824,9 @@
             "properties": {
               "errorMessage": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.9eursr50hp.payload.error.message}}\",\n        \"tooltip\": \"{{local.9eursr50hp.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "User Create Error"
               }
             }
           },
@@ -937,6 +961,9 @@
               },
               "family": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"lastName\",\n        \"data\": \"{{local.j3acsbmwkq.payload.output.governmentID._embedded.verifiedData[0].data.lastName}}\",\n        \"tooltip\": \"{{local.j3acsbmwkq.payload.output.governmentID._embedded.verifiedData[0].data.lastName}}\",\n        \"children\": [\n          {\n            \"text\": \"lastName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Update User Details"
               }
             }
           },
@@ -1061,8 +1088,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 2205.070332813034,
-            "y": 779.365650058022
+            "x": 2220,
+            "y": 780
           },
           "group": "nodes",
           "removed": false,
@@ -1399,6 +1426,9 @@
             "properties": {
               "errorMessage": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Passwords do not match.\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Password Mismatch"
               }
             }
           },
@@ -1702,6 +1732,9 @@
             "properties": {
               "errorMessage": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.v12u5lo5yo.payload.error.message}}\",\n        \"tooltip\": \"{{local.v12u5lo5yo.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Set Password Error"
               }
             },
             "idUnique": "mw54qaum73"
@@ -2014,6 +2047,25 @@
         }
       ],
       "edges": [
+        {
+          "data": {
+            "id": "8lkselld19",
+            "source": "71c2mkqocg",
+            "target": "0q2zegje8q"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
         {
           "data": {
             "id": "vtrvkukr26",
@@ -2814,25 +2866,6 @@
           "grabbable": true,
           "pannable": true,
           "classes": ""
-        },
-        {
-          "data": {
-            "id": "8lkselld19",
-            "source": "71c2mkqocg",
-            "target": "0q2zegje8q"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
         }
       ]
     },
@@ -2855,7 +2888,7 @@
   },
   "inputSchema": [],
   "flowColor": "#E3F0FF",
-  "savedDate": 1690823081866,
+  "savedDate": 1690889880512,
   "variables": [
     {
       "context": "flowInstance",
