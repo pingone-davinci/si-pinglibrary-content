@@ -1,5 +1,5 @@
 {
-  "companyId": "18728430-0d47-45dd-b08b-0c1503bc16d2",
+  "companyId": "50451ff2-2ed6-4c10-90ed-0e138623955c",
   "authTokenExpireIds": [],
   "connectorIds": [
     "pingOneSSOConnector",
@@ -10,14 +10,15 @@
     "variablesConnector",
     "httpConnector"
   ],
-  "createdDate": 1682944390751,
-  "currentVersion": 33,
+  "createdDate": 1691501503545,
+  "currentVersion": 7,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "deployedDate": 1682944402737,
-  "description": "",
+  "deployedDate": 1691501537303,
+  "description": "Imported on Tue Aug 08 2023 13:29:14 GMT+0000 (Coordinated Universal Time)",
   "flowStatus": "enabled",
+  "isOutputSchemaSaved": false,
   "name": "User Sign On Starter Flow",
-  "publishedVersion": 33,
+  "publishedVersion": 7,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": {},
@@ -29,9 +30,10 @@
       "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.6/icons.css"
     ]
   },
-  "updatedDate": 1682944402738,
-  "flowId": "cd1c41d0b8eb31043c10051c5281e24b",
-  "versionId": 33,
+  "timeouts": "null",
+  "updatedDate": 1691501537304,
+  "flowId": "aad34c5f73c367f223098ab4b1895925",
+  "versionId": 7,
   "graphData": {
     "elements": {
       "nodes": [
@@ -69,7 +71,7 @@
             "idUnique": "bx1c4yd3j7"
           },
           "position": {
-            "x": 1594,
+            "x": 1598,
             "y": 424
           },
           "group": "nodes",
@@ -112,7 +114,7 @@
             "idUnique": "0re8wbsb52"
           },
           "position": {
-            "x": 1924,
+            "x": 1928,
             "y": 424
           },
           "group": "nodes",
@@ -168,7 +170,7 @@
             "isDisabled": false
           },
           "position": {
-            "x": 1294,
+            "x": 1298,
             "y": 424
           },
           "group": "nodes",
@@ -194,7 +196,7 @@
             }
           },
           "position": {
-            "x": 2044,
+            "x": 2048,
             "y": 424
           },
           "group": "nodes",
@@ -212,7 +214,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1414,
+            "x": 1418,
             "y": 424
           },
           "group": "nodes",
@@ -230,7 +232,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1414,
+            "x": 1418,
             "y": 784
           },
           "group": "nodes",
@@ -269,7 +271,7 @@
             }
           },
           "position": {
-            "x": 2254,
+            "x": 2258,
             "y": 664
           },
           "group": "nodes",
@@ -287,7 +289,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1084,
+            "x": 1088,
             "y": 424
           },
           "group": "nodes",
@@ -347,7 +349,7 @@
             "idUnique": "inquyytf9s"
           },
           "position": {
-            "x": 934,
+            "x": 938,
             "y": 274
           },
           "group": "nodes",
@@ -366,7 +368,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 424,
+            "x": 428,
             "y": 424
           },
           "group": "nodes",
@@ -392,7 +394,7 @@
             }
           },
           "position": {
-            "x": 1714,
+            "x": 1718,
             "y": 424
           },
           "group": "nodes",
@@ -408,9 +410,9 @@
           "data": {
             "id": "zcu0ayklzw",
             "nodeType": "CONNECTION",
-            "connectionId": "91942aaa705f6244ab4f51118f99870f",
+            "connectionId": "40308198837a97ff2be91afcc974d267",
             "connectorId": "nodeConnector",
-            "name": "Node [2022-09-06]",
+            "name": "Teleport",
             "label": "Teleport",
             "status": "configured",
             "capabilityName": "goToNode",
@@ -431,7 +433,7 @@
             }
           },
           "position": {
-            "x": 2254,
+            "x": 2258,
             "y": 424
           },
           "group": "nodes",
@@ -491,7 +493,7 @@
             "idUnique": "qdyr4tfx92"
           },
           "position": {
-            "x": 1564,
+            "x": 1568,
             "y": 274
           },
           "group": "nodes",
@@ -510,7 +512,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 754,
+            "x": 758,
             "y": 304
           },
           "group": "nodes",
@@ -526,9 +528,9 @@
           "data": {
             "id": "8p6rjybyxh",
             "nodeType": "CONNECTION",
-            "connectionId": "91942aaa705f6244ab4f51118f99870f",
+            "connectionId": "40308198837a97ff2be91afcc974d267",
             "connectorId": "nodeConnector",
-            "name": "Node [2022-09-06]",
+            "name": "Teleport",
             "label": "Teleport",
             "status": "configured",
             "capabilityName": "startNode",
@@ -543,7 +545,7 @@
             }
           },
           "position": {
-            "x": 634,
+            "x": 638,
             "y": 304
           },
           "group": "nodes",
@@ -559,9 +561,9 @@
           "data": {
             "id": "40ufexqgak",
             "nodeType": "CONNECTION",
-            "connectionId": "91942aaa705f6244ab4f51118f99870f",
+            "connectionId": "40308198837a97ff2be91afcc974d267",
             "connectorId": "nodeConnector",
-            "name": "Node [2022-09-06]",
+            "name": "Teleport",
             "label": "Teleport",
             "status": "configured",
             "capabilityName": "goToNode",
@@ -576,7 +578,7 @@
             }
           },
           "position": {
-            "x": 1594,
+            "x": 1598,
             "y": 544
           },
           "group": "nodes",
@@ -636,7 +638,7 @@
             "idUnique": "wnd3zn9363"
           },
           "position": {
-            "x": 2104,
+            "x": 2108,
             "y": 274
           },
           "group": "nodes",
@@ -652,9 +654,9 @@
           "data": {
             "id": "o5dyz9shr2",
             "nodeType": "CONNECTION",
-            "connectionId": "91942aaa705f6244ab4f51118f99870f",
+            "connectionId": "40308198837a97ff2be91afcc974d267",
             "connectorId": "nodeConnector",
-            "name": "Node [2022-09-06]",
+            "name": "Teleport",
             "label": "Teleport",
             "status": "configured",
             "capabilityName": "goToNode",
@@ -670,7 +672,7 @@
             "idUnique": "ecvbwb26hy"
           },
           "position": {
-            "x": 1594,
+            "x": 1598,
             "y": 664
           },
           "group": "nodes",
@@ -688,7 +690,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1414,
+            "x": 1418,
             "y": 544
           },
           "group": "nodes",
@@ -706,7 +708,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1414,
+            "x": 1418,
             "y": 664
           },
           "group": "nodes",
@@ -786,7 +788,7 @@
             "idUnique": "zyvcc0ssnv"
           },
           "position": {
-            "x": 304,
+            "x": 308,
             "y": 424
           },
           "group": "nodes",
@@ -811,7 +813,7 @@
             "type": "trigger",
             "properties": {
               "customHTML": {
-                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">User Sign On</h1>\n                <p class=\"text-muted text-center\">Welcome to Ping Identity</p>\n                <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                <form id=\"usernamePasswordForm\" data-id=\"usernamePasswordForm\">\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" id=\"username\" name=\"username\" placeholder=\"username\"\n                            autocomplete=\"off\" value=\"\" data-id=\"username-input\" />\n                        <label class=\"form-label\" for=\"username\">Username</label>\n                    </div>\n                    <div id=\"passwordDiv\" class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"password\" id=\"password\" name=\"password\" placeholder=\"Password\"\n                            autocomplete=\"off\" value=\"\" data-id=\"password-input\" />\n                        <label class=\"form-label\" for=\"password\">Password</label>\n                    </div>\n                    <div class=\"d-flex flex-column\">\n                        <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\" data-skform=\"usernamePasswordForm\" id=\"btnSignIn\"\n                            data-skbuttonvalue=\"SIGNIN\">\n                            Sign In\n                        </button>\n                        <div class=\"d-flex flex-column\">\n                            <button data-id=\"button\" type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"form-submit\" data-skform=\"usernamePasswordForm\" id=\"btnTrouble\"\n                                data-skbuttonvalue=\"TROUBLE\">\n                                Having trouble signing on?\n                            </button>\n                            <button type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skform=\"usernamePasswordForm\" id=\"btnRegister\"\n                                data-skbuttonvalue=\"REGISTER\">\n                                No account? Register now!\n                            </button>\n                        </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">User Sign On</h1>\n                <p class=\"text-muted text-center\">Welcome to {{global.variables.companyName}}</p>\n                <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                <form id=\"usernamePasswordForm\" data-id=\"usernamePasswordForm\">\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" id=\"username\" name=\"username\" placeholder=\"username\"\n                            autocomplete=\"off\" value=\"\" data-id=\"username-input\" />\n                        <label class=\"form-label\" for=\"username\">Username</label>\n                    </div>\n                    <div id=\"passwordDiv\" class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"password\" id=\"password\" name=\"password\" placeholder=\"Password\"\n                            autocomplete=\"off\" value=\"\" data-id=\"password-input\" />\n                        <label class=\"form-label\" for=\"password\">Password</label>\n                    </div>\n                    <div class=\"d-flex flex-column\">\n                        <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\" data-skform=\"usernamePasswordForm\" id=\"btnSignIn\"\n                            data-skbuttonvalue=\"SIGNIN\">\n                            Sign In\n                        </button>\n                        <div class=\"d-flex flex-column\">\n                            <button data-id=\"button\" type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"form-submit\" data-skform=\"usernamePasswordForm\" id=\"btnTrouble\"\n                                data-skbuttonvalue=\"TROUBLE\">\n                                Having trouble signing on?\n                            </button>\n                            <button type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skform=\"usernamePasswordForm\" id=\"btnRegister\"\n                                data-skbuttonvalue=\"REGISTER\">\n                                No account? Register now!\n                            </button>\n                        </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
               },
               "formFieldsList": {
                 "value": [
@@ -854,7 +856,7 @@
             }
           },
           "position": {
-            "x": 964,
+            "x": 968,
             "y": 424
           },
           "group": "nodes",
@@ -904,7 +906,7 @@
             "status": "configured"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 214
           },
           "group": "nodes",
@@ -986,7 +988,7 @@
             "idUnique": "a0yf1wqul8"
           },
           "position": {
-            "x": 631.3333333333333,
+            "x": 635.3333333333333,
             "y": 1189.4285714285716
           },
           "group": "nodes",
@@ -1002,9 +1004,9 @@
           "data": {
             "id": "4slszat3ch",
             "nodeType": "CONNECTION",
-            "connectionId": "3422cfa808df068b0468926cd3fb359e",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
             "connectorId": "functionsConnector",
-            "name": "Function",
+            "name": "Functions",
             "label": "Functions",
             "status": "configured",
             "capabilityName": "customFunction",
@@ -1034,7 +1036,7 @@
             }
           },
           "position": {
-            "x": 634,
+            "x": 638,
             "y": 424
           },
           "group": "nodes",
@@ -1083,7 +1085,7 @@
             "idUnique": "3nm07rhtek"
           },
           "position": {
-            "x": 964,
+            "x": 968,
             "y": 634
           },
           "group": "nodes",
@@ -1140,7 +1142,7 @@
             "idUnique": "lxzpplo8t5"
           },
           "position": {
-            "x": 844,
+            "x": 848,
             "y": 544
           },
           "group": "nodes",
@@ -1163,7 +1165,7 @@
             }
           },
           "position": {
-            "x": 754,
+            "x": 758,
             "y": 424
           },
           "group": "nodes",
@@ -1213,7 +1215,7 @@
             "status": "configured"
           },
           "position": {
-            "x": 218,
+            "x": 222,
             "y": 1012.2857142857143
           },
           "group": "nodes",
@@ -1229,9 +1231,9 @@
           "data": {
             "id": "kb5sr0jagq",
             "nodeType": "CONNECTION",
-            "connectionId": "91942aaa705f6244ab4f51118f99870f",
+            "connectionId": "40308198837a97ff2be91afcc974d267",
             "connectorId": "nodeConnector",
-            "name": "Node [2022-09-06]",
+            "name": "Teleport",
             "label": "Node [2022-09-06]",
             "status": "configured",
             "capabilityName": "startNode",
@@ -1246,7 +1248,7 @@
             }
           },
           "position": {
-            "x": 306.57142857142856,
+            "x": 310.57142857142856,
             "y": 1189.4285714285716
           },
           "group": "nodes",
@@ -1264,7 +1266,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 424.6666666666667,
+            "x": 428.6666666666667,
             "y": 1189.4285714285716
           },
           "group": "nodes",
@@ -1297,7 +1299,7 @@
             }
           },
           "position": {
-            "x": 1594,
+            "x": 1598,
             "y": 784
           },
           "group": "nodes",
@@ -1354,7 +1356,7 @@
             "idUnique": "940rm8qjb1"
           },
           "position": {
-            "x": 210,
+            "x": 214,
             "y": 1080
           },
           "group": "nodes",
@@ -1905,11 +1907,11 @@
     }
   },
   "flowColor": "#ff661c",
-  "savedDate": 1682944390546,
+  "savedDate": 1691501502919,
   "variables": [
     {
       "context": "flowInstance",
-      "createdDate": 1675688332013,
+      "createdDate": 1689078102606,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -1920,11 +1922,11 @@
       "type": "property",
       "visibility": "private",
       "name": "companyName##SK##flowInstance",
-      "companyId": "18728430-0d47-45dd-b08b-0c1503bc16d2"
+      "companyId": "50451ff2-2ed6-4c10-90ed-0e138623955c"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1675688332013,
+      "createdDate": 1689078102608,
       "fields": {
         "type": "string",
         "displayName": "FIDO2 origin",
@@ -1935,11 +1937,11 @@
       "type": "property",
       "visibility": "private",
       "name": "origin##SK##flowInstance",
-      "companyId": "18728430-0d47-45dd-b08b-0c1503bc16d2"
+      "companyId": "50451ff2-2ed6-4c10-90ed-0e138623955c"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1675688332012,
+      "createdDate": 1689078102606,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -1950,11 +1952,11 @@
       "type": "property",
       "visibility": "private",
       "name": "originURL##SK##flowInstance",
-      "companyId": "18728430-0d47-45dd-b08b-0c1503bc16d2"
+      "companyId": "50451ff2-2ed6-4c10-90ed-0e138623955c"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1682940841296,
+      "createdDate": 1689102489080,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -1965,11 +1967,11 @@
       "type": "property",
       "visibility": "private",
       "name": "populationId##SK##flowInstance",
-      "companyId": "18728430-0d47-45dd-b08b-0c1503bc16d2"
+      "companyId": "50451ff2-2ed6-4c10-90ed-0e138623955c"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1675688332013,
+      "createdDate": 1689078102609,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -1980,7 +1982,7 @@
       "type": "property",
       "visibility": "private",
       "name": "relyingParty##SK##flowInstance",
-      "companyId": "18728430-0d47-45dd-b08b-0c1503bc16d2"
+      "companyId": "50451ff2-2ed6-4c10-90ed-0e138623955c"
     }
   ],
   "connections": []
