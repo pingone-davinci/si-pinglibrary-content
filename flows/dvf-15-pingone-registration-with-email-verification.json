@@ -10,15 +10,15 @@
     "functionsConnector",
     "nodeConnector"
   ],
-  "createdDate": 1693492851873,
-  "currentVersion": 45,
+  "createdDate": 1693502510024,
+  "currentVersion": 46,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "deployedDate": 1693492856342,
-  "description": "Imported on Thu Aug 31 2023 11:21:37 GMT+0000 (Coordinated Universal Time)",
+  "deployedDate": 1693502513371,
+  "description": "",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
-  "name": "DVF-15 -PingOne Registration with Email Verification",
-  "publishedVersion": 45,
+  "name": "DVF-15 - PingOne Registration with Email Verification",
+  "publishedVersion": 1,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": ".sk-loading-container {\n  --primary-color: #526BDB;\n  height:100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  background: #fff;\n  right: 0;\n  z-index: 10000;\n}\n\n@-webkit-keyframes scale {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; }\n  45% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 0.7; }\n  80% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; } }\n@keyframes scale {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; }\n  45% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 0.7; }\n  80% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; } }\n\n.sk-ballpulse > div:nth-child(1) {\n  -webkit-animation: scale 0.75s -0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s -0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.sk-ballpulse > div:nth-child(2) {\n  -webkit-animation: scale 0.75s -0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s -0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.sk-ballpulse > div:nth-child(3) {\n  -webkit-animation: scale 0.75s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.sk-ballpulse > div {\n  background-color: var(--primary-color);\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n}",
@@ -37,9 +37,9 @@
     "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
   },
   "timeouts": "null",
-  "updatedDate": 1693492856342,
+  "updatedDate": 1693511212176,
   "flowId": "c858bb37021b65e29b16e6795d2fe952",
-  "versionId": 45,
+  "versionId": 1,
   "graphData": {
     "elements": {
       "nodes": [
@@ -381,66 +381,6 @@
           "selected": false,
           "selectable": true,
           "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "kqasol3ezo",
-            "nodeType": "ANNOTATION",
-            "name": "Annotation",
-            "connectionId": "921bfae85c38ed45045e07be703d86b8",
-            "connectorId": "annotationConnector",
-            "capabilityName": "updateAnnotationProperties",
-            "type": "action",
-            "properties": {
-              "backgroundColor": {
-                "value": "#ffffffff"
-              },
-              "annotationTextColor": {
-                "value": "#000000"
-              },
-              "annotation": {
-                "value": "PingOne Registration with Email Verification Flow                                                                                                                                                                                                  Created by: Ping Identity                                                           Version: 1.1                                                                           Updated Date: Aug 22, 2023                                          Documentation: https://support.pingidentity.com/s/marketplace-integration/a7i8Z000000bsfyQAA/davinci-flow-pingone-register-with-verify-email"
-              },
-              "width": {
-                "value": 600
-              },
-              "height": {
-                "value": 240
-              },
-              "strokeEnabled": {
-                "value": true
-              },
-              "strokeWidth": {
-                "value": 3
-              },
-              "strokeColor": {
-                "value": "#d0021bff"
-              },
-              "cornerRadius": {
-                "value": 5
-              },
-              "fontStyle": {
-                "value": "bold"
-              },
-              "fontFamily": {
-                "value": "sans-serif"
-              }
-            },
-            "status": "configured",
-            "idUnique": "611w3cjgfi"
-          },
-          "position": {
-            "x": 270,
-            "y": 1530
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": true,
           "grabbable": true,
           "pannable": false,
           "classes": ""
@@ -934,7 +874,7 @@
                 "value": [
                   {
                     "name": "populationId",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"57d9190f-9b44-4eb8-aecb-3a154109112f\"\n      }\n    ]\n  }\n]",
                     "key": 0.9673372774789002,
                     "type": "string",
                     "label": "populationId (string - flowInstance)"
@@ -1051,12 +991,12 @@
               "claimsNameValuePairs": {
                 "value": [
                   {
-                    "name": "username",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.hwm8kns5vd.payload.output.user.username}}\",\n        \"tooltip\": \"{{local.hwm8kns5vd.payload.output.user.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "name": "userId",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.hwm8kns5vd.payload.output.user.id}}\",\n        \"tooltip\": \"{{local.hwm8kns5vd.payload.output.user.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
                     "key": 0.7600387240665358,
-                    "label": "username (string - flowInstance)",
+                    "label": "userId (string - flowInstance)",
                     "type": "string",
-                    "nameDefault": "username"
+                    "nameDefault": "id"
                   }
                 ]
               },
@@ -1609,6 +1549,25 @@
       "edges": [
         {
           "data": {
+            "id": "vxb0bvyqx6",
+            "source": "jp1ves3ssb",
+            "target": "6ounnfojy0"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
             "id": "tgf7shxg8s",
             "source": "jp1ves3ssb",
             "target": "ijnu03bewh"
@@ -2064,25 +2023,6 @@
           "grabbable": true,
           "pannable": true,
           "classes": ""
-        },
-        {
-          "data": {
-            "id": "vxb0bvyqx6",
-            "source": "jp1ves3ssb",
-            "target": "6ounnfojy0"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
         }
       ]
     },
@@ -2104,7 +2044,7 @@
     }
   },
   "flowColor": "#ff661c",
-  "savedDate": 1693492851656,
+  "savedDate": 1693502509776,
   "variables": [
     {
       "context": "flowInstance",
