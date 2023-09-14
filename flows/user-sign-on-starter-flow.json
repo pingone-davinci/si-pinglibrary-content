@@ -10,15 +10,15 @@
     "variablesConnector",
     "httpConnector"
   ],
-  "createdDate": 1694688603292,
-  "currentVersion": 29,
+  "createdDate": 1694690544800,
+  "currentVersion": 30,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "deployedDate": 1694688639627,
+  "deployedDate": 1694690547603,
   "description": "Imported on Thu Sep 14 2023 10:12:31 GMT+0000 (Coordinated Universal Time)",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
   "name": "User Sign On Starter Flow",
-  "publishedVersion": 29,
+  "publishedVersion": 30,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": {},
@@ -33,9 +33,9 @@
     "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
   },
   "timeouts": "null",
-  "updatedDate": 1694688639628,
+  "updatedDate": 1694690547604,
   "flowId": "13d3e3ac4956bdc6aac193c5a1b5c986",
-  "versionId": 29,
+  "versionId": 30,
   "graphData": {
     "elements": {
       "nodes": [
@@ -790,7 +790,7 @@
                 "value": "#afd5ffff"
               },
               "customScript": {
-                "value": "function setFieldFocus(id) {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    }\n}\n\nfunction makePasswordToggle(id) {\n    let container = document.getElementById(id);\n\n    if (container) {\n        let password = container.getElementsByTagName(\"input\")[0];\n        let toggler = document.createElement(\"button\");\n        toggler.setAttribute(\"type\", \"button\");\n        toggler.setAttribute(\"aria-label\", \"Show/Hide Password\");\n        toggler.className = \"btn mdi mdi-eye-off-outline position-absolute end-0 top-50 translate-middle-y\";\n        container.appendChild(toggler);\n\n        function showHidePassword() {\n            if (password.type == \"password\") {\n                password.setAttribute(\"type\", \"text\");\n                toggler.classList.add(\"mdi-eye-outline\");\n                toggler.classList.remove(\"mdi-eye-off-outline\");\n            } else {\n                toggler.classList.add(\"mdi-eye-off-outline\");\n                toggler.classList.remove(\"mdi-eye-outline\");\n                password.setAttribute(\"type\", \"password\");\n            }\n            password.focus();\n        };\n\n        toggler.addEventListener(\"click\", showHidePassword);\n    }\n}\n\nfunction start() {\n    makePasswordToggle(\"passwordDiv\");\n    setFieldFocus(\"username\")\n}\n\nif (document.readyState === \"loading\") {\n    // Loading hasn't finished yet\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    // `DOMContentLoaded` has already fired\n    start();\n}"
+                "value": "const setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    }\n}\n\nconst makePasswordToggle = (id) => {\n    let container = document.getElementById(id);\n\n    if (container) {\n        let password = container.getElementsByTagName(\"input\")[0];\n        let toggler = document.createElement(\"button\");\n        toggler.setAttribute(\"type\", \"button\");\n        toggler.setAttribute(\"aria-label\", \"Show/Hide Password\");\n        toggler.className = \"btn mdi mdi-eye-off-outline position-absolute end-0 top-50 translate-middle-y\";\n        container.appendChild(toggler);\n\n        function showHidePassword() {\n            if (password.type == \"password\") {\n                password.setAttribute(\"type\", \"text\");\n                toggler.classList.add(\"mdi-eye-outline\");\n                toggler.classList.remove(\"mdi-eye-off-outline\");\n            } else {\n                toggler.classList.add(\"mdi-eye-off-outline\");\n                toggler.classList.remove(\"mdi-eye-outline\");\n                password.setAttribute(\"type\", \"password\");\n            }\n            password.focus();\n        };\n\n        toggler.addEventListener(\"click\", showHidePassword);\n    }\n}\n\nconst start = () => {\n    makePasswordToggle(\"passwordDiv\");\n    setFieldFocus(\"username\")\n}\n\nif (document.readyState === \"loading\") {\n    // Loading hasn't finished yet\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    // `DOMContentLoaded` has already fired\n    start();\n}"
               },
               "sktemplate": {
                 "uiId": "285c9d55f6886242da17a6dcb6a504da",
@@ -1669,7 +1669,7 @@
     }
   },
   "flowColor": "#ff661c",
-  "savedDate": 1694688602731,
+  "savedDate": 1694690544426,
   "variables": [
     {
       "context": "flowInstance",
