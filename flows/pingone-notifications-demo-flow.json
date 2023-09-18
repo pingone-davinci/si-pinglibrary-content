@@ -1,22 +1,24 @@
 {
-  "companyId": "18728430-0d47-45dd-b08b-0c1503bc16d2",
+  "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
   "authTokenExpireIds": [],
   "connectorIds": [
     "notificationsConnector",
-    "httpConnector",
     "functionsConnector",
     "pingOneSSOConnector",
     "annotationConnector",
     "nodeConnector",
-    "errorConnector"
+    "errorConnector",
+    "httpConnector"
   ],
-  "createdDate": 1682956550639,
-  "currentVersion": 36,
+  "createdDate": 1695038978166,
+  "currentVersion": 42,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "description": "",
+  "deployedDate": 1695039012232,
+  "description": "Imported on Mon Sep 18 2023 11:30:26 GMT+0000 (Coordinated Universal Time)",
   "flowStatus": "enabled",
-  "name": "PingOne Notifications Example",
-  "publishedVersion": 34,
+  "isOutputSchemaSaved": false,
+  "name": "DaVinci PingOne Notifications Example Flow",
+  "publishedVersion": 42,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": {},
@@ -24,14 +26,15 @@
     "useCustomCSS": true,
     "cssLinks": [
       "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css",
-      "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.6/icons.css"
+      "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.7/icons.css"
     ],
     "css": ".companyLogo {\n    /* Ping Logo  */\n    content: url(\"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\");\n    width: 65px;\n    height: 65px;\n}\n",
-    "logLevel": 3
+    "logLevel": 2
   },
-  "updatedDate": 1682956550644,
-  "flowId": "5dec801f7b710a8056372a54bd3178bd",
-  "versionId": 36,
+  "timeouts": "null",
+  "updatedDate": 1695039809103,
+  "flowId": "767f135a1d2214f61de0a9eb0ea1f310",
+  "versionId": 42,
   "graphData": {
     "elements": {
       "nodes": [
@@ -58,12 +61,13 @@
               },
               "email": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.frkui5gioa.payload.output.matchedUser.email}}\",\n        \"tooltip\": \"{{local.frkui5gioa.payload.output.matchedUser.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              }
+              },
+              "templateVariant": {}
             }
           },
           "position": {
-            "x": 1740,
-            "y": 390
+            "x": 1594,
+            "y": 394
           },
           "group": "nodes",
           "removed": false,
@@ -80,68 +84,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1530,
-            "y": 390
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "6ov1ibh7p2",
-            "nodeType": "CONNECTION",
-            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
-            "connectorId": "httpConnector",
-            "name": "Http",
-            "label": "Http",
-            "status": "configured",
-            "capabilityName": "customHTMLTemplate",
-            "type": "trigger",
-            "properties": {
-              "customHTML": {
-                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">PingOne Notifications Demo</h1>\n                <p class=\"text-muted text-center\">Welcome to Ping Identity</p>\n                <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                <form id=\"inputForm\" data-id=\"inputForm\">\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" type=\"text\" id=\"username\" name=\"username\" placeholder=\"username\"\n                            autocomplete=\"off\" value=\"\" data-id=\"username-input\" />\n                        <label class=\"form-label\" for=\"username\">Username</label>\n                    </div>\n\n                    <div class=\"d-flex flex-column\">\n                        <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\" data-skform=\"inputForm\" id=\"btnSignInEmail\"\n                            data-skbuttonvalue=\"EMAIL\">\n                            Email\n                        </button>\n                        <div class=\"d-flex flex-column\">\n                            <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\" data-skform=\"inputForm\" id=\"btnSignInSMS\"\n                            data-skbuttonvalue=\"SMS\">\n                            SMS\n                        </button>\n                            <div class=\"d-flex flex-column\">\n                                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\" data-skform=\"inputForm\" id=\"btnSignInVoice\"\n                            data-skbuttonvalue=\"VOICE\">\n                            VOICE\n                        </button>\n                            </div>\n                        </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
-              },
-              "formFieldsList": {
-                "value": [
-                  {
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "propertyName": "username",
-                    "displayName": "Username",
-                    "hashedVisibility": false,
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
-                  {
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "propertyName": "buttonValue"
-                  }
-                ]
-              },
-              "nodeTitle": {
-                "value": "Ask for input to notifications"
-              },
-              "customCSS": {},
-              "validationRules": {
-                "value": []
-              },
-              "backgroundColor": {
-                "value": "#afd5ffff"
-              },
-              "customScript": {
-                "value": "// Focus on the first input element on the page\nconst focusOnFirstInputElement = () => {\n    const element = document.querySelector(\"input\");\n\n    // Set focus on the first input element, if it exists\n    if (element) {\n        element.focus();\n    }\n};\n\n// If the page is still loading, wait for it to finish before calling the function\nif (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", focusOnFirstInputElement);\n} else {\n    // If the page has already finished loading, call the function immediately\n    focusOnFirstInputElement();\n}\n"
-              }
-            }
-          },
-          "position": {
-            "x": 450,
-            "y": 390
+            "x": 1384,
+            "y": 394
           },
           "group": "nodes",
           "removed": false,
@@ -165,7 +109,7 @@
             "type": "trigger",
             "properties": {
               "leftValueA": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.6ov1ibh7p2.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.6ov1ibh7p2.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.9g5i5x1eby.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.9g5i5x1eby.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
               "rightValueB": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"submit\"\n      }\n    ]\n  }\n]"
@@ -193,8 +137,8 @@
             "isDisabled": false
           },
           "position": {
-            "x": 1380,
-            "y": 390
+            "x": 1234,
+            "y": 394
           },
           "group": "nodes",
           "removed": false,
@@ -209,11 +153,16 @@
           "data": {
             "id": "gtmbvbbrwm",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "properties": {
+              "frkui5gioa": {
+                "value": "allTriggersTrue"
+              }
+            }
           },
           "position": {
-            "x": 570,
-            "y": 390
+            "x": 424,
+            "y": 394
           },
           "group": "nodes",
           "removed": false,
@@ -242,7 +191,7 @@
                 ]
               },
               "userIdentifierForFindUser": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.6ov1ibh7p2.payload.output.username}}\",\n        \"tooltip\": \"{{local.6ov1ibh7p2.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.9g5i5x1eby.payload.output.username}}\",\n        \"tooltip\": \"{{local.9g5i5x1eby.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
               "nodeTitle": {
                 "value": "Find P1 User by Username"
@@ -250,8 +199,8 @@
             }
           },
           "position": {
-            "x": 750,
-            "y": 390
+            "x": 604,
+            "y": 394
           },
           "group": "nodes",
           "removed": false,
@@ -273,8 +222,8 @@
             }
           },
           "position": {
-            "x": 870,
-            "y": 390
+            "x": 724,
+            "y": 394
           },
           "group": "nodes",
           "removed": false,
@@ -292,8 +241,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1530,
-            "y": 540
+            "x": 1384,
+            "y": 544
           },
           "group": "nodes",
           "removed": false,
@@ -331,8 +280,8 @@
             }
           },
           "position": {
-            "x": 1740,
-            "y": 540
+            "x": 1594,
+            "y": 544
           },
           "group": "nodes",
           "removed": false,
@@ -350,8 +299,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1530,
-            "y": 690
+            "x": 1384,
+            "y": 694
           },
           "group": "nodes",
           "removed": false,
@@ -389,8 +338,8 @@
             }
           },
           "position": {
-            "x": 1740,
-            "y": 690
+            "x": 1594,
+            "y": 694
           },
           "group": "nodes",
           "removed": false,
@@ -408,8 +357,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1860,
-            "y": 390
+            "x": 1714,
+            "y": 394
           },
           "group": "nodes",
           "removed": false,
@@ -426,8 +375,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1860,
-            "y": 540
+            "x": 1714,
+            "y": 544
           },
           "group": "nodes",
           "removed": false,
@@ -444,8 +393,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1860,
-            "y": 690
+            "x": 1714,
+            "y": 694
           },
           "group": "nodes",
           "removed": false,
@@ -494,8 +443,8 @@
             "status": "configured"
           },
           "position": {
-            "x": 360,
-            "y": 210
+            "x": 214,
+            "y": 214
           },
           "group": "nodes",
           "removed": false,
@@ -510,16 +459,16 @@
           "data": {
             "id": "2818mo6r7g",
             "nodeType": "CONNECTION",
-            "connectionId": "91942aaa705f6244ab4f51118f99870f",
+            "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
             "connectorId": "nodeConnector",
-            "name": "Node [2022-09-06]",
+            "name": "Teleport",
             "label": "Node",
             "status": "configured",
             "capabilityName": "startNode",
             "type": "trigger",
             "properties": {
               "inputSchema": {
-                "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"username\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Username\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"username\"\n\t\t},\n\t\t\"deliveryMethod\": {\n\t\t\t\"type\": \"String\",\n\t\t\t\"displayName\": \"Delivery Method\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"deliveryMethod\"\n\t\t}\n\t}\n}"
+                "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"username\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Username\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"username\"\n\t\t},\n\t\t\"deliveryMethod\": {\n\t\t\t\"type\": \"String\",\n\t\t\t\"displayName\": \"Delivery Method\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"deliveryMethod\"\n\t\t},\n        \"iconClass\": {\n            \"type\": \"string\",\n            \"displayName\": \"Icon Class\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"iconClass\"\n        }\n\t}\n}"
               },
               "nodeTitle": {
                 "value": "Success"
@@ -527,8 +476,8 @@
             }
           },
           "position": {
-            "x": 450,
-            "y": 960
+            "x": 304,
+            "y": 964
           },
           "group": "nodes",
           "removed": false,
@@ -546,8 +495,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 540,
-            "y": 960
+            "x": 424,
+            "y": 964
           },
           "group": "nodes",
           "removed": false,
@@ -603,8 +552,8 @@
             "idUnique": "940rm8qjb1"
           },
           "position": {
-            "x": 360,
-            "y": 840
+            "x": 214,
+            "y": 844
           },
           "group": "nodes",
           "removed": false,
@@ -653,54 +602,8 @@
             "status": "configured"
           },
           "position": {
-            "x": 360,
-            "y": 780
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "pu7aauh6b2",
-            "nodeType": "CONNECTION",
-            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
-            "connectorId": "httpConnector",
-            "name": "Http",
-            "label": "Http",
-            "status": "configured",
-            "capabilityName": "customHTMLTemplate",
-            "type": "trigger",
-            "properties": {
-              "customHTML": {
-                "value": "<div class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n   <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">Success</h1>\n                <p class=\"text-muted text-center\">\n                    One-Time Passcode was successfully sent to <strong>{{local.2818mo6r7g.payload.output.username}}</strong> \n                    via <strong>{{local.2818mo6r7g.payload.output.deliveryMethod}}</strong>\n                </p>\n                <div class=\"d-flex flex-column mt-5\">\n                    <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\">Exit</button>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
-              },
-              "formFieldsList": {
-                "value": [
-                  {
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "propertyName": "buttonValue"
-                  }
-                ]
-              },
-              "nodeTitle": {
-                "value": "Success Message"
-              },
-              "nodeDescription": {
-                "value": "Display success message"
-              }
-            },
-            "idUnique": "3nm07rhtek"
-          },
-          "position": {
-            "x": 750,
-            "y": 960
+            "x": 214,
+            "y": 784
           },
           "group": "nodes",
           "removed": false,
@@ -715,9 +618,9 @@
           "data": {
             "id": "q61kc9dfpu",
             "nodeType": "CONNECTION",
-            "connectionId": "91942aaa705f6244ab4f51118f99870f",
+            "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
             "connectorId": "nodeConnector",
-            "name": "Node [2022-09-06]",
+            "name": "Teleport",
             "label": "Node [2022-09-06]",
             "status": "configured",
             "capabilityName": "goToNode",
@@ -730,13 +633,16 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.frkui5gioa.payload.output.matchedUser.username}}\",\n        \"tooltip\": \"{{local.frkui5gioa.payload.output.matchedUser.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
               "deliveryMethod": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.6ov1ibh7p2.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.6ov1ibh7p2.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.9g5i5x1eby.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.9g5i5x1eby.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "iconClass": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"mdi-email-outline\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               }
             }
           },
           "position": {
-            "x": 2040,
-            "y": 390
+            "x": 1894,
+            "y": 394
           },
           "group": "nodes",
           "removed": false,
@@ -751,9 +657,9 @@
           "data": {
             "id": "hox7x97y12",
             "nodeType": "CONNECTION",
-            "connectionId": "91942aaa705f6244ab4f51118f99870f",
+            "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
             "connectorId": "nodeConnector",
-            "name": "Node [2022-09-06]",
+            "name": "Teleport",
             "label": "Node [2022-09-06]",
             "status": "configured",
             "capabilityName": "goToNode",
@@ -766,14 +672,17 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.frkui5gioa.payload.output.matchedUser.username}}\",\n        \"tooltip\": \"{{local.frkui5gioa.payload.output.matchedUser.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
               "deliveryMethod": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.6ov1ibh7p2.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.6ov1ibh7p2.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.9g5i5x1eby.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.9g5i5x1eby.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "iconClass": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"mdi-comment-text-outline\"\n      }\n    ]\n  }\n]"
               }
             },
             "idUnique": "083p0h4wei"
           },
           "position": {
-            "x": 2040,
-            "y": 540
+            "x": 1894,
+            "y": 544
           },
           "group": "nodes",
           "removed": false,
@@ -788,9 +697,9 @@
           "data": {
             "id": "23qgwo9gq3",
             "nodeType": "CONNECTION",
-            "connectionId": "91942aaa705f6244ab4f51118f99870f",
+            "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
             "connectorId": "nodeConnector",
-            "name": "Node [2022-09-06]",
+            "name": "Teleport",
             "label": "Node [2022-09-06]",
             "status": "configured",
             "capabilityName": "goToNode",
@@ -803,14 +712,17 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.frkui5gioa.payload.output.matchedUser.username}}\",\n        \"tooltip\": \"{{local.frkui5gioa.payload.output.matchedUser.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
               "deliveryMethod": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.6ov1ibh7p2.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.6ov1ibh7p2.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.9g5i5x1eby.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.9g5i5x1eby.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "iconClass": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"mdi-phone-outline\"\n      }\n    ]\n  }\n]"
               }
             },
             "idUnique": "ypahkeak4n"
           },
           "position": {
-            "x": 2040,
-            "y": 690
+            "x": 1894,
+            "y": 694
           },
           "group": "nodes",
           "removed": false,
@@ -842,8 +754,8 @@
             }
           },
           "position": {
-            "x": 1080,
-            "y": 540
+            "x": 934,
+            "y": 544
           },
           "group": "nodes",
           "removed": false,
@@ -898,8 +810,194 @@
             "status": "configured"
           },
           "position": {
-            "x": 1620,
-            "y": 270
+            "x": 1474,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "a1fvcj4whs",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "sktemplate": {
+                "uiId": "624fbda9a79d412a0e62cc045b410da7",
+                "createdDate": 1693913007853,
+                "customerId": "f3e47d945ae971a4b4142ec75012d155",
+                "description": "",
+                "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n\t\t\"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n\t\t\"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n\t\t\"buttonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"buttonLabel\"\n        },\n        \"iconClass\": {\n            \"type\": \"string\",\n            \"displayName\": \"Icon Class\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"iconClass\"\n        }\n    }\n}",
+                "name": "Custom Message",
+                "outputSchema": null,
+                "script": "",
+                "style": "",
+                "template": "",
+                "updatedDate": 1693913396823,
+                "validationRules": [],
+                "version": "1.0",
+                "visibility": "private",
+                "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
+                "value": "624fbda9a79d412a0e62cc045b410da7"
+              },
+              "inputSchema": {
+                "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n\t\t\"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n\t\t\"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n        \"iconClass\": {\n            \"type\": \"string\",\n            \"displayName\": \"Icon Class\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"iconClass\"\n        },\n\t\t\"buttonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"buttonLabel\"\n        }\n    }\n}"
+              },
+              "outputSchema": {
+                "value": {}
+              },
+              "customHTML": {
+                "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n        \n        {{#if title}}\n        <h1 class=\"text-center mb-4\">{{title}}</h1>\n        {{/if}}\n\n        {{#if iconClass}}\n        <p class=\"text-center\"><i class=\"mdi {{iconClass}} text-dark display-6\" aria-hidden=\"true\"></i> \n        {{/if}}\n\n        {{#if textOne}}\n        <p class=\"text-muted text-center\">{{textOne}}</p>\n        {{/if}}\n\n        {{#if textTwo}}\n        <p class=\"text-muted text-center\">{{textTwo}}</p>\n        {{/if}}\n\n        {{#if buttonLabel}}\n        <div class=\"d-flex flex-column\">\n          <button data-id=\"next-button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n             data-skbuttontype=\"next-event\"  data-skbuttonvalue=\"NEXT\" id=\"btnNext\">\n                {{buttonLabel}}\n            </button>\n        </div>\n        {{/if}}\n        \n      </div>\n    </div>\n  </div>\n</div>"
+              },
+              "customCSS": {
+                "value": ""
+              },
+              "customScript": {
+                "value": ""
+              },
+              "validationRules": {
+                "value": []
+              },
+              "title": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success\"\n      }\n    ]\n  }\n]"
+              },
+              "textOne": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"A test notification was successfully sent to\"\n      }\n    ]\n  }\n]"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Success Messages"
+              },
+              "nodeDescription": {
+                "value": "Render a custom message"
+              },
+              "textTwo": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.2818mo6r7g.payload.output.username}}\",\n        \"tooltip\": \"{{local.2818mo6r7g.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \" via \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"deliveryMethod\",\n        \"data\": \"{{local.2818mo6r7g.payload.output.deliveryMethod}}\",\n        \"tooltip\": \"{{local.2818mo6r7g.payload.output.deliveryMethod}}\",\n        \"children\": [\n          {\n            \"text\": \"deliveryMethod\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "iconClass": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"iconClass\",\n        \"data\": \"{{local.2818mo6r7g.payload.output.iconClass}}\",\n        \"tooltip\": \"{{local.2818mo6r7g.payload.output.iconClass}}\",\n        \"children\": [\n          {\n            \"text\": \"iconClass\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "idUnique": "16fkjw5hoo"
+          },
+          "position": {
+            "x": 604,
+            "y": 964
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9g5i5x1eby",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "title": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"PingOne Notifications Demo\"\n      }\n    ]\n  }\n]"
+              },
+              "description": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please enter your username\"\n      }\n    ]\n  }\n]"
+              },
+              "customHTML": {
+                "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n\n        {{#if title}}\n        <h1 class=\"text-center mb-4\">{{title}}</h1>\n        {{/if}}\n\n        {{#if textOne}}\n        <p class=\"text-muted text-center\">{{textOne}}</p>\n        {{/if}}\n\n        {{#if textTwo}}\n        <p class=\"text-muted text-center\">{{textTwo}}</p>\n        {{/if}}\n\n        <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle\" data-skcomponent=\"skerror\"></p>\n        <form id=\"usernameForm\" data-id=\"usernameForm\">\n          <div class=\"mb-4 form-floating\">\n            <input id=\"username\" data-id=\"username\" class=\"form-control\" type=\"text\" name=\"username\"\n              placeholder=\"Username\" autocomplete=\"off\" value=\"\" />\n            <label class=\"form-label\" for=\"username\">Username</label>\n          </div>\n          <div class=\"d-flex flex-column\">\n            <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"form-submit\" data-skform=\"usernameForm\" id=\"btnSignInEmail\"\n                data-skbuttonvalue=\"EMAIL\">\n                Email\n            </button>\n\n            <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"form-submit\" data-skform=\"usernameForm\" id=\"btnSignInSMS\"\n                data-skbuttonvalue=\"SMS\">\n                SMS\n            </button>\n\n            <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"form-submit\" data-skform=\"usernameForm\" id=\"btnSignInVoice\"\n                data-skbuttonvalue=\"VOICE\">\n                VOICE\n            </button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "username",
+                    "displayName": "Username",
+                    "hashedVisibility": false
+                  },
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Ask for input to notifications"
+              },
+              "customCSS": {
+                "value": ""
+              },
+              "customScript": {
+                "value": "const setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    }\n}\n\nconst start = () => {\n    setFieldFocus(\"username\")\n}\n\nif (document.readyState === \"loading\") {\n    // Loading hasn't finished yet\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    // `DOMContentLoaded` has already fired\n    start();\n}"
+              },
+              "validationRules": {
+                "value": []
+              },
+              "nodeDescription": {
+                "value": "Username entry form"
+              },
+              "sktemplate": {
+                "uiId": "f0278a8ddca082f38c7741636477706e",
+                "createdDate": 1689165082540,
+                "customerId": "f3e47d945ae971a4b4142ec75012d155",
+                "description": "",
+                "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n\t\t\"description\": {\n            \"type\": \"string\",\n            \"displayName\": \"Description\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"description\"\n        }\n    }\n}",
+                "name": "Username form",
+                "outputSchema": null,
+                "script": "",
+                "style": "",
+                "template": "",
+                "updatedDate": 1689165187330,
+                "validationRules": [],
+                "version": "1.0",
+                "visibility": "private",
+                "companyId": "50451ff2-2ed6-4c10-90ed-0e138623955c",
+                "value": "f0278a8ddca082f38c7741636477706e"
+              },
+              "inputSchema": {
+                "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n        \"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n        \"iconClass\": {\n            \"type\": \"string\",\n            \"displayName\": \"Icon Class\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"iconClass\"\n        }\n    }\n}"
+              },
+              "outputSchema": {
+                "value": null
+              },
+              "textOne": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please enter your username, then select an OTP delivery method.\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "idUnique": "pl05yk6egm"
+          },
+          "position": {
+            "x": 304,
+            "y": 394
           },
           "group": "nodes",
           "removed": false,
@@ -912,6 +1010,121 @@
         }
       ],
       "edges": [
+        {
+          "data": {
+            "id": "snltzjgudg",
+            "source": "b0omofffnu",
+            "target": "v87dce50na",
+            "multiValueSourceId": "js0k5824y5"
+          },
+          "position": {
+            "x": 64,
+            "y": 92
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "95t91xu5c8",
+            "source": "9g5i5x1eby",
+            "target": "gtmbvbbrwm"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tjggjispcb",
+            "source": "9zfettjood",
+            "target": "a1fvcj4whs"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0suvaeiqt3",
+            "source": "v87dce50na",
+            "target": "rnnhyx8or5"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "rprv8qq92r",
+            "source": "vqabw5eief",
+            "target": "b0omofffnu"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ksw1cimln6",
+            "source": "y44ck6blex",
+            "target": "pa8ixrgibm"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
         {
           "data": {
             "id": "o7g7wn00r9",
@@ -971,9 +1184,9 @@
         },
         {
           "data": {
-            "id": "us48uhuenr",
-            "source": "9zfettjood",
-            "target": "pu7aauh6b2"
+            "id": "5q31j2x5se",
+            "source": "b2usf6zdmy",
+            "target": "m0q66z9cui"
           },
           "position": {
             "x": 0,
@@ -1086,13 +1299,14 @@
         },
         {
           "data": {
-            "id": "5vdw1lrwo7",
-            "source": "6ov1ibh7p2",
-            "target": "gtmbvbbrwm"
+            "id": "s7mfrqxrjb",
+            "source": "b0omofffnu",
+            "target": "y44ck6blex",
+            "multiValueSourceId": "qtli5t2v0s"
           },
           "position": {
-            "x": 0,
-            "y": 0
+            "x": 64,
+            "y": 132
           },
           "group": "edges",
           "removed": false,
@@ -1159,122 +1373,6 @@
           "grabbable": true,
           "pannable": true,
           "classes": ""
-        },
-        {
-          "data": {
-            "id": "snltzjgudg",
-            "source": "b0omofffnu",
-            "target": "v87dce50na",
-            "multiValueSourceId": "js0k5824y5"
-          },
-          "position": {
-            "x": 64,
-            "y": 92
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "0suvaeiqt3",
-            "source": "v87dce50na",
-            "target": "rnnhyx8or5"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "s7mfrqxrjb",
-            "source": "b0omofffnu",
-            "target": "y44ck6blex",
-            "multiValueSourceId": "qtli5t2v0s"
-          },
-          "position": {
-            "x": 64,
-            "y": 132
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "ksw1cimln6",
-            "source": "y44ck6blex",
-            "target": "pa8ixrgibm"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "5q31j2x5se",
-            "source": "b2usf6zdmy",
-            "target": "m0q66z9cui"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "rprv8qq92r",
-            "source": "vqabw5eief",
-            "target": "b0omofffnu"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
         }
       ]
     },
@@ -1295,12 +1393,12 @@
       "name": "null"
     }
   },
-  "flowColor": "#AFD5FF",
-  "savedDate": 1682956550485,
+  "flowColor": "#ff661c",
+  "savedDate": 1695038977775,
   "variables": [
     {
       "context": "flowInstance",
-      "createdDate": 1675688332013,
+      "createdDate": 1693480897657,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -1311,7 +1409,7 @@
       "type": "property",
       "visibility": "private",
       "name": "companyName##SK##flowInstance",
-      "companyId": "18728430-0d47-45dd-b08b-0c1503bc16d2"
+      "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
     }
   ],
   "connections": []
