@@ -1,25 +1,26 @@
 {
-  "companyId": "ee43f700-c751-494d-9dbf-70946a85b328",
+  "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
   "authTokenExpireIds": [],
   "connectorIds": [
     "annotationConnector",
-    "httpConnector",
     "nodeConnector",
+    "httpConnector",
     "variablesConnector"
   ],
-  "createdDate": 1680520498286,
-  "currentVersion": 1,
+  "createdDate": 1695041651026,
+  "currentVersion": 3,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "deployedDate": 1680520498362,
-  "description": "DaVinci starter flow that comes preconfigured to leverage Ping's CSS resources. The flow includes common instance variables, a generic error handler and a success message UI.",
+  "deployedDate": 1695041655383,
+  "description": "Imported on Mon Sep 18 2023 12:48:14 GMT+0000 (Coordinated Universal Time)",
   "flowStatus": "enabled",
-  "name": "Starter Flow",
-  "publishedVersion": 1,
+  "isOutputSchemaSaved": false,
+  "name": "DaVinci Starter Flow",
+  "publishedVersion": 3,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": {},
     "intermediateLoadingScreenHTML": {},
-    "logLevel": 3,
+    "logLevel": 2,
     "useCustomCSS": true,
     "css": ".companyLogo {\n    /* Ping Logo  */\n    content: url(\"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\");\n    width: 65px;\n    height: 65px;\n}",
     "cssLinks": [
@@ -28,9 +29,10 @@
     ],
     "scrubSensitiveInfo": false
   },
-  "updatedDate": 1680520521024,
-  "flowId": "47360733f8216ad35114e9a787ca83e0",
-  "versionId": 1,
+  "timeouts": "null",
+  "updatedDate": 1695041691784,
+  "flowId": "fe8e3c916843b17931483f0b3805a913",
+  "versionId": 3,
   "graphData": {
     "elements": {
       "nodes": [
@@ -74,52 +76,6 @@
           "position": {
             "x": 214,
             "y": 214
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "u5khyxw07p",
-            "nodeType": "CONNECTION",
-            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
-            "connectorId": "httpConnector",
-            "name": "Http",
-            "label": "Http",
-            "status": "configured",
-            "capabilityName": "customHTMLTemplate",
-            "type": "trigger",
-            "properties": {
-              "customHTML": {
-                "value": "<div class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\"/>\n                <h1 class=\"text-center mb-4\">Success</h1>\n                <p class=\"text-muted text-center\">__SUCCESS_MSG_1__</p>\n                <p class=\"text-muted text-center\">__SUCCESS_MSG_2__</p>\n                <div class=\"d-flex flex-column\">\n                    <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\">Exit</button>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
-              },
-              "formFieldsList": {
-                "value": [
-                  {
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "propertyName": "buttonValue"
-                  }
-                ]
-              },
-              "nodeTitle": {
-                "value": "Success Message"
-              },
-              "nodeDescription": {
-                "value": "Display success message"
-              }
-            },
-            "idUnique": "a0yf1wqul8"
-          },
-          "position": {
-            "x": 600,
-            "y": 390
           },
           "group": "nodes",
           "removed": false,
@@ -208,9 +164,9 @@
           "data": {
             "id": "4zjizi23c6",
             "nodeType": "CONNECTION",
-            "connectionId": "b3b6bfe4bcfc8bd1d8851a5664d824d2",
+            "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
             "connectorId": "nodeConnector",
-            "name": "Node",
+            "name": "Teleport",
             "label": "Node",
             "status": "configured",
             "capabilityName": "startNode",
@@ -510,6 +466,97 @@
           "grabbable": true,
           "pannable": false,
           "classes": ""
+        },
+        {
+          "data": {
+            "id": "e6q3kvh770",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "buttonLabel": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
+              },
+              "sktemplate": {
+                "uiId": "624fbda9a79d412a0e62cc045b410da7",
+                "createdDate": 1693913007853,
+                "customerId": "f3e47d945ae971a4b4142ec75012d155",
+                "description": "",
+                "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n\t\t\"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n\t\t\"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n\t\t\"buttonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"buttonLabel\"\n        }\n    }\n}",
+                "name": "Custom Message",
+                "outputSchema": null,
+                "script": "",
+                "style": "",
+                "template": "",
+                "updatedDate": 1693913396823,
+                "validationRules": [],
+                "version": "1.0",
+                "visibility": "private",
+                "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
+                "value": "624fbda9a79d412a0e62cc045b410da7"
+              },
+              "inputSchema": {
+                "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n\t\t\"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n\t\t\"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n\t\t\"buttonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"buttonLabel\"\n        }\n    }\n}"
+              },
+              "outputSchema": {
+                "value": null
+              },
+              "customHTML": {
+                "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n        \n        {{#if title}}\n        <h1 class=\"text-center mb-4\">{{title}}</h1>\n        {{/if}}\n\n        {{#if textOne}}\n        <p class=\"text-muted text-center\">{{textOne}}</p>\n        {{/if}}\n\n        {{#if textTwo}}\n        <p class=\"text-muted text-center\">{{textTwo}}</p>\n        {{/if}}\n\n        {{#if buttonLabel}}\n        <div class=\"d-flex flex-column\">\n          <button data-id=\"next-button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n             data-skbuttontype=\"next-event\"  data-skbuttonvalue=\"NEXT\" id=\"btnNext\">\n                {{buttonLabel}}\n            </button>\n        </div>\n        {{/if}}\n        \n      </div>\n    </div>\n  </div>\n</div>"
+              },
+              "customCSS": {
+                "value": ""
+              },
+              "customScript": {
+                "value": ""
+              },
+              "validationRules": {
+                "value": []
+              },
+              "title": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Custom Message\"\n      }\n    ]\n  }\n]"
+              },
+              "textOne": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Text One message\"\n      }\n    ]\n  }\n]"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Custom Message"
+              },
+              "nodeDescription": {
+                "value": "Render a custom message"
+              },
+              "textTwo": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Text Two message\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "idUnique": "16fkjw5hoo"
+          },
+          "position": {
+            "x": 630,
+            "y": 390
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
         }
       ],
       "edges": [
@@ -534,9 +581,9 @@
         },
         {
           "data": {
-            "id": "o8sgd38p64",
-            "source": "t5lim69t2u",
-            "target": "u5khyxw07p"
+            "id": "fb0464z6lq",
+            "source": "pdk9atuwtv",
+            "target": "t5lim69t2u"
           },
           "position": {
             "x": 0,
@@ -572,9 +619,9 @@
         },
         {
           "data": {
-            "id": "fb0464z6lq",
-            "source": "pdk9atuwtv",
-            "target": "t5lim69t2u"
+            "id": "3gd23kycb0",
+            "source": "t5lim69t2u",
+            "target": "e6q3kvh770"
           },
           "position": {
             "x": 0,
@@ -609,11 +656,11 @@
     }
   },
   "flowColor": "#ff661c",
-  "savedDate": 1680520498215,
+  "savedDate": 1695041650931,
   "variables": [
     {
       "context": "flowInstance",
-      "createdDate": 1676296600642,
+      "createdDate": 1693480897657,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -624,57 +671,11 @@
       "type": "property",
       "visibility": "private",
       "name": "companyName##SK##flowInstance",
-      "companyId": "ee43f700-c751-494d-9dbf-70946a85b328"
+      "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1678115982658,
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "flowDocsURL##SK##flowInstance",
-      "companyId": "ee43f700-c751-494d-9dbf-70946a85b328"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1678115982658,
-      "fields": {
-        "type": "string",
-        "displayName": "FIDO2 origin",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "origin##SK##flowInstance",
-      "companyId": "ee43f700-c751-494d-9dbf-70946a85b328"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1678115982656,
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "originURL##SK##flowInstance",
-      "companyId": "ee43f700-c751-494d-9dbf-70946a85b328"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1677009854303,
-      "customerId": "f3e47d945ae971a4b4142ec75012d155",
+      "createdDate": 1693480897656,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -685,11 +686,41 @@
       "type": "property",
       "visibility": "private",
       "name": "populationId##SK##flowInstance",
-      "companyId": "ee43f700-c751-494d-9dbf-70946a85b328"
+      "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1678115982658,
+      "createdDate": 1693915870120,
+      "fields": {
+        "type": "string",
+        "displayName": "FIDO2 origin",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "origin##SK##flowInstance",
+      "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1693915870118,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "originURL##SK##flowInstance",
+      "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1693915870118,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -700,7 +731,22 @@
       "type": "property",
       "visibility": "private",
       "name": "relyingParty##SK##flowInstance",
-      "companyId": "ee43f700-c751-494d-9dbf-70946a85b328"
+      "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1695041294188,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "flowDocsURL##SK##flowInstance",
+      "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
     }
   ],
   "connections": []
