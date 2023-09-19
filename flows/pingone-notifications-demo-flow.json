@@ -10,15 +10,15 @@
     "errorConnector",
     "httpConnector"
   ],
-  "createdDate": 1695038978166,
-  "currentVersion": 42,
+  "createdDate": 1695124048350,
+  "currentVersion": 55,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "deployedDate": 1695039012232,
+  "deployedDate": 1695124051706,
   "description": "Imported on Mon Sep 18 2023 11:30:26 GMT+0000 (Coordinated Universal Time)",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
   "name": "DaVinci PingOne Notifications Example Flow",
-  "publishedVersion": 42,
+  "publishedVersion": 55,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": {},
@@ -32,9 +32,9 @@
     "logLevel": 2
   },
   "timeouts": "null",
-  "updatedDate": 1695039809103,
+  "updatedDate": 1695124051706,
   "flowId": "767f135a1d2214f61de0a9eb0ea1f310",
-  "versionId": 42,
+  "versionId": 55,
   "graphData": {
     "elements": {
       "nodes": [
@@ -932,7 +932,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please enter your username\"\n      }\n    ]\n  }\n]"
               },
               "customHTML": {
-                "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n\n        {{#if title}}\n        <h1 class=\"text-center mb-4\">{{title}}</h1>\n        {{/if}}\n\n        {{#if textOne}}\n        <p class=\"text-muted text-center\">{{textOne}}</p>\n        {{/if}}\n\n        {{#if textTwo}}\n        <p class=\"text-muted text-center\">{{textTwo}}</p>\n        {{/if}}\n\n        <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle\" data-skcomponent=\"skerror\"></p>\n        <form id=\"usernameForm\" data-id=\"usernameForm\">\n          <div class=\"mb-4 form-floating\">\n            <input id=\"username\" data-id=\"username\" class=\"form-control\" type=\"text\" name=\"username\"\n              placeholder=\"Username\" autocomplete=\"off\" value=\"\" />\n            <label class=\"form-label\" for=\"username\">Username</label>\n          </div>\n          <div class=\"d-flex flex-column\">\n            <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"form-submit\" data-skform=\"usernameForm\" id=\"btnSignInEmail\"\n                data-skbuttonvalue=\"EMAIL\">\n                Email\n            </button>\n\n            <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"form-submit\" data-skform=\"usernameForm\" id=\"btnSignInSMS\"\n                data-skbuttonvalue=\"SMS\">\n                SMS\n            </button>\n\n            <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"form-submit\" data-skform=\"usernameForm\" id=\"btnSignInVoice\"\n                data-skbuttonvalue=\"VOICE\">\n                VOICE\n            </button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>"
+                "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n\n        {{#if title}}\n        <h1 class=\"text-center mb-4\">{{title}}</h1>\n        {{/if}}\n\n        {{#if textOne}}\n        <p class=\"text-muted text-center\">{{textOne}}</p>\n        {{/if}}\n\n        {{#if textTwo}}\n        <p class=\"text-muted text-center\">{{textTwo}}</p>\n        {{/if}}\n\n        <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle\" data-skcomponent=\"skerror\"></p>\n        <form id=\"usernameForm\" data-id=\"usernameForm\">\n          <div class=\"mb-4 form-floating\">\n            <input id=\"username\" data-id=\"username\" class=\"form-control\" type=\"text\" name=\"username\"\n              placeholder=\"Username\" autocomplete=\"off\" value=\"\" />\n            <label class=\"form-label\" for=\"username\">Username</label>\n          </div>\n          <div class=\"d-flex flex-column\">\n            \n            <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"form-submit\" data-skform=\"usernameForm\" id=\"btnSignInEmail\"\n                data-skrequiredinputs=\"username\" data-skbuttonvalue=\"EMAIL\">\n                <i class=\"mdi mdi-email-outline\" aria-hidden=\"true\"></i> EMAIL\n            </button>\n\n            <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"form-submit\" data-skform=\"usernameForm\" id=\"btnSignInSMS\"\n                data-skrequiredinputs=\"username\" data-skbuttonvalue=\"SMS\">\n                <i class=\"mdi mdi-comment-text-outline\" aria-hidden=\"true\"></i> SMS\n            </button>\n\n            <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"form-submit\" data-skform=\"usernameForm\" id=\"btnSignInVoice\"\n                data-skrequiredinputs=\"username\" data-skbuttonvalue=\"VOICE\">\n                <i class=\"mdi mdi-phone-outline\" aria-hidden=\"true\"></i> VOICE\n            </button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>"
               },
               "formFieldsList": {
                 "value": [
@@ -984,13 +984,13 @@
                 "value": "f0278a8ddca082f38c7741636477706e"
               },
               "inputSchema": {
-                "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n        \"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n        \"iconClass\": {\n            \"type\": \"string\",\n            \"displayName\": \"Icon Class\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"iconClass\"\n        }\n    }\n}"
+                "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n        \"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        }\n    }\n}"
               },
               "outputSchema": {
                 "value": null
               },
               "textOne": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please enter your username, then select an OTP delivery method.\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please enter your username, then select an notification delivery method.\"\n      }\n    ]\n  }\n]"
               }
             },
             "idUnique": "pl05yk6egm"
@@ -1394,7 +1394,7 @@
     }
   },
   "flowColor": "#ff661c",
-  "savedDate": 1695038977775,
+  "savedDate": 1695124047992,
   "variables": [
     {
       "context": "flowInstance",
