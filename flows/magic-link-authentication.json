@@ -9,14 +9,14 @@
         "httpConnector",
         "variablesConnector"
       ],
-      "createdDate": 1695150525677,
-      "currentVersion": 26,
+      "createdDate": 1695207933648,
+      "currentVersion": 29,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
       "description": "Imported on Tue Sep 19 2023 17:36:09 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Authentication with Magic Link",
-      "publishedVersion": 26,
+      "publishedVersion": 29,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
@@ -38,9 +38,9 @@
         "logLevel": 2
       },
       "timeouts": "null",
-      "updatedDate": 1695150528048,
+      "updatedDate": 1695207935974,
       "flowId": "3082c18330f0d43e132bcc0e5c8b5dad",
-      "versionId": 26,
+      "versionId": 29,
       "graphData": {
         "elements": {
           "nodes": [
@@ -89,8 +89,8 @@
                 }
               },
               "position": {
-                "x": 904,
-                "y": 424
+                "x": 908,
+                "y": 428
               },
               "group": "nodes",
               "removed": false,
@@ -116,8 +116,8 @@
                 }
               },
               "position": {
-                "x": 1024,
-                "y": 424
+                "x": 1028,
+                "y": 428
               },
               "group": "nodes",
               "removed": false,
@@ -145,7 +145,7 @@
                     "value": "#ffffffff"
                   },
                   "annotation": {
-                    "value": "Authenticate User with Magic Link "
+                    "value": "PingOne Authentication with Magic Link"
                   },
                   "width": {
                     "value": 1500
@@ -166,8 +166,8 @@
                 "status": "configured"
               },
               "position": {
-                "x": 210,
-                "y": 210
+                "x": 214,
+                "y": 214
               },
               "group": "nodes",
               "removed": false,
@@ -222,8 +222,8 @@
                 "status": "configured"
               },
               "position": {
-                "x": 484,
-                "y": 304
+                "x": 488,
+                "y": 308
               },
               "group": "nodes",
               "removed": false,
@@ -279,8 +279,8 @@
                 "idUnique": "sq8z2scnhi"
               },
               "position": {
-                "x": 784,
-                "y": 304
+                "x": 788,
+                "y": 308
               },
               "group": "nodes",
               "removed": false,
@@ -336,8 +336,8 @@
                 "idUnique": "j0327j05r1"
               },
               "position": {
-                "x": 1084,
-                "y": 514
+                "x": 1088,
+                "y": 518
               },
               "group": "nodes",
               "removed": false,
@@ -393,8 +393,8 @@
                 "idUnique": "5845t37dl0"
               },
               "position": {
-                "x": 1084,
-                "y": 304
+                "x": 1088,
+                "y": 308
               },
               "group": "nodes",
               "removed": false,
@@ -451,8 +451,8 @@
                 "idUnique": "nfw5wfs9fm"
               },
               "position": {
-                "x": 1204,
-                "y": 604
+                "x": 1208,
+                "y": 608
               },
               "group": "nodes",
               "removed": false,
@@ -475,8 +475,8 @@
                 }
               },
               "position": {
-                "x": 724,
-                "y": 424
+                "x": 728,
+                "y": 428
               },
               "group": "nodes",
               "removed": false,
@@ -516,8 +516,8 @@
                 }
               },
               "position": {
-                "x": 304,
-                "y": 424
+                "x": 308,
+                "y": 428
               },
               "group": "nodes",
               "removed": false,
@@ -534,8 +534,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 424,
-                "y": 424
+                "x": 428,
+                "y": 428
               },
               "group": "nodes",
               "removed": false,
@@ -581,7 +581,7 @@
                     "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n\t\t\"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n\t\t\"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n\t\t\"buttonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"buttonLabel\"\n        }\n    }\n}"
                   },
                   "textOne": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Congratulations, you have successfully completed the Magic Link Authentication demo\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Congratulations, you have successfully completed the Magic Link Authentication demo.\"\n      }\n    ]\n  }\n]"
                   },
                   "title": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Sign On Success\"\n      }\n    ]\n  }\n]"
@@ -593,8 +593,8 @@
                 "idUnique": "fnryk13gci"
               },
               "position": {
-                "x": 1204,
-                "y": 424
+                "x": 1208,
+                "y": 428
               },
               "group": "nodes",
               "removed": false,
@@ -688,8 +688,8 @@
                 "idUnique": "pl05yk6egm"
               },
               "position": {
-                "x": 604,
-                "y": 424
+                "x": 608,
+                "y": 428
               },
               "group": "nodes",
               "removed": false,
@@ -855,7 +855,7 @@
         }
       },
       "flowColor": "#ff661c",
-      "savedDate": 1695150525608,
+      "savedDate": 1695207933583,
       "variables": [
         {
           "context": "flowInstance",
@@ -903,8 +903,8 @@
         "functionsConnector",
         "pingOneSSOConnector"
       ],
-      "createdDate": 1695152943716,
-      "currentVersion": 82,
+      "createdDate": 1695207961302,
+      "currentVersion": 85,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
       "description": "Imported on Tue Sep 19 2023 17:36:08 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
@@ -936,7 +936,7 @@
       "isInputSchemaSaved": true,
       "isOutputSchemaSaved": false,
       "name": "Magic Link Authentication Subflow",
-      "publishedVersion": 79,
+      "publishedVersion": 85,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
@@ -952,9 +952,9 @@
         "customTitle": "Magic Link Authentication"
       },
       "timeouts": "null",
-      "updatedDate": 1695152943795,
+      "updatedDate": 1695207969523,
       "flowId": "952996d3e1f98f89a717c6a27e7cf51e",
-      "versionId": 82,
+      "versionId": 85,
       "graphData": {
         "elements": {
           "nodes": [
@@ -1301,10 +1301,10 @@
                     "value": "#ffffffff"
                   },
                   "annotation": {
-                    "value": "Magic Link Subflow"
+                    "value": "Magic Link Authentication Subflow"
                   },
                   "width": {
-                    "value": 2700
+                    "value": 2800
                   },
                   "fontStyle": {
                     "value": "bold"
@@ -3454,7 +3454,7 @@
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1695152943087,
+      "savedDate": 1695207960582,
       "variables": [
         {
           "context": "flowInstance",
