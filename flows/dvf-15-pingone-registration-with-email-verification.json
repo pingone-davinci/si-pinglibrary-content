@@ -12,14 +12,14 @@
         "variablesConnector",
         "annotationConnector"
       ],
-      "createdDate": 1695648465370,
-      "currentVersion": 27,
+      "createdDate": 1695663041213,
+      "currentVersion": 29,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
       "description": "",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "DVF-15 - PingOne Registration with Email Verification",
-      "publishedVersion": 27,
+      "publishedVersion": 29,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
@@ -30,12 +30,14 @@
           "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css",
           "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.7/icons.css"
         ],
-        "useBetaAlgorithm": true
+        "useBetaAlgorithm": true,
+        "customTitle": "PingOne Registration with Email Verification",
+        "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
       },
       "timeouts": "null",
-      "updatedDate": 1695648704541,
+      "updatedDate": 1695663043003,
       "flowId": "8eb0ab486617b5e25c35d20834761ec1",
-      "versionId": 27,
+      "versionId": 29,
       "graphData": {
         "elements": {
           "nodes": [
@@ -61,7 +63,7 @@
                     "value": -1
                   },
                   "populationId": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"69e9d148-1134-4050-af7e-c30bef3ca2b5\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeTitle": {
                     "value": "Register Account"
@@ -1563,7 +1565,7 @@
         }
       },
       "flowColor": "#CACED3",
-      "savedDate": 1695648464935,
+      "savedDate": 1695663040777,
       "variables": [
         {
           "context": "flowInstance",
@@ -1626,8 +1628,8 @@
         "nodeConnector",
         "pingOneSSOConnector"
       ],
-      "createdDate": 1695648815413,
-      "currentVersion": 11,
+      "createdDate": 1695662995602,
+      "currentVersion": 12,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
       "description": "Imported on Mon Sep 25 2023 12:54:05 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
@@ -1644,7 +1646,9 @@
             }
           },
           "additionalProperties": false,
-          "required": []
+          "required": [
+            "populationId"
+          ]
         }
       },
       "isInputSchemaSaved": true,
@@ -1669,9 +1673,9 @@
         "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
       },
       "timeouts": "null",
-      "updatedDate": 1695648817158,
+      "updatedDate": 1695662995652,
       "flowId": "6aaecf1cf307ba6f2f40cdda311b5e22",
-      "versionId": 11,
+      "versionId": 12,
       "graphData": {
         "elements": {
           "nodes": [
@@ -3982,11 +3986,12 @@
           "description": "",
           "preferredDataType": "string",
           "preferredControlType": "textField",
-          "isExpanded": true
+          "isExpanded": true,
+          "required": true
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1695648814679,
+      "savedDate": 1695662994938,
       "variables": [
         {
           "context": "flowInstance",
