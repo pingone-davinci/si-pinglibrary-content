@@ -12,14 +12,14 @@
         "variablesConnector",
         "annotationConnector"
       ],
-      "createdDate": 1695663041213,
-      "currentVersion": 29,
+      "createdDate": 1695736301850,
+      "currentVersion": 1,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
-      "description": "",
+      "description": "Imported on Tue Sep 26 2023 13:51:41 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "DVF-15 - PingOne Registration with Email Verification",
-      "publishedVersion": 29,
+      "publishedVersion": 1,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
@@ -35,9 +35,9 @@
         "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
       },
       "timeouts": "null",
-      "updatedDate": 1695663043003,
-      "flowId": "8eb0ab486617b5e25c35d20834761ec1",
-      "versionId": 29,
+      "updatedDate": 1695736302392,
+      "flowId": "cd850bb56534e6a36a134189d739374d",
+      "versionId": 1,
       "graphData": {
         "elements": {
           "nodes": [
@@ -56,7 +56,7 @@
                   "subFlowId": {
                     "value": {
                       "label": "PingOne Registration with Email Verification Subflow",
-                      "value": "6aaecf1cf307ba6f2f40cdda311b5e22"
+                      "value": "f5de01eaee00a718a0cb6f68cb806b7a"
                     }
                   },
                   "subFlowVersionId": {
@@ -1565,24 +1565,8 @@
         }
       },
       "flowColor": "#CACED3",
-      "savedDate": 1695663040777,
+      "savedDate": 1695736301378,
       "variables": [
-        {
-          "context": "flowInstance",
-          "createdDate": 1695227245780,
-          "customerId": "f3e47d945ae971a4b4142ec75012d155",
-          "fields": {
-            "type": "string",
-            "displayName": "",
-            "mutable": true,
-            "min": 0,
-            "max": 2000
-          },
-          "type": "property",
-          "visibility": "private",
-          "name": "companyLogo##SK##flowInstance",
-          "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
-        },
         {
           "context": "flowInstance",
           "createdDate": 1693480897657,
@@ -1612,10 +1596,26 @@
           "visibility": "private",
           "name": "populationId##SK##flowInstance",
           "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
+        },
+        {
+          "context": "flowInstance",
+          "createdDate": 1695227245780,
+          "customerId": "f3e47d945ae971a4b4142ec75012d155",
+          "fields": {
+            "type": "string",
+            "displayName": "",
+            "mutable": true,
+            "min": 0,
+            "max": 2000
+          },
+          "type": "property",
+          "visibility": "private",
+          "name": "companyLogo##SK##flowInstance",
+          "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
         }
       ],
       "connections": [],
-      "parentFlowId": "8eb0ab486617b5e25c35d20834761ec1"
+      "parentFlowId": "cd850bb56534e6a36a134189d739374d"
     },
     {
       "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
@@ -1628,10 +1628,10 @@
         "nodeConnector",
         "pingOneSSOConnector"
       ],
-      "createdDate": 1695662995602,
-      "currentVersion": 12,
+      "createdDate": 1695736346946,
+      "currentVersion": 2,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
-      "description": "Imported on Mon Sep 25 2023 12:54:05 GMT+0000 (Coordinated Universal Time)",
+      "description": "Imported on Tue Sep 26 2023 13:51:39 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -1654,7 +1654,7 @@
       "isInputSchemaSaved": true,
       "isOutputSchemaSaved": false,
       "name": "PingOne Registration with Email Verification Subflow",
-      "publishedVersion": 11,
+      "publishedVersion": 2,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": ".sk-loading-container {\n  --primary-color: #526BDB;\n  height:100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  top: 0;\n  left: 0;\n  background: #fff;\n  right: 0;\n  z-index: 10000;\n}\n\n@-webkit-keyframes scale {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; }\n  45% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 0.7; }\n  80% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; } }\n@keyframes scale {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; }\n  45% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 0.7; }\n  80% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; } }\n\n.sk-ballpulse > div:nth-child(1) {\n  -webkit-animation: scale 0.75s -0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s -0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.sk-ballpulse > div:nth-child(2) {\n  -webkit-animation: scale 0.75s -0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s -0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.sk-ballpulse > div:nth-child(3) {\n  -webkit-animation: scale 0.75s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.sk-ballpulse > div {\n  background-color: var(--primary-color);\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n}",
@@ -1673,9 +1673,9 @@
         "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
       },
       "timeouts": "null",
-      "updatedDate": 1695662995652,
-      "flowId": "6aaecf1cf307ba6f2f40cdda311b5e22",
-      "versionId": 12,
+      "updatedDate": 1695736349243,
+      "flowId": "f5de01eaee00a718a0cb6f68cb806b7a",
+      "versionId": 2,
       "graphData": {
         "elements": {
           "nodes": [
@@ -3064,7 +3064,7 @@
                     "value": "const setFieldFocus = (id) => {\r\n    const element = document.getElementById(id);\r\n    if (element) {\r\n        element.focus();\r\n    }\r\n}\r\n\r\nconst start = () => {\r\n    setFieldFocus(\"verifyCode\")\r\n}\r\n\r\nif (document.readyState === \"loading\") {\r\n    // Loading hasn't finished yet\r\n    document.addEventListener(\"DOMContentLoaded\", start);\r\n} else {\r\n    // `DOMContentLoaded` has already fired\r\n    start();\r\n}"
                   },
                   "customCSS": {
-                    "value": "#verifyCode {\n    text-align: center;\n    font-size: xx-large;\n    letter-spacing: 6px;\n}"
+                    "value": "#verifyCode {\n    text-align: center;\n    font-size: xx-large;\n    letter-spacing: 6px;\n}\n\nlabel.form-label {\n    padding: 22px 10px;\n}"
                   },
                   "nodeDescription": {
                     "value": "Displays a form for the user to enter the verification code"
@@ -3991,7 +3991,7 @@
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1695662994938,
+      "savedDate": 1695736346285,
       "variables": [
         {
           "context": "flowInstance",
