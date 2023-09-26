@@ -11,14 +11,14 @@
         "httpConnector",
         "variablesConnector"
       ],
-      "createdDate": 1695662601924,
-      "currentVersion": 31,
+      "createdDate": 1695735952718,
+      "currentVersion": 1,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
-      "description": "Imported on Mon Sep 18 2023 13:40:43 GMT+0000 (Coordinated Universal Time)",
+      "description": "Imported on Tue Sep 26 2023 13:45:52 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "Delete PingOne User",
-      "publishedVersion": 31,
+      "publishedVersion": 1,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": {},
@@ -33,9 +33,9 @@
         "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
       },
       "timeouts": "null",
-      "updatedDate": 1695662604935,
-      "flowId": "a773ae84c16c2e10bfb732c132a14b94",
-      "versionId": 31,
+      "updatedDate": 1695735952928,
+      "flowId": "406f28e60a54c7ff1f5c2a8a43ceb0f2",
+      "versionId": 1,
       "graphData": {
         "elements": {
           "nodes": [
@@ -301,8 +301,8 @@
                 "properties": {
                   "subFlowId": {
                     "value": {
-                      "label": "PingOne Delete User Subflow - Ping Library Mon, Sep 18, 2023, 10:40 AM",
-                      "value": "c0bd052dbd05ae86449d7cafb53d7158"
+                      "label": "PingOne Delete User Subflow",
+                      "value": "33584ef8cd555ac09ba303ec9c4bee4a"
                     }
                   },
                   "subFlowVersionId": {
@@ -1058,7 +1058,7 @@
         }
       },
       "flowColor": "#ff661c",
-      "savedDate": 1695662601543,
+      "savedDate": 1695735952541,
       "variables": [
         {
           "context": "flowInstance",
@@ -1077,7 +1077,7 @@
         }
       ],
       "connections": [],
-      "parentFlowId": "a773ae84c16c2e10bfb732c132a14b94"
+      "parentFlowId": "406f28e60a54c7ff1f5c2a8a43ceb0f2"
     },
     {
       "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
@@ -1089,10 +1089,10 @@
         "annotationConnector",
         "httpConnector"
       ],
-      "createdDate": 1695122122077,
-      "currentVersion": 27,
+      "createdDate": 1695735988909,
+      "currentVersion": 2,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
-      "description": "Imported on Mon Sep 18 2023 13:40:42 GMT+0000 (Coordinated Universal Time)",
+      "description": "Imported on Tue Sep 26 2023 13:45:51 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -1123,11 +1123,11 @@
       "isInputSchemaSaved": true,
       "isOutputSchemaSaved": false,
       "name": "PingOne Delete User Subflow",
-      "publishedVersion": 22,
+      "publishedVersion": 2,
       "timeouts": "null",
-      "updatedDate": 1695122122084,
-      "flowId": "c0bd052dbd05ae86449d7cafb53d7158",
-      "versionId": 27,
+      "updatedDate": 1695735991186,
+      "flowId": "33584ef8cd555ac09ba303ec9c4bee4a",
+      "versionId": 2,
       "graphData": {
         "elements": {
           "nodes": [
@@ -1826,7 +1826,7 @@
                     "value": "One-time Passcode entry"
                   },
                   "customCSS": {
-                    "value": "#verifyCode {\n    text-align: center;\n    font-size: xx-large;\n    letter-spacing: 6px;\n}"
+                    "value": "#verifyCode {\n    text-align: center;\n    font-size: xx-large;\n    letter-spacing: 6px;\n}\n\nlabel.form-label {\n    padding: 22px 10px;\n}"
                   },
                   "inputSchema": {
                     "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n        \"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n        \"iconClass\": {\n            \"type\": \"string\",\n            \"displayName\": \"Icon Class\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"iconClass\"\n        },\n        \"codeMaxLength\": {\n            \"type\": \"string\",\n            \"displayName\": \"Code Max Length\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"codeMaxLength\"\n        }\n    }\n}"
@@ -2186,7 +2186,7 @@
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1695122121891,
+      "savedDate": 1695735988643,
       "variables": [
         {
           "context": "flowInstance",
