@@ -1,0 +1,3070 @@
+{
+  "companyId": "b1bc29c4-a98f-4f11-b852-fe70b6383f65",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "annotationConnector",
+    "pingOneCredentialsConnector",
+    "nodeConnector",
+    "httpConnector",
+    "functionsConnector",
+    "devicePolicyConnector",
+    "variablesConnector",
+    "pingOneMfaConnector"
+  ],
+  "createdDate": 1695829629264,
+  "currentVersion": 96,
+  "customerId": "0241a35acf80e3bd89cb7c27b9ad83b6",
+  "deployedDate": 1695829649855,
+  "description": "",
+  "flowStatus": "enabled",
+  "inputSchemaCompiled": {
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "pingOneUserId": {
+          "description": "The PingOne userid of the person pairing the digital wallet.",
+          "preferredDataType": "string",
+          "isExpanded": true,
+          "type": "string",
+          "name": "pingOneUserId"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "pingOneUserId"
+      ]
+    }
+  },
+  "isInputSchemaSaved": true,
+  "isOutputSchemaSaved": false,
+  "name": "Pair a Digital Wallet Using Verified SMS Subflow",
+  "publishedVersion": 96,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": {},
+    "intermediateLoadingScreenHTML": {},
+    "useCustomCSS": false,
+    "cssLinks": [],
+    "logLevel": 3,
+    "useBetaAlgorithm": true,
+    "useCustomScript": false,
+    "jsLinks": [],
+    "flowHttpTimeoutInSeconds": 60,
+    "flowTimeoutInSeconds": 90,
+    "requireAuthenticationToInitiate": true
+  },
+  "timeouts": "null",
+  "updatedDate": 1695830102780,
+  "flowId": "8eb1b2b1a404f207bf41b796ad302069",
+  "versionId": 96,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "szsktlnctv",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4462edff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "Primary Flow:  Initiate a Digital Wallet Pairing Request"
+              },
+              "width": {
+                "value": 2000
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontSize": {
+                "value": 16
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 8
+              }
+            },
+            "status": "configured",
+            "idUnique": "7x04397o2h"
+          },
+          "position": {
+            "x": 219.57823129251702,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "oq056votuo",
+            "nodeType": "CONNECTION",
+            "connectionId": "ac5c99c61472d1d40e03928323798a7e",
+            "connectorId": "pingOneCredentialsConnector",
+            "name": "PingOne Credentials",
+            "label": "PingOne Credentials",
+            "status": "configured",
+            "capabilityName": "createUserDigitalWallet",
+            "type": "action",
+            "properties": {
+              "reqCredType": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "protocol": {
+                "value": "NATIVE"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Create SMS Wallet Pairing Request"
+              },
+              "issuerFilterEnvIds": {
+                "value": []
+              },
+              "requestedCredKeys": {
+                "value": []
+              },
+              "userId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"pingOneUserId\",\n        \"data\": \"{{global.parameters.pingOneUserId}}\",\n        \"tooltip\": \"{{global.parameters.pingOneUserId}}\",\n        \"children\": [\n          {\n            \"text\": \"pingOneUserId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "notificationMethods": {
+                "value": [
+                  "SMS"
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 591.9138321995464,
+            "y": 646.3356009070294
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "cmhdx19556",
+            "nodeType": "EVAL",
+            "properties": {
+              "u0fdp7khpm": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 708.1950113378684,
+            "y": 646.3356009070294
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "s085zoqaii",
+            "nodeType": "CONNECTION",
+            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Node",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "inputSchema": {
+                "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"errorCode\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Error Code\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"errorCode\"\n\t\t},\n\t\t\"errorMessage\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Error Message\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"errorMessage\"\n\t\t}\n\t}\n}"
+              },
+              "nodeTitle": {
+                "value": "Error"
+              }
+            }
+          },
+          "position": {
+            "x": 330.28117913832193,
+            "y": 1721.936507936508
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "vzyon8s8yf",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 446.562358276644,
+            "y": 1721.936507936508
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mkta0k316z",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "createErrorResponse",
+            "type": "action",
+            "properties": {
+              "nodeTitle": {
+                "value": "Error JSON"
+              },
+              "backgroundColor": {
+                "value": "#ffc8c1ff"
+              },
+              "claimsNameValuePairs": {
+                "value": [
+                  {
+                    "name": "errorCode",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"errorCode\",\n        \"data\": \"{{local.s085zoqaii.payload.output.errorCode}}\",\n        \"tooltip\": \"{{local.s085zoqaii.payload.output.errorCode}}\",\n        \"children\": [\n          {\n            \"text\": \"errorCode\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.7505189133115058,
+                    "label": "errorCode (number - flowInstance)",
+                    "type": "number",
+                    "nameDefault": "errorCode"
+                  },
+                  {
+                    "name": "errorMessage",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"errorMessage\",\n        \"data\": \"{{local.s085zoqaii.payload.output.errorMessage}}\",\n        \"tooltip\": \"{{local.s085zoqaii.payload.output.errorMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"errorMessage\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.9809707255767062,
+                    "label": "errorMessage (string - flowInstance)",
+                    "type": "string",
+                    "nameDefault": "errorMessage"
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 591.9138321995464,
+            "y": 1721.936507936508
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "qco93i4w28",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#5d00d6ff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "Error"
+              },
+              "width": {
+                "value": 500
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontSize": {
+                "value": 16
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 8
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 214,
+            "y": 1605.6553287981858
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "haeekza2nz",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "createSuccessResponse",
+            "type": "action",
+            "properties": {
+              "nodeTitle": {
+                "value": "Wallet Paired and Active"
+              },
+              "backgroundColor": {
+                "value": "#9dc967ff"
+              },
+              "claimsNameValuePairs": {
+                "value": [
+                  {
+                    "name": "digitalWalletPairingStatus",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"status\",\n        \"data\": \"{{local.rum6u9mwfg.payload.output.userDigitalWallet.status}}\",\n        \"tooltip\": \"{{local.rum6u9mwfg.payload.output.userDigitalWallet.status}}\",\n        \"children\": [\n          {\n            \"text\": \"status\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.7582178186565254,
+                    "type": "string",
+                    "label": "digitalWalletPairingStatus (string - flowInstance)",
+                    "nameDefault": "status"
+                  },
+                  {
+                    "name": "digitalWalletId",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.rum6u9mwfg.payload.output.userDigitalWallet.id}}\",\n        \"tooltip\": \"{{local.rum6u9mwfg.payload.output.userDigitalWallet.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.7013489434594,
+                    "label": "digitalWalletId (string - flowInstance)",
+                    "type": "string",
+                    "nameDefault": "id"
+                  },
+                  {
+                    "name": "digitalWalletDeviceData",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"moustache\",\n        \"data\": \"{{local.rum6u9mwfg.payload.output.rawResponse.deviceData}}\",\n        \"name\": \"deviceData\",\n        \"children\": [\n          {\n            \"text\": \"\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.608803653236067,
+                    "label": "digitalWalletDeviceData (object - flowInstance)",
+                    "type": "object",
+                    "nameDefault": "output"
+                  }
+                ]
+              }
+            },
+            "idUnique": "00surhcg33"
+          },
+          "position": {
+            "x": 1231.4603174603176,
+            "y": 1373.092970521542
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8dmi3vador",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "oby56nwbq1": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 1057.0385487528345,
+            "y": 1373.092970521542
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "el5j90z3vi",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "bfodov7v87": {
+                "value": "anyTriggersFalse"
+              },
+              "piokbh69xt": {
+                "value": "anyTriggersFalse"
+              },
+              "yf9d8dh8mn": {
+                "value": "anyTriggersFalse"
+              },
+              "rum6u9mwfg": {
+                "value": "allTriggersTrue"
+              }
+            }
+          },
+          "position": {
+            "x": 1580.3038548752834,
+            "y": 1024.249433106576
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "rum6u9mwfg",
+            "nodeType": "CONNECTION",
+            "connectionId": "ac5c99c61472d1d40e03928323798a7e",
+            "connectorId": "pingOneCredentialsConnector",
+            "name": "PingOne Credentials",
+            "label": "PingOne Credentials",
+            "status": "configured",
+            "capabilityName": "readUserDigitalWallet",
+            "type": "action",
+            "properties": {
+              "userId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"pingOneUserId\",\n        \"data\": \"{{global.parameters.pingOneUserId}}\",\n        \"tooltip\": \"{{global.parameters.pingOneUserId}}\",\n        \"children\": [\n          {\n            \"text\": \"pingOneUserId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "digitalWalletId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"digitalWalletId\",\n        \"data\": \"{{local.gctw05mfs7.payload.output.digitalWalletId}}\",\n        \"tooltip\": \"{{local.gctw05mfs7.payload.output.digitalWalletId}}\",\n        \"children\": [\n          {\n            \"text\": \"digitalWalletId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Get the Pairing Status"
+              }
+            }
+          },
+          "position": {
+            "x": 620.9841269841269,
+            "y": 1373.092970521542
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "k4f15wae03",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "7fi4o2lolk": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 766.3356009070294,
+            "y": 1373.092970521542
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "rludrr21ch",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Functions",
+            "status": "configured",
+            "capabilityName": "AEqualsB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"status\",\n        \"data\": \"{{local.rum6u9mwfg.payload.output.userDigitalWallet.status}}\",\n        \"tooltip\": \"{{local.rum6u9mwfg.payload.output.userDigitalWallet.status}}\",\n        \"children\": [\n          {\n            \"text\": \"status\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueB": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"ACTIVE\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Is Wallet ACTIVE?"
+              }
+            }
+          },
+          "position": {
+            "x": 940.7573696145124,
+            "y": 1373.092970521542
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "oby56nwbq1",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "continuePolling",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Poll for Session change"
+              },
+              "connectionInstanceId": {}
+            }
+          },
+          "position": {
+            "x": 1231.4603174603176,
+            "y": 1489.3741496598639
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7fi4o2lolk",
+            "nodeType": "CONNECTION",
+            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "s085zoqaii"
+              },
+              "errorCode": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"500\"\n      }\n    ]\n  }\n]"
+              },
+              "errorMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"PingOne Credentials Connector is unable to read the wallet pairing status.\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Error"
+              }
+            },
+            "idUnique": "vt9vrlcxkv"
+          },
+          "position": {
+            "x": 940.7573696145124,
+            "y": 1489.3741496598639
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9k7tel3k9x",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "title": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Digital Wallet Pairing Request\"\n      }\n    ]\n  }\n]"
+              },
+              "subtitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Scan this QR Code with your mobile phone or digital wallet and follow the instructions.\"\n      }\n    ]\n  }\n]"
+              },
+              "pollingMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Status: Waiting for \"\n      },\n      {\n        \"text\": \"Digital Wallet\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Display Digital Wallet Pairing QR"
+              },
+              "nodeDescription": {},
+              "showFooter": {
+                "value": false
+              },
+              "enablePolling": {
+                "value": true
+              },
+              "pollChallengeStatus": {
+                "value": false
+              },
+              "customHTML": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div\\n   class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n   <div style=\\\"max-width: 400px; min-width: 400px; width: 100%\\\">\\n      <div class=\\\"card shadow mb-5\\\">\\n         <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n            <img class=\\\"companyLogo align-self-center mb-5\\\" alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" />\\n            <h1 class=\\\"text-center mb-4\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"title\",\n        \"data\": \"{{title}}\",\n        \"tooltip\": \"{{title}}\",\n        \"children\": [\n          {\n            \"text\": \"{{title}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</h1>\\n                   \\n            <p class=\\\"text-muted text-center\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"subtitle\",\n        \"data\": \"{{subtitle}}\",\n        \"tooltip\": \"{{subtitle}}\",\n        \"children\": [\n          {\n            \"text\": \"{{subtitle}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</p>\\n               <img src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"generatedQr\",\n        \"data\": \"{{generatedQr}}\",\n        \"tooltip\": \"{{generatedQr}}\",\n        \"children\": [\n          {\n            \"text\": \"{{generatedQr}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"  class=\\\"w-50 mx-auto mt-4 mb-4 p-1 border border-info border-3 rounded card-img-top\\\" alt=\\\"Presentation Session QR Code\\\" /> \\n               <br/>         \\n               <div class=\\\"card-footer mt-3\\\">\\n                  <div class=\\\"row text-center py-2\\\">\\n                     <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"pollingMessage\",\n        \"data\": \"{{pollingMessage}}\",\n        \"tooltip\": \"{{pollingMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"{{pollingMessage}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n                     <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iNzUwIiBwb2xsUmV0cmllcz0iNTAwIiBwb2xsQ2hhbGxlbmdlU3RhdHVzPSJmYWxzZSI=###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6Ijc1MCIsInBvbGxSZXRyaWVzIjoiNTAwIiwicG9sbENoYWxsZW5nZVN0YXR1cyI6ImZhbHNlIn0sImNvbXBvbmVudFByb3BzIjp7ImNsYXNzIjp7Im5hbWUiOiJjbGFzcyIsImRpc3BsYXlOYW1lIjoiQ1NTIENsYXNzIn0sInBvbGxJbnRlcnZhbCI6eyJuYW1lIjoicG9sbEludGVydmFsIiwiZGlzcGxheU5hbWUiOiJQb2xsIEludGVydmFsIiwidmFsdWUiOjIwMDB9LCJwb2xsUmV0cmllcyI6eyJuYW1lIjoicG9sbFJldHJpZXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgUmV0cmllcyIsInZhbHVlIjo2MH0sInBvbGxDaGFsbGVuZ2VTdGF0dXMiOnsibmFtZSI6InBvbGxDaGFsbGVuZ2VTdGF0dXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgQ2hhbGxlbmdlIFN0YXR1cyIsInR5cGUiOiJzZWxlY3QiLCJ2YWx1ZSI6InRydWUiLCJvcHRpb25zIjpbeyJuYW1lIjoiVHJ1ZSIsInZhbHVlIjoidHJ1ZSJ9LHsibmFtZSI6IkZhbHNlIiwidmFsdWUiOiJmYWxzZSJ9XX19fQ==]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skpolling\",\n        \"children\": [\n          {\n            \"text\": \"skpolling\"\n          }\n        ],\n        \"component\": \"skpolling\",\n        \"options\": {\n          \"class\": \"\",\n          \"pollInterval\": \"750\",\n          \"pollRetries\": \"500\",\n          \"pollChallengeStatus\": \"false\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"CSS Class\"\n          },\n          \"pollInterval\": {\n            \"name\": \"pollInterval\",\n            \"displayName\": \"Poll Interval\",\n            \"value\": 2000\n          },\n          \"pollRetries\": {\n            \"name\": \"pollRetries\",\n            \"displayName\": \"Poll Retries\",\n            \"value\": 60\n          },\n          \"pollChallengeStatus\": {\n            \"name\": \"pollChallengeStatus\",\n            \"displayName\": \"Poll Challenge Status\",\n            \"type\": \"select\",\n            \"value\": \"true\",\n            \"options\": [\n              {\n                \"name\": \"True\",\n                \"value\": \"true\"\n              },\n              {\n                \"name\": \"False\",\n                \"value\": \"false\"\n              }\n            ]\n          }\n        },\n        \"tooltip\": \"{{component.skpolling}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n                  </div>\\n               </div>\\n         </div>\\n      </div>\\n   </div>\\n</div>\\n\"\n      }\n    ]\n  }\n]"
+              },
+              "customScript": {
+                "value": ""
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "sktemplate": {
+                "uiId": "e6e1bb56db7fa43d0bb18721a55fc694",
+                "createdDate": 1687889267333,
+                "customerId": "f3e47d945ae971a4b4142ec75012d155",
+                "description": "",
+                "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        },       \n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        },\n        \"generatedQr\": {\n            \"type\": \"string\",\n            \"displayName\": \"Generated QR Code Image\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"generatedQr\"\n        }\n    }\n}",
+                "name": "VerifyPolling",
+                "outputSchema": {},
+                "script": "",
+                "style": "",
+                "template": "",
+                "updatedDate": 1687889792920,
+                "validationRules": [],
+                "version": "1.0",
+                "visibility": "private",
+                "companyId": "edcc3f46-49cc-4176-bfcb-849afb268c1b",
+                "value": "e6e1bb56db7fa43d0bb18721a55fc694"
+              },
+              "inputSchema": {
+                "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        },       \n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        },\n        \"generatedQr\": {\n            \"type\": \"string\",\n            \"displayName\": \"Generated QR Code Image\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"generatedQr\"\n        }\n    }\n}"
+              },
+              "outputSchema": {
+                "value": {}
+              },
+              "customCSS": {
+                "value": ""
+              },
+              "validationRules": {
+                "value": []
+              },
+              "appOpenUrl.href": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"href\",\n        \"data\": \"{{local.oq056votuo.payload.output.userDigitalWallet._links.appOpen.href}}\",\n        \"tooltip\": \"{{local.oq056votuo.payload.output.userDigitalWallet._links.appOpen.href}}\",\n        \"children\": [\n          {\n            \"text\": \"href\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "generatedQr": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"href\",\n        \"data\": \"{{local.ip0q4uxyh1.payload.output.userDigitalWallet._links.qrUrl.href}}\",\n        \"tooltip\": \"{{local.ip0q4uxyh1.payload.output.userDigitalWallet._links.qrUrl.href}}\",\n        \"children\": [\n          {\n            \"text\": \"href\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "idUnique": "wzqyn7daj7"
+          },
+          "position": {
+            "x": 1464.0226757369614,
+            "y": 1024.249433106576
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "h64lp2p14l",
+            "nodeType": "CONNECTION",
+            "connectionId": "362b514ffa76967be25341e86da461c2",
+            "connectorId": "devicePolicyConnector",
+            "name": "Device Policy",
+            "label": "Device Policy",
+            "status": "configured",
+            "capabilityName": "getPlatform",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Get Device Platform"
+              }
+            }
+          },
+          "position": {
+            "x": 882.6167800453514,
+            "y": 1024.249433106576
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "dazaskddxc",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Function",
+            "status": "configured",
+            "capabilityName": "ANotEqualsB",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Is user on laptop?"
+              },
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"devicePolicy.svg\",\n        \"url\": \"platform\",\n        \"data\": \"{{local.h64lp2p14l.payload.output.platform}}\",\n        \"tooltip\": \"{{local.h64lp2p14l.payload.output.platform}}\",\n        \"children\": [\n          {\n            \"text\": \"platform\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueB": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"mobile\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "idUnique": "kdmwyo5phq"
+          },
+          "position": {
+            "x": 1173.3197278911564,
+            "y": 1024.249433106576
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "y0r7zvhbz0",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 998.8979591836734,
+            "y": 1024.249433106576
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "03ihore7b2",
+            "nodeType": "EVAL",
+            "properties": {
+              "56stwn4mgp": {
+                "value": "anyTriggersFalse"
+              },
+              "0ehyoni4tq": {
+                "value": "anyTriggersFalse"
+              },
+              "jp3evw1w2e": {
+                "value": "anyTriggersFalse"
+              },
+              "of39ybb4xg": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 1289.6009070294785,
+            "y": 1024.249433106576
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "56stwn4mgp",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Function",
+            "status": "configured",
+            "capabilityName": "customFunction",
+            "type": "trigger",
+            "properties": {
+              "variableInputList": {
+                "value": [
+                  {
+                    "name": "pairingNotificationResults",
+                    "preferredDataType": "object",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"digitalWalletPairingDeviceInfo\",\n        \"data\": \"{{global.variables.digitalWalletPairingDeviceInfo}}\",\n        \"tooltip\": \"{{global.variables.digitalWalletPairingDeviceInfo}}\",\n        \"children\": [\n          {\n            \"text\": \"digitalWalletPairingDeviceInfo\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                ]
+              },
+              "code": {
+                "value": "// Write your code here\n// Supported language: Javascript \nmodule.exports = a = async ({params}) => {\n\n\tpairingNotificationResults = params.pairingNotificationResults\n                                        \n\t// Determine if a pairing notification was sent via \"sms\"\n\tconst smsNotification = pairingNotificationResults.find((result) => result.method === \"SMS\");\n\n\tif ( smsNotification?.sent === true ) {\n\t\treturn {'notificationSent': true}\n\t}\n\n    // Didn't find successfully sent wallet pairing notification\n    return false\n\t\n}"
+              },
+              "outputSchema": {
+                "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"notificationSent\": {\n\t\t\t\t\"type\": \"boolean\"\n\t\t\t}\n\t\t}\n\t}\n}"
+              },
+              "nodeTitle": {
+                "value": "SMS pairing notification sent OK?"
+              }
+            }
+          },
+          "position": {
+            "x": 1173.3197278911564,
+            "y": 646.3356009070294
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "s0nl1yv4ws",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "1dl7nmumjc": {
+                "value": "anyTriggersFalse"
+              },
+              "h64lp2p14l": {
+                "value": "anyTriggersFalse"
+              },
+              "ikkrw2zztf": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 1289.6009070294785,
+            "y": 646.3356009070294
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0ehyoni4tq",
+            "nodeType": "CONNECTION",
+            "connectionId": "06922a684039827499bdbdd97f49827b",
+            "connectorId": "variablesConnector",
+            "name": "Variables",
+            "label": "Variables",
+            "status": "configured",
+            "capabilityName": "saveValue",
+            "type": "trigger",
+            "properties": {
+              "saveVariables": {
+                "value": [
+                  {
+                    "name": "digitalWalletPairingDeviceInfo",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"moustache\",\n        \"data\": \"{{local.oq056votuo.payload.output.userDigitalWallet.notification.results}}\",\n        \"name\": \"results\",\n        \"children\": [\n          {\n            \"text\": \"\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.8179684498274484,
+                    "label": "digitalWalletPairingDeviceInfo (object - flowInstance)",
+                    "type": "object"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Get Pairing Notification Info"
+              }
+            }
+          },
+          "position": {
+            "x": 882.6167800453514,
+            "y": 646.3356009070294
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "kb2j1hbqtx",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 998.8979591836734,
+            "y": 646.3356009070294
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "f90pyxmgu7",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "title": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Digital Wallet Pairing Request\"\n      }\n    ]\n  }\n]"
+              },
+              "subtitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Follow the steps on your mobile device to complete the setup of your digital wallet.\"\n      }\n    ]\n  }\n]"
+              },
+              "pollingMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Status: Waiting for \"\n      },\n      {\n        \"text\": \"Digital Wallet\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Pairing Status Page"
+              },
+              "nodeDescription": {},
+              "showFooter": {
+                "value": false
+              },
+              "enablePolling": {
+                "value": true
+              },
+              "pollChallengeStatus": {
+                "value": false
+              },
+              "customHTML": {
+                "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n        <h1 id=\"header\" class=\"text-center mb-4\">{{title}}</h1>\n\n        <p class=\"text-muted text-center\">{{subtitle}}</p>\n        <br/>\n        <p class=\"text-muted text-center \">        \n          <button type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\" data-skform=\"emailForm\" data-skbuttonvalue=\"DISPLAYQR\" id=\"btnCancel\">\n            Didn't receive the link?  Click here to pair your wallet using a QR Code.\n          </button>    \n        </p>\n        <div class=\"card-footer mt-3\">\n          <div class=\"row text-center py-2\">\n              <span>{{pollingMessage}}</span>\n              <span>[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iMjAwMCIgcG9sbFJldHJpZXM9IjkwIiBwb2xsQ2hhbGxlbmdlU3RhdHVzPSJmYWxzZSI=###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6IjIwMDAiLCJwb2xsUmV0cmllcyI6IjkwIiwicG9sbENoYWxsZW5nZVN0YXR1cyI6ImZhbHNlIn0sImNvbXBvbmVudFByb3BzIjp7ImNsYXNzIjp7Im5hbWUiOiJjbGFzcyIsImRpc3BsYXlOYW1lIjoiQ1NTIENsYXNzIn0sInBvbGxJbnRlcnZhbCI6eyJuYW1lIjoicG9sbEludGVydmFsIiwiZGlzcGxheU5hbWUiOiJQb2xsIEludGVydmFsIiwidmFsdWUiOjIwMDB9LCJwb2xsUmV0cmllcyI6eyJuYW1lIjoicG9sbFJldHJpZXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgUmV0cmllcyIsInZhbHVlIjo2MH0sInBvbGxDaGFsbGVuZ2VTdGF0dXMiOnsibmFtZSI6InBvbGxDaGFsbGVuZ2VTdGF0dXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgQ2hhbGxlbmdlIFN0YXR1cyIsInR5cGUiOiJzZWxlY3QiLCJ2YWx1ZSI6InRydWUiLCJvcHRpb25zIjpbeyJuYW1lIjoiVHJ1ZSIsInZhbHVlIjoidHJ1ZSJ9LHsibmFtZSI6IkZhbHNlIiwidmFsdWUiOiJmYWxzZSJ9XX19fQ==]]]</span>\n          </div>\n        </div>        \n      </div>\n    </div>\n  </div>\n</div>\n"
+              },
+              "customScript": {
+                "value": ""
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "sktemplate": {
+                "uiId": "e6e1bb56db7fa43d0bb18721a55fc694",
+                "createdDate": 1687889267333,
+                "customerId": "f3e47d945ae971a4b4142ec75012d155",
+                "description": "",
+                "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        },       \n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        }\n    }\n}",
+                "name": "VerifyPolling",
+                "outputSchema": {},
+                "script": "",
+                "style": "",
+                "template": "",
+                "updatedDate": 1687889792920,
+                "validationRules": [],
+                "version": "1.0",
+                "visibility": "private",
+                "companyId": "edcc3f46-49cc-4176-bfcb-849afb268c1b",
+                "value": "e6e1bb56db7fa43d0bb18721a55fc694"
+              },
+              "inputSchema": {
+                "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        },       \n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        }\n    }\n}"
+              },
+              "outputSchema": {
+                "value": {}
+              },
+              "customCSS": {
+                "value": ""
+              },
+              "validationRules": {
+                "value": []
+              },
+              "appOpenUrl.href": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"href\",\n        \"data\": \"{{local.oq056votuo.payload.output.userDigitalWallet._links.appOpen.href}}\",\n        \"tooltip\": \"{{local.oq056votuo.payload.output.userDigitalWallet._links.appOpen.href}}\",\n        \"children\": [\n          {\n            \"text\": \"href\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "generatedQr": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"generatedQr\",\n        \"data\": \"{{local.a7jwrbxreg.payload.output.generatedQr}}\",\n        \"tooltip\": \"{{local.a7jwrbxreg.payload.output.generatedQr}}\",\n        \"children\": [\n          {\n            \"text\": \"generatedQr\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "idUnique": "ndm5lpiwnr"
+          },
+          "position": {
+            "x": 1464.0226757369614,
+            "y": 646.3356009070294
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "i0tywsk9kb",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#e7e7e7ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 2
+              },
+              "strokeColor": {
+                "value": "#000000ff"
+              },
+              "fontSize": {
+                "value": 10
+              },
+              "fontStyle": {
+                "value": "normal"
+              },
+              "fontFamily": {
+                "value": "Verdana"
+              },
+              "annotation": {
+                "value": "User cannot scan QR if on mobile device."
+              },
+              "width": {
+                "value": 200
+              },
+              "height": {
+                "value": 0
+              }
+            },
+            "status": "configured",
+            "idUnique": "15e28h9lo9"
+          },
+          "position": {
+            "x": 1170,
+            "y": 1140
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "gctw05mfs7",
+            "nodeType": "CONNECTION",
+            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "PairingStatus"
+              },
+              "inputSchema": {
+                "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"digitalWalletId\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Digital Wallet UUID\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"digitalWalletId\"\n\t\t}\n\t}\n}"
+              }
+            }
+          },
+          "position": {
+            "x": 330.28117913832193,
+            "y": 1373.092970521542
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9dh949braj",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 446.562358276644,
+            "y": 1373.092970521542
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0sbdzr5gn4",
+            "nodeType": "CONNECTION",
+            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "gctw05mfs7"
+              },
+              "digitalWalletId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.ip0q4uxyh1.payload.output.userDigitalWallet.id}}\",\n        \"tooltip\": \"{{local.ip0q4uxyh1.payload.output.userDigitalWallet.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Teleport to Polling"
+              }
+            }
+          },
+          "position": {
+            "x": 1754.7256235827665,
+            "y": 1024.249433106576
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ty0rtetx2h",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "3lqqi1vc9g": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 1580.3038548752834,
+            "y": 646.3356009070294
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "benofr5hfx",
+            "nodeType": "CONNECTION",
+            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "gctw05mfs7"
+              },
+              "digitalWalletId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.oq056votuo.payload.output.userDigitalWallet.id}}\",\n        \"tooltip\": \"{{local.oq056votuo.payload.output.userDigitalWallet.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Teleport to Polling"
+              }
+            }
+          },
+          "position": {
+            "x": 2103.5691609977325,
+            "y": 791.6870748299319
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "otdtpdouts",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#5d00d6ff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "Process Pairing Status"
+              },
+              "width": {
+                "value": 1200
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontSize": {
+                "value": 16
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 8
+              }
+            },
+            "status": "configured",
+            "idUnique": "slcps15bil"
+          },
+          "position": {
+            "x": 214,
+            "y": 1256.8117913832198
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "j9wnz23me4",
+            "nodeType": "CONNECTION",
+            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "QRPath"
+              }
+            }
+          },
+          "position": {
+            "x": 330.28117913832193,
+            "y": 1024.249433106576
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "yk0fvhoy1f",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 417.4920634920635,
+            "y": 1024.249433106576
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ikkrw2zztf",
+            "nodeType": "CONNECTION",
+            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "j9wnz23me4"
+              },
+              "nodeTitle": {
+                "value": "Teleport to QRPath"
+              }
+            }
+          },
+          "position": {
+            "x": 1464.0226757369614,
+            "y": 733.546485260771
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "poiuwu8jo8",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Functions",
+            "status": "configured",
+            "capabilityName": "AEqualsMultipleB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.f90pyxmgu7.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.f90pyxmgu7.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueMultiple": {
+                "value": [
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"DISPLAYQR\"\n      }\n    ]\n  }\n]",
+                    "id": "uvtriwi3s5"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Continue Poll or Display QR?"
+              }
+            }
+          },
+          "position": {
+            "x": 1783.795918367347,
+            "y": 646.3356009070294
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "o340j35m5n",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 1900.077097505669,
+            "y": 791.6870748299319
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ixhyg8c7n",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 1900.077097505669,
+            "y": 675.4058956916099
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "a3hmsqkltp",
+            "nodeType": "CONNECTION",
+            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "j9wnz23me4"
+              },
+              "nodeTitle": {
+                "value": "Teleport to QRPath"
+              }
+            }
+          },
+          "position": {
+            "x": 2103.5691609977325,
+            "y": 675.4058956916099
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "34918vdn5o",
+            "nodeType": "CONNECTION",
+            "connectionId": "b72bd44e6be8180bd5988ac74cd9c949",
+            "connectorId": "pingOneMfaConnector",
+            "name": "PingOne MFA",
+            "label": "PingOne MFA",
+            "status": "configured",
+            "capabilityName": "readAllDevices",
+            "type": "action",
+            "properties": {
+              "setFilterFlag": {
+                "value": true
+              },
+              "deviceTypes": {
+                "value": [
+                  "SMS"
+                ]
+              },
+              "userId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"pingOneUserId\",\n        \"data\": \"{{global.parameters.pingOneUserId}}\",\n        \"tooltip\": \"{{global.parameters.pingOneUserId}}\",\n        \"children\": [\n          {\n            \"text\": \"pingOneUserId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "statusFilter": {
+                "value": "ACTIVE"
+              },
+              "nodeTitle": {
+                "value": "Get User Active SMS Devices"
+              }
+            }
+          },
+          "position": {
+            "x": 330.28117913832193,
+            "y": 355.63265306122446
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "si24lheods",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 475.63265306122446,
+            "y": 355.63265306122446
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0ftnhxnhhh",
+            "nodeType": "EVAL",
+            "properties": {
+              "ip0q4uxyh1": {
+                "value": "anyTriggersFalse"
+              },
+              "58pzinr7f4": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 795.4058956916099,
+            "y": 355.63265306122446
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "fr0nvcy73u",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Functions",
+            "status": "configured",
+            "capabilityName": "AEqualsB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"{{local.34918vdn5o.payload.output.devices[0].status}}\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueB": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"ACTIVE\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "User have verified mobile number?"
+              }
+            }
+          },
+          "position": {
+            "x": 650.0544217687075,
+            "y": 355.63265306122446
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ip0q4uxyh1",
+            "nodeType": "CONNECTION",
+            "connectionId": "ac5c99c61472d1d40e03928323798a7e",
+            "connectorId": "pingOneCredentialsConnector",
+            "name": "PingOne Credentials",
+            "label": "PingOne Credentials",
+            "status": "configured",
+            "capabilityName": "createUserDigitalWallet",
+            "type": "action",
+            "properties": {
+              "notificationMethods": {
+                "value": []
+              },
+              "userId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"pingOneUserId\",\n        \"data\": \"{{global.parameters.pingOneUserId}}\",\n        \"tooltip\": \"{{global.parameters.pingOneUserId}}\",\n        \"children\": [\n          {\n            \"text\": \"pingOneUserId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Create QR Pairing Request"
+              }
+            }
+          },
+          "position": {
+            "x": 591.9138321995464,
+            "y": 1024.249433106576
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "utfj45kzv8",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 708.1950113378684,
+            "y": 1024.249433106576
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "58pzinr7f4",
+            "nodeType": "CONNECTION",
+            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "j9wnz23me4"
+              },
+              "nodeTitle": {
+                "value": "Teleport to QRPath"
+              }
+            }
+          },
+          "position": {
+            "x": 940.7573696145124,
+            "y": 442.84353741496597
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "35gku7f9gh",
+            "nodeType": "CONNECTION",
+            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "wbpo9vidad"
+              },
+              "nodeTitle": {
+                "value": "Teleport to SMSPath"
+              }
+            }
+          },
+          "position": {
+            "x": 940.7573696145124,
+            "y": 355.63265306122446
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "wbpo9vidad",
+            "nodeType": "CONNECTION",
+            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "SMSPath"
+              }
+            }
+          },
+          "position": {
+            "x": 330.28117913832193,
+            "y": 646.3356009070294
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "uee4whxt43",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 417.4920634920635,
+            "y": 646.3356009070294
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7zopk8w897",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#e7e7e7ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 2
+              },
+              "strokeColor": {
+                "value": "#000000ff"
+              },
+              "fontSize": {
+                "value": 10
+              },
+              "fontStyle": {
+                "value": "normal"
+              },
+              "fontFamily": {
+                "value": "Verdana"
+              },
+              "annotation": {
+                "value": "Check if user has a verified mobile device. If so, use channel for pairing request.  Otherwise, use QR code."
+              },
+              "width": {
+                "value": 750
+              },
+              "height": {
+                "value": 0
+              }
+            },
+            "status": "configured",
+            "idUnique": "e62dkamj4u"
+          },
+          "position": {
+            "x": 249.57823129251702,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "j3o8f90kjg",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#e7e7e7ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 2
+              },
+              "strokeColor": {
+                "value": "#000000ff"
+              },
+              "fontSize": {
+                "value": 10
+              },
+              "fontStyle": {
+                "value": "normal"
+              },
+              "fontFamily": {
+                "value": "Verdana"
+              },
+              "annotation": {
+                "value": "Failover to QR Code."
+              },
+              "width": {
+                "value": 100
+              },
+              "height": {
+                "value": 0
+              }
+            },
+            "status": "configured",
+            "idUnique": "qzqhnpyhd7"
+          },
+          "position": {
+            "x": 1260.530612244898,
+            "y": 733.546485260771
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ba14pfk1uo",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#5d00d6ff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "Pair Wallet using QR Code"
+              },
+              "width": {
+                "value": 1200
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontSize": {
+                "value": 16
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 8
+              }
+            },
+            "status": "configured",
+            "idUnique": "84406ir9wm"
+          },
+          "position": {
+            "x": 243.0702947845805,
+            "y": 907.968253968254
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "eawt0kt7u9",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#5d00d6ff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "Deliver Wallet Pairing Request via Trusted Mobile Channel"
+              },
+              "width": {
+                "value": 1200
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontSize": {
+                "value": 16
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 8
+              }
+            },
+            "status": "configured",
+            "idUnique": "z298mz9tmi"
+          },
+          "position": {
+            "x": 243.0702947845805,
+            "y": 530.0544217687075
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "sympgwf3yg",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#e7e7e7ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 2
+              },
+              "strokeColor": {
+                "value": "#000000ff"
+              },
+              "fontSize": {
+                "value": 10
+              },
+              "fontStyle": {
+                "value": "normal"
+              },
+              "fontFamily": {
+                "value": "Verdana"
+              },
+              "annotation": {
+                "value": "User selected fallback to QR."
+              },
+              "width": {
+                "value": 100
+              },
+              "height": {
+                "value": 0
+              }
+            },
+            "status": "configured",
+            "idUnique": "6irp3q3fh2"
+          },
+          "position": {
+            "x": 1929.1473922902494,
+            "y": 617.2653061224489
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "of39ybb4xg",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "title": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Pairing Unable to Proceed\"\n      }\n    ]\n  }\n]"
+              },
+              "subtitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"The request has been initiated from a mobile device and is unable to scan a QR code to proceed. Contact the application owner for assistance.\"\n      }\n    ]\n  }\n]"
+              },
+              "pollingMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "qrUrl": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"qrUrl\",\n        \"data\": \"{{local.6nxaefguf0.payload.output.transaction.qrUrl}}\",\n        \"tooltip\": \"{{local.6nxaefguf0.payload.output.transaction.qrUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"qrUrl\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "webVerificationUrl": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"webVerificationUrl\",\n        \"data\": \"{{local.6nxaefguf0.payload.output.transaction.webVerificationUrl}}\",\n        \"tooltip\": \"{{local.6nxaefguf0.payload.output.transaction.webVerificationUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"webVerificationUrl\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "webVerificationCode": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"webVerificationCode\",\n        \"data\": \"{{local.6nxaefguf0.payload.output.transaction.webVerificationCode}}\",\n        \"tooltip\": \"{{local.6nxaefguf0.payload.output.transaction.webVerificationCode}}\",\n        \"children\": [\n          {\n            \"text\": \"webVerificationCode\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please Verify yourself\"\n      }\n    ]\n  }\n]"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:i585p7f1n8\",\n        \"url\": \"generatedQr\",\n        \"data\": \"{{local.9mth1vknb1.payload.output.generatedQr}}\",\n        \"tooltip\": \"{{local.9mth1vknb1.payload.output.generatedQr}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.9mth1vknb1.payload.output.generatedQr}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n\\nVerify Code: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:f93w9r1ccf\",\n        \"url\": \"webVerificationCode\",\n        \"data\": \"{{local.f7rajqo8ws.payload.output.rawResponse.body.webVerificationCode}}\",\n        \"tooltip\": \"{{local.f7rajqo8ws.payload.output.rawResponse.body.webVerificationCode}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.f7rajqo8ws.payload.output.rawResponse.body.webVerificationCode}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n\\n\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrZXJyb3JtZXNzYWdlIiAgY2xhc3M9IiIgZXJyb3JJZD0iIg==###eyJuYW1lIjoic2tlcnJvcm1lc3NhZ2UiLCJvcHRpb25zIjp7ImNsYXNzIjoiIiwiZXJyb3JJZCI6IiJ9LCJjb21wb25lbnRQcm9wcyI6eyJjbGFzcyI6eyJuYW1lIjoiY2xhc3MiLCJkaXNwbGF5TmFtZSI6IkNsYXNzIn0sImVycm9ySWQiOnsibmFtZSI6ImVycm9ySWQiLCJkaXNwbGF5TmFtZSI6IklEIG9mIGlucHV0IGZpZWxkIGFzc29jaWF0ZWQgd2l0aCBlcnJvciBtZXNzYWdlIn19fQ==]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skerrormessage\",\n        \"children\": [\n          {\n            \"text\": \"skerrormessage\"\n          }\n        ],\n        \"component\": \"skerrormessage\",\n        \"options\": {\n          \"class\": \"\",\n          \"errorId\": \"\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"Class\"\n          },\n          \"errorId\": {\n            \"name\": \"errorId\",\n            \"displayName\": \"ID of input field associated with error message\"\n          }\n        },\n        \"tooltip\": \"{{component.skerrormessage}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Unable to Continue"
+              },
+              "nodeDescription": {},
+              "showFooter": {
+                "value": false
+              },
+              "enablePolling": {
+                "value": true
+              },
+              "pollChallengeStatus": {
+                "value": false
+              },
+              "customHTML": {
+                "value": "<div\n   class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n   <div style=\"max-width: 460px; min-width: 460px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n         <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n            <h1 class=\"text-center mb-4\">{{title}}</h1>\n            <p class=\"text-muted text-center\">{{subtitle}}</p>\n         </div>\n      </div>\n   </div>\n</div>"
+              },
+              "customScript": {
+                "value": ""
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "sktemplate": {
+                "uiId": "e6e1bb56db7fa43d0bb18721a55fc694",
+                "createdDate": 1687889267333,
+                "customerId": "f3e47d945ae971a4b4142ec75012d155",
+                "description": "",
+                "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        }\n    }\n}",
+                "name": "VerifyPolling",
+                "outputSchema": {},
+                "script": "",
+                "style": "",
+                "template": "",
+                "updatedDate": 1687889792920,
+                "validationRules": [],
+                "version": "1.0",
+                "visibility": "private",
+                "companyId": "edcc3f46-49cc-4176-bfcb-849afb268c1b",
+                "value": "e6e1bb56db7fa43d0bb18721a55fc694"
+              },
+              "inputSchema": {
+                "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        }\n    }\n}"
+              },
+              "outputSchema": {
+                "value": {}
+              },
+              "customCSS": {
+                "value": ""
+              },
+              "validationRules": {
+                "value": []
+              },
+              "backgroundColor": {
+                "value": "#ffc8c1ff"
+              }
+            },
+            "idUnique": "r5abcyrm34"
+          },
+          "position": {
+            "x": 1470,
+            "y": 1140
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "05m12hxj67",
+            "source": "03ihore7b2",
+            "target": "of39ybb4xg"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "a5y27v8jmb",
+            "source": "utfj45kzv8",
+            "target": "h64lp2p14l"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "3519adeuvw",
+            "source": "0ftnhxnhhh",
+            "target": "35gku7f9gh"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "k6zkw1vhsm",
+            "source": "ip0q4uxyh1",
+            "target": "utfj45kzv8"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "wjd3z6fwmk",
+            "source": "fr0nvcy73u",
+            "target": "0ftnhxnhhh"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "l8zmmegp7g",
+            "source": "0ftnhxnhhh",
+            "target": "58pzinr7f4"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8wa7powcv9",
+            "source": "f90pyxmgu7",
+            "target": "ty0rtetx2h"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "olboor6ihu",
+            "source": "kb2j1hbqtx",
+            "target": "56stwn4mgp"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "km9i3ii3xm",
+            "source": "dazaskddxc",
+            "target": "03ihore7b2"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "2yeozk9r36",
+            "source": "03ihore7b2",
+            "target": "9k7tel3k9x"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1eq3pwzuxn",
+            "source": "s0nl1yv4ws",
+            "target": "f90pyxmgu7"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "hpn77pq8vr",
+            "source": "56stwn4mgp",
+            "target": "s0nl1yv4ws"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "87wlv53q50",
+            "source": "s0nl1yv4ws",
+            "target": "ikkrw2zztf"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tv5j7czjn8",
+            "source": "0ehyoni4tq",
+            "target": "kb2j1hbqtx"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "br2gpf9xa",
+            "source": "h64lp2p14l",
+            "target": "y0r7zvhbz0"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "cljweewi3g",
+            "source": "8dmi3vador",
+            "target": "oby56nwbq1"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "kt0r7oubre",
+            "source": "k4f15wae03",
+            "target": "7fi4o2lolk"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tf8blgumpf",
+            "source": "8dmi3vador",
+            "target": "haeekza2nz"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7lnsw318vm",
+            "source": "wbpo9vidad",
+            "target": "uee4whxt43"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zp6w9ij3t9",
+            "source": "vzyon8s8yf",
+            "target": "mkta0k316z"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "nf2afgotkd",
+            "source": "k4f15wae03",
+            "target": "rludrr21ch"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "eapvorza09",
+            "source": "uee4whxt43",
+            "target": "oq056votuo"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "i0fqowylla",
+            "source": "si24lheods",
+            "target": "fr0nvcy73u"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "91hhk8e351",
+            "source": "rludrr21ch",
+            "target": "8dmi3vador"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "hqs3rhfx2u",
+            "source": "oq056votuo",
+            "target": "cmhdx19556"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "vrfqkhj3oj",
+            "source": "rum6u9mwfg",
+            "target": "k4f15wae03"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "itnkkd7ghp",
+            "source": "s085zoqaii",
+            "target": "vzyon8s8yf"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mcx6bmeknu",
+            "source": "y0r7zvhbz0",
+            "target": "dazaskddxc"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "o958btl39c",
+            "source": "cmhdx19556",
+            "target": "0ehyoni4tq"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ekn68lbv1j",
+            "source": "9k7tel3k9x",
+            "target": "el5j90z3vi"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5inwnkkroy",
+            "source": "gctw05mfs7",
+            "target": "9dh949braj"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "xi3upk5yx8",
+            "source": "9dh949braj",
+            "target": "rum6u9mwfg"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "qm1bk3cw7n",
+            "source": "el5j90z3vi",
+            "target": "0sbdzr5gn4"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "17zdhsw394",
+            "source": "j9wnz23me4",
+            "target": "yk0fvhoy1f"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "hf50os8rq1",
+            "source": "34918vdn5o",
+            "target": "si24lheods"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1h6kx4sn0x",
+            "source": "ty0rtetx2h",
+            "target": "poiuwu8jo8"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8smacx8zt2",
+            "source": "poiuwu8jo8",
+            "target": "o340j35m5n",
+            "multiValueSourceId": "-1"
+          },
+          "position": {
+            "x": 64,
+            "y": 92
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "4ozpymmec3",
+            "source": "o340j35m5n",
+            "target": "benofr5hfx"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "3wctxmgv6u",
+            "source": "poiuwu8jo8",
+            "target": "ixhyg8c7n",
+            "multiValueSourceId": "uvtriwi3s5"
+          },
+          "position": {
+            "x": 64,
+            "y": 52
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "a9kldo37lh",
+            "source": "ixhyg8c7n",
+            "target": "a3hmsqkltp"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1ehm0hxaak",
+            "source": "yk0fvhoy1f",
+            "target": "ip0q4uxyh1"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "inputSchema": [
+    {
+      "propertyName": "pingOneUserId",
+      "description": "The PingOne userid of the person pairing the digital wallet.",
+      "preferredDataType": "string",
+      "preferredControlType": "textField",
+      "isExpanded": true,
+      "required": true
+    }
+  ],
+  "flowColor": "#ff661c",
+  "savedDate": 1695829628459,
+  "variables": [
+    {
+      "context": "flowInstance",
+      "createdDate": 1694717799832,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "companyName##SK##flowInstance",
+      "companyId": "b1bc29c4-a98f-4f11-b852-fe70b6383f65"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1694723451918,
+      "fields": {
+        "type": "object",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "digitalWalletPairingDeviceInfo##SK##flowInstance",
+      "companyId": "b1bc29c4-a98f-4f11-b852-fe70b6383f65"
+    }
+  ],
+  "connections": []
+}
