@@ -1,5 +1,5 @@
 {
-  "companyId": "b1bc29c4-a98f-4f11-b852-fe70b6383f65",
+  "companyId": "c4da54b5-7ef5-4f0c-aaa7-cb794aafbcff",
   "authTokenExpireIds": [],
   "connectorIds": [
     "annotationConnector",
@@ -11,10 +11,10 @@
     "variablesConnector",
     "pingOneMfaConnector"
   ],
-  "createdDate": 1695829629264,
-  "currentVersion": 96,
+  "createdDate": 1696271210910,
+  "currentVersion": 18,
   "customerId": "0241a35acf80e3bd89cb7c27b9ad83b6",
-  "deployedDate": 1695829649855,
+  "deployedDate": 1696271215882,
   "description": "",
   "flowStatus": "enabled",
   "inputSchemaCompiled": {
@@ -37,8 +37,8 @@
   },
   "isInputSchemaSaved": true,
   "isOutputSchemaSaved": false,
-  "name": "Pair a Digital Wallet Using Verified SMS Subflow",
-  "publishedVersion": 96,
+  "name": "Pair a Digital Wallet Using Verified Channel Subflow",
+  "publishedVersion": 18,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": {},
@@ -49,14 +49,14 @@
     "useBetaAlgorithm": true,
     "useCustomScript": false,
     "jsLinks": [],
-    "flowHttpTimeoutInSeconds": 60,
-    "flowTimeoutInSeconds": 90,
+    "flowHttpTimeoutInSeconds": 120,
+    "flowTimeoutInSeconds": 300,
     "requireAuthenticationToInitiate": true
   },
   "timeouts": "null",
-  "updatedDate": 1695830102780,
-  "flowId": "8eb1b2b1a404f207bf41b796ad302069",
-  "versionId": 96,
+  "updatedDate": 1696271215885,
+  "flowId": "29c211b6e4d5cbe20e5e845f28766c30",
+  "versionId": 18,
   "graphData": {
     "elements": {
       "nodes": [
@@ -115,7 +115,7 @@
           "data": {
             "id": "oq056votuo",
             "nodeType": "CONNECTION",
-            "connectionId": "ac5c99c61472d1d40e03928323798a7e",
+            "connectionId": "7cf282745f58992b805ecadf4eb893d4",
             "connectorId": "pingOneCredentialsConnector",
             "name": "PingOne Credentials",
             "label": "PingOne Credentials",
@@ -152,8 +152,8 @@
             }
           },
           "position": {
-            "x": 591.9138321995464,
-            "y": 646.3356009070294
+            "x": 600,
+            "y": 630
           },
           "group": "nodes",
           "removed": false,
@@ -175,8 +175,8 @@
             }
           },
           "position": {
-            "x": 708.1950113378684,
-            "y": 646.3356009070294
+            "x": 720,
+            "y": 630
           },
           "group": "nodes",
           "removed": false,
@@ -191,7 +191,7 @@
           "data": {
             "id": "s085zoqaii",
             "nodeType": "CONNECTION",
-            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectionId": "e4800e573e36b7fd46b80ef419793ef4",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Node",
@@ -465,7 +465,7 @@
           "data": {
             "id": "rum6u9mwfg",
             "nodeType": "CONNECTION",
-            "connectionId": "ac5c99c61472d1d40e03928323798a7e",
+            "connectionId": "7cf282745f58992b805ecadf4eb893d4",
             "connectorId": "pingOneCredentialsConnector",
             "name": "PingOne Credentials",
             "label": "PingOne Credentials",
@@ -592,7 +592,7 @@
           "data": {
             "id": "7fi4o2lolk",
             "nodeType": "CONNECTION",
-            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectionId": "e4800e573e36b7fd46b80ef419793ef4",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -663,7 +663,7 @@
                 "value": false
               },
               "customHTML": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div\\n   class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n   <div style=\\\"max-width: 400px; min-width: 400px; width: 100%\\\">\\n      <div class=\\\"card shadow mb-5\\\">\\n         <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n            <img class=\\\"companyLogo align-self-center mb-5\\\" alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" />\\n            <h1 class=\\\"text-center mb-4\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"title\",\n        \"data\": \"{{title}}\",\n        \"tooltip\": \"{{title}}\",\n        \"children\": [\n          {\n            \"text\": \"{{title}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</h1>\\n                   \\n            <p class=\\\"text-muted text-center\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"subtitle\",\n        \"data\": \"{{subtitle}}\",\n        \"tooltip\": \"{{subtitle}}\",\n        \"children\": [\n          {\n            \"text\": \"{{subtitle}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</p>\\n               <img src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"generatedQr\",\n        \"data\": \"{{generatedQr}}\",\n        \"tooltip\": \"{{generatedQr}}\",\n        \"children\": [\n          {\n            \"text\": \"{{generatedQr}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"  class=\\\"w-50 mx-auto mt-4 mb-4 p-1 border border-info border-3 rounded card-img-top\\\" alt=\\\"Presentation Session QR Code\\\" /> \\n               <br/>         \\n               <div class=\\\"card-footer mt-3\\\">\\n                  <div class=\\\"row text-center py-2\\\">\\n                     <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"pollingMessage\",\n        \"data\": \"{{pollingMessage}}\",\n        \"tooltip\": \"{{pollingMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"{{pollingMessage}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n                     <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iNzUwIiBwb2xsUmV0cmllcz0iNTAwIiBwb2xsQ2hhbGxlbmdlU3RhdHVzPSJmYWxzZSI=###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6Ijc1MCIsInBvbGxSZXRyaWVzIjoiNTAwIiwicG9sbENoYWxsZW5nZVN0YXR1cyI6ImZhbHNlIn0sImNvbXBvbmVudFByb3BzIjp7ImNsYXNzIjp7Im5hbWUiOiJjbGFzcyIsImRpc3BsYXlOYW1lIjoiQ1NTIENsYXNzIn0sInBvbGxJbnRlcnZhbCI6eyJuYW1lIjoicG9sbEludGVydmFsIiwiZGlzcGxheU5hbWUiOiJQb2xsIEludGVydmFsIiwidmFsdWUiOjIwMDB9LCJwb2xsUmV0cmllcyI6eyJuYW1lIjoicG9sbFJldHJpZXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgUmV0cmllcyIsInZhbHVlIjo2MH0sInBvbGxDaGFsbGVuZ2VTdGF0dXMiOnsibmFtZSI6InBvbGxDaGFsbGVuZ2VTdGF0dXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgQ2hhbGxlbmdlIFN0YXR1cyIsInR5cGUiOiJzZWxlY3QiLCJ2YWx1ZSI6InRydWUiLCJvcHRpb25zIjpbeyJuYW1lIjoiVHJ1ZSIsInZhbHVlIjoidHJ1ZSJ9LHsibmFtZSI6IkZhbHNlIiwidmFsdWUiOiJmYWxzZSJ9XX19fQ==]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skpolling\",\n        \"children\": [\n          {\n            \"text\": \"skpolling\"\n          }\n        ],\n        \"component\": \"skpolling\",\n        \"options\": {\n          \"class\": \"\",\n          \"pollInterval\": \"750\",\n          \"pollRetries\": \"500\",\n          \"pollChallengeStatus\": \"false\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"CSS Class\"\n          },\n          \"pollInterval\": {\n            \"name\": \"pollInterval\",\n            \"displayName\": \"Poll Interval\",\n            \"value\": 2000\n          },\n          \"pollRetries\": {\n            \"name\": \"pollRetries\",\n            \"displayName\": \"Poll Retries\",\n            \"value\": 60\n          },\n          \"pollChallengeStatus\": {\n            \"name\": \"pollChallengeStatus\",\n            \"displayName\": \"Poll Challenge Status\",\n            \"type\": \"select\",\n            \"value\": \"true\",\n            \"options\": [\n              {\n                \"name\": \"True\",\n                \"value\": \"true\"\n              },\n              {\n                \"name\": \"False\",\n                \"value\": \"false\"\n              }\n            ]\n          }\n        },\n        \"tooltip\": \"{{component.skpolling}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n                  </div>\\n               </div>\\n         </div>\\n      </div>\\n   </div>\\n</div>\\n\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div\\n   class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n   <div style=\\\"max-width: 460px; min-width: 460px; width: 100%\\\">\\n      <div class=\\\"card shadow mb-5\\\">\\n         <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n            <img class=\\\"companyLogo align-self-center mb-5\\\" alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" />\\n            <h1 class=\\\"text-center mb-4\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"title\",\n        \"data\": \"{{title}}\",\n        \"tooltip\": \"{{title}}\",\n        \"children\": [\n          {\n            \"text\": \"{{title}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</h1>\\n                   \\n            <p class=\\\"text-muted text-center\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"subtitle\",\n        \"data\": \"{{subtitle}}\",\n        \"tooltip\": \"{{subtitle}}\",\n        \"children\": [\n          {\n            \"text\": \"{{subtitle}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</p>\\n               <img src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"generatedQr\",\n        \"data\": \"{{generatedQr}}\",\n        \"tooltip\": \"{{generatedQr}}\",\n        \"children\": [\n          {\n            \"text\": \"{{generatedQr}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"  class=\\\"w-50 mx-auto mt-4 mb-4 p-1 border border-info border-3 rounded card-img-top\\\" alt=\\\"Presentation Session QR Code\\\" /> \\n               <br/>         \\n               <div class=\\\"card-footer mt-3\\\">\\n                  <div class=\\\"row text-center py-2\\\">\\n                     <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"pollingMessage\",\n        \"data\": \"{{pollingMessage}}\",\n        \"tooltip\": \"{{pollingMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"{{pollingMessage}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n                     <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iMTAwMCIgcG9sbFJldHJpZXM9IjIwMCIgcG9sbENoYWxsZW5nZVN0YXR1cz0iZmFsc2Ui###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6IjEwMDAiLCJwb2xsUmV0cmllcyI6IjIwMCIsInBvbGxDaGFsbGVuZ2VTdGF0dXMiOiJmYWxzZSJ9LCJjb21wb25lbnRQcm9wcyI6eyJjbGFzcyI6eyJuYW1lIjoiY2xhc3MiLCJkaXNwbGF5TmFtZSI6IkNTUyBDbGFzcyJ9LCJwb2xsSW50ZXJ2YWwiOnsibmFtZSI6InBvbGxJbnRlcnZhbCIsImRpc3BsYXlOYW1lIjoiUG9sbCBJbnRlcnZhbCIsInZhbHVlIjoyMDAwfSwicG9sbFJldHJpZXMiOnsibmFtZSI6InBvbGxSZXRyaWVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIFJldHJpZXMiLCJ2YWx1ZSI6NjB9LCJwb2xsQ2hhbGxlbmdlU3RhdHVzIjp7Im5hbWUiOiJwb2xsQ2hhbGxlbmdlU3RhdHVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIENoYWxsZW5nZSBTdGF0dXMiLCJ0eXBlIjoic2VsZWN0IiwidmFsdWUiOiJ0cnVlIiwib3B0aW9ucyI6W3sibmFtZSI6IlRydWUiLCJ2YWx1ZSI6InRydWUifSx7Im5hbWUiOiJGYWxzZSIsInZhbHVlIjoiZmFsc2UifV19fX0=]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skpolling\",\n        \"children\": [\n          {\n            \"text\": \"skpolling\"\n          }\n        ],\n        \"component\": \"skpolling\",\n        \"options\": {\n          \"class\": \"\",\n          \"pollInterval\": \"1000\",\n          \"pollRetries\": \"200\",\n          \"pollChallengeStatus\": \"false\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"CSS Class\"\n          },\n          \"pollInterval\": {\n            \"name\": \"pollInterval\",\n            \"displayName\": \"Poll Interval\",\n            \"value\": 2000\n          },\n          \"pollRetries\": {\n            \"name\": \"pollRetries\",\n            \"displayName\": \"Poll Retries\",\n            \"value\": 60\n          },\n          \"pollChallengeStatus\": {\n            \"name\": \"pollChallengeStatus\",\n            \"displayName\": \"Poll Challenge Status\",\n            \"type\": \"select\",\n            \"value\": \"true\",\n            \"options\": [\n              {\n                \"name\": \"True\",\n                \"value\": \"true\"\n              },\n              {\n                \"name\": \"False\",\n                \"value\": \"false\"\n              }\n            ]\n          }\n        },\n        \"tooltip\": \"{{component.skpolling}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n                  </div>\\n               </div>\\n         </div>\\n      </div>\\n   </div>\\n</div>\\n\"\n      }\n    ]\n  }\n]"
               },
               "customScript": {
                 "value": ""
@@ -733,7 +733,7 @@
           "data": {
             "id": "h64lp2p14l",
             "nodeType": "CONNECTION",
-            "connectionId": "362b514ffa76967be25341e86da461c2",
+            "connectionId": "e782efd493c337cf8054c45556efd013",
             "connectorId": "devicePolicyConnector",
             "name": "Device Policy",
             "label": "Device Policy",
@@ -742,7 +742,7 @@
             "type": "trigger",
             "properties": {
               "nodeTitle": {
-                "value": "Get Device Platform"
+                "value": "Get Device Type"
               }
             }
           },
@@ -879,8 +879,8 @@
             }
           },
           "position": {
-            "x": 1173.3197278911564,
-            "y": 646.3356009070294
+            "x": 1170,
+            "y": 630
           },
           "group": "nodes",
           "removed": false,
@@ -909,8 +909,8 @@
             }
           },
           "position": {
-            "x": 1289.6009070294785,
-            "y": 646.3356009070294
+            "x": 1290,
+            "y": 630
           },
           "group": "nodes",
           "removed": false,
@@ -950,8 +950,8 @@
             }
           },
           "position": {
-            "x": 882.6167800453514,
-            "y": 646.3356009070294
+            "x": 870,
+            "y": 630
           },
           "group": "nodes",
           "removed": false,
@@ -968,8 +968,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 998.8979591836734,
-            "y": 646.3356009070294
+            "x": 990,
+            "y": 630
           },
           "group": "nodes",
           "removed": false,
@@ -1015,7 +1015,7 @@
                 "value": false
               },
               "customHTML": {
-                "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n        <h1 id=\"header\" class=\"text-center mb-4\">{{title}}</h1>\n\n        <p class=\"text-muted text-center\">{{subtitle}}</p>\n        <br/>\n        <p class=\"text-muted text-center \">        \n          <button type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\" data-skform=\"emailForm\" data-skbuttonvalue=\"DISPLAYQR\" id=\"btnCancel\">\n            Didn't receive the link?  Click here to pair your wallet using a QR Code.\n          </button>    \n        </p>\n        <div class=\"card-footer mt-3\">\n          <div class=\"row text-center py-2\">\n              <span>{{pollingMessage}}</span>\n              <span>[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iMjAwMCIgcG9sbFJldHJpZXM9IjkwIiBwb2xsQ2hhbGxlbmdlU3RhdHVzPSJmYWxzZSI=###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6IjIwMDAiLCJwb2xsUmV0cmllcyI6IjkwIiwicG9sbENoYWxsZW5nZVN0YXR1cyI6ImZhbHNlIn0sImNvbXBvbmVudFByb3BzIjp7ImNsYXNzIjp7Im5hbWUiOiJjbGFzcyIsImRpc3BsYXlOYW1lIjoiQ1NTIENsYXNzIn0sInBvbGxJbnRlcnZhbCI6eyJuYW1lIjoicG9sbEludGVydmFsIiwiZGlzcGxheU5hbWUiOiJQb2xsIEludGVydmFsIiwidmFsdWUiOjIwMDB9LCJwb2xsUmV0cmllcyI6eyJuYW1lIjoicG9sbFJldHJpZXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgUmV0cmllcyIsInZhbHVlIjo2MH0sInBvbGxDaGFsbGVuZ2VTdGF0dXMiOnsibmFtZSI6InBvbGxDaGFsbGVuZ2VTdGF0dXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgQ2hhbGxlbmdlIFN0YXR1cyIsInR5cGUiOiJzZWxlY3QiLCJ2YWx1ZSI6InRydWUiLCJvcHRpb25zIjpbeyJuYW1lIjoiVHJ1ZSIsInZhbHVlIjoidHJ1ZSJ9LHsibmFtZSI6IkZhbHNlIiwidmFsdWUiOiJmYWxzZSJ9XX19fQ==]]]</span>\n          </div>\n        </div>        \n      </div>\n    </div>\n  </div>\n</div>\n"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div\\n  class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n  <div style=\\\"max-width: 460px; min-width: 460px; width: 100%\\\">\\n    <div class=\\\"card shadow mb-5\\\">\\n      <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n        <img class=\\\"companyLogo align-self-center mb-5\\\" alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" />\\n        <h1 id=\\\"header\\\" class=\\\"text-center mb-4\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"title\",\n        \"data\": \"{{title}}\",\n        \"tooltip\": \"{{title}}\",\n        \"children\": [\n          {\n            \"text\": \"{{title}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</h1>\\n\\n        <p class=\\\"text-muted text-center\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"subtitle\",\n        \"data\": \"{{subtitle}}\",\n        \"tooltip\": \"{{subtitle}}\",\n        \"children\": [\n          {\n            \"text\": \"{{subtitle}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</p>\\n        <br/>\\n        <p class=\\\"text-muted text-center \\\">        \\n          <button type=\\\"submit\\\" class=\\\"btn btn-link\\\" data-skcomponent=\\\"skbutton\\\" data-skbuttontype=\\\"next-event\\\" data-skform=\\\"emailForm\\\" data-skbuttonvalue=\\\"DISPLAYQR\\\" id=\\\"btnCancel\\\">\\n            Didn't receive the link?  Click here to pair your wallet using a QR Code.\\n          </button>    \\n        </p>\\n        <div class=\\\"card-footer mt-3\\\">\\n          <div class=\\\"row text-center py-2\\\">\\n              <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"pollingMessage\",\n        \"data\": \"{{pollingMessage}}\",\n        \"tooltip\": \"{{pollingMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"{{pollingMessage}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n              <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iMjAwMCIgcG9sbFJldHJpZXM9IjUwMCIgcG9sbENoYWxsZW5nZVN0YXR1cz0iZmFsc2Ui###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6IjIwMDAiLCJwb2xsUmV0cmllcyI6IjUwMCIsInBvbGxDaGFsbGVuZ2VTdGF0dXMiOiJmYWxzZSJ9LCJjb21wb25lbnRQcm9wcyI6eyJjbGFzcyI6eyJuYW1lIjoiY2xhc3MiLCJkaXNwbGF5TmFtZSI6IkNTUyBDbGFzcyJ9LCJwb2xsSW50ZXJ2YWwiOnsibmFtZSI6InBvbGxJbnRlcnZhbCIsImRpc3BsYXlOYW1lIjoiUG9sbCBJbnRlcnZhbCIsInZhbHVlIjoyMDAwfSwicG9sbFJldHJpZXMiOnsibmFtZSI6InBvbGxSZXRyaWVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIFJldHJpZXMiLCJ2YWx1ZSI6NjB9LCJwb2xsQ2hhbGxlbmdlU3RhdHVzIjp7Im5hbWUiOiJwb2xsQ2hhbGxlbmdlU3RhdHVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIENoYWxsZW5nZSBTdGF0dXMiLCJ0eXBlIjoic2VsZWN0IiwidmFsdWUiOiJ0cnVlIiwib3B0aW9ucyI6W3sibmFtZSI6IlRydWUiLCJ2YWx1ZSI6InRydWUifSx7Im5hbWUiOiJGYWxzZSIsInZhbHVlIjoiZmFsc2UifV19fX0=]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skpolling\",\n        \"children\": [\n          {\n            \"text\": \"skpolling\"\n          }\n        ],\n        \"component\": \"skpolling\",\n        \"options\": {\n          \"class\": \"\",\n          \"pollInterval\": \"2000\",\n          \"pollRetries\": \"500\",\n          \"pollChallengeStatus\": \"false\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"CSS Class\"\n          },\n          \"pollInterval\": {\n            \"name\": \"pollInterval\",\n            \"displayName\": \"Poll Interval\",\n            \"value\": 2000\n          },\n          \"pollRetries\": {\n            \"name\": \"pollRetries\",\n            \"displayName\": \"Poll Retries\",\n            \"value\": 60\n          },\n          \"pollChallengeStatus\": {\n            \"name\": \"pollChallengeStatus\",\n            \"displayName\": \"Poll Challenge Status\",\n            \"type\": \"select\",\n            \"value\": \"true\",\n            \"options\": [\n              {\n                \"name\": \"True\",\n                \"value\": \"true\"\n              },\n              {\n                \"name\": \"False\",\n                \"value\": \"false\"\n              }\n            ]\n          }\n        },\n        \"tooltip\": \"{{component.skpolling}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n          </div>\\n        </div>        \\n      </div>\\n    </div>\\n  </div>\\n</div>\\n\"\n      }\n    ]\n  }\n]"
               },
               "customScript": {
                 "value": ""
@@ -1069,8 +1069,8 @@
             "idUnique": "ndm5lpiwnr"
           },
           "position": {
-            "x": 1464.0226757369614,
-            "y": 646.3356009070294
+            "x": 1470,
+            "y": 630
           },
           "group": "nodes",
           "removed": false,
@@ -1145,7 +1145,7 @@
           "data": {
             "id": "gctw05mfs7",
             "nodeType": "CONNECTION",
-            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectionId": "e4800e573e36b7fd46b80ef419793ef4",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -1196,7 +1196,7 @@
           "data": {
             "id": "0sbdzr5gn4",
             "nodeType": "CONNECTION",
-            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectionId": "e4800e573e36b7fd46b80ef419793ef4",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -1211,7 +1211,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.ip0q4uxyh1.payload.output.userDigitalWallet.id}}\",\n        \"tooltip\": \"{{local.ip0q4uxyh1.payload.output.userDigitalWallet.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
               "nodeTitle": {
-                "value": "Teleport to Polling"
+                "value": "PairingStatus"
               }
             }
           },
@@ -1240,8 +1240,8 @@
             }
           },
           "position": {
-            "x": 1580.3038548752834,
-            "y": 646.3356009070294
+            "x": 1590,
+            "y": 630
           },
           "group": "nodes",
           "removed": false,
@@ -1256,7 +1256,7 @@
           "data": {
             "id": "benofr5hfx",
             "nodeType": "CONNECTION",
-            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectionId": "e4800e573e36b7fd46b80ef419793ef4",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -1271,13 +1271,13 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.oq056votuo.payload.output.userDigitalWallet.id}}\",\n        \"tooltip\": \"{{local.oq056votuo.payload.output.userDigitalWallet.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
               "nodeTitle": {
-                "value": "Teleport to Polling"
+                "value": "PairingStatus"
               }
             }
           },
           "position": {
-            "x": 2103.5691609977325,
-            "y": 791.6870748299319
+            "x": 2310,
+            "y": 780
           },
           "group": "nodes",
           "removed": false,
@@ -1343,7 +1343,7 @@
           "data": {
             "id": "j9wnz23me4",
             "nodeType": "CONNECTION",
-            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectionId": "e4800e573e36b7fd46b80ef419793ef4",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -1391,7 +1391,7 @@
           "data": {
             "id": "ikkrw2zztf",
             "nodeType": "CONNECTION",
-            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectionId": "e4800e573e36b7fd46b80ef419793ef4",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -1403,13 +1403,13 @@
                 "value": "j9wnz23me4"
               },
               "nodeTitle": {
-                "value": "Teleport to QRPath"
+                "value": "QRPath"
               }
             }
           },
           "position": {
-            "x": 1464.0226757369614,
-            "y": 733.546485260771
+            "x": 1470,
+            "y": 720
           },
           "group": "nodes",
           "removed": false,
@@ -1444,13 +1444,13 @@
                 ]
               },
               "nodeTitle": {
-                "value": "Continue Poll or Display QR?"
+                "value": "Poll or QR fallback check"
               }
             }
           },
           "position": {
-            "x": 1783.795918367347,
-            "y": 646.3356009070294
+            "x": 1740,
+            "y": 630
           },
           "group": "nodes",
           "removed": false,
@@ -1467,8 +1467,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1900.077097505669,
-            "y": 791.6870748299319
+            "x": 1860,
+            "y": 780
           },
           "group": "nodes",
           "removed": false,
@@ -1486,41 +1486,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1900.077097505669,
-            "y": 675.4058956916099
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "a3hmsqkltp",
-            "nodeType": "CONNECTION",
-            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
-            "connectorId": "nodeConnector",
-            "name": "Teleport",
-            "label": "Teleport",
-            "status": "configured",
-            "capabilityName": "goToNode",
-            "type": "action",
-            "properties": {
-              "nodeInstanceId": {
-                "value": "j9wnz23me4"
-              },
-              "nodeTitle": {
-                "value": "Teleport to QRPath"
-              }
-            }
-          },
-          "position": {
-            "x": 2103.5691609977325,
-            "y": 675.4058956916099
+            "x": 1860,
+            "y": 690
           },
           "group": "nodes",
           "removed": false,
@@ -1558,7 +1525,7 @@
                 "value": "ACTIVE"
               },
               "nodeTitle": {
-                "value": "Get User Active SMS Devices"
+                "value": "Get user devices"
               }
             }
           },
@@ -1660,7 +1627,7 @@
           "data": {
             "id": "ip0q4uxyh1",
             "nodeType": "CONNECTION",
-            "connectionId": "ac5c99c61472d1d40e03928323798a7e",
+            "connectionId": "7cf282745f58992b805ecadf4eb893d4",
             "connectorId": "pingOneCredentialsConnector",
             "name": "PingOne Credentials",
             "label": "PingOne Credentials",
@@ -1715,7 +1682,7 @@
           "data": {
             "id": "58pzinr7f4",
             "nodeType": "CONNECTION",
-            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectionId": "e4800e573e36b7fd46b80ef419793ef4",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -1727,7 +1694,7 @@
                 "value": "j9wnz23me4"
               },
               "nodeTitle": {
-                "value": "Teleport to QRPath"
+                "value": "QRPath"
               }
             }
           },
@@ -1748,7 +1715,7 @@
           "data": {
             "id": "35gku7f9gh",
             "nodeType": "CONNECTION",
-            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectionId": "e4800e573e36b7fd46b80ef419793ef4",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -1760,7 +1727,7 @@
                 "value": "wbpo9vidad"
               },
               "nodeTitle": {
-                "value": "Teleport to SMSPath"
+                "value": "SMSPath"
               }
             }
           },
@@ -1781,7 +1748,7 @@
           "data": {
             "id": "wbpo9vidad",
             "nodeType": "CONNECTION",
-            "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+            "connectionId": "e4800e573e36b7fd46b80ef419793ef4",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Teleport",
@@ -1795,8 +1762,8 @@
             }
           },
           "position": {
-            "x": 330.28117913832193,
-            "y": 646.3356009070294
+            "x": 330,
+            "y": 630
           },
           "group": "nodes",
           "removed": false,
@@ -1813,8 +1780,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 417.4920634920635,
-            "y": 646.3356009070294
+            "x": 420,
+            "y": 630
           },
           "group": "nodes",
           "removed": false,
@@ -1920,7 +1887,7 @@
                 "value": "Verdana"
               },
               "annotation": {
-                "value": "Failover to QR Code."
+                "value": "Try to failover to QR Code."
               },
               "width": {
                 "value": 100
@@ -1933,8 +1900,8 @@
             "idUnique": "qzqhnpyhd7"
           },
           "position": {
-            "x": 1260.530612244898,
-            "y": 733.546485260771
+            "x": 1260,
+            "y": 720
           },
           "group": "nodes",
           "removed": false,
@@ -2095,8 +2062,8 @@
             "idUnique": "6irp3q3fh2"
           },
           "position": {
-            "x": 1929.1473922902494,
-            "y": 617.2653061224489
+            "x": 1860,
+            "y": 630
           },
           "group": "nodes",
           "removed": false,
@@ -2219,9 +2186,203 @@
           "grabbable": true,
           "pannable": false,
           "classes": ""
+        },
+        {
+          "data": {
+            "id": "vmgm9kyteo",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "title": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Digital Wallet Pairing Request\"\n      }\n    ]\n  }\n]"
+              },
+              "subtitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Scan this QR Code with your mobile phone or digital wallet and follow the instructions.\"\n      }\n    ]\n  }\n]"
+              },
+              "pollingMessage": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Status: Waiting for \"\n      },\n      {\n        \"text\": \"Digital Wallet\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Display Digital Wallet Pairing QR"
+              },
+              "nodeDescription": {},
+              "showFooter": {
+                "value": false
+              },
+              "enablePolling": {
+                "value": true
+              },
+              "pollChallengeStatus": {
+                "value": false
+              },
+              "customHTML": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div\\n   class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n   <div style=\\\"max-width: 460px; min-width: 460px; width: 100%\\\">\\n      <div class=\\\"card shadow mb-5\\\">\\n         <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n            <img class=\\\"companyLogo align-self-center mb-5\\\" alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" />\\n            <h1 class=\\\"text-center mb-4\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"title\",\n        \"data\": \"{{title}}\",\n        \"tooltip\": \"{{title}}\",\n        \"children\": [\n          {\n            \"text\": \"{{title}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</h1>\\n                   \\n            <p class=\\\"text-muted text-center\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"subtitle\",\n        \"data\": \"{{subtitle}}\",\n        \"tooltip\": \"{{subtitle}}\",\n        \"children\": [\n          {\n            \"text\": \"{{subtitle}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</p>\\n               <img src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"generatedQr\",\n        \"data\": \"{{generatedQr}}\",\n        \"tooltip\": \"{{generatedQr}}\",\n        \"children\": [\n          {\n            \"text\": \"{{generatedQr}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"  class=\\\"w-50 mx-auto mt-4 mb-4 p-1 border border-info border-3 rounded card-img-top\\\" alt=\\\"Presentation Session QR Code\\\" /> \\n               <br/>         \\n               <div class=\\\"card-footer mt-3\\\">\\n                  <div class=\\\"row text-center py-2\\\">\\n                     <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"pollingMessage\",\n        \"data\": \"{{pollingMessage}}\",\n        \"tooltip\": \"{{pollingMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"{{pollingMessage}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n                     <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iMTAwMCIgcG9sbFJldHJpZXM9IjIwMCIgcG9sbENoYWxsZW5nZVN0YXR1cz0iZmFsc2Ui###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6IjEwMDAiLCJwb2xsUmV0cmllcyI6IjIwMCIsInBvbGxDaGFsbGVuZ2VTdGF0dXMiOiJmYWxzZSJ9LCJjb21wb25lbnRQcm9wcyI6eyJjbGFzcyI6eyJuYW1lIjoiY2xhc3MiLCJkaXNwbGF5TmFtZSI6IkNTUyBDbGFzcyJ9LCJwb2xsSW50ZXJ2YWwiOnsibmFtZSI6InBvbGxJbnRlcnZhbCIsImRpc3BsYXlOYW1lIjoiUG9sbCBJbnRlcnZhbCIsInZhbHVlIjoyMDAwfSwicG9sbFJldHJpZXMiOnsibmFtZSI6InBvbGxSZXRyaWVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIFJldHJpZXMiLCJ2YWx1ZSI6NjB9LCJwb2xsQ2hhbGxlbmdlU3RhdHVzIjp7Im5hbWUiOiJwb2xsQ2hhbGxlbmdlU3RhdHVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIENoYWxsZW5nZSBTdGF0dXMiLCJ0eXBlIjoic2VsZWN0IiwidmFsdWUiOiJ0cnVlIiwib3B0aW9ucyI6W3sibmFtZSI6IlRydWUiLCJ2YWx1ZSI6InRydWUifSx7Im5hbWUiOiJGYWxzZSIsInZhbHVlIjoiZmFsc2UifV19fX0=]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skpolling\",\n        \"children\": [\n          {\n            \"text\": \"skpolling\"\n          }\n        ],\n        \"component\": \"skpolling\",\n        \"options\": {\n          \"class\": \"\",\n          \"pollInterval\": \"1000\",\n          \"pollRetries\": \"200\",\n          \"pollChallengeStatus\": \"false\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"CSS Class\"\n          },\n          \"pollInterval\": {\n            \"name\": \"pollInterval\",\n            \"displayName\": \"Poll Interval\",\n            \"value\": 2000\n          },\n          \"pollRetries\": {\n            \"name\": \"pollRetries\",\n            \"displayName\": \"Poll Retries\",\n            \"value\": 60\n          },\n          \"pollChallengeStatus\": {\n            \"name\": \"pollChallengeStatus\",\n            \"displayName\": \"Poll Challenge Status\",\n            \"type\": \"select\",\n            \"value\": \"true\",\n            \"options\": [\n              {\n                \"name\": \"True\",\n                \"value\": \"true\"\n              },\n              {\n                \"name\": \"False\",\n                \"value\": \"false\"\n              }\n            ]\n          }\n        },\n        \"tooltip\": \"{{component.skpolling}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n                  </div>\\n               </div>\\n         </div>\\n      </div>\\n   </div>\\n</div>\\n\"\n      }\n    ]\n  }\n]"
+              },
+              "customScript": {
+                "value": ""
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "sktemplate": {
+                "uiId": "e6e1bb56db7fa43d0bb18721a55fc694",
+                "createdDate": 1687889267333,
+                "customerId": "f3e47d945ae971a4b4142ec75012d155",
+                "description": "",
+                "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        },       \n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        },\n        \"generatedQr\": {\n            \"type\": \"string\",\n            \"displayName\": \"Generated QR Code Image\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"generatedQr\"\n        }\n    }\n}",
+                "name": "VerifyPolling",
+                "outputSchema": {},
+                "script": "",
+                "style": "",
+                "template": "",
+                "updatedDate": 1687889792920,
+                "validationRules": [],
+                "version": "1.0",
+                "visibility": "private",
+                "companyId": "edcc3f46-49cc-4176-bfcb-849afb268c1b",
+                "value": "e6e1bb56db7fa43d0bb18721a55fc694"
+              },
+              "inputSchema": {
+                "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        },       \n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        },\n        \"generatedQr\": {\n            \"type\": \"string\",\n            \"displayName\": \"Generated QR Code Image\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"generatedQr\"\n        }\n    }\n}"
+              },
+              "outputSchema": {
+                "value": {}
+              },
+              "customCSS": {
+                "value": ""
+              },
+              "validationRules": {
+                "value": []
+              },
+              "appOpenUrl.href": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"href\",\n        \"data\": \"{{local.oq056votuo.payload.output.userDigitalWallet._links.appOpen.href}}\",\n        \"tooltip\": \"{{local.oq056votuo.payload.output.userDigitalWallet._links.appOpen.href}}\",\n        \"children\": [\n          {\n            \"text\": \"href\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "generatedQr": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"href\",\n        \"data\": \"{{local.oq056votuo.payload.output.userDigitalWallet._links.qrUrl.href}}\",\n        \"tooltip\": \"{{local.oq056votuo.payload.output.userDigitalWallet._links.qrUrl.href}}\",\n        \"children\": [\n          {\n            \"text\": \"href\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "idUnique": "2kt1yuw9xd"
+          },
+          "position": {
+            "x": 2040,
+            "y": 690
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0lz45725z2",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 2160,
+            "y": 690
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8bz502nziy",
+            "nodeType": "CONNECTION",
+            "connectionId": "e4800e573e36b7fd46b80ef419793ef4",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "gctw05mfs7"
+              },
+              "digitalWalletId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.oq056votuo.payload.output.userDigitalWallet.id}}\",\n        \"tooltip\": \"{{local.oq056votuo.payload.output.userDigitalWallet.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "PairingStatus"
+              }
+            },
+            "idUnique": "lkytsko6v"
+          },
+          "position": {
+            "x": 2310,
+            "y": 690
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
         }
       ],
       "edges": [
+        {
+          "data": {
+            "id": "r0g786vxje",
+            "source": "0lz45725z2",
+            "target": "8bz502nziy"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "o2px62h7ij",
+            "source": "ixhyg8c7n",
+            "target": "vmgm9kyteo"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
         {
           "data": {
             "id": "05m12hxj67",
@@ -2967,9 +3128,9 @@
         },
         {
           "data": {
-            "id": "a9kldo37lh",
-            "source": "ixhyg8c7n",
-            "target": "a3hmsqkltp"
+            "id": "1ehm0hxaak",
+            "source": "yk0fvhoy1f",
+            "target": "ip0q4uxyh1"
           },
           "position": {
             "x": 0,
@@ -2986,9 +3147,9 @@
         },
         {
           "data": {
-            "id": "1ehm0hxaak",
-            "source": "yk0fvhoy1f",
-            "target": "ip0q4uxyh1"
+            "id": "c2yr2mca7g",
+            "source": "vmgm9kyteo",
+            "target": "0lz45725z2"
           },
           "position": {
             "x": 0,
@@ -3033,11 +3194,11 @@
     }
   ],
   "flowColor": "#ff661c",
-  "savedDate": 1695829628459,
+  "savedDate": 1696271210376,
   "variables": [
     {
       "context": "flowInstance",
-      "createdDate": 1694717799832,
+      "createdDate": 1695541299040,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -3048,11 +3209,11 @@
       "type": "property",
       "visibility": "private",
       "name": "companyName##SK##flowInstance",
-      "companyId": "b1bc29c4-a98f-4f11-b852-fe70b6383f65"
+      "companyId": "c4da54b5-7ef5-4f0c-aaa7-cb794aafbcff"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1694723451918,
+      "createdDate": 1695541299043,
       "fields": {
         "type": "object",
         "displayName": "",
@@ -3063,7 +3224,7 @@
       "type": "property",
       "visibility": "private",
       "name": "digitalWalletPairingDeviceInfo##SK##flowInstance",
-      "companyId": "b1bc29c4-a98f-4f11-b852-fe70b6383f65"
+      "companyId": "c4da54b5-7ef5-4f0c-aaa7-cb794aafbcff"
     }
   ],
   "connections": []
