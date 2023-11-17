@@ -1,5 +1,5 @@
 {
-  "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
+  "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7",
   "authTokenExpireIds": [],
   "connectorIds": [
     "annotationConnector",
@@ -7,15 +7,15 @@
     "httpConnector",
     "variablesConnector"
   ],
-  "createdDate": 1695041651026,
-  "currentVersion": 3,
+  "createdDate": 1700226980737,
+  "currentVersion": 4,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "deployedDate": 1695041655383,
-  "description": "Imported on Mon Sep 18 2023 12:48:14 GMT+0000 (Coordinated Universal Time)",
+  "deployedDate": 1700226982358,
+  "description": "Imported on Fri Nov 17 2023 12:38:20 GMT+0000 (Coordinated Universal Time)",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
-  "name": "DaVinci Starter Flow",
-  "publishedVersion": 3,
+  "name": "DaVinci Starter Flow ",
+  "publishedVersion": 4,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": {},
@@ -25,14 +25,14 @@
     "css": ".companyLogo {\n    /* Ping Logo  */\n    content: url(\"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\");\n    width: 65px;\n    height: 65px;\n}",
     "cssLinks": [
       "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css",
-      "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.6/icons.css"
+      "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.7/icons.css"
     ],
     "scrubSensitiveInfo": false
   },
   "timeouts": "null",
-  "updatedDate": 1695041691784,
-  "flowId": "fe8e3c916843b17931483f0b3805a913",
-  "versionId": 3,
+  "updatedDate": 1700226982358,
+  "flowId": "91cf2f526df11ece56219f0a03decb6f",
+  "versionId": 4,
   "graphData": {
     "elements": {
       "nodes": [
@@ -121,13 +121,13 @@
                 "value": "#000000"
               },
               "annotation": {
-                "value": "<--150px-SPACER-->"
+                "value": "<--145px-SPACER-->"
               },
               "width": {
-                "value": 150
+                "value": 145
               },
               "height": {
-                "value": 150
+                "value": 145
               },
               "fontSize": {
                 "value": 12
@@ -164,7 +164,7 @@
           "data": {
             "id": "4zjizi23c6",
             "nodeType": "CONNECTION",
-            "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+            "connectionId": "db375b67772d16c451287a824048de1a",
             "connectorId": "nodeConnector",
             "name": "Teleport",
             "label": "Node",
@@ -656,86 +656,25 @@
     }
   },
   "flowColor": "#ff661c",
-  "savedDate": 1695041650931,
+  "savedDate": 1700226980659,
   "variables": [
     {
       "context": "flowInstance",
-      "createdDate": 1693480897657,
+      "createdDate": 1695902607447,
       "fields": {
         "type": "string",
         "displayName": "",
-        "mutable": true,
         "min": 0,
         "max": 2000
       },
       "type": "property",
       "visibility": "private",
       "name": "companyName##SK##flowInstance",
-      "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
+      "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1693480897656,
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "populationId##SK##flowInstance",
-      "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1693915870120,
-      "fields": {
-        "type": "string",
-        "displayName": "FIDO2 origin",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "origin##SK##flowInstance",
-      "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1693915870118,
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "originURL##SK##flowInstance",
-      "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1693915870118,
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "relyingParty##SK##flowInstance",
-      "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1695041294188,
+      "createdDate": 1700224700259,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -746,7 +685,67 @@
       "type": "property",
       "visibility": "private",
       "name": "flowDocsURL##SK##flowInstance",
-      "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
+      "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1695902607458,
+      "fields": {
+        "type": "string",
+        "displayName": "FIDO2 origin",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "origin##SK##flowInstance",
+      "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1700224700261,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "originURL##SK##flowInstance",
+      "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1695902607456,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "populationId##SK##flowInstance",
+      "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1695902607456,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "relyingParty##SK##flowInstance",
+      "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7"
     }
   ],
   "connections": []
