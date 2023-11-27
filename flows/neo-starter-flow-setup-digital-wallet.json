@@ -1,7 +1,7 @@
 {
   "flows": [
     {
-      "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
+      "companyId": "b1bc29c4-a98f-4f11-b852-fe70b6383f65",
       "authTokenExpireIds": [],
       "connectorIds": [
         "annotationConnector",
@@ -13,19 +13,19 @@
         "nodeConnector",
         "functionsConnector"
       ],
-      "createdDate": 1695401325416,
-      "currentVersion": 3,
-      "customerId": "f3e47d945ae971a4b4142ec75012d155",
-      "description": "Imported on Fri Sep 22 2023 16:44:07 GMT+0000 (Coordinated Universal Time)",
+      "createdDate": 1701110284195,
+      "currentVersion": 68,
+      "customerId": "0241a35acf80e3bd89cb7c27b9ad83b6",
+      "description": "",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Neo Starter Flow - Setup a User Digital Wallet",
-      "publishedVersion": 3,
+      "publishedVersion": 68,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
         "intermediateLoadingScreenHTML": "",
-        "logLevel": 2,
+        "logLevel": 3,
         "useCustomCSS": true,
         "cssLinks": [
           "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.7/icons.css",
@@ -37,9 +37,9 @@
         "css": "\n  :root {\n    /********************************************************\n    * COMPANY LOGO\n    *********************************************************/\n    --company-logo-img-url: url(\"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\");\n    --company-logo-max-height: 65px;\n\n    /********************************************************\n    * PAGE BACKGROUND \n    *********************************************************/\n    --background-image-url: url(\"\");\n\n    /********************************************************\n    * CARD BODY\n    *********************************************************/\n    --card-background-color: rgb(255, 255, 255);\n\n    /********************************************************\n    * BODY\n    *********************************************************/\n    --body-font-family: BlinkMacSystemFont;\n    --body-font-size: 0.9rem;\n\n    /********************************************************\n    * TEXT FONT COLORS\n    *********************************************************/\n\n    /*  PRIMARY FONT COLOR (RGB) */\n    --text-color-primary: 61, 69, 77;\n\n    /* HEADING FONT COLR (RBG) */\n    --heading-text-color: 61, 69, 77;\n    \n    /*  MUTED TEXT ALPHA  */\n    --text-color-muted-apha: 0.75;\n\n    /*  ERROR FONT COLOR  */\n    --text-color-error: rgb(163, 19, 0);\n\n    /********************************************************\n    * BUTTON ATTRIBUTES\n    *********************************************************/\n\n    /*  BUTTON FONT COLOR  */\n    --button-primary-text-color: rgb(255, 255, 255);\n\n    /*  BUTTON BACKGROUND COLOR (RGB)  */\n    --button-primary-background-color: 39, 123, 165;\n    \n    /* LINK BUTTON FONT COLOR (RGB)  */\n    --link-button-primary-color: 39, 123, 165;\n\n    /*  BUTTON HOVER ALPHA  */\n    --button-hover-alpha: 0.70;\n\n    /*  BUTTON ACTIVE ALPHA  */\n    --button-active-alpha: 0.80;\n\n    /*  BUTTON DISABLED ALPHA  */\n    --button-disabled-alpha: 0.65;\n\n    /********************************************************\n    * ACTIVITY INDICATOR & BUTTON SPINNER COLOR\n    *********************************************************/\n\n    --activity-indicator-color: rgb(68, 98, 237);\n\n    --polling-indicator-color: rgb(68, 98, 237);\n\n    /********************************************************\n    * APPLYING TEXT COLOR - DO NOT CHANGE\n    *********************************************************/\n    /* H1,H2, H3, Body text color */\n    --bs-body-color: rgb(var(--text-color-main)) !important;\n    --bs-danger-rgb: var(--text-color-error);\n  }\n\n  \n  \n/********************************************************\n* CLASSES BELOW ARE DERIVED FROM VALUES ABOVE\n* DO NOT CHANGE UNLESS YOU HAVE CSS 'SKILLZ' :)\n*********************************************************/\n\n/*  COMPANY LOGO  */\n.companyLogo {\n  content: var(--company-logo-img-url) !important;\n  height: var(--company-logo-max-height) !important;\n  width: auto !important;\n}\n\n/*  BACKGROUND IMAGE  */\ndiv.bg-light {\n  background-image:       var(--background-image-url);\n  background-size:        cover;\n  background-repeat:      no-repeat;\n}\n\n/*  HEADING TEXT  */\nh1, h2, h3, h4 {\n  color: rgb(var(--heading-text-color)) !important;\n}\n\n/*  BODY FONT & COLOR  */\n.card-body {\n  /*  font family */\n  font-family: var(--body-font-family) !important;\n  /*  font size */\n  font-size: var(--body-font-size) !important;\n  /*  font color */\n  color: rgb(var(--text-color-primary)) !important;\n  /*  background color */\n  background-color: var(--card-background-color) !important;\n}\n\n/*  MUTED PARAGRAPH  */\np.text-muted {\n  color: rgba(var(--text-color-primary), var(--text-color-muted-apha)) !important;\n}\n\n/*  ERROR MESSAGE PARAGRAPH  */\n.card .text-danger {\n  color: var(--text-color-error) !important;\n}\n\n/*  FORM CONTROL FONT COLOR  */\n.form-control,\n.form-control:focus {\n  color: var(--text-color-primary) !important;\n}\n\n/*  FORM CONTROL PLACEHOLDER FONT COLOR  */\n.form-floating input+label {\n  color: rgba(var(--text-color-primary), var(--text-color-muted-apha)) !important;\n}\n\n/*  FORM CONTROL HIGHLIGHT  */\n.form-control:focus {\n  border-color: rgba(var(--button-primary-background-color), .5) !important;\n  box-shadow: 0 0 0 0.25rem rgba(var(--button-primary-background-color), 0.25) !important;\n}\n\n/*  PRIMARY BUTTON  */\n.btn-primary {\n  /*  font color  */\n  --bs-btn-color: var(--button-primary-text-color) !important;\n  /*  font color when hovering  */\n  --bs-btn-hover-color: var(--button-primary-text-color) !important;\n  /*  border color  */\n  --bs-btn-border-color: var(--button-primary-background-color) !important;\n  /*  background color  */\n  --bs-btn-bg: rgb(var(--button-primary-background-color)) !important;\n  /*  background color when hovering  */\n  --bs-btn-hover-bg: rgba(var(--button-primary-background-color), var(--button-hover-alpha)) !important;\n  /*  background color when active  */\n  --bs-btn-active-bg: rgba(var(--button-primary-background-color), var(--button-active-alpha)) !important;\n  /*  background color when disabled  */\n  --bs-btn-disabled-bg: rgba(var(--button-primary-background-color), var(--button-disabled-alpha)) !important;\n  background-color: rgb(var(--button-primary-background-color)) !important;\n  border-color: rgb(var(--button-primary-background-color)) !important;\n  color: var(--button-primary-text-color) !important;\n}\n\n\n.btn-primary:hover {\n  background-color: rgba(var(--button-primary-background-color), var(--button-hover-alpha)) !important;\n  border-color: rgba(var(--button-primary-background-color), var(--button-hover-alpha)) !important;\n\n  color: var(--button-primary-text-color) !important;\n}\n\n/*  LINK BUTTON  */\n.btn-link {\n  /*  button font color  */\n  --bs-btn-color: rgb(var(--link-button-primary-color)) !important;\n  /*  button font color when active  */\n  --bs-btn-active-color: rgba(var(--link-button-primary-color), var(--button-active-alpha)) !important;\n  /*  button font color when hovering  */\n  --bs-btn-hover-color: rgba(var(--link-button-primary-color), var(--button-hover-alpha)) !important;\n  /*  button font color when disabled  */\n  --bs-btn-disabled-color: rgba(var(--link-button-primary-color), var(--button-disabled-alpha)) !important;\n  color: rgb(var(--link-button-primary-color)) !important;\n}\n\n/*  POLLING INDICATORS  */\n.css-11k6vsm,\n.css-17zi2ag,\n.css-139roxj {\n  /* width: 20px; */\n  /* height: 20px; */\n  /* animation-duration: 0.75s; */\n  /*  circle background color  */\n  background-color: var(--polling-indicator-color) !important;\n}\n\n/*  BUTTON ACTIVITY INDICATOR  */\n.css-sw2ho0 {\n  /*  spinning circle color  */\n  --primary-color: var(--activity-indicator-color) !important;\n}\n"
       },
       "timeouts": "null",
-      "updatedDate": 1695401326822,
-      "flowId": "4c1bee48e0d171556fd444586aa2cf3c",
-      "versionId": 3,
+      "updatedDate": 1701110287713,
+      "flowId": "751d38742af4ad1e5034bf7d17bd6a90",
+      "versionId": 68,
       "graphData": {
         "elements": {
           "nodes": [
@@ -131,7 +131,7 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "Identify User by Email"
+                    "value": "Find User by Email"
                   },
                   "customCSS": {
                     "value": ""
@@ -395,7 +395,7 @@
               "data": {
                 "id": "b08yfypr78",
                 "nodeType": "CONNECTION",
-                "connectionId": "dcf5b764791ee7cfe18d9c60a87b68c7",
+                "connectionId": "b7979fde3aae368156f678ecdd257e7b",
                 "connectorId": "flowConnector",
                 "name": "Flow Conductor",
                 "label": "Flow Conductor",
@@ -406,7 +406,7 @@
                   "subFlowId": {
                     "value": {
                       "label": "Pair a Digital Wallet Using Verified Channel Subflow",
-                      "value": "15be374f71ce2c4ed0093a9571d91c32"
+                      "value": "e33c0d3642ca54bfe5f9045f58a9af02"
                     }
                   },
                   "subFlowVersionId": {
@@ -485,7 +485,7 @@
                     "value": ""
                   },
                   "customScript": {
-                    "value": "// Focus on the first input element on the page\nconst focusOnFirstInputElement = () => {\n  const element = document.getElementById(\"phone\");\n\n    // Set focus on the first input element, if it exists\n    if (element) {\n        element.focus();\n    }\n};\n\n// If the page is still loading, wait for it to finish before calling the function\nif (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", focusOnFirstInputElement);\n} else {\n    // If the page has already finished loading, call the function immediately\n    focusOnFirstInputElement();\n}\n"
+                    "value": "// Focus on the first input element on the page\nconst focusOnFirstInputElement = () => {\n  //const element = document.getElementById(\"phone\");\n  // focus on phone code instead of phone based on int'l feedback\n  const element = document.getElementById(\"phoneCode\");\n\n    // Set focus on the first input element, if it exists\n    if (element) {\n        element.focus();\n    }\n};\n\n// If the page is still loading, wait for it to finish before calling the function\nif (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", focusOnFirstInputElement);\n} else {\n    // If the page has already finished loading, call the function immediately\n    focusOnFirstInputElement();\n}\n"
                   },
                   "validationRules": {
                     "value": []
@@ -922,13 +922,13 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"deviceAddress\",\n        \"data\": \"{{local.a2238awuae.payload.output.deviceAddress}}\",\n        \"tooltip\": \"{{local.a2238awuae.payload.output.deviceAddress}}\",\n        \"children\": [\n          {\n            \"text\": \"deviceAddress\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeTitle": {
-                    "value": "Create MFA Device"
+                    "value": "Create Device"
                   }
                 }
               },
               "position": {
-                "x": 934,
-                "y": 904
+                "x": 930,
+                "y": 960
               },
               "group": "nodes",
               "removed": false,
@@ -987,8 +987,8 @@
                 "idUnique": "pclet128qa"
               },
               "position": {
-                "x": 1234,
-                "y": 904
+                "x": 1230,
+                "y": 960
               },
               "group": "nodes",
               "removed": false,
@@ -1005,8 +1005,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1054,
-                "y": 904
+                "x": 1050,
+                "y": 960
               },
               "group": "nodes",
               "removed": false,
@@ -1024,8 +1024,8 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1354,
-                "y": 904
+                "x": 1350,
+                "y": 960
               },
               "group": "nodes",
               "removed": false,
@@ -1063,8 +1063,8 @@
                 }
               },
               "position": {
-                "x": 1834,
-                "y": 904
+                "x": 1830,
+                "y": 960
               },
               "group": "nodes",
               "removed": false,
@@ -1079,7 +1079,7 @@
               "data": {
                 "id": "a2238awuae",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Teleport",
@@ -1096,8 +1096,8 @@
                 }
               },
               "position": {
-                "x": 364,
-                "y": 904
+                "x": 360,
+                "y": 960
               },
               "group": "nodes",
               "removed": false,
@@ -1114,8 +1114,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 454,
-                "y": 904
+                "x": 450,
+                "y": 960
               },
               "group": "nodes",
               "removed": false,
@@ -1138,8 +1138,8 @@
                 }
               },
               "position": {
-                "x": 1954,
-                "y": 904
+                "x": 1950,
+                "y": 960
               },
               "group": "nodes",
               "removed": false,
@@ -1154,18 +1154,22 @@
               "data": {
                 "id": "ddnvtpc6km",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Teleport",
                 "status": "configured",
                 "capabilityName": "returnBackToCallingNode",
                 "type": "trigger",
-                "properties": {}
+                "properties": {
+                  "nodeTitle": {
+                    "value": "Return to Main Flow"
+                  }
+                }
               },
               "position": {
-                "x": 2104,
-                "y": 904
+                "x": 2100,
+                "y": 960
               },
               "group": "nodes",
               "removed": false,
@@ -1216,8 +1220,8 @@
                 "idUnique": "wn4pm7fp2s"
               },
               "position": {
-                "x": 634,
-                "y": 904
+                "x": 630,
+                "y": 960
               },
               "group": "nodes",
               "removed": false,
@@ -1234,8 +1238,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 754,
-                "y": 904
+                "x": 750,
+                "y": 960
               },
               "group": "nodes",
               "removed": false,
@@ -1269,8 +1273,8 @@
                 "idUnique": "mc31vdd4t2"
               },
               "position": {
-                "x": 2134,
-                "y": 994
+                "x": 2130,
+                "y": 1050
               },
               "group": "nodes",
               "removed": false,
@@ -1356,8 +1360,8 @@
                 }
               },
               "position": {
-                "x": 1534,
-                "y": 904
+                "x": 1530,
+                "y": 960
               },
               "group": "nodes",
               "removed": false,
@@ -1379,8 +1383,8 @@
                 }
               },
               "position": {
-                "x": 1654,
-                "y": 904
+                "x": 1650,
+                "y": 960
               },
               "group": "nodes",
               "removed": false,
@@ -1395,7 +1399,7 @@
               "data": {
                 "id": "fib09lqcjh",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Teleport",
@@ -1421,8 +1425,8 @@
                 }
               },
               "position": {
-                "x": 1834,
-                "y": 994
+                "x": 1830,
+                "y": 1050
               },
               "group": "nodes",
               "removed": false,
@@ -1437,7 +1441,7 @@
               "data": {
                 "id": "0wtdndpmbb",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Teleport",
@@ -1480,6 +1484,63 @@
               "position": {
                 "x": 1774,
                 "y": 484
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "d16x23sd9p",
+                "nodeType": "ANNOTATION",
+                "name": "Annotation",
+                "connectionId": "921bfae85c38ed45045e07be703d86b8",
+                "connectorId": "annotationConnector",
+                "capabilityName": "updateAnnotationProperties",
+                "type": "action",
+                "properties": {
+                  "backgroundColor": {
+                    "value": "#f7f7adff"
+                  },
+                  "annotationTextColor": {
+                    "value": "#000000"
+                  },
+                  "annotation": {
+                    "value": "Teleport Input Schema: userid, deviceType, deviceAddress, message"
+                  },
+                  "width": {
+                    "value": 500
+                  },
+                  "fontSize": {
+                    "value": 14
+                  },
+                  "fontFamily": {
+                    "value": "sans-serif"
+                  },
+                  "cornerRadius": {
+                    "value": 8
+                  },
+                  "strokeEnabled": {
+                    "value": false
+                  },
+                  "strokeWidth": {
+                    "value": 1
+                  },
+                  "strokeColor": {
+                    "value": "#181818ff"
+                  }
+                },
+                "status": "configured",
+                "idUnique": "d2mbrib33f"
+              },
+              "position": {
+                "x": 270,
+                "y": 870
               },
               "group": "nodes",
               "removed": false,
@@ -2063,11 +2124,11 @@
         }
       },
       "flowColor": "#ff661c",
-      "savedDate": 1695401325156,
+      "savedDate": 1701110283786,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1693480897657,
+          "createdDate": 1694717799832,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -2078,14 +2139,14 @@
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
-          "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
+          "companyId": "b1bc29c4-a98f-4f11-b852-fe70b6383f65"
         }
       ],
       "connections": [],
-      "parentFlowId": "4c1bee48e0d171556fd444586aa2cf3c"
+      "parentFlowId": "751d38742af4ad1e5034bf7d17bd6a90"
     },
     {
-      "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
+      "companyId": "b1bc29c4-a98f-4f11-b852-fe70b6383f65",
       "authTokenExpireIds": [],
       "connectorIds": [
         "annotationConnector",
@@ -2097,10 +2158,10 @@
         "variablesConnector",
         "pingOneMfaConnector"
       ],
-      "createdDate": 1695401518643,
-      "currentVersion": 11,
-      "customerId": "f3e47d945ae971a4b4142ec75012d155",
-      "description": "Imported on Fri Sep 22 2023 16:44:06 GMT+0000 (Coordinated Universal Time)",
+      "createdDate": 1701105784025,
+      "currentVersion": 14,
+      "customerId": "0241a35acf80e3bd89cb7c27b9ad83b6",
+      "description": "",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -2123,7 +2184,7 @@
       "isInputSchemaSaved": true,
       "isOutputSchemaSaved": false,
       "name": "Pair a Digital Wallet Using Verified Channel Subflow",
-      "publishedVersion": 1,
+      "publishedVersion": 14,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": {},
@@ -2134,14 +2195,14 @@
         "useBetaAlgorithm": true,
         "useCustomScript": false,
         "jsLinks": [],
-        "flowHttpTimeoutInSeconds": 60,
-        "flowTimeoutInSeconds": 90,
+        "flowHttpTimeoutInSeconds": 120,
+        "flowTimeoutInSeconds": 300,
         "requireAuthenticationToInitiate": true
       },
       "timeouts": "null",
-      "updatedDate": 1695401463851,
-      "flowId": "15be374f71ce2c4ed0093a9571d91c32",
-      "versionId": 12,
+      "updatedDate": 1701105790178,
+      "flowId": "e33c0d3642ca54bfe5f9045f58a9af02",
+      "versionId": 14,
       "graphData": {
         "elements": {
           "nodes": [
@@ -2184,7 +2245,7 @@
                 "idUnique": "7x04397o2h"
               },
               "position": {
-                "x": 219.57823129251702,
+                "x": 286.9884300118925,
                 "y": 214
               },
               "group": "nodes",
@@ -2200,7 +2261,7 @@
               "data": {
                 "id": "oq056votuo",
                 "nodeType": "CONNECTION",
-                "connectionId": "8dbe4990586f551eb01ad95e88ddecd7",
+                "connectionId": "ac5c99c61472d1d40e03928323798a7e",
                 "connectorId": "pingOneCredentialsConnector",
                 "name": "PingOne Credentials",
                 "label": "PingOne Credentials",
@@ -2237,8 +2298,8 @@
                 }
               },
               "position": {
-                "x": 591.9138321995464,
-                "y": 646.3356009070294
+                "x": 659.3641866349535,
+                "y": 704.2110182877456
               },
               "group": "nodes",
               "removed": false,
@@ -2260,8 +2321,8 @@
                 }
               },
               "position": {
-                "x": 708.1950113378684,
-                "y": 646.3356009070294
+                "x": 770.7052332936917,
+                "y": 704.2110182877456
               },
               "group": "nodes",
               "removed": false,
@@ -2276,7 +2337,7 @@
               "data": {
                 "id": "s085zoqaii",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Node",
@@ -2293,8 +2354,8 @@
                 }
               },
               "position": {
-                "x": 330.28117913832193,
-                "y": 1721.936507936508
+                "x": 395.17834647086346,
+                "y": 1834.7566086147233
               },
               "group": "nodes",
               "removed": false,
@@ -2312,8 +2373,8 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 446.562358276644,
-                "y": 1721.936507936508
+                "x": 479.8594207146199,
+                "y": 1834.7566086147233
               },
               "group": "nodes",
               "removed": false,
@@ -2365,8 +2426,8 @@
                 }
               },
               "position": {
-                "x": 591.9138321995464,
-                "y": 1721.936507936508
+                "x": 649.2215692021329,
+                "y": 1834.7566086147233
               },
               "group": "nodes",
               "removed": false,
@@ -2415,8 +2476,8 @@
                 "status": "configured"
               },
               "position": {
-                "x": 214,
-                "y": 1605.6553287981858
+                "x": 310.49727222710703,
+                "y": 1693.6214848751292
               },
               "group": "nodes",
               "removed": false,
@@ -2477,8 +2538,8 @@
                 "idUnique": "00surhcg33"
               },
               "position": {
-                "x": 1231.4603174603176,
-                "y": 1373.092970521542
+                "x": 1270.2161136563468,
+                "y": 1467.8052868917785
               },
               "group": "nodes",
               "removed": false,
@@ -2501,8 +2562,8 @@
                 }
               },
               "position": {
-                "x": 1057.0385487528345,
-                "y": 1373.092970521542
+                "x": 1100.8539651688338,
+                "y": 1467.8052868917785
               },
               "group": "nodes",
               "removed": false,
@@ -2534,8 +2595,8 @@
                 }
               },
               "position": {
-                "x": 1580.3038548752834,
-                "y": 1024.249433106576
+                "x": 1605.7630832342293,
+                "y": 1066.0694199286452
               },
               "group": "nodes",
               "removed": false,
@@ -2550,7 +2611,7 @@
               "data": {
                 "id": "rum6u9mwfg",
                 "nodeType": "CONNECTION",
-                "connectionId": "8dbe4990586f551eb01ad95e88ddecd7",
+                "connectionId": "ac5c99c61472d1d40e03928323798a7e",
                 "connectorId": "pingOneCredentialsConnector",
                 "name": "PingOne Credentials",
                 "label": "PingOne Credentials",
@@ -2570,8 +2631,8 @@
                 }
               },
               "position": {
-                "x": 620.9841269841269,
-                "y": 1373.092970521542
+                "x": 677.4485939500516,
+                "y": 1467.8052868917785
               },
               "group": "nodes",
               "removed": false,
@@ -2594,8 +2655,8 @@
                 }
               },
               "position": {
-                "x": 766.3356009070294,
-                "y": 1373.092970521542
+                "x": 818.5837176896457,
+                "y": 1467.8052868917785
               },
               "group": "nodes",
               "removed": false,
@@ -2630,8 +2691,8 @@
                 }
               },
               "position": {
-                "x": 940.7573696145124,
-                "y": 1373.092970521542
+                "x": 987.9458661771587,
+                "y": 1467.8052868917785
               },
               "group": "nodes",
               "removed": false,
@@ -2661,8 +2722,8 @@
                 }
               },
               "position": {
-                "x": 1231.4603174603176,
-                "y": 1489.3741496598639
+                "x": 1270.2161136563468,
+                "y": 1580.7133858834538
               },
               "group": "nodes",
               "removed": false,
@@ -2677,7 +2738,7 @@
               "data": {
                 "id": "7fi4o2lolk",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Teleport",
@@ -2701,8 +2762,8 @@
                 "idUnique": "vt9vrlcxkv"
               },
               "position": {
-                "x": 940.7573696145124,
-                "y": 1489.3741496598639
+                "x": 987.9458661771587,
+                "y": 1580.7133858834538
               },
               "group": "nodes",
               "removed": false,
@@ -2748,7 +2809,7 @@
                     "value": false
                   },
                   "customHTML": {
-                    "value": "<div\n   class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n   <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n         <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n            <h1 class=\"text-center mb-4\">{{title}}</h1>\n                   \n            <p class=\"text-muted text-center\">{{subtitle}}</p>\n               <img src=\"{{generatedQr}}\"  class=\"w-50 mx-auto mt-4 mb-4 p-1 border border-info border-3 rounded card-img-top\" alt=\"Presentation Session QR Code\" /> \n               <br/>         \n               <div class=\"card-footer mt-3\">\n                  <div class=\"row text-center py-2\">\n                     <span>{{pollingMessage}}</span>\n                     <span>[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iMjAwMCIgcG9sbFJldHJpZXM9IjkwIiBwb2xsQ2hhbGxlbmdlU3RhdHVzPSJmYWxzZSI=###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6IjIwMDAiLCJwb2xsUmV0cmllcyI6IjkwIiwicG9sbENoYWxsZW5nZVN0YXR1cyI6ImZhbHNlIn0sImNvbXBvbmVudFByb3BzIjp7ImNsYXNzIjp7Im5hbWUiOiJjbGFzcyIsImRpc3BsYXlOYW1lIjoiQ1NTIENsYXNzIn0sInBvbGxJbnRlcnZhbCI6eyJuYW1lIjoicG9sbEludGVydmFsIiwiZGlzcGxheU5hbWUiOiJQb2xsIEludGVydmFsIiwidmFsdWUiOjIwMDB9LCJwb2xsUmV0cmllcyI6eyJuYW1lIjoicG9sbFJldHJpZXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgUmV0cmllcyIsInZhbHVlIjo2MH0sInBvbGxDaGFsbGVuZ2VTdGF0dXMiOnsibmFtZSI6InBvbGxDaGFsbGVuZ2VTdGF0dXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgQ2hhbGxlbmdlIFN0YXR1cyIsInR5cGUiOiJzZWxlY3QiLCJ2YWx1ZSI6InRydWUiLCJvcHRpb25zIjpbeyJuYW1lIjoiVHJ1ZSIsInZhbHVlIjoidHJ1ZSJ9LHsibmFtZSI6IkZhbHNlIiwidmFsdWUiOiJmYWxzZSJ9XX19fQ==]]]</span>\n                  </div>\n               </div>\n         </div>\n      </div>\n   </div>\n</div>\n"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div\\n   class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n   <div style=\\\"max-width: 460px; min-width: 460px; width: 100%\\\">\\n      <div class=\\\"card shadow mb-5\\\">\\n         <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n            <img class=\\\"companyLogo align-self-center mb-5\\\" alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" />\\n            <h1 class=\\\"text-center mb-4\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"title\",\n        \"data\": \"{{title}}\",\n        \"tooltip\": \"{{title}}\",\n        \"children\": [\n          {\n            \"text\": \"{{title}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</h1>\\n                   \\n            <p class=\\\"text-muted text-center\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"subtitle\",\n        \"data\": \"{{subtitle}}\",\n        \"tooltip\": \"{{subtitle}}\",\n        \"children\": [\n          {\n            \"text\": \"{{subtitle}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</p>\\n               <img src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"generatedQr\",\n        \"data\": \"{{generatedQr}}\",\n        \"tooltip\": \"{{generatedQr}}\",\n        \"children\": [\n          {\n            \"text\": \"{{generatedQr}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"  class=\\\"w-50 mx-auto mt-4 mb-4 p-1 border border-info border-3 rounded card-img-top\\\" alt=\\\"Presentation Session QR Code\\\" /> \\n               <br/>         \\n               <div class=\\\"card-footer mt-3\\\">\\n                  <div class=\\\"row text-center py-2\\\">\\n                     <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"pollingMessage\",\n        \"data\": \"{{pollingMessage}}\",\n        \"tooltip\": \"{{pollingMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"{{pollingMessage}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n                     <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iMTAwMCIgcG9sbFJldHJpZXM9IjIwMCIgcG9sbENoYWxsZW5nZVN0YXR1cz0iZmFsc2Ui###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6IjEwMDAiLCJwb2xsUmV0cmllcyI6IjIwMCIsInBvbGxDaGFsbGVuZ2VTdGF0dXMiOiJmYWxzZSJ9LCJjb21wb25lbnRQcm9wcyI6eyJjbGFzcyI6eyJuYW1lIjoiY2xhc3MiLCJkaXNwbGF5TmFtZSI6IkNTUyBDbGFzcyJ9LCJwb2xsSW50ZXJ2YWwiOnsibmFtZSI6InBvbGxJbnRlcnZhbCIsImRpc3BsYXlOYW1lIjoiUG9sbCBJbnRlcnZhbCIsInZhbHVlIjoyMDAwfSwicG9sbFJldHJpZXMiOnsibmFtZSI6InBvbGxSZXRyaWVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIFJldHJpZXMiLCJ2YWx1ZSI6NjB9LCJwb2xsQ2hhbGxlbmdlU3RhdHVzIjp7Im5hbWUiOiJwb2xsQ2hhbGxlbmdlU3RhdHVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIENoYWxsZW5nZSBTdGF0dXMiLCJ0eXBlIjoic2VsZWN0IiwidmFsdWUiOiJ0cnVlIiwib3B0aW9ucyI6W3sibmFtZSI6IlRydWUiLCJ2YWx1ZSI6InRydWUifSx7Im5hbWUiOiJGYWxzZSIsInZhbHVlIjoiZmFsc2UifV19fX0=]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skpolling\",\n        \"children\": [\n          {\n            \"text\": \"skpolling\"\n          }\n        ],\n        \"component\": \"skpolling\",\n        \"options\": {\n          \"class\": \"\",\n          \"pollInterval\": \"1000\",\n          \"pollRetries\": \"200\",\n          \"pollChallengeStatus\": \"false\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"CSS Class\"\n          },\n          \"pollInterval\": {\n            \"name\": \"pollInterval\",\n            \"displayName\": \"Poll Interval\",\n            \"value\": 2000\n          },\n          \"pollRetries\": {\n            \"name\": \"pollRetries\",\n            \"displayName\": \"Poll Retries\",\n            \"value\": 60\n          },\n          \"pollChallengeStatus\": {\n            \"name\": \"pollChallengeStatus\",\n            \"displayName\": \"Poll Challenge Status\",\n            \"type\": \"select\",\n            \"value\": \"true\",\n            \"options\": [\n              {\n                \"name\": \"True\",\n                \"value\": \"true\"\n              },\n              {\n                \"name\": \"False\",\n                \"value\": \"false\"\n              }\n            ]\n          }\n        },\n        \"tooltip\": \"{{component.skpolling}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n                  </div>\\n               </div>\\n         </div>\\n      </div>\\n   </div>\\n</div>\\n\"\n      }\n    ]\n  }\n]"
                   },
                   "customScript": {
                     "value": ""
@@ -2802,8 +2863,8 @@
                 "idUnique": "wzqyn7daj7"
               },
               "position": {
-                "x": 1464.0226757369614,
-                "y": 1024.249433106576
+                "x": 1494.422036575491,
+                "y": 1066.0694199286452
               },
               "group": "nodes",
               "removed": false,
@@ -2818,7 +2879,7 @@
               "data": {
                 "id": "h64lp2p14l",
                 "nodeType": "CONNECTION",
-                "connectionId": "5db456eb9756e9d7c4f39be6c84f65fb",
+                "connectionId": "3339d14b03caf699a4d98ac94eb2f5cd",
                 "connectorId": "devicePolicyConnector",
                 "name": "Device Policy",
                 "label": "Device Policy",
@@ -2832,8 +2893,8 @@
                 }
               },
               "position": {
-                "x": 882.6167800453514,
-                "y": 1024.249433106576
+                "x": 909.8815416171146,
+                "y": 1066.0694199286452
               },
               "group": "nodes",
               "removed": false,
@@ -2869,8 +2930,8 @@
                 "idUnique": "kdmwyo5phq"
               },
               "position": {
-                "x": 1173.3197278911564,
-                "y": 1024.249433106576
+                "x": 1216.0694199286452,
+                "y": 1066.0694199286452
               },
               "group": "nodes",
               "removed": false,
@@ -2887,8 +2948,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 998.8979591836734,
-                "y": 1024.249433106576
+                "x": 1049.0578499405376,
+                "y": 1066.0694199286452
               },
               "group": "nodes",
               "removed": false,
@@ -2919,8 +2980,8 @@
                 }
               },
               "position": {
-                "x": 1289.6009070294785,
-                "y": 1024.249433106576
+                "x": 1327.4104665873836,
+                "y": 1066.0694199286452
               },
               "group": "nodes",
               "removed": false,
@@ -2964,8 +3025,8 @@
                 }
               },
               "position": {
-                "x": 1173.3197278911564,
-                "y": 646.3356009070294
+                "x": 1216.0694199286452,
+                "y": 704.2110182877456
               },
               "group": "nodes",
               "removed": false,
@@ -2994,8 +3055,8 @@
                 }
               },
               "position": {
-                "x": 1289.6009070294785,
-                "y": 646.3356009070294
+                "x": 1327.4104665873836,
+                "y": 704.2110182877456
               },
               "group": "nodes",
               "removed": false,
@@ -3035,8 +3096,8 @@
                 }
               },
               "position": {
-                "x": 882.6167800453514,
-                "y": 646.3356009070294
+                "x": 909.8815416171146,
+                "y": 704.2110182877456
               },
               "group": "nodes",
               "removed": false,
@@ -3053,8 +3114,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 998.8979591836734,
-                "y": 646.3356009070294
+                "x": 1049.0578499405376,
+                "y": 704.2110182877456
               },
               "group": "nodes",
               "removed": false,
@@ -3100,7 +3161,7 @@
                     "value": false
                   },
                   "customHTML": {
-                    "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n        <h1 id=\"header\" class=\"text-center mb-4\">{{title}}</h1>\n\n        <p class=\"text-muted text-center\">{{subtitle}}</p>\n        <br/>\n        <p class=\"text-muted text-center \">        \n          <button type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\" data-skform=\"emailForm\" data-skbuttonvalue=\"DISPLAYQR\" id=\"btnCancel\">\n            Didn't receive the link?  Click here to pair your wallet using a QR Code.\n          </button>    \n        </p>\n        <div class=\"card-footer mt-3\">\n          <div class=\"row text-center py-2\">\n              <span>{{pollingMessage}}</span>\n              <span>[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iMjAwMCIgcG9sbFJldHJpZXM9IjkwIiBwb2xsQ2hhbGxlbmdlU3RhdHVzPSJmYWxzZSI=###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6IjIwMDAiLCJwb2xsUmV0cmllcyI6IjkwIiwicG9sbENoYWxsZW5nZVN0YXR1cyI6ImZhbHNlIn0sImNvbXBvbmVudFByb3BzIjp7ImNsYXNzIjp7Im5hbWUiOiJjbGFzcyIsImRpc3BsYXlOYW1lIjoiQ1NTIENsYXNzIn0sInBvbGxJbnRlcnZhbCI6eyJuYW1lIjoicG9sbEludGVydmFsIiwiZGlzcGxheU5hbWUiOiJQb2xsIEludGVydmFsIiwidmFsdWUiOjIwMDB9LCJwb2xsUmV0cmllcyI6eyJuYW1lIjoicG9sbFJldHJpZXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgUmV0cmllcyIsInZhbHVlIjo2MH0sInBvbGxDaGFsbGVuZ2VTdGF0dXMiOnsibmFtZSI6InBvbGxDaGFsbGVuZ2VTdGF0dXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgQ2hhbGxlbmdlIFN0YXR1cyIsInR5cGUiOiJzZWxlY3QiLCJ2YWx1ZSI6InRydWUiLCJvcHRpb25zIjpbeyJuYW1lIjoiVHJ1ZSIsInZhbHVlIjoidHJ1ZSJ9LHsibmFtZSI6IkZhbHNlIiwidmFsdWUiOiJmYWxzZSJ9XX19fQ==]]]</span>\n          </div>\n        </div>        \n      </div>\n    </div>\n  </div>\n</div>\n"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div\\n  class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n  <div style=\\\"max-width: 460px; min-width: 460px; width: 100%\\\">\\n    <div class=\\\"card shadow mb-5\\\">\\n      <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n        <img class=\\\"companyLogo align-self-center mb-5\\\" alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" />\\n        <h1 id=\\\"header\\\" class=\\\"text-center mb-4\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"title\",\n        \"data\": \"{{title}}\",\n        \"tooltip\": \"{{title}}\",\n        \"children\": [\n          {\n            \"text\": \"{{title}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</h1>\\n\\n        <p class=\\\"text-muted text-center\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"subtitle\",\n        \"data\": \"{{subtitle}}\",\n        \"tooltip\": \"{{subtitle}}\",\n        \"children\": [\n          {\n            \"text\": \"{{subtitle}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</p>\\n        <br/>\\n        <p class=\\\"text-muted text-center \\\">        \\n          <button type=\\\"submit\\\" class=\\\"btn btn-link\\\" data-skcomponent=\\\"skbutton\\\" data-skbuttontype=\\\"next-event\\\" data-skform=\\\"emailForm\\\" data-skbuttonvalue=\\\"DISPLAYQR\\\" id=\\\"btnCancel\\\">\\n            Didn't receive the link?  Click here to pair your wallet using a QR Code.\\n          </button>    \\n        </p>\\n        <div class=\\\"card-footer mt-3\\\">\\n          <div class=\\\"row text-center py-2\\\">\\n              <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"pollingMessage\",\n        \"data\": \"{{pollingMessage}}\",\n        \"tooltip\": \"{{pollingMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"{{pollingMessage}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n              <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iMjAwMCIgcG9sbFJldHJpZXM9IjUwMCIgcG9sbENoYWxsZW5nZVN0YXR1cz0iZmFsc2Ui###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6IjIwMDAiLCJwb2xsUmV0cmllcyI6IjUwMCIsInBvbGxDaGFsbGVuZ2VTdGF0dXMiOiJmYWxzZSJ9LCJjb21wb25lbnRQcm9wcyI6eyJjbGFzcyI6eyJuYW1lIjoiY2xhc3MiLCJkaXNwbGF5TmFtZSI6IkNTUyBDbGFzcyJ9LCJwb2xsSW50ZXJ2YWwiOnsibmFtZSI6InBvbGxJbnRlcnZhbCIsImRpc3BsYXlOYW1lIjoiUG9sbCBJbnRlcnZhbCIsInZhbHVlIjoyMDAwfSwicG9sbFJldHJpZXMiOnsibmFtZSI6InBvbGxSZXRyaWVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIFJldHJpZXMiLCJ2YWx1ZSI6NjB9LCJwb2xsQ2hhbGxlbmdlU3RhdHVzIjp7Im5hbWUiOiJwb2xsQ2hhbGxlbmdlU3RhdHVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIENoYWxsZW5nZSBTdGF0dXMiLCJ0eXBlIjoic2VsZWN0IiwidmFsdWUiOiJ0cnVlIiwib3B0aW9ucyI6W3sibmFtZSI6IlRydWUiLCJ2YWx1ZSI6InRydWUifSx7Im5hbWUiOiJGYWxzZSIsInZhbHVlIjoiZmFsc2UifV19fX0=]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skpolling\",\n        \"children\": [\n          {\n            \"text\": \"skpolling\"\n          }\n        ],\n        \"component\": \"skpolling\",\n        \"options\": {\n          \"class\": \"\",\n          \"pollInterval\": \"2000\",\n          \"pollRetries\": \"500\",\n          \"pollChallengeStatus\": \"false\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"CSS Class\"\n          },\n          \"pollInterval\": {\n            \"name\": \"pollInterval\",\n            \"displayName\": \"Poll Interval\",\n            \"value\": 2000\n          },\n          \"pollRetries\": {\n            \"name\": \"pollRetries\",\n            \"displayName\": \"Poll Retries\",\n            \"value\": 60\n          },\n          \"pollChallengeStatus\": {\n            \"name\": \"pollChallengeStatus\",\n            \"displayName\": \"Poll Challenge Status\",\n            \"type\": \"select\",\n            \"value\": \"true\",\n            \"options\": [\n              {\n                \"name\": \"True\",\n                \"value\": \"true\"\n              },\n              {\n                \"name\": \"False\",\n                \"value\": \"false\"\n              }\n            ]\n          }\n        },\n        \"tooltip\": \"{{component.skpolling}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n          </div>\\n        </div>        \\n      </div>\\n    </div>\\n  </div>\\n</div>\\n\"\n      }\n    ]\n  }\n]"
                   },
                   "customScript": {
                     "value": ""
@@ -3154,8 +3215,8 @@
                 "idUnique": "ndm5lpiwnr"
               },
               "position": {
-                "x": 1464.0226757369614,
-                "y": 646.3356009070294
+                "x": 1522.2572982401755,
+                "y": 704.2110182877456
               },
               "group": "nodes",
               "removed": false,
@@ -3214,8 +3275,8 @@
                 "idUnique": "15e28h9lo9"
               },
               "position": {
-                "x": 1170,
-                "y": 1140
+                "x": 1216.0694199286452,
+                "y": 1177.4104665873836
               },
               "group": "nodes",
               "removed": false,
@@ -3230,7 +3291,7 @@
               "data": {
                 "id": "gctw05mfs7",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Teleport",
@@ -3247,8 +3308,8 @@
                 }
               },
               "position": {
-                "x": 330.28117913832193,
-                "y": 1373.092970521542
+                "x": 395.17834647086346,
+                "y": 1467.8052868917785
               },
               "group": "nodes",
               "removed": false,
@@ -3265,8 +3326,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 446.562358276644,
-                "y": 1373.092970521542
+                "x": 479.8594207146199,
+                "y": 1467.8052868917785
               },
               "group": "nodes",
               "removed": false,
@@ -3281,7 +3342,7 @@
               "data": {
                 "id": "0sbdzr5gn4",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Teleport",
@@ -3301,8 +3362,8 @@
                 }
               },
               "position": {
-                "x": 1754.7256235827665,
-                "y": 1024.249433106576
+                "x": 1800.6099148870214,
+                "y": 1066.0694199286452
               },
               "group": "nodes",
               "removed": false,
@@ -3325,8 +3386,8 @@
                 }
               },
               "position": {
-                "x": 1580.3038548752834,
-                "y": 646.3356009070294
+                "x": 1633.5983448989139,
+                "y": 704.2110182877456
               },
               "group": "nodes",
               "removed": false,
@@ -3341,7 +3402,7 @@
               "data": {
                 "id": "benofr5hfx",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Teleport",
@@ -3361,8 +3422,8 @@
                 }
               },
               "position": {
-                "x": 2103.5691609977325,
-                "y": 791.6870748299319
+                "x": 2357.315148180713,
+                "y": 843.3873266111684
               },
               "group": "nodes",
               "removed": false,
@@ -3412,8 +3473,8 @@
                 "idUnique": "slcps15bil"
               },
               "position": {
-                "x": 214,
-                "y": 1256.8117913832198
+                "x": 310.49727222710703,
+                "y": 1326.6701631521844
               },
               "group": "nodes",
               "removed": false,
@@ -3428,7 +3489,7 @@
               "data": {
                 "id": "j9wnz23me4",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Teleport",
@@ -3442,8 +3503,8 @@
                 }
               },
               "position": {
-                "x": 330.28117913832193,
-                "y": 1024.249433106576
+                "x": 381.0115699881075,
+                "y": 1066.0694199286452
               },
               "group": "nodes",
               "removed": false,
@@ -3460,8 +3521,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 417.4920634920635,
-                "y": 1024.249433106576
+                "x": 464.5173549821613,
+                "y": 1066.0694199286452
               },
               "group": "nodes",
               "removed": false,
@@ -3476,7 +3537,7 @@
               "data": {
                 "id": "ikkrw2zztf",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Teleport",
@@ -3493,8 +3554,8 @@
                 }
               },
               "position": {
-                "x": 1464.0226757369614,
-                "y": 733.546485260771
+                "x": 1522.2572982401755,
+                "y": 787.7168032817992
               },
               "group": "nodes",
               "removed": false,
@@ -3534,8 +3595,8 @@
                 }
               },
               "position": {
-                "x": 1783.795918367347,
-                "y": 646.3356009070294
+                "x": 1772.7746532223368,
+                "y": 704.2110182877456
               },
               "group": "nodes",
               "removed": false,
@@ -3552,8 +3613,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1900.077097505669,
-                "y": 791.6870748299319
+                "x": 1911.9509615457598,
+                "y": 843.3873266111684
               },
               "group": "nodes",
               "removed": false,
@@ -3571,41 +3632,8 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1900.077097505669,
-                "y": 675.4058956916099
-              },
-              "group": "nodes",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": false,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "a3hmsqkltp",
-                "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
-                "connectorId": "nodeConnector",
-                "name": "Teleport",
-                "label": "Teleport",
-                "status": "configured",
-                "capabilityName": "goToNode",
-                "type": "action",
-                "properties": {
-                  "nodeInstanceId": {
-                    "value": "j9wnz23me4"
-                  },
-                  "nodeTitle": {
-                    "value": "QRPath"
-                  }
-                }
-              },
-              "position": {
-                "x": 2103.5691609977325,
-                "y": 675.4058956916099
+                "x": 1911.9509615457598,
+                "y": 759.8815416171146
               },
               "group": "nodes",
               "removed": false,
@@ -3648,8 +3676,8 @@
                 }
               },
               "position": {
-                "x": 330.28117913832193,
-                "y": 355.63265306122446
+                "x": 408.8468316527921,
+                "y": 398.023139976215
               },
               "group": "nodes",
               "removed": false,
@@ -3667,8 +3695,8 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 475.63265306122446,
-                "y": 355.63265306122446
+                "x": 548.0231399762151,
+                "y": 398.023139976215
               },
               "group": "nodes",
               "removed": false,
@@ -3693,8 +3721,8 @@
                 }
               },
               "position": {
-                "x": 795.4058956916099,
-                "y": 355.63265306122446
+                "x": 882.04627995243,
+                "y": 398.023139976215
               },
               "group": "nodes",
               "removed": false,
@@ -3729,8 +3757,8 @@
                 }
               },
               "position": {
-                "x": 650.0544217687075,
-                "y": 355.63265306122446
+                "x": 715.0347099643225,
+                "y": 398.023139976215
               },
               "group": "nodes",
               "removed": false,
@@ -3745,7 +3773,7 @@
               "data": {
                 "id": "ip0q4uxyh1",
                 "nodeType": "CONNECTION",
-                "connectionId": "8dbe4990586f551eb01ad95e88ddecd7",
+                "connectionId": "ac5c99c61472d1d40e03928323798a7e",
                 "connectorId": "pingOneCredentialsConnector",
                 "name": "PingOne Credentials",
                 "label": "PingOne Credentials",
@@ -3765,8 +3793,8 @@
                 }
               },
               "position": {
-                "x": 591.9138321995464,
-                "y": 1024.249433106576
+                "x": 631.5289249702689,
+                "y": 1066.0694199286452
               },
               "group": "nodes",
               "removed": false,
@@ -3784,8 +3812,8 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 708.1950113378684,
-                "y": 1024.249433106576
+                "x": 742.8699716290071,
+                "y": 1066.0694199286452
               },
               "group": "nodes",
               "removed": false,
@@ -3800,7 +3828,7 @@
               "data": {
                 "id": "58pzinr7f4",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Teleport",
@@ -3817,8 +3845,8 @@
                 }
               },
               "position": {
-                "x": 940.7573696145124,
-                "y": 442.84353741496597
+                "x": 1021.222588275853,
+                "y": 481.5289249702688
               },
               "group": "nodes",
               "removed": false,
@@ -3833,7 +3861,7 @@
               "data": {
                 "id": "35gku7f9gh",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Teleport",
@@ -3850,8 +3878,8 @@
                 }
               },
               "position": {
-                "x": 940.7573696145124,
-                "y": 355.63265306122446
+                "x": 1021.222588275853,
+                "y": 398.023139976215
               },
               "group": "nodes",
               "removed": false,
@@ -3866,7 +3894,7 @@
               "data": {
                 "id": "wbpo9vidad",
                 "nodeType": "CONNECTION",
-                "connectionId": "6129a5f225a283f9a5dc6a4fe75385dd",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
                 "connectorId": "nodeConnector",
                 "name": "Teleport",
                 "label": "Teleport",
@@ -3880,8 +3908,8 @@
                 }
               },
               "position": {
-                "x": 330.28117913832193,
-                "y": 646.3356009070294
+                "x": 381.0115699881075,
+                "y": 704.2110182877456
               },
               "group": "nodes",
               "removed": false,
@@ -3898,8 +3926,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 417.4920634920635,
-                "y": 646.3356009070294
+                "x": 464.5173549821613,
+                "y": 704.2110182877456
               },
               "group": "nodes",
               "removed": false,
@@ -3958,8 +3986,8 @@
                 "idUnique": "e62dkamj4u"
               },
               "position": {
-                "x": 249.57823129251702,
-                "y": 274
+                "x": 325.3410466587384,
+                "y": 314.5173549821613
               },
               "group": "nodes",
               "removed": false,
@@ -4005,7 +4033,7 @@
                     "value": "Verdana"
                   },
                   "annotation": {
-                    "value": "Failover to QR Code."
+                    "value": "Try to failover to QR Code."
                   },
                   "width": {
                     "value": 100
@@ -4018,8 +4046,8 @@
                 "idUnique": "qzqhnpyhd7"
               },
               "position": {
-                "x": 1260.530612244898,
-                "y": 733.546485260771
+                "x": 1299.575204922699,
+                "y": 787.7168032817992
               },
               "group": "nodes",
               "removed": false,
@@ -4069,8 +4097,8 @@
                 "idUnique": "84406ir9wm"
               },
               "position": {
-                "x": 243.0702947845805,
-                "y": 907.968253968254
+                "x": 297.5057849940538,
+                "y": 954.7283732699068
               },
               "group": "nodes",
               "removed": false,
@@ -4120,8 +4148,8 @@
                 "idUnique": "z298mz9tmi"
               },
               "position": {
-                "x": 243.0702947845805,
-                "y": 530.0544217687075
+                "x": 297.5057849940538,
+                "y": 592.8699716290072
               },
               "group": "nodes",
               "removed": false,
@@ -4180,8 +4208,8 @@
                 "idUnique": "6irp3q3fh2"
               },
               "position": {
-                "x": 1929.1473922902494,
-                "y": 617.2653061224489
+                "x": 1911.9509615457598,
+                "y": 704.2110182877456
               },
               "group": "nodes",
               "removed": false,
@@ -4293,8 +4321,335 @@
                 "idUnique": "r5abcyrm34"
               },
               "position": {
-                "x": 1470,
-                "y": 1140
+                "x": 1522.2572982401755,
+                "y": 1177.4104665873836
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "vmgm9kyteo",
+                "nodeType": "CONNECTION",
+                "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+                "connectorId": "httpConnector",
+                "name": "Http",
+                "label": "Http",
+                "status": "configured",
+                "capabilityName": "customHTMLTemplate",
+                "type": "trigger",
+                "properties": {
+                  "title": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Digital Wallet Pairing Request\"\n      }\n    ]\n  }\n]"
+                  },
+                  "subtitle": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Scan this QR Code with your mobile phone or digital wallet and follow the instructions.\"\n      }\n    ]\n  }\n]"
+                  },
+                  "pollingMessage": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Status: Waiting for \"\n      },\n      {\n        \"text\": \"Digital Wallet\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  },
+                  "nodeTitle": {
+                    "value": "Display Digital Wallet Pairing QR"
+                  },
+                  "nodeDescription": {},
+                  "showFooter": {
+                    "value": false
+                  },
+                  "enablePolling": {
+                    "value": true
+                  },
+                  "pollChallengeStatus": {
+                    "value": false
+                  },
+                  "customHTML": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div\\n   class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n   <div style=\\\"max-width: 460px; min-width: 460px; width: 100%\\\">\\n      <div class=\\\"card shadow mb-5\\\">\\n         <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n            <img class=\\\"companyLogo align-self-center mb-5\\\" alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" />\\n            <h1 class=\\\"text-center mb-4\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"title\",\n        \"data\": \"{{title}}\",\n        \"tooltip\": \"{{title}}\",\n        \"children\": [\n          {\n            \"text\": \"{{title}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</h1>\\n                   \\n            <p class=\\\"text-muted text-center\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"subtitle\",\n        \"data\": \"{{subtitle}}\",\n        \"tooltip\": \"{{subtitle}}\",\n        \"children\": [\n          {\n            \"text\": \"{{subtitle}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</p>\\n               <img src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"generatedQr\",\n        \"data\": \"{{generatedQr}}\",\n        \"tooltip\": \"{{generatedQr}}\",\n        \"children\": [\n          {\n            \"text\": \"{{generatedQr}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"  class=\\\"w-50 mx-auto mt-4 mb-4 p-1 border border-info border-3 rounded card-img-top\\\" alt=\\\"Presentation Session QR Code\\\" /> \\n               <br/>         \\n               <div class=\\\"card-footer mt-3\\\">\\n                  <div class=\\\"row text-center py-2\\\">\\n                     <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"pollingMessage\",\n        \"data\": \"{{pollingMessage}}\",\n        \"tooltip\": \"{{pollingMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"{{pollingMessage}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n                     <span>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iMTAwMCIgcG9sbFJldHJpZXM9IjIwMCIgcG9sbENoYWxsZW5nZVN0YXR1cz0iZmFsc2Ui###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6IjEwMDAiLCJwb2xsUmV0cmllcyI6IjIwMCIsInBvbGxDaGFsbGVuZ2VTdGF0dXMiOiJmYWxzZSJ9LCJjb21wb25lbnRQcm9wcyI6eyJjbGFzcyI6eyJuYW1lIjoiY2xhc3MiLCJkaXNwbGF5TmFtZSI6IkNTUyBDbGFzcyJ9LCJwb2xsSW50ZXJ2YWwiOnsibmFtZSI6InBvbGxJbnRlcnZhbCIsImRpc3BsYXlOYW1lIjoiUG9sbCBJbnRlcnZhbCIsInZhbHVlIjoyMDAwfSwicG9sbFJldHJpZXMiOnsibmFtZSI6InBvbGxSZXRyaWVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIFJldHJpZXMiLCJ2YWx1ZSI6NjB9LCJwb2xsQ2hhbGxlbmdlU3RhdHVzIjp7Im5hbWUiOiJwb2xsQ2hhbGxlbmdlU3RhdHVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIENoYWxsZW5nZSBTdGF0dXMiLCJ0eXBlIjoic2VsZWN0IiwidmFsdWUiOiJ0cnVlIiwib3B0aW9ucyI6W3sibmFtZSI6IlRydWUiLCJ2YWx1ZSI6InRydWUifSx7Im5hbWUiOiJGYWxzZSIsInZhbHVlIjoiZmFsc2UifV19fX0=]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skpolling\",\n        \"children\": [\n          {\n            \"text\": \"skpolling\"\n          }\n        ],\n        \"component\": \"skpolling\",\n        \"options\": {\n          \"class\": \"\",\n          \"pollInterval\": \"1000\",\n          \"pollRetries\": \"200\",\n          \"pollChallengeStatus\": \"false\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"CSS Class\"\n          },\n          \"pollInterval\": {\n            \"name\": \"pollInterval\",\n            \"displayName\": \"Poll Interval\",\n            \"value\": 2000\n          },\n          \"pollRetries\": {\n            \"name\": \"pollRetries\",\n            \"displayName\": \"Poll Retries\",\n            \"value\": 60\n          },\n          \"pollChallengeStatus\": {\n            \"name\": \"pollChallengeStatus\",\n            \"displayName\": \"Poll Challenge Status\",\n            \"type\": \"select\",\n            \"value\": \"true\",\n            \"options\": [\n              {\n                \"name\": \"True\",\n                \"value\": \"true\"\n              },\n              {\n                \"name\": \"False\",\n                \"value\": \"false\"\n              }\n            ]\n          }\n        },\n        \"tooltip\": \"{{component.skpolling}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span>\\n                  </div>\\n               </div>\\n         </div>\\n      </div>\\n   </div>\\n</div>\\n\"\n      }\n    ]\n  }\n]"
+                  },
+                  "customScript": {
+                    "value": ""
+                  },
+                  "formFieldsList": {
+                    "value": [
+                      {
+                        "preferredControlType": "textField",
+                        "preferredDataType": "string",
+                        "propertyName": "buttonValue"
+                      }
+                    ]
+                  },
+                  "sktemplate": {
+                    "uiId": "e6e1bb56db7fa43d0bb18721a55fc694",
+                    "createdDate": 1687889267333,
+                    "customerId": "f3e47d945ae971a4b4142ec75012d155",
+                    "description": "",
+                    "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        },       \n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        },\n        \"generatedQr\": {\n            \"type\": \"string\",\n            \"displayName\": \"Generated QR Code Image\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"generatedQr\"\n        }\n    }\n}",
+                    "name": "VerifyPolling",
+                    "outputSchema": {},
+                    "script": "",
+                    "style": "",
+                    "template": "",
+                    "updatedDate": 1687889792920,
+                    "validationRules": [],
+                    "version": "1.0",
+                    "visibility": "private",
+                    "companyId": "edcc3f46-49cc-4176-bfcb-849afb268c1b",
+                    "value": "e6e1bb56db7fa43d0bb18721a55fc694"
+                  },
+                  "inputSchema": {
+                    "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Form Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        },       \n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        },\n        \"generatedQr\": {\n            \"type\": \"string\",\n            \"displayName\": \"Generated QR Code Image\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"generatedQr\"\n        }\n    }\n}"
+                  },
+                  "outputSchema": {
+                    "value": {}
+                  },
+                  "customCSS": {
+                    "value": ""
+                  },
+                  "validationRules": {
+                    "value": []
+                  },
+                  "appOpenUrl.href": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"href\",\n        \"data\": \"{{local.oq056votuo.payload.output.userDigitalWallet._links.appOpen.href}}\",\n        \"tooltip\": \"{{local.oq056votuo.payload.output.userDigitalWallet._links.appOpen.href}}\",\n        \"children\": [\n          {\n            \"text\": \"href\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  },
+                  "generatedQr": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"href\",\n        \"data\": \"{{local.oq056votuo.payload.output.userDigitalWallet._links.qrUrl.href}}\",\n        \"tooltip\": \"{{local.oq056votuo.payload.output.userDigitalWallet._links.qrUrl.href}}\",\n        \"children\": [\n          {\n            \"text\": \"href\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                },
+                "idUnique": "2kt1yuw9xd"
+              },
+              "position": {
+                "x": 2078.9625315338676,
+                "y": 759.8815416171146
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "0lz45725z2",
+                "nodeType": "EVAL"
+              },
+              "position": {
+                "x": 2218.1388398572903,
+                "y": 759.8815416171146
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "8bz502nziy",
+                "nodeType": "CONNECTION",
+                "connectionId": "acfd238d726a22e7c1ca1f28c127241d",
+                "connectorId": "nodeConnector",
+                "name": "Teleport",
+                "label": "Teleport",
+                "status": "configured",
+                "capabilityName": "goToNode",
+                "type": "action",
+                "properties": {
+                  "nodeInstanceId": {
+                    "value": "gctw05mfs7"
+                  },
+                  "digitalWalletId": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.oq056votuo.payload.output.userDigitalWallet.id}}\",\n        \"tooltip\": \"{{local.oq056votuo.payload.output.userDigitalWallet.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  },
+                  "nodeTitle": {
+                    "value": "PairingStatus"
+                  }
+                },
+                "idUnique": "lkytsko6v"
+              },
+              "position": {
+                "x": 2357.315148180713,
+                "y": 759.8815416171146
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "dkdjuzesu1",
+                "nodeType": "ANNOTATION",
+                "name": "Annotation",
+                "connectionId": "921bfae85c38ed45045e07be703d86b8",
+                "connectorId": "annotationConnector",
+                "capabilityName": "updateAnnotationProperties",
+                "type": "action",
+                "properties": {
+                  "backgroundColor": {
+                    "value": "#f7f7adff"
+                  },
+                  "annotationTextColor": {
+                    "value": "#000000"
+                  },
+                  "annotation": {
+                    "value": "Subflow Input Schema: pingOneUserId"
+                  },
+                  "width": {
+                    "value": 400
+                  },
+                  "fontSize": {
+                    "value": 14
+                  },
+                  "fontFamily": {
+                    "value": "sans-serif"
+                  },
+                  "cornerRadius": {
+                    "value": 8
+                  },
+                  "strokeEnabled": {
+                    "value": false
+                  },
+                  "strokeWidth": {
+                    "value": 1
+                  },
+                  "strokeColor": {
+                    "value": "#181818ff"
+                  }
+                },
+                "status": "configured",
+                "idUnique": "d2mbrib33f"
+              },
+              "position": {
+                "x": 325.3410466587384,
+                "y": 258.8468316527921
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "uepzd44sxq",
+                "nodeType": "ANNOTATION",
+                "name": "Annotation",
+                "connectionId": "921bfae85c38ed45045e07be703d86b8",
+                "connectorId": "annotationConnector",
+                "capabilityName": "updateAnnotationProperties",
+                "type": "action",
+                "properties": {
+                  "backgroundColor": {
+                    "value": "#f7f7adff"
+                  },
+                  "annotationTextColor": {
+                    "value": "#000000"
+                  },
+                  "annotation": {
+                    "value": "Teleport Input Schema: digitalWalletId"
+                  },
+                  "width": {
+                    "value": 400
+                  },
+                  "fontSize": {
+                    "value": 14
+                  },
+                  "fontFamily": {
+                    "value": "sans-serif"
+                  },
+                  "cornerRadius": {
+                    "value": 8
+                  },
+                  "strokeEnabled": {
+                    "value": false
+                  },
+                  "strokeWidth": {
+                    "value": 1
+                  },
+                  "strokeColor": {
+                    "value": "#181818ff"
+                  }
+                },
+                "status": "configured",
+                "idUnique": "n0j76i29yo"
+              },
+              "position": {
+                "x": 310.49727222710703,
+                "y": 1383.1242126480222
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "ar4acfk5ma",
+                "nodeType": "ANNOTATION",
+                "name": "Annotation",
+                "connectionId": "921bfae85c38ed45045e07be703d86b8",
+                "connectorId": "annotationConnector",
+                "capabilityName": "updateAnnotationProperties",
+                "type": "action",
+                "properties": {
+                  "backgroundColor": {
+                    "value": "#f7f7adff"
+                  },
+                  "annotationTextColor": {
+                    "value": "#000000"
+                  },
+                  "annotation": {
+                    "value": "Teleport Input Schema: errorCode, errorMessage"
+                  },
+                  "width": {
+                    "value": 400
+                  },
+                  "fontSize": {
+                    "value": 14
+                  },
+                  "fontFamily": {
+                    "value": "sans-serif"
+                  },
+                  "cornerRadius": {
+                    "value": 8
+                  },
+                  "strokeEnabled": {
+                    "value": false
+                  },
+                  "strokeWidth": {
+                    "value": 1
+                  },
+                  "strokeColor": {
+                    "value": "#181818ff"
+                  }
+                },
+                "status": "configured",
+                "idUnique": "x68hk0hwh4"
+              },
+              "position": {
+                "x": 310.49727222710703,
+                "y": 1750.0755343709668
               },
               "group": "nodes",
               "removed": false,
@@ -4307,6 +4662,141 @@
             }
           ],
           "edges": [
+            {
+              "data": {
+                "id": "c2yr2mca7g",
+                "source": "vmgm9kyteo",
+                "target": "0lz45725z2"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "1ehm0hxaak",
+                "source": "yk0fvhoy1f",
+                "target": "ip0q4uxyh1"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "3wctxmgv6u",
+                "source": "poiuwu8jo8",
+                "target": "ixhyg8c7n",
+                "multiValueSourceId": "uvtriwi3s5"
+              },
+              "position": {
+                "x": 64,
+                "y": 52
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "4ozpymmec3",
+                "source": "o340j35m5n",
+                "target": "benofr5hfx"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "8smacx8zt2",
+                "source": "poiuwu8jo8",
+                "target": "o340j35m5n",
+                "multiValueSourceId": "-1"
+              },
+              "position": {
+                "x": 64,
+                "y": 92
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "r0g786vxje",
+                "source": "0lz45725z2",
+                "target": "8bz502nziy"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "o2px62h7ij",
+                "source": "ixhyg8c7n",
+                "target": "vmgm9kyteo"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
             {
               "data": {
                 "id": "05m12hxj67",
@@ -4990,103 +5480,6 @@
               "grabbable": true,
               "pannable": true,
               "classes": ""
-            },
-            {
-              "data": {
-                "id": "8smacx8zt2",
-                "source": "poiuwu8jo8",
-                "target": "o340j35m5n",
-                "multiValueSourceId": "-1"
-              },
-              "position": {
-                "x": 64,
-                "y": 92
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "4ozpymmec3",
-                "source": "o340j35m5n",
-                "target": "benofr5hfx"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "3wctxmgv6u",
-                "source": "poiuwu8jo8",
-                "target": "ixhyg8c7n",
-                "multiValueSourceId": "uvtriwi3s5"
-              },
-              "position": {
-                "x": 64,
-                "y": 52
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "a9kldo37lh",
-                "source": "ixhyg8c7n",
-                "target": "a3hmsqkltp"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "1ehm0hxaak",
-                "source": "yk0fvhoy1f",
-                "target": "ip0q4uxyh1"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
             }
           ]
         },
@@ -5118,11 +5511,11 @@
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1695401518011,
+      "savedDate": 1701105783377,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1693480897657,
+          "createdDate": 1694717799832,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -5133,11 +5526,11 @@
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
-          "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
+          "companyId": "b1bc29c4-a98f-4f11-b852-fe70b6383f65"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1695401046172,
+          "createdDate": 1694723451918,
           "fields": {
             "type": "object",
             "displayName": "",
@@ -5148,11 +5541,11 @@
           "type": "property",
           "visibility": "private",
           "name": "digitalWalletPairingDeviceInfo##SK##flowInstance",
-          "companyId": "9343c168-20f8-4262-b335-5250b428bd12"
+          "companyId": "b1bc29c4-a98f-4f11-b852-fe70b6383f65"
         }
       ]
     }
   ],
-  "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
-  "customerId": "f3e47d945ae971a4b4142ec75012d155"
+  "companyId": "b1bc29c4-a98f-4f11-b852-fe70b6383f65",
+  "customerId": "0241a35acf80e3bd89cb7c27b9ad83b6"
 }
