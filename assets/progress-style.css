@@ -1,0 +1,114 @@
+:root {
+  --active-fill-color: 247, 248, 253;
+  --line-shadow-color: 206, 206, 206;
+  --incomplete-text-color: 104, 116, 127;
+}
+
+.stepper-wrapper {
+  font-family: var(--body-font-family);
+  font-size: 0.75rem;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.step-name {
+  color: rgb(var(--text-color-primary));
+}
+
+.stepper-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.stepper-item::before {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid rgb(var(--line-shadow-color));
+  width: 100%;
+  top: 15px;
+  left: -50%;
+  z-index: 2;
+}
+
+.stepper-item::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid rgb(var(--line-shadow-color));
+  width: 100%;
+  top: 15px;
+  left: 50%;
+  z-index: 2;
+}
+
+.stepper-item .step-counter {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgb(var(--line-shadow-color));
+  background-color: white;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: rgb(var(--incomplete-text-color));
+}
+
+.stepper-item.active {
+  font-weight: bold;
+}
+
+.stepper-item.active .step-counter {
+  background-color: rgb(var(--active-fill-color));
+  border: 1px solid rgb(var(--button-primary-background-color));
+  color: rgb(var(--button-primary-background-color));
+}
+
+.stepper-item.finished .step-counter {
+  background-color: var(--activity-indicator-color);
+  border: 1px solid var(--activity-indicator-color);
+  font-size: 0;
+}
+
+.stepper-item.completed .step-counter {
+  background-color: rgb(var(--button-primary-background-color));
+  border: 1px solid rgb(var(--button-primary-background-color));
+  font-size: 0;
+  /* Hide the step number */
+  line-height: 0;
+  overflow: hidden;
+}
+
+.stepper-item.completed .step-counter::before,
+.stepper-item.finished .step-counter::before {
+  content: "\2713";
+  color: var(--button-primary-text-color);
+  display: inline-block;
+  line-height: normal;
+  font-size: 10pt;
+}
+
+.stepper-item.completed::after {
+  position: absolute;
+  content: "";
+  border-bottom: 1px solid rgb(var(--button-primary-background-color));
+  width: 100%;
+  top: 15px;
+  left: 50%;
+  z-index: 3;
+}
+
+.stepper-item:first-child::before {
+  content: none;
+}
+
+.stepper-item:last-child::after {
+  content: none;
+}
