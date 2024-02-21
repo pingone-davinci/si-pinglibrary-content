@@ -523,7 +523,7 @@
                 "value": "const setFieldFocus = (id) => {\r\n    const element = document.getElementById(id);\r\n    if (element) {\r\n        element.focus();\r\n    }\r\n}\r\n\r\nconst start = () => {\r\n    setFieldFocus(\"verifyCode\")\r\n}\r\n\r\nif (document.readyState === \"loading\") {\r\n    // Loading hasn't finished yet\r\n    document.addEventListener(\"DOMContentLoaded\", start);\r\n} else {\r\n    // `DOMContentLoaded` has already fired\r\n    start();\r\n}"
               },
               "customCSS": {
-                "value": "#verifyCode {\n    text-align: center;\n    font-size: larger;\n    letter-spacing: 2px;\n}\n\nlabel.form-label {\n    padding: 22px 10px;\n}"
+                "value": "#verifyCode {\n    text-align: center;\n    font-size: larger;\n    letter-spacing: 2px;\n}\n\nlabel.form-label {\n    padding: 18px 10px;\n}"
               },
               "nodeDescription": {
                 "value": "Displays a form for the user to enter the verification code"
