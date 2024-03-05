@@ -2,6 +2,10 @@
   --active-fill-color: 247, 248, 253;
   --line-shadow-color: 206, 206, 206;
   --incomplete-text-color: 104, 116, 127;
+  --button-primary-background-color: 39, 123, 165;
+  --text-color-primary: 61, 69, 77;
+  --button-primary-text-color: 255, 255, 255;
+  --progress-success-color: 0, 133, 18;
 }
 
 .stepper-wrapper {
@@ -45,7 +49,7 @@
   z-index: 2;
 }
 
-.stepper-item .step-counter {
+.stepper-wrapper .stepper-item .step-counter {
   position: relative;
   z-index: 5;
   display: flex;
@@ -54,8 +58,8 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid rgb(var(--line-shadow-color));
-  background-color: white;
+  border: 1px solid rgb(var(--line-shadow-color)) !important;
+  background-color: white !important;
   margin-bottom: 6px;
   font-weight: bold;
   color: rgb(var(--incomplete-text-color));
@@ -72,16 +76,15 @@
 }
 
 .stepper-item.finished .step-counter {
-  background-color: var(--activity-indicator-color);
-  border: 1px solid var(--activity-indicator-color);
+  background-color: rgb(var(--progress-success-color)) !important;
+  border: 1px solid rgb(var(--progress-success-color)) !important;
   font-size: 0;
 }
 
 .stepper-item.completed .step-counter {
-  background-color: rgb(var(--button-primary-background-color));
-  border: 1px solid rgb(var(--button-primary-background-color));
+  background-color: rgb(var(--button-primary-background-color)) !important;
+  border: 1px solid rgb(var(--button-primary-background-color)) !important;
   font-size: 0;
-  /* Hide the step number */
   line-height: 0;
   overflow: hidden;
 }
@@ -89,7 +92,7 @@
 .stepper-item.completed .step-counter::before,
 .stepper-item.finished .step-counter::before {
   content: "\2713";
-  color: var(--button-primary-text-color);
+  color: white;
   display: inline-block;
   line-height: normal;
   font-size: 10pt;
