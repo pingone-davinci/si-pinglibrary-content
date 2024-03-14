@@ -12,15 +12,15 @@
     "pingOneMfaConnector",
     "pingOneAuthenticationConnector"
   ],
-  "createdDate": 1710422196194,
-  "currentVersion": 209,
+  "createdDate": 1710425801224,
+  "currentVersion": 44,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "deployedDate": 1710422202067,
-  "description": "DaVinci registration flow with email and phone verification, MFA enrollment, progressive profiling, and Terms of Service acceptance.",
+  "deployedDate": 1710425805717,
+  "description": "Imported on Thu Mar 14 2024 13:33:51 GMT+0000 (Coordinated Universal Time)",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
   "name": "PingOne Registration with Progressive Profiling and Consent",
-  "publishedVersion": 209,
+  "publishedVersion": 44,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": {},
@@ -37,9 +37,9 @@
     "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
   },
   "timeouts": "null",
-  "updatedDate": 1710422202069,
-  "flowId": "51794d9b506c5afd653973db12a6d4b9",
-  "versionId": 209,
+  "updatedDate": 1710425805723,
+  "flowId": "1254914680aa55dc5c58e096533b0679",
+  "versionId": 44,
   "graphData": {
     "elements": {
       "nodes": [
@@ -81,7 +81,7 @@
             "status": "configured"
           },
           "position": {
-            "x": 226,
+            "x": 230,
             "y": 270
           },
           "group": "nodes",
@@ -129,7 +129,7 @@
             }
           },
           "position": {
-            "x": 1234,
+            "x": 1238,
             "y": 990
           },
           "group": "nodes",
@@ -186,7 +186,7 @@
             "idUnique": "0qrhi9meoi"
           },
           "position": {
-            "x": 1414,
+            "x": 1418,
             "y": 1230
           },
           "group": "nodes",
@@ -205,7 +205,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1654,
+            "x": 1658,
             "y": 1320
           },
           "group": "nodes",
@@ -230,7 +230,7 @@
             "type": "trigger",
             "properties": {
               "inputSchema": {
-                "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"p1UserId\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Ping One User Id\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"p1UserId\"\n\t\t},\n    \"email\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Email\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"email\"\n\t\t},\n\t\t\"resendMessage\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Resend Message\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"resendMessage\"\n\t\t}\n\t}\n}"
+                "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"p1UserId\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Ping One User Id\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"p1UserId\"\n\t\t},\n\t\t\"email\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Email\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"email\"\n\t\t},\n\t\t\"resendMessage\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Resend Message\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"resendMessage\"\n\t\t}\n\t}\n}"
               },
               "nodeTitle": {
                 "value": "Account Verification"
@@ -238,7 +238,7 @@
             }
           },
           "position": {
-            "x": 334,
+            "x": 338,
             "y": 990
           },
           "group": "nodes",
@@ -271,7 +271,7 @@
             }
           },
           "position": {
-            "x": 1534,
+            "x": 1538,
             "y": 1320
           },
           "group": "nodes",
@@ -289,7 +289,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 454,
+            "x": 458,
             "y": 990
           },
           "group": "nodes",
@@ -331,7 +331,7 @@
             }
           },
           "position": {
-            "x": 1834,
+            "x": 1838,
             "y": 1320
           },
           "group": "nodes",
@@ -349,7 +349,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1354,
+            "x": 1358,
             "y": 990
           },
           "group": "nodes",
@@ -368,7 +368,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1354,
+            "x": 1358,
             "y": 1320
           },
           "group": "nodes",
@@ -397,10 +397,10 @@
                 "value": "#000000"
               },
               "annotation": {
-                "value": "Input Schema: p1UserId, message (optional)"
+                "value": "Input Schema: p1UserId, resendMessage (optional)"
               },
               "width": {
-                "value": 300
+                "value": 450
               },
               "fontSize": {
                 "value": 14
@@ -425,7 +425,7 @@
             "idUnique": "twyb3s51b1"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 870
           },
           "group": "nodes",
@@ -443,7 +443,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1054,
+            "x": 1058,
             "y": 990
           },
           "group": "nodes",
@@ -469,7 +469,7 @@
             }
           },
           "position": {
-            "x": 1654,
+            "x": 1658,
             "y": 990
           },
           "group": "nodes",
@@ -504,11 +504,39 @@
               },
               "nodeDescription": {
                 "value": "Sends the verification code to PingOne to validate"
+              },
+              "verifyEmail_localizedErrors": {
+                "properties": {
+                  "en": {
+                    "value": [
+                      {
+                        "key": "unexpectedError",
+                        "value": ""
+                      },
+                      {
+                        "key": "notFound",
+                        "value": ""
+                      },
+                      {
+                        "key": "accessFailed",
+                        "value": ""
+                      },
+                      {
+                        "key": "noUserMatch",
+                        "value": ""
+                      },
+                      {
+                        "key": "verificationCode",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Invalid verification code\"\n      }\n    ]\n  }\n]"
+                      }
+                    ]
+                  }
+                }
               }
             }
           },
           "position": {
-            "x": 1534,
+            "x": 1538,
             "y": 990
           },
           "group": "nodes",
@@ -541,7 +569,7 @@
             }
           },
           "position": {
-            "x": 1834,
+            "x": 1838,
             "y": 1140
           },
           "group": "nodes",
@@ -571,7 +599,7 @@
             }
           },
           "position": {
-            "x": 1834,
+            "x": 1838,
             "y": 990
           },
           "group": "nodes",
@@ -621,7 +649,7 @@
             "status": "configured"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 810
           },
           "group": "nodes",
@@ -687,7 +715,7 @@
             "idUnique": "o9dkvzsnnf"
           },
           "position": {
-            "x": 334,
+            "x": 338,
             "y": 480
           },
           "group": "nodes",
@@ -740,7 +768,7 @@
                 ]
               },
               "customHTML": {
-                "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\">\n  <div style=\"max-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n        {{#if title}}\n        <h1 class=\"text-center mb-4\">{{title}}</h1>\n        {{/if}}\n\n        {{#if textOne}}\n        <p class=\"text-muted text-center\">{{textOne}}</p>\n        {{/if}}\n\n        {{#if textTwo}}\n        <p class=\"text-muted text-center\">{{textTwo}}</p>\n        {{/if}}\n\n        \n        <!-- Generic Error Message -->\n        <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle\" data-skcomponent=\"skerror\"></p>\n\n        <!-- Field Validation Error Messages -->\n        <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"email\" data-skcomponent=\"skerrormessage\"></p>\n        <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"password\" data-skcomponent=\"skerrormessage\"></p>\n\n        <form id=\"registrationForm\" data-id=\"registrationForm\" class=\"form\">\n          <div class=\"mb-4 form-floating\">\n            <input id=\"email\" data-id=\"email\" class=\"form-control\" type=\"text\" name=\"email\" placeholder=\"Email Address\"\n              autocomplete=\"off\" />\n            <label id=\"emailLabel\" data-id=\"emailLabel\" class=\"form-label\" for=\"email\">Email Address</label>\n          </div>\n          <div id=\"passwordContainer\" class=\"mb-4 form-floating\">\n            <input id=\"password\" data-id=\"password\" class=\"form-control\" type=\"password\" placeholder=\"Password\"\n              autocomplete=\"off\" name=\"password\" />\n            <label id=\"passwordLabel\" data-id=\"passwordLabel\" class=\"form-label\" for=\"password\">Password</label>\n          </div>\n          <div class=\"d-flex flex-column\">\n            {{#if buttonLabel}}\n            <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\"\n              data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"registrationForm\"\n              data-skbuttonvalue=\"REGISTER\">\n              {{buttonLabel}}\n            </button>\n            {{/if}}\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\">\n    <div style=\"max-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n          {{#if title}}\n          <h1 class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          {{#if textOne}}\n          <p class=\"text-muted text-center\">{{textOne}}</p>\n          {{/if}}\n\n          {{#if textTwo}}\n          <p class=\"text-muted text-center\">{{textTwo}}</p>\n          {{/if}}\n\n          \n          <!-- Generic Error Message -->\n          <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle text-center\" data-skcomponent=\"skerror\"></p>\n\n          <!-- Field Validation Error Messages -->\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"email\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"password\" data-skcomponent=\"skerrormessage\"></p>\n\n          <form id=\"registrationForm\" data-id=\"registrationForm\" class=\"form\">\n            <div class=\"mb-4 form-floating\">\n              <input id=\"email\" data-id=\"email\" class=\"form-control\" type=\"text\" name=\"email\" placeholder=\"Email Address\"\n                autocomplete=\"off\" aria-required=\"true\" />\n              <label id=\"emailLabel\" data-id=\"emailLabel\" class=\"form-label\" for=\"email\">Email Address</label>\n            </div>\n            <div id=\"passwordContainer\" class=\"mb-4 form-floating\">\n              <input id=\"password\" data-id=\"password\" class=\"form-control\" type=\"password\" placeholder=\"Password\"\n                autocomplete=\"off\" name=\"password\" aria-required=\"true\" />\n              <label id=\"passwordLabel\" data-id=\"passwordLabel\" class=\"form-label\" for=\"password\">Password</label>\n            </div>\n            <div class=\"d-flex flex-column\">\n              {{#if buttonLabel}}\n              <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\"\n                data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"registrationForm\"\n                data-skbuttonvalue=\"REGISTER\">\n                {{buttonLabel}}\n              </button>\n              {{/if}}\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
               },
               "customCSS": {},
               "customScript": {
@@ -753,11 +781,11 @@
                     "rules": [
                       {
                         "ruleName": "presence",
-                        "message": "Please enter your email address"
+                        "message": "Enter your email address"
                       },
                       {
                         "ruleName": "email",
-                        "message": "Please enter a valid email address"
+                        "message": "Enter a valid email address"
                       }
                     ]
                   },
@@ -766,7 +794,7 @@
                     "rules": [
                       {
                         "ruleName": "presence",
-                        "message": "Please set a password for your account"
+                        "message": "Set a password for your account"
                       }
                     ]
                   }
@@ -791,7 +819,7 @@
             "idUnique": "e9zf5ebk6y"
           },
           "position": {
-            "x": 934,
+            "x": 938,
             "y": 480
           },
           "group": "nodes",
@@ -817,7 +845,7 @@
             }
           },
           "position": {
-            "x": 1054,
+            "x": 1058,
             "y": 480
           },
           "group": "nodes",
@@ -835,7 +863,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 454,
+            "x": 458,
             "y": 480
           },
           "group": "nodes",
@@ -853,7 +881,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1654,
+            "x": 1658,
             "y": 480
           },
           "group": "nodes",
@@ -893,7 +921,7 @@
             "idUnique": "bdzfpuqvez"
           },
           "position": {
-            "x": 1534,
+            "x": 1538,
             "y": 480
           },
           "group": "nodes",
@@ -927,7 +955,7 @@
             "idUnique": "f6c6klxo7e"
           },
           "position": {
-            "x": 1534,
+            "x": 1538,
             "y": 660
           },
           "group": "nodes",
@@ -951,7 +979,7 @@
             }
           },
           "position": {
-            "x": 1354,
+            "x": 1358,
             "y": 480
           },
           "group": "nodes",
@@ -1040,7 +1068,7 @@
             }
           },
           "position": {
-            "x": 1234,
+            "x": 1238,
             "y": 480
           },
           "group": "nodes",
@@ -1097,7 +1125,7 @@
             "idUnique": "6ttoks5717"
           },
           "position": {
-            "x": 1414,
+            "x": 1418,
             "y": 360
           },
           "group": "nodes",
@@ -1148,7 +1176,7 @@
             "idUnique": "ssxgorenzh"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 1470
           },
           "group": "nodes",
@@ -1182,7 +1210,7 @@
             "idUnique": "m3eh084bo8"
           },
           "position": {
-            "x": 334,
+            "x": 338,
             "y": 1680
           },
           "group": "nodes",
@@ -1207,7 +1235,7 @@
             "type": "trigger",
             "properties": {
               "customHTML": {
-                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"width:500px\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                {{#if title}}\n                <h1 class=\"text-center mb-4\">{{title}}</h1>\n                {{/if}}\n\n                {{#if textOne}}\n                <p class=\"text-muted text-center\">{{textOne}}</p>\n                {{/if}}\n\n                {{#if textTwo}}\n                <p class=\"text-muted text-center\">{{textTwo}}</p>\n                {{/if}}\n\n                <!-- Generic Error Message -->\n                <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle\" data-skcomponent=\"skerror\"></p>\n                <div class=\"border overflow-auto\" style=\"max-height: 300px\" data-id=\"textblock\">\n                    <div class=\"p-3\" style=\"white-space: pre-wrap\">{{agreementText}}</div>\n                </div>\n                <form id='agreementForm' data-id=\"agreementForm\">\n                     <div class=\"mt-4 form-check d-flex justify-content-center\">\n                        <input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"agreeCheckBox\" >\n                        <label class=\"form-check-label ms-3 fs-5\" for=\"agreeCheckBox\">\n                            {{#if agreementCheckboxText}}\n                                {{agreementCheckboxText}}\n                            {{else}}\n                                I have read and agree to the terms and conditions. \n                            {{/if}}                             \n                        </label>\n                    </div>\n                    <div class=\"d-flex flex-column mt-4\">\n                        <button id=\"acceptBtn\" data-id=\"accept-button\" type=\"accept\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                            data-skrequiredinputs=\"agreeCheckBox\" data-skform=\"agreementForm\" data-skbuttonvalue=\"ACCEPT\" class=\"btn btn-primary mb-3\" >\n                            {{#if acceptButtonLabel}}\n                                {{acceptButtonLabel}}\n                            {{else}}\n                                Accept \n                            {{/if}}\n                        </button>\n                        <button id=\"declineBtn\" data-id=\"decline-button\" type=\"\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                            data-skform=\"agreementForm\" data-skbuttonvalue=\"DECLINE\" class=\"btn\" >\n                            {{#if declineButtonLabel}}\n                                {{declineButtonLabel}}\n                            {{else}}\n                                Decline \n                            {{/if}}    \n                        </button>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"width:500px\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n\n                    {{#if textOne}}\n                    <p class=\"text-muted text-center\">{{textOne}}</p>\n                    {{/if}}\n\n                    {{#if textTwo}}\n                    <p class=\"text-muted text-center\">{{textTwo}}</p>\n                    {{/if}}\n\n                    <!-- Generic Error Message -->\n                    <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle text-center\" data-skcomponent=\"skerror\"></p>\n                    <div class=\"border overflow-auto\" style=\"max-height: 300px\" data-id=\"textblock\">\n                        <div class=\"p-3\" style=\"white-space: pre-wrap\">{{agreementText}}</div>\n                    </div>\n                    <form id='agreementForm' data-id=\"agreementForm\">\n                        <div class=\"mt-4 form-check d-flex justify-content-center\">\n                            <input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"agreeCheckBox\" aria-required=\"true\" >\n                            <label class=\"form-check-label ms-3 fs-5\" for=\"agreeCheckBox\">\n                                {{#if agreementCheckboxText}}\n                                    {{agreementCheckboxText}}\n                                {{else}}\n                                    I have read and agree to the terms and conditions. \n                                {{/if}}                             \n                            </label>\n                        </div>\n                        <div class=\"d-flex flex-column mt-4\">\n                            <button id=\"acceptBtn\" data-id=\"accept-button\" type=\"accept\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                                data-skrequiredinputs=\"agreeCheckBox\" data-skform=\"agreementForm\" data-skbuttonvalue=\"ACCEPT\" class=\"btn btn-primary mb-3\" >\n                                {{#if acceptButtonLabel}}\n                                    {{acceptButtonLabel}}\n                                {{else}}\n                                    Accept \n                                {{/if}}\n                            </button>\n                            <button id=\"declineBtn\" data-id=\"decline-button\" type=\"\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                                data-skform=\"agreementForm\" data-skbuttonvalue=\"DECLINE\" class=\"btn\" >\n                                {{#if declineButtonLabel}}\n                                    {{declineButtonLabel}}\n                                {{else}}\n                                    Decline \n                                {{/if}}    \n                            </button>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
               },
               "formFieldsList": {
                 "value": [
@@ -1282,7 +1310,7 @@
             "idUnique": "a0yf1wqul8"
           },
           "position": {
-            "x": 934,
+            "x": 938,
             "y": 1680
           },
           "group": "nodes",
@@ -1301,7 +1329,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1054,
+            "x": 1058,
             "y": 1680
           },
           "group": "nodes",
@@ -1349,7 +1377,7 @@
             }
           },
           "position": {
-            "x": 1234,
+            "x": 1238,
             "y": 1680
           },
           "group": "nodes",
@@ -1384,7 +1412,7 @@
             "idUnique": "ofc4tniyxs"
           },
           "position": {
-            "x": 634,
+            "x": 638,
             "y": 1680
           },
           "group": "nodes",
@@ -1441,7 +1469,7 @@
             "idUnique": "51rs8oxkai"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 1530
           },
           "group": "nodes",
@@ -1459,7 +1487,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 454,
+            "x": 458,
             "y": 1680
           },
           "group": "nodes",
@@ -1482,7 +1510,7 @@
             }
           },
           "position": {
-            "x": 754,
+            "x": 758,
             "y": 1680
           },
           "group": "nodes",
@@ -1521,7 +1549,7 @@
             }
           },
           "position": {
-            "x": 1834,
+            "x": 1838,
             "y": 480
           },
           "group": "nodes",
@@ -1540,7 +1568,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1354,
+            "x": 1358,
             "y": 1680
           },
           "group": "nodes",
@@ -1576,7 +1604,7 @@
             }
           },
           "position": {
-            "x": 1534,
+            "x": 1538,
             "y": 1680
           },
           "group": "nodes",
@@ -1595,7 +1623,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1654,
+            "x": 1658,
             "y": 1680
           },
           "group": "nodes",
@@ -1625,7 +1653,7 @@
             }
           },
           "position": {
-            "x": 1834,
+            "x": 1838,
             "y": 1680
           },
           "group": "nodes",
@@ -1644,7 +1672,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1354,
+            "x": 1358,
             "y": 1890
           },
           "group": "nodes",
@@ -1677,7 +1705,7 @@
             }
           },
           "position": {
-            "x": 1534,
+            "x": 1538,
             "y": 1890
           },
           "group": "nodes",
@@ -1765,7 +1793,7 @@
             "idUnique": "ydgzw24hej"
           },
           "position": {
-            "x": 1834,
+            "x": 1838,
             "y": 1890
           },
           "group": "nodes",
@@ -1783,7 +1811,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1654,
+            "x": 1658,
             "y": 1890
           },
           "group": "nodes",
@@ -1812,7 +1840,7 @@
             }
           },
           "position": {
-            "x": 754,
+            "x": 758,
             "y": 480
           },
           "group": "nodes",
@@ -1869,7 +1897,7 @@
             "idUnique": "4xlzke6n1k"
           },
           "position": {
-            "x": 1414,
+            "x": 1418,
             "y": 1800
           },
           "group": "nodes",
@@ -1926,7 +1954,7 @@
             "idUnique": "0vo3avbo2d"
           },
           "position": {
-            "x": 1714,
+            "x": 1718,
             "y": 360
           },
           "group": "nodes",
@@ -1983,7 +2011,7 @@
             "idUnique": "o2v5xhdcbc"
           },
           "position": {
-            "x": 230,
+            "x": 234,
             "y": 214
           },
           "group": "nodes",
@@ -2008,7 +2036,7 @@
             "type": "trigger",
             "properties": {
               "customHTML": {
-                "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n        <h1 class=\"text-center mb-4\">Flow Configuration Error</h1>\n        <p class=\"text-muted text-center\">{{errorMessage}}</p>\n      </div>\n    </div>\n  </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n          <h1 class=\"text-center mb-4\">Flow Configuration Error</h1>\n          <p class=\"text-muted text-center\">{{errorMessage}}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
               },
               "formFieldsList": {
                 "value": [
@@ -2068,7 +2096,7 @@
             "idUnique": "3nm07rhtek"
           },
           "position": {
-            "x": 934,
+            "x": 938,
             "y": 660
           },
           "group": "nodes",
@@ -2121,7 +2149,7 @@
             }
           },
           "position": {
-            "x": 634,
+            "x": 638,
             "y": 480
           },
           "group": "nodes",
@@ -2172,7 +2200,7 @@
             "idUnique": "i2ni7h1ktw"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 2070
           },
           "group": "nodes",
@@ -2206,7 +2234,7 @@
             "idUnique": "15ceh3lwwd"
           },
           "position": {
-            "x": 334,
+            "x": 338,
             "y": 2250
           },
           "group": "nodes",
@@ -2263,7 +2291,7 @@
             "idUnique": "kmk6e3p1r4"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 2130
           },
           "group": "nodes",
@@ -2332,14 +2360,51 @@
                 ]
               },
               "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\">\n    <div style=\"max-width: 400px; width: 400%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n          {{#if title}}\n          <h1 class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          {{#if textOne}}\n          <p class=\"text-muted text-center\">{{textOne}}</p>\n          {{/if}}\n\n          {{#if textTwo}}\n          <p class=\"text-muted text-center\">{{textTwo}}</p>\n          {{/if}}\n\n          <!-- Generic Error Message -->\n          <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle\" data-skcomponent=\"skerror\"></p>\n\n          <!-- Form Validation Error Message -->\n          <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"givenName\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"familyName\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"phoneCode\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"phone\" data-skcomponent=\"skerrormessage\"></p>\n\n          <form id=\"profileForm\" data-id=\"profileForm\" class=\"form\">\n            <div class=\"mb-4 p-0\">\n              <div class=\"mb-4 form-floating\" style=\"flex:4\">\n                <input id=\"givenName\" data-id=\"givenName\" class=\"form-control\" type=\"text\" name=\"givenName\"\n                  placeholder=\"First Name\" autocomplete=\"off\" />\n                <label id=\"givenNameLabel\" data-id=\"givenNameLabel\" class=\"form-label\" for=\"givenName\">First Name</label>\n              </div>\n              <div class=\"mb-4 form-floating\">\n                <input id=\"familyName\" data-id=\"familyName\" class=\"form-control\" type=\"text\" placeholder=\"Last Name\"\n                  autocomplete=\"off\" name=\"familyName\" />\n                <label id=\"familyNameLabel\" data-id=\"familyNameLabel\" class=\"form-label\" for=\"familyName\">Last Name</label>\n              </div>\n              <div style=\"display:flex\">\n                <div class=\"mb-4 form-floating\" style=\"flex: 1\">\n                  <input id=\"phoneCode\" data-id=\"phoneCode\" class=\"form-control\" type=\"text\" placeholder=\"Code\"\n                    autocomplete=\"off\" name=\"phoneCode\" />\n                  <label id=\"phoneCodeLabel\" data-id=\"phoneCodeLabel\" class=\"form-label\" for=\"phoneCode\">Code</label>\n                </div>\n                <div class=\"mb-4 form-floating ms-3\" style=\"flex: 4\">\n                  <input id=\"phone\" data-id=\"phone\" class=\"form-control\" type=\"text\" placeholder=\"Phone Number\"\n                    autocomplete=\"off\" name=\"phone\" />\n                  <label id=\"phoneLabel\" data-id=\"phoneLabel\" class=\"form-label\" for=\"phone\">Phone Number</label>\n                </div>\n              </div>\n            </div>\n            {{#if buttonLabel}}\n            <div class=\"d-flex flex-column\">\n              <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\"\n                data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"profileForm\"\n                data-skbuttonvalue=\"SUBMIT\">\n                {{buttonLabel}}\n              </button>\n            </div>\n            {{/if}}\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\">\n    <div style=\"max-width: 400px; width: 400%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n          {{#if title}}\n          <h1 class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          {{#if textOne}}\n          <p class=\"text-muted text-center\">{{textOne}}</p>\n          {{/if}}\n\n          {{#if textTwo}}\n          <p class=\"text-muted text-center\">{{textTwo}}</p>\n          {{/if}}\n\n          <!-- Generic Error Message -->\n          <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle text-center\" data-skcomponent=\"skerror\"></p>\n\n          <!-- Form Validation Error Message -->\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"givenName\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"familyName\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"phoneCode\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"phone\" data-skcomponent=\"skerrormessage\"></p>\n\n          <form id=\"profileForm\" data-id=\"profileForm\" class=\"form\">\n            <div class=\"mb-4 p-0\">\n              <div class=\"mb-4 form-floating\" style=\"flex:4\">\n                <input id=\"givenName\" data-id=\"givenName\" class=\"form-control\" type=\"text\" name=\"givenName\"\n                  placeholder=\"First Name\" autocomplete=\"off\" aria-required=\"true\" />\n                <label id=\"givenNameLabel\" data-id=\"givenNameLabel\" class=\"form-label\" for=\"givenName\">First Name</label>\n              </div>\n              <div class=\"mb-4 form-floating\">\n                <input id=\"familyName\" data-id=\"familyName\" class=\"form-control\" type=\"text\" placeholder=\"Last Name\"\n                  autocomplete=\"off\" name=\"familyName\" aria-required=\"true\"/>\n                <label id=\"familyNameLabel\" data-id=\"familyNameLabel\" class=\"form-label\" for=\"familyName\">Last Name</label>\n              </div>\n              <div style=\"display:flex\">\n                <div class=\"mb-4 form-floating\" style=\"flex: 1\">\n                  <input id=\"phoneCode\" data-id=\"phoneCode\" class=\"form-control\" type=\"text\" placeholder=\"Code\"\n                    autocomplete=\"off\" name=\"phoneCode\" aria-required=\"true\"/>\n                  <label id=\"phoneCodeLabel\" data-id=\"phoneCodeLabel\" class=\"form-label\" for=\"phoneCode\">Code</label>\n                </div>\n                <div class=\"mb-4 form-floating ms-3\" style=\"flex: 4\">\n                  <input id=\"phone\" data-id=\"phone\" class=\"form-control\" type=\"text\" placeholder=\"Phone Number\"\n                    autocomplete=\"off\" name=\"phone\" aria-required=\"true\"/>\n                  <label id=\"phoneLabel\" data-id=\"phoneLabel\" class=\"form-label\" for=\"phone\">Phone Number</label>\n                </div>\n              </div>\n            </div>\n            {{#if buttonLabel}}\n            <div class=\"d-flex flex-column\">\n              <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\"\n                data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"profileForm\"\n                data-skbuttonvalue=\"SUBMIT\">\n                {{buttonLabel}}\n              </button>\n            </div>\n            {{/if}}\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
               },
               "customCSS": {},
               "customScript": {
                 "value": "const setFieldFocus = (id) => {\r\n    const element = document.getElementById(id);\r\n    if (element) {\r\n        element.focus();\r\n    }\r\n}\r\nconst start = () => {\r\n    setFieldFocus(\"givenName\")\r\n}\r\n\r\nif (document.readyState === \"loading\") {\r\n    // Loading hasn't finished yet\r\n    document.addEventListener(\"DOMContentLoaded\", start);\r\n} else {\r\n    // `DOMContentLoaded` has already fired\r\n    start();\r\n}"
               },
               "validationRules": {
-                "value": []
+                "value": [
+                  {
+                    "propertyName": "givenName",
+                    "rules": [
+                      {
+                        "ruleName": "presence",
+                        "message": "Enter your first name"
+                      }
+                    ]
+                  },
+                  {
+                    "propertyName": "familyName",
+                    "rules": [
+                      {
+                        "ruleName": "presence",
+                        "message": "Enter your last name"
+                      }
+                    ]
+                  },
+                  {
+                    "propertyName": "phoneCode",
+                    "rules": [
+                      {
+                        "ruleName": "presence",
+                        "message": "Enter your phone's country code"
+                      }
+                    ]
+                  },
+                  {
+                    "propertyName": "phone",
+                    "rules": [
+                      {
+                        "ruleName": "presence",
+                        "message": "Enter your phone number"
+                      }
+                    ]
+                  }
+                ]
               },
               "nodeDescription": {
                 "value": "Name, phone,"
@@ -2360,7 +2425,7 @@
             "idUnique": "26h9g91wqe"
           },
           "position": {
-            "x": 634,
+            "x": 638,
             "y": 2250
           },
           "group": "nodes",
@@ -2378,7 +2443,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 754,
+            "x": 758,
             "y": 2250
           },
           "group": "nodes",
@@ -2396,7 +2461,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 454,
+            "x": 458,
             "y": 2250
           },
           "group": "nodes",
@@ -2444,7 +2509,7 @@
             }
           },
           "position": {
-            "x": 934,
+            "x": 938,
             "y": 2250
           },
           "group": "nodes",
@@ -2468,7 +2533,7 @@
             }
           },
           "position": {
-            "x": 1054,
+            "x": 1058,
             "y": 2250
           },
           "group": "nodes",
@@ -2510,7 +2575,7 @@
             }
           },
           "position": {
-            "x": 1234,
+            "x": 1238,
             "y": 2250
           },
           "group": "nodes",
@@ -2529,7 +2594,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1954,
+            "x": 1958,
             "y": 480
           },
           "group": "nodes",
@@ -2568,7 +2633,7 @@
             }
           },
           "position": {
-            "x": 2134,
+            "x": 2138,
             "y": 480
           },
           "group": "nodes",
@@ -2619,7 +2684,7 @@
             "idUnique": "lwq4wj4xl2"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 2520
           },
           "group": "nodes",
@@ -2676,7 +2741,7 @@
             "idUnique": "90vlhsr7gm"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 2580
           },
           "group": "nodes",
@@ -2710,7 +2775,7 @@
             "idUnique": "v9mh8ozh41"
           },
           "position": {
-            "x": 334,
+            "x": 338,
             "y": 2700
           },
           "group": "nodes",
@@ -2729,7 +2794,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 454,
+            "x": 458,
             "y": 2700
           },
           "group": "nodes",
@@ -2780,7 +2845,7 @@
             }
           },
           "position": {
-            "x": 634,
+            "x": 638,
             "y": 2700
           },
           "group": "nodes",
@@ -2804,7 +2869,7 @@
             }
           },
           "position": {
-            "x": 754,
+            "x": 758,
             "y": 2700
           },
           "group": "nodes",
@@ -2837,7 +2902,7 @@
             }
           },
           "position": {
-            "x": 934,
+            "x": 938,
             "y": 2700
           },
           "group": "nodes",
@@ -2856,7 +2921,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1054,
+            "x": 1058,
             "y": 2700
           },
           "group": "nodes",
@@ -2886,7 +2951,7 @@
             }
           },
           "position": {
-            "x": 1234,
+            "x": 1238,
             "y": 2700
           },
           "group": "nodes",
@@ -2905,7 +2970,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 2254,
+            "x": 2258,
             "y": 480
           },
           "group": "nodes",
@@ -2944,7 +3009,7 @@
             }
           },
           "position": {
-            "x": 2434,
+            "x": 2438,
             "y": 480
           },
           "group": "nodes",
@@ -2995,7 +3060,7 @@
             "idUnique": "lwq4wj4xl2"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 3030
           },
           "group": "nodes",
@@ -3052,7 +3117,7 @@
             "idUnique": "90vlhsr7gm"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 3090
           },
           "group": "nodes",
@@ -3086,7 +3151,7 @@
             "idUnique": "v9mh8ozh41"
           },
           "position": {
-            "x": 334,
+            "x": 338,
             "y": 3240
           },
           "group": "nodes",
@@ -3105,7 +3170,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 454,
+            "x": 458,
             "y": 3240
           },
           "group": "nodes",
@@ -3138,7 +3203,7 @@
             }
           },
           "position": {
-            "x": 934,
+            "x": 938,
             "y": 3390
           },
           "group": "nodes",
@@ -3196,7 +3261,7 @@
             "idUnique": "w7x8a5sdoy"
           },
           "position": {
-            "x": 634,
+            "x": 638,
             "y": 3240
           },
           "group": "nodes",
@@ -3241,7 +3306,7 @@
             }
           },
           "position": {
-            "x": 1534,
+            "x": 1538,
             "y": 3240
           },
           "group": "nodes",
@@ -3259,7 +3324,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1354,
+            "x": 1358,
             "y": 3240
           },
           "group": "nodes",
@@ -3299,7 +3364,7 @@
             "idUnique": "iqu9fg7yzw"
           },
           "position": {
-            "x": 1834,
+            "x": 1838,
             "y": 3510
           },
           "group": "nodes",
@@ -3328,7 +3393,7 @@
             }
           },
           "position": {
-            "x": 1984,
+            "x": 1988,
             "y": 3510
           },
           "group": "nodes",
@@ -3362,7 +3427,7 @@
                 "value": {}
               },
               "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                    <h1 class=\"text-center mb-4\">\n                        {{#ifEquals type \"SMS\"}}\n                        <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                        Text message\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                        Email\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"VOICE\"}}\n                        <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n                        Email\n                        {{/ifEquals}}\n                    </h1>\n                    <p class=\"text-muted text-center\">\n                        {{#ifEquals type \"SMS\"}}\n                        Please enter the passcode you received.\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        Enter the passcode you received to complete email pairing.\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"VOICE\"}}\n                        Please enter the passcode you received.\n                        {{/ifEquals}}\n                    </p>\n                \n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                    {{#if resendMessage}}\n                        <p class=\"text-info text-center\">{{resendMessage}}</p>\n                    {{/if}}\n                    \n                    <form id=\"otp-form\" data-id=\"otp-form\">\n                        <div class=\"mb-4 form-floating\">\n                            <input class=\"form-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"6\" />\n                            <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                        </div>\n                        <p class=\"text-muted text-center\">\n                            {{#ifEquals type \"SMS\"}}\n                            Message sent to:\n                            {{maskedContactInfo}}\n                            {{/ifEquals}}\n                            \n                            {{#ifEquals type \"EMAIL\"}}\n                            Email sent to:\n                            {{maskedContactInfo}}\n                            {{/ifEquals}}\n                        </p>\n                        <div class=\"d-flex flex-column\">\n                            {{#if resendButtonLabel}}\n                            <button id=\"resend\" type=\"button\" class=\"btn btn-link mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                                {{resendButtonLabel}}\n                            </button>\n                            {{/if}}\n                            {{#if primaryButtonLabel}}\n                            <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                                {{primaryButtonLabel}}\n                            </button>\n                            {{/if}}\n\n                            {{#if cancelButtonLabel}}\n                            <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                                {{cancelButtonLabel}}\n                            </button>\n                            {{/if}}\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                    <h1 class=\"text-center mb-4\">\n                        {{#ifEquals type \"SMS\"}}\n                        <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                        Text message\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                        Email\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"VOICE\"}}\n                        <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n                        Email\n                        {{/ifEquals}}\n                    </h1>\n                    <p class=\"text-muted text-center\">\n                        {{#ifEquals type \"SMS\"}}\n                        Please enter the passcode you received.\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        Enter the passcode you received to complete email pairing.\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"VOICE\"}}\n                        Please enter the passcode you received.\n                        {{/ifEquals}}\n                    </p>\n                \n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                    {{#if resendMessage}}\n                        <p class=\"text-info text-center\">{{resendMessage}}</p>\n                    {{/if}}\n                    \n                    <form id=\"otp-form\" data-id=\"otp-form\">\n                        <div class=\"mb-4 form-floating\">\n                            <input class=\"form-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"6\" aria-required=\"true\" />\n                            <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                        </div>\n                        <p class=\"text-muted text-center\">\n                            {{#ifEquals type \"SMS\"}}\n                            Message sent to:\n                            {{maskedContactInfo}}\n                            {{/ifEquals}}\n                            \n                            {{#ifEquals type \"EMAIL\"}}\n                            Email sent to:\n                            {{maskedContactInfo}}\n                            {{/ifEquals}}\n                        </p>\n                        <div class=\"d-flex flex-column\">\n                            {{#if resendButtonLabel}}\n                            <button id=\"resend\" type=\"button\" class=\"btn btn-link mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                                {{resendButtonLabel}}\n                            </button>\n                            {{/if}}\n                            {{#if primaryButtonLabel}}\n                            <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                                {{primaryButtonLabel}}\n                            </button>\n                            {{/if}}\n\n                            {{#if cancelButtonLabel}}\n                            <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                                {{cancelButtonLabel}}\n                            </button>\n                            {{/if}}\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
               },
               "customCSS": {
                 "value": ""
@@ -3432,7 +3497,7 @@
             }
           },
           "position": {
-            "x": 1234,
+            "x": 1238,
             "y": 3240
           },
           "group": "nodes",
@@ -3450,7 +3515,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1054,
+            "x": 1058,
             "y": 3240
           },
           "group": "nodes",
@@ -3501,7 +3566,7 @@
             "idUnique": "4hh269b7ty"
           },
           "position": {
-            "x": 934,
+            "x": 938,
             "y": 3240
           },
           "group": "nodes",
@@ -3519,7 +3584,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1654,
+            "x": 1658,
             "y": 3510
           },
           "group": "nodes",
@@ -3547,7 +3612,7 @@
                 "value": "dg26uv57lk"
               },
               "resendMessage": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"One-time passcode resent.\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"One-time passcode resent\"\n      }\n    ]\n  }\n]"
               },
               "email": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.eh45uuo9ep.payload.output.email}}\",\n        \"tooltip\": \"{{local.eh45uuo9ep.payload.output.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
@@ -3567,7 +3632,7 @@
             }
           },
           "position": {
-            "x": 2164,
+            "x": 2168,
             "y": 3510
           },
           "group": "nodes",
@@ -3621,7 +3686,7 @@
                       },
                       {
                         "key": "invalidOtp",
-                        "value": "Invalid OTP"
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Invalid one-time passcode \"\n      }\n    ]\n  }\n]"
                       },
                       {
                         "key": "tooManyOtpRetries",
@@ -3643,7 +3708,7 @@
             "idUnique": "0c24903nfo"
           },
           "position": {
-            "x": 1834,
+            "x": 1838,
             "y": 3240
           },
           "group": "nodes",
@@ -3666,7 +3731,7 @@
             }
           },
           "position": {
-            "x": 754,
+            "x": 758,
             "y": 3240
           },
           "group": "nodes",
@@ -3684,7 +3749,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1654,
+            "x": 1658,
             "y": 3240
           },
           "group": "nodes",
@@ -3708,7 +3773,7 @@
             }
           },
           "position": {
-            "x": 1984,
+            "x": 1988,
             "y": 3240
           },
           "group": "nodes",
@@ -3738,7 +3803,7 @@
             }
           },
           "position": {
-            "x": 2164,
+            "x": 2168,
             "y": 3240
           },
           "group": "nodes",
@@ -3757,7 +3822,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 2554,
+            "x": 2558,
             "y": 480
           },
           "group": "nodes",
@@ -3796,7 +3861,7 @@
             }
           },
           "position": {
-            "x": 2734,
+            "x": 2738,
             "y": 480
           },
           "group": "nodes",
@@ -3814,7 +3879,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 2854,
+            "x": 2858,
             "y": 480
           },
           "group": "nodes",
@@ -3856,7 +3921,7 @@
             }
           },
           "position": {
-            "x": 1834,
+            "x": 1838,
             "y": 4320
           },
           "group": "nodes",
@@ -3892,7 +3957,7 @@
             }
           },
           "position": {
-            "x": 1534,
+            "x": 1538,
             "y": 4230
           },
           "group": "nodes",
@@ -3956,7 +4021,7 @@
             }
           },
           "position": {
-            "x": 1234,
+            "x": 1238,
             "y": 3960
           },
           "group": "nodes",
@@ -3974,7 +4039,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1354,
+            "x": 1358,
             "y": 4230
           },
           "group": "nodes",
@@ -3992,7 +4057,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1354,
+            "x": 1358,
             "y": 4320
           },
           "group": "nodes",
@@ -4011,7 +4076,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1354,
+            "x": 1358,
             "y": 3960
           },
           "group": "nodes",
@@ -4030,7 +4095,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1354,
+            "x": 1358,
             "y": 4050
           },
           "group": "nodes",
@@ -4074,7 +4139,7 @@
             }
           },
           "position": {
-            "x": 1534,
+            "x": 1538,
             "y": 4050
           },
           "group": "nodes",
@@ -4093,7 +4158,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1354,
+            "x": 1358,
             "y": 4140
           },
           "group": "nodes",
@@ -4112,7 +4177,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1354,
+            "x": 1358,
             "y": 4410
           },
           "group": "nodes",
@@ -4151,7 +4216,7 @@
             }
           },
           "position": {
-            "x": 1534,
+            "x": 1538,
             "y": 4410
           },
           "group": "nodes",
@@ -4211,7 +4276,7 @@
             }
           },
           "position": {
-            "x": 934,
+            "x": 938,
             "y": 3960
           },
           "group": "nodes",
@@ -4229,7 +4294,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1054,
+            "x": 1058,
             "y": 3960
           },
           "group": "nodes",
@@ -4248,7 +4313,7 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 454,
+            "x": 458,
             "y": 3960
           },
           "group": "nodes",
@@ -4281,7 +4346,7 @@
             }
           },
           "position": {
-            "x": 334,
+            "x": 338,
             "y": 3960
           },
           "group": "nodes",
@@ -4338,7 +4403,7 @@
             "idUnique": "d2mbrib33f"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 3840
           },
           "group": "nodes",
@@ -4388,7 +4453,7 @@
             "status": "configured"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 3780
           },
           "group": "nodes",
@@ -4445,7 +4510,7 @@
             "idUnique": "ez34nkkank"
           },
           "position": {
-            "x": 214,
+            "x": 218,
             "y": 3720
           },
           "group": "nodes",
@@ -4502,7 +4567,7 @@
             "idUnique": "lxipbs118u"
           },
           "position": {
-            "x": 2014,
+            "x": 2018,
             "y": 360
           },
           "group": "nodes",
@@ -4559,7 +4624,7 @@
             "idUnique": "0lzq5be6ag"
           },
           "position": {
-            "x": 2314,
+            "x": 2318,
             "y": 360
           },
           "group": "nodes",
@@ -4596,7 +4661,7 @@
             "idUnique": "3pb0p921bd"
           },
           "position": {
-            "x": 1834,
+            "x": 1838,
             "y": 3960
           },
           "group": "nodes",
@@ -4635,7 +4700,7 @@
             }
           },
           "position": {
-            "x": 3034,
+            "x": 3038,
             "y": 480
           },
           "group": "nodes",
@@ -4692,7 +4757,7 @@
             "idUnique": "fydb037nvo"
           },
           "position": {
-            "x": 2614,
+            "x": 2618,
             "y": 360
           },
           "group": "nodes",
@@ -4749,7 +4814,7 @@
             "idUnique": "8xqv4safnf"
           },
           "position": {
-            "x": 2914,
+            "x": 2918,
             "y": 360
           },
           "group": "nodes",
@@ -4800,7 +4865,7 @@
             "idUnique": "7n399jfuq4"
           },
           "position": {
-            "x": 634,
+            "x": 638,
             "y": 990
           },
           "group": "nodes",
@@ -4823,7 +4888,7 @@
             }
           },
           "position": {
-            "x": 754,
+            "x": 758,
             "y": 990
           },
           "group": "nodes",
@@ -4857,7 +4922,7 @@
                 "value": {}
               },
               "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                    <h1 class=\"text-center mb-4\">\n                        <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                        {{title}}\n                    </h1>\n                    <p class=\"text-muted text-center\">{{text}}</p>\n                \n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                    {{#if resendMessage}}\n                        <p class=\"text-info text-center\">{{resendMessage}}</p>\n                    {{/if}}\n                    \n                    <form id=\"otp-form\" data-id=\"otp-form\">\n                        <div class=\"mb-4 form-floating\">\n                            <input class=\"form-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"8\" />\n                            <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                        </div>\n                        <p class=\"text-muted text-center\">\n                            Email sent to:\n                            {{maskedContactInfo}}\n                        </p>\n                        <div class=\"d-flex flex-column\">\n                            {{#if resendButtonLabel}}\n                            <button id=\"resend\" type=\"button\" class=\"btn btn-link mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                                {{resendButtonLabel}}\n                            </button>\n                            {{/if}}\n                            {{#if primaryButtonLabel}}\n                            <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                                {{primaryButtonLabel}}\n                            </button>\n                            {{/if}}\n\n                            {{#if cancelButtonLabel}}\n                            <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                                {{cancelButtonLabel}}\n                            </button>\n                            {{/if}}\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                    <h1 class=\"text-center mb-4\">\n                        <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                        {{title}}\n                    </h1>\n                    <p class=\"text-muted text-center\">{{text}}</p>\n                \n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                    {{#if resendMessage}}\n                        <p class=\"text-info text-center\">{{resendMessage}}</p>\n                    {{/if}}\n                    \n                    <form id=\"otp-form\" data-id=\"otp-form\">\n                        <div class=\"mb-4 form-floating\">\n                            <input class=\"form-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"8\" aria-required=\"true\" />\n                            <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                        </div>\n                        <p class=\"text-muted text-center\">\n                            Email sent to:\n                            {{maskedContactInfo}}\n                        </p>\n                        <div class=\"d-flex flex-column\">\n                            {{#if resendButtonLabel}}\n                            <button id=\"resend\" type=\"button\" class=\"btn btn-link mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                                {{resendButtonLabel}}\n                            </button>\n                            {{/if}}\n                            {{#if primaryButtonLabel}}\n                            <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                                {{primaryButtonLabel}}\n                            </button>\n                            {{/if}}\n\n                            {{#if cancelButtonLabel}}\n                            <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                                {{cancelButtonLabel}}\n                            </button>\n                            {{/if}}\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
               },
               "customCSS": {
                 "value": ""
@@ -4911,13 +4976,13 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"maskedValue\",\n        \"data\": \"{{local.ianyq94i77.payload.output.maskedValue}}\",\n        \"tooltip\": \"{{local.ianyq94i77.payload.output.maskedValue}}\",\n        \"children\": [\n          {\n            \"text\": \"maskedValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
               "resendButtonLabel": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Resend passcode\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Resend Verification Code\"\n      }\n    ]\n  }\n]"
               },
               "primaryButtonLabel": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
               },
               "resendMessage": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.vukr0araeb.payload.output.message}}\",\n        \"tooltip\": \"{{local.vukr0araeb.payload.output.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"resendMessage\",\n        \"data\": \"{{local.vukr0araeb.payload.output.resendMessage}}\",\n        \"tooltip\": \"{{local.vukr0araeb.payload.output.resendMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"resendMessage\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
               "title": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Verify Account\"\n      }\n    ]\n  }\n]"
@@ -4929,7 +4994,7 @@
             "idUnique": "mc0qvitm1n"
           },
           "position": {
-            "x": 934,
+            "x": 938,
             "y": 990
           },
           "group": "nodes",
@@ -4962,7 +5027,7 @@
             }
           },
           "position": {
-            "x": 2164,
+            "x": 2168,
             "y": 3390
           },
           "group": "nodes",
@@ -4996,7 +5061,7 @@
             "idUnique": "jk5rde7tci"
           },
           "position": {
-            "x": 2164,
+            "x": 2168,
             "y": 3660
           },
           "group": "nodes",
@@ -5029,7 +5094,7 @@
             }
           },
           "position": {
-            "x": 1234,
+            "x": 1238,
             "y": 2400
           },
           "group": "nodes",
@@ -5063,7 +5128,7 @@
             "idUnique": "2kes02mnpl"
           },
           "position": {
-            "x": 934,
+            "x": 938,
             "y": 2850
           },
           "group": "nodes",
@@ -5096,7 +5161,7 @@
             }
           },
           "position": {
-            "x": 934,
+            "x": 938,
             "y": 1890
           },
           "group": "nodes",
@@ -5121,7 +5186,7 @@
             "type": "trigger",
             "properties": {
               "customHTML": {
-                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                {{#if title}}\n                <h1 class=\"text-center mb-4\">{{title}}</h1>\n                {{/if}}\n\n                <div class=\"mx-auto mt-3 mb-4\">\n                    <svg class=\"checkmark\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 52 52\">\n                        <circle class=\"checkmarkCircle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\" />\n                        <path class=\"checkmarkCheck\" fill=\"none\" d=\"M14.1 27.2l7.1 7.2 16.7-16.8\" />\n                    </svg>\n                </div>\n\n                {{#if textOne}}\n                <p class=\"text-muted text-center\">{{textOne}}</p>\n                {{/if}}\n\n                {{#if textTwo}}\n                <p class=\"text-muted text-center\">{{textTwo}}</p>\n                {{/if}}\n\n                <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n                {{#if buttonLabel}}\n                <div class=\"d-flex flex-column\">\n                    <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"next-event\" data-skbuttonvalue=\"NEXT\" >\n                    {{buttonLabel}}\n                    </button>\n                </div>\n                {{/if}}\n\n            </div>\n        </div>\n    </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n\n                    <div class=\"mx-auto mt-3 mb-4\">\n                        <svg class=\"checkmark\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 52 52\">\n                            <circle class=\"checkmarkCircle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\" />\n                            <path class=\"checkmarkCheck\" fill=\"none\" d=\"M14.1 27.2l7.1 7.2 16.7-16.8\" />\n                        </svg>\n                    </div>\n\n                    {{#if textOne}}\n                    <p class=\"text-muted text-center\">{{textOne}}</p>\n                    {{/if}}\n\n                    {{#if textTwo}}\n                    <p class=\"text-muted text-center\">{{textTwo}}</p>\n                    {{/if}}\n\n                    <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n                    {{#if buttonLabel}}\n                    <div class=\"d-flex flex-column\">\n                        <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\" data-skcomponent=\"skbutton\"\n                        data-skbuttontype=\"next-event\" data-skbuttonvalue=\"NEXT\" >\n                        {{buttonLabel}}\n                        </button>\n                    </div>\n                    {{/if}}\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
               },
               "formFieldsList": {
                 "value": [
@@ -5181,7 +5246,7 @@
             "idUnique": "9wi6dhkpi6"
           },
           "position": {
-            "x": 634,
+            "x": 638,
             "y": 3960
           },
           "group": "nodes",
@@ -5199,7 +5264,7 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 754,
+            "x": 758,
             "y": 3960
           },
           "group": "nodes",
@@ -5284,7 +5349,7 @@
             "idUnique": "8rsda1hj30"
           },
           "position": {
-            "x": 1834,
+            "x": 1838,
             "y": 4140
           },
           "group": "nodes",
@@ -5341,7 +5406,7 @@
             "idUnique": "vtntbkcdvk"
           },
           "position": {
-            "x": 210,
+            "x": 214,
             "y": 360
           },
           "group": "nodes",
@@ -7306,7 +7371,7 @@
     }
   },
   "flowColor": "#ff661c",
-  "savedDate": 1710422194864,
+  "savedDate": 1710425799935,
   "variables": [
     {
       "context": "flowInstance",
