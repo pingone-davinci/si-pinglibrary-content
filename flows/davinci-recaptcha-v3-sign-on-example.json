@@ -7,14 +7,15 @@
     "variablesConnector",
     "annotationConnector"
   ],
-  "createdDate": 1710960745736,
-  "currentVersion": 136,
+  "createdDate": 1711023971477,
+  "currentVersion": 2,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
+  "deployedDate": 1711023996145,
   "description": "Reference DaVinci orchestration flow that integrates reCAPTCHA in a sign-on process to assess whether a form submission is by a human or a bot.",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
   "name": "reCAPTCHA v3 Sign On Example",
-  "publishedVersion": 136,
+  "publishedVersion": 2,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": "",
@@ -41,9 +42,9 @@
     "css": ".companyLogo {\n    /* Ping Logo  */\n    height: 65px;\n}"
   },
   "timeouts": "null",
-  "updatedDate": 1710960752164,
-  "flowId": "6c58c99f62a4e25ebbdaaf8e573a2eb4",
-  "versionId": 136,
+  "updatedDate": 1711023996146,
+  "flowId": "f2f5a418a72f2fb78930d7b30e97bc74",
+  "versionId": 2,
   "graphData": {
     "elements": {
       "nodes": [
@@ -76,8 +77,8 @@
             "idUnique": "dz4nfgx57r"
           },
           "position": {
-            "x": 1530,
-            "y": 450
+            "x": 1534,
+            "y": 484
           },
           "group": "nodes",
           "removed": false,
@@ -96,8 +97,8 @@
             "idUnique": "bzw3senjno"
           },
           "position": {
-            "x": 1350,
-            "y": 450
+            "x": 1354,
+            "y": 484
           },
           "group": "nodes",
           "removed": false,
@@ -152,8 +153,8 @@
             "idUnique": "rg734w4u88"
           },
           "position": {
-            "x": 1230,
-            "y": 450
+            "x": 1234,
+            "y": 484
           },
           "group": "nodes",
           "removed": false,
@@ -172,8 +173,8 @@
             "idUnique": "xxzhyhae5o"
           },
           "position": {
-            "x": 1050,
-            "y": 450
+            "x": 1054,
+            "y": 484
           },
           "group": "nodes",
           "removed": false,
@@ -199,8 +200,8 @@
             "idUnique": "hw6u1vsgw5"
           },
           "position": {
-            "x": 1650,
-            "y": 450
+            "x": 1654,
+            "y": 484
           },
           "group": "nodes",
           "removed": false,
@@ -286,8 +287,8 @@
             "idUnique": "5c7do7l9e6"
           },
           "position": {
-            "x": 930,
-            "y": 450
+            "x": 934,
+            "y": 484
           },
           "group": "nodes",
           "removed": false,
@@ -349,8 +350,8 @@
             "idUnique": "syyanus7e7"
           },
           "position": {
-            "x": 330,
-            "y": 450
+            "x": 334,
+            "y": 484
           },
           "group": "nodes",
           "removed": false,
@@ -372,8 +373,8 @@
             }
           },
           "position": {
-            "x": 450,
-            "y": 450
+            "x": 454,
+            "y": 484
           },
           "group": "nodes",
           "removed": false,
@@ -388,9 +389,9 @@
           "data": {
             "id": "am4qtuerzq",
             "nodeType": "CONNECTION",
-            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectionId": "481e952e6b11db8360587b8711620786",
             "connectorId": "httpConnector",
-            "name": "Http",
+            "name": "HTTP",
             "label": "Http",
             "status": "configured",
             "capabilityName": "customHTMLTemplate",
@@ -459,8 +460,8 @@
             "idUnique": "p3z6662uwb"
           },
           "position": {
-            "x": 1830,
-            "y": 450
+            "x": 1834,
+            "y": 484
           },
           "group": "nodes",
           "removed": false,
@@ -475,16 +476,16 @@
           "data": {
             "id": "i21eb2n1ho",
             "nodeType": "CONNECTION",
-            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectionId": "481e952e6b11db8360587b8711620786",
             "connectorId": "httpConnector",
-            "name": "Http",
+            "name": "HTTP",
             "label": "Http",
             "status": "configured",
             "capabilityName": "customHTMLTemplate",
             "type": "trigger",
             "properties": {
               "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n\n                    <div class=\"mx-auto mt-3 mb-4\">\n    <svg class=\"xmark\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\">\n        <circle class=\"xmarkCircle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\" />\n        <path class=\"xmarkX\" fill=\"none\" d=\"M16,16 L36,36 M36,16 L16,36\" />\n    </svg>\n</div>\n\n\n\n\n\n                    {{#if textOne}}\n                    <p class=\"text-muted text-center\">{{textOne}}</p>\n                    {{/if}}\n\n                    {{#if textTwo}}\n                    <p class=\"text-muted text-center\">{{textTwo}}</p>\n                    {{/if}}\n\n                    {{#if textThree}}\n                    <p class=\"text-center fw-bold\">{{textThree}}</p>\n                    {{/if}}\n\n                    <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n                    {{#if buttonLabel}}\n                    <div class=\"d-flex flex-column\">\n                        <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\" data-skcomponent=\"skbutton\"\n                        data-skbuttontype=\"next-event\" data-skbuttonvalue=\"NEXT\" >\n                        {{buttonLabel}}\n                        </button>\n                    </div>\n                    {{/if}}\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n\n                    <div class=\"mx-auto mt-3 mb-4\">\n                        <svg class=\"xmark\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\">\n                            <circle class=\"xmarkCircle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\" />\n                            <path class=\"xmarkX\" fill=\"none\" d=\"M16,16 L36,36 M36,16 L16,36\" />\n                        </svg>\n                    </div>\n\n                    {{#if textOne}}\n                    <p class=\"text-muted text-center\">{{textOne}}</p>\n                    {{/if}}\n\n                    {{#if textTwo}}\n                    <p class=\"text-muted text-center\">{{textTwo}}</p>\n                    {{/if}}\n\n                    {{#if textThree}}\n                    <p class=\"text-center fw-bold\">{{textThree}}</p>\n                    {{/if}}\n\n                    <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n                    {{#if buttonLabel}}\n                    <div class=\"d-flex flex-column\">\n                        <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\" data-skcomponent=\"skbutton\"\n                        data-skbuttontype=\"next-event\" data-skbuttonvalue=\"NEXT\" >\n                        {{buttonLabel}}\n                        </button>\n                    </div>\n                    {{/if}}\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
               },
               "formFieldsList": {
                 "value": [
@@ -546,8 +547,8 @@
             "idUnique": "the8zdg5iv"
           },
           "position": {
-            "x": 1830,
-            "y": 660
+            "x": 1834,
+            "y": 694
           },
           "group": "nodes",
           "removed": false,
@@ -596,8 +597,8 @@
             "status": "configured"
           },
           "position": {
-            "x": 210,
-            "y": 240
+            "x": 214,
+            "y": 274
           },
           "group": "nodes",
           "removed": false,
@@ -656,8 +657,8 @@
             "idUnique": "lb31g4gkg6"
           },
           "position": {
-            "x": 210,
-            "y": 300
+            "x": 214,
+            "y": 334
           },
           "group": "nodes",
           "removed": false,
@@ -714,8 +715,8 @@
             }
           },
           "position": {
-            "x": 630,
-            "y": 450
+            "x": 634,
+            "y": 484
           },
           "group": "nodes",
           "removed": false,
@@ -740,8 +741,8 @@
             }
           },
           "position": {
-            "x": 750,
-            "y": 450
+            "x": 754,
+            "y": 484
           },
           "group": "nodes",
           "removed": false,
@@ -756,9 +757,9 @@
           "data": {
             "id": "udbb34cil1",
             "nodeType": "CONNECTION",
-            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectionId": "481e952e6b11db8360587b8711620786",
             "connectorId": "httpConnector",
-            "name": "Http",
+            "name": "HTTP",
             "label": "Http",
             "status": "configured",
             "capabilityName": "customHTMLTemplate",
@@ -825,8 +826,8 @@
             "idUnique": "3nm07rhtek"
           },
           "position": {
-            "x": 930,
-            "y": 660
+            "x": 934,
+            "y": 694
           },
           "group": "nodes",
           "removed": false,
@@ -885,8 +886,8 @@
             "idUnique": "cw7x36wsom"
           },
           "position": {
-            "x": 210,
-            "y": 180
+            "x": 214,
+            "y": 214
           },
           "group": "nodes",
           "removed": false,
@@ -1147,7 +1148,7 @@
     }
   },
   "flowColor": "#E3F0FF",
-  "savedDate": 1710960745162,
+  "savedDate": 1711023971147,
   "variables": [
     {
       "context": "flowInstance",
