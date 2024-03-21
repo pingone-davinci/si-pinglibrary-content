@@ -1,5 +1,5 @@
 {
-  "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7",
+  "companyId": "193bc45b-146d-4bf0-88fd-b9dcb6f7288e",
   "authTokenExpireIds": [],
   "connectorIds": [
     "annotationConnector",
@@ -7,32 +7,34 @@
     "httpConnector",
     "variablesConnector"
   ],
-  "createdDate": 1700226980737,
-  "currentVersion": 4,
+  "createdDate": 1711027698580,
+  "currentVersion": 6,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "deployedDate": 1700226982358,
-  "description": "Imported on Fri Nov 17 2023 12:38:20 GMT+0000 (Coordinated Universal Time)",
+  "deployedDate": 1711027699979,
+  "description": "DaVinci starter flow that comes preconfigured to leverage Ping standard CSS resources, instance variables, generic error handler, and a custom message UI.",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
-  "name": "DaVinci Starter Flow ",
-  "publishedVersion": 4,
+  "name": "DaVinci Starter Flow",
+  "publishedVersion": 6,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": {},
     "intermediateLoadingScreenHTML": {},
     "logLevel": 2,
     "useCustomCSS": true,
-    "css": ".companyLogo {\n    /* Ping Logo  */\n    content: url(\"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\");\n    width: 65px;\n    height: 65px;\n}",
+    "css": ".companyLogo {\n    height: 65px;\n}",
     "cssLinks": [
       "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css",
-      "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.7/icons.css"
+      "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.11/icons.css"
     ],
-    "scrubSensitiveInfo": false
+    "scrubSensitiveInfo": false,
+    "customTitle": "DaVinci Starter Flow",
+    "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
   },
   "timeouts": "null",
-  "updatedDate": 1700226982358,
-  "flowId": "91cf2f526df11ece56219f0a03decb6f",
-  "versionId": 4,
+  "updatedDate": 1711027796763,
+  "flowId": "ab6fc1a63211b7de86a3b0bb62b5e034",
+  "versionId": 6,
   "graphData": {
     "elements": {
       "nodes": [
@@ -74,8 +76,8 @@
             "status": "configured"
           },
           "position": {
-            "x": 214,
-            "y": 214
+            "x": 210,
+            "y": 210
           },
           "group": "nodes",
           "removed": false,
@@ -148,7 +150,7 @@
             "status": "configured"
           },
           "position": {
-            "x": 840,
+            "x": 810,
             "y": 330
           },
           "group": "nodes",
@@ -164,9 +166,9 @@
           "data": {
             "id": "4zjizi23c6",
             "nodeType": "CONNECTION",
-            "connectionId": "db375b67772d16c451287a824048de1a",
+            "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
             "connectorId": "nodeConnector",
-            "name": "Teleport",
+            "name": "Node",
             "label": "Node",
             "status": "configured",
             "capabilityName": "startNode",
@@ -181,8 +183,8 @@
             }
           },
           "position": {
-            "x": 304,
-            "y": 994
+            "x": 300,
+            "y": 990
           },
           "group": "nodes",
           "removed": false,
@@ -200,8 +202,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 424,
-            "y": 994
+            "x": 420,
+            "y": 990
           },
           "group": "nodes",
           "removed": false,
@@ -216,9 +218,9 @@
           "data": {
             "id": "13xqy80afe",
             "nodeType": "CONNECTION",
-            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectionId": "481e952e6b11db8360587b8711620786",
             "connectorId": "httpConnector",
-            "name": "Http",
+            "name": "HTTP",
             "label": "Http",
             "status": "configured",
             "capabilityName": "createErrorResponse",
@@ -261,8 +263,8 @@
             }
           },
           "position": {
-            "x": 604,
-            "y": 994
+            "x": 600,
+            "y": 990
           },
           "group": "nodes",
           "removed": false,
@@ -311,8 +313,8 @@
             "status": "configured"
           },
           "position": {
-            "x": 214,
-            "y": 814
+            "x": 210,
+            "y": 810
           },
           "group": "nodes",
           "removed": false,
@@ -368,8 +370,8 @@
             "idUnique": "940rm8qjb1"
           },
           "position": {
-            "x": 214,
-            "y": 874
+            "x": 210,
+            "y": 870
           },
           "group": "nodes",
           "removed": false,
@@ -395,13 +397,6 @@
               "saveVariables": {
                 "value": [
                   {
-                    "name": "populationId",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
-                    "key": 0.9673372774789002,
-                    "type": "string",
-                    "label": "populationId (string - flowInstance)"
-                  },
-                  {
                     "name": "companyName",
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Ping Identity\"\n      }\n    ]\n  }\n]",
                     "key": 0.8558926100565449,
@@ -409,38 +404,10 @@
                     "type": "string"
                   },
                   {
-                    "name": "origin",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"auth.pingone.com\"\n      }\n    ]\n  }\n]",
-                    "key": 0.38383064124643007,
-                    "label": "origin (string - flowInstance)",
-                    "type": "string"
-                  },
-                  {
-                    "name": "originURL",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://auth.pingone.com\"\n      }\n    ]\n  }\n]",
-                    "key": 0.3895964400152929,
-                    "label": "originURL (string - flowInstance)",
-                    "type": "string"
-                  },
-                  {
-                    "name": "relyingParty",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"PingOne\"\n      }\n    ]\n  }\n]",
-                    "key": 0.8294031869442895,
-                    "label": "relyingParty (string - flowInstance)",
-                    "type": "string"
-                  },
-                  {
-                    "name": "relyingPartyId",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"auth.pingone.com\"\n      }\n    ]\n  }\n]",
-                    "key": 0.33706413004714153,
-                    "label": "relyingPartyId (string - flowInstance)",
-                    "type": "string"
-                  },
-                  {
-                    "name": "flowDocsURL",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
-                    "key": 0.8153538352277487,
-                    "label": "flowDocsURL (string - flowInstance)",
+                    "name": "companyLogo",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\"\n      }\n    ]\n  }\n]",
+                    "key": 0.07468674246917284,
+                    "label": "companyLogo (string - flowInstance)",
                     "type": "string"
                   }
                 ]
@@ -469,7 +436,7 @@
         },
         {
           "data": {
-            "id": "e6q3kvh770",
+            "id": "pkfhscclyh",
             "nodeType": "CONNECTION",
             "connectionId": "867ed4363b2bc21c860085ad2baa817d",
             "connectorId": "httpConnector",
@@ -507,7 +474,7 @@
                 "value": null
               },
               "customHTML": {
-                "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n        \n        {{#if title}}\n        <h1 class=\"text-center mb-4\">{{title}}</h1>\n        {{/if}}\n\n        {{#if textOne}}\n        <p class=\"text-muted text-center\">{{textOne}}</p>\n        {{/if}}\n\n        {{#if textTwo}}\n        <p class=\"text-muted text-center\">{{textTwo}}</p>\n        {{/if}}\n\n        {{#if buttonLabel}}\n        <div class=\"d-flex flex-column\">\n          <button data-id=\"next-button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n             data-skbuttontype=\"next-event\"  data-skbuttonvalue=\"NEXT\" id=\"btnNext\">\n                {{buttonLabel}}\n            </button>\n        </div>\n        {{/if}}\n        \n      </div>\n    </div>\n  </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n          {{#if title}}\n          <h1 class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          {{#if textOne}}\n          <p class=\"text-muted text-center\">{{textOne}}</p>\n          {{/if}}\n\n          {{#if textTwo}}\n          <p class=\"text-muted text-center\">{{textTwo}}</p>\n          {{/if}}\n\n          {{#if buttonLabel}}\n          <div class=\"d-flex flex-column\">\n            <button data-id=\"next-button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n             data-skbuttontype=\"next-event\"  data-skbuttonvalue=\"NEXT\" id=\"btnNext\">\n                {{buttonLabel}}\n            </button>\n          </div>\n          {{/if}}\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
               },
               "customCSS": {
                 "value": ""
@@ -538,15 +505,12 @@
               },
               "nodeDescription": {
                 "value": "Render a custom message"
-              },
-              "textTwo": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Text Two message\"\n      }\n    ]\n  }\n]"
               }
             },
-            "idUnique": "16fkjw5hoo"
+            "idUnique": "8rsda1hj30"
           },
           "position": {
-            "x": 630,
+            "x": 600,
             "y": 390
           },
           "group": "nodes",
@@ -560,6 +524,25 @@
         }
       ],
       "edges": [
+        {
+          "data": {
+            "id": "psqcjsf0wp",
+            "source": "4zjizi23c6",
+            "target": "z4g8c5z5pw"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
         {
           "data": {
             "id": "j67d1ioyye",
@@ -600,28 +583,9 @@
         },
         {
           "data": {
-            "id": "psqcjsf0wp",
-            "source": "4zjizi23c6",
-            "target": "z4g8c5z5pw"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "3gd23kycb0",
+            "id": "2sx3apqnsb",
             "source": "t5lim69t2u",
-            "target": "e6q3kvh770"
+            "target": "pkfhscclyh"
           },
           "position": {
             "x": 0,
@@ -656,96 +620,37 @@
     }
   },
   "flowColor": "#ff661c",
-  "savedDate": 1700226980659,
+  "savedDate": 1711027698539,
   "variables": [
     {
       "context": "flowInstance",
-      "createdDate": 1695902607447,
+      "createdDate": 1705424772091,
       "fields": {
         "type": "string",
         "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "companyLogo##SK##flowInstance",
+      "companyId": "193bc45b-146d-4bf0-88fd-b9dcb6f7288e"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1704310438220,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
         "min": 0,
         "max": 2000
       },
       "type": "property",
       "visibility": "private",
       "name": "companyName##SK##flowInstance",
-      "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1700224700259,
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "flowDocsURL##SK##flowInstance",
-      "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1695902607458,
-      "fields": {
-        "type": "string",
-        "displayName": "FIDO2 origin",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "origin##SK##flowInstance",
-      "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1700224700261,
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "originURL##SK##flowInstance",
-      "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1695902607456,
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "populationId##SK##flowInstance",
-      "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7"
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1695902607456,
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "type": "property",
-      "visibility": "private",
-      "name": "relyingParty##SK##flowInstance",
-      "companyId": "16395f68-5373-4a81-bf1e-6c61f6cacdd7"
+      "companyId": "193bc45b-146d-4bf0-88fd-b9dcb6f7288e"
     }
   ],
   "connections": []
