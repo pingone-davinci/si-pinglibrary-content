@@ -1,7 +1,7 @@
 {
   "flows": [
     {
-      "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581",
+      "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640",
       "authTokenExpireIds": [],
       "connectorIds": [
         "variablesConnector",
@@ -14,14 +14,14 @@
         "flowConnector",
         "pingOneAuthenticationConnector"
       ],
-      "createdDate": 1710937548712,
-      "currentVersion": 201,
+      "createdDate": 1711456211632,
+      "currentVersion": 8,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
-      "description": "",
+      "description": "Imported on Tue Mar 26 2024 12:07:11 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Authentication with MFA via OTP or FIDO",
-      "publishedVersion": 201,
+      "publishedVersion": 8,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
@@ -37,9 +37,9 @@
         "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
       },
       "timeouts": "null",
-      "updatedDate": 1710937570421,
-      "flowId": "21a43d48b59fd13d45276242f708d9af",
-      "versionId": 201,
+      "updatedDate": 1711456220137,
+      "flowId": "46b9ba5dc6cb5ba18c27f0d5d3e1be78",
+      "versionId": 8,
       "graphData": {
         "elements": {
           "nodes": [
@@ -186,7 +186,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Welcome to \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"companyName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img role=\"banner\" class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                    \n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n                    \n                    {{#if textOne}}\n                    <p class=\"text-muted text-center\">{{textOne}}</p>\n                    {{/if}}\n                    \n                    {{#if textTwo}}\n                    <p class=\"text-muted text-center\">{{textTwo}}</p>\n                    {{/if}}\n\n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"email\" data-skcomponent=\"skerrormessage\"></p>\n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"password\" data-skcomponent=\"skerrormessage\"></p>\n\n\n                    <form id=\"emailPasswordForm\" data-id=\"emailPasswordForm\">\n                        <div class=\"mb-4 form-floating\">\n                            <input class=\"form-control\" type=\"text\" id=\"email\" name=\"email\" placeholder=\"Email Address\"\n                                autocomplete=\"off\" value=\"\" data-id=\"email-input\" aria-required=\"true\" />\n                            <label class=\"form-label\" for=\"email\">Email Address</label>\n                        </div>\n                        <div id=\"passwordDiv\" class=\"mb-4 form-floating\">\n                            <input class=\"form-control\" type=\"password\" id=\"password\" name=\"password\" placeholder=\"Password\"\n                                autocomplete=\"off\" value=\"\" data-id=\"password-input\" aria-required=\"true\" />\n                            <label class=\"form-label\" for=\"password\">Password</label>\n                        </div>\n                        <div class=\"d-flex flex-column\">\n                            {{#if primaryButtonLabel}}\n                            <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"form-submit\" data-skform=\"emailPasswordForm\" id=\"btnSignIn\"\n                                data-skbuttonvalue=\"SIGNON\">\n                                {{primaryButtonLabel}}\n                            </button>\n                            {{/if}}\n                            {{#if forgotButtonLabel}}\n                            <button data-id=\"button\" type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skform=\"emailPasswordForm\" id=\"btnTrouble\"\n                                data-skbuttonvalue=\"TROUBLE\">\n                                {{forgotButtonLabel}}\n                            </button>\n                            {{/if}}\n                        </div> \n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">                  \n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"Logo of {{global.variables.companyName}}\" />\n\n                        {{#if title}}\n                        <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n                        {{/if}}\n\n                        {{#if textOne}}\n                        <p class=\"text-muted text-center\">{{textOne}}</p>\n                        {{/if}}\n\n                        {{#if textTwo}}\n                        <p class=\"text-muted text-center\">{{textTwo}}</p>\n                        {{/if}}\n\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"feedbackError\" data-id=\"feedback\"\n                            data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"emailError\" data-skerrorid=\"email\"\n                            data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"passwordError\"\n                            data-skerrorid=\"password\" data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n                        <form id=\"emailPasswordForm\" aria-labelledby=\"title\" data-id=\"emailPasswordForm\">\n                            <div class=\"mb-4 form-floating\">\n                                <input class=\"form-control\" type=\"email\" id=\"email\" name=\"email\" placeholder=\"Email Address\"\n                                    autocomplete=\"email\" value=\"\" data-id=\"email-input\" aria-required=\"true\" aria-describedby=\"emailLabel\" />\n                                <label id=\"emailLabel\" for=\"email\">Email Address</label>\n                            </div>\n                            <div class=\"mb-4 form-floating\">\n                                <input class=\"form-control\" type=\"password\" id=\"password\" name=\"password\" placeholder=\"Password\"\n                                    autocomplete=\"current-password\" value=\"\" data-id=\"password-input\" aria-required=\"true\" aria-describedby=\"passwordLabel\" />\n                                <label id=\"passwordLabel\" for=\"password\">Password</label>\n                            </div>\n                            <div class=\"d-flex flex-column\">\n                                {{#if primaryButtonLabel}}\n                                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"form-submit\" id=\"btnSignIn\" data-skbuttonvalue=\"SIGNON\" data-skform=\"emailPasswordForm\">\n                                    {{primaryButtonLabel}}\n                                </button>\n                                {{/if}}\n\n                                {{#if forgotButtonLabel}}\n                                <button data-id=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"next-event\" id=\"btnTrouble\" data-skbuttonvalue=\"TROUBLE\">\n                                    {{forgotButtonLabel}}\n                                </button> \n                                {{/if}}  \n                            </div>\n                        </form>\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
                   },
                   "formFieldsList": {
                     "value": [
@@ -3137,7 +3137,7 @@
                   "subFlowId": {
                     "value": {
                       "label": "MFA Device Authentication Subflow",
-                      "value": "baf2a282b75b1af13f1d311034aeb117"
+                      "value": "9bc5e3b8efe1cf328a862931233d79af"
                     }
                   },
                   "subFlowVersionId": {
@@ -6432,11 +6432,11 @@
         }
       },
       "flowColor": "#E3F0FF",
-      "savedDate": 1710937548275,
+      "savedDate": 1711456209305,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1704721922442,
+          "createdDate": 1711453044028,
           "fields": {
             "type": "string",
             "displayName": "Url for company's logo image",
@@ -6447,11 +6447,11 @@
           "type": "property",
           "visibility": "private",
           "name": "companyLogo##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1704721115281,
+          "createdDate": 1711451861763,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -6462,11 +6462,11 @@
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1704721537303,
+          "createdDate": 1711454831267,
           "fields": {
             "type": "string",
             "displayName": "FIDO2 origin",
@@ -6477,11 +6477,11 @@
           "type": "property",
           "visibility": "private",
           "name": "origin##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1710438992139,
+          "createdDate": 1711454831258,
           "fields": {
             "type": "string",
             "displayName": "Relying Party ID",
@@ -6492,14 +6492,14 @@
           "type": "property",
           "visibility": "private",
           "name": "rpid##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         }
       ],
       "connections": [],
-      "parentFlowId": "21a43d48b59fd13d45276242f708d9af"
+      "parentFlowId": "46b9ba5dc6cb5ba18c27f0d5d3e1be78"
     },
     {
-      "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581",
+      "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640",
       "authTokenExpireIds": [],
       "connectorIds": [
         "annotationConnector",
@@ -6510,10 +6510,10 @@
         "functionsConnector",
         "errorConnector"
       ],
-      "createdDate": 1710937845317,
-      "currentVersion": 312,
+      "createdDate": 1711454834080,
+      "currentVersion": 1,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
-      "description": "",
+      "description": "Imported on Tue Mar 26 2024 12:07:11 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -6568,17 +6568,16 @@
       "isInputSchemaSaved": true,
       "isOutputSchemaSaved": false,
       "name": "MFA Device Authentication Subflow",
-      "publishedVersion": 312,
+      "publishedVersion": 1,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
         "intermediateLoadingScreenHTML": "",
         "logLevel": 2
       },
-      "timeouts": "null",
-      "updatedDate": 1710937853393,
-      "flowId": "baf2a282b75b1af13f1d311034aeb117",
-      "versionId": 312,
+      "updatedDate": 1711454834266,
+      "flowId": "9bc5e3b8efe1cf328a862931233d79af",
+      "versionId": 1,
       "graphData": {
         "elements": {
           "nodes": [
@@ -9059,7 +9058,7 @@
                     "value": "Present OTP Form"
                   },
                   "inputSchema": {
-                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"type\": {\n\t\t\t\"displayName\": \"Device Type\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"maskedContact\": {\n\t\t\t\"displayName\": \"Masked Contact\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"canChangeDevice\": {\n\t\t\t\"displayName\": \"Can change Device\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"resendMessage\": {\n\t\t\t\"displayName\": \"Resend Message\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"resendButtonLabel\": {\n\t\t\t\"displayName\": \"Resend Button Label\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"primaryButtonLabel\": {\n\t\t\t\"displayName\": \"Primary Button Label\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"canChangeDevice\": {\n\t\t\t\"displayName\": \"Can Change Device\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t}\n\t}\n}"
+                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"type\": {\n\t\t\t\"displayName\": \"Device Type\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"maskedContact\": {\n\t\t\t\"displayName\": \"Masked Contact\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"canChangeDevice\": {\n\t\t\t\"displayName\": \"Can change Device\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"resendMessage\": {\n\t\t\t\"displayName\": \"Resend Message\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"resendButtonLabel\": {\n\t\t\t\"displayName\": \"Resend Button Label\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"primaryButtonLabel\": {\n\t\t\t\"displayName\": \"Primary Button Label\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t}\n\t}\n}"
                   },
                   "outputSchema": {
                     "value": {}
@@ -13356,11 +13355,11 @@
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1710937843602,
+      "savedDate": 1711454831944,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1710357740430,
+          "createdDate": 1711453044030,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13371,11 +13370,11 @@
           "type": "property",
           "visibility": "private",
           "name": "webAuthnSupport##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1710438992139,
+          "createdDate": 1711454831258,
           "fields": {
             "type": "string",
             "displayName": "Relying Party ID",
@@ -13386,11 +13385,11 @@
           "type": "property",
           "visibility": "private",
           "name": "rpid##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1704721537307,
+          "createdDate": 1711454831258,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13400,11 +13399,11 @@
           "type": "property",
           "visibility": "private",
           "name": "p1DeviceAuthenticationId##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1710357740431,
+          "createdDate": 1711453044034,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13415,11 +13414,11 @@
           "type": "property",
           "visibility": "private",
           "name": "ORIGIN##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1704721922442,
+          "createdDate": 1711453044028,
           "fields": {
             "type": "string",
             "displayName": "Url for company's logo image",
@@ -13430,11 +13429,11 @@
           "type": "property",
           "visibility": "private",
           "name": "companyLogo##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1704721115281,
+          "createdDate": 1711451861763,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13445,12 +13444,11 @@
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1710511027645,
-          "customerId": "f3e47d945ae971a4b4142ec75012d155",
+          "createdDate": 1711454831267,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13461,12 +13459,11 @@
           "type": "property",
           "visibility": "private",
           "name": "maskedUsableDevices##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1710511174643,
-          "customerId": "f3e47d945ae971a4b4142ec75012d155",
+          "createdDate": 1711454831267,
           "fields": {
             "type": "boolean",
             "displayName": "",
@@ -13477,11 +13474,11 @@
           "type": "property",
           "visibility": "private",
           "name": "canChangeDevice##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1704721537303,
+          "createdDate": 1711454831267,
           "fields": {
             "type": "string",
             "displayName": "FIDO2 origin",
@@ -13492,11 +13489,11 @@
           "type": "property",
           "visibility": "private",
           "name": "origin##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1704721537309,
+          "createdDate": 1711454831266,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13507,11 +13504,11 @@
           "type": "property",
           "visibility": "private",
           "name": "publicKeyCredentialRequestOptions##SK##flowInstance",
-          "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
         }
       ]
     }
   ],
-  "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581",
+  "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640",
   "customerId": "f3e47d945ae971a4b4142ec75012d155"
 }
