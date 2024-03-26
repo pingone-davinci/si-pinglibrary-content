@@ -14,14 +14,14 @@
         "flowConnector",
         "pingOneAuthenticationConnector"
       ],
-      "createdDate": 1711458006014,
-      "currentVersion": 15,
+      "createdDate": 1711461153794,
+      "currentVersion": 17,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
-      "description": "Imported on Tue Mar 26 2024 12:07:11 GMT+0000 (Coordinated Universal Time)",
+      "description": "The DaVinci authentication combines password verification with Multi-Factor Authentication (MFA) for enhanced security, ensuring a balance of user convenience and robust access protection.",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Authentication with MFA via OTP or FIDO",
-      "publishedVersion": 15,
+      "publishedVersion": 17,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
@@ -37,9 +37,9 @@
         "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
       },
       "timeouts": "null",
-      "updatedDate": 1711458010027,
+      "updatedDate": 1711461189279,
       "flowId": "46b9ba5dc6cb5ba18c27f0d5d3e1be78",
-      "versionId": 15,
+      "versionId": 17,
       "graphData": {
         "elements": {
           "nodes": [
@@ -316,7 +316,7 @@
                     "value": "#ffffffff"
                   },
                   "annotation": {
-                    "value": "User Sign On Starter Flow"
+                    "value": "PingOne Authentication with MFA via OTP or FIDO"
                   },
                   "width": {
                     "value": 2100
@@ -6433,7 +6433,7 @@
         }
       },
       "flowColor": "#E3F0FF",
-      "savedDate": 1711458003661,
+      "savedDate": 1711461154269,
       "variables": [
         {
           "context": "flowInstance",
@@ -6511,8 +6511,8 @@
         "functionsConnector",
         "errorConnector"
       ],
-      "createdDate": 1711457885147,
-      "currentVersion": 10,
+      "createdDate": 1711458558581,
+      "currentVersion": 11,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
       "description": "Imported on Tue Mar 26 2024 12:07:11 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
@@ -6569,7 +6569,7 @@
       "isInputSchemaSaved": true,
       "isOutputSchemaSaved": false,
       "name": "MFA Device Authentication Subflow",
-      "publishedVersion": 10,
+      "publishedVersion": 11,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
@@ -6577,9 +6577,9 @@
         "logLevel": 2
       },
       "timeouts": "null",
-      "updatedDate": 1711457890621,
+      "updatedDate": 1711458562639,
       "flowId": "9bc5e3b8efe1cf328a862931233d79af",
-      "versionId": 10,
+      "versionId": 11,
       "graphData": {
         "elements": {
           "nodes": [
@@ -8105,7 +8105,7 @@
                     "value": {}
                   },
                   "customHTML": {
-                    "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                 <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                {{#if title}}\n                <h1 class=\"text-center mb-4\">{{title}}</h1>\n                {{/if}}\n\n                {{#if text}}\n                <p class=\"text-muted text-center\">{{text}}</p>\n                {{/if}}\n                \n                <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n                <form id=\"method-selection\" data-id=\"method-selection\">    \n                    <div class=\"d-flex flex-column gap-4 mb-4\">\n                        {{#each devices}}\n                        {{#ifEquals type \"EMAIL\"}}\n                        <button class=\"btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4\"\n                            id=\"mfa-type-list-button-EMAIL-{{id}}\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"{{id}}\">\n                            <div class=\"flex-grow-1 d-flex align-items-center gap-4\">\n                                <i class=\"mdi mdi-email-outline text-dark fs-2\" aria-hidden=\"true\"></i>\n                                <div class=\"d-flex flex-column text-start gap-1\">\n                                    <div class=\"fw-semibold text-primary\">\n                                        {{#if nickname}}\n                                            {{nickname}}\n                                        {{else}}\n                                            Email\n                                        {{/if}}\n                                    </div>\n                                    <div class=\"fs-5 text-secondary\" id=\"emailContainer\">\n                                        {{email}}\n                                    </div>\n                                </div>\n                            </div>\n                        </button>\n                        {{/ifEquals}}\n                        {{#ifEquals type \"SMS\"}}\n                        <button class=\"btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4\"\n                            id=\"mfa-type-list-button-SMS-{{id}}\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"{{id}}\">\n                            <div class=\"flex-grow-1 d-flex align-items-center gap-4\">\n                                <i class=\"mdi mdi-comment-text-outline text-dark fs-2\" aria-hidden=\"true\"></i>\n                                <div class=\"d-flex flex-column text-start gap-1\">\n                                    <div class=\"fw-semibold text-primary\">\n                                        {{#if nickname}}\n                                            {{nickname}}\n                                        {{else}}\n                                            Text Message\n                                        {{/if}}\n                                    </div>\n                                    <div class=\"fs-5 text-secondary\" id=\"phoneContainer\">\n                                        {{phone}}\n                                    </div>\n                                </div>\n                            </div>\n                        </button>\n                        {{/ifEquals}}\n                        {{#ifEquals type \"FIDO2\"}}\n                        <button class=\"btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4\"\n                            id=\"mfa-type-list-button-FIDO2-{{id}}\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"{{id}}\">\n                            <div class=\"flex-grow-1 d-flex align-items-center gap-4\">\n                                <i class=\"mdi mdi-account-key-outline text-dark fs-2\" aria-hidden=\"true\"></i>\n                                <div class=\"d-flex flex-column text-start gap-1\">\n                                    <div class=\"fw-semibold text-primary\">\n                                        {{#if nickname}}\n                                            {{nickname}}\n                                        {{else}}\n                                            Passkey\n                                        {{/if}}\n                                    </div>\n                                    <div class=\"fs-5 text-secondary\">\n                                        Use device passkey to authenticate.\n                                    </div>\n                                </div>\n                            </div>\n                        </button>\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"VOICE\"}}\n                        <button class=\"btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4\"\n                            data-skbuttontype=\"next-event\" data-skcomponent=\"skbutton\"\n                            data-skbuttonvalue=\"{{id}}\" id=\"btnDevice-VOICE\" >\n                            <div class=\"flex-grow-1 d-flex align-items-center gap-4\">\n                                <i class=\"mdi mdi-face-agent text-dark fs-2\" aria-hidden=\"true\"></i> \n                                <div class=\"d-flex flex-column text-start gap-1\">\n                                    <div class=\"fw-semibold text-primary\">Voice</div>\n                                    <div class=\"fs-5 text-secondary\">Receive a phone call with a passcode to authenticate.</div>\n                                </div>\n                            </div>\n                        </button>\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"TOTP\"}}\n                        <button class=\"btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4\"\n                            id=\"btnDevice-TOTP\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                            data-skbuttonvalue=\"{{id}}\">\n                            <div class=\"flex-grow-1 d-flex align-items-center gap-4\">\n                                <i class=\"mdi mdi-cellphone-key text-dark fs-2\" aria-hidden=\"true\"></i>\n                                <div class=\"d-flex flex-column text-start gap-1\">\n                                    <div class=\"fw-semibold text-primary\">\n                                        Authenticator App\n                                    </div>\n                                    <div class=\"fs-5 text-secondary\">\n                                        Use an authenticator app to authenticate.\n                                    </div>\n                                </div>\n                            </div>\n                        </button>\n                        {{/ifEquals}}\n\n\n                        {{/each}}\n                    <div class=\"d-flex flex-column\">\n                        <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                            Cancel\n                        </button>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+                    "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                 <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                {{#if title}}\n                <h1 class=\"text-center mb-4\">{{title}}</h1>\n                {{/if}}\n\n                {{#if text}}\n                <p class=\"text-muted text-center\">{{text}}</p>\n                {{/if}}\n                \n                <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n                <form id=\"method-selection\" data-id=\"method-selection\">    \n                    <div class=\"d-flex flex-column gap-4 mb-4\">\n                        {{#each devices}}\n                        {{#ifEquals type \"EMAIL\"}}\n                        <button class=\"btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4\"\n                            id=\"mfa-type-list-button-EMAIL-{{id}}\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"{{id}}\">\n                            <div class=\"flex-grow-1 d-flex align-items-center gap-4\">\n                                <i class=\"mdi mdi-email-outline text-dark fs-2\" aria-hidden=\"true\"></i>\n                                <div class=\"d-flex flex-column text-start gap-1\">\n                                    <div class=\"fw-semibold text-primary\">\n                                        {{#if nickname}}\n                                            {{nickname}}\n                                        {{else}}\n                                            Email\n                                        {{/if}}\n                                    </div>\n                                    <div class=\"fs-5 text-secondary\" id=\"emailContainer\">\n                                        {{email}}\n                                    </div>\n                                </div>\n                            </div>\n                        </button>\n                        {{/ifEquals}}\n                        {{#ifEquals type \"SMS\"}}\n                        <button class=\"btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4\"\n                            id=\"mfa-type-list-button-SMS-{{id}}\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"{{id}}\">\n                            <div class=\"flex-grow-1 d-flex align-items-center gap-4\">\n                                <i class=\"mdi mdi-comment-text-outline text-dark fs-2\" aria-hidden=\"true\"></i>\n                                <div class=\"d-flex flex-column text-start gap-1\">\n                                    <div class=\"fw-semibold text-primary\">\n                                        {{#if nickname}}\n                                            {{nickname}}\n                                        {{else}}\n                                            Text Message\n                                        {{/if}}\n                                    </div>\n                                    <div class=\"fs-5 text-secondary\" id=\"phoneContainer\">\n                                        {{phone}}\n                                    </div>\n                                </div>\n                            </div>\n                        </button>\n                        {{/ifEquals}}\n                        {{#ifEquals type \"FIDO2\"}}\n                        <button class=\"btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4\"\n                            id=\"mfa-type-list-button-FIDO2-{{id}}\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"{{id}}\">\n                            <div class=\"flex-grow-1 d-flex align-items-center gap-4\">\n                                <i class=\"mdi mdi-account-key-outline text-dark fs-2\" aria-hidden=\"true\"></i>\n                                <div class=\"d-flex flex-column text-start gap-1\">\n                                    <div class=\"fw-semibold text-primary\">\n                                        {{#if nickname}}\n                                            {{nickname}}\n                                        {{else}}\n                                            Passkey\n                                        {{/if}}\n                                    </div>\n                                    <div class=\"fs-5 text-secondary\">\n                                        Use device passkey to authenticate.\n                                    </div>\n                                </div>\n                            </div>\n                        </button>\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"VOICE\"}}\n                        <button class=\"btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4\"\n                            data-skbuttontype=\"next-event\" data-skcomponent=\"skbutton\"\n                            data-skbuttonvalue=\"{{id}}\" id=\"btnDevice-VOICE\" >\n                            <div class=\"flex-grow-1 d-flex align-items-center gap-4\">\n                                <i class=\"mdi mdi-phone-outline text-dark fs-2\" aria-hidden=\"true\"></i> \n                                <div class=\"d-flex flex-column text-start gap-1\">\n                                    <div class=\"fw-semibold text-primary\">Voice</div>\n                                    <div class=\"fs-5 text-secondary\">Receive a phone call with a passcode to authenticate.</div>\n                                </div>\n                            </div>\n                        </button>\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"TOTP\"}}\n                        <button class=\"btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4\"\n                            id=\"btnDevice-TOTP\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                            data-skbuttonvalue=\"{{id}}\">\n                            <div class=\"flex-grow-1 d-flex align-items-center gap-4\">\n                                <i class=\"mdi mdi-cellphone text-dark fs-2\" aria-hidden=\"true\"></i>\n                                <div class=\"d-flex flex-column text-start gap-1\">\n                                    <div class=\"fw-semibold text-primary\">\n                                        Authenticator App\n                                    </div>\n                                    <div class=\"fs-5 text-secondary\">\n                                        Use an authenticator app to authenticate.\n                                    </div>\n                                </div>\n                            </div>\n                        </button>\n                        {{/ifEquals}}\n\n\n                        {{/each}}\n                    <div class=\"d-flex flex-column\">\n                        <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                            Cancel\n                        </button>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
                   },
                   "customCSS": {
                     "value": ""
@@ -13360,7 +13360,7 @@
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1711457882743,
+      "savedDate": 1711458557173,
       "variables": [
         {
           "context": "flowInstance",
