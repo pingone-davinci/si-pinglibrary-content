@@ -14,14 +14,14 @@
         "flowConnector",
         "pingOneAuthenticationConnector"
       ],
-      "createdDate": 1711456211632,
-      "currentVersion": 8,
+      "createdDate": 1711458006014,
+      "currentVersion": 15,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
       "description": "Imported on Tue Mar 26 2024 12:07:11 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Authentication with MFA via OTP or FIDO",
-      "publishedVersion": 8,
+      "publishedVersion": 15,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
@@ -37,9 +37,9 @@
         "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
       },
       "timeouts": "null",
-      "updatedDate": 1711456220137,
+      "updatedDate": 1711458010027,
       "flowId": "46b9ba5dc6cb5ba18c27f0d5d3e1be78",
-      "versionId": 8,
+      "versionId": 15,
       "graphData": {
         "elements": {
           "nodes": [
@@ -1051,7 +1051,7 @@
                 }
               },
               "position": {
-                "x": 1534,
+                "x": 1530,
                 "y": 1680
               },
               "group": "nodes",
@@ -1078,7 +1078,7 @@
                 }
               },
               "position": {
-                "x": 1654,
+                "x": 1650,
                 "y": 1680
               },
               "group": "nodes",
@@ -1129,7 +1129,7 @@
                 }
               },
               "position": {
-                "x": 1234,
+                "x": 1230,
                 "y": 1680
               },
               "group": "nodes",
@@ -1159,7 +1159,7 @@
                 }
               },
               "position": {
-                "x": 1354,
+                "x": 1350,
                 "y": 1680
               },
               "group": "nodes",
@@ -1209,7 +1209,7 @@
                 "idUnique": "4vgs8vk8om"
               },
               "position": {
-                "x": 934,
+                "x": 930,
                 "y": 1680
               },
               "group": "nodes",
@@ -1227,7 +1227,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 754,
+                "x": 750,
                 "y": 1680
               },
               "group": "nodes",
@@ -1273,7 +1273,7 @@
                 }
               },
               "position": {
-                "x": 1834,
+                "x": 1830,
                 "y": 1890
               },
               "group": "nodes",
@@ -1307,7 +1307,7 @@
                 }
               },
               "position": {
-                "x": 1534,
+                "x": 1530,
                 "y": 1890
               },
               "group": "nodes",
@@ -1325,7 +1325,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1054,
+                "x": 1050,
                 "y": 1680
               },
               "group": "nodes",
@@ -1344,7 +1344,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1054,
+                "x": 1050,
                 "y": 1890
               },
               "group": "nodes",
@@ -1380,7 +1380,7 @@
                 }
               },
               "position": {
-                "x": 1234,
+                "x": 1230,
                 "y": 1890
               },
               "group": "nodes",
@@ -1502,7 +1502,7 @@
                 "idUnique": "1w04t6dr85"
               },
               "position": {
-                "x": 634,
+                "x": 630,
                 "y": 1680
               },
               "group": "nodes",
@@ -1587,7 +1587,7 @@
                 "idUnique": "n1fro2xg02"
               },
               "position": {
-                "x": 334,
+                "x": 330,
                 "y": 1680
               },
               "group": "nodes",
@@ -1605,7 +1605,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 454,
+                "x": 450,
                 "y": 1680
               },
               "group": "nodes",
@@ -1717,7 +1717,7 @@
                 }
               },
               "position": {
-                "x": 1834,
+                "x": 1830,
                 "y": 1680
               },
               "group": "nodes",
@@ -1930,110 +1930,6 @@
             },
             {
               "data": {
-                "id": "tgmvkr8adh",
-                "nodeType": "CONNECTION",
-                "connectionId": "867ed4363b2bc21c860085ad2baa817d",
-                "connectorId": "httpConnector",
-                "name": "Http",
-                "label": "Http",
-                "status": "configured",
-                "capabilityName": "customHTMLTemplate",
-                "type": "trigger",
-                "properties": {
-                  "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n        {{#if title}}\n          <h1 class=\"text-center mb-4\">{{title}}</h1>\n        {{/if}}\n\n        {{#if text}}\n          <p class=\"text-muted text-center\">{{text}}</p>\n        {{/if}}\n        \n        <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n        <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"email\" data-skcomponent=\"skerrormessage\"></p>\n        \n        <form id=\"emailForm\" data-id=\"emailForm\">\n          <div class=\"mb-4 form-floating\">\n            <input id=\"email\" data-id=\"email\" class=\"form-control\" type=\"text\" name=\"email\"\n              placeholder=\"Email Address\" autocomplete=\"off\" value=\"\" aria-required=\"true\"/>\n            <label class=\"form-label\" for=\"email\">Email Address</label>\n          </div>\n          <div class=\"d-flex flex-column\">\n            {{#if primaryButtonLabel}}\n            <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\"\n              data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"emailForm\" data-skbuttonvalue=\"NEXT\">\n              {{primaryButtonLabel}}\n            </button>\n            {{/if}}\n\n            {{#if cancelButtonLabel}}\n            <button id=\"cancelBtn\" data-id=\"cancelBtn\" class=\"btn btn-link\" type=\"submit\" data-skcomponent=\"skbutton\"\n              data-skbuttontype=\"next-event\" data-skform=\"emailForm\" data-skbuttonvalue=\"CANCEL\">\n              {{cancelButtonLabel}}\n            </button>\n            {{/if}}\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n</div>"
-                  },
-                  "formFieldsList": {
-                    "value": [
-                      {
-                        "preferredControlType": "textField",
-                        "preferredDataType": "string",
-                        "propertyName": "email",
-                        "displayName": "",
-                        "hashedVisibility": false,
-                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.w349wlpj6p.payload.output.email}}\",\n        \"tooltip\": \"{{local.w349wlpj6p.payload.output.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                      },
-                      {
-                        "preferredControlType": "textField",
-                        "preferredDataType": "string",
-                        "propertyName": "buttonValue"
-                      }
-                    ]
-                  },
-                  "nodeTitle": {
-                    "value": "Forgot Password Form"
-                  },
-                  "customCSS": {},
-                  "customScript": {
-                    "value": "const setFieldFocus = (id) => {\r\n    const element = document.getElementById(id);\r\n    if (element) {\r\n        element.focus();\r\n    }\r\n}\r\n\r\nconst start = () => {\r\n    setFieldFocus(\"email\")\r\n}\r\n\r\nif (document.readyState === \"loading\") {\r\n    // Loading hasn't finished yet\r\n    document.addEventListener(\"DOMContentLoaded\", start);\r\n} else {\r\n    // `DOMContentLoaded` has already fired\r\n    start();\r\n}\r\n"
-                  },
-                  "validationRules": {
-                    "value": [
-                      {
-                        "propertyName": "email",
-                        "rules": [
-                          {
-                            "ruleName": "email",
-                            "message": "Enter your email address."
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  "nodeDescription": {
-                    "value": "A form for the user to submit the email of the account they forgot the password to"
-                  },
-                  "inputSchema": {
-                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"title\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Title\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"title\"\n\t\t},\n\t\t\"text\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Text\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"text\"\n\t\t},\n\t\t\"primaryButtonLabel\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Primary Button Label\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"primaryButtonLabel\"\n\t\t},\n\t\t\"cancelButtonLabel\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Cancel Button Label\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"cancelButtonLabel\"\n\t\t}\n\t}\n}"
-                  },
-                  "title": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Password Reset\"\n      }\n    ]\n  }\n]"
-                  },
-                  "text": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter your email address and we'll send password reset instructions to you.\"\n      }\n    ]\n  }\n]"
-                  },
-                  "primaryButtonLabel": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
-                  },
-                  "cancelButtonLabel": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Cancel\"\n      }\n    ]\n  }\n]"
-                  }
-                },
-                "idUnique": "xq5tgcjhxz"
-              },
-              "position": {
-                "x": 634,
-                "y": 2250
-              },
-              "group": "nodes",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": false,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "o7ivz4aq0k",
-                "nodeType": "EVAL"
-              },
-              "position": {
-                "x": 484,
-                "y": 2250
-              },
-              "group": "nodes",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": false,
-              "classes": ""
-            },
-            {
-              "data": {
                 "id": "kdoyplvxuo",
                 "nodeType": "CONNECTION",
                 "connectionId": "de650ca45593b82c49064ead10b9fe17",
@@ -2159,94 +2055,6 @@
             },
             {
               "data": {
-                "id": "ek83tf1mgy",
-                "nodeType": "CONNECTION",
-                "connectionId": "de650ca45593b82c49064ead10b9fe17",
-                "connectorId": "functionsConnector",
-                "name": "Functions",
-                "label": "Functions",
-                "status": "configured",
-                "capabilityName": "AEqualsMultipleB",
-                "type": "trigger",
-                "properties": {
-                  "leftValueA": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.tgmvkr8adh.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.tgmvkr8adh.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
-                  "rightValueB": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"submit\"\n      }\n    ]\n  }\n]"
-                  },
-                  "nodeTitle": {
-                    "value": "Form Button Check"
-                  },
-                  "rightValueMultiple": {
-                    "value": [
-                      {
-                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"NEXT\"\n      }\n    ]\n  }\n]",
-                        "id": "vgii63uk2p"
-                      },
-                      {
-                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"CANCEL\"\n      }\n    ]\n  }\n]",
-                        "id": "3a7tpbhtep"
-                      }
-                    ]
-                  },
-                  "nodeDescription": {}
-                },
-                "isDisabled": false,
-                "idUnique": "7nk4lci8mp"
-              },
-              "position": {
-                "x": 934,
-                "y": 2250
-              },
-              "group": "nodes",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": false,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "0aptbue4fm",
-                "nodeType": "EVAL"
-              },
-              "position": {
-                "x": 784,
-                "y": 2250
-              },
-              "group": "nodes",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": false,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "k9dk3ynxwm",
-                "nodeType": "EVAL",
-                "label": "Evaluator"
-              },
-              "position": {
-                "x": 1054,
-                "y": 2250
-              },
-              "group": "nodes",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": false,
-              "classes": ""
-            },
-            {
-              "data": {
                 "id": "h4ffuubfak",
                 "nodeType": "CONNECTION",
                 "connectionId": "94141bf2f1b9b59a5f5365ff135e02bb",
@@ -2261,7 +2069,7 @@
                     "value": "email"
                   },
                   "identifier": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.tgmvkr8adh.payload.output.email}}\",\n        \"tooltip\": \"{{local.tgmvkr8adh.payload.output.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.6qno04vqav.payload.output.email}}\",\n        \"tooltip\": \"{{local.6qno04vqav.payload.output.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeTitle": {
                     "value": "Send Recovery Code"
@@ -2424,25 +2232,6 @@
               "position": {
                 "x": 1354,
                 "y": 2250
-              },
-              "group": "nodes",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": false,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "82bl5ys19q",
-                "nodeType": "EVAL",
-                "label": "Evaluator"
-              },
-              "position": {
-                "x": 1054,
-                "y": 2460
               },
               "group": "nodes",
               "removed": false,
@@ -2856,7 +2645,7 @@
                     "value": "sb7lgfar79"
                   },
                   "email": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.tgmvkr8adh.payload.output.email}}\",\n        \"tooltip\": \"{{local.tgmvkr8adh.payload.output.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.6qno04vqav.payload.output.email}}\",\n        \"tooltip\": \"{{local.6qno04vqav.payload.output.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeTitle": {
                     "value": "Go to Sign On Start"
@@ -2911,7 +2700,7 @@
                     "value": "sb7lgfar79"
                   },
                   "email": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.tgmvkr8adh.payload.output.email}}\",\n        \"tooltip\": \"{{local.tgmvkr8adh.payload.output.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.6qno04vqav.payload.output.email}}\",\n        \"tooltip\": \"{{local.6qno04vqav.payload.output.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeTitle": {
                     "value": "Go to Sign On Start"
@@ -3242,7 +3031,7 @@
                     "value": {}
                   },
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n        {{#if title}}\n          <h1 class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          {{#if textOne}}\n          <p class=\"text-muted text-center\">{{textOne}}</p>\n          {{/if}}\n\n          {{#if textTwo}}\n          <p class=\"text-muted text-center\">{{textTwo}}</p>\n          {{/if}}\n\n          {{#if buttonLabel}}\n          <div class=\"d-flex flex-column\">\n            <button data-id=\"next-button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n             data-skbuttontype=\"next-event\"  data-skbuttonvalue=\"NEXT\" id=\"btnNext\">\n                {{buttonLabel}}\n            </button>\n          </div>\n          {{/if}}\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n          {{#if title}}\n          <h1 class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          {{#if textOne}}\n          <p class=\"text-muted text-center\">{{textOne}}</p>\n          {{/if}}\n\n          {{#if textTwo}}\n          <p class=\"text-muted text-center\">{{textTwo}}</p>\n          {{/if}}\n\n          {{#if buttonLabel}}\n          <div class=\"d-flex flex-column\">\n            <button data-id=\"next-button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n             data-skbuttontype=\"next-event\"  data-skbuttonvalue=\"NEXT\" id=\"btnNext\">\n                {{buttonLabel}}\n            </button>\n          </div>\n          {{/if}}\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
                   },
                   "customCSS": {
                     "value": ""
@@ -4624,9 +4413,337 @@
               "grabbable": true,
               "pannable": false,
               "classes": ""
+            },
+            {
+              "data": {
+                "id": "6qno04vqav",
+                "nodeType": "CONNECTION",
+                "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+                "connectorId": "httpConnector",
+                "name": "Http",
+                "label": "HTTP",
+                "status": "configured",
+                "capabilityName": "customHTMLTemplate",
+                "type": "trigger",
+                "properties": {
+                  "customHTML": {
+                    "value": "<div class=\"end-user-nano\">\n        <div\n            class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n            <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n                <div class=\"card shadow mb-5\">\n                    <main aria-labelledby=\"title\">\n                        <div class=\"card-body p-5 d-flex flex-column\">\n                            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                            {{#if title}}\n                            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n                            {{/if}}\n\n                            {{#if textOne}}\n                            <p class=\"text-muted text-center\">{{textOne}}</p>\n                            {{/if}}\n\n                            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\"\n                                data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n                            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"email\"\n                                data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n                            <form id=\"emailForm\" data-id=\"emailForm\">\n                                <div class=\"mb-4 form-floating\">\n                                    <input id=\"email\" data-id=\"email\" class=\"form-control\" type=\"text\" name=\"email\"\n                                        placeholder=\"Email Address\" autocomplete=\"email\" value=\"\" aria-required=\"true\"\n                                        aria-describedby=\"emailLabel\" />\n                                    <label id=\"emailLabel\" class=\"form-label\" for=\"email\">Email Address</label>\n                                </div>\n                                <div class=\"d-flex flex-column\">\n                                    {{#if continueButtonLabel}}\n                                    <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\"\n                                        type=\"submit\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                                        data-skform=\"emailForm\" data-skbuttonvalue=\"SEND\">\n                                        {{continueButtonLabel}}\n                                    </button>\n                                    {{/if}}\n                                    {{#if cancelButtonLabel}}\n                                    <button id=\"cancelBtn\" data-id=\"cancelBtn\" class=\"btn btn-link\"\n                                        data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                                        data-skform=\"emailForm\" data-skbuttonvalue=\"CANCEL\">\n                                        {{cancelButtonLabel}}\n                                    </button>\n                                    {{/if}}\n                                </div>\n                            </form>\n                        </div>\n                    </main>\n                </div>\n            </div>\n        </div>\n    </div>"
+                  },
+                  "formFieldsList": {
+                    "value": [
+                      {
+                        "preferredControlType": "textField",
+                        "preferredDataType": "string",
+                        "propertyName": "buttonValue"
+                      },
+                      {
+                        "propertyName": "email",
+                        "preferredControlType": "textField",
+                        "preferredDataType": "string",
+                        "value": "",
+                        "hashedVisibility": false
+                      }
+                    ]
+                  },
+                  "nodeTitle": {
+                    "value": "Account Recovery"
+                  },
+                  "nodeDescription": {
+                    "value": "Prompt for email to reset password"
+                  },
+                  "inputSchema": {
+                    "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"continueButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Continue Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"cancelButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Cancel Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
+                  },
+                  "title": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Account Recovery\"\n      }\n    ]\n  }\n]"
+                  },
+                  "textOne": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter your email address to receive a recovery code that will let you change your password.\"\n      }\n    ]\n  }\n]"
+                  },
+                  "continueButtonLabel": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Send\"\n      }\n    ]\n  }\n]"
+                  },
+                  "cancelButtonLabel": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Cancel\"\n      }\n    ]\n  }\n]"
+                  },
+                  "validationRules": {
+                    "value": [
+                      {
+                        "propertyName": "email",
+                        "rules": [
+                          {
+                            "ruleName": "presence",
+                            "message": "Enter your email address"
+                          },
+                          {
+                            "ruleName": "email",
+                            "message": "Enter a valid email address"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "customScript": {
+                    "value": "const setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    }\n}\n\nconst start = () => {\n    setFieldFocus(\"email\");\n}\n\nif (document.readyState === \"loading\") {\n    // Loading hasn't finished yet\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    // `DOMContentLoaded` has already fired\n    start();\n}\n"
+                  }
+                }
+              },
+              "position": {
+                "x": 630,
+                "y": 2250
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "6copvvog2k",
+                "nodeType": "CONNECTION",
+                "connectionId": "de650ca45593b82c49064ead10b9fe17",
+                "connectorId": "functionsConnector",
+                "name": "Functions",
+                "label": "Functions",
+                "status": "configured",
+                "capabilityName": "AEqualsMultipleB",
+                "type": "trigger",
+                "properties": {
+                  "leftValueA": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.6qno04vqav.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.6qno04vqav.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  },
+                  "rightValueB": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"submit\"\n      }\n    ]\n  }\n]"
+                  },
+                  "nodeTitle": {
+                    "value": "Account Recovery Button Action"
+                  },
+                  "rightValueMultiple": {
+                    "value": [
+                      {
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"SEND\"\n      }\n    ]\n  }\n]",
+                        "id": "vgii63uk2p"
+                      },
+                      {
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"CANCEL\"\n      }\n    ]\n  }\n]",
+                        "id": "3a7tpbhtep"
+                      }
+                    ]
+                  },
+                  "nodeDescription": {
+                    "value": "Check which button was clicked"
+                  }
+                },
+                "isDisabled": false,
+                "idUnique": "rqhbbrkqra"
+              },
+              "position": {
+                "x": 930,
+                "y": 2250
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "mfwi22ex2b",
+                "nodeType": "EVAL"
+              },
+              "position": {
+                "x": 750,
+                "y": 2250
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "sue7ij77um",
+                "nodeType": "EVAL"
+              },
+              "position": {
+                "x": 450,
+                "y": 2250
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "aydq8vocja",
+                "nodeType": "EVAL"
+              },
+              "position": {
+                "x": 1050,
+                "y": 2250
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "mt1lksc5fs",
+                "nodeType": "EVAL"
+              },
+              "position": {
+                "x": 1050,
+                "y": 2460
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
             }
           ],
           "edges": [
+            {
+              "data": {
+                "id": "ngfx3eghav",
+                "source": "9onirdal6t",
+                "target": "zs6b4akvu9",
+                "multiValueSourceId": "21v35bhwbb"
+              },
+              "position": {
+                "x": 64,
+                "y": 252
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "b3fr4cveu6",
+                "source": "hc4djvxcq3",
+                "target": "qu7b3vllzf"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "ngf03z93j3",
+                "source": "htmqt1rgn2",
+                "target": "6nkanqnopq"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "exjudlm0sr",
+                "source": "plu3y7ko8z",
+                "target": "d90iw9hmj9"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "u6qmon63it",
+                "source": "7stx2loz2b",
+                "target": "jp7frrosjj"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "pr63ghc9cm",
+                "source": "9onirdal6t",
+                "target": "ljbrkwxf0g",
+                "multiValueSourceId": "s603gogxbh"
+              },
+              "position": {
+                "x": 64,
+                "y": 92
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
             {
               "data": {
                 "id": "gdrrzjg4b8",
@@ -4937,9 +5054,9 @@
             },
             {
               "data": {
-                "id": "1ntpsr7epr",
-                "source": "o7ivz4aq0k",
-                "target": "tgmvkr8adh"
+                "id": "a8ubvrb5v0",
+                "source": "tx0jl2n3w2",
+                "target": "icnlbc2ri9"
               },
               "position": {
                 "x": 0,
@@ -5357,9 +5474,9 @@
             },
             {
               "data": {
-                "id": "eleytco3cy",
-                "source": "w349wlpj6p",
-                "target": "o7ivz4aq0k"
+                "id": "257xvsak3w",
+                "source": "ljbrkwxf0g",
+                "target": "vqys9n7u1b"
               },
               "position": {
                 "x": 0,
@@ -5473,9 +5590,9 @@
             },
             {
               "data": {
-                "id": "btx2g5june",
-                "source": "tgmvkr8adh",
-                "target": "0aptbue4fm"
+                "id": "nytuynhsmn",
+                "source": "icnlbc2ri9",
+                "target": "9onirdal6t"
               },
               "position": {
                 "x": 0,
@@ -5492,9 +5609,9 @@
             },
             {
               "data": {
-                "id": "rb712vto0w",
-                "source": "0aptbue4fm",
-                "target": "ek83tf1mgy"
+                "id": "qvr2a3s0dg",
+                "source": "l0y7h5kkap",
+                "target": "tx0jl2n3w2"
               },
               "position": {
                 "x": 0,
@@ -5511,14 +5628,13 @@
             },
             {
               "data": {
-                "id": "frjipnoxt9",
-                "source": "ek83tf1mgy",
-                "target": "k9dk3ynxwm",
-                "multiValueSourceId": "vgii63uk2p"
+                "id": "rm7rkdsh04",
+                "source": "mfwi22ex2b",
+                "target": "6copvvog2k"
               },
               "position": {
-                "x": 64,
-                "y": 52
+                "x": 0,
+                "y": 0
               },
               "group": "edges",
               "removed": false,
@@ -5531,9 +5647,9 @@
             },
             {
               "data": {
-                "id": "joaof6ci5r",
-                "source": "k9dk3ynxwm",
-                "target": "h4ffuubfak"
+                "id": "f6qtmoxd2h",
+                "source": "6qno04vqav",
+                "target": "mfwi22ex2b"
               },
               "position": {
                 "x": 0,
@@ -5588,14 +5704,14 @@
             },
             {
               "data": {
-                "id": "eaa0wx5swq",
-                "source": "ek83tf1mgy",
-                "target": "82bl5ys19q",
-                "multiValueSourceId": "3a7tpbhtep"
+                "id": "2h6q3l6f5i",
+                "source": "9onirdal6t",
+                "target": "plu3y7ko8z",
+                "multiValueSourceId": "4848dx8q5r"
               },
               "position": {
                 "x": 64,
-                "y": 92
+                "y": 52
               },
               "group": "edges",
               "removed": false,
@@ -5608,9 +5724,9 @@
             },
             {
               "data": {
-                "id": "6pe7jkkjk7",
-                "source": "82bl5ys19q",
-                "target": "q59rbwllhe"
+                "id": "8hd0od4lt7",
+                "source": "qu7b3vllzf",
+                "target": "tginooy3ei"
               },
               "position": {
                 "x": 0,
@@ -6183,9 +6299,9 @@
             },
             {
               "data": {
-                "id": "exjudlm0sr",
-                "source": "plu3y7ko8z",
-                "target": "d90iw9hmj9"
+                "id": "tgr0a1317z",
+                "source": "w349wlpj6p",
+                "target": "sue7ij77um"
               },
               "position": {
                 "x": 0,
@@ -6202,9 +6318,9 @@
             },
             {
               "data": {
-                "id": "ngf03z93j3",
-                "source": "htmqt1rgn2",
-                "target": "6nkanqnopq"
+                "id": "dzefj9s078",
+                "source": "sue7ij77um",
+                "target": "6qno04vqav"
               },
               "position": {
                 "x": 0,
@@ -6221,145 +6337,10 @@
             },
             {
               "data": {
-                "id": "qvr2a3s0dg",
-                "source": "l0y7h5kkap",
-                "target": "tx0jl2n3w2"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "ngfx3eghav",
-                "source": "9onirdal6t",
-                "target": "zs6b4akvu9",
-                "multiValueSourceId": "21v35bhwbb"
-              },
-              "position": {
-                "x": 64,
-                "y": 252
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "nytuynhsmn",
-                "source": "icnlbc2ri9",
-                "target": "9onirdal6t"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "b3fr4cveu6",
-                "source": "hc4djvxcq3",
-                "target": "qu7b3vllzf"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "a8ubvrb5v0",
-                "source": "tx0jl2n3w2",
-                "target": "icnlbc2ri9"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "257xvsak3w",
-                "source": "ljbrkwxf0g",
-                "target": "vqys9n7u1b"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "pr63ghc9cm",
-                "source": "9onirdal6t",
-                "target": "ljbrkwxf0g",
-                "multiValueSourceId": "s603gogxbh"
-              },
-              "position": {
-                "x": 64,
-                "y": 92
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "2h6q3l6f5i",
-                "source": "9onirdal6t",
-                "target": "plu3y7ko8z",
-                "multiValueSourceId": "4848dx8q5r"
+                "id": "e7sb52q4yv",
+                "source": "6copvvog2k",
+                "target": "aydq8vocja",
+                "multiValueSourceId": "vgii63uk2p"
               },
               "position": {
                 "x": 64,
@@ -6376,9 +6357,9 @@
             },
             {
               "data": {
-                "id": "8hd0od4lt7",
-                "source": "qu7b3vllzf",
-                "target": "tginooy3ei"
+                "id": "pfft1mog0z",
+                "source": "aydq8vocja",
+                "target": "h4ffuubfak"
               },
               "position": {
                 "x": 0,
@@ -6395,9 +6376,29 @@
             },
             {
               "data": {
-                "id": "u6qmon63it",
-                "source": "7stx2loz2b",
-                "target": "jp7frrosjj"
+                "id": "s9oaezmiuq",
+                "source": "6copvvog2k",
+                "target": "mt1lksc5fs",
+                "multiValueSourceId": "3a7tpbhtep"
+              },
+              "position": {
+                "x": 64,
+                "y": 92
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "h07daj087r",
+                "source": "mt1lksc5fs",
+                "target": "q59rbwllhe"
               },
               "position": {
                 "x": 0,
@@ -6432,7 +6433,7 @@
         }
       },
       "flowColor": "#E3F0FF",
-      "savedDate": 1711456209305,
+      "savedDate": 1711458003661,
       "variables": [
         {
           "context": "flowInstance",
@@ -6510,8 +6511,8 @@
         "functionsConnector",
         "errorConnector"
       ],
-      "createdDate": 1711454834080,
-      "currentVersion": 1,
+      "createdDate": 1711457885147,
+      "currentVersion": 10,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
       "description": "Imported on Tue Mar 26 2024 12:07:11 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
@@ -6568,16 +6569,17 @@
       "isInputSchemaSaved": true,
       "isOutputSchemaSaved": false,
       "name": "MFA Device Authentication Subflow",
-      "publishedVersion": 1,
+      "publishedVersion": 10,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
         "intermediateLoadingScreenHTML": "",
         "logLevel": 2
       },
-      "updatedDate": 1711454834266,
+      "timeouts": "null",
+      "updatedDate": 1711457890621,
       "flowId": "9bc5e3b8efe1cf328a862931233d79af",
-      "versionId": 1,
+      "versionId": 10,
       "graphData": {
         "elements": {
           "nodes": [
@@ -9064,10 +9066,10 @@
                     "value": {}
                   },
                   "customHTML": {
-                    "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">\n                    {{#ifEquals type \"SMS\"}}\n                    <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Text message\n                    {{/ifEquals}}\n\n                    {{#ifEquals type \"EMAIL\"}}\n                    <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Email\n                    {{/ifEquals}}\n                    \n                    {{#ifEquals type \"TOTP\"}}\n                    <i class=\"mdi mdi-cellphone-key text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Authenticator App\n                    {{/ifEquals}}\n\n                     {{#ifEquals type \"VOICE\"}}\n                    <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Voice\n                    {{/ifEquals}}\n                </h1>\n                <p class=\"text-muted text-center\">Enter the passcode you received to complete authentication.</p>\n                \n                <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\" id=\"error-msg\"></p>\n                <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                {{#if resendMessage}}\n                    <p class=\"text-info text-center\">{{resendMessage}}</p>\n                {{/if}}\n\n                <form id=\"otp-form\" data-id=\"otp-form\">\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"6\" />\n                        <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                    </div>\n                    <p class=\"text-muted text-center\" id=\"contact\">\n                        {{#ifEquals type \"SMS\"}}\n                        Message sent to:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"Voice\"}}\n                        Calling:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        Email sent to:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n                    </p>\n                    <div class=\"d-flex flex-column\">\n                        {{#ifEquals type \"TOTP\"}}\n                          <!-- exclude resend option -->\n                        {{else}}\n                        <button id=\"resend\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                            {{resendButtonLabel}}\n                        </button>\n                        {{/ifEquals}}\n                        {{#if primaryButtonLabel}}\n                        <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                            {{primaryButtonLabel}}\n                        </button>\n                        {{/if}}\n                        {{#if canChangeDevice}}\n                        <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                            Cancel\n                        </button>\n                        {{/if}}\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+                    "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">\n                    {{#ifEquals type \"SMS\"}}\n                    <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Text message\n                    {{/ifEquals}}\n\n                    {{#ifEquals type \"EMAIL\"}}\n                    <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Email\n                    {{/ifEquals}}\n                    \n                    {{#ifEquals type \"TOTP\"}}\n                    <i class=\"mdi mdi-cellphone-key text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Authenticator App\n                    {{/ifEquals}}\n\n                     {{#ifEquals type \"VOICE\"}}\n                    <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Voice\n                    {{/ifEquals}}\n                </h1>\n                <p class=\"text-muted text-center\">Enter the passcode you received to complete authentication.</p>\n                \n                <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\" id=\"error-msg\"></p>\n                <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                {{#if resendMessage}}\n                    <p class=\"text-info text-center\">{{resendMessage}}</p>\n                {{/if}}\n\n                <form id=\"otp-form\" data-id=\"otp-form\">\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"6\" />\n                        <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                    </div>\n                    <p class=\"text-muted text-center\" id=\"contact\">\n                        {{#ifEquals type \"SMS\"}}\n                        Message sent to:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"Voice\"}}\n                        Calling:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        Email sent to:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n                    </p>\n                    <div class=\"d-flex flex-column\">\n                        {{#ifEquals type \"TOTP\"}}\n                          <!-- exclude resend option -->\n                        {{else}}\n                        <button id=\"resend\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                            {{resendButtonLabel}}\n                        </button>\n                        {{/ifEquals}}\n                        {{#if primaryButtonLabel}}\n                        <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                            {{primaryButtonLabel}}\n                        </button>\n                        {{/if}}\n                        {{#if canChangeDevice}}\n                        <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                            Cancel\n                        </button>\n                        {{/if}}\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
                   },
                   "customCSS": {
-                    "value": ""
+                    "value": ".otp-control {\n    padding-top: 0rem !important;\n    padding-bottom: 0rem !important;\n    font-size: 17px;\n}"
                   },
                   "customScript": {
                     "value": "const setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    }\n}\n\nconst start = () => {\n    setFieldFocus(\"passcode\");\n}\n\nif (document.readyState === \"loading\") {\n    // Loading hasn't finished yet\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    // `DOMContentLoaded` has already fired\n    start();\n}\n"
@@ -9131,6 +9133,9 @@
                   },
                   "resendMessage": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"resendMessage\",\n        \"data\": \"{{local.m5l2cif5p1.payload.output.resendMessage}}\",\n        \"tooltip\": \"{{local.m5l2cif5p1.payload.output.resendMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"resendMessage\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  },
+                  "nodeDescription": {
+                    "value": "One-time Passcode entry"
                   }
                 }
               },
@@ -11556,6 +11561,63 @@
           "edges": [
             {
               "data": {
+                "id": "hu6mk0h4bx",
+                "source": "39ijhmd3fm",
+                "target": "mgh4eqyyan"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "s3cq1j3gr6",
+                "source": "xdyg4ar8uv",
+                "target": "39ijhmd3fm"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "ewalxhxxf9",
+                "source": "tz23ookvrc",
+                "target": "mvbrsh4yq3"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
                 "id": "rsp4dkriih",
                 "source": "mgh4eqyyan",
                 "target": "yh5twp5fsn"
@@ -13235,63 +13297,6 @@
               "grabbable": true,
               "pannable": true,
               "classes": ""
-            },
-            {
-              "data": {
-                "id": "ewalxhxxf9",
-                "source": "tz23ookvrc",
-                "target": "mvbrsh4yq3"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "s3cq1j3gr6",
-                "source": "xdyg4ar8uv",
-                "target": "39ijhmd3fm"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "hu6mk0h4bx",
-                "source": "39ijhmd3fm",
-                "target": "mgh4eqyyan"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
             }
           ]
         },
@@ -13355,7 +13360,7 @@
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1711454831944,
+      "savedDate": 1711457882743,
       "variables": [
         {
           "context": "flowInstance",
