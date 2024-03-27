@@ -1,5 +1,5 @@
 {
-  "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581",
+  "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212",
   "authTokenExpireIds": [],
   "connectorIds": [
     "annotationConnector",
@@ -12,15 +12,15 @@
     "pingOneMfaConnector",
     "pingOneAuthenticationConnector"
   ],
-  "createdDate": 1710425801224,
-  "currentVersion": 44,
+  "createdDate": 1711546972698,
+  "currentVersion": 11,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "deployedDate": 1710425805717,
-  "description": "Imported on Thu Mar 14 2024 13:33:51 GMT+0000 (Coordinated Universal Time)",
+  "deployedDate": 1711546975484,
+  "description": "",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
   "name": "PingOne Registration with Progressive Profiling and Consent",
-  "publishedVersion": 44,
+  "publishedVersion": 11,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": {},
@@ -37,9 +37,9 @@
     "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
   },
   "timeouts": "null",
-  "updatedDate": 1710425805723,
-  "flowId": "1254914680aa55dc5c58e096533b0679",
-  "versionId": 44,
+  "updatedDate": 1711546975492,
+  "flowId": "f828a2d434c8c664d4e492f4ce01f6fc",
+  "versionId": 11,
   "graphData": {
     "elements": {
       "nodes": [
@@ -677,14 +677,14 @@
                 "value": [
                   {
                     "name": "p1PopulationId",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"023bf20e-ad47-4f9b-8f57-de5bbdf662f3\"\n      }\n    ]\n  }\n]",
                     "key": 0.9673372774789002,
                     "type": "string",
                     "label": "p1PopulationId (string - flowInstance)"
                   },
                   {
                     "name": "p1AgreementId",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"e74bf1bc-0e2d-45db-ab24-70c0cce9be6f\"\n      }\n    ]\n  }\n]",
                     "key": 0.3512698314759033,
                     "label": "p1AgreementId (string - flowInstance)",
                     "type": "string"
@@ -3427,10 +3427,10 @@
                 "value": {}
               },
               "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                    <h1 class=\"text-center mb-4\">\n                        {{#ifEquals type \"SMS\"}}\n                        <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                        Text message\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                        Email\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"VOICE\"}}\n                        <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n                        Email\n                        {{/ifEquals}}\n                    </h1>\n                    <p class=\"text-muted text-center\">\n                        {{#ifEquals type \"SMS\"}}\n                        Please enter the passcode you received.\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        Enter the passcode you received to complete email pairing.\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"VOICE\"}}\n                        Please enter the passcode you received.\n                        {{/ifEquals}}\n                    </p>\n                \n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                    {{#if resendMessage}}\n                        <p class=\"text-info text-center\">{{resendMessage}}</p>\n                    {{/if}}\n                    \n                    <form id=\"otp-form\" data-id=\"otp-form\">\n                        <div class=\"mb-4 form-floating\">\n                            <input class=\"form-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"6\" aria-required=\"true\" />\n                            <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                        </div>\n                        <p class=\"text-muted text-center\">\n                            {{#ifEquals type \"SMS\"}}\n                            Message sent to:\n                            {{maskedContactInfo}}\n                            {{/ifEquals}}\n                            \n                            {{#ifEquals type \"EMAIL\"}}\n                            Email sent to:\n                            {{maskedContactInfo}}\n                            {{/ifEquals}}\n                        </p>\n                        <div class=\"d-flex flex-column\">\n                            {{#if resendButtonLabel}}\n                            <button id=\"resend\" type=\"button\" class=\"btn btn-link mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                                {{resendButtonLabel}}\n                            </button>\n                            {{/if}}\n                            {{#if primaryButtonLabel}}\n                            <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                                {{primaryButtonLabel}}\n                            </button>\n                            {{/if}}\n\n                            {{#if cancelButtonLabel}}\n                            <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                                {{cancelButtonLabel}}\n                            </button>\n                            {{/if}}\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                    <h1 class=\"text-center mb-4\">\n                        {{#ifEquals type \"SMS\"}}\n                        <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                        Text message\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                        Email\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"VOICE\"}}\n                        <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n                        Email\n                        {{/ifEquals}}\n                    </h1>\n                    <p class=\"text-muted text-center\">\n                        {{#ifEquals type \"SMS\"}}\n                        Please enter the passcode you received.\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        Enter the passcode you received to complete email pairing.\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"VOICE\"}}\n                        Please enter the passcode you received.\n                        {{/ifEquals}}\n                    </p>\n                \n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                    {{#if resendMessage}}\n                        <p class=\"text-info text-center\">{{resendMessage}}</p>\n                    {{/if}}\n                    \n                    <form id=\"otp-form\" data-id=\"otp-form\">\n                        <div class=\"mb-4 form-floating\">\n                            <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"6\" aria-required=\"true\" />\n                            <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                        </div>\n                        <p class=\"text-muted text-center\">\n                            {{#ifEquals type \"SMS\"}}\n                            Message sent to:\n                            {{maskedContactInfo}}\n                            {{/ifEquals}}\n                            \n                            {{#ifEquals type \"EMAIL\"}}\n                            Email sent to:\n                            {{maskedContactInfo}}\n                            {{/ifEquals}}\n                        </p>\n                        <div class=\"d-flex flex-column\">\n                            {{#if resendButtonLabel}}\n                            <button id=\"resend\" type=\"button\" class=\"btn btn-link mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                                {{resendButtonLabel}}\n                            </button>\n                            {{/if}}\n                            {{#if primaryButtonLabel}}\n                            <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                                {{primaryButtonLabel}}\n                            </button>\n                            {{/if}}\n\n                            {{#if cancelButtonLabel}}\n                            <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                                {{cancelButtonLabel}}\n                            </button>\n                            {{/if}}\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
               },
               "customCSS": {
-                "value": ""
+                "value": ".otp-control {\n    padding-top: 0rem !important;\n    padding-bottom: 0rem !important;\n    font-size: 17px;\n}"
               },
               "customScript": {
                 "value": "const setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    }\n}\n\nconst start = () => {\n    setFieldFocus(\"passcode\")\n}\n\nif (document.readyState === \"loading\") {\n    // Loading hasn't finished yet\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    // `DOMContentLoaded` has already fired\n    start();\n}\n"
@@ -4922,10 +4922,10 @@
                 "value": {}
               },
               "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                    <h1 class=\"text-center mb-4\">\n                        <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                        {{title}}\n                    </h1>\n                    <p class=\"text-muted text-center\">{{text}}</p>\n                \n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                    {{#if resendMessage}}\n                        <p class=\"text-info text-center\">{{resendMessage}}</p>\n                    {{/if}}\n                    \n                    <form id=\"otp-form\" data-id=\"otp-form\">\n                        <div class=\"mb-4 form-floating\">\n                            <input class=\"form-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"8\" aria-required=\"true\" />\n                            <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                        </div>\n                        <p class=\"text-muted text-center\">\n                            Email sent to:\n                            {{maskedContactInfo}}\n                        </p>\n                        <div class=\"d-flex flex-column\">\n                            {{#if resendButtonLabel}}\n                            <button id=\"resend\" type=\"button\" class=\"btn btn-link mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                                {{resendButtonLabel}}\n                            </button>\n                            {{/if}}\n                            {{#if primaryButtonLabel}}\n                            <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                                {{primaryButtonLabel}}\n                            </button>\n                            {{/if}}\n\n                            {{#if cancelButtonLabel}}\n                            <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                                {{cancelButtonLabel}}\n                            </button>\n                            {{/if}}\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                    <h1 class=\"text-center mb-4\">\n                        <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                        {{title}}\n                    </h1>\n                    <p class=\"text-muted text-center\">{{text}}</p>\n                \n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                    <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                    {{#if resendMessage}}\n                        <p class=\"text-info text-center\">{{resendMessage}}</p>\n                    {{/if}}\n                    \n                    <form id=\"otp-form\" data-id=\"otp-form\">\n                        <div class=\"mb-4 form-floating\">\n                            <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"8\" aria-required=\"true\" placeholder=\"Verification Code\" />\n                            <label class=\"form-label\" for=\"passcode\">Verification Code</label>\n                        </div>\n                        <p class=\"text-muted text-center\">\n                            Email sent to:\n                            {{maskedContactInfo}}\n                        </p>\n                        <div class=\"d-flex flex-column\">\n                            {{#if resendButtonLabel}}\n                            <button id=\"resend\" type=\"button\" class=\"btn btn-link mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                                {{resendButtonLabel}}\n                            </button>\n                            {{/if}}\n                            {{#if primaryButtonLabel}}\n                            <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                                {{primaryButtonLabel}}\n                            </button>\n                            {{/if}}\n\n                            {{#if cancelButtonLabel}}\n                            <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                                {{cancelButtonLabel}}\n                            </button>\n                            {{/if}}\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
               },
               "customCSS": {
-                "value": ""
+                "value": ".otp-control {\n    padding-top: 0rem !important;\n    padding-bottom: 0rem !important;\n    font-size: 17px;\n}"
               },
               "customScript": {
                 "value": "const setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    }\n}\n\nconst start = () => {\n    setFieldFocus(\"passcode\")\n}\n\nif (document.readyState === \"loading\") {\n    // Loading hasn't finished yet\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    // `DOMContentLoaded` has already fired\n    start();\n}\n"
@@ -5420,6 +5420,63 @@
         }
       ],
       "edges": [
+        {
+          "data": {
+            "id": "eyl83v1c5k",
+            "source": "xy7unrfnsv",
+            "target": "151tlwxygx"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0704mnqxfg",
+            "source": "stf37c1kqo",
+            "target": "pbkfgnyqbi"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "cgu292ajsr",
+            "source": "iu5ja7az7h",
+            "target": "gbppuahuzp"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
         {
           "data": {
             "id": "dlodl90gt2",
@@ -7293,63 +7350,6 @@
           "grabbable": true,
           "pannable": true,
           "classes": ""
-        },
-        {
-          "data": {
-            "id": "cgu292ajsr",
-            "source": "iu5ja7az7h",
-            "target": "gbppuahuzp"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "0704mnqxfg",
-            "source": "stf37c1kqo",
-            "target": "pbkfgnyqbi"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "eyl83v1c5k",
-            "source": "xy7unrfnsv",
-            "target": "151tlwxygx"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
         }
       ]
     },
@@ -7371,11 +7371,11 @@
     }
   },
   "flowColor": "#ff661c",
-  "savedDate": 1710425799935,
+  "savedDate": 1711546971176,
   "variables": [
     {
       "context": "flowInstance",
-      "createdDate": 1704721922442,
+      "createdDate": 1711542060985,
       "fields": {
         "type": "string",
         "displayName": "Url for company's logo image",
@@ -7386,11 +7386,11 @@
       "type": "property",
       "visibility": "private",
       "name": "companyLogo##SK##flowInstance",
-      "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+      "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1704721115281,
+      "createdDate": 1711541872878,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -7401,11 +7401,11 @@
       "type": "property",
       "visibility": "private",
       "name": "companyName##SK##flowInstance",
-      "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+      "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1710354608003,
+      "createdDate": 1711545752662,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -7416,11 +7416,11 @@
       "type": "property",
       "visibility": "private",
       "name": "p1AgreementId##SK##flowInstance",
-      "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+      "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1710354608005,
+      "createdDate": 1711545752665,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -7431,7 +7431,7 @@
       "type": "property",
       "visibility": "private",
       "name": "p1PopulationId##SK##flowInstance",
-      "companyId": "5e447c06-0483-41a5-adb0-56d6c37af581"
+      "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
     }
   ],
   "connections": []
