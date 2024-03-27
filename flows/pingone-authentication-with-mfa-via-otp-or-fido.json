@@ -1,7 +1,7 @@
 {
   "flows": [
     {
-      "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640",
+      "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212",
       "authTokenExpireIds": [],
       "connectorIds": [
         "variablesConnector",
@@ -14,14 +14,14 @@
         "flowConnector",
         "pingOneAuthenticationConnector"
       ],
-      "createdDate": 1711461153794,
-      "currentVersion": 17,
+      "createdDate": 1711543448502,
+      "currentVersion": 3,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
-      "description": "The DaVinci authentication combines password verification with Multi-Factor Authentication (MFA) for enhanced security, ensuring a balance of user convenience and robust access protection.",
+      "description": "Imported on Wed Mar 27 2024 12:21:01 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
-      "name": "PingOne Authentication with MFA via OTP or FIDO",
-      "publishedVersion": 17,
+      "name": "PingOne Authentication with MFA via OTP or FIDO ",
+      "publishedVersion": 3,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
@@ -37,9 +37,9 @@
         "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
       },
       "timeouts": "null",
-      "updatedDate": 1711461189279,
-      "flowId": "46b9ba5dc6cb5ba18c27f0d5d3e1be78",
-      "versionId": 17,
+      "updatedDate": 1711543451822,
+      "flowId": "501b816fe4e55fc55607b2cacf518fd2",
+      "versionId": 3,
       "graphData": {
         "elements": {
           "nodes": [
@@ -685,7 +685,7 @@
                 "type": "action",
                 "properties": {
                   "errorMessage": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.3a45kpt0k3.payload.error.message}}\",\n        \"tooltip\": \"{{local.3a45kpt0k3.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Invalid email and password combination\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeTitle": {
                     "value": "Password Check Failure Error"
@@ -2925,8 +2925,8 @@
                 "properties": {
                   "subFlowId": {
                     "value": {
-                      "label": "MFA Device Authentication Subflow",
-                      "value": "9bc5e3b8efe1cf328a862931233d79af"
+                      "label": "MFA Device Authentication Subflow - Ping Library Mar 27, 2024, 09:20 AM",
+                      "value": "ba0795f6b014d6aa2cb5cd682531aecf"
                     }
                   },
                   "subFlowVersionId": {
@@ -6433,11 +6433,11 @@
         }
       },
       "flowColor": "#E3F0FF",
-      "savedDate": 1711461154269,
+      "savedDate": 1711543446648,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1711453044028,
+          "createdDate": 1711542060985,
           "fields": {
             "type": "string",
             "displayName": "Url for company's logo image",
@@ -6448,11 +6448,11 @@
           "type": "property",
           "visibility": "private",
           "name": "companyLogo##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711451861763,
+          "createdDate": 1711541872878,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -6463,11 +6463,11 @@
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711454831267,
+          "createdDate": 1711542060979,
           "fields": {
             "type": "string",
             "displayName": "FIDO2 origin",
@@ -6478,11 +6478,11 @@
           "type": "property",
           "visibility": "private",
           "name": "origin##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711454831258,
+          "createdDate": 1711542060980,
           "fields": {
             "type": "string",
             "displayName": "Relying Party ID",
@@ -6493,14 +6493,14 @@
           "type": "property",
           "visibility": "private",
           "name": "rpid##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         }
       ],
       "connections": [],
-      "parentFlowId": "46b9ba5dc6cb5ba18c27f0d5d3e1be78"
+      "parentFlowId": "501b816fe4e55fc55607b2cacf518fd2"
     },
     {
-      "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640",
+      "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212",
       "authTokenExpireIds": [],
       "connectorIds": [
         "annotationConnector",
@@ -6511,10 +6511,10 @@
         "functionsConnector",
         "errorConnector"
       ],
-      "createdDate": 1711458558581,
-      "currentVersion": 11,
+      "createdDate": 1711545336767,
+      "currentVersion": 18,
       "customerId": "f3e47d945ae971a4b4142ec75012d155",
-      "description": "Imported on Tue Mar 26 2024 12:07:11 GMT+0000 (Coordinated Universal Time)",
+      "description": "Imported on Wed Mar 27 2024 12:21:00 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -6569,7 +6569,7 @@
       "isInputSchemaSaved": true,
       "isOutputSchemaSaved": false,
       "name": "MFA Device Authentication Subflow",
-      "publishedVersion": 11,
+      "publishedVersion": 17,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
@@ -6577,9 +6577,9 @@
         "logLevel": 2
       },
       "timeouts": "null",
-      "updatedDate": 1711458562639,
-      "flowId": "9bc5e3b8efe1cf328a862931233d79af",
-      "versionId": 11,
+      "updatedDate": 1711545337046,
+      "flowId": "ba0795f6b014d6aa2cb5cd682531aecf",
+      "versionId": 18,
       "graphData": {
         "elements": {
           "nodes": [
@@ -6621,7 +6621,7 @@
                 "status": "configured"
               },
               "position": {
-                "x": 218,
+                "x": 214,
                 "y": 214
               },
               "group": "nodes",
@@ -6695,7 +6695,7 @@
                 "idUnique": "w9l0p3xj35"
               },
               "position": {
-                "x": 338,
+                "x": 334,
                 "y": 454
               },
               "group": "nodes",
@@ -6754,8 +6754,8 @@
                 }
               },
               "position": {
-                "x": 1170,
-                "y": 4020
+                "x": 934,
+                "y": 4024
               },
               "group": "nodes",
               "removed": false,
@@ -6779,7 +6779,7 @@
                 "type": "trigger",
                 "properties": {
                   "inputSchema": {
-                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"errorMessage\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Error Message\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"errorMessage\"\n\t\t},\n\t\t\"action\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"action\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"action\"\n\t\t},\n\t\t\"showUI\": {\n\t\t\t\"type\": \"boolean\",\n\t\t\t\"displayName\": \"Show UI (needed if no UI yet in subflow)\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"showUI\"\n\t\t}\n\t}\n}"
+                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"errorMessage\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Error Message\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"errorMessage\"\n\t\t},\n\t\t\"action\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"action\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"action\"\n\t\t}\n\t}\n}"
                   },
                   "nodeTitle": {
                     "value": "Error"
@@ -6788,7 +6788,7 @@
               },
               "position": {
                 "x": 334,
-                "y": 4020
+                "y": 4024
               },
               "group": "nodes",
               "removed": false,
@@ -6806,7 +6806,7 @@
               },
               "position": {
                 "x": 454,
-                "y": 4020
+                "y": 4024
               },
               "group": "nodes",
               "removed": false,
@@ -6869,7 +6869,7 @@
               },
               "position": {
                 "x": 634,
-                "y": 3720
+                "y": 3724
               },
               "group": "nodes",
               "removed": false,
@@ -6888,7 +6888,7 @@
               },
               "position": {
                 "x": 454,
-                "y": 3720
+                "y": 3724
               },
               "group": "nodes",
               "removed": false,
@@ -6922,7 +6922,7 @@
               },
               "position": {
                 "x": 334,
-                "y": 3720
+                "y": 3724
               },
               "group": "nodes",
               "removed": false,
@@ -6979,7 +6979,7 @@
               },
               "position": {
                 "x": 214,
-                "y": 3900
+                "y": 3904
               },
               "group": "nodes",
               "removed": false,
@@ -7010,7 +7010,7 @@
                     "value": "Error"
                   },
                   "width": {
-                    "value": 1150
+                    "value": 850
                   },
                   "fontStyle": {
                     "value": "bold"
@@ -7029,7 +7029,7 @@
               },
               "position": {
                 "x": 214,
-                "y": 3840
+                "y": 3844
               },
               "group": "nodes",
               "removed": false,
@@ -7080,7 +7080,7 @@
               },
               "position": {
                 "x": 214,
-                "y": 3570
+                "y": 3574
               },
               "group": "nodes",
               "removed": false,
@@ -7139,7 +7139,7 @@
                 "idUnique": "wfef2vvvwn"
               },
               "position": {
-                "x": 638,
+                "x": 634,
                 "y": 454
               },
               "group": "nodes",
@@ -7157,7 +7157,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 458,
+                "x": 454,
                 "y": 454
               },
               "group": "nodes",
@@ -7184,7 +7184,7 @@
                 }
               },
               "position": {
-                "x": 758,
+                "x": 754,
                 "y": 454
               },
               "group": "nodes",
@@ -7214,16 +7214,13 @@
                   "errorMessage": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.9iij76vcob.payload.error.message}}\",\n        \"tooltip\": \"{{local.9iij76vcob.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
-                  "showUI": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"true\"\n      }\n    ]\n  }\n]"
-                  },
                   "nodeTitle": {
                     "value": "Go to Error"
                   }
                 }
               },
               "position": {
-                "x": 938,
+                "x": 934,
                 "y": 634
               },
               "group": "nodes",
@@ -7253,9 +7250,6 @@
                   "errorMessage": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Unable to retrieve usable devices\"\n      }\n    ]\n  }\n]"
                   },
-                  "showUI": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"true\"\n      }\n    ]\n  }\n]"
-                  },
                   "nodeTitle": {
                     "value": "Go to Error"
                   }
@@ -7263,7 +7257,7 @@
                 "idUnique": "wn39gohh6z"
               },
               "position": {
-                "x": 1238,
+                "x": 1234,
                 "y": 634
               },
               "group": "nodes",
@@ -7319,7 +7313,7 @@
                 "idUnique": "sx79k4vwj7"
               },
               "position": {
-                "x": 938,
+                "x": 934,
                 "y": 454
               },
               "group": "nodes",
@@ -7343,7 +7337,7 @@
                 }
               },
               "position": {
-                "x": 1058,
+                "x": 1054,
                 "y": 454
               },
               "group": "nodes",
@@ -7389,7 +7383,7 @@
                 "idUnique": "649opaehwy"
               },
               "position": {
-                "x": 1238,
+                "x": 1234,
                 "y": 454
               },
               "group": "nodes",
@@ -7424,7 +7418,7 @@
                 "idUnique": "jzv7dxmvtq"
               },
               "position": {
-                "x": 1838,
+                "x": 1834,
                 "y": 454
               },
               "group": "nodes",
@@ -7442,7 +7436,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1358,
+                "x": 1354,
                 "y": 454
               },
               "group": "nodes",
@@ -7483,7 +7477,7 @@
                 "idUnique": "929dkrnxe0"
               },
               "position": {
-                "x": 2138,
+                "x": 2134,
                 "y": 454
               },
               "group": "nodes",
@@ -7501,7 +7495,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1958,
+                "x": 1954,
                 "y": 454
               },
               "group": "nodes",
@@ -7531,9 +7525,6 @@
                   "errorMessage": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"MFA is not enabled on this account\"\n      }\n    ]\n  }\n]"
                   },
-                  "showUI": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"true\"\n      }\n    ]\n  }\n]"
-                  },
                   "nodeTitle": {
                     "value": "Go to Error"
                   }
@@ -7541,7 +7532,7 @@
                 "idUnique": "9m7ixxtoow"
               },
               "position": {
-                "x": 2438,
+                "x": 2434,
                 "y": 634
               },
               "group": "nodes",
@@ -7564,7 +7555,7 @@
                 }
               },
               "position": {
-                "x": 2258,
+                "x": 2254,
                 "y": 454
               },
               "group": "nodes",
@@ -7605,7 +7596,7 @@
                 "idUnique": "ttvq2y083s"
               },
               "position": {
-                "x": 2438,
+                "x": 2434,
                 "y": 454
               },
               "group": "nodes",
@@ -7635,9 +7626,6 @@
                   "errorMessage": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"No available MFA devices available. \"\n      }\n    ]\n  }\n]"
                   },
-                  "showUI": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"true\"\n      }\n    ]\n  }\n]"
-                  },
                   "nodeTitle": {
                     "value": "Go to Error"
                   }
@@ -7645,7 +7633,7 @@
                 "idUnique": "a5dfj563ew"
               },
               "position": {
-                "x": 2738,
+                "x": 2734,
                 "y": 634
               },
               "group": "nodes",
@@ -7668,7 +7656,7 @@
                 }
               },
               "position": {
-                "x": 2558,
+                "x": 2554,
                 "y": 454
               },
               "group": "nodes",
@@ -7718,7 +7706,7 @@
                 "idUnique": "you346314f"
               },
               "position": {
-                "x": 638,
+                "x": 634,
                 "y": 964
               },
               "group": "nodes",
@@ -7746,7 +7734,7 @@
                 "idUnique": "54sego8zzz"
               },
               "position": {
-                "x": 758,
+                "x": 754,
                 "y": 964
               },
               "group": "nodes",
@@ -7776,9 +7764,6 @@
                   "errorMessage": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.51dvh0pxyt.payload.error.message}}\",\n        \"tooltip\": \"{{local.51dvh0pxyt.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
-                  "showUI": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"true\"\n      }\n    ]\n  }\n]"
-                  },
                   "nodeTitle": {
                     "value": "Go to Error"
                   }
@@ -7786,7 +7771,7 @@
                 "idUnique": "v3cm7skc3j"
               },
               "position": {
-                "x": 938,
+                "x": 934,
                 "y": 1144
               },
               "group": "nodes",
@@ -7839,7 +7824,7 @@
                 "idUnique": "aod0k3fhnl"
               },
               "position": {
-                "x": 1538,
+                "x": 1534,
                 "y": 964
               },
               "group": "nodes",
@@ -7876,7 +7861,7 @@
                 "idUnique": "je3btck5rd"
               },
               "position": {
-                "x": 938,
+                "x": 934,
                 "y": 2104
               },
               "group": "nodes",
@@ -7903,7 +7888,7 @@
                 "idUnique": "7m10j19q48"
               },
               "position": {
-                "x": 1058,
+                "x": 1054,
                 "y": 2104
               },
               "group": "nodes",
@@ -7937,7 +7922,7 @@
                 "idUnique": "ounjwd3nfn"
               },
               "position": {
-                "x": 338,
+                "x": 334,
                 "y": 1594
               },
               "group": "nodes",
@@ -7956,7 +7941,7 @@
                 "idUnique": "jnu0h3rifb"
               },
               "position": {
-                "x": 758,
+                "x": 754,
                 "y": 1594
               },
               "group": "nodes",
@@ -8020,7 +8005,7 @@
                 "idUnique": "2zsa0ji3a3"
               },
               "position": {
-                "x": 1238,
+                "x": 1234,
                 "y": 1594
               },
               "group": "nodes",
@@ -8068,7 +8053,7 @@
                 }
               },
               "position": {
-                "x": 938,
+                "x": 934,
                 "y": 1594
               },
               "group": "nodes",
@@ -8127,15 +8112,18 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"maskedUsableDevices\",\n        \"data\": \"{{global.variables.maskedUsableDevices}}\",\n        \"tooltip\": \"{{global.variables.maskedUsableDevices}}\",\n        \"children\": [\n          {\n            \"text\": \"maskedUsableDevices\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
                   "title": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Select Authentication Method\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Select Method\"\n      }\n    ]\n  }\n]"
                   },
                   "cancelButtonLabel": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Cancel\"\n      }\n    ]\n  }\n]"
+                  },
+                  "text": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Select an MFA method to use to sign on to your account.\"\n      }\n    ]\n  }\n]"
                   }
                 }
               },
               "position": {
-                "x": 638,
+                "x": 634,
                 "y": 1594
               },
               "group": "nodes",
@@ -8165,9 +8153,6 @@
                   "errorMessage": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Something went wrong. Please try again later.\"\n      }\n    ]\n  }\n]"
                   },
-                  "showUI": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"true\"\n      }\n    ]\n  }\n]"
-                  },
                   "nodeTitle": {
                     "value": "Go to Error"
                   }
@@ -8175,7 +8160,7 @@
                 "idUnique": "h2nawrwazk"
               },
               "position": {
-                "x": 1238,
+                "x": 1234,
                 "y": 2254
               },
               "group": "nodes",
@@ -8193,7 +8178,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 458,
+                "x": 454,
                 "y": 1594
               },
               "group": "nodes",
@@ -8216,7 +8201,7 @@
                 }
               },
               "position": {
-                "x": 1058,
+                "x": 1054,
                 "y": 1594
               },
               "group": "nodes",
@@ -8235,7 +8220,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1658,
+                "x": 1654,
                 "y": 964
               },
               "group": "nodes",
@@ -8277,7 +8262,7 @@
                 }
               },
               "position": {
-                "x": 1838,
+                "x": 1834,
                 "y": 964
               },
               "group": "nodes",
@@ -8310,16 +8295,13 @@
                   "action": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"CANCEL\"\n      }\n    ]\n  }\n]"
                   },
-                  "showUI": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"false\"\n      }\n    ]\n  }\n]"
-                  },
                   "nodeTitle": {
                     "value": "Go to Error"
                   }
                 }
               },
               "position": {
-                "x": 1238,
+                "x": 1234,
                 "y": 1774
               },
               "group": "nodes",
@@ -8368,7 +8350,7 @@
                 "idUnique": "oyxcr1z24q"
               },
               "position": {
-                "x": 1538,
+                "x": 1534,
                 "y": 2104
               },
               "group": "nodes",
@@ -8419,7 +8401,7 @@
                 "idUnique": "11r56ghtad"
               },
               "position": {
-                "x": 638,
+                "x": 634,
                 "y": 2104
               },
               "group": "nodes",
@@ -8443,7 +8425,7 @@
                 }
               },
               "position": {
-                "x": 758,
+                "x": 754,
                 "y": 2104
               },
               "group": "nodes",
@@ -8462,7 +8444,7 @@
                 "idUnique": "pbisfmdr1j"
               },
               "position": {
-                "x": 1658,
+                "x": 1654,
                 "y": 2104
               },
               "group": "nodes",
@@ -8496,7 +8478,7 @@
                 "idUnique": "nywv7qckyw"
               },
               "position": {
-                "x": 338,
+                "x": 334,
                 "y": 2104
               },
               "group": "nodes",
@@ -8523,7 +8505,7 @@
                 }
               },
               "position": {
-                "x": 458,
+                "x": 454,
                 "y": 2104
               },
               "group": "nodes",
@@ -8566,7 +8548,7 @@
                 "idUnique": "nh734qn4ky"
               },
               "position": {
-                "x": 1838,
+                "x": 1834,
                 "y": 2104
               },
               "group": "nodes",
@@ -8616,7 +8598,7 @@
                 "idUnique": "7cn1hjd8xx"
               },
               "position": {
-                "x": 938,
+                "x": 934,
                 "y": 2584
               },
               "group": "nodes",
@@ -8653,7 +8635,7 @@
                 "idUnique": "r1h3etanz9"
               },
               "position": {
-                "x": 1238,
+                "x": 1234,
                 "y": 2764
               },
               "group": "nodes",
@@ -8672,7 +8654,7 @@
                 "idUnique": "aab9wbrg0z"
               },
               "position": {
-                "x": 1058,
+                "x": 1054,
                 "y": 2764
               },
               "group": "nodes",
@@ -8709,7 +8691,7 @@
                 "idUnique": "jp0gdz08sh"
               },
               "position": {
-                "x": 1538,
+                "x": 1534,
                 "y": 2584
               },
               "group": "nodes",
@@ -8739,7 +8721,7 @@
                 "idUnique": "jsgf2ovy4b"
               },
               "position": {
-                "x": 1658,
+                "x": 1654,
                 "y": 2584
               },
               "group": "nodes",
@@ -8758,7 +8740,7 @@
                 "idUnique": "dpd9nytlnp"
               },
               "position": {
-                "x": 1058,
+                "x": 1054,
                 "y": 2944
               },
               "group": "nodes",
@@ -8813,7 +8795,7 @@
                 "idUnique": "9hxhzj6ppv"
               },
               "position": {
-                "x": 1238,
+                "x": 1234,
                 "y": 2944
               },
               "group": "nodes",
@@ -8832,7 +8814,7 @@
                 "idUnique": "e7ua1izet2"
               },
               "position": {
-                "x": 458,
+                "x": 454,
                 "y": 2584
               },
               "group": "nodes",
@@ -8872,7 +8854,7 @@
                 "idUnique": "2vjtkh34dq"
               },
               "position": {
-                "x": 1838,
+                "x": 1834,
                 "y": 2584
               },
               "group": "nodes",
@@ -8923,7 +8905,7 @@
                 "idUnique": "re2v73q0dh"
               },
               "position": {
-                "x": 1238,
+                "x": 1234,
                 "y": 2584
               },
               "group": "nodes",
@@ -8942,7 +8924,7 @@
                 "idUnique": "i0agq2fjgm"
               },
               "position": {
-                "x": 1058,
+                "x": 1054,
                 "y": 2584
               },
               "group": "nodes",
@@ -8961,7 +8943,7 @@
                 "idUnique": "m4jhp9pkb"
               },
               "position": {
-                "x": 1358,
+                "x": 1354,
                 "y": 2584
               },
               "group": "nodes",
@@ -8995,7 +8977,7 @@
                 "idUnique": "z0hgib8ouz"
               },
               "position": {
-                "x": 1838,
+                "x": 1834,
                 "y": 2764
               },
               "group": "nodes",
@@ -9029,7 +9011,7 @@
                 "idUnique": "2hshyrpipm"
               },
               "position": {
-                "x": 338,
+                "x": 334,
                 "y": 2584
               },
               "group": "nodes",
@@ -9066,7 +9048,7 @@
                     "value": {}
                   },
                   "customHTML": {
-                    "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">\n                    {{#ifEquals type \"SMS\"}}\n                    <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Text message\n                    {{/ifEquals}}\n\n                    {{#ifEquals type \"EMAIL\"}}\n                    <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Email\n                    {{/ifEquals}}\n                    \n                    {{#ifEquals type \"TOTP\"}}\n                    <i class=\"mdi mdi-cellphone-key text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Authenticator App\n                    {{/ifEquals}}\n\n                     {{#ifEquals type \"VOICE\"}}\n                    <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Voice\n                    {{/ifEquals}}\n                </h1>\n                <p class=\"text-muted text-center\">Enter the passcode you received to complete authentication.</p>\n                \n                <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\" id=\"error-msg\"></p>\n                <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                {{#if resendMessage}}\n                    <p class=\"text-info text-center\">{{resendMessage}}</p>\n                {{/if}}\n\n                <form id=\"otp-form\" data-id=\"otp-form\">\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"6\" />\n                        <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                    </div>\n                    <p class=\"text-muted text-center\" id=\"contact\">\n                        {{#ifEquals type \"SMS\"}}\n                        Message sent to:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"Voice\"}}\n                        Calling:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        Email sent to:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n                    </p>\n                    <div class=\"d-flex flex-column\">\n                        {{#ifEquals type \"TOTP\"}}\n                          <!-- exclude resend option -->\n                        {{else}}\n                        <button id=\"resend\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                            {{resendButtonLabel}}\n                        </button>\n                        {{/ifEquals}}\n                        {{#if primaryButtonLabel}}\n                        <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                            {{primaryButtonLabel}}\n                        </button>\n                        {{/if}}\n                        {{#if canChangeDevice}}\n                        <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                            Cancel\n                        </button>\n                        {{/if}}\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+                    "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">\n                    {{#ifEquals type \"SMS\"}}\n                    <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Text message\n                    {{/ifEquals}}\n\n                    {{#ifEquals type \"EMAIL\"}}\n                    <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Email\n                    {{/ifEquals}}\n                    \n                    {{#ifEquals type \"TOTP\"}}\n                    <i class=\"mdi mdi-cellphone-key text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Authenticator App\n                    {{/ifEquals}}\n\n                     {{#ifEquals type \"VOICE\"}}\n                    <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Voice\n                    {{/ifEquals}}\n                </h1>\n                <p class=\"text-muted text-center\">Enter the passcode you received to complete authentication.</p>\n                \n                <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\" id=\"error-msg\"></p>\n                <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                {{#if resendMessage}}\n                    <p class=\"text-info text-center\">{{resendMessage}}</p>\n                {{/if}}\n\n                <form id=\"otp-form\" data-id=\"otp-form\">\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"6\" />\n                        <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                    </div>\n                    <p class=\"text-muted text-center\" id=\"contact\">\n                        {{#ifEquals type \"SMS\"}}\n                        Message sent to:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"Voice\"}}\n                        Calling:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        Email sent to:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n                    </p>\n                    <div class=\"d-flex flex-column\">\n                        {{#ifEquals type \"TOTP\"}}\n                          <!-- exclude resend option -->\n                        {{else}}\n                        <button id=\"resend\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                            {{resendButtonLabel}}\n                        </button>\n                        {{/ifEquals}}\n                        {{#if primaryButtonLabel}}\n                        <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                            {{primaryButtonLabel}}\n                        </button>\n                        {{/if}}\n                        {{#if canChangeDevice}}\n                        <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                            Change Device\n                        </button>\n                        {{/if}}\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
                   },
                   "customCSS": {
                     "value": ".otp-control {\n    padding-top: 0rem !important;\n    padding-bottom: 0rem !important;\n    font-size: 17px;\n}"
@@ -9140,7 +9122,7 @@
                 }
               },
               "position": {
-                "x": 638,
+                "x": 634,
                 "y": 2584
               },
               "group": "nodes",
@@ -9158,7 +9140,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 758,
+                "x": 754,
                 "y": 2584
               },
               "group": "nodes",
@@ -9215,7 +9197,7 @@
                 "idUnique": "d2mbrib33f"
               },
               "position": {
-                "x": 218,
+                "x": 214,
                 "y": 274
               },
               "group": "nodes",
@@ -9265,7 +9247,7 @@
                 "status": "configured"
               },
               "position": {
-                "x": 218,
+                "x": 214,
                 "y": 1384
               },
               "group": "nodes",
@@ -9322,7 +9304,7 @@
                 "idUnique": "5sneq645jx"
               },
               "position": {
-                "x": 218,
+                "x": 214,
                 "y": 1444
               },
               "group": "nodes",
@@ -9372,7 +9354,7 @@
                 }
               },
               "position": {
-                "x": 1538,
+                "x": 1534,
                 "y": 454
               },
               "group": "nodes",
@@ -9395,7 +9377,7 @@
                 }
               },
               "position": {
-                "x": 1658,
+                "x": 1654,
                 "y": 454
               },
               "group": "nodes",
@@ -9445,7 +9427,7 @@
                 }
               },
               "position": {
-                "x": 938,
+                "x": 934,
                 "y": 964
               },
               "group": "nodes",
@@ -9502,7 +9484,7 @@
                 "idUnique": "0vc9rsyaah"
               },
               "position": {
-                "x": 218,
+                "x": 214,
                 "y": 1954
               },
               "group": "nodes",
@@ -9553,7 +9535,7 @@
                 "idUnique": "tfqxapb06s"
               },
               "position": {
-                "x": 218,
+                "x": 214,
                 "y": 1894
               },
               "group": "nodes",
@@ -9604,7 +9586,7 @@
                 "idUnique": "92arosy69z"
               },
               "position": {
-                "x": 218,
+                "x": 214,
                 "y": 2404
               },
               "group": "nodes",
@@ -9623,7 +9605,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1358,
+                "x": 1354,
                 "y": 2764
               },
               "group": "nodes",
@@ -9668,7 +9650,7 @@
                 }
               },
               "position": {
-                "x": 1538,
+                "x": 1534,
                 "y": 2764
               },
               "group": "nodes",
@@ -9708,7 +9690,7 @@
                 "idUnique": "4mouq23bxc"
               },
               "position": {
-                "x": 1238,
+                "x": 1234,
                 "y": 3244
               },
               "group": "nodes",
@@ -9738,7 +9720,7 @@
                 "idUnique": "71aldgnomn"
               },
               "position": {
-                "x": 1358,
+                "x": 1354,
                 "y": 3244
               },
               "group": "nodes",
@@ -9783,7 +9765,7 @@
                 "idUnique": "78rowewdmo"
               },
               "position": {
-                "x": 938,
+                "x": 934,
                 "y": 3244
               },
               "group": "nodes",
@@ -9802,7 +9784,7 @@
                 "idUnique": "ylqk29yc42"
               },
               "position": {
-                "x": 758,
+                "x": 754,
                 "y": 3244
               },
               "group": "nodes",
@@ -9826,7 +9808,7 @@
                 }
               },
               "position": {
-                "x": 1058,
+                "x": 1054,
                 "y": 3244
               },
               "group": "nodes",
@@ -9860,7 +9842,7 @@
                 "idUnique": "pm2qfjyxjd"
               },
               "position": {
-                "x": 338,
+                "x": 334,
                 "y": 3244
               },
               "group": "nodes",
@@ -9884,7 +9866,7 @@
                 }
               },
               "position": {
-                "x": 458,
+                "x": 454,
                 "y": 3244
               },
               "group": "nodes",
@@ -9924,7 +9906,7 @@
                 "idUnique": "84a43azk0d"
               },
               "position": {
-                "x": 1538,
+                "x": 1534,
                 "y": 3244
               },
               "group": "nodes",
@@ -9958,7 +9940,7 @@
                 "idUnique": "z0hgib8ouz"
               },
               "position": {
-                "x": 1538,
+                "x": 1534,
                 "y": 3454
               },
               "group": "nodes",
@@ -9989,7 +9971,7 @@
                     "value": "Present FIDO2 Form "
                   },
                   "customHTML": {
-                    "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n               <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">\n                    {{#ifEquals type \"FIDO2\"}}\n                    <i class=\"mdi mdi-account-key-outline text-dark fs-2\" aria-hidden=\"true\"></i>\n                    Passkey\n                    {{/ifEquals}}\n                </h1>\n                <p class=\"text-muted text-center\">\n                    Follow the directions your browser provides to finish\n                    {{#ifEquals type \"FIDO2\"}} Passkey {{/ifEquals}}\n                    authentication.\n                </p>\n                <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                <form id=\"error-form\" data-id=\"error-form\">\n                    <button class=\"hidden-button\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                        data-skform=\"error-form\" data-skbuttonvalue=\"InvalidStateError\" id=\"errorButton\">\n                        Next\n                    </button>\n                </form>\n                <div class=\"d-flex flex-column mt-5\">\n                    <button id=\"fidoButton\" class=\"btn btn-primary mb-3\">\n                        Retry\n                    </button>\n                </div>\n                <form id=\"fido-form\" data-id=\"fido-form\" class=\"d-flex flex-column\">\n                    <input type=\"hidden\" name=\"assertionValue\" id=\"assertionValue\" />\n                    <button class=\"hidden-button\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                        data-skform=\"fido-form\" data-skbuttonvalue=\"submit\" id=\"assertionButton\">\n                        Next\n                    </button>\n                    {{#if canChangeDevice}}\n                    <button id=\"cancel\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                        data-skform=\"fido-form\" data-skbuttonvalue=\"CANCEL\">\n                        Cancel\n                    </button>\n                    {{/if}}\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+                    "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n               <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">\n                    {{#ifEquals type \"FIDO2\"}}\n                    <i class=\"mdi mdi-account-key-outline text-dark fs-2\" aria-hidden=\"true\"></i>\n                    Passkey\n                    {{/ifEquals}}\n                </h1>\n                <p class=\"text-muted text-center\">\n                    Follow the directions your browser provides to finish\n                    {{#ifEquals type \"FIDO2\"}} Passkey {{/ifEquals}}\n                    authentication.\n                </p>\n                <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                <form id=\"error-form\" data-id=\"error-form\">\n                    <button class=\"hidden-button\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                        data-skform=\"error-form\" data-skbuttonvalue=\"InvalidStateError\" id=\"errorButton\">\n                        Next\n                    </button>\n                </form>\n                <div class=\"d-flex flex-column mt-5\">\n                    <button id=\"fidoButton\" class=\"btn btn-primary mb-3\">\n                        Retry\n                    </button>\n                </div>\n                <form id=\"fido-form\" data-id=\"fido-form\" class=\"d-flex flex-column\">\n                    <input type=\"hidden\" name=\"assertionValue\" id=\"assertionValue\" />\n                    <button class=\"hidden-button\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                        data-skform=\"fido-form\" data-skbuttonvalue=\"submit\" id=\"assertionButton\">\n                        Next\n                    </button>\n                    {{#if canChangeDevice}}\n                    <button id=\"cancel\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                        data-skform=\"fido-form\" data-skbuttonvalue=\"CANCEL\">\n                        Change Device\n                    </button>\n                    {{/if}}\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
                   },
                   "formFieldsList": {
                     "value": [
@@ -10035,7 +10017,7 @@
                 "idUnique": "3uy99xopth"
               },
               "position": {
-                "x": 638,
+                "x": 634,
                 "y": 3244
               },
               "group": "nodes",
@@ -10054,7 +10036,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1658,
+                "x": 1654,
                 "y": 2284
               },
               "group": "nodes",
@@ -10090,7 +10072,7 @@
                 }
               },
               "position": {
-                "x": 1838,
+                "x": 1834,
                 "y": 2284
               },
               "group": "nodes",
@@ -10133,7 +10115,7 @@
                 "idUnique": "yp4ozn6rqp"
               },
               "position": {
-                "x": 1238,
+                "x": 1234,
                 "y": 2104
               },
               "group": "nodes",
@@ -10166,7 +10148,7 @@
                 }
               },
               "position": {
-                "x": 1238,
+                "x": 1234,
                 "y": 3454
               },
               "group": "nodes",
@@ -10223,7 +10205,7 @@
                 "idUnique": "pkb3xijmjo"
               },
               "position": {
-                "x": 218,
+                "x": 214,
                 "y": 2464
               },
               "group": "nodes",
@@ -10274,7 +10256,7 @@
                 "idUnique": "kme9ln4htk"
               },
               "position": {
-                "x": 218,
+                "x": 214,
                 "y": 3034
               },
               "group": "nodes",
@@ -10331,7 +10313,7 @@
                 "idUnique": "4330dvgk8r"
               },
               "position": {
-                "x": 218,
+                "x": 214,
                 "y": 3094
               },
               "group": "nodes",
@@ -10389,7 +10371,7 @@
               },
               "position": {
                 "x": 214,
-                "y": 3630
+                "y": 3634
               },
               "group": "nodes",
               "removed": false,
@@ -10406,7 +10388,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1358,
+                "x": 1354,
                 "y": 2104
               },
               "group": "nodes",
@@ -10457,7 +10439,7 @@
                 "idUnique": "jiabp261pz"
               },
               "position": {
-                "x": 1238,
+                "x": 1234,
                 "y": 964
               },
               "group": "nodes",
@@ -10499,7 +10481,7 @@
                 }
               },
               "position": {
-                "x": 1838,
+                "x": 1834,
                 "y": 1264
               },
               "group": "nodes",
@@ -10518,7 +10500,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1658,
+                "x": 1654,
                 "y": 1114
               },
               "group": "nodes",
@@ -10554,7 +10536,7 @@
                 }
               },
               "position": {
-                "x": 1838,
+                "x": 1834,
                 "y": 1114
               },
               "group": "nodes",
@@ -10596,8 +10578,8 @@
                 "idUnique": "3wi21s8m6z"
               },
               "position": {
-                "x": 900,
-                "y": 4170
+                "x": 634,
+                "y": 4024
               },
               "group": "nodes",
               "removed": false,
@@ -10614,8 +10596,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1020,
-                "y": 4170
+                "x": 754,
+                "y": 4024
               },
               "group": "nodes",
               "removed": false,
@@ -10632,7 +10614,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1058,
+                "x": 1054,
                 "y": 964
               },
               "group": "nodes",
@@ -10650,7 +10632,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1358,
+                "x": 1354,
                 "y": 964
               },
               "group": "nodes",
@@ -10668,7 +10650,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1658,
+                "x": 1654,
                 "y": 1264
               },
               "group": "nodes",
@@ -10719,7 +10701,7 @@
                 "idUnique": "wm1r0avooj"
               },
               "position": {
-                "x": 218,
+                "x": 214,
                 "y": 784
               },
               "group": "nodes",
@@ -10749,7 +10731,7 @@
                 }
               },
               "position": {
-                "x": 338,
+                "x": 334,
                 "y": 964
               },
               "group": "nodes",
@@ -10806,7 +10788,7 @@
                 "idUnique": "dpzyonlfmi"
               },
               "position": {
-                "x": 218,
+                "x": 214,
                 "y": 844
               },
               "group": "nodes",
@@ -10839,7 +10821,7 @@
                 }
               },
               "position": {
-                "x": 2738,
+                "x": 2734,
                 "y": 454
               },
               "group": "nodes",
@@ -10857,7 +10839,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 458,
+                "x": 454,
                 "y": 964
               },
               "group": "nodes",
@@ -10913,7 +10895,7 @@
                 "status": "configured"
               },
               "position": {
-                "x": 2618,
+                "x": 2614,
                 "y": 334
               },
               "group": "nodes",
@@ -10969,7 +10951,7 @@
                 "status": "configured"
               },
               "position": {
-                "x": 1718,
+                "x": 1714,
                 "y": 874
               },
               "group": "nodes",
@@ -11025,7 +11007,7 @@
                 "status": "configured"
               },
               "position": {
-                "x": 1718,
+                "x": 1714,
                 "y": 1024
               },
               "group": "nodes",
@@ -11081,7 +11063,7 @@
                 "status": "configured"
               },
               "position": {
-                "x": 1718,
+                "x": 1714,
                 "y": 1174
               },
               "group": "nodes",
@@ -11138,7 +11120,7 @@
                 "idUnique": "u5ne139ykk"
               },
               "position": {
-                "x": 1718,
+                "x": 1714,
                 "y": 2014
               },
               "group": "nodes",
@@ -11195,7 +11177,7 @@
                 "idUnique": "sdbxtv77au"
               },
               "position": {
-                "x": 1718,
+                "x": 1714,
                 "y": 2194
               },
               "group": "nodes",
@@ -11252,7 +11234,7 @@
                 "idUnique": "zn2033lqgw"
               },
               "position": {
-                "x": 1718,
+                "x": 1714,
                 "y": 2494
               },
               "group": "nodes",
@@ -11309,7 +11291,7 @@
                 "idUnique": "6chk4h2p27"
               },
               "position": {
-                "x": 1418,
+                "x": 1414,
                 "y": 2674
               },
               "group": "nodes",
@@ -11366,7 +11348,7 @@
                 "idUnique": "ssh0ztt9pe"
               },
               "position": {
-                "x": 1418,
+                "x": 1414,
                 "y": 3124
               },
               "group": "nodes",
@@ -11423,7 +11405,7 @@
                 "idUnique": "exk6zbsykq"
               },
               "position": {
-                "x": 1118,
+                "x": 1114,
                 "y": 3364
               },
               "group": "nodes",
@@ -11480,73 +11462,8 @@
                 "idUnique": "0l9oqt6rj3"
               },
               "position": {
-                "x": 1118,
+                "x": 1114,
                 "y": 2854
-              },
-              "group": "nodes",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": false,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "39ijhmd3fm",
-                "nodeType": "CONNECTION",
-                "connectionId": "de650ca45593b82c49064ead10b9fe17",
-                "connectorId": "functionsConnector",
-                "name": "Functions",
-                "label": "Functions",
-                "status": "configured",
-                "capabilityName": "ANotEqualsB",
-                "type": "trigger",
-                "properties": {
-                  "rightValueB": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"true\"\n      }\n    ]\n  }\n]"
-                  },
-                  "type": {
-                    "value": "boolean"
-                  },
-                  "leftValueA": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"showUI\",\n        \"data\": \"{{local.etn576tjxn.payload.output.showUI}}\",\n        \"tooltip\": \"{{local.etn576tjxn.payload.output.showUI}}\",\n        \"children\": [\n          {\n            \"text\": \"showUI\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
-                  "nodeTitle": {
-                    "value": "Has Flow Displayed UI?"
-                  }
-                }
-              },
-              "position": {
-                "x": 630,
-                "y": 4020
-              },
-              "group": "nodes",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": false,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "mgh4eqyyan",
-                "nodeType": "EVAL",
-                "properties": {
-                  "yh5twp5fsn": {
-                    "value": "anyTriggersFalse"
-                  },
-                  "epw0oq727q": {
-                    "value": "allTriggersTrue"
-                  }
-                }
-              },
-              "position": {
-                "x": 750,
-                "y": 4020
               },
               "group": "nodes",
               "removed": false,
@@ -11561,9 +11478,9 @@
           "edges": [
             {
               "data": {
-                "id": "hu6mk0h4bx",
-                "source": "39ijhmd3fm",
-                "target": "mgh4eqyyan"
+                "id": "esfhft5eau",
+                "source": "hfa19qo1ws",
+                "target": "fzkpvzkc39"
               },
               "position": {
                 "x": 0,
@@ -11580,9 +11497,48 @@
             },
             {
               "data": {
-                "id": "s3cq1j3gr6",
-                "source": "xdyg4ar8uv",
-                "target": "39ijhmd3fm"
+                "id": "ds134rlf8a",
+                "source": "9rcv21ooou",
+                "target": "gltuh7pu5s"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "irnobxi8te",
+                "source": "fzkpvzkc39",
+                "target": "sft0z1jdt0",
+                "multiValueSourceId": "fmf2dvwm72"
+              },
+              "position": {
+                "x": 64,
+                "y": 132
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "9vxqnyfgz2",
+                "source": "e7162j3cfm",
+                "target": "fr8ffvqm8q"
               },
               "position": {
                 "x": 0,
@@ -11618,9 +11574,9 @@
             },
             {
               "data": {
-                "id": "rsp4dkriih",
-                "source": "mgh4eqyyan",
-                "target": "yh5twp5fsn"
+                "id": "3p6w3m2907",
+                "source": "gltuh7pu5s",
+                "target": "lcj0csy5zf"
               },
               "position": {
                 "x": 0,
@@ -11637,9 +11593,9 @@
             },
             {
               "data": {
-                "id": "p20x5lyq9f",
-                "source": "mgh4eqyyan",
-                "target": "epw0oq727q"
+                "id": "s4p3qyqvbt",
+                "source": "lcj0csy5zf",
+                "target": "hfa19qo1ws"
               },
               "position": {
                 "x": 0,
@@ -13185,105 +13141,9 @@
             },
             {
               "data": {
-                "id": "ds134rlf8a",
-                "source": "9rcv21ooou",
-                "target": "gltuh7pu5s"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "3p6w3m2907",
-                "source": "gltuh7pu5s",
-                "target": "lcj0csy5zf"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "s4p3qyqvbt",
-                "source": "lcj0csy5zf",
-                "target": "hfa19qo1ws"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "esfhft5eau",
-                "source": "hfa19qo1ws",
-                "target": "fzkpvzkc39"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "irnobxi8te",
-                "source": "fzkpvzkc39",
-                "target": "sft0z1jdt0",
-                "multiValueSourceId": "fmf2dvwm72"
-              },
-              "position": {
-                "x": 64,
-                "y": 132
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "9vxqnyfgz2",
-                "source": "e7162j3cfm",
-                "target": "fr8ffvqm8q"
+                "id": "jud635shdr",
+                "source": "xdyg4ar8uv",
+                "target": "yh5twp5fsn"
               },
               "position": {
                 "x": 0,
@@ -13360,11 +13220,11 @@
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1711458557173,
+      "savedDate": 1711545334780,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1711453044030,
+          "createdDate": 1711542060976,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13375,11 +13235,11 @@
           "type": "property",
           "visibility": "private",
           "name": "webAuthnSupport##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711454831258,
+          "createdDate": 1711542060980,
           "fields": {
             "type": "string",
             "displayName": "Relying Party ID",
@@ -13390,11 +13250,11 @@
           "type": "property",
           "visibility": "private",
           "name": "rpid##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711454831258,
+          "createdDate": 1711542060986,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13404,11 +13264,11 @@
           "type": "property",
           "visibility": "private",
           "name": "p1DeviceAuthenticationId##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711453044034,
+          "createdDate": 1711542060985,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13419,11 +13279,11 @@
           "type": "property",
           "visibility": "private",
           "name": "ORIGIN##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711453044028,
+          "createdDate": 1711542060985,
           "fields": {
             "type": "string",
             "displayName": "Url for company's logo image",
@@ -13434,11 +13294,11 @@
           "type": "property",
           "visibility": "private",
           "name": "companyLogo##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711451861763,
+          "createdDate": 1711541872878,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13449,11 +13309,11 @@
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711454831267,
+          "createdDate": 1711542060984,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13464,11 +13324,11 @@
           "type": "property",
           "visibility": "private",
           "name": "maskedUsableDevices##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711454831267,
+          "createdDate": 1711542060984,
           "fields": {
             "type": "boolean",
             "displayName": "",
@@ -13479,11 +13339,11 @@
           "type": "property",
           "visibility": "private",
           "name": "canChangeDevice##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711454831267,
+          "createdDate": 1711542060979,
           "fields": {
             "type": "string",
             "displayName": "FIDO2 origin",
@@ -13494,11 +13354,11 @@
           "type": "property",
           "visibility": "private",
           "name": "origin##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711454831266,
+          "createdDate": 1711542060980,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13509,11 +13369,11 @@
           "type": "property",
           "visibility": "private",
           "name": "publicKeyCredentialRequestOptions##SK##flowInstance",
-          "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640"
+          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
         }
       ]
     }
   ],
-  "companyId": "2e9f4eb9-a88d-434b-8fc1-751e5a2b6640",
+  "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212",
   "customerId": "f3e47d945ae971a4b4142ec75012d155"
 }
