@@ -1,5 +1,5 @@
 {
-  "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212",
+  "companyId": "",
   "authTokenExpireIds": [],
   "connectorIds": [
     "variablesConnector",
@@ -12,12 +12,12 @@
   ],
   "createdDate": 1714137029514,
   "currentVersion": 6,
-  "customerId": "f3e47d945ae971a4b4142ec75012d155",
+  "customerId": "",
   "deployedDate": 1714137030867,
   "description": "Last Updated: April 26th, 2024",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
-  "name": "Account Recovery by Email",
+  "name": "PingOne Account Recovery by Email",
   "publishedVersion": 6,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
@@ -259,24 +259,6 @@
               },
               "customScript": {
                 "value": "const setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    }\n}\n\nconst start = () => {\n    setFieldFocus(\"email\")\n}\n\nif (document.readyState === \"loading\") {\n    // Loading hasn't finished yet\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    // `DOMContentLoaded` has already fired\n    start();\n}"
-              },
-              "sktemplate": {
-                "uiId": "285c9d55f6886242da17a6dcb6a504da",
-                "createdDate": 1694687041166,
-                "customerId": "f3e47d945ae971a4b4142ec75012d155",
-                "description": "",
-                "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textTwo\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text Two\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"userMessage\": {\n      \"type\": \"string\",\n      \"displayName\": \"User Message\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"continueButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Continue Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}",
-                "name": "Sign On Form",
-                "outputSchema": null,
-                "script": "",
-                "style": "",
-                "template": "",
-                "updatedDate": 1694687155750,
-                "validationRules": [],
-                "version": "1.0",
-                "visibility": "private",
-                "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
-                "value": "285c9d55f6886242da17a6dcb6a504da"
               },
               "inputSchema": {
                 "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textTwo\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text Two\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"userMessage\": {\n      \"type\": \"string\",\n      \"displayName\": \"User Message\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"continueButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Continue Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
@@ -807,24 +789,6 @@
               },
               "nodeDescription": {
                 "value": "Enter the recovery code and set new password"
-              },
-              "sktemplate": {
-                "uiId": "c67da909b74e090364dee33cddb36f7f",
-                "createdDate": 1689595622386,
-                "customerId": "f3e47d945ae971a4b4142ec75012d155",
-                "description": "",
-                "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"userMessage\": {\n      \"type\": \"string\",\n      \"displayName\": \"User Message\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"resendButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Resend Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"updatePasswordButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Update Password Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"cancelButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Cancel Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}",
-                "name": "UI Form",
-                "outputSchema": null,
-                "script": "",
-                "style": "",
-                "template": "",
-                "updatedDate": 1689599585108,
-                "validationRules": [],
-                "version": "1.0",
-                "visibility": "private",
-                "companyId": "50451ff2-2ed6-4c10-90ed-0e138623955c",
-                "value": "c67da909b74e090364dee33cddb36f7f"
               },
               "inputSchema": {
                 "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"userMessage\": {\n      \"type\": \"string\",\n      \"displayName\": \"User Message\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"resendButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Resend Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"updatePasswordButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Update Password Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"cancelButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Cancel Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
@@ -2286,7 +2250,7 @@
       "type": "property",
       "visibility": "private",
       "name": "companyLogo##SK##flowInstance",
-      "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
+      "companyId": ""
     },
     {
       "context": "flowInstance",
@@ -2301,7 +2265,7 @@
       "type": "property",
       "visibility": "private",
       "name": "companyName##SK##flowInstance",
-      "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
+      "companyId": ""
     }
   ],
   "connections": []
