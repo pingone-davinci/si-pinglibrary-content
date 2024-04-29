@@ -1,29 +1,19 @@
 {
   "type": "object",
   "properties": {
-    "title": {
+    "p1UserId": {
       "type": "string",
-      "displayName": "Title",
+      "displayName": "PingOne User Id",
       "preferredControlType": "textField",
-      "enableParameters": true
+      "enableParameters": true,
+      "propertyName": "p1UserId"
     },
-    "textOne": {
+    "maskedEmail": {
       "type": "string",
-      "displayName": "Text One",
+      "displayName": "Masked Email",
       "preferredControlType": "textField",
-      "enableParameters": true
-    },
-    "textTwo": {
-      "type": "string",
-      "displayName": "Text Two",
-      "preferredControlType": "textField",
-      "enableParameters": true
-    },
-    "continueButtonLabel": {
-      "type": "string",
-      "displayName": "Continue Button Label",
-      "preferredControlType": "textField",
-      "enableParameters": true
+      "enableParameters": true,
+      "propertyName": "maskedEmail"
     }
   }
 }
