@@ -12,11 +12,11 @@
     "pingOneMfaConnector",
     "pingOneAuthenticationConnector"
   ],
-  "createdDate": 1714393400150,
+  "createdDate": 1715194634093,
   "currentVersion": 1,
-  "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "deployedDate": 1714393439285,
-  "description": "Last updated April 29th, 2024",
+  "customerId": "",
+  "deployedDate": 1715194639577,
+  "description": "Last Updated: May 8th, 2024",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
   "name": "PingOne Registration with Progressive Profiling and Consent",
@@ -27,7 +27,7 @@
     "intermediateLoadingScreenHTML": {},
     "logLevel": 2,
     "useCustomCSS": true,
-    "css": ".companyLogo {\n    width: 65px;\n    height: 65px;\n}",
+    "css": ".companyLogo {\n    height: 65px;\n}",
     "cssLinks": [
       "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css",
       "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.11/icons.css"
@@ -37,9 +37,9 @@
     "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
   },
   "timeouts": "null",
-  "updatedDate": 1714393439287,
-  "flowId": "f828a2d434c8c664d4e492f4ce01f6fc",
-  "versionId": 27,
+  "updatedDate": 1715194639614,
+  "flowId": "e53af6e7cd6fbe2a00beda57a955d303",
+  "versionId": 1,
   "graphData": {
     "elements": {
       "nodes": [
@@ -397,7 +397,7 @@
                 "value": "#000000"
               },
               "annotation": {
-                "value": "Input Schema: p1UserId, resendMessage (optional)"
+                "value": "Input Schema: p1UserId, email, resendMessage (optional)"
               },
               "width": {
                 "value": 450
@@ -819,7 +819,7 @@
             "idUnique": "e9zf5ebk6y"
           },
           "position": {
-            "x": 938,
+            "x": 930,
             "y": 480
           },
           "group": "nodes",
@@ -845,7 +845,7 @@
             }
           },
           "position": {
-            "x": 1058,
+            "x": 1050,
             "y": 480
           },
           "group": "nodes",
@@ -1068,7 +1068,7 @@
             }
           },
           "position": {
-            "x": 1238,
+            "x": 1230,
             "y": 480
           },
           "group": "nodes",
@@ -1947,7 +1947,7 @@
                 "value": "#000000"
               },
               "annotation": {
-                "value": "Last Updated: April 29th, 2024"
+                "value": "Last Updated: May 8th, 2024"
               },
               "width": {
                 "value": 240
@@ -3373,7 +3373,7 @@
                 "value": {}
               },
               "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">\n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                        <h1 id=\"title\" class=\"text-center mb-4\">\n                            {{#ifEquals type \"SMS\"}}\n                            <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                            Text message\n                            {{/ifEquals}}\n\n                            {{#ifEquals type \"EMAIL\"}}\n                            <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                            Email\n                            {{/ifEquals}}\n\n                            {{#ifEquals type \"VOICE\"}}\n                            <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n                            Email\n                            {{/ifEquals}}\n                        </h1>\n                        <p class=\"text-muted text-center\">\n                            {{#ifEquals type \"SMS\"}}\n                            Please enter the passcode you received.\n                            {{/ifEquals}}\n\n                            {{#ifEquals type \"EMAIL\"}}\n                            Enter the passcode you received to complete email pairing.\n                            {{/ifEquals}}\n\n                            {{#ifEquals type \"VOICE\"}}\n                            Please enter the passcode you received.\n                            {{/ifEquals}}\n                        </p>\n                    \n                        <!-- Generic Error Message -->\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                        \n                        <!-- Field Validation Error Messages -->\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                        {{#if resendMessage}}\n                            <p class=\"text-info text-center\">{{resendMessage}}</p>\n                        {{/if}}\n                        \n                        <form id=\"otp-form\" data-id=\"otp-form\">\n                            <div class=\"mb-4 form-floating\">\n                                <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"6\" aria-required=\"true\" />\n                                <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                            </div>\n                            <p class=\"text-muted text-center\">\n                                {{#ifEquals type \"SMS\"}}\n                                Message sent to:\n                                {{maskedContactInfo}}\n                                {{/ifEquals}}\n                                \n                                {{#ifEquals type \"EMAIL\"}}\n                                Email sent to:\n                                {{maskedContactInfo}}\n                                {{/ifEquals}}\n                            </p>\n                            <div class=\"d-flex flex-column\">\n                                {{#if resendButtonLabel}}\n                                <button id=\"resend\" type=\"button\" class=\"btn btn-link mb-3\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                                    {{resendButtonLabel}}\n                                </button>\n                                {{/if}}\n                                {{#if primaryButtonLabel}}\n                                <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                                    {{primaryButtonLabel}}\n                                </button>\n                                {{/if}}\n\n                                {{#if cancelButtonLabel}}\n                                <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                                    {{cancelButtonLabel}}\n                                </button>\n                                {{/if}}\n                            </div>\n                        </form>\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">\n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                        <h1 id=\"title\" class=\"text-center mb-4\">\n                            {{#ifEquals type \"SMS\"}}\n                            <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                            Text Message\n                            {{/ifEquals}}\n\n                            {{#ifEquals type \"EMAIL\"}}\n                            <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                            Email\n                            {{/ifEquals}}\n\n                            {{#ifEquals type \"VOICE\"}}\n                            <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n                            Email\n                            {{/ifEquals}}\n                        </h1>\n                        <p class=\"text-muted text-center\">\n                            {{#ifEquals type \"SMS\"}}\n                            Please enter the passcode you received.\n                            {{/ifEquals}}\n\n                            {{#ifEquals type \"EMAIL\"}}\n                            Enter the passcode you received to complete email pairing.\n                            {{/ifEquals}}\n\n                            {{#ifEquals type \"VOICE\"}}\n                            Please enter the passcode you received.\n                            {{/ifEquals}}\n                        </p>\n                    \n                        <!-- Generic Error Message -->\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                        \n                        <!-- Field Validation Error Messages -->\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                        {{#if resendMessage}}\n                            <p class=\"text-info text-center\">{{resendMessage}}</p>\n                        {{/if}}\n                        \n                        <form id=\"otp-form\" data-id=\"otp-form\">\n                            <div class=\"mb-4 form-floating\">\n                                <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"6\" aria-required=\"true\" />\n                                <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                            </div>\n                            <p class=\"text-muted text-center\">\n                                {{#ifEquals type \"SMS\"}}\n                                Message sent to:\n                                {{maskedContactInfo}}\n                                {{/ifEquals}}\n                                \n                                {{#ifEquals type \"EMAIL\"}}\n                                Email sent to:\n                                {{maskedContactInfo}}\n                                {{/ifEquals}}\n                            </p>\n                            <div class=\"d-flex flex-column\">\n                                {{#if resendButtonLabel}}\n                                <button id=\"resend\" type=\"button\" class=\"btn btn-link mb-3\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                                    {{resendButtonLabel}}\n                                </button>\n                                {{/if}}\n                                {{#if primaryButtonLabel}}\n                                <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                                    {{primaryButtonLabel}}\n                                </button>\n                                {{/if}}\n\n                                {{#if cancelButtonLabel}}\n                                <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                                    {{cancelButtonLabel}}\n                                </button>\n                                {{/if}}\n                            </div>\n                        </form>\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
               },
               "customCSS": {
                 "value": ".otp-control {\n    padding-top: 0rem !important;\n    padding-bottom: 0rem !important;\n    font-size: 17px;\n}"
@@ -3560,14 +3560,8 @@
               "resendMessage": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"One-time passcode resent\"\n      }\n    ]\n  }\n]"
               },
-              "email": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.eh45uuo9ep.payload.output.email}}\",\n        \"tooltip\": \"{{local.eh45uuo9ep.payload.output.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
               "phone": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"phone\",\n        \"data\": \"{{local.dg26uv57lk.payload.output.phone}}\",\n        \"tooltip\": \"{{local.dg26uv57lk.payload.output.phone}}\",\n        \"children\": [\n          {\n            \"text\": \"phone\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "deviceType": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"deviceType\",\n        \"data\": \"{{local.eh45uuo9ep.payload.output.deviceType}}\",\n        \"tooltip\": \"{{local.eh45uuo9ep.payload.output.deviceType}}\",\n        \"children\": [\n          {\n            \"text\": \"deviceType\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
               "p1UserId": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"p1UserId\",\n        \"data\": \"{{local.dg26uv57lk.payload.output.p1UserId}}\",\n        \"tooltip\": \"{{local.dg26uv57lk.payload.output.p1UserId}}\",\n        \"children\": [\n          {\n            \"text\": \"p1UserId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
@@ -3899,6 +3893,9 @@
               },
               "nodeTitle": {
                 "value": "Return PingOne Success"
+              },
+              "oeInteractionCacheExpire": {
+                "value": true
               }
             }
           },
@@ -4081,6 +4078,9 @@
               },
               "backgroundColor": {
                 "value": "#9dc967ff"
+              },
+              "oeInteractionCacheExpire": {
+                "value": true
               }
             }
           },
@@ -4158,6 +4158,9 @@
               },
               "backgroundColor": {
                 "value": "#9dc967ff"
+              },
+              "oeInteractionCacheExpire": {
+                "value": true
               }
             }
           },
@@ -4602,6 +4605,9 @@
               },
               "nodeTitle": {
                 "value": "Return PingOne Success"
+              },
+              "oeInteractionCacheExpire": {
+                "value": true
               }
             },
             "idUnique": "3pb0p921bd"
@@ -5272,6 +5278,9 @@
               },
               "nodeDescription": {
                 "value": "Render a custom message"
+              },
+              "oeInteractionCacheExpire": {
+                "value": true
               }
             },
             "idUnique": "8rsda1hj30"
@@ -7299,7 +7308,7 @@
     }
   },
   "flowColor": "#ff661c",
-  "savedDate": 1714393399775,
+  "savedDate": 1715194633800,
   "variables": [
     {
       "context": "flowInstance",
