@@ -11,10 +11,10 @@
         "pingOneSSOConnector",
         "nodeConnector"
       ],
-      "createdDate": 1714660879177,
+      "createdDate": 1715184795198,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: May 2nd, 2024",
+      "description": "Last Updated: May 8th, 2024",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Authentication with Magic Link",
@@ -33,16 +33,16 @@
         "useCustomScript": false,
         "jsLinks": [],
         "useBetaAlgorithm": true,
-        "flowTimeoutInSeconds": 12000,
-        "flowHttpTimeoutInSeconds": 45,
+        "flowTimeoutInSeconds": 300,
+        "flowHttpTimeoutInSeconds": 15,
         "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png",
         "customTitle": "Magic Link Authentication",
         "logLevel": 2
       },
       "timeouts": "null",
-      "updatedDate": 1714660879189,
-      "flowId": "80d2ba38ec3bce4f5b295406cc50671c",
-      "versionId": 23,
+      "updatedDate": 1715184797729,
+      "flowId": "b3797f97704578ae173b5594ed7c51e2",
+      "versionId": 1,
       "graphData": {
         "elements": {
           "nodes": [
@@ -61,7 +61,7 @@
                   "subFlowId": {
                     "value": {
                       "label": "Magic Link Authentication Subflow ",
-                      "value": "bffb4efb26d0c076cf3b56d85a47d792"
+                      "value": "94a645540569018e7a35479a5cb3ea25"
                     }
                   },
                   "subFlowVersionId": {
@@ -82,8 +82,8 @@
                 }
               },
               "position": {
-                "x": 1230,
-                "y": 450
+                "x": 1234,
+                "y": 454
               },
               "group": "nodes",
               "removed": false,
@@ -115,8 +115,8 @@
                 }
               },
               "position": {
-                "x": 1350,
-                "y": 450
+                "x": 1354,
+                "y": 454
               },
               "group": "nodes",
               "removed": false,
@@ -165,8 +165,8 @@
                 "status": "configured"
               },
               "position": {
-                "x": 210,
-                "y": 270
+                "x": 214,
+                "y": 274
               },
               "group": "nodes",
               "removed": false,
@@ -189,8 +189,8 @@
                 }
               },
               "position": {
-                "x": 750,
-                "y": 450
+                "x": 754,
+                "y": 454
               },
               "group": "nodes",
               "removed": false,
@@ -232,13 +232,13 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "Flow Variables"
+                    "value": "Set Company & Logo"
                   }
                 }
               },
               "position": {
-                "x": 330,
-                "y": 450
+                "x": 334,
+                "y": 454
               },
               "group": "nodes",
               "removed": false,
@@ -255,8 +255,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 450,
-                "y": 450
+                "x": 454,
+                "y": 454
               },
               "group": "nodes",
               "removed": false,
@@ -351,8 +351,8 @@
                 "idUnique": "r2da6k8g67"
               },
               "position": {
-                "x": 630,
-                "y": 450
+                "x": 634,
+                "y": 454
               },
               "group": "nodes",
               "removed": false,
@@ -423,13 +423,16 @@
                   },
                   "textOne": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"You have successfully completed the Magic Link Authentication demo.\"\n      }\n    ]\n  }\n]"
+                  },
+                  "oeInteractionCacheExpire": {
+                    "value": true
                   }
                 },
                 "idUnique": "p3z6662uwb"
               },
               "position": {
-                "x": 1530,
-                "y": 450
+                "x": 1534,
+                "y": 454
               },
               "group": "nodes",
               "removed": false,
@@ -457,7 +460,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: May 2nd, 2024"
+                    "value": "Last Updated: May 8th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -485,8 +488,8 @@
                 "idUnique": "o2v5xhdcbc"
               },
               "position": {
-                "x": 210,
-                "y": 210
+                "x": 214,
+                "y": 214
               },
               "group": "nodes",
               "removed": false,
@@ -545,8 +548,8 @@
                 "idUnique": "lb31g4gkg6"
               },
               "position": {
-                "x": 210,
-                "y": 330
+                "x": 214,
+                "y": 334
               },
               "group": "nodes",
               "removed": false,
@@ -583,8 +586,8 @@
                 }
               },
               "position": {
-                "x": 930,
-                "y": 450
+                "x": 934,
+                "y": 454
               },
               "group": "nodes",
               "removed": false,
@@ -606,8 +609,8 @@
                 }
               },
               "position": {
-                "x": 1050,
-                "y": 450
+                "x": 1054,
+                "y": 454
               },
               "group": "nodes",
               "removed": false,
@@ -639,8 +642,8 @@
                 }
               },
               "position": {
-                "x": 1530,
-                "y": 660
+                "x": 1534,
+                "y": 664
               },
               "group": "nodes",
               "removed": false,
@@ -672,8 +675,8 @@
                 }
               },
               "position": {
-                "x": 330,
-                "y": 660
+                "x": 334,
+                "y": 664
               },
               "group": "nodes",
               "removed": false,
@@ -690,8 +693,8 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 450,
-                "y": 660
+                "x": 454,
+                "y": 664
               },
               "group": "nodes",
               "removed": false,
@@ -933,7 +936,7 @@
         }
       },
       "flowColor": "#ff661c",
-      "savedDate": 1714660879089,
+      "savedDate": 1715184795097,
       "variables": [
         {
           "context": "flowInstance",
@@ -967,7 +970,7 @@
         }
       ],
       "connections": [],
-      "parentFlowId": "80d2ba38ec3bce4f5b295406cc50671c"
+      "parentFlowId": "b3797f97704578ae173b5594ed7c51e2"
     },
     {
       "companyId": "",
@@ -982,10 +985,10 @@
         "pingOneSSOConnector",
         "variablesConnector"
       ],
-      "createdDate": 1714574023571,
-      "currentVersion": 1,
+      "createdDate": 1715184660905,
+      "currentVersion": 3,
       "customerId": "",
-      "description": "Last Updated: May 1st, 2024",
+      "description": "Imported on Thu May 02 2024 15:07:36 GMT+0000 (Coordinated Universal Time)",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -1024,7 +1027,7 @@
       "isInputSchemaSaved": true,
       "isOutputSchemaSaved": false,
       "name": "Magic Link Authentication Subflow ",
-      "publishedVersion": 1,
+      "publishedVersion": 3,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
@@ -1041,9 +1044,9 @@
         "customTitle": "Magic Link Authentication"
       },
       "timeouts": "null",
-      "updatedDate": 1714574032084,
-      "flowId": "bffb4efb26d0c076cf3b56d85a47d792",
-      "versionId": 12,
+      "updatedDate": 1715184663184,
+      "flowId": "94a645540569018e7a35479a5cb3ea25",
+      "versionId": 3,
       "graphData": {
         "elements": {
           "nodes": [
@@ -1362,6 +1365,9 @@
                         "nameDefault": "id"
                       }
                     ]
+                  },
+                  "oeInteractionCacheExpire": {
+                    "value": true
                   }
                 }
               },
@@ -2655,7 +2661,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: May 1st, 2024"
+                    "value": "Last Updated: May 8th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -3477,7 +3483,7 @@
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1714574023413,
+      "savedDate": 1715184660767,
       "variables": [
         {
           "context": "flowInstance",
