@@ -9,10 +9,10 @@
         "pingOneAuthenticationConnector",
         "nodeConnector"
       ],
-      "createdDate": 1715342415732,
+      "createdDate": 1715599609867,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: May 9th, 2024",
+      "description": "Last Updated: May 13th, 2024",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Session Main Flow",
@@ -40,8 +40,8 @@
       "trigger": {
         "type": "AUTHENTICATION"
       },
-      "updatedDate": 1715342417504,
-      "flowId": "64473d57d85d8ce715ad5fb58f10c10b",
+      "updatedDate": 1715599613695,
+      "flowId": "ddac04e7c21e5e43f1161b1a87f1083d",
       "versionId": 1,
       "graphData": {
         "elements": {
@@ -366,7 +366,7 @@
                   "subFlowId": {
                     "value": {
                       "label": "PingOne Sign On with Registration, Password Reset and Recovery",
-                      "value": "4ef6d1eccb1e939c54c68358371ab772"
+                      "value": "5665977ac74e0d7f7f934fbfa1ece05e"
                     }
                   },
                   "subFlowVersionId": {
@@ -419,7 +419,7 @@
                     "value": "Return success"
                   },
                   "nodeDescription": {
-                    "value": "Returns successful flow completion back to the PingOne application connection"
+                    "value": "Returns Successful Flow Completion Back To The PingOne Application Connection"
                   },
                   "oeInteractionCacheExpire": {
                     "value": true
@@ -467,7 +467,7 @@
                     "value": "Check for a session"
                   },
                   "nodeDescription": {
-                    "value": "Checks if the user has logged in with a password in the last 8 hours"
+                    "value": "Checks If The User Has Logged In With A Password In The Last 8 Hours"
                   }
                 }
               },
@@ -693,7 +693,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: May 9th, 2024"
+                    "value": "Last Updated: May 13th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -888,10 +888,10 @@
         }
       },
       "flowColor": "#ff661c",
-      "savedDate": 1715342415696,
+      "savedDate": 1715599609795,
       "variables": [],
       "connections": [],
-      "parentFlowId": "64473d57d85d8ce715ad5fb58f10c10b"
+      "parentFlowId": "ddac04e7c21e5e43f1161b1a87f1083d"
     },
     {
       "companyId": "",
@@ -905,10 +905,10 @@
         "httpConnector",
         "variablesConnector"
       ],
-      "createdDate": 1715340710934,
+      "createdDate": 1715599555787,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Imported on Thu May 09 2024 16:30:01 GMT+0000 (Coordinated Universal Time)",
+      "description": "Last Updated: May 13th, 2024",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -943,8 +943,8 @@
       },
       "timeouts": "null",
       "trigger": {},
-      "updatedDate": 1715340789092,
-      "flowId": "4ef6d1eccb1e939c54c68358371ab772",
+      "updatedDate": 1715599572674,
+      "flowId": "5665977ac74e0d7f7f934fbfa1ece05e",
       "versionId": 1,
       "graphData": {
         "elements": {
@@ -2328,6 +2328,9 @@
                   },
                   "text": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"We've sent a verification code to your email address. Please verify your email to complete your account setup.\"\n      }\n    ]\n  }\n]"
+                  },
+                  "nodeDescription": {
+                    "value": "Capture Verification Code Or Resend"
                   }
                 },
                 "idUnique": "mc0qvitm1n"
@@ -2417,7 +2420,7 @@
                     "value": "Validate verification code"
                   },
                   "nodeDescription": {
-                    "value": "Sends the verification code to PingOne to validate"
+                    "value": "Sends The Verification Code To PingOne To Validate"
                   },
                   "verifyEmail_localizedErrors": {
                     "properties": {
@@ -2682,6 +2685,9 @@
                         "id": "8982ybbt5z"
                       }
                     ]
+                  },
+                  "nodeDescription": {
+                    "value": "Check Which Button Was Clicked"
                   }
                 }
               },
@@ -3021,7 +3027,10 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "Set Company & Logo"
+                    "value": "companyName & companyLogo"
+                  },
+                  "nodeDescription": {
+                    "value": "Set variables used in flow execution"
                   }
                 },
                 "idUnique": "mbb1ucl3yi"
@@ -3485,7 +3494,7 @@
                     ]
                   },
                   "nodeDescription": {
-                    "value": "Enter the recovery code and set new password"
+                    "value": "Enter The Recovery Code and Set New Password"
                   },
                   "inputSchema": {
                     "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"userMessage\": {\n      \"type\": \"string\",\n      \"displayName\": \"User Message\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"resendButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Resend Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"updatePasswordButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Update Password Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"cancelButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Cancel Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
@@ -3566,7 +3575,7 @@
                     ]
                   },
                   "nodeDescription": {
-                    "value": "Check which button was clicked"
+                    "value": "Check Which Button Was Clicked"
                   }
                 },
                 "isDisabled": false,
@@ -3900,7 +3909,7 @@
                     "value": "Verify Passwords Match"
                   },
                   "nodeDescription": {
-                    "value": "Verify new passwords match before setting"
+                    "value": "Verify New Passwords Match Before Setting"
                   },
                   "code": {
                     "value": "// Test to ensure passwords match\nmodule.exports = a = async ({ params }) => {\n\tconst newPassword = params.newPassword;\n\tconst verifyNewPassword = params.verifyNewPassword;\n\n\tif (!newPassword || !verifyNewPassword || (newPassword !== verifyNewPassword)) {\n\t\treturn false;\n\t}\n\n\treturn { \"success\": true};\n}"
@@ -4016,10 +4025,13 @@
                   "customCSS": {},
                   "customScript": {},
                   "nodeTitle": {
-                    "value": "Reset Form"
+                    "value": "Reset Form for Resend"
                   },
                   "formFieldsList": {
                     "value": []
+                  },
+                  "nodeDescription": {
+                    "value": "Re-initialize Verification Code Form"
                   }
                 },
                 "idUnique": "g9fybbwj88"
@@ -4125,7 +4137,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Password Recovery\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeDescription": {
-                    "value": "Prompt for email address"
+                    "value": "Prompt For Email To Send Instructions To Reset Password"
                   },
                   "continueButtonLabel": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
@@ -4320,6 +4332,9 @@
                   },
                   "outputSchema": {
                     "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\n\t\t}\n\t}\n}"
+                  },
+                  "nodeDescription": {
+                    "value": "If Account Present, Check If Enabled"
                   }
                 },
                 "idUnique": "05cqt8cjux"
@@ -4356,7 +4371,7 @@
                     "value": "Account Disabled"
                   },
                   "nodeDescription": {
-                    "value": "Unable to initiate account recovery"
+                    "value": "Unable To Initiate Account Recovery"
                   }
                 },
                 "idUnique": "7yeg055kgh"
@@ -4529,7 +4544,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeDescription": {
-                    "value": "Success message with animated checkmark"
+                    "value": "Success Message With Animated Checkmark"
                   },
                   "textOne": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your password has been successfully updated.\"\n      }\n    ]\n  }\n]"
@@ -4694,6 +4709,9 @@
                   },
                   "code": {
                     "value": "module.exports = a = async ({params}) => {\n\tconst { p1UserId } = params;\n\n\tif (!p1UserId) {\n\t\treturn false;\n\t}\n\n\treturn \n}"
+                  },
+                  "nodeDescription": {
+                    "value": "Check If P1 User Exists"
                   }
                 },
                 "idUnique": "v59l69b4w2"
@@ -4768,6 +4786,9 @@
                   },
                   "code": {
                     "value": "/**\n * Masks a phone number or email address.\n * @param  {Object} params - The parameters object containing an email or phone.\n * @returns {Object} An object with a maskedValue property containing the masked email or phone.\n */\nmodule.exports = function maskContactInfo({ params: { email, phone } = {} }) {\n    let maskedValue;\n\n    if (email) {\n        const [username, domain] = email.split(\"@\");\n        const maskedUsername =\n            username.charAt(0) + \"*\".repeat(username.length - 2) + username.slice(-1);\n        maskedValue = `${maskedUsername}@${domain}`;\n    } else if (phone) {\n        const numericPhoneNumber = phone.replace(/\\D/g, '');\n        maskedValue = `***-***-${numericPhoneNumber.slice(-4)}`;\n    }\n\n    return { maskedValue };\n}"
+                  },
+                  "nodeDescription": {
+                    "value": "Mask Email Or Phone Using **** Characters"
                   }
                 },
                 "idUnique": "7n399jfuq4"
@@ -4895,10 +4916,13 @@
                   "customCSS": {},
                   "customScript": {},
                   "nodeTitle": {
-                    "value": "Reset Form"
+                    "value": "Reset Form for Resend"
                   },
                   "formFieldsList": {
                     "value": []
+                  },
+                  "nodeDescription": {
+                    "value": "Re-initialize Verification Code Form"
                   }
                 },
                 "idUnique": "pn2oeba1bn"
@@ -5093,7 +5117,7 @@
                     ]
                   },
                   "nodeDescription": {
-                    "value": "Collect name, email, password"
+                    "value": "Collect Name, Email, Password"
                   },
                   "inputSchema": {
                     "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"title\"\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"textOne\"\n    },\n    \"textTwo\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text Two\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"registerButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Register Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"cancelButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Cancel Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
@@ -5163,7 +5187,7 @@
                     ]
                   },
                   "nodeDescription": {
-                    "value": "Check which button was clicked"
+                    "value": "Check Which Button Was Clicked"
                   }
                 },
                 "isDisabled": false,
@@ -5309,6 +5333,9 @@
                   },
                   "nodeTitle": {
                     "value": "Unable to Create User"
+                  },
+                  "nodeDescription": {
+                    "value": "User Create Error Message"
                   }
                 },
                 "idUnique": "f6c6klxo7e"
@@ -5387,7 +5414,7 @@
                     "value": "useDefaultPopulation"
                   },
                   "nodeDescription": {
-                    "value": "Creates the PingOne account for the user"
+                    "value": "Creates The PingOne User Account"
                   },
                   "populationId": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"p1PopulationId\",\n        \"data\": \"{{global.variables.p1PopulationId}}\",\n        \"tooltip\": \"{{global.variables.p1PopulationId}}\",\n        \"children\": [\n          {\n            \"text\": \"p1PopulationId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
@@ -5522,7 +5549,9 @@
                   "title": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"Success!\"\n      }\n    ]\n  }\n]"
                   },
-                  "nodeDescription": {},
+                  "nodeDescription": {
+                    "value": "Notify User Account Is Successfully Created"
+                  },
                   "textOne": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your account has been successfully created.\"\n      }\n    ]\n  }\n]"
                   },
@@ -5687,6 +5716,9 @@
                   },
                   "type": {
                     "value": "boolean"
+                  },
+                  "nodeDescription": {
+                    "value": "Verify account is enabled"
                   }
                 },
                 "idUnique": "btkwmij5zk"
@@ -5722,7 +5754,9 @@
                   "nodeTitle": {
                     "value": "Account Disabled"
                   },
-                  "nodeDescription": {}
+                  "nodeDescription": {
+                    "value": "Disabled account message"
+                  }
                 },
                 "idUnique": "osm0v53dqs"
               },
@@ -6196,7 +6230,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: May 9th, 2024"
+                    "value": "Last Updated: May 13th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -8685,7 +8719,7 @@
       },
       "inputSchema": [],
       "flowColor": "#CACED3",
-      "savedDate": 1715340788729,
+      "savedDate": 1715599555380,
       "variables": [
         {
           "context": "flowInstance",
