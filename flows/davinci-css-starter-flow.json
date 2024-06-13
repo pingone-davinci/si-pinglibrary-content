@@ -1,12 +1,14 @@
 {
-  "companyId": "edcc3f46-49cc-4176-bfcb-849afb268c1b",
+  "companyId": "",
   "authTokenExpireIds": [],
   "connectorIds": [
-    "annotationConnector"
+    "annotationConnector",
+    "variablesConnector"
   ],
-  "createdDate": 1687268239647,
-  "currentVersion": 2,
-  "customerId": "f3e47d945ae971a4b4142ec75012d155",
+  "createdDate": 1718291739930,
+  "currentVersion": 1,
+  "customerId": "",
+  "deployedDate": 1718291744977,
   "description": "Empty flow containing Ping's CSS resources",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
@@ -23,11 +25,13 @@
       "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css",
       "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.11/icons.css"
     ],
-    "scrubSensitiveInfo": false
+    "scrubSensitiveInfo": false,
+    "customFaviconLink": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
   },
-  "updatedDate": 1687268239652,
-  "flowId": "650739bf8a9c913a53ca068bfef39434",
-  "versionId": 2,
+  "timeouts": "null",
+  "updatedDate": 1718291745014,
+  "flowId": "81ce9e97afd36055341dc23732d2fafc",
+  "versionId": 1,
   "graphData": {
     "elements": {
       "nodes": [
@@ -51,7 +55,7 @@
                 "value": "__FLOW_TITLE__"
               },
               "width": {
-                "value": 1800
+                "value": 1200
               },
               "fontStyle": {
                 "value": "bold"
@@ -71,6 +75,115 @@
           "position": {
             "x": 214,
             "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "l6d2fkhv5r",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffffffff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Last Updated: __DATE__, 2024"
+              },
+              "width": {
+                "value": 240
+              },
+              "fontSize": {
+                "value": 14
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 8
+              },
+              "strokeEnabled": {
+                "value": false
+              },
+              "strokeWidth": {
+                "value": 1
+              },
+              "strokeColor": {
+                "value": "#181818ff"
+              }
+            },
+            "status": "configured",
+            "idUnique": "o2v5xhdcbc"
+          },
+          "position": {
+            "x": 210,
+            "y": 150
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1bmthugfwc",
+            "nodeType": "CONNECTION",
+            "connectionId": "06922a684039827499bdbdd97f49827b",
+            "connectorId": "variablesConnector",
+            "name": "Variables",
+            "label": "Variables",
+            "status": "configured",
+            "capabilityName": "saveValue",
+            "type": "trigger",
+            "properties": {
+              "saveVariables": {
+                "value": [
+                  {
+                    "name": "companyName",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Ping Identity\"\n      }\n    ]\n  }\n]",
+                    "key": 0.2827866731051578,
+                    "label": "companyName (string - flowInstance)",
+                    "type": "string"
+                  },
+                  {
+                    "name": "companyLogo",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.3651977481717872,
+                    "label": "companyLogo (string - flowInstance)",
+                    "type": "string"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Set Company & Logo"
+              },
+              "nodeDescription": {
+                "value": "Used for Form Logo and Text"
+              }
+            },
+            "idUnique": "3ugzhfz3ne"
+          },
+          "position": {
+            "x": 300,
+            "y": 390
           },
           "group": "nodes",
           "removed": false,
@@ -101,7 +214,40 @@
     }
   },
   "flowColor": "#ff661c",
-  "savedDate": 1687268239633,
-  "variables": [],
+  "savedDate": 1718291739894,
+  "variables": [
+    {
+      "context": "flowInstance",
+      "createdDate": 1717758717477,
+      "fields": {
+        "displayName": "",
+        "max": 2000,
+        "min": 0,
+        "mutable": true,
+        "type": "string"
+      },
+      "id": "e58e8b60-51b3-40d7-a18e-7f9d92f50028",
+      "type": "property",
+      "visibility": "private",
+      "name": "companyLogo##SK##flowInstance",
+      "companyId": "6ce2e4dd-8fbd-402e-8bae-f8f1c30a567d"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1717758590601,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "id": "d395d148-8467-4cdd-94d6-18c65eb01248",
+      "type": "property",
+      "visibility": "private",
+      "name": "companyName##SK##flowInstance",
+      "companyId": "6ce2e4dd-8fbd-402e-8bae-f8f1c30a567d"
+    }
+  ],
   "connections": []
 }
