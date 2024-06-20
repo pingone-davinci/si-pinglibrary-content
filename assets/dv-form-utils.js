@@ -26,75 +26,6 @@
  */
 
 class DaVinciFormUtils {
-  /**
-   * Adds custom validation messages and handles form submission.
-   */
-  static addCustomValidation() {
-    const form = document.querySelector("form.needs-validation");
-    const submitButton = form.querySelector('[data-skbuttontype="form-submit"]');
-
-    const setValidationMessage = (element) => {
-      let message = "";
-      if (element.validity.valueMissing) {
-        message = element.getAttribute("data-required-message") || "This field is required.";
-      } else if (element.validity.typeMismatch) {
-        message = element.getAttribute("data-type-mismatch-message") || "Please enter a valid value.";
-      } else if (element.validity.patternMismatch) {
-        message = element.getAttribute("data-pattern-mismatch-message") || "Please follow the required pattern.";
-      } else if (element.validity.tooShort) {
-        message = element.getAttribute("data-too-short-message") || `Value is too short. Minimum length is ${element.minLength} characters.`;
-      } else if (element.validity.tooLong) {
-        message = element.getAttribute("data-too-long-message") || `Value is too long. Maximum length is ${element.maxLength} characters.`;
-      } else {
-        message = "";
-      }
-      element.setCustomValidity(message);
-
-      // Update custom-invalid-feedback div with the custom message
-      let feedbackElement = element.nextElementSibling;
-      while (feedbackElement && !feedbackElement.classList.contains("custom-invalid-feedback")) {
-        feedbackElement = feedbackElement.nextElementSibling;
-      }
-
-      if (feedbackElement && feedbackElement.classList.contains("custom-invalid-feedback")) {
-        feedbackElement.textContent = message;
-        feedbackElement.style.display = message ? "block" : "none";
-      } else {
-        console.log("Unable to locate element for", element);
-      }
-    };
-
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      let allValid = true;
-      let invalidElements = [];
-
-      // Loop through each form control
-      Array.from(form.elements).forEach((element) => {
-        if (element.willValidate) {
-          setValidationMessage(element);
-          if (element.checkValidity()) {
-            element.classList.remove("custom-invalid");
-          } else {
-            element.classList.add("custom-invalid");
-            invalidElements.push(element);
-            allValid = false;
-          }
-        }
-      });
-
-      if (allValid) {
-        // Submit the form if all fields are valid
-        submitButton.click();
-      } else {
-        // Focus on the first invalid field
-        if (invalidElements.length > 0) {
-          invalidElements[0].focus();
-        }
-      }
-    });
-  }
 
   /**
    * Adds a red asterisk to required fields' labels to indicate they are mandatory.
@@ -195,7 +126,7 @@ class DaVinciFormUtils {
    * Adds custom validation messages and handles form submission.
    * V2 version will add onChange listener to re-validate on input change
    */
-  static addCustomValidationV2() {
+  static addCustomValidation() {
     const form = document.querySelector("form.needs-validation");
     const submitButton = form.querySelector('[data-skbuttontype="form-submit"]');
 
@@ -218,12 +149,20 @@ class DaVinciFormUtils {
       }
       element.setCustomValidity(message);
 
-      // Update custom-invalid-feedback div with the custom message
+      // Ensure the feedback element exists
       let feedbackElement = element.nextElementSibling;
       while (feedbackElement && !feedbackElement.classList.contains("custom-invalid-feedback")) {
         feedbackElement = feedbackElement.nextElementSibling;
       }
 
+      if (!feedbackElement) {
+        feedbackElement = document.createElement("div");
+        feedbackElement.classList.add("custom-invalid-feedback", "mt-1");
+        element.insertAdjacentElement("afterend", feedbackElement);
+        console.log("inserted")
+      }
+
+      // Update custom-invalid-feedback div with the custom message
       if (feedbackElement && feedbackElement.classList.contains("custom-invalid-feedback")) {
         feedbackElement.textContent = message;
         feedbackElement.style.display = message ? "block" : "none";
