@@ -126,7 +126,7 @@ class DaVinciFormUtils {
    * Adds custom validation messages and handles form submission.
    * V2 version will add onChange listener to re-validate on input change
    */
-  static addCustomValidation() {
+  static addCustomValidationV2() {
     const form = document.querySelector("form.needs-validation");
     const submitButton = form.querySelector('[data-skbuttontype="form-submit"]');
 
@@ -149,26 +149,19 @@ class DaVinciFormUtils {
       }
       element.setCustomValidity(message);
 
-      // Ensure the feedback element exists
-      let feedbackElement = element.nextElementSibling;
-      while (feedbackElement && !feedbackElement.classList.contains("custom-invalid-feedback")) {
-        feedbackElement = feedbackElement.nextElementSibling;
-      }
+      // Ensure the feedback element exists as the last child of the parent container
+      const parent = element.parentNode;
+      let feedbackElement = parent.querySelector(".custom-invalid-feedback");
 
       if (!feedbackElement) {
         feedbackElement = document.createElement("div");
         feedbackElement.classList.add("custom-invalid-feedback", "mt-1");
-        element.insertAdjacentElement("afterend", feedbackElement);
-        console.log("inserted")
+        parent.appendChild(feedbackElement);
       }
 
       // Update custom-invalid-feedback div with the custom message
-      if (feedbackElement && feedbackElement.classList.contains("custom-invalid-feedback")) {
-        feedbackElement.textContent = message;
-        feedbackElement.style.display = message ? "block" : "none";
-      } else {
-        console.log("Unable to locate element for", element);
-      }
+      feedbackElement.textContent = message;
+      feedbackElement.style.display = message ? "block" : "none";
     };
 
     const validateOnChange = (element) => {
