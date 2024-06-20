@@ -161,7 +161,11 @@ class DaVinciFormUtils {
 
       // Update custom-invalid-feedback div with the custom message
       feedbackElement.textContent = message;
-      feedbackElement.style.display = message ? "block" : "none";
+      if (message) {
+        feedbackElement.classList.add("show");
+      } else {
+        feedbackElement.classList.remove("show");
+      }
     };
 
     const validateOnChange = (element) => {
