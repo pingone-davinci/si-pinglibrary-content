@@ -126,7 +126,7 @@ class DaVinciFormUtils {
    * Adds custom validation messages and handles form submission.
    * V2 version will add onChange listener to re-validate on input change
    */
-  static addCustomValidationV2() {
+  static addCustomValidation() {
     const form = document.querySelector("form.needs-validation");
     const submitButton = form.querySelector('[data-skbuttontype="form-submit"]');
 
