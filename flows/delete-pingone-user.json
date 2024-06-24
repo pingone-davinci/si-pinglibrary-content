@@ -7,14 +7,14 @@
     "annotationConnector",
     "nodeConnector",
     "httpConnector",
-    "functionsConnector",
-    "variablesConnector"
+    "variablesConnector",
+    "functionsConnector"
   ],
-  "createdDate": 1715183686060,
+  "createdDate": 1719252333010,
   "currentVersion": 1,
   "customerId": "",
-  "deployedDate": 1715183687934,
-  "description": "Last Updated: May 8th, 2024",
+  "deployedDate": 1719252334178,
+  "description": "Last Updated: June 24th, 2024",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
   "name": "Delete PingOne User",
@@ -34,8 +34,8 @@
     "logLevel": 2
   },
   "timeouts": "null",
-  "updatedDate": 1715183687961,
-  "flowId": "a3cf349bdae6b42c15942ad1468590f1",
+  "updatedDate": 1719252334223,
+  "flowId": "46a798665f826583af737976a07f3e3f",
   "versionId": 1,
   "graphData": {
     "elements": {
@@ -74,8 +74,8 @@
             "idUnique": "bx1c4yd3j7"
           },
           "position": {
-            "x": 934,
-            "y": 514
+            "x": 890.7283732699068,
+            "y": 501.0347099643226
           },
           "group": "nodes",
           "removed": false,
@@ -117,8 +117,8 @@
             "idUnique": "0re8wbsb52"
           },
           "position": {
-            "x": 1234,
-            "y": 514
+            "x": 1196.9162515814373,
+            "y": 501.0347099643226
           },
           "group": "nodes",
           "removed": false,
@@ -146,8 +146,8 @@
             }
           },
           "position": {
-            "x": 1354,
-            "y": 514
+            "x": 1336.09255990486,
+            "y": 501.0347099643226
           },
           "group": "nodes",
           "removed": false,
@@ -164,8 +164,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 754,
-            "y": 514
+            "x": 723.7168032817992,
+            "y": 501.0347099643226
           },
           "group": "nodes",
           "removed": false,
@@ -203,8 +203,8 @@
             }
           },
           "position": {
-            "x": 1834,
-            "y": 904
+            "x": 1503.1041298929676,
+            "y": 668.04627995243
           },
           "group": "nodes",
           "removed": false,
@@ -232,10 +232,10 @@
                 "value": "#ffffffff"
               },
               "annotation": {
-                "value": "PingOne User Delete Example"
+                "value": "Delete PingOne User"
               },
               "width": {
-                "value": 2000
+                "value": 1700
               },
               "fontStyle": {
                 "value": "bold"
@@ -253,8 +253,8 @@
             "status": "configured"
           },
           "position": {
-            "x": 244,
-            "y": 274
+            "x": 222.6820933174767,
+            "y": 278.3526166468459
           },
           "group": "nodes",
           "removed": false,
@@ -279,8 +279,8 @@
             }
           },
           "position": {
-            "x": 1054,
-            "y": 514
+            "x": 1029.9046815933298,
+            "y": 501.0347099643226
           },
           "group": "nodes",
           "removed": false,
@@ -309,18 +309,18 @@
               "p1UserId": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.id}}\",\n        \"tooltip\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
-              "maskedEmail": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"maskedValue\",\n        \"data\": \"{{local.u93edgz04f.payload.output.maskedValue}}\",\n        \"tooltip\": \"{{local.u93edgz04f.payload.output.maskedValue}}\",\n        \"children\": [\n          {\n            \"text\": \"maskedValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
               "nodeTitle": {
                 "value": "Go to Verify and Delete"
+              },
+              "email": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.email}}\",\n        \"tooltip\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               }
             },
             "idUnique": "819yow4wmu"
           },
           "position": {
-            "x": 1834,
-            "y": 514
+            "x": 1503.1041298929676,
+            "y": 501.0347099643226
           },
           "group": "nodes",
           "removed": false,
@@ -342,8 +342,8 @@
             }
           },
           "position": {
-            "x": 1954,
-            "y": 514
+            "x": 1614.445176551706,
+            "y": 501.0347099643226
           },
           "group": "nodes",
           "removed": false,
@@ -367,7 +367,7 @@
             "type": "trigger",
             "properties": {
               "textOne": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"This demonstration shows how to use self-service to delete a PingOne user account.\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"This demonstration illustrates how to utilize self-service to delete a PingOne user account.\"\n      }\n    ]\n  }\n]"
               },
               "customHTML": {
                 "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">\n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                        {{#if title}}\n                        <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n                        {{/if}}\n\n                        {{#if textOne}}\n                        <p class=\"text-muted text-center\">{{textOne}}</p>\n                        {{/if}}\n\n                        {{#if textTwo}}\n                        <p class=\"text-muted text-center\">{{textTwo}}</p>\n                        {{/if}}\n\n                        <!-- Generic Error Message -->\n                        <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"\n                            aria-live=\"assertive\"></p>\n\n                        <!-- Field Validation Error Messages -->\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"emailError\" data-skerrorid=\"email\"\n                            data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"passwordError\"\n                            data-skerrorid=\"password\" data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n                        {{#if userMessage}}\n                        <p class=\"text-info text-center fade\" aria-live=\"assertive\">{{userMessage}}</p>\n                        {{/if}}\n\n                        <form id=\"signOnForm\" data-id=\"signOnForm\">\n                            <div class=\"mb-4 form-floating\">\n                                <input class=\"form-control\" type=\"text\" id=\"email\" name=\"email\" placeholder=\"Email Address\"\n                                    autocomplete=\"off\" value=\"\" data-id=\"email-input\" aria-describedby=\"emailLabel\" />\n                                <label id=\"emailLabel\" class=\"form-label\" for=\"email\">Email Address</label>\n                            </div>\n                            <div id=\"passwordDiv\" class=\"mb-4 form-floating\">\n                                <input class=\"form-control\" type=\"password\" id=\"password\" name=\"password\"\n                                    placeholder=\"Password\" autocomplete=\"off\" value=\"\" aria-describedby=\"passwordLabel\"\n                                    data-id=\"password-input\" />\n                                <label id=\"passwordLabel\" class=\"form-label\" for=\"password\">Password</label>\n                            </div>\n                            <div class=\"d-flex flex-column\">\n                                {{#if continueButtonLabel}}\n                                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\"\n                                    data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"signOnForm\"\n                                    id=\"btnSignOn\" data-skbuttonvalue=\"CONTINUE\">\n                                    {{continueButtonLabel}}\n                                </button>\n                                {{/if}}\n                            </div>\n                        </form>\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
@@ -442,7 +442,7 @@
                 "value": {}
               },
               "title": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Delete PingOne User Example\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Delete Account\"\n      }\n    ]\n  }\n]"
               },
               "continueButtonLabel": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
@@ -453,8 +453,8 @@
             }
           },
           "position": {
-            "x": 634,
-            "y": 514
+            "x": 612.375756623061,
+            "y": 501.0347099643226
           },
           "group": "nodes",
           "removed": false,
@@ -471,106 +471,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 454,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "rbprycaw75",
-            "nodeType": "CONNECTION",
-            "connectionId": "de650ca45593b82c49064ead10b9fe17",
-            "connectorId": "functionsConnector",
-            "name": "Functions",
-            "label": "Functions",
-            "status": "configured",
-            "capabilityName": "AEqualsB",
-            "type": "trigger",
-            "properties": {
-              "leftValueA": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"enabled\",\n        \"data\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.enabled}}\",\n        \"tooltip\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.enabled}}\",\n        \"children\": [\n          {\n            \"text\": \"enabled\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Is Account Disabled?"
-              },
-              "rightValueB": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"false\"\n      }\n    ]\n  }\n]"
-              },
-              "type": {
-                "value": "boolean"
-              }
-            },
-            "idUnique": "tv8yhhw2vy"
-          },
-          "position": {
-            "x": 1534,
-            "y": 694
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "vmkp56rgq7",
-            "nodeType": "CONNECTION",
-            "connectionId": "53ab83a4a4ab919d9f2cb02d9e111ac8",
-            "connectorId": "errorConnector",
-            "name": "Error Message",
-            "label": "Error Message",
-            "status": "configured",
-            "capabilityName": "customErrorMessage",
-            "type": "action",
-            "properties": {
-              "errorMessage": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your account is disabled, account deletion unavailable.\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Account Disabled"
-              },
-              "nodeDescription": {}
-            },
-            "idUnique": "6ysy9wttbd"
-          },
-          "position": {
-            "x": 1834,
-            "y": 694
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "j6iij2u9um",
-            "nodeType": "EVAL",
-            "properties": {
-              "0nvm6vkdua": {
-                "value": "anyTriggersFalse"
-              }
-            }
-          },
-          "position": {
-            "x": 1654,
-            "y": 694
+            "x": 417.5289249702688,
+            "y": 501.0347099643226
           },
           "group": "nodes",
           "removed": false,
@@ -646,9 +548,6 @@
               "textOne": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your account has been successfully deleted.\"\n      }\n    ]\n  }\n]"
               },
-              "textTwo": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"You may safely close this window.\"\n      }\n    ]\n  }\n]"
-              },
               "oeInteractionCacheExpire": {
                 "value": true
               }
@@ -656,8 +555,8 @@
             "idUnique": "p3z6662uwb"
           },
           "position": {
-            "x": 2134,
-            "y": 514
+            "x": 1809.2920082044982,
+            "y": 501.0347099643226
           },
           "group": "nodes",
           "removed": false,
@@ -685,7 +584,7 @@
                 "value": "#000000"
               },
               "annotation": {
-                "value": "Last Updated: May 8th, 2024"
+                "value": "Last Updated: June 24th, 2024"
               },
               "width": {
                 "value": 240
@@ -713,8 +612,8 @@
             "idUnique": "o2v5xhdcbc"
           },
           "position": {
-            "x": 214,
-            "y": 214
+            "x": 222.6820933174767,
+            "y": 222.6820933174767
           },
           "group": "nodes",
           "removed": false,
@@ -762,8 +661,8 @@
             "idUnique": "mbb1ucl3yi"
           },
           "position": {
-            "x": 334,
-            "y": 514
+            "x": 306.1878783115305,
+            "y": 501.0347099643226
           },
           "group": "nodes",
           "removed": false,
@@ -781,8 +680,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 754,
-            "y": 1294
+            "x": 695.8815416171146,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -811,7 +710,7 @@
               "rightValueMultiple": {
                 "value": [
                   {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"DELETE\"\n      }\n    ]\n  }\n]",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"CONTINUE\"\n      }\n    ]\n  }\n]",
                     "id": "275o62s1jk"
                   },
                   {
@@ -826,8 +725,8 @@
             }
           },
           "position": {
-            "x": 934,
-            "y": 1294
+            "x": 862.8931116052222,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -844,8 +743,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1054,
-            "y": 1474
+            "x": 1002.0694199286452,
+            "y": 1169.0809899167527
           },
           "group": "nodes",
           "removed": false,
@@ -880,8 +779,8 @@
             }
           },
           "position": {
-            "x": 1234,
-            "y": 1294
+            "x": 1169.0809899167527,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -898,8 +797,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1054,
-            "y": 1294
+            "x": 1002.0694199286452,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -917,8 +816,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1954,
-            "y": 1294
+            "x": 1892.797793198552,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -952,12 +851,40 @@
               },
               "nodeTitle": {
                 "value": "Check Verification Code"
+              },
+              "verifyEmail_localizedErrors": {
+                "properties": {
+                  "en": {
+                    "value": [
+                      {
+                        "key": "unexpectedError",
+                        "value": ""
+                      },
+                      {
+                        "key": "notFound",
+                        "value": ""
+                      },
+                      {
+                        "key": "accessFailed",
+                        "value": ""
+                      },
+                      {
+                        "key": "noUserMatch",
+                        "value": ""
+                      },
+                      {
+                        "key": "invalidValue",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Invalid passcode.\"\n      }\n    ]\n  }\n]"
+                      }
+                    ]
+                  }
+                }
               }
             }
           },
           "position": {
-            "x": 2434,
-            "y": 1294
+            "x": 2365.99724149819,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -980,8 +907,8 @@
             }
           },
           "position": {
-            "x": 2554,
-            "y": 1294
+            "x": 2505.173549821613,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -1016,8 +943,8 @@
             }
           },
           "position": {
-            "x": 2734,
-            "y": 1294
+            "x": 2672.18511980972,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -1040,8 +967,8 @@
             }
           },
           "position": {
-            "x": 2854,
-            "y": 1294
+            "x": 2811.3614281331434,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -1073,8 +1000,8 @@
             }
           },
           "position": {
-            "x": 2734,
-            "y": 1474
+            "x": 2672.18511980972,
+            "y": 1169.0809899167527
           },
           "group": "nodes",
           "removed": false,
@@ -1102,7 +1029,7 @@
                 "value": "#000000"
               },
               "annotation": {
-                "value": "Input Schema: userid, maskedEmail"
+                "value": "Input Schema: email, maskedEmail"
               },
               "width": {
                 "value": 400
@@ -1130,8 +1057,8 @@
             "idUnique": "940rm8qjb1"
           },
           "position": {
-            "x": 244,
-            "y": 1144
+            "x": 222.6820933174767,
+            "y": 835.0578499405376
           },
           "group": "nodes",
           "removed": false,
@@ -1161,8 +1088,8 @@
             "idUnique": "zup2n9k5b6"
           },
           "position": {
-            "x": 3034,
-            "y": 1294
+            "x": 2978.372998121251,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -1198,8 +1125,8 @@
             "idUnique": "w0gd18oyq8"
           },
           "position": {
-            "x": 1234,
-            "y": 1474
+            "x": 1169.0809899167527,
+            "y": 1169.0809899167527
           },
           "group": "nodes",
           "removed": false,
@@ -1223,7 +1150,7 @@
             "type": "trigger",
             "properties": {
               "buttonLabel": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Yes, Delete My Account\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
               },
               "inputSchema": {
                 "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"title\"\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"textOne\"\n    },\n    \"textTwo\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text Two\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"textTwo\"\n    },\n    \"buttonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"cancelButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Cancel Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
@@ -1232,7 +1159,7 @@
                 "value": {}
               },
               "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"feedbackError\" data-id=\"feedback\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <div class=\"d-flex flex-column\">\n              {{#if buttonLabel}}\n              <button data-id=\"next-button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"next-event\"  data-skbuttonvalue=\"DELETE\" id=\"btnNext\">\n                {{buttonLabel}}\n              </button>\n              {{/if}}\n              {{#if cancelButtonLabel}}\n              <button type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                data-skbuttonvalue=\"CANCEL\" id=\"btnCancel\">\n                {{cancelButtonLabel}}\n              </button>\n              {{/if}}\n            </div>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"feedbackError\" data-id=\"feedback\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <div class=\"d-flex flex-column\">\n              {{#if buttonLabel}}\n              <button data-id=\"next-button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"next-event\"  data-skbuttonvalue=\"CONTINUE\" id=\"btnNext\">\n                {{buttonLabel}}\n              </button>\n              {{/if}}\n              {{#if cancelButtonLabel}}\n              <button type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                data-skbuttonvalue=\"CANCEL\" id=\"btnCancel\">\n                {{cancelButtonLabel}}\n              </button>\n              {{/if}}\n            </div>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
               },
               "customCSS": {
                 "value": ""
@@ -1247,7 +1174,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Confirm Account Deletion\"\n      }\n    ]\n  }\n]"
               },
               "textOne": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"To confirm your request, we'll email a one-time passcode to \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"maskedEmail\",\n        \"data\": \"{{local.1614a9n6bn.payload.output.maskedEmail}}\",\n        \"tooltip\": \"{{local.1614a9n6bn.payload.output.maskedEmail}}\",\n        \"children\": [\n          {\n            \"text\": \"maskedEmail\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"To verify your request, you will receive a one-time passcode (OTP). \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               },
               "formFieldsList": {
                 "value": [
@@ -1262,9 +1189,6 @@
                 "value": "Verify Delete Form"
               },
               "nodeDescription": {},
-              "textTwo": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Use this code in the next screen to complete account deletion\"\n      }\n    ]\n  }\n]"
-              },
               "cancelButtonLabel": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Cancel\"\n      }\n    ]\n  }\n]"
               }
@@ -1272,8 +1196,8 @@
             "idUnique": "16fkjw5hoo"
           },
           "position": {
-            "x": 634,
-            "y": 1294
+            "x": 584.5404949583764,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -1301,7 +1225,7 @@
                 "value": "#ffffffff"
               },
               "annotation": {
-                "value": "Verify and Delete"
+                "value": "Verify and Delete User"
               },
               "width": {
                 "value": 2900
@@ -1322,8 +1246,8 @@
             "status": "configured"
           },
           "position": {
-            "x": 244,
-            "y": 1084
+            "x": 222.6820933174767,
+            "y": 779.3873266111684
           },
           "group": "nodes",
           "removed": false,
@@ -1347,16 +1271,16 @@
             "type": "trigger",
             "properties": {
               "inputSchema": {
-                "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"p1UserId\": {\n      \"type\": \"string\",\n      \"displayName\": \"PingOne User Id\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"p1UserId\"\n    },\n    \"maskedEmail\": {\n      \"type\": \"string\",\n      \"displayName\": \"Masked Email\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"maskedEmail\"\n    }\n  }\n}"
+                "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"p1UserId\": {\n      \"type\": \"string\",\n      \"displayName\": \"PingOne User Id\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"p1UserId\"\n    },\n    \"email\": {\n      \"type\": \"string\",\n      \"displayName\": \"Email Address\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"email\"\n    }\n  }\n}"
               },
               "nodeTitle": {
-                "value": "Verify and Delete"
+                "value": "Verify and Delete User"
               }
             }
           },
           "position": {
-            "x": 334,
-            "y": 1294
+            "x": 306.1878783115305,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -1389,8 +1313,8 @@
             "idUnique": "y2w84jdymn"
           },
           "position": {
-            "x": 3034,
-            "y": 1474
+            "x": 2978.372998121251,
+            "y": 1169.0809899167527
           },
           "group": "nodes",
           "removed": false,
@@ -1422,8 +1346,8 @@
             }
           },
           "position": {
-            "x": 334,
-            "y": 364
+            "x": 306.1878783115305,
+            "y": 361.8584016408996
           },
           "group": "nodes",
           "removed": false,
@@ -1440,8 +1364,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 454,
-            "y": 364
+            "x": 417.5289249702688,
+            "y": 361.8584016408996
           },
           "group": "nodes",
           "removed": false,
@@ -1468,7 +1392,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success\"\n      }\n    ]\n  }\n]"
               },
               "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n            <h1 id=\"title\" class=\"text-center mb-4\">\n              {{#ifEquals type \"SMS\"}}\n              <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n              Text message\n              {{/ifEquals}}\n\n              {{#ifEquals type \"EMAIL\"}}\n              <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n              Email\n              {{/ifEquals}}\n\n              {{#ifEquals type \"TOTP\"}}\n              <i class=\"mdi mdi-cellphone-key text-dark fs-1\" aria-hidden=\"true\"></i>\n              Authenticator App\n              {{/ifEquals}}\n\n              {{#ifEquals type \"VOICE\"}}\n              <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n              Voice\n              {{/ifEquals}}\n            </h1>\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"\n              aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"passcodeError\" data-skerrorid=\"passcode\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            {{#if resendMessage}}\n            <p class=\"text-info text-center fade\" aria-live=\"assertive\">{{resendMessage}}</p>\n            {{/if}}\n\n            <form id=\"otp-form\" data-id=\"otp-form\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"one-time-code\" maxlength=\"8\"\n                  aria-required=\"true\" aria-describedby=\"passcodeLabel\" placeholder=\"Passcode\" />\n                <label id=\"passcodeLabel\" class=\"form-label\" for=\"passcode\">Passcode</label>\n              </div>\n              <p class=\"text-muted text-center\" id=\"contact\">\n                {{#ifEquals type \"SMS\"}}\n                Message sent to:<br>\n                {{maskedContact}}\n                {{/ifEquals}}\n\n                {{#ifEquals type \"Voice\"}}\n                Calling:<br>\n                {{maskedContact}}\n                {{/ifEquals}}\n\n                {{#ifEquals type \"EMAIL\"}}\n                Email sent to:<br>\n                {{maskedContact}}\n                {{/ifEquals}}\n              </p>\n              <div class=\"d-flex flex-column\">\n                {{#ifEquals type \"TOTP\"}}\n                <!-- exclude resend option -->\n                {{else}}\n                <button id=\"resend\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                  {{resendButtonLabel}}\n                </button>\n                {{/ifEquals}}\n                {{#if verifyButtonLabel}}\n                <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"VERIFY\">\n                  {{verifyButtonLabel}}\n                </button>\n                {{/if}}\n                {{#if canChangeDevice}}\n                <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                  Cancel\n                </button>\n                {{/if}}\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"\n              aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"passcodeError\" data-skerrorid=\"passcode\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            {{#if resendMessage}}\n             <p class=\"text-success mdi mdi-check-circle text-center\" aria-live=\"assertive\">{{resendMessage}}</p>\n            {{/if}}\n\n            <form id=\"otp-form\" data-id=\"otp-form\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"one-time-code\" maxlength=\"8\"\n                  aria-required=\"true\" aria-describedby=\"passcodeLabel\" placeholder=\"Passcode\" />\n                <label id=\"passcodeLabel\" class=\"form-label\" for=\"passcode\">Passcode</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                {{#if continueButtonLabel}}\n                <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"CONTINUE\">\n                  {{continueButtonLabel}}\n                </button>\n                {{/if}}\n                {{#if resendButtonLabel}}\n                <button id=\"resend\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                  {{resendButtonLabel}}\n                </button>\n                {{/if}}\n                {{#if cancelButtonLabel}}\n                <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                  {{cancelButtonLabel}}\n                </button>\n                {{/if}}\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
               },
               "formFieldsList": {
                 "value": [
@@ -1496,16 +1420,16 @@
                 "value": "One-time Passcode entry"
               },
               "customCSS": {
-                "value": ".otp-control {\n    padding-top: 0rem !important;\n    padding-bottom: 0rem !important;\n    font-size: 17px;\n}\n\n@keyframes fadeOut {\n    0% {\n        opacity: 1;\n        visibility: visible;\n    }\n    80% {\n        opacity: .8;\n        visibility: visible;\n    }\n\n\n    100% {\n        opacity: 0;\n        visibility: hidden;\n        max-height: 0;\n    }\n}\n\n.fade {\n    overflow: hidden;\n    animation: fadeOut 20s forwards;\n}"
+                "value": ".otp-control {\n    padding-top: 0rem !important;\n    padding-bottom: 0rem !important;\n    font-size: 17px;\n}\n"
               },
               "inputSchema": {
-                "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"type\": {\n\t\t\t\"displayName\": \"Device Type [EMAIL|SMS|VOICE|TOTP]\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n    \"textOne\": {\n\t\t\t\"displayName\": \"Text One\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"maskedContact\": {\n\t\t\t\"displayName\": \"Masked Contact\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"canChangeDevice\": {\n\t\t\t\"displayName\": \"Can change Device\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"resendMessage\": {\n\t\t\t\"displayName\": \"Resend Message\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"resendButtonLabel\": {\n\t\t\t\"displayName\": \"Resend Button Label\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"verifyButtonLabel\": {\n\t\t\t\"displayName\": \"Verify Button Label\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t}\n\t}\n}"
+                "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"title\": {\n\t\t\t\"displayName\": \"Title\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"textOne\": {\n\t\t\t\"displayName\": \"Text One\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"textTwo\": {\n\t\t\t\"displayName\": \"Text Two\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"resendMessage\": {\n\t\t\t\"displayName\": \"Resend Message\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"continueButtonLabel\": {\n\t\t\t\"displayName\": \"Continue Button Label\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"resendButtonLabel\": {\n\t\t\t\"displayName\": \"Resend Button Label\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"cancelButtonLabel\": {\n\t\t\t\"displayName\": \"Cancel Button Label\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t}\n\t}\n}"
               },
               "title": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Passcode Verification\"\n      }\n    ]\n  }\n]"
               },
               "textOne": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter the passcode you received to complete authentication.\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter the passcode you received to delete your account.\"\n      }\n    ]\n  }\n]"
               },
               "iconClass": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"mdi-comment-text-outline\"\n      }\n    ]\n  }\n]"
@@ -1526,7 +1450,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"false\"\n      }\n    ]\n  }\n]"
               },
               "verifyButtonLabel": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Complete Account Deletion\"\n      }\n    ]\n  }\n]"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Delete Account\"\n      }\n    ]\n  }\n]"
               },
               "validationRules": {
                 "value": [
@@ -1546,18 +1470,24 @@
                   }
                 ]
               },
-              "maskedContact": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"maskedEmail\",\n        \"data\": \"{{local.1614a9n6bn.payload.output.maskedEmail}}\",\n        \"tooltip\": \"{{local.1614a9n6bn.payload.output.maskedEmail}}\",\n        \"children\": [\n          {\n            \"text\": \"maskedEmail\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
               "resendMessage": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.h292objxyd.payload.output.message}}\",\n        \"tooltip\": \"{{local.h292objxyd.payload.output.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "textTwo": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Note: Account deletion cannot be undone.\"\n      }\n    ]\n  }\n]"
+              },
+              "continueButtonLabel": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Delete Account\"\n      }\n    ]\n  }\n]"
+              },
+              "cancelButtonLabel": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Cancel\"\n      }\n    ]\n  }\n]"
               }
             },
             "idUnique": "w1js97gxg2"
           },
           "position": {
-            "x": 1534,
-            "y": 1294
+            "x": 1475.268868228283,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -1575,8 +1505,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 1654,
-            "y": 1294
+            "x": 1586.6099148870214,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -1611,7 +1541,7 @@
               "rightValueMultiple": {
                 "value": [
                   {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"VERIFY\"\n      }\n    ]\n  }\n]",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"CONTINUE\"\n      }\n    ]\n  }\n]",
                     "id": "js0k5824y5"
                   },
                   {
@@ -1631,8 +1561,8 @@
             "isDisabled": false
           },
           "position": {
-            "x": 1834,
-            "y": 1294
+            "x": 1781.4567465398136,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -1649,26 +1579,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 454,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "gsyfn0811p",
-            "nodeType": "EVAL"
-          },
-          "position": {
-            "x": 1354,
-            "y": 1294
+            "x": 417.5289249702688,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -1706,8 +1618,8 @@
             "idUnique": "pirg629qrb"
           },
           "position": {
-            "x": 2134,
-            "y": 1474
+            "x": 2087.644624851344,
+            "y": 1169.0809899167527
           },
           "group": "nodes",
           "removed": false,
@@ -1724,8 +1636,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1954,
-            "y": 1474
+            "x": 1892.797793198552,
+            "y": 1169.0809899167527
           },
           "group": "nodes",
           "removed": false,
@@ -1757,8 +1669,8 @@
             }
           },
           "position": {
-            "x": 934,
-            "y": 1174
+            "x": 862.8931116052222,
+            "y": 890.7283732699068
           },
           "group": "nodes",
           "removed": false,
@@ -1775,8 +1687,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1054,
-            "y": 1174
+            "x": 1002.0694199286452,
+            "y": 890.7283732699068
           },
           "group": "nodes",
           "removed": false,
@@ -1794,8 +1706,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 2254,
-            "y": 1474
+            "x": 2198.9856715100823,
+            "y": 1169.0809899167527
           },
           "group": "nodes",
           "removed": false,
@@ -1830,8 +1742,8 @@
             }
           },
           "position": {
-            "x": 2434,
-            "y": 1474
+            "x": 2365.99724149819,
+            "y": 1169.0809899167527
           },
           "group": "nodes",
           "removed": false,
@@ -1867,8 +1779,8 @@
             "idUnique": "mlkfgkzc7z"
           },
           "position": {
-            "x": 2134,
-            "y": 1714
+            "x": 2087.644624851344,
+            "y": 1363.9278215695447
           },
           "group": "nodes",
           "removed": false,
@@ -1885,8 +1797,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1954,
-            "y": 1714
+            "x": 1892.797793198552,
+            "y": 1363.9278215695447
           },
           "group": "nodes",
           "removed": false,
@@ -1899,63 +1811,12 @@
         },
         {
           "data": {
-            "id": "u93edgz04f",
-            "nodeType": "CONNECTION",
-            "connectionId": "de650ca45593b82c49064ead10b9fe17",
-            "connectorId": "functionsConnector",
-            "name": "Functions",
-            "label": "Functions",
-            "status": "configured",
-            "capabilityName": "customFunction",
-            "type": "trigger",
-            "properties": {
-              "nodeTitle": {
-                "value": "Mask Phone Number/Email Address"
-              },
-              "variableInputList": {
-                "value": [
-                  {
-                    "name": "email",
-                    "preferredDataType": "string",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.email}}\",\n        \"tooltip\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
-                  {
-                    "name": "phone",
-                    "preferredDataType": "string",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  }
-                ]
-              },
-              "outputSchema": {
-                "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"maskedValue\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
-              },
-              "code": {
-                "value": "/**\n * Masks a phone number or email address.\n * @param  {Object} params - The parameters object containing an email or phone.\n * @returns {Object} An object with a maskedValue property containing the masked email or phone.\n */\nmodule.exports = function maskContactInfo({ params: { email, phone } = {} }) {\n    let maskedValue;\n\n    if (email) {\n        const [username, domain] = email.split(\"@\");\n        const maskedUsername =\n            username.charAt(0) + \"*\".repeat(username.length - 2) + username.slice(-1);\n        maskedValue = `${maskedUsername}@${domain}`;\n    } else if (phone) {\n        const numericPhoneNumber = phone.replace(/\\D/g, '');\n        maskedValue = `***-***-${numericPhoneNumber.slice(-4)}`;\n    }\n\n    return { maskedValue };\n}"
-              }
-            },
-            "idUnique": "mo962u4b9p"
-          },
-          "position": {
-            "x": 1534,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "sau73p77i6",
+            "id": "zy6bvyzfdd",
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 1654,
-            "y": 514
+            "x": 1308.2572982401757,
+            "y": 1002.0694199286452
           },
           "group": "nodes",
           "removed": false,
@@ -1970,9 +1831,9 @@
       "edges": [
         {
           "data": {
-            "id": "gguhgx3m9u",
-            "source": "rpf5dwgniq",
-            "target": "r83to3ceuh"
+            "id": "smmcrtbdco",
+            "source": "zy6bvyzfdd",
+            "target": "4psozogtdq"
           },
           "position": {
             "x": 0,
@@ -1989,9 +1850,182 @@
         },
         {
           "data": {
-            "id": "a52bkkxdvm",
+            "id": "cf3qqovqru",
+            "source": "2740lxm4tx",
+            "target": "zy6bvyzfdd"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "b3x6duh9hf",
+            "source": "8v0tfjyipi",
+            "target": "6iokdi9xy0"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "fl9ouguvjz",
+            "source": "za33yzgqty",
+            "target": "2740lxm4tx"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "uq88oql92g",
             "source": "m50prm0ud3",
-            "target": "u93edgz04f"
+            "target": "edqxl0k4ko"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "xgddnf67cb",
+            "source": "1614a9n6bn",
+            "target": "rpf5dwgniq"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5mygnn37v7",
+            "source": "sveco8m875",
+            "target": "4t47mt299e",
+            "multiValueSourceId": "qtli5t2v0s"
+          },
+          "position": {
+            "x": 64,
+            "y": 92
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "cqxb25e2rg",
+            "source": "3pnnz9j1uz",
+            "target": "fe19hzgf1s"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "m0h16dx1jq",
+            "source": "4psozogtdq",
+            "target": "60flezhf93"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5vali4bo35",
+            "source": "9gcs4ayu5t",
+            "target": "za33yzgqty",
+            "multiValueSourceId": "275o62s1jk"
+          },
+          "position": {
+            "x": 64,
+            "y": 52
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "bwu23vc55h",
+            "source": "6iokdi9xy0",
+            "target": "3pnnz9j1uz"
           },
           "position": {
             "x": 0,
@@ -2181,27 +2215,8 @@
         },
         {
           "data": {
-            "id": "vuto16s0bw",
-            "source": "j6iij2u9um",
-            "target": "vmkp56rgq7"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "5gpbtme0fh",
-            "source": "j6iij2u9um",
+            "id": "v8aywc6wtn",
+            "source": "m50prm0ud3",
             "target": "0nvm6vkdua"
           },
           "position": {
@@ -2219,9 +2234,28 @@
         },
         {
           "data": {
-            "id": "uzlx9607y8",
-            "source": "m50prm0ud3",
-            "target": "rbprycaw75"
+            "id": "a17ec88678",
+            "source": "3f1tguhv73",
+            "target": "30imok73d9"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "c7t45iuezj",
+            "source": "4t47mt299e",
+            "target": "3f1tguhv73"
           },
           "position": {
             "x": 0,
@@ -2485,9 +2519,9 @@
         },
         {
           "data": {
-            "id": "3s0tr4vcc8",
-            "source": "rbprycaw75",
-            "target": "j6iij2u9um"
+            "id": "si8laeyg5e",
+            "source": "h292objxyd",
+            "target": "v47bbv2wc1"
           },
           "position": {
             "x": 0,
@@ -2619,277 +2653,9 @@
         },
         {
           "data": {
-            "id": "b3x6duh9hf",
-            "source": "8v0tfjyipi",
-            "target": "6iokdi9xy0"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "cqxb25e2rg",
-            "source": "3pnnz9j1uz",
-            "target": "fe19hzgf1s"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "5vali4bo35",
-            "source": "9gcs4ayu5t",
-            "target": "za33yzgqty",
-            "multiValueSourceId": "275o62s1jk"
-          },
-          "position": {
-            "x": 64,
-            "y": 52
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "fl9ouguvjz",
-            "source": "za33yzgqty",
-            "target": "2740lxm4tx"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "m0h16dx1jq",
-            "source": "4psozogtdq",
-            "target": "60flezhf93"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "bwu23vc55h",
-            "source": "6iokdi9xy0",
-            "target": "3pnnz9j1uz"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "xgddnf67cb",
-            "source": "1614a9n6bn",
-            "target": "rpf5dwgniq"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "0quliyko1p",
-            "source": "u93edgz04f",
-            "target": "sau73p77i6"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "zniidymb4j",
-            "source": "sau73p77i6",
-            "target": "edqxl0k4ko"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "a17ec88678",
-            "source": "3f1tguhv73",
-            "target": "30imok73d9"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "47gmwo2qjh",
-            "source": "2740lxm4tx",
-            "target": "gsyfn0811p"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "s0667i9t28",
-            "source": "gsyfn0811p",
-            "target": "4psozogtdq"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "5mygnn37v7",
-            "source": "sveco8m875",
-            "target": "4t47mt299e",
-            "multiValueSourceId": "qtli5t2v0s"
-          },
-          "position": {
-            "x": 64,
-            "y": 92
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "c7t45iuezj",
-            "source": "4t47mt299e",
-            "target": "3f1tguhv73"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "si8laeyg5e",
-            "source": "h292objxyd",
-            "target": "v47bbv2wc1"
+            "id": "zsa92wymy5",
+            "source": "rpf5dwgniq",
+            "target": "r83to3ceuh"
           },
           "position": {
             "x": 0,
@@ -2924,11 +2690,11 @@
     }
   },
   "flowColor": "#ff661c",
-  "savedDate": 1715183685837,
+  "savedDate": 1719252332816,
   "variables": [
     {
       "context": "flowInstance",
-      "createdDate": 1711542060985,
+      "createdDate": 1718715614928,
       "fields": {
         "type": "string",
         "displayName": "Url for company's logo image",
@@ -2936,14 +2702,15 @@
         "min": 0,
         "max": 2000
       },
+      "id": "454da928-c543-4aac-b6b3-c233400c1d32",
       "type": "property",
       "visibility": "private",
       "name": "companyLogo##SK##flowInstance",
-      "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
+      "companyId": ""
     },
     {
       "context": "flowInstance",
-      "createdDate": 1711541872878,
+      "createdDate": 1718715505632,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -2951,2897 +2718,12 @@
         "min": 0,
         "max": 2000
       },
+      "id": "3245a456-c70f-4cb8-bc33-7c7b14c1f479",
       "type": "property",
       "visibility": "private",
       "name": "companyName##SK##flowInstance",
-      "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
+      "companyId": ""
     }
   ],
-  "connections": [],
-  "enabledGraphData": {
-    "elements": {
-      "nodes": [
-        {
-          "data": {
-            "id": "5a0ivy5c7z",
-            "nodeType": "CONNECTION",
-            "connectionId": "94141bf2f1b9b59a5f5365ff135e02bb",
-            "connectorId": "pingOneSSOConnector",
-            "name": "PingOne",
-            "label": "PingOne - am",
-            "status": "configured",
-            "capabilityName": "userLookup",
-            "type": "action",
-            "properties": {
-              "identifier": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.howu8n9hsc.payload.output.username}}\",\n        \"tooltip\": \"{{local.howu8n9hsc.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "matchAttributes": {
-                "value": [
-                  "email"
-                ]
-              },
-              "nodeTitle": {
-                "value": "User Lookup"
-              },
-              "userIdentifierForFindUser": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.ma1nk3lekr.payload.output.email}}\",\n        \"tooltip\": \"{{local.ma1nk3lekr.payload.output.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "returnUserPasswordStatus": {
-                "value": true
-              },
-              "nodeDescription": {}
-            },
-            "idUnique": "bx1c4yd3j7"
-          },
-          "position": {
-            "x": 934,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "va1cylqkud",
-            "nodeType": "CONNECTION",
-            "connectionId": "94141bf2f1b9b59a5f5365ff135e02bb",
-            "connectorId": "pingOneSSOConnector",
-            "name": "PingOne",
-            "label": "PingOne - am",
-            "status": "configured",
-            "capabilityName": "checkPassword",
-            "type": "action",
-            "properties": {
-              "userId": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.id}}\",\n        \"tooltip\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "password": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"password\",\n        \"data\": \"{{local.ma1nk3lekr.payload.output.password}}\",\n        \"tooltip\": \"{{local.ma1nk3lekr.payload.output.password}}\",\n        \"children\": [\n          {\n            \"text\": \"password\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Check Password"
-              },
-              "matchAttribute": {
-                "value": "id"
-              },
-              "identifier": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.id}}\",\n        \"tooltip\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              }
-            },
-            "idUnique": "0re8wbsb52"
-          },
-          "position": {
-            "x": 1234,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "m50prm0ud3",
-            "nodeType": "EVAL",
-            "properties": {
-              "undefined": {
-                "value": "allTriggersTrue"
-              },
-              "0nvm6vkdua": {
-                "value": "anyTriggersFalse"
-              },
-              "rbprycaw75": {
-                "value": "anyTriggersFalse"
-              }
-            }
-          },
-          "position": {
-            "x": 1354,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "fe4k6lh9ng",
-            "nodeType": "EVAL"
-          },
-          "position": {
-            "x": 754,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "0nvm6vkdua",
-            "nodeType": "CONNECTION",
-            "connectionId": "53ab83a4a4ab919d9f2cb02d9e111ac8",
-            "connectorId": "errorConnector",
-            "name": "Error Message",
-            "label": "Error Customize",
-            "status": "configured",
-            "capabilityName": "customErrorMessage",
-            "type": "action",
-            "properties": {
-              "errorMessage": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \" Incorrect username or password. Please try again.\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Invalid Username/Password"
-              },
-              "backgroundColor": {
-                "value": "#ffc8c1ff"
-              },
-              "errorCode": {
-                "value": "400"
-              }
-            }
-          },
-          "position": {
-            "x": 1834,
-            "y": 904
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "f9535s1hmr",
-            "nodeType": "ANNOTATION",
-            "name": "Annotation",
-            "connectionId": "921bfae85c38ed45045e07be703d86b8",
-            "connectorId": "annotationConnector",
-            "capabilityName": "updateAnnotationProperties",
-            "type": "action",
-            "properties": {
-              "backgroundColor": {
-                "value": "#4462edff"
-              },
-              "annotationTextColor": {
-                "value": "#ffffffff"
-              },
-              "annotation": {
-                "value": "PingOne User Delete Example"
-              },
-              "width": {
-                "value": 2000
-              },
-              "fontStyle": {
-                "value": "bold"
-              },
-              "fontSize": {
-                "value": 16
-              },
-              "fontFamily": {
-                "value": "sans-serif"
-              },
-              "cornerRadius": {
-                "value": 8
-              }
-            },
-            "status": "configured"
-          },
-          "position": {
-            "x": 244,
-            "y": 274
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "epjmdb0h06",
-            "nodeType": "EVAL",
-            "properties": {
-              "undefined": {
-                "value": "allTriggersTrue"
-              },
-              "0nvm6vkdua": {
-                "value": "anyTriggersFalse"
-              }
-            }
-          },
-          "position": {
-            "x": 1054,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "edqxl0k4ko",
-            "nodeType": "CONNECTION",
-            "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
-            "connectorId": "nodeConnector",
-            "name": "Node",
-            "label": "Node",
-            "status": "configured",
-            "capabilityName": "goToNode",
-            "type": "action",
-            "properties": {
-              "nodeInstanceId": {
-                "value": "1614a9n6bn"
-              },
-              "p1UserId": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.id}}\",\n        \"tooltip\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "maskedEmail": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"maskedValue\",\n        \"data\": \"{{local.u93edgz04f.payload.output.maskedValue}}\",\n        \"tooltip\": \"{{local.u93edgz04f.payload.output.maskedValue}}\",\n        \"children\": [\n          {\n            \"text\": \"maskedValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Go to Verify and Delete"
-              }
-            },
-            "idUnique": "819yow4wmu"
-          },
-          "position": {
-            "x": 1834,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "vwzr845qyc",
-            "nodeType": "EVAL",
-            "properties": {
-              "iq9fvbojh6": {
-                "value": "anyTriggersFalse"
-              }
-            }
-          },
-          "position": {
-            "x": 1954,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "ma1nk3lekr",
-            "nodeType": "CONNECTION",
-            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
-            "connectorId": "httpConnector",
-            "name": "Http",
-            "label": "Http",
-            "status": "configured",
-            "capabilityName": "customHTMLTemplate",
-            "type": "trigger",
-            "properties": {
-              "textOne": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"This demonstration shows how to use self-service to delete a PingOne user account.\"\n      }\n    ]\n  }\n]"
-              },
-              "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">\n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                        {{#if title}}\n                        <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n                        {{/if}}\n\n                        {{#if textOne}}\n                        <p class=\"text-muted text-center\">{{textOne}}</p>\n                        {{/if}}\n\n                        {{#if textTwo}}\n                        <p class=\"text-muted text-center\">{{textTwo}}</p>\n                        {{/if}}\n\n                        <!-- Generic Error Message -->\n                        <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"\n                            aria-live=\"assertive\"></p>\n\n                        <!-- Field Validation Error Messages -->\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"emailError\" data-skerrorid=\"email\"\n                            data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"passwordError\"\n                            data-skerrorid=\"password\" data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n                        {{#if userMessage}}\n                        <p class=\"text-info text-center fade\" aria-live=\"assertive\">{{userMessage}}</p>\n                        {{/if}}\n\n                        <form id=\"signOnForm\" data-id=\"signOnForm\">\n                            <div class=\"mb-4 form-floating\">\n                                <input class=\"form-control\" type=\"text\" id=\"email\" name=\"email\" placeholder=\"Email Address\"\n                                    autocomplete=\"off\" value=\"\" data-id=\"email-input\" aria-describedby=\"emailLabel\" />\n                                <label id=\"emailLabel\" class=\"form-label\" for=\"email\">Email Address</label>\n                            </div>\n                            <div id=\"passwordDiv\" class=\"mb-4 form-floating\">\n                                <input class=\"form-control\" type=\"password\" id=\"password\" name=\"password\"\n                                    placeholder=\"Password\" autocomplete=\"off\" value=\"\" aria-describedby=\"passwordLabel\"\n                                    data-id=\"password-input\" />\n                                <label id=\"passwordLabel\" class=\"form-label\" for=\"password\">Password</label>\n                            </div>\n                            <div class=\"d-flex flex-column\">\n                                {{#if continueButtonLabel}}\n                                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\"\n                                    data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"signOnForm\"\n                                    id=\"btnSignOn\" data-skbuttonvalue=\"CONTINUE\">\n                                    {{continueButtonLabel}}\n                                </button>\n                                {{/if}}\n                            </div>\n                        </form>\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
-              },
-              "formFieldsList": {
-                "value": [
-                  {
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "propertyName": "email",
-                    "displayName": "",
-                    "hashedVisibility": false,
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
-                  {
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "propertyName": "buttonValue"
-                  },
-                  {
-                    "propertyName": "password",
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
-                    "hashedVisibility": true,
-                    "displayName": "Password"
-                  }
-                ]
-              },
-              "nodeTitle": {
-                "value": "Email/Password Form"
-              },
-              "customCSS": {
-                "value": "@keyframes fadeOut {\n    0% {\n        opacity: 1;\n        visibility: visible;\n    }\n    80% {\n        opacity: .8;\n        visibility: visible;\n    }\n\n\n    100% {\n        opacity: 0;\n        visibility: hidden;\n        max-height: 0;\n    }\n}\n\n.fade {\n    overflow: hidden;\n    animation: fadeOut 20s forwards;\n}"
-              },
-              "validationRules": {
-                "value": [
-                  {
-                    "propertyName": "email",
-                    "rules": [
-                      {
-                        "ruleName": "presence",
-                        "message": "Enter your email address"
-                      },
-                      {
-                        "ruleName": "email",
-                        "message": "Enter a valid email address"
-                      }
-                    ]
-                  },
-                  {
-                    "propertyName": "password",
-                    "rules": [
-                      {
-                        "ruleName": "presence",
-                        "message": "Enter your account password"
-                      }
-                    ]
-                  }
-                ]
-              },
-              "backgroundColor": {
-                "value": "#afd5ffff"
-              },
-              "customScript": {
-                "value": "const setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    }\n}\n\nconst makePasswordToggle = (id) => {\n    let container = document.getElementById(id);\n\n    if (container) {\n        let password = container.getElementsByTagName(\"input\")[0];\n        let toggler = document.createElement(\"button\");\n        toggler.setAttribute(\"type\", \"button\");\n        toggler.setAttribute(\"aria-label\", \"Show/Hide Password\");\n        toggler.className = \"btn mdi mdi-eye-off-outline position-absolute end-0 top-50 translate-middle-y\";\n        container.appendChild(toggler);\n\n        function showHidePassword() {\n            if (password.type == \"password\") {\n                password.setAttribute(\"type\", \"text\");\n                toggler.classList.add(\"mdi-eye-outline\");\n                toggler.classList.remove(\"mdi-eye-off-outline\");\n            } else {\n                toggler.classList.add(\"mdi-eye-off-outline\");\n                toggler.classList.remove(\"mdi-eye-outline\");\n                password.setAttribute(\"type\", \"password\");\n            }\n            password.focus();\n        };\n\n        toggler.addEventListener(\"click\", showHidePassword);\n    }\n}\n\nconst start = () => {\n    makePasswordToggle(\"passwordDiv\");\n    setFieldFocus(\"email\")\n}\n\nif (document.readyState === \"loading\") {\n    // Loading hasn't finished yet\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    // `DOMContentLoaded` has already fired\n    start();\n}"
-              },
-              "inputSchema": {
-                "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textTwo\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text Two\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"userMessage\": {\n      \"type\": \"string\",\n      \"displayName\": \"User Message\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"continueButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Continue Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
-              },
-              "outputSchema": {
-                "value": {}
-              },
-              "title": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Delete PingOne User Example\"\n      }\n    ]\n  }\n]"
-              },
-              "continueButtonLabel": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
-              },
-              "userMessage": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.o8ip72kzyk.payload.output.message}}\",\n        \"tooltip\": \"{{local.o8ip72kzyk.payload.output.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              }
-            }
-          },
-          "position": {
-            "x": 634,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "jslhypy7yq",
-            "nodeType": "EVAL"
-          },
-          "position": {
-            "x": 454,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "rbprycaw75",
-            "nodeType": "CONNECTION",
-            "connectionId": "de650ca45593b82c49064ead10b9fe17",
-            "connectorId": "functionsConnector",
-            "name": "Functions",
-            "label": "Functions",
-            "status": "configured",
-            "capabilityName": "AEqualsB",
-            "type": "trigger",
-            "properties": {
-              "leftValueA": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"enabled\",\n        \"data\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.enabled}}\",\n        \"tooltip\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.enabled}}\",\n        \"children\": [\n          {\n            \"text\": \"enabled\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Is Account Disabled?"
-              },
-              "rightValueB": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"false\"\n      }\n    ]\n  }\n]"
-              },
-              "type": {
-                "value": "boolean"
-              }
-            },
-            "idUnique": "tv8yhhw2vy"
-          },
-          "position": {
-            "x": 1534,
-            "y": 694
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "vmkp56rgq7",
-            "nodeType": "CONNECTION",
-            "connectionId": "53ab83a4a4ab919d9f2cb02d9e111ac8",
-            "connectorId": "errorConnector",
-            "name": "Error Message",
-            "label": "Error Message",
-            "status": "configured",
-            "capabilityName": "customErrorMessage",
-            "type": "action",
-            "properties": {
-              "errorMessage": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your account is disabled, account deletion unavailable.\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Account Disabled"
-              },
-              "nodeDescription": {}
-            },
-            "idUnique": "6ysy9wttbd"
-          },
-          "position": {
-            "x": 1834,
-            "y": 694
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "j6iij2u9um",
-            "nodeType": "EVAL",
-            "properties": {
-              "0nvm6vkdua": {
-                "value": "anyTriggersFalse"
-              }
-            }
-          },
-          "position": {
-            "x": 1654,
-            "y": 694
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "00j9nrb68o",
-            "nodeType": "CONNECTION",
-            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
-            "connectorId": "httpConnector",
-            "name": "Http",
-            "label": "Http",
-            "status": "configured",
-            "capabilityName": "customHTMLTemplate",
-            "type": "trigger",
-            "properties": {
-              "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">\n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                        {{#if title}}\n                        <h1 id=\"main\" class=\"text-center mb-4\">{{title}}</h1>\n                        {{/if}}\n\n                        <div class=\"mx-auto mt-3 mb-4\">\n                            <svg class=\"checkmark\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 52 52\">\n                                <circle class=\"checkmarkCircle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\" />\n                                <path class=\"checkmarkCheck\" fill=\"none\" d=\"M14.1 27.2l7.1 7.2 16.7-16.8\" />\n                            </svg>\n                        </div>\n\n                        {{#if textOne}}\n                        <p class=\"text-muted text-center\">{{textOne}}</p>\n                        {{/if}}\n\n                        {{#if textTwo}}\n                        <p class=\"text-muted text-center\">{{textTwo}}</p>\n                        {{/if}}\n\n                        <!-- Generic Error Message -->\n                        <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n                        {{#if buttonLabel}}\n                        <div class=\"d-flex flex-column\">\n                            <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"NEXT\" >\n                            {{buttonLabel}}\n                            </button>\n                        </div>\n                        {{/if}}\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
-              },
-              "formFieldsList": {
-                "value": [
-                  {
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "propertyName": "username",
-                    "displayName": "Username",
-                    "hashedVisibility": false,
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
-                  {
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "propertyName": "buttonValue"
-                  },
-                  {
-                    "propertyName": "password",
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "value": "",
-                    "hashedVisibility": true,
-                    "displayName": "Password"
-                  }
-                ]
-              },
-              "nodeTitle": {
-                "value": "Delete Success"
-              },
-              "customCSS": {
-                "value": ":root {\n  --animation-dimension: 120px;\n  --animation-start-color: #71e171;\n  --animation-midway-color: #67d067;\n  --animation-finish-color: #59b259;\n}\n\n.checkmark {\n  width: var(--animation-dimension);\n  height: var(--animation-dimension);\n  border-radius: 50%;\n  display: block;\n  stroke-width: 5;\n  stroke: #ffffff;\n  stroke-miterlimit: 10;\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);\n  animation: fill 0.4s ease-in-out 0.4s forwards,\n    scale 0.3s ease-in-out 0.9s both;\n}\n\n.checkmarkCircle {\n  stroke-dasharray: 166;\n  stroke-dashoffset: 166;\n  stroke-width: 5;\n  stroke-miterlimit: 10;\n  stroke: var(--animation-finish-color);\n  fill: none;\n  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards,\n    colorChange 1.2s ease-in-out forwards;\n}\n\n.checkmarkCheck {\n  transform-origin: 50% 50%;\n  stroke-dasharray: 48;\n  stroke-dashoffset: 48;\n  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards,\n    colorChange 0.6s ease-in-out 0.8s forwards;\n}\n\n@keyframes colorChange {\n  0% {\n    stroke: var(--animation-start-color);\n  }\n  50% {\n    stroke: var(--animation-midway-color);\n  } \n  100% {\n    stroke: var(--animation-finish-color);\n  }\n}\n\n@keyframes stroke {\n  100% {\n    stroke-dashoffset: 0;\n  }\n}\n@keyframes scale {\n  0%,\n  100% {\n    transform: none;\n  }\n  50% {\n    transform: scale3d(1.1, 1.1, 1);\n  }\n  70% {\n    transform: scale3d(0.98, 0.98, 1);\n  }\n  85% {\n    transform: scale3d(1.02, 1.02, 1);\n  }\n}\n@keyframes fill {\n  100% {\n    box-shadow: inset 0px 0px 0px 0px var(--animation-finish-color);\n  }\n}"
-              },
-              "validationRules": {
-                "value": []
-              },
-              "backgroundColor": {
-                "value": "#9dc967ff"
-              },
-              "customScript": {},
-              "inputSchema": {
-                "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n\t\"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n\t\"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n        \"buttonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"buttonLabel\"\n        }\n    }\n}"
-              },
-              "title": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Account Deletion\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeDescription": {
-                "value": "Success message with animated checkmark"
-              },
-              "textOne": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your account has been successfully deleted.\"\n      }\n    ]\n  }\n]"
-              },
-              "textTwo": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"You may safely close this window.\"\n      }\n    ]\n  }\n]"
-              },
-              "oeInteractionCacheExpire": {
-                "value": true
-              }
-            },
-            "idUnique": "p3z6662uwb"
-          },
-          "position": {
-            "x": 2134,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "x79j9gtc0j",
-            "nodeType": "ANNOTATION",
-            "name": "Annotation",
-            "connectionId": "921bfae85c38ed45045e07be703d86b8",
-            "connectorId": "annotationConnector",
-            "capabilityName": "updateAnnotationProperties",
-            "type": "action",
-            "properties": {
-              "backgroundColor": {
-                "value": "#ffffffff"
-              },
-              "annotationTextColor": {
-                "value": "#000000"
-              },
-              "annotation": {
-                "value": "Last Updated: May 8th, 2024"
-              },
-              "width": {
-                "value": 240
-              },
-              "fontSize": {
-                "value": 14
-              },
-              "fontFamily": {
-                "value": "sans-serif"
-              },
-              "cornerRadius": {
-                "value": 8
-              },
-              "strokeEnabled": {
-                "value": false
-              },
-              "strokeWidth": {
-                "value": 1
-              },
-              "strokeColor": {
-                "value": "#181818ff"
-              }
-            },
-            "status": "configured",
-            "idUnique": "o2v5xhdcbc"
-          },
-          "position": {
-            "x": 214,
-            "y": 214
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "80b0lmqldf",
-            "nodeType": "CONNECTION",
-            "connectionId": "06922a684039827499bdbdd97f49827b",
-            "connectorId": "variablesConnector",
-            "name": "Variables",
-            "label": "Variables",
-            "status": "configured",
-            "capabilityName": "saveValue",
-            "type": "trigger",
-            "properties": {
-              "saveVariables": {
-                "value": [
-                  {
-                    "name": "companyLogo",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
-                    "key": 0.3651977481717872,
-                    "label": "companyLogo (string - flowInstance)",
-                    "type": "string"
-                  },
-                  {
-                    "name": "companyName",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Ping Identity\"\n      }\n    ]\n  }\n]",
-                    "key": 0.2827866731051578,
-                    "label": "companyName (string - flowInstance)",
-                    "type": "string"
-                  }
-                ]
-              },
-              "nodeTitle": {
-                "value": "Set Company & Logo"
-              }
-            },
-            "idUnique": "mbb1ucl3yi"
-          },
-          "position": {
-            "x": 334,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "m69hijc7un",
-            "nodeType": "EVAL",
-            "label": "Evaluator"
-          },
-          "position": {
-            "x": 754,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "9gcs4ayu5t",
-            "nodeType": "CONNECTION",
-            "connectionId": "de650ca45593b82c49064ead10b9fe17",
-            "connectorId": "functionsConnector",
-            "name": "Functions",
-            "label": "Functions",
-            "status": "configured",
-            "capabilityName": "AEqualsMultipleB",
-            "type": "trigger",
-            "properties": {
-              "leftValueA": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.r83to3ceuh.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.r83to3ceuh.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "rightValueMultiple": {
-                "value": [
-                  {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"DELETE\"\n      }\n    ]\n  }\n]",
-                    "id": "275o62s1jk"
-                  },
-                  {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"CANCEL\"\n      }\n    ]\n  }\n]",
-                    "id": "u68y3i8hvr"
-                  }
-                ]
-              },
-              "nodeTitle": {
-                "value": "Delete form Button Check"
-              }
-            }
-          },
-          "position": {
-            "x": 934,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "l0xw3ngmrm",
-            "nodeType": "EVAL"
-          },
-          "position": {
-            "x": 1054,
-            "y": 1474
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "2740lxm4tx",
-            "nodeType": "CONNECTION",
-            "connectionId": "94141bf2f1b9b59a5f5365ff135e02bb",
-            "connectorId": "pingOneSSOConnector",
-            "name": "PingOne",
-            "label": "PingOne",
-            "status": "configured",
-            "capabilityName": "sendVerificationCode",
-            "type": "action",
-            "properties": {
-              "matchAttribute": {
-                "value": "id"
-              },
-              "identifier": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"p1UserId\",\n        \"data\": \"{{local.1614a9n6bn.payload.output.p1UserId}}\",\n        \"tooltip\": \"{{local.1614a9n6bn.payload.output.p1UserId}}\",\n        \"children\": [\n          {\n            \"text\": \"p1UserId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Send OTP"
-              }
-            }
-          },
-          "position": {
-            "x": 1234,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "za33yzgqty",
-            "nodeType": "EVAL"
-          },
-          "position": {
-            "x": 1054,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "1vtwegk6fr",
-            "nodeType": "EVAL",
-            "label": "Evaluator"
-          },
-          "position": {
-            "x": 1954,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "qfqxuv3c5n",
-            "nodeType": "CONNECTION",
-            "connectionId": "94141bf2f1b9b59a5f5365ff135e02bb",
-            "connectorId": "pingOneSSOConnector",
-            "name": "PingOne",
-            "label": "PingOne",
-            "status": "configured",
-            "capabilityName": "verifyEmail",
-            "type": "action",
-            "properties": {
-              "matchAttribute": {
-                "value": "id"
-              },
-              "identifier": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"p1UserId\",\n        \"data\": \"{{local.1614a9n6bn.payload.output.p1UserId}}\",\n        \"tooltip\": \"{{local.1614a9n6bn.payload.output.p1UserId}}\",\n        \"children\": [\n          {\n            \"text\": \"p1UserId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "verificationCode": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"passcode\",\n        \"data\": \"{{local.4psozogtdq.payload.output.passcode}}\",\n        \"tooltip\": \"{{local.4psozogtdq.payload.output.passcode}}\",\n        \"children\": [\n          {\n            \"text\": \"passcode\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Check Verification Code"
-              }
-            }
-          },
-          "position": {
-            "x": 2434,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "8v0tfjyipi",
-            "nodeType": "EVAL",
-            "label": "Evaluator",
-            "properties": {
-              "q6w3yodjof": {
-                "value": "anyTriggersFalse"
-              }
-            }
-          },
-          "position": {
-            "x": 2554,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "6iokdi9xy0",
-            "nodeType": "CONNECTION",
-            "connectionId": "94141bf2f1b9b59a5f5365ff135e02bb",
-            "connectorId": "pingOneSSOConnector",
-            "name": "PingOne",
-            "label": "PingOne",
-            "status": "configured",
-            "capabilityName": "deleteUser",
-            "type": "action",
-            "properties": {
-              "matchAttribute": {
-                "value": "id"
-              },
-              "identifier": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"p1UserId\",\n        \"data\": \"{{local.1614a9n6bn.payload.output.p1UserId}}\",\n        \"tooltip\": \"{{local.1614a9n6bn.payload.output.p1UserId}}\",\n        \"children\": [\n          {\n            \"text\": \"p1UserId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Delete User"
-              }
-            }
-          },
-          "position": {
-            "x": 2734,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "3pnnz9j1uz",
-            "nodeType": "EVAL",
-            "label": "Evaluator",
-            "properties": {
-              "3enb3q5kaw": {
-                "value": "anyTriggersFalse"
-              }
-            }
-          },
-          "position": {
-            "x": 2854,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "q6w3yodjof",
-            "nodeType": "CONNECTION",
-            "connectionId": "53ab83a4a4ab919d9f2cb02d9e111ac8",
-            "connectorId": "errorConnector",
-            "name": "Error Message",
-            "label": "Error Customize",
-            "status": "configured",
-            "capabilityName": "customErrorMessage",
-            "type": "action",
-            "properties": {
-              "errorMessage": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.qfqxuv3c5n.payload.error.message}}\",\n        \"tooltip\": \"{{local.qfqxuv3c5n.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Verification Code Error"
-              }
-            }
-          },
-          "position": {
-            "x": 2734,
-            "y": 1474
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "li17vdlp0b",
-            "nodeType": "ANNOTATION",
-            "name": "Annotation",
-            "connectionId": "921bfae85c38ed45045e07be703d86b8",
-            "connectorId": "annotationConnector",
-            "capabilityName": "updateAnnotationProperties",
-            "type": "action",
-            "properties": {
-              "backgroundColor": {
-                "value": "#f7f7adff"
-              },
-              "annotationTextColor": {
-                "value": "#000000"
-              },
-              "annotation": {
-                "value": "Input Schema: userid, maskedEmail"
-              },
-              "width": {
-                "value": 400
-              },
-              "fontSize": {
-                "value": 14
-              },
-              "fontFamily": {
-                "value": "sans-serif"
-              },
-              "cornerRadius": {
-                "value": 8
-              },
-              "strokeEnabled": {
-                "value": false
-              },
-              "strokeWidth": {
-                "value": 1
-              },
-              "strokeColor": {
-                "value": "#181818ff"
-              }
-            },
-            "status": "configured",
-            "idUnique": "940rm8qjb1"
-          },
-          "position": {
-            "x": 244,
-            "y": 1144
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "fe19hzgf1s",
-            "nodeType": "CONNECTION",
-            "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
-            "connectorId": "nodeConnector",
-            "name": "Node",
-            "label": "Node",
-            "status": "configured",
-            "capabilityName": "returnBackToCallingNode",
-            "type": "trigger",
-            "properties": {
-              "nodeTitle": {
-                "value": "Return to Caller"
-              }
-            },
-            "idUnique": "zup2n9k5b6"
-          },
-          "position": {
-            "x": 3034,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "pgycd2vrao",
-            "nodeType": "CONNECTION",
-            "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
-            "connectorId": "nodeConnector",
-            "name": "Node",
-            "label": "Node",
-            "status": "configured",
-            "capabilityName": "goToNode",
-            "type": "action",
-            "properties": {
-              "nodeInstanceId": {
-                "value": "o8ip72kzyk"
-              },
-              "message": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Account deletion canceled.\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Go to Start"
-              }
-            },
-            "idUnique": "w0gd18oyq8"
-          },
-          "position": {
-            "x": 1234,
-            "y": 1474
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "r83to3ceuh",
-            "nodeType": "CONNECTION",
-            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
-            "connectorId": "httpConnector",
-            "name": "Http",
-            "label": "Http",
-            "status": "configured",
-            "capabilityName": "customHTMLTemplate",
-            "type": "trigger",
-            "properties": {
-              "buttonLabel": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Yes, Delete My Account\"\n      }\n    ]\n  }\n]"
-              },
-              "inputSchema": {
-                "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"title\"\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"textOne\"\n    },\n    \"textTwo\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text Two\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"textTwo\"\n    },\n    \"buttonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"cancelButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Cancel Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
-              },
-              "outputSchema": {
-                "value": {}
-              },
-              "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"feedbackError\" data-id=\"feedback\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <div class=\"d-flex flex-column\">\n              {{#if buttonLabel}}\n              <button data-id=\"next-button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"next-event\"  data-skbuttonvalue=\"DELETE\" id=\"btnNext\">\n                {{buttonLabel}}\n              </button>\n              {{/if}}\n              {{#if cancelButtonLabel}}\n              <button type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                data-skbuttonvalue=\"CANCEL\" id=\"btnCancel\">\n                {{cancelButtonLabel}}\n              </button>\n              {{/if}}\n            </div>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
-              },
-              "customCSS": {
-                "value": ""
-              },
-              "customScript": {
-                "value": ""
-              },
-              "validationRules": {
-                "value": []
-              },
-              "title": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Confirm Account Deletion\"\n      }\n    ]\n  }\n]"
-              },
-              "textOne": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"To confirm your request, we'll email a one-time passcode to \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"maskedEmail\",\n        \"data\": \"{{local.1614a9n6bn.payload.output.maskedEmail}}\",\n        \"tooltip\": \"{{local.1614a9n6bn.payload.output.maskedEmail}}\",\n        \"children\": [\n          {\n            \"text\": \"maskedEmail\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "formFieldsList": {
-                "value": [
-                  {
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "propertyName": "buttonValue"
-                  }
-                ]
-              },
-              "nodeTitle": {
-                "value": "Verify Delete Form"
-              },
-              "nodeDescription": {},
-              "textTwo": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Use this code in the next screen to complete account deletion\"\n      }\n    ]\n  }\n]"
-              },
-              "cancelButtonLabel": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Cancel\"\n      }\n    ]\n  }\n]"
-              }
-            },
-            "idUnique": "16fkjw5hoo"
-          },
-          "position": {
-            "x": 634,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "kfc7yu2kke",
-            "nodeType": "ANNOTATION",
-            "name": "Annotation",
-            "connectionId": "921bfae85c38ed45045e07be703d86b8",
-            "connectorId": "annotationConnector",
-            "capabilityName": "updateAnnotationProperties",
-            "type": "action",
-            "properties": {
-              "backgroundColor": {
-                "value": "#5D00D6ff"
-              },
-              "annotationTextColor": {
-                "value": "#ffffffff"
-              },
-              "annotation": {
-                "value": "Verify and Delete"
-              },
-              "width": {
-                "value": 2900
-              },
-              "fontStyle": {
-                "value": "bold"
-              },
-              "fontSize": {
-                "value": 14
-              },
-              "fontFamily": {
-                "value": "sans-serif"
-              },
-              "cornerRadius": {
-                "value": 8
-              }
-            },
-            "status": "configured"
-          },
-          "position": {
-            "x": 244,
-            "y": 1084
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "1614a9n6bn",
-            "nodeType": "CONNECTION",
-            "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
-            "connectorId": "nodeConnector",
-            "name": "Node",
-            "label": "Node",
-            "status": "configured",
-            "capabilityName": "startNode",
-            "type": "trigger",
-            "properties": {
-              "inputSchema": {
-                "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"p1UserId\": {\n      \"type\": \"string\",\n      \"displayName\": \"PingOne User Id\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"p1UserId\"\n    },\n    \"maskedEmail\": {\n      \"type\": \"string\",\n      \"displayName\": \"Masked Email\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"maskedEmail\"\n    }\n  }\n}"
-              },
-              "nodeTitle": {
-                "value": "Verify and Delete"
-              }
-            }
-          },
-          "position": {
-            "x": 334,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "3enb3q5kaw",
-            "nodeType": "CONNECTION",
-            "connectionId": "53ab83a4a4ab919d9f2cb02d9e111ac8",
-            "connectorId": "errorConnector",
-            "name": "Error Message",
-            "label": "Error Customize",
-            "status": "configured",
-            "capabilityName": "customErrorMessage",
-            "type": "action",
-            "properties": {
-              "errorMessage": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.6iokdi9xy0.payload.error.message}}\",\n        \"tooltip\": \"{{local.6iokdi9xy0.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Error Deleting User"
-              }
-            },
-            "idUnique": "y2w84jdymn"
-          },
-          "position": {
-            "x": 3034,
-            "y": 1474
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "o8ip72kzyk",
-            "nodeType": "CONNECTION",
-            "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
-            "connectorId": "nodeConnector",
-            "name": "Node",
-            "label": "Node",
-            "status": "configured",
-            "capabilityName": "startNode",
-            "type": "trigger",
-            "properties": {
-              "nodeTitle": {
-                "value": "Start"
-              },
-              "inputSchema": {
-                "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"message\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Message\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"message\"\n\t\t}\n\t}\n}"
-              }
-            }
-          },
-          "position": {
-            "x": 334,
-            "y": 364
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "akb8r44ib2",
-            "nodeType": "EVAL"
-          },
-          "position": {
-            "x": 454,
-            "y": 364
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "4psozogtdq",
-            "nodeType": "CONNECTION",
-            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
-            "connectorId": "httpConnector",
-            "name": "Http",
-            "label": "Http",
-            "status": "configured",
-            "capabilityName": "customHTMLTemplate",
-            "type": "trigger",
-            "properties": {
-              "messageTitle": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success\"\n      }\n    ]\n  }\n]"
-              },
-              "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n            <h1 id=\"title\" class=\"text-center mb-4\">\n              {{#ifEquals type \"SMS\"}}\n              <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n              Text message\n              {{/ifEquals}}\n\n              {{#ifEquals type \"EMAIL\"}}\n              <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n              Email\n              {{/ifEquals}}\n\n              {{#ifEquals type \"TOTP\"}}\n              <i class=\"mdi mdi-cellphone-key text-dark fs-1\" aria-hidden=\"true\"></i>\n              Authenticator App\n              {{/ifEquals}}\n\n              {{#ifEquals type \"VOICE\"}}\n              <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n              Voice\n              {{/ifEquals}}\n            </h1>\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"\n              aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"passcodeError\" data-skerrorid=\"passcode\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            {{#if resendMessage}}\n            <p class=\"text-info text-center fade\" aria-live=\"assertive\">{{resendMessage}}</p>\n            {{/if}}\n\n            <form id=\"otp-form\" data-id=\"otp-form\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"one-time-code\" maxlength=\"8\"\n                  aria-required=\"true\" aria-describedby=\"passcodeLabel\" placeholder=\"Passcode\" />\n                <label id=\"passcodeLabel\" class=\"form-label\" for=\"passcode\">Passcode</label>\n              </div>\n              <p class=\"text-muted text-center\" id=\"contact\">\n                {{#ifEquals type \"SMS\"}}\n                Message sent to:<br>\n                {{maskedContact}}\n                {{/ifEquals}}\n\n                {{#ifEquals type \"Voice\"}}\n                Calling:<br>\n                {{maskedContact}}\n                {{/ifEquals}}\n\n                {{#ifEquals type \"EMAIL\"}}\n                Email sent to:<br>\n                {{maskedContact}}\n                {{/ifEquals}}\n              </p>\n              <div class=\"d-flex flex-column\">\n                {{#ifEquals type \"TOTP\"}}\n                <!-- exclude resend option -->\n                {{else}}\n                <button id=\"resend\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                  {{resendButtonLabel}}\n                </button>\n                {{/ifEquals}}\n                {{#if verifyButtonLabel}}\n                <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"VERIFY\">\n                  {{verifyButtonLabel}}\n                </button>\n                {{/if}}\n                {{#if canChangeDevice}}\n                <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                  Cancel\n                </button>\n                {{/if}}\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
-              },
-              "formFieldsList": {
-                "value": [
-                  {
-                    "propertyName": "passcode",
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "value": "",
-                    "hashedVisibility": false
-                  },
-                  {
-                    "preferredControlType": "textField",
-                    "preferredDataType": "string",
-                    "propertyName": "buttonValue"
-                  }
-                ]
-              },
-              "nodeTitle": {
-                "value": "Passcode Verification (OTP)"
-              },
-              "customScript": {
-                "value": "const setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    }\n}\n\nconst start = () => {\n    setFieldFocus(\"passcode\");\n}\n\nif (document.readyState === \"loading\") {\n    // Loading hasn't finished yet\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    // `DOMContentLoaded` has already fired\n    start();\n}\n"
-              },
-              "nodeDescription": {
-                "value": "One-time Passcode entry"
-              },
-              "customCSS": {
-                "value": ".otp-control {\n    padding-top: 0rem !important;\n    padding-bottom: 0rem !important;\n    font-size: 17px;\n}\n\n@keyframes fadeOut {\n    0% {\n        opacity: 1;\n        visibility: visible;\n    }\n    80% {\n        opacity: .8;\n        visibility: visible;\n    }\n\n\n    100% {\n        opacity: 0;\n        visibility: hidden;\n        max-height: 0;\n    }\n}\n\n.fade {\n    overflow: hidden;\n    animation: fadeOut 20s forwards;\n}"
-              },
-              "inputSchema": {
-                "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"type\": {\n\t\t\t\"displayName\": \"Device Type [EMAIL|SMS|VOICE|TOTP]\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n    \"textOne\": {\n\t\t\t\"displayName\": \"Text One\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"maskedContact\": {\n\t\t\t\"displayName\": \"Masked Contact\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"canChangeDevice\": {\n\t\t\t\"displayName\": \"Can change Device\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"resendMessage\": {\n\t\t\t\"displayName\": \"Resend Message\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"resendButtonLabel\": {\n\t\t\t\"displayName\": \"Resend Button Label\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"verifyButtonLabel\": {\n\t\t\t\"displayName\": \"Verify Button Label\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t}\n\t}\n}"
-              },
-              "title": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Passcode Verification\"\n      }\n    ]\n  }\n]"
-              },
-              "textOne": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter the passcode you received to complete authentication.\"\n      }\n    ]\n  }\n]"
-              },
-              "iconClass": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"mdi-comment-text-outline\"\n      }\n    ]\n  }\n]"
-              },
-              "codeMaxLength": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"6\"\n      }\n    ]\n  }\n]"
-              },
-              "buttonLabel": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
-              },
-              "resendButtonLabel": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Resend\"\n      }\n    ]\n  }\n]"
-              },
-              "type": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"EMAIL\"\n      }\n    ]\n  }\n]"
-              },
-              "canChangeDevice": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"false\"\n      }\n    ]\n  }\n]"
-              },
-              "verifyButtonLabel": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Complete Account Deletion\"\n      }\n    ]\n  }\n]"
-              },
-              "validationRules": {
-                "value": [
-                  {
-                    "propertyName": "passcode",
-                    "rules": [
-                      {
-                        "ruleName": "presence",
-                        "message": "Enter the one-time passcode"
-                      },
-                      {
-                        "ruleName": "length",
-                        "wrongLength": "The one-time passcode must be eight characters.",
-                        "is": "8"
-                      }
-                    ]
-                  }
-                ]
-              },
-              "maskedContact": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"maskedEmail\",\n        \"data\": \"{{local.1614a9n6bn.payload.output.maskedEmail}}\",\n        \"tooltip\": \"{{local.1614a9n6bn.payload.output.maskedEmail}}\",\n        \"children\": [\n          {\n            \"text\": \"maskedEmail\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "resendMessage": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.h292objxyd.payload.output.message}}\",\n        \"tooltip\": \"{{local.h292objxyd.payload.output.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              }
-            },
-            "idUnique": "w1js97gxg2"
-          },
-          "position": {
-            "x": 1534,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "60flezhf93",
-            "nodeType": "EVAL",
-            "label": "Evaluator"
-          },
-          "position": {
-            "x": 1654,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "sveco8m875",
-            "nodeType": "CONNECTION",
-            "connectionId": "de650ca45593b82c49064ead10b9fe17",
-            "connectorId": "functionsConnector",
-            "name": "Functions",
-            "label": "Functions",
-            "status": "configured",
-            "capabilityName": "AEqualsMultipleB",
-            "type": "trigger",
-            "properties": {
-              "leftValueA": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.4psozogtdq.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.4psozogtdq.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "rightValueB": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"submit\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "OTP Form Button Action"
-              },
-              "rightValueMultiple": {
-                "value": [
-                  {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"VERIFY\"\n      }\n    ]\n  }\n]",
-                    "id": "js0k5824y5"
-                  },
-                  {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"RESEND\"\n      }\n    ]\n  }\n]",
-                    "id": "qtli5t2v0s"
-                  },
-                  {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"CANCEL\"\n      }\n    ]\n  }\n]",
-                    "id": "zb1ojca8u"
-                  }
-                ]
-              },
-              "nodeDescription": {
-                "value": "Check which button was clicked"
-              }
-            },
-            "isDisabled": false
-          },
-          "position": {
-            "x": 1834,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "rpf5dwgniq",
-            "nodeType": "EVAL"
-          },
-          "position": {
-            "x": 454,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "gsyfn0811p",
-            "nodeType": "EVAL"
-          },
-          "position": {
-            "x": 1354,
-            "y": 1294
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "3f1tguhv73",
-            "nodeType": "CONNECTION",
-            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
-            "connectorId": "httpConnector",
-            "name": "Http",
-            "label": "Http",
-            "status": "configured",
-            "capabilityName": "customHTMLTemplate",
-            "type": "trigger",
-            "properties": {
-              "customHTML": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div class=\\\"end-user-nano\\\">\\n    <div\\n        class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n        <div class=\\\"d-none\\\" \\n            data-skcomponent=\\\"skpolling\\\" \\n            data-skpollInterval=\\\"1\\\" \\n            data-skpollRetries=\\\"1\\\"\\n            data-skpollChallengeStatus=\\\"false\\\"></div>\\n    </div>\\n</div>\"\n      }\n    ]\n  }\n]"
-              },
-              "customCSS": {},
-              "customScript": {},
-              "nodeTitle": {
-                "value": "Reset Form"
-              },
-              "formFieldsList": {
-                "value": []
-              }
-            },
-            "idUnique": "pirg629qrb"
-          },
-          "position": {
-            "x": 2134,
-            "y": 1474
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "4t47mt299e",
-            "nodeType": "EVAL"
-          },
-          "position": {
-            "x": 1954,
-            "y": 1474
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "h292objxyd",
-            "nodeType": "CONNECTION",
-            "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
-            "connectorId": "nodeConnector",
-            "name": "Node",
-            "label": "Node",
-            "status": "configured",
-            "capabilityName": "startNode",
-            "type": "trigger",
-            "properties": {
-              "nodeTitle": {
-                "value": "Resend Passcode"
-              },
-              "inputSchema": {
-                "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"message\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Message\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"message\"\n\t\t}\n\t}\n}"
-              }
-            }
-          },
-          "position": {
-            "x": 934,
-            "y": 1174
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "v47bbv2wc1",
-            "nodeType": "EVAL"
-          },
-          "position": {
-            "x": 1054,
-            "y": 1174
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "30imok73d9",
-            "nodeType": "EVAL",
-            "label": "Evaluator"
-          },
-          "position": {
-            "x": 2254,
-            "y": 1474
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "kxsoebpt3o",
-            "nodeType": "CONNECTION",
-            "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
-            "connectorId": "nodeConnector",
-            "name": "Node",
-            "label": "Node",
-            "status": "configured",
-            "capabilityName": "goToNode",
-            "type": "action",
-            "properties": {
-              "nodeInstanceId": {
-                "value": "h292objxyd"
-              },
-              "message": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Passcode resent.\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Go to Resend"
-              }
-            }
-          },
-          "position": {
-            "x": 2434,
-            "y": 1474
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "6d31hn880u",
-            "nodeType": "CONNECTION",
-            "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
-            "connectorId": "nodeConnector",
-            "name": "Node",
-            "label": "Node",
-            "status": "configured",
-            "capabilityName": "goToNode",
-            "type": "action",
-            "properties": {
-              "nodeInstanceId": {
-                "value": "o8ip72kzyk"
-              },
-              "message": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Account deletion canceled.\"\n      }\n    ]\n  }\n]"
-              },
-              "nodeTitle": {
-                "value": "Go to Start"
-              }
-            },
-            "idUnique": "mlkfgkzc7z"
-          },
-          "position": {
-            "x": 2134,
-            "y": 1714
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "38zrh7mkmm",
-            "nodeType": "EVAL"
-          },
-          "position": {
-            "x": 1954,
-            "y": 1714
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "u93edgz04f",
-            "nodeType": "CONNECTION",
-            "connectionId": "de650ca45593b82c49064ead10b9fe17",
-            "connectorId": "functionsConnector",
-            "name": "Functions",
-            "label": "Functions",
-            "status": "configured",
-            "capabilityName": "customFunction",
-            "type": "trigger",
-            "properties": {
-              "nodeTitle": {
-                "value": "Mask Phone Number/Email Address"
-              },
-              "variableInputList": {
-                "value": [
-                  {
-                    "name": "email",
-                    "preferredDataType": "string",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.email}}\",\n        \"tooltip\": \"{{local.5a0ivy5c7z.payload.output.matchedUser.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
-                  {
-                    "name": "phone",
-                    "preferredDataType": "string",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  }
-                ]
-              },
-              "outputSchema": {
-                "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"maskedValue\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
-              },
-              "code": {
-                "value": "/**\n * Masks a phone number or email address.\n * @param  {Object} params - The parameters object containing an email or phone.\n * @returns {Object} An object with a maskedValue property containing the masked email or phone.\n */\nmodule.exports = function maskContactInfo({ params: { email, phone } = {} }) {\n    let maskedValue;\n\n    if (email) {\n        const [username, domain] = email.split(\"@\");\n        const maskedUsername =\n            username.charAt(0) + \"*\".repeat(username.length - 2) + username.slice(-1);\n        maskedValue = `${maskedUsername}@${domain}`;\n    } else if (phone) {\n        const numericPhoneNumber = phone.replace(/\\D/g, '');\n        maskedValue = `***-***-${numericPhoneNumber.slice(-4)}`;\n    }\n\n    return { maskedValue };\n}"
-              }
-            },
-            "idUnique": "mo962u4b9p"
-          },
-          "position": {
-            "x": 1534,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "sau73p77i6",
-            "nodeType": "EVAL"
-          },
-          "position": {
-            "x": 1654,
-            "y": 514
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        }
-      ],
-      "edges": [
-        {
-          "data": {
-            "id": "gguhgx3m9u",
-            "source": "rpf5dwgniq",
-            "target": "r83to3ceuh"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "a52bkkxdvm",
-            "source": "m50prm0ud3",
-            "target": "u93edgz04f"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "ur2vt6vmz8",
-            "source": "v47bbv2wc1",
-            "target": "2740lxm4tx"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "qiqg9aa8si",
-            "source": "sveco8m875",
-            "target": "38zrh7mkmm",
-            "multiValueSourceId": "zb1ojca8u"
-          },
-          "position": {
-            "x": 64,
-            "y": 132
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "b975sm72wb",
-            "source": "sveco8m875",
-            "target": "1vtwegk6fr",
-            "multiValueSourceId": "js0k5824y5"
-          },
-          "position": {
-            "x": 64,
-            "y": 52
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "7x81x4dbl5",
-            "source": "qfqxuv3c5n",
-            "target": "8v0tfjyipi"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "ofs69enbqd",
-            "source": "60flezhf93",
-            "target": "sveco8m875"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "dlunu86xlt",
-            "source": "8v0tfjyipi",
-            "target": "q6w3yodjof"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "z53tjwt2rp",
-            "source": "akb8r44ib2",
-            "target": "ma1nk3lekr"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "egj5h0e6r",
-            "source": "3pnnz9j1uz",
-            "target": "3enb3q5kaw"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "8rqoy2wfrm",
-            "source": "1vtwegk6fr",
-            "target": "qfqxuv3c5n"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "vuto16s0bw",
-            "source": "j6iij2u9um",
-            "target": "vmkp56rgq7"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "5gpbtme0fh",
-            "source": "j6iij2u9um",
-            "target": "0nvm6vkdua"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "uzlx9607y8",
-            "source": "m50prm0ud3",
-            "target": "rbprycaw75"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "2nj4dvh8kd",
-            "source": "38zrh7mkmm",
-            "target": "6d31hn880u"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "1wage2x95g",
-            "source": "ma1nk3lekr",
-            "target": "fe4k6lh9ng"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "dja2gkbixh",
-            "source": "edqxl0k4ko",
-            "target": "vwzr845qyc"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "9oph61tjll",
-            "source": "vwzr845qyc",
-            "target": "00j9nrb68o"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "o9gyu1y3fd",
-            "source": "fe4k6lh9ng",
-            "target": "5a0ivy5c7z"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "35uagiar6o",
-            "source": "30imok73d9",
-            "target": "kxsoebpt3o"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "dk84rhmkhb",
-            "source": "5a0ivy5c7z",
-            "target": "epjmdb0h06"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "k09g242p9k",
-            "source": "jslhypy7yq",
-            "target": "ma1nk3lekr"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "run2881hy9",
-            "source": "fe4k6lh9ng",
-            "target": "5a0ivy5c7z"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "i8usr94da2",
-            "source": "epjmdb0h06",
-            "target": "0nvm6vkdua"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "g71t7rfbvp",
-            "source": "va1cylqkud",
-            "target": "m50prm0ud3"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "60kkgmxwf3",
-            "source": "5a0ivy5c7z",
-            "target": "epjmdb0h06"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "p0h484knzj",
-            "source": "epjmdb0h06",
-            "target": "va1cylqkud"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "3s0tr4vcc8",
-            "source": "rbprycaw75",
-            "target": "j6iij2u9um"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "pzivb9o9r3",
-            "source": "80b0lmqldf",
-            "target": "jslhypy7yq"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "a9t6rykhce",
-            "source": "r83to3ceuh",
-            "target": "m69hijc7un"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "v6vl5j5qt8",
-            "source": "m69hijc7un",
-            "target": "9gcs4ayu5t"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "8gv5shao9f",
-            "source": "o8ip72kzyk",
-            "target": "akb8r44ib2"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "hkzjj2wdy1",
-            "source": "9gcs4ayu5t",
-            "target": "l0xw3ngmrm",
-            "multiValueSourceId": "u68y3i8hvr"
-          },
-          "position": {
-            "x": 64,
-            "y": 92
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "850vo2c2up",
-            "source": "l0xw3ngmrm",
-            "target": "pgycd2vrao"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "b3x6duh9hf",
-            "source": "8v0tfjyipi",
-            "target": "6iokdi9xy0"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "cqxb25e2rg",
-            "source": "3pnnz9j1uz",
-            "target": "fe19hzgf1s"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "5vali4bo35",
-            "source": "9gcs4ayu5t",
-            "target": "za33yzgqty",
-            "multiValueSourceId": "275o62s1jk"
-          },
-          "position": {
-            "x": 64,
-            "y": 52
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "fl9ouguvjz",
-            "source": "za33yzgqty",
-            "target": "2740lxm4tx"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "m0h16dx1jq",
-            "source": "4psozogtdq",
-            "target": "60flezhf93"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "bwu23vc55h",
-            "source": "6iokdi9xy0",
-            "target": "3pnnz9j1uz"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "xgddnf67cb",
-            "source": "1614a9n6bn",
-            "target": "rpf5dwgniq"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "0quliyko1p",
-            "source": "u93edgz04f",
-            "target": "sau73p77i6"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "zniidymb4j",
-            "source": "sau73p77i6",
-            "target": "edqxl0k4ko"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "a17ec88678",
-            "source": "3f1tguhv73",
-            "target": "30imok73d9"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "47gmwo2qjh",
-            "source": "2740lxm4tx",
-            "target": "gsyfn0811p"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "s0667i9t28",
-            "source": "gsyfn0811p",
-            "target": "4psozogtdq"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "5mygnn37v7",
-            "source": "sveco8m875",
-            "target": "4t47mt299e",
-            "multiValueSourceId": "qtli5t2v0s"
-          },
-          "position": {
-            "x": 64,
-            "y": 92
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "c7t45iuezj",
-            "source": "4t47mt299e",
-            "target": "3f1tguhv73"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "si8laeyg5e",
-            "source": "h292objxyd",
-            "target": "v47bbv2wc1"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        }
-      ]
-    },
-    "data": {},
-    "zoomingEnabled": true,
-    "userZoomingEnabled": true,
-    "zoom": 1,
-    "minZoom": 1e-50,
-    "maxZoom": 1e+50,
-    "panningEnabled": true,
-    "userPanningEnabled": true,
-    "pan": {
-      "x": 0,
-      "y": 0
-    },
-    "boxSelectionEnabled": true,
-    "renderer": {
-      "name": "null"
-    }
-  }
+  "connections": []
 }
