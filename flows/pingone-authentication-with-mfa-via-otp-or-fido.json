@@ -14,10 +14,10 @@
         "flowConnector",
         "pingOneAuthenticationConnector"
       ],
-      "createdDate": 1715362235859,
+      "createdDate": 1719336282223,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: May 10th, 2024",
+      "description": "Last Updated: June 25th, 2024",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Authentication with MFA via OTP or FIDO",
@@ -34,11 +34,11 @@
           "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.11/icons.css"
         ],
         "customTitle": "PingOne Authentication with MFA via OTP or FIDO",
-        "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
+        "customFaviconLink": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
       },
       "timeouts": "null",
-      "updatedDate": 1715362237559,
-      "flowId": "ef33916eedf5484e2b3357db3ccea441",
+      "updatedDate": 1719336284740,
+      "flowId": "fa9811f7dcf655ebfc7e78de81a83c4c",
       "versionId": 1,
       "graphData": {
         "elements": {
@@ -186,7 +186,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Welcome to \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"companyName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">                  \n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"Logo of {{global.variables.companyName}}\" />\n\n                        {{#if title}}\n                        <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n                        {{/if}}\n\n                        {{#if textOne}}\n                        <p class=\"text-muted text-center\">{{textOne}}</p>\n                        {{/if}}\n\n                        {{#if textTwo}}\n                        <p class=\"text-muted text-center\">{{textTwo}}</p>\n                        {{/if}}\n\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"feedbackError\" data-id=\"feedback\"\n                            data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"emailError\" data-skerrorid=\"email\"\n                            data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"passwordError\"\n                            data-skerrorid=\"password\" data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n                        <form id=\"emailPasswordForm\" aria-labelledby=\"title\" data-id=\"emailPasswordForm\">\n                            <div class=\"mb-4 form-floating\">\n                                <input class=\"form-control\" type=\"email\" id=\"email\" name=\"email\" placeholder=\"Email Address\"\n                                    autocomplete=\"email\" value=\"\" data-id=\"email-input\" aria-required=\"true\" aria-describedby=\"emailLabel\" />\n                                <label id=\"emailLabel\" for=\"email\">Email Address</label>\n                            </div>\n                            <div class=\"mb-4 form-floating\">\n                                <input class=\"form-control\" type=\"password\" id=\"password\" name=\"password\" placeholder=\"Password\"\n                                    autocomplete=\"current-password\" value=\"\" data-id=\"password-input\" aria-required=\"true\" aria-describedby=\"passwordLabel\" />\n                                <label id=\"passwordLabel\" for=\"password\">Password</label>\n                            </div>\n                            <div class=\"d-flex flex-column\">\n                                {{#if primaryButtonLabel}}\n                                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"form-submit\" id=\"btnSignIn\" data-skbuttonvalue=\"SIGNON\" data-skform=\"emailPasswordForm\">\n                                    {{primaryButtonLabel}}\n                                </button>\n                                {{/if}}\n\n                                {{#if forgotButtonLabel}}\n                                <button data-id=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"next-event\" id=\"btnTrouble\" data-skbuttonvalue=\"TROUBLE\">\n                                    {{forgotButtonLabel}}\n                                </button> \n                                {{/if}}  \n                            </div>\n                        </form>\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">                  \n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"Logo of {{global.variables.companyName}}\" />\n\n                        {{#if title}}\n                        <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n                        {{/if}}\n\n                        {{#if textOne}}\n                        <p class=\"text-muted text-center\">{{textOne}}</p>\n                        {{/if}}\n\n                        {{#if textTwo}}\n                        <p class=\"text-muted text-center\">{{textTwo}}</p>\n                        {{/if}}\n\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"feedbackError\" data-id=\"feedback\"\n                            data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"emailError\" data-skerrorid=\"email\"\n                            data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"passwordError\"\n                            data-skerrorid=\"password\" data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n                        <form id=\"emailPasswordForm\" aria-labelledby=\"title\" data-id=\"emailPasswordForm\">\n                            <div class=\"mb-4 form-floating\">\n                                <input class=\"form-control\" type=\"email\" id=\"email\" name=\"email\" placeholder=\"Email Address\"\n                                    autocomplete=\"email\" value=\"\" data-id=\"email-input\" aria-required=\"true\" aria-describedby=\"emailLabel\" />\n                                <label id=\"emailLabel\" for=\"email\">Email Address</label>\n                            </div>\n                            <div id=\"passwordDiv\" class=\"mb-4 form-floating\">\n                                <input class=\"form-control\" type=\"password\" id=\"password\" name=\"password\" placeholder=\"Password\"\n                                    autocomplete=\"current-password\" value=\"\" data-id=\"password-input\" aria-required=\"true\" aria-describedby=\"passwordLabel\" />\n                                <label id=\"passwordLabel\" for=\"password\">Password</label>\n                            </div>\n                            <div class=\"d-flex flex-column\">\n                                {{#if primaryButtonLabel}}\n                                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"form-submit\" id=\"btnSignIn\" data-skbuttonvalue=\"SIGNON\" data-skform=\"emailPasswordForm\">\n                                    {{primaryButtonLabel}}\n                                </button>\n                                {{/if}}\n\n                                {{#if forgotButtonLabel}}\n                                <button data-id=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"next-event\" id=\"btnTrouble\" data-skbuttonvalue=\"TROUBLE\">\n                                    {{forgotButtonLabel}}\n                                </button> \n                                {{/if}}  \n                            </div>\n                        </form>\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
                   },
                   "formFieldsList": {
                     "value": [
@@ -1000,7 +1000,55 @@
                   "nodeTitle": {
                     "value": "Update password"
                   },
-                  "nodeDescription": {}
+                  "nodeDescription": {},
+                  "resetPassword_localizedErrors": {
+                    "properties": {
+                      "en": {
+                        "value": [
+                          {
+                            "key": "unexpectedError",
+                            "value": ""
+                          },
+                          {
+                            "key": "notFound",
+                            "value": ""
+                          },
+                          {
+                            "key": "accessFailed",
+                            "value": ""
+                          },
+                          {
+                            "key": "noUserMatch",
+                            "value": ""
+                          },
+                          {
+                            "key": "requiredValue",
+                            "value": ""
+                          },
+                          {
+                            "key": "passwordLockedOut",
+                            "value": ""
+                          },
+                          {
+                            "key": "passwordTooYoung",
+                            "value": ""
+                          },
+                          {
+                            "key": "userDisabled",
+                            "value": ""
+                          },
+                          {
+                            "key": "currentPasswordNotValid",
+                            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Current password is not valid\"\n      }\n    ]\n  }\n]"
+                          },
+                          {
+                            "key": "newPasswordNotValid",
+                            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"New password did not meet policy requirements\"\n      }\n    ]\n  }\n]"
+                          }
+                        ]
+                      }
+                    }
+                  }
                 }
               },
               "position": {
@@ -1355,7 +1403,7 @@
                 "type": "trigger",
                 "properties": {
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n          {{#if title}}\n            <h1 id=\"header\" class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          {{#if text}}\n            <p class=\"text-muted text-center\">{{text}}</p>\n          {{/if}}\n\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"currentPassword\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"newPassword\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"verifyNewPassword\" data-skcomponent=\"skerrormessage\"></p>\n\n          <form id=\"resetPasswordForm\" data-id=\"resetPasswordForm\">\n            <div id=\"currentPasswordContainer\" class=\"mb-4 form-floating\">\n              <input id=\"currentPassword\" data-id=\"currentPassword\" class=\"form-control\" type=\"password\"\n                name=\"currentPassword\" placeholder=\"Current Password\" autocomplete=\"off\" value=\"\" />\n              <label class=\"form-label\" for=\"email\">Current Password</label>\n            </div>\n          </p>\n            <div id=\"newPasswordContainer\" class=\"mb-4 form-floating mt-lg-4\">\n              <input\n                id=\"newPassword\" data-id=\"newPassword\" class=\"form-control\" type=\"password\"\n                name=\"newPassword\" placeholder=\"New Password\" autocomplete=\"off\" value=\"\" />\n              <label class=\"form-label\" for=\"email\">New Password</label>\n            </div>\n            <div id=\"verifyPasswordContainer\" class=\"mb-4 form-floating\">\n              <input\n                id=\"verifyNewPassword\" data-id=\"verifyNewPassword\" class=\"form-control\" type=\"password\"\n                name=\"verifyNewPassword\" placeholder=\"Verify New Password\" autocomplete=\"off\" value=\"\" />\n              <label class=\"form-label\" for=\"email\">Confirm New Password</label>\n            </div>\n            <div class=\"d-flex flex-column\">\n              {{#if primaryButtonLabel}}\n              <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\"\n                data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"resetPasswordForm\" \n                data-skbuttonvalue=\"NEXT\">  \n                {{primaryButtonLabel}}\n              </button>\n              {{/if}}\n\n              {{#if cancelButtonLabel}}\n                <button id=\"cancelBtn\" data-id=\"cancelBtn\" class=\"btn btn-link\" type=\"submit\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"next-event\" data-skform=\"resetPasswordForm\" \n                  data-skbuttonvalue=\"CANCEL\">\n                    {{cancelButtonLabel}}\n                </button>\n              {{/if}}\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n          {{#if title}}\n            <h1 id=\"header\" class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          {{#if text}}\n            <p class=\"text-muted text-center\">{{text}}</p>\n          {{/if}}\n\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"currentPassword\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"newPassword\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"verifyNewPassword\" data-skcomponent=\"skerrormessage\"></p>\n\n          <form id=\"resetPasswordForm\" data-id=\"resetPasswordForm\">\n            <div id=\"currentPasswordContainer\" class=\"mb-4 form-floating\">\n              <input id=\"currentPassword\" data-id=\"currentPassword\" class=\"form-control\" type=\"password\"\n                name=\"currentPassword\" placeholder=\"Current Password\" autocomplete=\"off\" value=\"\" />\n              <label class=\"form-label\" for=\"email\">Current Password</label>\n            </div>\n          </p>\n            <div id=\"newPasswordContainer\" class=\"mb-4 form-floating mt-lg-4\">\n              <input\n                id=\"newPassword\" data-id=\"newPassword\" class=\"form-control\" type=\"password\"\n                name=\"newPassword\" placeholder=\"New Password\" autocomplete=\"off\" value=\"\" />\n              <label class=\"form-label\" for=\"email\">New Password</label>\n            </div>\n            <div id=\"verifyPasswordContainer\" class=\"mb-4 form-floating\">\n              <input\n                id=\"verifyNewPassword\" data-id=\"verifyNewPassword\" class=\"form-control\" type=\"password\"\n                name=\"verifyNewPassword\" placeholder=\"Verify Password\" autocomplete=\"off\" value=\"\" />\n              <label class=\"form-label\" for=\"email\">Verify Password</label>\n            </div>\n            <div class=\"d-flex flex-column\">\n              {{#if primaryButtonLabel}}\n              <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\"\n                data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"resetPasswordForm\" \n                data-skbuttonvalue=\"NEXT\">  \n                {{primaryButtonLabel}}\n              </button>\n              {{/if}}\n\n              {{#if cancelButtonLabel}}\n                <button id=\"cancelBtn\" data-id=\"cancelBtn\" class=\"btn btn-link\" type=\"submit\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"next-event\" data-skform=\"resetPasswordForm\" \n                  data-skbuttonvalue=\"CANCEL\">\n                    {{cancelButtonLabel}}\n                </button>\n              {{/if}}\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
                   },
                   "formFieldsList": {
                     "value": [
@@ -2049,7 +2097,7 @@
                 "type": "trigger",
                 "properties": {
                   "title": {
-                    "value": "Recover Password"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter New Password\"\n      }\n    ]\n  }\n]"
                   },
                   "formFieldsList": {
                     "value": [
@@ -2088,10 +2136,10 @@
                     "value": "Sign On"
                   },
                   "nodeTitle": {
-                    "value": "Recovery Code Form"
+                    "value": "Set New Password"
                   },
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n         <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n         \n          {{#if title}}\n            <h1 class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          {{#if text}}\n            <p class=\"text-muted text-center\">{{text}}</p>\n          {{/if}}\n\n          {{#if resendMessage}}\n              <p class=\"text-info text-center\">{{resendMessage}}</p>\n          {{/if}}\n\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"recoveryCode\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"newPassword\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"verifyNewPassword\" data-skcomponent=\"skerrormessage\"></p>\n\n          <form id=\"recoveryCodeForm\" data-id=\"recoveryCodeForm\">\n            <div class=\"mb-4 form-floating\">\n              <input id=\"recoveryCode\" data-id=\"recoveryCode\" class=\"form-control\" type=\"text\" name=\"recoveryCode\"\n                placeholder=\"Recovery Code\" autocomplete=\"on\" value=\"\"/>\n              <label id=\"recoveryCodeLabel\" data-id=\"recoveryCodeLabel\" class=\"form-label\" for=\"recoveryCode\">\n                Recovery Code\n              </label>\n            </div>\n            <div id=\"newPasswordContainer\" class=\"mb-4 form-floating\">\n              <input id=\"newPassword\" data-id=\"newPassword\" class=\"form-control\" type=\"password\" name=\"newPassword\"\n                placeholder=\"New Password\" autocomplete=\"on\" value=\"\" />\n              <label id=\"newPasswordLabel\" data-id=\"newPasswordLabel\" class=\"form-label\" for=\"newPassword\" >\n                New Password\n              </label>\n            </div>\n            <div id=\"verifyPasswordContainer\" class=\"mb-4 form-floating\">\n              <input\n                id=\"verifyNewPassword\" data-id=\"verifyNewPassword\" class=\"form-control\" type=\"password\"\n                name=\"verifyNewPassword\" placeholder=\"Verify New Password\" autocomplete=\"off\" value=\"\" />\n              <label class=\"form-label\" for=\"email\">Verify New Password</label>\n            </div>\n            <div class=\"d-flex flex-column\">\n              {{#if resendButtonLabel}}\n              <button id=\"resendBtn\" type=\"resendBtn\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" style=\"margin-bottom: 15px;\"\n                data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                {{resendButtonLabel}}\n              </button>\n              {{/if}}\n            </div>\n            <div class=\"d-flex flex-column\">\n              {{#if primaryButtonLabel}}\n              <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"form-submit\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"NEXT\" >\n                {{primaryButtonLabel}}\n              </button>\n              {{/if}}\n              {{#if cancelButtonLabel}}\n              <button id=\"backBtn\" data-id=\"backBtn\" class=\"btn btn-link\" type=\"submit\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"next-event\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"CANCEL\">\n                {{cancelButtonLabel}}\n              </button>\n              {{/if}}\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n         <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n         \n          {{#if title}}\n            <h1 class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          {{#if text}}\n            <p class=\"text-muted text-center\">{{text}}</p>\n          {{/if}}\n\n          {{#if resendMessage}}\n             <p class=\"text-success mdi mdi-check-circle text-center\" aria-live=\"assertive\">{{resendMessage}}</p>\n          {{/if}}\n\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"recoveryCode\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"newPassword\" data-skcomponent=\"skerrormessage\"></p>\n          <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"verifyNewPassword\" data-skcomponent=\"skerrormessage\"></p>\n\n          <form id=\"recoveryCodeForm\" data-id=\"recoveryCodeForm\">\n            <div class=\"mb-4 form-floating\">\n              <input id=\"recoveryCode\" data-id=\"recoveryCode\" class=\"form-control\" type=\"text\" name=\"recoveryCode\"\n                placeholder=\"Recovery Code\" autocomplete=\"on\" value=\"\"/>\n              <label id=\"recoveryCodeLabel\" data-id=\"recoveryCodeLabel\" class=\"form-label\" for=\"recoveryCode\">\n                Recovery Code\n              </label>\n            </div>\n            <div id=\"newPasswordContainer\" class=\"mb-4 form-floating\">\n              <input id=\"newPassword\" data-id=\"newPassword\" class=\"form-control\" type=\"password\" name=\"newPassword\"\n                placeholder=\"New Password\" autocomplete=\"on\" value=\"\" />\n              <label id=\"newPasswordLabel\" data-id=\"newPasswordLabel\" class=\"form-label\" for=\"newPassword\" >\n                New Password\n              </label>\n            </div>\n            <div id=\"verifyPasswordContainer\" class=\"mb-4 form-floating\">\n              <input\n                id=\"verifyNewPassword\" data-id=\"verifyNewPassword\" class=\"form-control\" type=\"password\"\n                name=\"verifyNewPassword\" placeholder=\"Verify Password\" autocomplete=\"off\" value=\"\" />\n              <label class=\"form-label\" for=\"email\">Verify Password</label>\n            </div>\n            <div class=\"d-flex flex-column\">\n              {{#if primaryButtonLabel}}\n              <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary\" type=\"submit\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"form-submit\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"CONTINUE\" >\n                {{primaryButtonLabel}}\n              </button>\n              {{/if}}\n\n              {{#if resendButtonLabel}}\n              <button id=\"resendBtn\" type=\"resendBtn\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                {{resendButtonLabel}}\n              </button>\n              {{/if}}\n              \n              {{#if cancelButtonLabel}}\n              <button id=\"backBtn\" data-id=\"backBtn\" class=\"btn btn-link\" type=\"submit\" data-skcomponent=\"skbutton\"\n                data-skbuttontype=\"next-event\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"CANCEL\">\n                {{cancelButtonLabel}}\n              </button>\n              {{/if}}\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
                   },
                   "customCSS": {},
                   "customScript": {
@@ -2135,7 +2183,7 @@
                     "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"title\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Title\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"title\"\n\t\t},\n\t\t\"text\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Text\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"text\"\n\t\t},\n\t\t\"resendMessage\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Resend Message\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"resendMessage\"\n\t\t},\n\t\t\"primaryButtonLabel\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Primary Button Label\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"primaryButtonLabel\"\n\t\t},\n\t\t\"cancelButtonLabel\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Cancel Button Label\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"cancelButtonLabel\"\n\t\t},\n\t\t\"resendButtonLabel\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Resend Button Label\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"resendButtonLabel\"\n\t\t}\n\t}\n}"
                   },
                   "text": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"If an account is associated with the provided email address, a recovery code will be sent.\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Create and verify a new password\"\n      }\n    ]\n  }\n]"
                   },
                   "primaryButtonLabel": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
@@ -2144,7 +2192,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Cancel\"\n      }\n    ]\n  }\n]"
                   },
                   "resendButtonLabel": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Resend\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Resend Code\"\n      }\n    ]\n  }\n]"
                   },
                   "resendMessage": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.bmfvybco52.payload.output.message}}\",\n        \"tooltip\": \"{{local.bmfvybco52.payload.output.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
@@ -2246,7 +2294,7 @@
                   "rightValueMultiple": {
                     "value": [
                       {
-                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"NEXT\"\n      }\n    ]\n  }\n]",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"CONTINUE\"\n      }\n    ]\n  }\n]",
                         "id": "vgii63uk2p"
                       },
                       {
@@ -2361,7 +2409,12 @@
                   "recoverPassword_localizedErrors": {
                     "properties": {
                       "en": {
-                        "value": []
+                        "value": [
+                          {
+                            "key": "invalidValue",
+                            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Invalid recovery code or password\"\n      }\n    ]\n  }\n]"
+                          }
+                        ]
                       }
                     }
                   },
@@ -2520,64 +2573,6 @@
             },
             {
               "data": {
-                "id": "ljornaqm7",
-                "nodeType": "CONNECTION",
-                "connectionId": "867ed4363b2bc21c860085ad2baa817d",
-                "connectorId": "httpConnector",
-                "name": "Http",
-                "label": "Http",
-                "status": "configured",
-                "capabilityName": "customHTMLTemplate",
-                "type": "trigger",
-                "properties": {
-                  "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n    <div class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n\n                    {{#if text}}\n                    <p class=\"text-muted text-center\">{{text}}</p>\n                    {{/if}}\n                    \n                    {{#if primaryButtonLabel}}\n                    <div class=\"d-flex flex-column\">\n                        <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                data-skbuttontype=\"next-event\">\n                            {{primaryButtonLabel}}\n                        </button>\n                    </div>\n                    {{/if}}\n                    \n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
-                  },
-                  "formFieldsList": {
-                    "value": [
-                      {
-                        "preferredControlType": "textField",
-                        "preferredDataType": "string",
-                        "propertyName": "buttonValue"
-                      }
-                    ]
-                  },
-                  "nodeTitle": {
-                    "value": "Display Success Message"
-                  },
-                  "nodeDescription": {
-                    "value": "Display success message"
-                  },
-                  "inputSchema": {
-                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"title\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Title\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"title\"\n\t\t},\n\t\t\"text\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Text\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"text\"\n\t\t},\n\t\t\"primaryButtonLabel\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Primary Button Label\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"primaryButtonLabel\"\n\t\t}\n\t}\n}"
-                  },
-                  "title": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Password Reset Success\"\n      }\n    ]\n  }\n]"
-                  },
-                  "text": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your password has been successfully updated.\"\n      }\n    ]\n  }\n]"
-                  },
-                  "primaryButtonLabel": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
-                  }
-                },
-                "idUnique": "22si2yf9r9"
-              },
-              "position": {
-                "x": 2738,
-                "y": 2314
-              },
-              "group": "nodes",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": false,
-              "classes": ""
-            },
-            {
-              "data": {
                 "id": "ug1tfuvoj8",
                 "nodeType": "CONNECTION",
                 "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
@@ -2640,14 +2635,11 @@
                 "name": "Node",
                 "label": "Node",
                 "status": "configured",
-                "capabilityName": "goToNode",
-                "type": "action",
+                "capabilityName": "returnBackToCallingNode",
+                "type": "trigger",
                 "properties": {
                   "nodeInstanceId": {
                     "value": "sb7lgfar79"
-                  },
-                  "email": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.6qno04vqav.payload.output.email}}\",\n        \"tooltip\": \"{{local.6qno04vqav.payload.output.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeTitle": {
                     "value": "Go to Sign On Start"
@@ -2721,8 +2713,8 @@
                 "idUnique": "fz3dd5lm92"
               },
               "position": {
-                "x": 2138,
-                "y": 2764
+                "x": 2430,
+                "y": 2760
               },
               "group": "nodes",
               "removed": false,
@@ -2810,8 +2802,8 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 2258,
-                "y": 2764
+                "x": 2550,
+                "y": 2760
               },
               "group": "nodes",
               "removed": false,
@@ -2846,8 +2838,8 @@
                 }
               },
               "position": {
-                "x": 2438,
-                "y": 2764
+                "x": 2730,
+                "y": 2760
               },
               "group": "nodes",
               "removed": false,
@@ -2873,14 +2865,14 @@
                   "subFlowId": {
                     "value": {
                       "label": "MFA Device Authentication Subflow",
-                      "value": "e717f020a2795b3e3c2fd4cd161cf2e9"
+                      "value": "3fbc35b8e04e1a8a5bc780c373e3e2e4"
                     }
                   },
                   "subFlowVersionId": {
                     "value": -1
                   },
                   "p1UserId": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"p1UserId\",\n        \"data\": \"{{local.u3nc0y6sgu.payload.output.p1UserId}}\",\n        \"tooltip\": \"{{local.u3nc0y6sgu.payload.output.p1UserId}}\",\n        \"children\": [\n          {\n            \"text\": \"p1UserId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"p1UserId\",\n        \"data\": \"{{local.u3nc0y6sgu.payload.output.p1UserId}}\",\n        \"tooltip\": \"{{local.u3nc0y6sgu.payload.output.p1UserId}}\",\n        \"children\": [\n          {\n            \"text\": \"p1UserId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"p1UserId\",\n        \"data\": \"{{local.ux6gq2dyxu.payload.output.p1UserId}}\",\n        \"tooltip\": \"{{local.ux6gq2dyxu.payload.output.p1UserId}}\",\n        \"children\": [\n          {\n            \"text\": \"p1UserId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
                   "email": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"email\",\n        \"data\": \"{{local.sii9zk8nys.payload.output.email}}\",\n        \"tooltip\": \"{{local.sii9zk8nys.payload.output.email}}\",\n        \"children\": [\n          {\n            \"text\": \"email\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
@@ -4289,62 +4281,6 @@
             },
             {
               "data": {
-                "id": "41pw846cun",
-                "nodeType": "ANNOTATION",
-                "name": "Annotation",
-                "connectionId": "921bfae85c38ed45045e07be703d86b8",
-                "connectorId": "annotationConnector",
-                "capabilityName": "updateAnnotationProperties",
-                "type": "action",
-                "properties": {
-                  "backgroundColor": {
-                    "value": "#f2f3f4ff"
-                  },
-                  "annotationTextColor": {
-                    "value": "#000000"
-                  },
-                  "annotation": {
-                    "value": "Sign On Start"
-                  },
-                  "width": {
-                    "value": 240
-                  },
-                  "fontSize": {
-                    "value": 14
-                  },
-                  "fontFamily": {
-                    "value": "sans-serif"
-                  },
-                  "cornerRadius": {
-                    "value": 8
-                  },
-                  "strokeEnabled": {
-                    "value": true
-                  },
-                  "strokeWidth": {
-                    "value": 1
-                  },
-                  "strokeColor": {
-                    "value": "#181818ff"
-                  }
-                },
-                "status": "configured"
-              },
-              "position": {
-                "x": 2914,
-                "y": 2194
-              },
-              "group": "nodes",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": false,
-              "classes": ""
-            },
-            {
-              "data": {
                 "id": "6qno04vqav",
                 "nodeType": "CONNECTION",
                 "connectionId": "867ed4363b2bc21c860085ad2baa817d",
@@ -4384,16 +4320,16 @@
                     "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"continueButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Continue Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"cancelButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Cancel Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
                   },
                   "title": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Account Recovery\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Recover Your Account\"\n      }\n    ]\n  }\n]"
                   },
                   "textOne": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter your email address to receive a recovery code that will let you change your password.\"\n      }\n    ]\n  }\n]"
                   },
                   "continueButtonLabel": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Send\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
                   },
                   "cancelButtonLabel": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Cancel\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Back\"\n      }\n    ]\n  }\n]"
                   },
                   "validationRules": {
                     "value": [
@@ -4572,7 +4508,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: May 10th, 2024"
+                    "value": "Last Updated: June 25th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -4611,9 +4547,187 @@
               "grabbable": true,
               "pannable": false,
               "classes": ""
+            },
+            {
+              "data": {
+                "id": "uet5ck92fl",
+                "nodeType": "CONNECTION",
+                "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+                "connectorId": "httpConnector",
+                "name": "Http",
+                "label": "Http",
+                "status": "configured",
+                "capabilityName": "customHTMLTemplate",
+                "type": "trigger",
+                "properties": {
+                  "customHTML": {
+                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"d-none\" \n            data-skcomponent=\"skpolling\" \n            data-skpollInterval=\"10\" \n            data-skpollRetries=\"1\"\n            data-skpollChallengeStatus=\"false\"></div>\n    </div>\n</div>"
+                  },
+                  "customCSS": {},
+                  "customScript": {},
+                  "nodeTitle": {
+                    "value": "NOP UI Page"
+                  },
+                  "formFieldsList": {
+                    "value": []
+                  }
+                },
+                "idUnique": "g9fybbwj88"
+              },
+              "position": {
+                "x": 2142,
+                "y": 2760
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "w3o1dm3ckg",
+                "nodeType": "EVAL"
+              },
+              "position": {
+                "x": 2286,
+                "y": 2760
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "h7u6fzhslc",
+                "nodeType": "CONNECTION",
+                "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+                "connectorId": "httpConnector",
+                "name": "Http",
+                "label": "Http",
+                "status": "configured",
+                "capabilityName": "customHTMLTemplate",
+                "type": "trigger",
+                "properties": {
+                  "customHTML": {
+                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n\n                    <div class=\"mx-auto mt-3 mb-4\">\n                        <svg class=\"checkmark\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 52 52\">\n                            <circle class=\"checkmarkCircle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\" />\n                            <path class=\"checkmarkCheck\" fill=\"none\" d=\"M14.1 27.2l7.1 7.2 16.7-16.8\" />\n                        </svg>\n                    </div>\n\n                    {{#if textOne}}\n                    <p class=\"text-muted text-center\">{{textOne}}</p>\n                    {{/if}}\n\n                    {{#if textTwo}}\n                    <p class=\"text-muted text-center\">{{textTwo}}</p>\n                    {{/if}}\n\n                    <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n                    <div class=\"d-flex flex-column\">\n                        <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\" data-skcomponent=\"skbutton\"\n                        data-skbuttontype=\"next-event\" data-skbuttonvalue=\"NEXT\" >\n                        Continue\n                        </button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+                  },
+                  "formFieldsList": {
+                    "value": [
+                      {
+                        "preferredControlType": "textField",
+                        "preferredDataType": "string",
+                        "propertyName": "buttonValue"
+                      }
+                    ]
+                  },
+                  "nodeTitle": {
+                    "value": "Password Reset Success"
+                  },
+                  "customCSS": {
+                    "value": ":root {\n  --animation-dimension: 120px;\n  --animation-start-color: #71e171;\n  --animation-midway-color: #67d067;\n  --animation-finish-color: #59b259;\n}\n\n.checkmark {\n  width: var(--animation-dimension);\n  height: var(--animation-dimension);\n  border-radius: 50%;\n  display: block;\n  stroke-width: 5;\n  stroke: #ffffff;\n  stroke-miterlimit: 10;\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);\n  animation: fill 0.4s ease-in-out 0.4s forwards,\n    scale 0.3s ease-in-out 0.9s both;\n}\n\n.checkmarkCircle {\n  stroke-dasharray: 166;\n  stroke-dashoffset: 166;\n  stroke-width: 5;\n  stroke-miterlimit: 10;\n  stroke: var(--animation-finish-color);\n  fill: none;\n  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards,\n    colorChange 1.2s ease-in-out forwards;\n}\n\n.checkmarkCheck {\n  transform-origin: 50% 50%;\n  stroke-dasharray: 48;\n  stroke-dashoffset: 48;\n  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards,\n    colorChange 0.6s ease-in-out 0.8s forwards;\n}\n\n@keyframes colorChange {\n  0% {\n    stroke: var(--animation-start-color);\n  }\n  50% {\n    stroke: var(--animation-midway-color);\n  } \n  100% {\n    stroke: var(--animation-finish-color);\n  }\n}\n\n@keyframes stroke {\n  100% {\n    stroke-dashoffset: 0;\n  }\n}\n@keyframes scale {\n  0%,\n  100% {\n    transform: none;\n  }\n  50% {\n    transform: scale3d(1.1, 1.1, 1);\n  }\n  70% {\n    transform: scale3d(0.98, 0.98, 1);\n  }\n  85% {\n    transform: scale3d(1.02, 1.02, 1);\n  }\n}\n@keyframes fill {\n  100% {\n    box-shadow: inset 0px 0px 0px 0px var(--animation-finish-color);\n  }\n}"
+                  },
+                  "validationRules": {
+                    "value": []
+                  },
+                  "backgroundColor": {
+                    "value": "#afd5ffff"
+                  },
+                  "customScript": {},
+                  "inputSchema": {
+                    "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textTwo\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text Two\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
+                  },
+                  "title": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success\"\n      }\n    ]\n  }\n]"
+                  },
+                  "nodeDescription": {
+                    "value": "Success Message With Animated Checkmark"
+                  },
+                  "textOne": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your password has been successfully updated.\"\n      }\n    ]\n  }\n]"
+                  }
+                },
+                "idUnique": "m1rg463acx"
+              },
+              "position": {
+                "x": 2730,
+                "y": 2310
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "sabe797h71",
+                "nodeType": "EVAL"
+              },
+              "position": {
+                "x": 1350,
+                "y": 690
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
             }
           ],
           "edges": [
+            {
+              "data": {
+                "id": "ncs531ssfr",
+                "source": "sabe797h71",
+                "target": "r0ijq2pqfd"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "rf9z6ujxsn",
+                "source": "fpjztfvx7x",
+                "target": "uet5ck92fl"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
             {
               "data": {
                 "id": "ngfx3eghav",
@@ -5881,9 +5995,9 @@
             },
             {
               "data": {
-                "id": "e55lh3tpr0",
-                "source": "ihplrki2dx",
-                "target": "ljornaqm7"
+                "id": "msq4tmjh15",
+                "source": "uet5ck92fl",
+                "target": "w3o1dm3ckg"
               },
               "position": {
                 "x": 0,
@@ -5939,9 +6053,9 @@
             },
             {
               "data": {
-                "id": "61p7tmmo9j",
-                "source": "ljornaqm7",
-                "target": "vnydims7cf"
+                "id": "s1vlv97bvd",
+                "source": "w3o1dm3ckg",
+                "target": "sgq9eyyzk6"
               },
               "position": {
                 "x": 0,
@@ -6035,9 +6149,9 @@
             },
             {
               "data": {
-                "id": "wj6vt4jwjv",
-                "source": "fpjztfvx7x",
-                "target": "sgq9eyyzk6"
+                "id": "h07daj087r",
+                "source": "mt1lksc5fs",
+                "target": "q59rbwllhe"
               },
               "position": {
                 "x": 0,
@@ -6382,9 +6496,47 @@
             },
             {
               "data": {
-                "id": "h07daj087r",
-                "source": "mt1lksc5fs",
-                "target": "q59rbwllhe"
+                "id": "37fkahn6cn",
+                "source": "ihplrki2dx",
+                "target": "h7u6fzhslc"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "njzp0qn56u",
+                "source": "h7u6fzhslc",
+                "target": "vnydims7cf"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "zp9vt7geff",
+                "source": "ux6gq2dyxu",
+                "target": "sabe797h71"
               },
               "position": {
                 "x": 0,
@@ -6419,11 +6571,11 @@
         }
       },
       "flowColor": "#E3F0FF",
-      "savedDate": 1715362235566,
+      "savedDate": 1719336282190,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1711542060985,
+          "createdDate": 1718715614928,
           "fields": {
             "type": "string",
             "displayName": "Url for company's logo image",
@@ -6431,6 +6583,7 @@
             "min": 0,
             "max": 2000
           },
+          "id": "454da928-c543-4aac-b6b3-c233400c1d32",
           "type": "property",
           "visibility": "private",
           "name": "companyLogo##SK##flowInstance",
@@ -6438,7 +6591,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711541872878,
+          "createdDate": 1718715505632,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -6446,6 +6599,7 @@
             "min": 0,
             "max": 2000
           },
+          "id": "3245a456-c70f-4cb8-bc33-7c7b14c1f479",
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
@@ -6453,7 +6607,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711542060979,
+          "createdDate": 1719333012618,
           "fields": {
             "type": "string",
             "displayName": "FIDO2 origin",
@@ -6461,6 +6615,7 @@
             "min": 0,
             "max": 2000
           },
+          "id": "26ab4d5a-42e0-44d3-9ceb-65a140da7468",
           "type": "property",
           "visibility": "private",
           "name": "origin##SK##flowInstance",
@@ -6468,7 +6623,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711542060980,
+          "createdDate": 1719333012616,
           "fields": {
             "type": "string",
             "displayName": "Relying Party ID",
@@ -6476,6 +6631,7 @@
             "min": 0,
             "max": 2000
           },
+          "id": "e88b4941-d794-4f1f-8a7f-c00e3bd644c8",
           "type": "property",
           "visibility": "private",
           "name": "rpid##SK##flowInstance",
@@ -6483,7 +6639,7 @@
         }
       ],
       "connections": [],
-      "parentFlowId": "ef33916eedf5484e2b3357db3ccea441"
+      "parentFlowId": "fa9811f7dcf655ebfc7e78de81a83c4c"
     },
     {
       "companyId": "",
@@ -6497,10 +6653,10 @@
         "functionsConnector",
         "errorConnector"
       ],
-      "createdDate": 1715353671107,
+      "createdDate": 1719335501215,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: May 10th, 2024",
+      "description": "Last Updated: June 25th, 2024",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -6563,8 +6719,8 @@
         "logLevel": 2
       },
       "timeouts": "null",
-      "updatedDate": 1715353672554,
-      "flowId": "e717f020a2795b3e3c2fd4cd161cf2e9",
+      "updatedDate": 1719335534913,
+      "flowId": "3fbc35b8e04e1a8a5bc780c373e3e2e4",
       "versionId": 1,
       "graphData": {
         "elements": {
@@ -9034,7 +9190,7 @@
                     "value": {}
                   },
                   "customHTML": {
-                    "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">\n                    {{#ifEquals type \"SMS\"}}\n                    <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Text message\n                    {{/ifEquals}}\n\n                    {{#ifEquals type \"EMAIL\"}}\n                    <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Email\n                    {{/ifEquals}}\n                    \n                    {{#ifEquals type \"TOTP\"}}\n                    <i class=\"mdi mdi-cellphone-key text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Authenticator App\n                    {{/ifEquals}}\n\n                     {{#ifEquals type \"VOICE\"}}\n                    <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Voice\n                    {{/ifEquals}}\n                </h1>\n                <p class=\"text-muted text-center\">Enter the passcode you received to complete authentication.</p>\n                \n                <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\" id=\"error-msg\"></p>\n                <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                {{#if resendMessage}}\n                    <p class=\"text-info text-center\">{{resendMessage}}</p>\n                {{/if}}\n\n                <form id=\"otp-form\" data-id=\"otp-form\">\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"6\" />\n                        <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                    </div>\n                    <p class=\"text-muted text-center\" id=\"contact\">\n                        {{#ifEquals type \"SMS\"}}\n                        Message sent to:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"Voice\"}}\n                        Calling:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        Email sent to:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n                    </p>\n                    <div class=\"d-flex flex-column\">\n                        {{#ifEquals type \"TOTP\"}}\n                          <!-- exclude resend option -->\n                        {{else}}\n                        <button id=\"resend\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                            {{resendButtonLabel}}\n                        </button>\n                        {{/ifEquals}}\n                        {{#if primaryButtonLabel}}\n                        <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                            {{primaryButtonLabel}}\n                        </button>\n                        {{/if}}\n                        {{#if canChangeDevice}}\n                        <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                            Change Device\n                        </button>\n                        {{/if}}\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+                    "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">\n                    {{#ifEquals type \"SMS\"}}\n                    <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Text message\n                    {{/ifEquals}}\n\n                    {{#ifEquals type \"EMAIL\"}}\n                    <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Email\n                    {{/ifEquals}}\n                    \n                    {{#ifEquals type \"TOTP\"}}\n                    <i class=\"mdi mdi-cellphone-key text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Authenticator App\n                    {{/ifEquals}}\n\n                    {{#ifEquals type \"VOICE\"}}\n                    <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n                    Voice\n                    {{/ifEquals}}\n                </h1>\n                <p class=\"text-muted text-center\">Enter the passcode you received.</p>\n                \n                <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\" id=\"error-msg\"></p>\n                <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"passcode\" data-skcomponent=\"skerrormessage\"></p>\n\n                {{#if resendMessage}}\n                <p class=\"text-success mdi mdi-check-circle text-center\" aria-live=\"assertive\">{{resendMessage}}</p>\n                {{/if}}\n\n                <form id=\"otp-form\" data-id=\"otp-form\">\n                    <div class=\"mb-4 form-floating\">\n                        <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"6\" />\n                        <label class=\"form-label\" for=\"passcode\">Passcode</label>\n                    </div>\n                    <p class=\"text-muted text-center\" id=\"contact\">\n                        {{#ifEquals type \"SMS\"}}\n                        Message sent to:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"Voice\"}}\n                        Calling:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n\n                        {{#ifEquals type \"EMAIL\"}}\n                        Email sent to:<br>\n                        {{maskedContact}}\n                        {{/ifEquals}}\n                    </p>\n                    <div class=\"d-flex flex-column\">\n                        {{#ifEquals type \"TOTP\"}}\n                          <!-- exclude resend option -->\n                        {{else}}\n                        <button id=\"resend\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                            {{resendButtonLabel}}\n                        </button>\n                        {{/ifEquals}}\n                        {{#if primaryButtonLabel}}\n                        <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"NEXT\">\n                            {{primaryButtonLabel}}\n                        </button>\n                        {{/if}}\n                        {{#if canChangeDevice}}\n                        <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                            Change Device\n                        </button>\n                        {{/if}}\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
                   },
                   "customCSS": {
                     "value": ".otp-control {\n    padding-top: 0rem !important;\n    padding-bottom: 0rem !important;\n    font-size: 17px;\n}"
@@ -11477,7 +11633,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: May 10th, 2024"
+                    "value": "Last Updated: June 25th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -13263,11 +13419,11 @@
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1715353670842,
+      "savedDate": 1719335500928,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1711542060976,
+          "createdDate": 1719333012615,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13275,6 +13431,7 @@
             "min": 0,
             "max": 2000
           },
+          "id": "9eb67912-04b4-4206-aad5-e084d63c2943",
           "type": "property",
           "visibility": "private",
           "name": "webAuthnSupport##SK##flowInstance",
@@ -13282,7 +13439,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711542060980,
+          "createdDate": 1719333012616,
           "fields": {
             "type": "string",
             "displayName": "Relying Party ID",
@@ -13290,6 +13447,7 @@
             "min": 0,
             "max": 2000
           },
+          "id": "e88b4941-d794-4f1f-8a7f-c00e3bd644c8",
           "type": "property",
           "visibility": "private",
           "name": "rpid##SK##flowInstance",
@@ -13297,13 +13455,14 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711542060986,
+          "createdDate": 1719333012617,
           "fields": {
             "type": "string",
             "displayName": "",
             "min": 0,
             "max": 2000
           },
+          "id": "9b02b869-5ba5-4b5c-acfc-2f64cb0d54ec",
           "type": "property",
           "visibility": "private",
           "name": "p1DeviceAuthenticationId##SK##flowInstance",
@@ -13311,7 +13470,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711542060985,
+          "createdDate": 1719333012617,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13319,6 +13478,7 @@
             "min": 0,
             "max": 2000
           },
+          "id": "c7e447e3-27a6-46c4-b0d5-59a08ab29ca0",
           "type": "property",
           "visibility": "private",
           "name": "ORIGIN##SK##flowInstance",
@@ -13326,7 +13486,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711542060985,
+          "createdDate": 1718715614928,
           "fields": {
             "type": "string",
             "displayName": "Url for company's logo image",
@@ -13334,6 +13494,7 @@
             "min": 0,
             "max": 2000
           },
+          "id": "454da928-c543-4aac-b6b3-c233400c1d32",
           "type": "property",
           "visibility": "private",
           "name": "companyLogo##SK##flowInstance",
@@ -13341,7 +13502,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711541872878,
+          "createdDate": 1718715505632,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13349,6 +13510,7 @@
             "min": 0,
             "max": 2000
           },
+          "id": "3245a456-c70f-4cb8-bc33-7c7b14c1f479",
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
@@ -13356,7 +13518,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711542060984,
+          "createdDate": 1719333012619,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13364,6 +13526,7 @@
             "min": 0,
             "max": 2000
           },
+          "id": "96ebc57e-a29e-449c-a7de-98190f6d715c",
           "type": "property",
           "visibility": "private",
           "name": "maskedUsableDevices##SK##flowInstance",
@@ -13371,7 +13534,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711542060984,
+          "createdDate": 1719333012620,
           "fields": {
             "type": "boolean",
             "displayName": "",
@@ -13379,6 +13542,7 @@
             "min": 0,
             "max": 2000
           },
+          "id": "5a5073ce-5850-4518-802f-5ad6c552976a",
           "type": "property",
           "visibility": "private",
           "name": "canChangeDevice##SK##flowInstance",
@@ -13386,7 +13550,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711542060979,
+          "createdDate": 1719333012618,
           "fields": {
             "type": "string",
             "displayName": "FIDO2 origin",
@@ -13394,6 +13558,7 @@
             "min": 0,
             "max": 2000
           },
+          "id": "26ab4d5a-42e0-44d3-9ceb-65a140da7468",
           "type": "property",
           "visibility": "private",
           "name": "origin##SK##flowInstance",
@@ -13401,7 +13566,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711542060980,
+          "createdDate": 1719333012619,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13409,6 +13574,7 @@
             "min": 0,
             "max": 2000
           },
+          "id": "f2158e7b-7183-483d-bf67-160f9b6ea071",
           "type": "property",
           "visibility": "private",
           "name": "publicKeyCredentialRequestOptions##SK##flowInstance",
