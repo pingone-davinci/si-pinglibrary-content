@@ -11,11 +11,10 @@
     "errorConnector",
     "variablesConnector"
   ],
-  "createdDate": 1719320965299,
+  "createdDate": 1719579547151,
   "currentVersion": 1,
   "customerId": "",
-  "deployedDate": 1719320967317,
-  "description": "Last Updated: June 25th, 2024",
+  "description": "Last Updated: June 28th, 2024",
   "flowStatus": "enabled",
   "inputSchemaCompiled": {
     "parameters": {
@@ -41,12 +40,12 @@
       "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.11/icons.css"
     ],
     "customTitle": "PingOne Account Registration with Document Verification",
-    "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png",
-    "logLevel": 2
+    "customFaviconLink": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png",
+    "logLevel": 2,
+    "flowTimeoutInSeconds": 0
   },
   "timeouts": "null",
-  "updatedDate": 1719320967376,
-  "flowId": "047c391877aa757630cd5b6172be32bd",
+  "flowId": "6705f2a022cee476f963c830cdb5700a",
   "versionId": 1,
   "graphData": {
     "elements": {
@@ -79,11 +78,14 @@
             "name": "Http",
             "label": "Http",
             "status": "configured",
-            "capabilityName": "continuePolling",
+            "capabilityName": "customHtmlMessage",
             "type": "trigger",
             "properties": {
               "nodeTitle": {
-                "value": "Continue Polling"
+                "value": "Polling Timeout"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"polling timeout\"\n      }\n    ]\n  }\n]"
               }
             }
           },
@@ -1771,7 +1773,7 @@
                 "value": false
               },
               "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">\n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                \n                        {{#if title}}\n                        <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n                        {{/if}}\n\n                        {{#if text}}\n                        <p class=\"text-muted text-center\">{{text}}</p>\n                        {{/if}}\n\n                        <div class=\"row p-2 row justify-content-center\">\n                            <img alt=\"Verify QR Code\" class=\"w-50 mx-auto my-2 p-4 border border-gray border-2\" src=\"{{qrUrl}}\" />\n                        </div>\n\n                        <div class=\"d-flex flex-row align-items-center my-4\">\n                            <hr class=\"flex-grow-1\" />\n                            <span class=\"fs-5 fw-bold px-3\">OR</span>\n                            <hr class=\"flex-grow-1\" />\n                        </div>\n\n                        <a href=\"{{webVerificationUrl}}&dt=1\" class=\"btn btn-outline-primary\" target=\"_blank\">Verify\n                            with Your Browser</a>\n                        <div class=\"text-center mt-5\">\n                            <p class=\"mb-2 fw-bold\">Verification Code</p>\n                            <p class=\"fs-1 mb-3\">{{webVerificationCode}}</p>\n                            <p class=\"text-muted\">Check that your phone shows the same verification code.</p>\n                        </div>\n\n                        <!-- Generic Error Message -->\n                        <div data-skcomponent=\"skerror\" class=\"text-center sk-alert sk-alert-danger text-danger\"\n                            data-skvisibility=\"\" aria-live=\"assertive\"></div>\n\n                        <div class=\"text-center\">\n                            <div class=\"align-self-center\" data-skcomponent=\"skpolling\" data-skpollInterval=\"2000\"\n                                data-skpollRetries=\"100\" data-skpollChallengeStatus=\"false\"></div>\n                            <p class=\"text-muted mt-2 fs-5\">\n                                {{pollingMessage}}\n                            </p>\n                        </div>\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div class=\\\"end-user-nano\\\">\\n    <div\\n        class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n        <div class=\\\"mh-100\\\" style=\\\"max-width: 400px; width: 100%\\\">\\n            <div class=\\\"card shadow mb-5\\\">\\n                <main aria-labelledby=\\\"title\\\">\\n                    <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                        <img class=\\\"companyLogo align-self-center mb-5\\\" src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyLogo\",\n        \"data\": \"{{global.variables.companyLogo}}\",\n        \"tooltip\": \"{{global.variables.companyLogo}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyLogo}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" />\\n                \\n                        {{#if title}}\\n                        <h1 id=\\\"title\\\" class=\\\"text-center mb-4\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"title\",\n        \"data\": \"{{title}}\",\n        \"tooltip\": \"{{title}}\",\n        \"children\": [\n          {\n            \"text\": \"{{title}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</h1>\\n                        {{/if}}\\n\\n                        {{#if text}}\\n                        <p class=\\\"text-muted text-center\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"text\",\n        \"data\": \"{{text}}\",\n        \"tooltip\": \"{{text}}\",\n        \"children\": [\n          {\n            \"text\": \"{{text}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</p>\\n                        {{/if}}\\n\\n                        <div class=\\\"row p-2 row justify-content-center\\\">\\n                            <img alt=\\\"Verify QR Code\\\" class=\\\"w-50 mx-auto my-2 p-4 border border-gray border-2\\\" src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"qrUrl\",\n        \"data\": \"{{qrUrl}}\",\n        \"tooltip\": \"{{qrUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"{{qrUrl}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" />\\n                        </div>\\n\\n                        <div class=\\\"d-flex flex-row align-items-center my-4\\\">\\n                            <hr class=\\\"flex-grow-1\\\" />\\n                            <span class=\\\"fs-5 fw-bold px-3\\\">OR</span>\\n                            <hr class=\\\"flex-grow-1\\\" />\\n                        </div>\\n\\n                        <a href=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"webVerificationUrl\",\n        \"data\": \"{{webVerificationUrl}}\",\n        \"tooltip\": \"{{webVerificationUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"{{webVerificationUrl}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"&dt=1\\\" class=\\\"btn btn-outline-primary\\\" target=\\\"_blank\\\">Verify\\n                            with Your Browser</a>\\n                        <div class=\\\"text-center mt-5\\\">\\n                            <p class=\\\"mb-2 fw-bold\\\">Verification Code</p>\\n                            <p class=\\\"fs-1 mb-3\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"webVerificationCode\",\n        \"data\": \"{{webVerificationCode}}\",\n        \"tooltip\": \"{{webVerificationCode}}\",\n        \"children\": [\n          {\n            \"text\": \"{{webVerificationCode}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</p>\\n                            <p class=\\\"text-muted\\\">Check that your phone shows the same verification code.</p>\\n                        </div>\\n\\n                        <!-- Generic Error Message -->\\n                        <div data-skcomponent=\\\"skerror\\\" class=\\\"text-center sk-alert sk-alert-danger text-danger\\\"\\n                            data-skvisibility=\\\"\\\" aria-live=\\\"assertive\\\"></div>\\n\\n                        <div class=\\\"text-center\\\">\\n                            <div class=\\\"align-self-center\\\" data-skcomponent=\\\"skpolling\\\" data-skpollInterval=\\\"2000\\\"\\n                                data-skpollRetries=\\\"100\\\" data-skpollChallengeStatus=\\\"true\\\"></div>\\n                            <p class=\\\"text-muted mt-2 fs-5\\\">\\n                                \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"pollingMessage\",\n        \"data\": \"{{pollingMessage}}\",\n        \"tooltip\": \"{{pollingMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"{{pollingMessage}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n                            </p>\\n                        </div>\\n                    </div>\\n                </main>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"\n      }\n    ]\n  }\n]"
               },
               "customScript": {
                 "value": ""
@@ -1805,6 +1807,9 @@
               },
               "text": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Scan the QR Code with your mobile phone and follow the instructions.\"\n      }\n    ]\n  }\n]"
+              },
+              "challenge": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"challenge\",\n        \"data\": \"{{local.d4lz7ki5k6.payload.output.challenge}}\",\n        \"tooltip\": \"{{local.d4lz7ki5k6.payload.output.challenge}}\",\n        \"children\": [\n          {\n            \"text\": \"challenge\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               }
             },
             "idUnique": "b9it33hy0o"
@@ -1839,7 +1844,7 @@
                 "value": "#000000"
               },
               "annotation": {
-                "value": "Last Updated: June 25th, 2024"
+                "value": "Last Updated: June 28th, 2024"
               },
               "width": {
                 "value": 240
@@ -4551,7 +4556,7 @@
   },
   "inputSchema": [],
   "flowColor": "#ff661c",
-  "savedDate": 1719320965047,
+  "savedDate": 1719579546863,
   "variables": [
     {
       "context": "flowInstance",
