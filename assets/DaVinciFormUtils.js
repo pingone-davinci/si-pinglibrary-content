@@ -39,11 +39,10 @@ class DaVinciFormUtils {
   /**
    * Adds a red asterisk to required fields' labels to indicate they are mandatory.
    */
-  static addRequiredFieldIndicators(): void {
+  static addRequiredFieldIndicators() {
     const requiredFields = document.querySelectorAll("input[required], textarea[required], select[required]");
     requiredFields.forEach((field) => {
-      const formField = field as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
-      const label = formField.labels ? formField.labels[0] : null; // Get the associated label
+      const label = field.labels ? field.labels[0] : null; // Get the associated label
       if (label && !label.querySelector(".text-danger")) {
         const asterisk = document.createElement("span");
         asterisk.textContent = " *";
@@ -57,12 +56,12 @@ class DaVinciFormUtils {
    * Creates a toggle button to show or hide the password input field.
    * This function assumes there's an input field within the specified container.
    * 
-   * @param id - The ID of the container element that includes the password input.
+   * @param {string} id - The ID of the container element that includes the password input.
    */
-  static makePasswordToggle(id: string): void {
+  static makePasswordToggle(id) {
     const container = document.getElementById(id);
     if (container) {
-      const password = container.querySelector("input") as HTMLInputElement;
+      const password = container.querySelector("input");
       if (password) {
         const toggler = document.createElement("button");
         toggler.setAttribute("type", "button");
@@ -74,7 +73,7 @@ class DaVinciFormUtils {
          * Toggles the visibility of the password input field between 'text' and 'password' types,
          * updates the toggler button's icon, and refocuses on the password field.
          */
-        const showHidePassword = (): void => {
+        const showHidePassword = () => {
           if (password.type === "password") {
             password.type = "text";
             toggler.classList.add("mdi-eye-outline");
@@ -94,9 +93,9 @@ class DaVinciFormUtils {
 
   /**
    * Sets the focus to an element with the given ID.
-   * @param id - The ID of the element to focus on.
+   * @param {string} id - The ID of the element to focus on.
    */
-  static setFieldFocus(id: string): void {
+  static setFieldFocus(id) {
     const element = document.getElementById(id);
     if (element) {
       element.focus();
@@ -107,17 +106,17 @@ class DaVinciFormUtils {
 
   /**
    * Creates a MutationObserver to observe changes to a specified element.
-   * @param id - The ID of the element to observe.
-   * @param handler - The handler function to call when a change is observed.
+   * @param {string} id - The ID of the element to observe.
+   * @param {Function} handler - The handler function to call when a change is observed.
    */
-  static createChangeObserver(id: string, handler: () => void): void {
+  static createChangeObserver(id, handler) {
     const targetNode = document.getElementById(id);
 
     if (targetNode) {
       // Observer options
-      const config: MutationObserverInit = { childList: true, characterData: true, subtree: true };
+      const config = { childList: true, characterData: true, subtree: true };
 
-      const callback = (mutationsList: MutationRecord[], observer: MutationObserver) => {
+      const callback = (mutationsList) => {
         for (const mutation of mutationsList) {
           if (mutation.type === 'characterData' || (mutation.type === 'childList' && mutation.addedNodes.length > 0)) {
             handler();
