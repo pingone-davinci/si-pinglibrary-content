@@ -4,9 +4,6 @@
  * by adding required field indicators, creating password toggle buttons, setting field focus, 
  * and observing DOM changes to trigger custom handlers.
  *
- * @version 1.0.2
- * @date 2024-07-02
- *
  * @version 1.1.0
  * @date 2024-07-04
  * Added initializePasswordValidation function.
@@ -157,6 +154,7 @@ class DaVinciFormUtils {
    * @param {boolean} [props.enablePasswordToggle=true] - Whether to enable the password toggle feature.
    * @param {Function} props.onPasswordValid - A callback function to be called once the password is validated.
    * @param {Function} props.onPasswordsMatch - A callback function to be called once the passwords match.
+   * @param {Function} props.onValidationSuccess - A callback function to be called when the password is valid and passwords match.
    */
   static initializePasswordValidation({
     passwordContainerId,
@@ -166,6 +164,7 @@ class DaVinciFormUtils {
     enablePasswordToggle = true,
     onPasswordValid,
     onPasswordsMatch,
+    onValidationSuccess,
   }) {
     const passwordContainer = document.getElementById(passwordContainerId);
     const verifyPasswordContainer = document.getElementById(verifyPasswordContainerId);
@@ -345,6 +344,17 @@ class DaVinciFormUtils {
         </ul>`;
     }
 
+    let isPasswordValid = false;
+    let doPasswordsMatch = false;
+
+    const validateBoth = () => {
+      if (isPasswordValid && doPasswordsMatch) {
+        if (typeof onValidationSuccess === 'function') {
+          onValidationSuccess();
+        }
+      }
+    };
+
     // Proceed with initialization if policy is not empty
     if (Object.keys(policy).length === 0) {
       console.log("Policy details are empty, unable to validate requirements");
@@ -365,8 +375,26 @@ class DaVinciFormUtils {
       const verifyPasswordField = verifyPasswordContainer.querySelector('input[type="password"]');
 
       // Add event listeners
-      passwordField.addEventListener("input", (event) => handlePasswordInput(event, policy, onPasswordValid));
-      verifyPasswordField.addEventListener("input", (event) => handleVerifyPasswordInput(event, onPasswordsMatch));
+      passwordField.addEventListener("input", (event) => {
+        handlePasswordInput(event, policy, (isValid) => {
+          isPasswordValid = isValid;
+          if (typeof onPasswordValid === 'function') {
+            onPasswordValid(isValid);
+          }
+          validateBoth();
+        });
+      });
+
+      verifyPasswordField.addEventListener("input", (event) => {
+        handleVerifyPasswordInput(event, (doMatch) => {
+          doPasswordsMatch = doMatch;
+          if (typeof onPasswordsMatch === 'function') {
+            onPasswordsMatch(doMatch);
+          }
+          validateBoth();
+        });
+      });
+
       passwordField.addEventListener("focus", handlePasswordFocus);
       passwordField.addEventListener("blur", hidePasswordPopup);
     }
