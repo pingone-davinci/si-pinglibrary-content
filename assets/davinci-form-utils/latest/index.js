@@ -294,7 +294,7 @@ class DaVinciFormUtils {
           position: absolute;
           top: -50px;
           right: -300px;
-          width: 280px;
+          width: 290px;
           opacity: 0;
           transform: translateY(-10px);
           z-index: 1000;
