@@ -6,7 +6,7 @@
  * 
  * @docs https://library.pingidentity.com/page/davinci-form-utils
  *
- * @version 0.1.0
+ * @version edge
  * @date 2024-07-05
  *
  * @author Ping Identity (pingidentity.com)
@@ -58,13 +58,6 @@
 
 class DaVinciFormUtils {
   /**
- * Adds a red asterisk (*) to the labels of required input, textarea, and select fields.
- * If a form ID is provided, only fields within that form will be processed.
- * If no form ID is provided, all required fields on the page will be processed.
- *
- * @param {string} [formId=null] - The ID of the form to process. If not provided, all forms are processed.
- */
-  /**
    * Adds a red asterisk (*) to the labels of required input, textarea, and select fields.
    * If a form ID is provided, only fields within that form will be processed.
    * If no form ID is provided, all required fields on the page will be processed.
@@ -104,14 +97,12 @@ class DaVinciFormUtils {
     });
   }
 
-
-
   /**
- * Creates a toggle button to show or hide the password input field.
- * This function assumes there's an input field within the specified container.
- * 
- * @param {string} id - The ID of the container element that includes the password input.
- */
+   * Creates a toggle button to show or hide the password input field.
+   * This function assumes there's an input field within the specified container.
+   *
+   * @param {string} id - The ID of the container element that includes the password input.
+   */
   static makePasswordToggle(id) {
     // Get the container element by ID
     const container = document.getElementById(id);
@@ -150,13 +141,12 @@ class DaVinciFormUtils {
     toggler.addEventListener("click", showHidePassword);
   }
 
-
   /**
-  * Sets the focus to an element with the given ID.
-  * If the element is not found or is not focusable, a warning is logged.
-  * 
-  * @param {string} id - The ID of the element to focus on. Must be a non-empty string.
-  */
+   * Sets the focus to an element with the given ID.
+   * If the element is not found or is not focusable, a warning is logged.
+   *
+   * @param {string} id - The ID of the element to focus on. Must be a non-empty string.
+   */
   static setFieldFocus(id) {
     // Validate the parameter to ensure it is a non-empty string
     if (typeof id !== 'string' || id.trim() === '') {
@@ -179,14 +169,13 @@ class DaVinciFormUtils {
     }
   }
 
-
   /**
    * Creates a MutationObserver to observe changes to a specified element.
-   * 
+   *
    * @param {string} id - The ID of the element to observe.
    * @param {Function} handler - The handler function to call when a change is observed.
    * @param {Object} [options] - Optional observer options (default: { childList: true, characterData: true, subtree: true }).
-   * 
+   *
    * @returns {Function} A function to stop observing changes.
    */
   static createChangeObserver(id, handler, options = { childList: true, characterData: true, subtree: true }) {
@@ -217,10 +206,9 @@ class DaVinciFormUtils {
     return () => observer.disconnect();
   }
 
-
   /**
    * Activates password validation for specified containers and policy.
-   * 
+   *
    * @param {Object} props - The properties for initializing password validation.
    * @param {string} props.passwordContainerId - The ID of the container element for the password input.
    * @param {string} props.verifyPasswordContainerId - The ID of the container element for the verify password input.
@@ -326,7 +314,7 @@ class DaVinciFormUtils {
 
     /**
      * Handle input event for the password field.
-     * 
+     *
      * @param {Event} event - The input event.
      * @param {Object} policy - The password policy.
      * @param {Function} callback - The callback function for validation result.
@@ -343,7 +331,7 @@ class DaVinciFormUtils {
 
     /**
      * Handle focus event for the password field.
-     * 
+     *
      * @param {Event} event - The focus event.
      */
     function handlePasswordFocus(event) {
@@ -355,7 +343,7 @@ class DaVinciFormUtils {
 
     /**
      * Handle input event for the verify password field.
-     * 
+     *
      * @param {Event} event - The input event.
      * @param {Function} callback - The callback function for match result.
      */
@@ -367,7 +355,7 @@ class DaVinciFormUtils {
 
     /**
      * Validate the password based on the policy.
-     * 
+     *
      * @param {string} password - The password to validate.
      * @param {Object} policy - The password policy.
      * @param {Function} callback - The callback function for validation result.
@@ -424,7 +412,7 @@ class DaVinciFormUtils {
 
     /**
      * Get placeholder text for the validation message.
-     * 
+     *
      * @param {string} chars - The character set.
      * @param {number} count - The minimum count required.
      * @returns {string} The placeholder text.
@@ -440,7 +428,7 @@ class DaVinciFormUtils {
 
     /**
      * Check if the passwords match.
-     * 
+     *
      * @param {string} password - The password.
      * @param {string} verifyPassword - The verify password.
      * @param {Function} callback - The callback function for match result.
@@ -475,7 +463,7 @@ class DaVinciFormUtils {
 
     /**
      * Update the password popup with validation results.
-     * 
+     *
      * @param {Array} validationResults - The validation results.
      */
     function updatePasswordPopup(validationResults, title) {
@@ -552,7 +540,21 @@ class DaVinciFormUtils {
     }
   }
 
-
+  /**
+   * Adds validation and other enhancements to a form.
+   *
+   * @param {Object} props - The properties for initializing form validation.
+   * @param {string} props.formId - The ID of the form to process.
+   * @param {string} [props.invalidFieldBorderColor=null] - The border color for invalid fields.
+   * @param {boolean} [props.addRequiredFieldIndicators=true] - Whether to add required field indicators.
+   * @param {boolean} [props.makePasswordToggle=false] - Whether to enable password toggle buttons.
+   * @param {string} [props.formType='signOn'] - The type of the form ('signOn' or 'passwordSetting').
+   * @param {Object} [props.passwordPolicy={}] - The password policy for password setting forms.
+   * @param {string} [props.verifyPasswordFieldId=null] - The ID of the verify password field for password setting forms.
+   * @param {boolean} [props.setFocusOnFirstField=true] - Whether to set focus on the first form field.
+   * @param {string} [props.title='Password Requirements'] - The title to display for the password validation popup.
+   * @param {boolean} [props.defaultStyles=true] - Whether to use default styles for password validation.
+   */
   static addFormValidation({
     formId,
     invalidFieldBorderColor = null,
@@ -561,7 +563,9 @@ class DaVinciFormUtils {
     formType = 'signOn', // 'signOn' or 'passwordSetting'
     passwordPolicy = {}, // Optional, for password setting forms
     verifyPasswordFieldId = null, // Optional, for password setting forms
-    setFocusOnFirstField = true // Default to true, set focus to the first form field
+    setFocusOnFirstField = true, // Default to true, set focus to the first form field
+    title = 'Password Requirements', // Default title for password validation popup
+    defaultStyles = true, // Default to true, use default styles for password validation
   }) {
     const form = document.getElementById(formId);
     if (!form) {
@@ -712,6 +716,8 @@ class DaVinciFormUtils {
         passwordContainerId,
         verifyPasswordContainerId: verifyPasswordFieldId,
         policy: passwordPolicy,
+        title,
+        defaultStyles,
         onPasswordValid: (isValid) => {
           const passwordField = form.querySelector(`#${passwordContainerId} input[type='password']`);
           console.log(isValid);
@@ -739,11 +745,4 @@ class DaVinciFormUtils {
       });
     }
   }
-
-
-
-
-
 }
-
-
