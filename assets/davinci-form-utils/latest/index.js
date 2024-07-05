@@ -434,7 +434,7 @@ class DaVinciFormUtils {
       if (chars === "ABCDEFGHIJKLMNOPQRSTUVWXYZ") return `${count} ${pluralize('uppercase character', count)}`;
       if (chars === "abcdefghijklmnopqrstuvwxyz") return `${count} ${pluralize('lowercase character', count)}`;
       if (chars === "~!@#$%^&*()-_=+[]{}|;:,.<>/?") return `${count} ${pluralize('special character', count)}`;
-      return `${count} ${pluralize('character from the set', count)}: ${chars}`;
+      return `${count} ${pluralize('character from the set', count)}: "${chars}"`;
     }
 
     /**
