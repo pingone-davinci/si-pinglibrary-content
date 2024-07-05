@@ -180,14 +180,14 @@ class DaVinciFormUtils {
 
 
   /**
- * Creates a MutationObserver to observe changes to a specified element.
- * 
- * @param {string} id - The ID of the element to observe.
- * @param {Function} handler - The handler function to call when a change is observed.
- * @param {Object} [options] - Optional observer options (default: { childList: true, characterData: true, subtree: true }).
- * 
- * @returns {Function} A function to stop observing changes.
- */
+   * Creates a MutationObserver to observe changes to a specified element.
+   * 
+   * @param {string} id - The ID of the element to observe.
+   * @param {Function} handler - The handler function to call when a change is observed.
+   * @param {Object} [options] - Optional observer options (default: { childList: true, characterData: true, subtree: true }).
+   * 
+   * @returns {Function} A function to stop observing changes.
+   */
   static createChangeObserver(id, handler, options = { childList: true, characterData: true, subtree: true }) {
     // Get the target element by ID
     const targetNode = document.getElementById(id);
