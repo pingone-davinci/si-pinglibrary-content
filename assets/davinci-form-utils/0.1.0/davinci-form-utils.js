@@ -46,6 +46,7 @@
  *         '~!@#$%^&*()-_=+[]{}|;:,.<>/?': 1
  *       }
  *     },
+ *     title: 'Password Must Contain',
  *     defaultStyles: true,
  *     enablePasswordToggle: true,
  *     onPasswordValid: (isValid) => { console.log('Password is valid:', isValid); },
