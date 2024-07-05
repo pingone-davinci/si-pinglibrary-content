@@ -7,7 +7,7 @@
  * @docs https://library.pingidentity.com/page/davinci-form-utils
  *
  * @version 0.1.0
- * @date 2024-07-04
+ * @date 2024-07-05
  *
  * @author Ping Identity (pingidentity.com)
  *
@@ -223,6 +223,7 @@ class DaVinciFormUtils {
    * @param {string} props.passwordContainerId - The ID of the container element for the password input.
    * @param {string} props.verifyPasswordContainerId - The ID of the container element for the verify password input.
    * @param {Object|string} props.policy - The password policy to use for validation, either as an object or a JSON string.
+   * @param {string} [props.title='Password Requirements'] - The title to display for the password validation popup.
    * @param {boolean} [props.defaultStyles=true] - Whether to use default styles.
    * @param {boolean} [props.enablePasswordToggle=true] - Whether to enable the password toggle feature.
    * @param {Function} props.onPasswordValid - A callback function to be called once the password is validated.
@@ -233,6 +234,7 @@ class DaVinciFormUtils {
     passwordContainerId,
     verifyPasswordContainerId,
     policy = {},
+    title = 'Password Requirements',
     defaultStyles = true,
     enablePasswordToggle = true,
     onPasswordValid,
@@ -410,7 +412,7 @@ class DaVinciFormUtils {
         }
       }
 
-      updatePasswordPopup(validationResults);
+      updatePasswordPopup(validationResults, title);
 
       // Call the callback function with the validation result
       if (typeof callback === 'function') {
@@ -474,10 +476,10 @@ class DaVinciFormUtils {
      * 
      * @param {Array} validationResults - The validation results.
      */
-    function updatePasswordPopup(validationResults) {
+    function updatePasswordPopup(validationResults, title) {
       const popup = document.getElementById("passwordPopup");
       popup.innerHTML = `
-      <p class="text-center fw-bold mt-3">Password Requirements</p>
+      <p class="text-center fw-bold mt-3">${title}</p>
       <ul class="list-unstyled">
         ${validationResults.map(result => `
           <li class="${result.valid ? 'text-muted' : 'text-danger'}">
