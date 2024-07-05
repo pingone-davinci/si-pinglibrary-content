@@ -720,8 +720,8 @@ class DaVinciFormUtils {
         defaultStyles,
         onPasswordValid: (isValid) => {
           const passwordField = form.querySelector(`#${passwordContainerId} input[type='password']`);
-          console.log(isValid);
-          passwordField.setAttribute('data-valid', isValid); // Set data attribute based on validation
+          // Set data attribute based on validation
+          passwordField.setAttribute('data-valid', isValid);
           if (!isValid) {
             passwordField.classList.add("custom-invalid");
             updateFeedbackElement(passwordField, "Password does not meet requirements.");
@@ -732,7 +732,8 @@ class DaVinciFormUtils {
         },
         onPasswordsMatch: (doMatch) => {
           const verifyPasswordField = document.getElementById(verifyPasswordFieldId).querySelector("input[type='password']");
-          verifyPasswordField.setAttribute('data-valid', doMatch); // Set data attribute based on matching
+          // Set data attribute based on matching
+          verifyPasswordField.setAttribute('data-valid', doMatch);
           if (!doMatch) {
             verifyPasswordField.classList.add("custom-invalid");
             updateFeedbackElement(verifyPasswordField, "Passwords do not match.");
