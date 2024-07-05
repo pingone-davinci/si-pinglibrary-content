@@ -3,6 +3,8 @@
  * PingOne DaVinci orchestration flows. It provides methods to enhance form handling 
  * by adding required field indicators, creating password toggle buttons, setting field focus, 
  * and observing DOM changes to trigger custom handlers.
+ * 
+ * @docs https://library.pingidentity.com/page/davinci-form-utils
  *
  * @version 1.1.0
  * @date 2024-07-04
@@ -32,18 +34,23 @@
  *   DaVinciFormUtils.createChangeObserver("observedElement", () => {
  *     console.log("Change observed!");
  *   });
- *   DaVinciFormUtils.initializePasswordValidation({
+ *   DaVinciFormUtils.activatePasswordValidation({
  *     passwordContainerId: 'passwordContainer',
  *     verifyPasswordContainerId: 'verifyPasswordContainer',
- *     policy,
+ *     policy: {
+ *       length: { min: 8, max: 20 },
+ *       minCharacters: {
+ *         '0123456789': 1,
+ *         'ABCDEFGHIJKLMNOPQRSTUVWXYZ': 1,
+ *         'abcdefghijklmnopqrstuvwxyz': 1,
+ *         '~!@#$%^&*()-_=+[]{}|;:,.<>/?': 1
+ *       }
+ *     },
  *     defaultStyles: true,
  *     enablePasswordToggle: true,
- *     onPasswordValid: (isValid) => {
- *       console.log('Password validation result:', isValid);
- *     },
- *     onPasswordsMatch: (doMatch) => {
- *       console.log('Passwords match result:', doMatch);
- *     }
+ *     onPasswordValid: (isValid) => { console.log('Password is valid:', isValid); },
+ *     onPasswordsMatch: (doMatch) => { console.log('Passwords match:', doMatch); },
+ *     onValidationSuccess: () => { console.log('Validation successful!'); }
  *   });
  * });
  */
