@@ -6,7 +6,7 @@
  * 
  * @docs https://library.pingidentity.com/page/davinci-form-utils
  *
- * @version 1.1.0
+ * @version 0.1.0
  * @date 2024-07-04
  *
  * @author Ping Identity (pingidentity.com)
