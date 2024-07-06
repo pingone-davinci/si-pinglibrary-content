@@ -547,7 +547,7 @@ class DaVinciFormUtils {
    * @param {string} props.formId - The ID of the form to process.
    * @param {string} [props.invalidFieldBorderColor=null] - The border color for invalid fields.
    * @param {boolean} [props.addRequiredFieldIndicators=true] - Whether to add required field indicators.
-   * @param {boolean} [props.makePasswordToggle=false] - Whether to enable password toggle buttons.
+   * @param {boolean} [props.enablePasswordToggle=true] - Whether to enable password toggle buttons.
    * @param {string} [props.formType='signOn'] - The type of the form ('signOn' or 'passwordSetting').
    * @param {Object} [props.passwordPolicy={}] - The password policy for password setting forms.
    * @param {string} [props.verifyPasswordFieldId=null] - The ID of the verify password field for password setting forms.
@@ -559,7 +559,7 @@ class DaVinciFormUtils {
     formId,
     invalidFieldBorderColor = null,
     addRequiredFieldIndicators = true,
-    makePasswordToggle = false,
+    enablePasswordToggle = true,
     formType = 'signOn', // 'signOn' or 'passwordSetting'
     passwordPolicy = {}, // Optional, for password setting forms
     verifyPasswordFieldId = null, // Optional, for password setting forms
@@ -590,7 +590,7 @@ class DaVinciFormUtils {
     form.setAttribute('novalidate', 'novalidate');
 
     // Enable password toggle for each password field if specified
-    if (makePasswordToggle) {
+    if (enablePasswordToggle) {
       const passwordFields = form.querySelectorAll("input[type='password']");
       passwordFields.forEach((field) => {
         const containerId = field.parentNode.id;
@@ -718,6 +718,7 @@ class DaVinciFormUtils {
         policy: passwordPolicy,
         title,
         defaultStyles,
+        enablePasswordToggle,
         onPasswordValid: (isValid) => {
           const passwordField = form.querySelector(`#${passwordContainerId} input[type='password']`);
           // Set data attribute based on validation
