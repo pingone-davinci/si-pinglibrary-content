@@ -473,7 +473,7 @@ class DaVinciFormUtils {
       <ul class="list-unstyled">
         ${validationResults.map(result => `
           <li class="${result.valid ? 'text-muted' : 'text-danger'}">
-            <i class="${result.valid ? 'text-success mdi mdi-check-circle' : 'text-danger mdi mdi-alert-circle'}"></i>
+            <i class="${result.valid ? 'text-success mdi mdi-check-circle' : 'text-danger mdi mdi-alert-circle'} me-2"></i>
             ${result.msg}
           </li>
         `).join('')}
