@@ -552,6 +552,7 @@ class DaVinciFormUtils {
    * @param {Object} [props.passwordPolicy={}] - The password policy for password setting forms.
    * @param {string} [props.verifyPasswordFieldId=null] - The ID of the verify password field for password setting forms.
    * @param {boolean} [props.setFocusOnFirstField=true] - Whether to set focus on the first form field.
+   * @param {boolean} [props.setFocusOnFirstError=true] - Whether to set focus on the first error on form submit.
    * @param {string} [props.title='Password Requirements'] - The title to display for the password validation popup.
    * @param {boolean} [props.defaultStyles=true] - Whether to use default styles for password validation.
    */
@@ -564,6 +565,7 @@ class DaVinciFormUtils {
     passwordPolicy = {}, // Optional, for password setting forms
     verifyPasswordFieldId = null, // Optional, for password setting forms
     setFocusOnFirstField = true, // Default to true, set focus to the first form field
+    setFocusOnFirstError = true, // Default to true, set focus to the first error on form submit
     title = 'Password Requirements', // Default title for password validation popup
     defaultStyles = true, // Default to true, use default styles for password validation
   }) {
@@ -692,7 +694,7 @@ class DaVinciFormUtils {
       if (allValid) {
         submitButton.click();
       } else {
-        if (invalidElements.length > 0) {
+        if (setFocusOnFirstError && invalidElements.length > 0) {
           invalidElements[0].focus();
         }
       }
