@@ -25,35 +25,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * @example
- * // Example of how to use the DaVinciFormUtils class in your code
- * document.addEventListener("DOMContentLoaded", () => {
- *   DaVinciFormUtils.addRequiredFieldIndicators();
- *   DaVinciFormUtils.makePasswordToggle("passwordContainer");
- *   DaVinciFormUtils.setFieldFocus("firstField");
- *   DaVinciFormUtils.createChangeObserver("observedElement", () => {
- *     console.log("Change observed!");
- *   });
- *   DaVinciFormUtils.activatePasswordValidation({
- *     passwordContainerId: 'passwordContainer',
- *     verifyPasswordContainerId: 'verifyPasswordContainer',
- *     policy: {
- *       length: { min: 8, max: 20 },
- *       minCharacters: {
- *         '0123456789': 1,
- *         'ABCDEFGHIJKLMNOPQRSTUVWXYZ': 1,
- *         'abcdefghijklmnopqrstuvwxyz': 1,
- *         '~!@#$%^&*()-_=+[]{}|;:,.<>/?': 1
- *       }
- *     },
- *     title: 'Password Must Contain',
- *     defaultStyles: true,
- *     enablePasswordToggle: true,
- *     onPasswordValid: (isValid) => { console.log('Password is valid:', isValid); },
- *     onPasswordsMatch: (doMatch) => { console.log('Passwords match:', doMatch); },
- *     onValidationSuccess: () => { console.log('Validation successful!'); }
- *   });
- * });
  */
 
 class DaVinciFormUtils {
@@ -634,6 +605,7 @@ class DaVinciFormUtils {
       if (!feedbackElement) {
         feedbackElement = document.createElement("div");
         feedbackElement.classList.add("custom-invalid-feedback", "text-danger", "mt-1");
+        feedbackElement.setAttribute('role', 'alert');
         parent.appendChild(feedbackElement);
       }
 
@@ -712,8 +684,12 @@ class DaVinciFormUtils {
     });
 
     if (formType === 'passwordSetting' && verifyPasswordFieldId) {
+      // Get password and verify password fields before the handler
+      const passwordField = form.querySelector("input[type='password']");
+      const verifyPasswordField = document.getElementById(verifyPasswordFieldId).querySelector("input[type='password']");
+
       // Activate password validation for password setting forms
-      const passwordContainerId = form.querySelector("input[type='password']").parentNode.id;
+      const passwordContainerId = passwordField.parentNode.id;
       DaVinciFormUtils.activatePasswordValidation({
         passwordContainerId,
         verifyPasswordContainerId: verifyPasswordFieldId,
@@ -722,7 +698,6 @@ class DaVinciFormUtils {
         defaultStyles,
         enablePasswordToggle,
         onPasswordValid: (isValid) => {
-          const passwordField = form.querySelector(`#${passwordContainerId} input[type='password']`);
           // Set data attribute based on validation
           passwordField.setAttribute('data-valid', isValid);
           if (!isValid) {
@@ -734,7 +709,6 @@ class DaVinciFormUtils {
           }
         },
         onPasswordsMatch: (doMatch) => {
-          const verifyPasswordField = document.getElementById(verifyPasswordFieldId).querySelector("input[type='password']");
           // Set data attribute based on matching
           verifyPasswordField.setAttribute('data-valid', doMatch);
           if (!doMatch) {
@@ -746,6 +720,19 @@ class DaVinciFormUtils {
           }
         },
         onValidationSuccess: () => { console.log('Validation successful!'); }
+      });
+
+      // Add an event listener to handle blur event and retain/remove error message based on matching
+      verifyPasswordField.addEventListener("blur", () => {
+        const doMatch = passwordField.value === verifyPasswordField.value;
+        verifyPasswordField.setAttribute('data-valid', doMatch);
+        if (!doMatch) {
+          verifyPasswordField.classList.add("custom-invalid");
+          updateFeedbackElement(verifyPasswordField, "Passwords do not match.");
+        } else {
+          verifyPasswordField.classList.remove("custom-invalid");
+          updateFeedbackElement(verifyPasswordField, "");
+        }
       });
     }
   }
