@@ -28,6 +28,7 @@
  */
 
 const DEFAULT_PASSWORD_POPUP_TITLE = "Password Requirements";
+const PASSWORD_ERROR_MESSAGE = "Password does not meet requirements";
 const FORM_TYPE_UPDATE_PASSWORD = "UPDATE_PASSWORD";
 const VALID_TAGS = ['INPUT', 'SELECT', 'TEXTAREA'];
 const VALID_TYPES = ['text', 'email', 'password', 'number', 'checkbox', 'radio'];
@@ -158,6 +159,7 @@ class DaVinciFormUtils {
     confirmPasswordFieldContainerId,
     invalidFieldBorderColor = null,
     passwordPolicy = null,
+    passwordErrorMessage = PASSWORD_ERROR_MESSAGE,
     addRequiredFieldIndicators = true,
     setFocusOnFirstField = true,
     setFocusOnFirstError = true,
@@ -437,7 +439,7 @@ class DaVinciFormUtils {
       // If password field, validate against password policy
       if (element === passwordField && passwordPolicy) {
         const password = element.value;
-        const validationResult = DaVinciFormUtils.validatePasswordAgainstPolicy(password, passwordPolicy);
+        const validationResult = DaVinciFormUtils.validatePasswordAgainstPolicy(password, passwordPolicy, passwordErrorMessage);
         updatePasswordPolicyPopup(password);
         if (!validationResult.isValid) {
           message = validationResult.message;
@@ -602,9 +604,10 @@ class DaVinciFormUtils {
    *
    * @param {string} password - The password to validate.
    * @param {object} policy - The policy containing the validation requirements.
+   * @param {string} [passwordValidationMessage=PASSWORD_ERROR_MESSAGE] - The message to return when the password does not meet the policy requirements. (Optional).
    * @returns {object} - An object with isValid (boolean) and message (string) properties.
    */
-  static validatePasswordAgainstPolicy(password, policy) {
+  static validatePasswordAgainstPolicy(password, policy, passwordValidationMessage = PASSWORD_ERROR_MESSAGE) {
     // Ensure both password and policy are provided
     if (!password) {
       return { isValid: false, message: "Password is not provided" };
@@ -612,8 +615,6 @@ class DaVinciFormUtils {
     if (!policy) {
       return { isValid: false, message: "Policy is not provided" };
     }
-
-    const passwordValidationMessage = "Password does not meet requirements";
 
     // Validate password length
     const lengthValid = password.length >= policy.length.min && password.length <= policy.length.max;
