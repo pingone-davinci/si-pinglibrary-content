@@ -151,6 +151,7 @@ class DaVinciFormUtils {
    * @param {boolean} [options.useDefaultStyles=true] - Use the built in CSS for the Passwordword Validator Popup (optional)
    * @param {string} [options.passwordPopupTitle=DEFAULT_PASSWORD_POPUP_TITLE] - The title for the password policy popup. (Optional).
    * @param {string} [options.formType=FORM_TYPE_UPDATE_PASSWORD] - The type of form, used to determine specific behaviors (e.g., "UPDATE_PASSWORD" or "STANDARD"). (Optional).
+   * @param {function|null} [options.validationSuccessClickHandler=null] - A custom handler to call when the form is successfully validated. (Optional).
    * @returns {void}
    */
   static addCustomValidation({
@@ -167,6 +168,7 @@ class DaVinciFormUtils {
     useDefaultStyles = true,
     passwordPopupTitle = DEFAULT_PASSWORD_POPUP_TITLE,
     formType = FORM_TYPE_UPDATE_PASSWORD,
+    validationSuccessClickHandler = null,
   }) {
     const form = document.getElementById(formId);
 
@@ -588,6 +590,9 @@ class DaVinciFormUtils {
 
       if (allValid) {
         submitButton.click();
+        if (validationSuccessClickHandler && typeof validationSuccessClickHandler === "function") {
+          validationSuccessClickHandler('success');
+        }
       } else {
         if (invalidElements.length > 0) {
           // Focus on first error if provided
