@@ -756,4 +756,23 @@ class DaVinciFormUtils {
     // Return a function to stop observing changes
     return () => observer.disconnect();
   }
+
+  /**
+ * Converts a text representation of "true" or "false" into a boolean value.
+ *
+ * @param {string} text - The text to convert. Should be "true" or "false" (case insensitive).
+ * @returns {boolean} - Returns `true` if the text is "true" (case insensitive), `false` if the text is "false" (case insensitive).
+ *                      Returns `false` for any other input.
+ */
+  static textToBoolean(text) {
+    if (typeof text === 'string') {
+      const lowerCaseText = text.toLowerCase();
+      if (lowerCaseText === 'true') {
+        return true;
+      } else if (lowerCaseText === 'false') {
+        return false;
+      }
+    }
+    return false;
+  }
 }
