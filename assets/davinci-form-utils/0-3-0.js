@@ -350,8 +350,6 @@ class DaVinciFormUtils {
     // Show password Popup element
     const showPasswordPopup = (element) => {
       const popup = document.getElementById("passwordPopup");
-
-
       const rect = element.getBoundingClientRect();
       popup.style.top = `${rect.top + window.scrollY - 50}px`;
       popup.style.left = `${rect.right + window.scrollX + 15}px`;
@@ -359,7 +357,6 @@ class DaVinciFormUtils {
       popup.style.display = "block";
 
     };
-
 
     // Hide password Popup element
     const hidePasswordPopup = () => {
@@ -718,5 +715,42 @@ class DaVinciFormUtils {
     }
 
     return { isValid: true, message: "" };
+  }
+
+  /**
+ * Creates a MutationObserver to observe changes to a specified element.
+ * 
+ * @param {string} id - The ID of the element to observe.
+ * @param {Function} handler - The handler function to call when a change is observed.
+ * @param {Object} [options] - Optional observer options (default: { childList: true, characterData: true, subtree: true }).
+ * 
+ * @returns {Function} A function to stop observing changes.
+ */
+  static createChangeObserver(id, handler, options = { childList: true, characterData: true, subtree: true }) {
+    // Get the target element by ID
+    const targetNode = document.getElementById(id);
+
+    if (!targetNode) {
+      console.warn(`Element with ID '${id}' not found.`);
+      return () => { }; // Return a no-op function if the target element is not found
+    }
+
+    // Define the callback function for the MutationObserver
+    const callback = (mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'characterData' || (mutation.type === 'childList' && mutation.addedNodes.length > 0)) {
+          handler(mutation);
+        }
+      }
+    };
+
+    // Create a new MutationObserver instance with the callback
+    const observer = new MutationObserver(callback);
+
+    // Start observing the target node with the specified options
+    observer.observe(targetNode, options);
+
+    // Return a function to stop observing changes
+    return () => observer.disconnect();
   }
 }
