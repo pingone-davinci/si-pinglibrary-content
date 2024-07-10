@@ -191,12 +191,16 @@ class DaVinciFormUtils {
       if (!existingSubmitButton) {
         console.error("Existing submit button not found.");
         return;
-      } else {
+      }
+      // Determine if form contains an existing validation submit button
+      else if (!document.getElementById('validationSubmitButton')) {
+
         // Add the Bootstrap 'd-none' class to hide the original button
         existingSubmitButton.classList.add('d-none');
 
         // Create a new button element
         validationSubmitButton = document.createElement('button');
+        validationSubmitButton.id = 'validationSubmitButton';
 
         // Copy the properties of the original button to the new button
         validationSubmitButton.textContent = existingSubmitButton.textContent;
@@ -213,7 +217,6 @@ class DaVinciFormUtils {
 
         // Insert the new button directly after the original button
         existingSubmitButton.insertAdjacentElement('afterend', validationSubmitButton);
-
       }
     }
 
