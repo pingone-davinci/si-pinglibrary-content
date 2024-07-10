@@ -205,7 +205,7 @@ class DaVinciFormUtils {
           // Copy all CSS classes except for 'd-none' from the original button to the new button
           existingSubmitButton.classList.forEach(className => {
             if (className !== 'd-none') {
-              newButton.classList.add(className);
+              validationSubmitButton.classList.add(className);
             }
           });
 
