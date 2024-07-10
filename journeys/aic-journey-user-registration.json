@@ -1,0 +1,316 @@
+{
+  "meta": {
+    "origin": "https://openam-dev.forgeblocks.com/platform/?realm=alpha#/journeys/User%20self-registration",
+    "exportedBy": "library@pingidentity.com",
+    "exportDate": "2024-06-25T05:59:36.046Z",
+    "exportTool": "platform-admin ui tree export",
+    "exportToolVersion": "1.0",
+    "treesSelectedForExport": [
+      "User self-registration"
+    ],
+    "innerTreesIncluded": []
+  },
+  "trees": {
+    "User self-registration": {
+      "tree": {
+        "_id": "User self-registration",
+        "_rev": "1313195035",
+        "identityResource": "managed/alpha_user",
+        "uiConfig": {
+          "categories": "[]"
+        },
+        "entryNodeId": "4d2b4e29-57e5-4205-a0f0-e5d9d5682ce1",
+        "innerTreeOnly": false,
+        "nodes": {
+          "4d2b4e29-57e5-4205-a0f0-e5d9d5682ce1": {
+            "x": 210,
+            "y": 80,
+            "connections": {
+              "outcome": "7541612d-d428-472a-aebe-a38ba66a8cc1"
+            },
+            "nodeType": "PageNode",
+            "displayName": "Page Node"
+          },
+          "7541612d-d428-472a-aebe-a38ba66a8cc1": {
+            "x": 574,
+            "y": 160,
+            "connections": {
+              "CREATED": "a2c572ec-998b-4879-8d8d-ab3588b5e9e7",
+              "FAILURE": "e301438c-0bd0-429c-ab0c-66126501069a"
+            },
+            "nodeType": "CreateObjectNode",
+            "displayName": "Create Object"
+          },
+          "a2c572ec-998b-4879-8d8d-ab3588b5e9e7": {
+            "x": 915,
+            "y": 100.66666666666667,
+            "connections": {
+              "outcome": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+            },
+            "nodeType": "IncrementLoginCountNode",
+            "displayName": "Increment Login Count"
+          }
+        },
+        "staticNodes": {
+          "startNode": {
+            "x": 70,
+            "y": 178.5
+          },
+          "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+            "x": 1174,
+            "y": 178.5
+          },
+          "e301438c-0bd0-429c-ab0c-66126501069a": {
+            "x": 915,
+            "y": 225.33333333333334
+          }
+        },
+        "enabled": true
+      },
+      "nodes": {
+        "4d2b4e29-57e5-4205-a0f0-e5d9d5682ce1": {
+          "_id": "4d2b4e29-57e5-4205-a0f0-e5d9d5682ce1",
+          "_rev": "1437042337",
+          "nodes": [
+            {
+              "_id": "41a0282a-6cf0-4d71-87b4-f9db8ad8afe2",
+              "nodeType": "AttributeCollectorNode",
+              "displayName": "Attribute Collector"
+            },
+            {
+              "_id": "74abbdf4-a99d-458f-bc7d-6fcb5da66335",
+              "nodeType": "ValidatedUsernameNode",
+              "displayName": "Platform Username"
+            },
+            {
+              "_id": "6f7988d3-0763-4198-96d7-4daa04c5d62d",
+              "nodeType": "ValidatedPasswordNode",
+              "displayName": "Platform Password"
+            },
+            {
+              "_id": "b01869df-dff0-481a-9a42-30ffcf4715cd",
+              "nodeType": "AcceptTermsAndConditionsNode",
+              "displayName": "Accept Terms and Conditions"
+            }
+          ],
+          "pageDescription": {},
+          "pageHeader": {},
+          "_type": {
+            "_id": "PageNode",
+            "name": "Page Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "7541612d-d428-472a-aebe-a38ba66a8cc1": {
+          "_id": "7541612d-d428-472a-aebe-a38ba66a8cc1",
+          "_rev": "-978407458",
+          "identityResource": "managed/alpha_user",
+          "_type": {
+            "_id": "CreateObjectNode",
+            "name": "Create Object",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "CREATED",
+              "displayName": "Created"
+            },
+            {
+              "id": "FAILURE",
+              "displayName": "Failed"
+            }
+          ]
+        },
+        "a2c572ec-998b-4879-8d8d-ab3588b5e9e7": {
+          "_id": "a2c572ec-998b-4879-8d8d-ab3588b5e9e7",
+          "_rev": "899487683",
+          "identityAttribute": "userName",
+          "_type": {
+            "_id": "IncrementLoginCountNode",
+            "name": "Increment Login Count",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        }
+      },
+      "innerNodes": {
+        "41a0282a-6cf0-4d71-87b4-f9db8ad8afe2": {
+          "_id": "41a0282a-6cf0-4d71-87b4-f9db8ad8afe2",
+          "_rev": "-1420681799",
+          "attributesToCollect": [
+            "mail",
+            "givenName",
+            "sn"
+          ],
+          "identityAttribute": "userName",
+          "validateInputs": false,
+          "required": false,
+          "_type": {
+            "_id": "AttributeCollectorNode",
+            "name": "Attribute Collector",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "74abbdf4-a99d-458f-bc7d-6fcb5da66335": {
+          "_id": "74abbdf4-a99d-458f-bc7d-6fcb5da66335",
+          "_rev": "-839877054",
+          "usernameAttribute": "userName",
+          "validateInput": true,
+          "_type": {
+            "_id": "ValidatedUsernameNode",
+            "name": "Platform Username",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "6f7988d3-0763-4198-96d7-4daa04c5d62d": {
+          "_id": "6f7988d3-0763-4198-96d7-4daa04c5d62d",
+          "_rev": "857831923",
+          "passwordAttribute": "password",
+          "validateInput": true,
+          "_type": {
+            "_id": "ValidatedPasswordNode",
+            "name": "Platform Password",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "b01869df-dff0-481a-9a42-30ffcf4715cd": {
+          "_id": "b01869df-dff0-481a-9a42-30ffcf4715cd",
+          "_rev": "792601519",
+          "_type": {
+            "_id": "AcceptTermsAndConditionsNode",
+            "name": "Accept Terms and Conditions",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        }
+      },
+      "scripts": {},
+      "emailTemplates": {},
+      "socialIdentityProviders": {},
+      "themes": [
+        {
+          "_id": "12885e3d-db65-4570-b132-812d291d2ff6",
+          "accountFooter": "<footer>\n  <div class=\"container-md\">\n    <div class=\"py-3 d-flex flex-column flex-sm-row flex-md-column flex-lg-row justify-content-between align-items-center w-100\">\n      <div class=\"text-nowrap\">\n        <span class=\"pr-1\">© 2022</span>\n        <a href=\"#\" target=\"_blank\" class=\"notranslate text-body\">Zardoz, Inc</a>\n      </div>\n      <ul class=\"nav\">\n        <li class=\"nav-item\">\n          <a href=\"#\" class=\"nav-link\">Privacy Policy</a>\n        </li>\n        <li class=\"nav-item\">\n          <a href=\"#\" class=\"nav-link\">Terms of Use</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</footer>\n",
+          "accountFooterEnabled": true,
+          "accountPageSections": {
+            "accountControls": {
+              "enabled": false
+            },
+            "accountSecurity": {
+              "enabled": true,
+              "subsections": {
+                "password": {
+                  "enabled": true
+                },
+                "securityQuestions": {
+                  "enabled": false
+                },
+                "twoStepVerification": {
+                  "enabled": true
+                },
+                "username": {
+                  "enabled": true
+                }
+              }
+            },
+            "consent": {
+              "enabled": false
+            },
+            "oauthApplications": {
+              "enabled": false
+            },
+            "personalInformation": {
+              "enabled": true
+            },
+            "preferences": {
+              "enabled": false
+            },
+            "social": {
+              "enabled": false
+            },
+            "trustedDevices": {
+              "enabled": true
+            }
+          },
+          "backgroundColor": "#FFFFFF",
+          "backgroundImage": "",
+          "bodyText": "#5E6D82",
+          "buttonRounded": "50",
+          "dangerColor": "#f7685b",
+          "favicon": "",
+          "isDefault": false,
+          "journeyFooter": "<footer>\n            <div class=\"container-md\">\n            <div class=\"py-3 d-flex flex-column flex-sm-row flex-md-column flex-lg-row justify-content-between align-items-center w-100\">\n              <div class=\"text-nowrap\">\n                <span class=\"pr-1\">© 2022</span>\n                <a href=\"#\" target=\"_blank\" class=\"notranslate text-body\">Zardoz, Inc</a>\n              </div>\n              <ul class=\"nav\">\n                <li class=\"nav-item\">\n                  <a href=\"#\" class=\"nav-link\">Privacy Policy</a>\n                </li>\n                <li class=\"nav-item\">\n                  <a href=\"#\" class=\"nav-link\">Terms of Use</a>\n                </li>\n              </ul>\n            </div>\n            </div>\n          </footer>\n",
+          "journeyFooterEnabled": true,
+          "journeyHeader": "<div class=\"d-flex justify-content-center py-4 flex-grow-1\">Header Content</div>",
+          "journeyHeaderEnabled": false,
+          "journeyJustifiedContent": "<div style=\"display: flex; background-color: black; height: 100vh;\">\n    <div class=\"d-none d-md-flex justify-content-center align-items-center p-5\" style=\"background-image: url(https://cdn.forgerock.com/platform/themes/zardoz/background-zardoz.png);\n    background-size: cover;\"><h1 class=\"text-center display-3\" style=\"color: rgb(255, 255, 255);\">Uptime &amp; Performance Benchmarking Made Easy</h1></div>\n</div>\n\n",
+          "journeyJustifiedContentEnabled": true,
+          "journeyLayout": "justified-right",
+          "journeyTheaterMode": true,
+          "linkActiveColor": "#007661",
+          "linkColor": "#009C80",
+          "linkedTrees": [
+            "User self-registration"
+          ],
+          "logo": "https://cdn.forgerock.com/platform/themes/zardoz/logo-zardoz.svg",
+          "logoAltText": "Zardoz Logo",
+          "logoEnabled": true,
+          "logoHeight": "47",
+          "logoProfile": "https://cdn.forgerock.com/platform/themes/zardoz/logo-zardoz.svg",
+          "logoProfileAltText": "Zardaz Logo",
+          "logoProfileCollapsed": "https://cdn.forgerock.com/platform/themes/zardoz/logo-zardoz.svg",
+          "logoProfileCollapsedAltText": "Zardaz Logo",
+          "logoProfileCollapsedHeight": "28",
+          "logoProfileHeight": "40",
+          "name": "Zardoz",
+          "pageTitle": "#23282e",
+          "primaryColor": "#009C80",
+          "primaryOffColor": "#007661",
+          "profileBackgroundColor": "#FFFFFF",
+          "profileMenuHighlightColor": "#FFFFFF",
+          "profileMenuHoverColor": "#FFFFFF",
+          "profileMenuHoverTextColor": "#455469",
+          "profileMenuTextHighlightColor": "#009C80",
+          "secondaryColor": "#69788b",
+          "textColor": "#ffffff"
+        }
+      ],
+      "saml2Entities": {},
+      "circlesOfTrust": {}
+    }
+  }
+}

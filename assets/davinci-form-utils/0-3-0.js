@@ -146,11 +146,13 @@ class DaVinciFormUtils {
    * @param {string} [options.invalidFieldBorderColor=null] - The border color to apply to invalid fields. (Optional).
    * @param {object|string|null} [options.passwordPolicy=null] - The password policy to validate against. Can be an object or a JSON string. (Optional).
    * @param {boolean} [options.addRequiredFieldIndicators=true] - Whether to add indicators for required fields. (Optional).
+   * @param {boolean} [options.setFocusOnFirstError=true] - Whether to set focus on the first error field in the form on submit. (Optional).
    * @param {boolean} [options.setFocusOnFirstField=true] - Whether to set focus on the first field in the form. (Optional).
    * @param {boolean} [options.enablePasswordToggle=true] - Whether to enable password visibility toggle. (Optional).
    * @param {boolean} [options.useDefaultStyles=true] - Use the built in CSS for the Passwordword Validator Popup (optional)
    * @param {boolean} [options.overrideDaVinciSubmit=true] - Override the default form-submit button to perform validation before submitting form. (Optional).
    * @param {string} [options.passwordPopupTitle=DEFAULT_PASSWORD_POPUP_TITLE] - The title for the password policy popup. (Optional).
+   * @param {string} [options.passwordErrorMessage=PASSWORD_ERROR_MESSAGE] - The message to display when the password does not meet the policy requirements. (Optional).
    * @param {string} [options.formType=FORM_TYPE_UPDATE_PASSWORD] - The type of form, used to determine specific behaviors (e.g., "UPDATE_PASSWORD" or "STANDARD"). (Optional).
    * @param {function|null} [options.validationSuccessClickHandler=null] - A custom handler to call when the form is successfully validated. (Optional).
    * @returns {void}
