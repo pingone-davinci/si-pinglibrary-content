@@ -521,6 +521,7 @@ class DaVinciFormUtils {
       if (!feedbackElement) {
         feedbackElement = document.createElement("div");
         feedbackElement.classList.add("custom-invalid-feedback", "text-danger", "mt-1");
+        feedbackElement.setAttribute("aria-live", "assertive");
         parent.appendChild(feedbackElement);
       }
 
