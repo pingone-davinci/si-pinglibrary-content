@@ -192,29 +192,28 @@ class DaVinciFormUtils {
         console.error("Existing submit button not found.");
         return;
       } else {
-        if (btnSignIn) {
-          // Add the Bootstrap 'd-none' class to hide the original button
-          existingSubmitButton.classList.add('d-none');
+        // Add the Bootstrap 'd-none' class to hide the original button
+        existingSubmitButton.classList.add('d-none');
 
-          // Create a new button element
-          validationSubmitButton = document.createElement('button');
+        // Create a new button element
+        validationSubmitButton = document.createElement('button');
 
-          // Copy the properties of the original button to the new button
-          validationSubmitButton.textContent = existingSubmitButton.textContent;
+        // Copy the properties of the original button to the new button
+        validationSubmitButton.textContent = existingSubmitButton.textContent;
 
-          // Copy all CSS classes except for 'd-none' from the original button to the new button
-          existingSubmitButton.classList.forEach(className => {
-            if (className !== 'd-none') {
-              validationSubmitButton.classList.add(className);
-            }
-          });
+        // Copy all CSS classes except for 'd-none' from the original button to the new button
+        existingSubmitButton.classList.forEach(className => {
+          if (className !== 'd-none') {
+            validationSubmitButton.classList.add(className);
+          }
+        });
 
-          // Set the same type attribute for the new button
-          validationSubmitButton.type = existingSubmitButton.type;
+        // Set the same type attribute for the new button
+        validationSubmitButton.type = existingSubmitButton.type;
 
-          // Insert the new button directly after the original button
-          existingSubmitButton.insertAdjacentElement('afterend', validationSubmitButton);
-        }
+        // Insert the new button directly after the original button
+        existingSubmitButton.insertAdjacentElement('afterend', validationSubmitButton);
+
       }
     }
 
