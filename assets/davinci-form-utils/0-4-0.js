@@ -183,7 +183,7 @@ class DaVinciFormUtils {
  * @param {boolean} [options.delayValidationUntilSubmit=false] - Whether to delay validation until the submit button is clicked. (Optional).
  * @returns {void}
  */
-  static addCustomValidation({
+  static addDaVinciFormValidation({
     formId,
     passwordFieldContainerId,
     confirmPasswordFieldContainerId,
@@ -616,9 +616,6 @@ class DaVinciFormUtils {
       });
     }
   }
-
-
-
 
   /**
    * Validates a password against the given policy.
