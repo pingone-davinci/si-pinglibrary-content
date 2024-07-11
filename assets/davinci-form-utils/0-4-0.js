@@ -69,8 +69,20 @@ class DaVinciFormUtils {
     const toggler = document.createElement("button");
     toggler.setAttribute("type", "button");
     toggler.setAttribute("aria-label", "Show/Hide Password");
-    toggler.className =
-      "btn mdi mdi-eye-off-outline position-absolute end-0 top-50 translate-middle-y";
+    toggler.className = "mdi mdi-eye-off-outline";
+    Object.assign(toggler.style, {
+      position: "absolute",
+      right: "10px",
+      zIndex: "2",
+      background: "transparent",
+      border: "none",
+      outline: "none",
+    });
+
+    // Ensure the container has relative positioning
+    container.style.position = "relative";
+
+    // Insert the toggler button into the container
     container.appendChild(toggler);
 
     /**
@@ -86,7 +98,30 @@ class DaVinciFormUtils {
     };
 
     toggler.addEventListener("click", showHidePassword);
+
+    const adjustTogglerPosition = () => {
+      const passwordRect = passwordInput.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      const offset = (passwordRect.height - toggler.offsetHeight) / 2;
+      toggler.style.top = `${passwordRect.top - containerRect.top + offset + 2}px`;
+    };
+
+    // Initial adjustment
+    adjustTogglerPosition();
+
+    const observer = new MutationObserver(() => {
+      adjustTogglerPosition();
+    });
+
+    observer.observe(passwordInput, {
+      attributes: true,
+      childList: true,
+      subtree: true,
+    });
+
+    window.addEventListener("resize", adjustTogglerPosition);
   }
+
 
   /**
    * Adds a red asterisk to the labels of required form fields.
