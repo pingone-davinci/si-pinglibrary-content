@@ -136,45 +136,90 @@ class DaVinciFormUtils {
   }
 
   /**
-   * Adds custom validation to a form, including password validation, field validation messages,
-   * and optional features like required field indicators, password toggle, and password policy popup.
-   *
-   * @param {object} options - The configuration options for custom validation.
-   * @param {string} options.formId - The ID of the form to apply validation to.
-   * @param {string} [options.passwordFieldContainerId] - The ID of the container holding the password field. (Optional).
-   * @param {string} [options.confirmPasswordFieldContainerId] - The ID of the container holding the confirm password field. (Optional).
-   * @param {string} [options.invalidFieldBorderColor=null] - The border color to apply to invalid fields. (Optional).
-   * @param {object|string|null} [options.passwordPolicy=null] - The password policy to validate against. Can be an object or a JSON string. (Optional).
-   * @param {boolean} [options.addRequiredFieldIndicators=true] - Whether to add indicators for required fields. (Optional).
-   * @param {boolean} [options.setFocusOnFirstField=true] - Whether to set focus on the first field in the form. (Optional).
-   * @param {boolean} [options.enablePasswordToggle=true] - Whether to enable password visibility toggle. (Optional).
-   * @param {boolean} [options.useDefaultStyles=true] - Use the built in CSS for the Passwordword Validator Popup (optional)
-   * @param {string} [options.passwordPopupTitle=DEFAULT_PASSWORD_POPUP_TITLE] - The title for the password policy popup. (Optional).
-   * @param {string} [options.formType=FORM_TYPE_UPDATE_PASSWORD] - The type of form, used to determine specific behaviors (e.g., "UPDATE_PASSWORD" or "STANDARD"). (Optional).
-   * @param {function|null} [options.validationSuccessClickHandler=null] - A custom handler to call when the form is successfully validated. (Optional).
-   * @returns {void}
-   */
+     * Adds custom validation to a form, including password validation, field validation messages,
+     * and optional features like required field indicators, password toggle, and password policy popup.
+     *
+     * @param {object} options - The configuration options for custom validation.
+     * @param {string} options.formId - The ID of the form to apply validation to.
+     * @param {string} [options.passwordFieldContainerId] - The ID of the container holding the password field. (Optional).
+     * @param {string} [options.confirmPasswordFieldContainerId] - The ID of the container holding the confirm password field. (Optional).
+     * @param {object|string|null} [options.passwordPolicy=null] - The password policy to validate against. Can be an object or a JSON string. (Optional).
+     * @param {function|null} [options.validationSuccessClickHandler=null] - A custom handler to call when the form is successfully validated. (Optional).
+     * @param {string} [options.invalidFieldBorderColor=null] - The border color to apply to invalid fields. (Optional).
+     * @param {string} [options.passwordErrorMessage=PASSWORD_ERROR_MESSAGE] - The message to display when the password does not meet the policy requirements. (Optional).
+     * @param {boolean} [options.addRequiredFieldIndicators=true] - Whether to add indicators for required fields. (Optional).
+     * @param {boolean} [options.setFocusOnFirstField=true] - Whether to set focus on the first field in the form. (Optional).
+     * @param {boolean} [options.setFocusOnFirstError=true] - Whether to set focus on the first error field in the form on submit. (Optional).
+     * @param {boolean} [options.enablePasswordToggle=true] - Whether to enable password visibility toggle. (Optional).
+     * @param {boolean} [options.useDefaultStyles=true] - Use the built-in CSS for the Password Validator Popup. (Optional).
+     * @param {boolean} [options.overrideDaVinciSubmit=true] - Override the default form-submit button to perform validation before submitting form. (Optional).
+     * @param {string} [options.passwordPopupTitle=DEFAULT_PASSWORD_POPUP_TITLE] - The title for the password policy popup. (Optional).
+     * @param {string} [options.formType=FORM_TYPE_UPDATE_PASSWORD] - The type of form, used to determine specific behaviors (e.g., "UPDATE_PASSWORD" or "STANDARD"). (Optional).
+     * @returns {void}
+     */
   static addCustomValidation({
     formId,
     passwordFieldContainerId,
     confirmPasswordFieldContainerId,
-    invalidFieldBorderColor = null,
     passwordPolicy = null,
+    validationSuccessClickHandler = null,
+    invalidFieldBorderColor = null,
     passwordErrorMessage = PASSWORD_ERROR_MESSAGE,
     addRequiredFieldIndicators = true,
     setFocusOnFirstField = true,
     setFocusOnFirstError = true,
     enablePasswordToggle = true,
     useDefaultStyles = true,
+    overrideDaVinciSubmit = true,
     passwordPopupTitle = DEFAULT_PASSWORD_POPUP_TITLE,
     formType = FORM_TYPE_UPDATE_PASSWORD,
-    validationSuccessClickHandler = null,
   }) {
     const form = document.getElementById(formId);
+    let existingSubmitButton;
+    let validationSubmitButton;
 
     if (!form) {
       console.error(`Form with ID "${formId}" not found.`);
       return;
+    }
+
+    /* 
+    * Hide the existing button an create a new button used for form validation.
+    * This is to prevent the form from being submitted before validation.
+    */
+    if (overrideDaVinciSubmit) {
+      existingSubmitButton = document.querySelector('button[data-skbuttontype="form-submit"][type="submit"]');
+
+      if (!existingSubmitButton) {
+        console.error("Existing submit button not found.");
+        return;
+      }
+      // Determine if form contains an existing validation submit button
+      else if (!document.getElementById('validationSubmitButton')) {
+
+        // Add the Bootstrap 'd-none' class to hide the original button
+        existingSubmitButton.classList.add('d-none');
+
+        // Create a new button element
+        validationSubmitButton = document.createElement('button');
+        validationSubmitButton.id = 'validationSubmitButton';
+
+        // Copy the properties of the original button to the new button
+        validationSubmitButton.textContent = existingSubmitButton.textContent;
+
+        // Copy all CSS classes except for 'd-none' from the original button to the new button
+        existingSubmitButton.classList.forEach(className => {
+          if (className !== 'd-none') {
+            validationSubmitButton.classList.add(className);
+          }
+        });
+
+        // Set the same type attribute for the new button
+        validationSubmitButton.type = existingSubmitButton.type;
+
+        // Insert the new button directly after the original button
+        existingSubmitButton.insertAdjacentElement('afterend', validationSubmitButton);
+      }
     }
 
     // Disable HTML5 Form Validation
@@ -254,10 +299,6 @@ class DaVinciFormUtils {
       }
     }
 
-    //TODO: SUBMIT BUTTON HANDLING IN DAVINCI
-    const submitButton = form.querySelector('[data-skbuttontype="form-submit"]');
-
-
     // Generates a placeholder text describing the required characters and their count.
     const getPlaceholderText = (chars, count) => {
       // Helper function to pluralize a word based on the count
@@ -314,8 +355,6 @@ class DaVinciFormUtils {
     // Show password Popup element
     const showPasswordPopup = (element) => {
       const popup = document.getElementById("passwordPopup");
-
-
       const rect = element.getBoundingClientRect();
       popup.style.top = `${rect.top + window.scrollY - 50}px`;
       popup.style.left = `${rect.right + window.scrollX + 15}px`;
@@ -323,7 +362,6 @@ class DaVinciFormUtils {
       popup.style.display = "block";
 
     };
-
 
     // Hide password Popup element
     const hidePasswordPopup = () => {
@@ -485,6 +523,7 @@ class DaVinciFormUtils {
       if (!feedbackElement) {
         feedbackElement = document.createElement("div");
         feedbackElement.classList.add("custom-invalid-feedback", "text-danger", "mt-1");
+        feedbackElement.setAttribute("aria-live", "assertive");
         parent.appendChild(feedbackElement);
       }
 
@@ -589,7 +628,9 @@ class DaVinciFormUtils {
       });
 
       if (allValid) {
-        submitButton.click();
+        if (existingSubmitButton) {
+          existingSubmitButton.click();
+        }
         if (validationSuccessClickHandler && typeof validationSuccessClickHandler === "function") {
           validationSuccessClickHandler('success');
         }
@@ -679,5 +720,61 @@ class DaVinciFormUtils {
     }
 
     return { isValid: true, message: "" };
+  }
+
+  /**
+ * Creates a MutationObserver to observe changes to a specified element.
+ * 
+ * @param {string} id - The ID of the element to observe.
+ * @param {Function} handler - The handler function to call when a change is observed.
+ * @param {Object} [options] - Optional observer options (default: { childList: true, characterData: true, subtree: true }).
+ * 
+ * @returns {Function} A function to stop observing changes.
+ */
+  static createChangeObserver(id, handler, options = { childList: true, characterData: true, subtree: true }) {
+    // Get the target element by ID
+    const targetNode = document.getElementById(id);
+
+    if (!targetNode) {
+      console.warn(`Element with ID '${id}' not found.`);
+      return () => { }; // Return a no-op function if the target element is not found
+    }
+
+    // Define the callback function for the MutationObserver
+    const callback = (mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'characterData' || (mutation.type === 'childList' && mutation.addedNodes.length > 0)) {
+          handler(mutation);
+        }
+      }
+    };
+
+    // Create a new MutationObserver instance with the callback
+    const observer = new MutationObserver(callback);
+
+    // Start observing the target node with the specified options
+    observer.observe(targetNode, options);
+
+    // Return a function to stop observing changes
+    return () => observer.disconnect();
+  }
+
+  /**
+ * Converts a text representation of "true" or "false" into a boolean value.
+ *
+ * @param {string} text - The text to convert. Should be "true" or "false" (case insensitive).
+ * @returns {boolean} - Returns `true` if the text is "true" (case insensitive), `false` if the text is "false" (case insensitive).
+ *                      Returns `false` for any other input.
+ */
+  static textToBoolean(text) {
+    if (typeof text === 'string') {
+      const lowerCaseText = text.toLowerCase();
+      if (lowerCaseText === 'true') {
+        return true;
+      } else if (lowerCaseText === 'false') {
+        return false;
+      }
+    }
+    return false;
   }
 }
