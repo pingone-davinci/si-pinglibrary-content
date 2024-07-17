@@ -201,6 +201,7 @@ class DaVinciFormUtils {
     passwordPopupTitle = DEFAULT_PASSWORD_POPUP_TITLE,
     formType = FORM_TYPE_UPDATE_PASSWORD,
     delayValidationUntilSubmit = false,
+    disableSubmitButtonUntilValid = false
   }) {
     const form = document.getElementById(formId);
     let existingSubmitButton;
