@@ -161,29 +161,29 @@ class DaVinciFormUtils {
   }
 
   /**
- * Adds custom validation to a form, including password validation, field validation messages,
- * and optional features like required field indicators, password toggle, and password policy popup.
- *
- * @param {object} options - The configuration options for custom validation.
- * @param {string} options.formId - The ID of the form to apply validation to.
- * @param {string} [options.passwordFieldContainerId] - The ID of the container holding the password field. (Optional).
- * @param {string} [options.confirmPasswordFieldContainerId] - The ID of the container holding the confirm password field. (Optional).
- * @param {object|string|null} [options.passwordPolicy=null] - The password policy to validate against. Can be an object or a JSON string. (Optional).
- * @param {function|null} [options.validationSuccessClickHandler=null] - A custom handler to call when the form is successfully validated. (Optional).
- * @param {string} [options.invalidFieldBorderColor=null] - The border color to apply to invalid fields. (Optional).
- * @param {string} [options.passwordErrorMessage=PASSWORD_ERROR_MESSAGE] - The message to display when the password does not meet the policy requirements. (Optional).
- * @param {boolean} [options.addRequiredFieldIndicators=true] - Whether to add indicators for required fields. (Optional).
- * @param {boolean} [options.setFocusOnFirstField=true] - Whether to set focus on the first field in the form. (Optional).
- * @param {boolean} [options.setFocusOnFirstError=true] - Whether to set focus on the first error field in the form on submit. (Optional).
- * @param {boolean} [options.enablePasswordToggle=true] - Whether to enable password visibility toggle. (Optional).
- * @param {boolean} [options.useDefaultStyles=true] - Use the built-in CSS for the Password Validator Popup. (Optional).
- * @param {boolean} [options.overrideDaVinciSubmit=true] - Override the default form-submit button to perform validation before submitting form. (Optional).
- * @param {string} [options.passwordPopupTitle=DEFAULT_PASSWORD_POPUP_TITLE] - The title for the password policy popup. (Optional).
- * @param {string} [options.formType=FORM_TYPE_UPDATE_PASSWORD] - The type of form, used to determine specific behaviors (e.g., "UPDATE_PASSWORD" or "STANDARD"). (Optional).
- * @param {boolean} [options.delayValidationUntilSubmit=false] - Whether to delay validation until the submit button is clicked. (Optional).
- * @param {boolean} [options.disableSubmitButtonUntilValid=false] - Whether to disable the submit button until valid. Only works when overrideDavinciSubmit is enabled (Optional).
- * @returns {void}
- */
+   * Adds custom validation to a form, including password validation, field validation messages,
+   * and optional features like required field indicators, password toggle, and password policy popup.
+   *
+   * @param {object} options - The configuration options for custom validation.
+   * @param {string} options.formId - The ID of the form to apply validation to.
+   * @param {string} [options.passwordFieldContainerId] - The ID of the container holding the password field. (Optional).
+   * @param {string} [options.confirmPasswordFieldContainerId] - The ID of the container holding the confirm password field. (Optional).
+   * @param {object|string|null} [options.passwordPolicy=null] - The password policy to validate against. Can be an object or a JSON string. (Optional).
+   * @param {function|null} [options.validationSuccessClickHandler=null] - A custom handler to call when the form is successfully validated. (Optional).
+   * @param {string} [options.invalidFieldBorderColor=null] - The border color to apply to invalid fields. (Optional).
+   * @param {string} [options.passwordErrorMessage=PASSWORD_ERROR_MESSAGE] - The message to display when the password does not meet the policy requirements. (Optional).
+   * @param {boolean} [options.addRequiredFieldIndicators=true] - Whether to add indicators for required fields. (Optional).
+   * @param {boolean} [options.setFocusOnFirstField=true] - Whether to set focus on the first field in the form. (Optional).
+   * @param {boolean} [options.setFocusOnFirstError=true] - Whether to set focus on the first error field in the form on submit. (Optional).
+   * @param {boolean} [options.enablePasswordToggle=true] - Whether to enable password visibility toggle. (Optional).
+   * @param {boolean} [options.useDefaultStyles=true] - Use the built-in CSS for the Password Validator Popup. (Optional).
+   * @param {boolean} [options.overrideDaVinciSubmit=true] - Override the default form-submit button to perform validation before submitting form. (Optional).
+   * @param {string} [options.passwordPopupTitle=DEFAULT_PASSWORD_POPUP_TITLE] - The title for the password policy popup. (Optional).
+   * @param {string} [options.formType=FORM_TYPE_UPDATE_PASSWORD] - The type of form, used to determine specific behaviors (e.g., "UPDATE_PASSWORD" or "STANDARD"). (Optional).
+   * @param {boolean} [options.delayValidationUntilSubmit=false] - Whether to delay validation until the submit button is clicked. (Optional).
+   * @param {boolean} [options.disableSubmitButtonUntilValid=false] - Whether to disable the submit button until valid. Only works when overrideDaVinciSubmit is enabled (Optional).
+   * @returns {void}
+   */
   static addDaVinciFormValidation({
     formId,
     passwordFieldContainerId,
@@ -417,34 +417,34 @@ class DaVinciFormUtils {
         styleElement.id = "default-password-styles";
 
         styleElement.innerHTML = `
-        .password-popup {
-          position: absolute;
-          width: 300px;
-          opacity: 0;
-          z-index: 1000;
-          background-color: #FFFFFF !important;
-          border: 1px solid #CCCCCC !important;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          padding: 5px !important;
-          border-radius: 4px;
-          font-size: 0.875rem;
-          transition: opacity 0.3s ease, transform 0.3s ease;
-        }
+      .password-popup {
+        position: absolute;
+        width: 300px;
+        opacity: 0;
+        z-index: 1000;
+        background-color: #FFFFFF !important;
+        border: 1px solid #CCCCCC !important;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 5px !important;
+        border-radius: 4px;
+        font-size: 0.875rem;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
 
-        .password-popup.visible {
-          opacity: 1;
-        }
+      .password-popup.visible {
+        opacity: 1;
+      }
 
-        .password-popup ul {
-          padding-left: 15px !important;
-          list-style-type: none !important;
-        }
+      .password-popup ul {
+        padding-left: 15px !important;
+        list-style-type: none !important;
+      }
 
-        .password-popup li {
-          list-style: none !important;
-          margin-bottom: 8px !important;
-        }
-      `;
+      .password-popup li {
+        list-style: none !important;
+        margin-bottom: 8px !important;
+      }
+    `;
         document.head.appendChild(styleElement);
       }
     }
@@ -539,6 +539,11 @@ class DaVinciFormUtils {
             setValidationMessage(confirmPasswordField, true);
           }
         }
+
+        // Enable/disable submit button based on form validity
+        if (disableSubmitButtonUntilValid && validationSubmitButton) {
+          validationSubmitButton.disabled = !form.checkValidity();
+        }
       });
 
       element.addEventListener("blur", () => {
@@ -555,6 +560,11 @@ class DaVinciFormUtils {
           if (element === passwordField && formType === FORM_TYPE_UPDATE_PASSWORD && passwordPolicy) {
             hidePasswordPopup();
           }
+        }
+
+        // Enable/disable submit button based on form validity
+        if (disableSubmitButtonUntilValid && validationSubmitButton) {
+          validationSubmitButton.disabled = !form.checkValidity();
         }
       });
 
@@ -606,10 +616,6 @@ class DaVinciFormUtils {
         if (validationSuccessClickHandler && typeof validationSuccessClickHandler === "function") {
           validationSuccessClickHandler("success");
         }
-        // Re-enable the submit button if it was disabled
-        if (disableSubmitButtonUntilValid && validationSubmitButton) {
-          validationSubmitButton.disabled = false;
-        }
 
       } else {
         if (invalidElements.length > 0 && setFocusOnFirstError) {
@@ -626,6 +632,7 @@ class DaVinciFormUtils {
       });
     }
   }
+
 
   /**
    * Validates a password against the given policy.
