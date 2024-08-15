@@ -9,10 +9,10 @@
         "pingOneAuthenticationConnector",
         "nodeConnector"
       ],
-      "createdDate": 1722254909521,
+      "createdDate": 1723731558075,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: July 29th, 2024",
+      "description": "Last Updated: August 15th, 2024",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Session Main Flow",
@@ -23,7 +23,7 @@
         "intermediateLoadingScreenHTML": "",
         "debugMode": false,
         "cssLinks": [
-          "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css",
+          "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.9/end-user-nano.css",
           "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.11/icons.css"
         ],
         "useCustomCSS": true,
@@ -34,13 +34,13 @@
         "pingOneFlow": true,
         "css": ".companyLogo {\n    height: 65px;\n}",
         "customTitle": "Sign On",
-        "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
+        "customFaviconLink": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
       },
       "timeouts": "null",
       "trigger": {
         "type": "AUTHENTICATION"
       },
-      "updatedDate": 1722254915088,
+      "updatedDate": 1723731559928,
       "flowId": "346f5b70d9e1a664375b8cea6a5e0ad1",
       "versionId": 1,
       "graphData": {
@@ -104,65 +104,6 @@
             },
             {
               "data": {
-                "id": "mfg3o9r8de",
-                "nodeType": "ANNOTATION",
-                "name": "Annotation",
-                "connectionId": "921bfae85c38ed45045e07be703d86b8",
-                "connectorId": "annotationConnector",
-                "capabilityName": "updateAnnotationProperties",
-                "type": "action",
-                "properties": {
-                  "backgroundColor": {
-                    "value": "#f2f3f4ff"
-                  },
-                  "annotationTextColor": {
-                    "value": "#000000"
-                  },
-                  "annotation": {
-                    "value": "Create session and pass control to PingOne for token issuance"
-                  },
-                  "width": {
-                    "value": 320
-                  },
-                  "fontSize": {
-                    "value": 14
-                  },
-                  "fontFamily": {
-                    "value": "sans-serif"
-                  },
-                  "cornerRadius": {
-                    "value": 8
-                  },
-                  "strokeEnabled": {
-                    "value": true
-                  },
-                  "strokeWidth": {
-                    "value": 1
-                  },
-                  "strokeColor": {
-                    "value": "#181818ff"
-                  },
-                  "height": {
-                    "value": 43
-                  }
-                },
-                "status": "configured"
-              },
-              "position": {
-                "x": 480,
-                "y": 930
-              },
-              "group": "nodes",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": false,
-              "classes": ""
-            },
-            {
-              "data": {
                 "id": "df9ia9vsmb",
                 "nodeType": "ANNOTATION",
                 "name": "Annotation",
@@ -181,7 +122,7 @@
                     "value": "Sign On Success"
                   },
                   "width": {
-                    "value": 1000
+                    "value": 700
                   },
                   "fontStyle": {
                     "value": "bold"
@@ -228,7 +169,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Input Schema: p1UserId"
+                    "value": "Input Schema: p1UserId, authMethod (optional)"
                   },
                   "width": {
                     "value": 0
@@ -407,7 +348,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"p1UserId\",\n        \"data\": \"{{local.ofk8hitz8r.payload.output.p1UserId}}\",\n        \"tooltip\": \"{{local.ofk8hitz8r.payload.output.p1UserId}}\",\n        \"children\": [\n          {\n            \"text\": \"p1UserId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
                   "authenticationMethods": {
-                    "value": "pwd"
+                    "value": "useCustomAuthenticationMethods"
                   },
                   "idleTimeout": {
                     "value": 43200
@@ -423,6 +364,9 @@
                   },
                   "oeInteractionCacheExpire": {
                     "value": true
+                  },
+                  "customAuthenticationMethods": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"authMethod\",\n        \"data\": \"{{local.ofk8hitz8r.payload.output.authMethod}}\",\n        \"tooltip\": \"{{local.ofk8hitz8r.payload.output.authMethod}}\",\n        \"children\": [\n          {\n            \"text\": \"authMethod\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   }
                 }
               },
@@ -533,7 +477,7 @@
                 "type": "trigger",
                 "properties": {
                   "inputSchema": {
-                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"p1UserId\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"PingOne User Id\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"p1UserId\"\n\t\t}\n\t}\n}"
+                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"p1UserId\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"PingOne User Id\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"p1UserId\"\n\t\t},\n\t\t\"authMethod\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Authentication Method\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"authMethod\"\n\t\t}\n\t}\n}"
                   },
                   "nodeTitle": {
                     "value": "Sign On Success"
@@ -610,6 +554,9 @@
                   },
                   "p1UserId": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"flow-connector.svg\",\n        \"url\": \"p1UserId\",\n        \"data\": \"{{local.z98ot8mzk7.payload.output.p1UserId}}\",\n        \"tooltip\": \"{{local.z98ot8mzk7.payload.output.p1UserId}}\",\n        \"children\": [\n          {\n            \"text\": \"p1UserId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  },
+                  "authMethod": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"flow-connector.svg\",\n        \"url\": \"authMethod\",\n        \"data\": \"{{local.z98ot8mzk7.payload.output.authMethod}}\",\n        \"tooltip\": \"{{local.z98ot8mzk7.payload.output.authMethod}}\",\n        \"children\": [\n          {\n            \"text\": \"authMethod\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   }
                 }
               },
@@ -693,7 +640,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: July 29th, 2024"
+                    "value": "Last Updated: August 15th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -735,6 +682,63 @@
             }
           ],
           "edges": [
+            {
+              "data": {
+                "id": "emucb01so1",
+                "source": "ofk8hitz8r",
+                "target": "zkumd1hvz"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "c7trfkylri",
+                "source": "t0im3zjpdh",
+                "target": "qklq9dhol4"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "2to7volmnk",
+                "source": "dbcjwy026h",
+                "target": "9b7cgoyv9z"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
             {
               "data": {
                 "id": "mwnduzih46",
@@ -794,66 +798,9 @@
             },
             {
               "data": {
-                "id": "c7trfkylri",
-                "source": "t0im3zjpdh",
-                "target": "qklq9dhol4"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "emucb01so1",
-                "source": "ofk8hitz8r",
-                "target": "zkumd1hvz"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "mtltuph17g",
+                "id": "jt1ukcyycl",
                 "source": "zkumd1hvz",
                 "target": "fbx7x6gnus"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "2to7volmnk",
-                "source": "dbcjwy026h",
-                "target": "9b7cgoyv9z"
               },
               "position": {
                 "x": 0,
@@ -888,7 +835,7 @@
         }
       },
       "flowColor": "#ff661c",
-      "savedDate": 1722254909380,
+      "savedDate": 1723731558018,
       "variables": [],
       "connections": [],
       "parentFlowId": "346f5b70d9e1a664375b8cea6a5e0ad1"
@@ -905,10 +852,10 @@
         "httpConnector",
         "variablesConnector"
       ],
-      "createdDate": 1722254931128,
+      "createdDate": 1723731634731,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: July 29th, 2024",
+      "description": "Last Updated: August 15th, 2024",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -928,7 +875,7 @@
         "intermediateLoadingScreenHTML": "",
         "debugMode": false,
         "cssLinks": [
-          "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css",
+          "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.9/end-user-nano.css",
           "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.11/icons.css"
         ],
         "useCustomCSS": true,
@@ -937,13 +884,13 @@
         "sensitiveInfoFields": [],
         "useBetaAlgorithm": true,
         "pingOneFlow": false,
-        "css": ".companyLogo {\n    height: 65px;\n}",
+        "css": ".companyLogo {\n    height: 65px;\n}\n\n.icon-padding::before {\n  padding-right: 5px;\n}",
         "customTitle": "Sign On",
-        "customFaviconLink": "https://d3uinntk0mqu3p.cloudfront.net/branding/market/a3d073bc-3108-49ad-b96c-404bea59a1d0.png"
+        "customFaviconLink": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
       },
       "timeouts": "null",
       "trigger": {},
-      "updatedDate": 1722254933082,
+      "updatedDate": 1723731636372,
       "flowId": "d37b16b39ea0b01816ae231e602ef35d",
       "versionId": 1,
       "graphData": {
@@ -983,7 +930,7 @@
                 "idUnique": "upt2qd07bj"
               },
               "position": {
-                "x": 1204,
+                "x": 1230,
                 "y": 1080
               },
               "group": "nodes",
@@ -1036,7 +983,7 @@
                 "idUnique": "0re8wbsb52"
               },
               "position": {
-                "x": 1504,
+                "x": 1530,
                 "y": 480
               },
               "group": "nodes",
@@ -1054,7 +1001,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1024,
+                "x": 1050,
                 "y": 1080
               },
               "group": "nodes",
@@ -1099,7 +1046,7 @@
                 }
               },
               "position": {
-                "x": 2404,
+                "x": 3030,
                 "y": 1080
               },
               "group": "nodes",
@@ -1132,7 +1079,7 @@
                 }
               },
               "position": {
-                "x": 334,
+                "x": 330,
                 "y": 3810
               },
               "group": "nodes",
@@ -1150,7 +1097,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 454,
+                "x": 450,
                 "y": 3810
               },
               "group": "nodes",
@@ -1168,7 +1115,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 2224,
+                "x": 2850,
                 "y": 480
               },
               "group": "nodes",
@@ -1220,7 +1167,7 @@
                 }
               },
               "position": {
-                "x": 2104,
+                "x": 2730,
                 "y": 480
               },
               "group": "nodes",
@@ -1257,7 +1204,7 @@
                 "idUnique": "efipo9nts6"
               },
               "position": {
-                "x": 2404,
+                "x": 3030,
                 "y": 690
               },
               "group": "nodes",
@@ -1293,7 +1240,7 @@
                 }
               },
               "position": {
-                "x": 2404,
+                "x": 3030,
                 "y": 480
               },
               "group": "nodes",
@@ -1312,7 +1259,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1024,
+                "x": 1050,
                 "y": 870
               },
               "group": "nodes",
@@ -1345,7 +1292,7 @@
                 }
               },
               "position": {
-                "x": 1204,
+                "x": 1230,
                 "y": 870
               },
               "group": "nodes",
@@ -1363,7 +1310,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 2224,
+                "x": 2850,
                 "y": 690
               },
               "group": "nodes",
@@ -1396,7 +1343,7 @@
                 }
               },
               "position": {
-                "x": 334,
+                "x": 330,
                 "y": 1410
               },
               "group": "nodes",
@@ -1414,7 +1361,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 454,
+                "x": 450,
                 "y": 1410
               },
               "group": "nodes",
@@ -1451,7 +1398,7 @@
                 "idUnique": "n0jc92tdiz"
               },
               "position": {
-                "x": 2134,
+                "x": 2130,
                 "y": 1410
               },
               "group": "nodes",
@@ -1488,7 +1435,7 @@
                 "idUnique": "efipo9nts6"
               },
               "position": {
-                "x": 2404,
+                "x": 3030,
                 "y": 870
               },
               "group": "nodes",
@@ -1506,7 +1453,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 2224,
+                "x": 2850,
                 "y": 870
               },
               "group": "nodes",
@@ -1524,7 +1471,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 2224,
+                "x": 2850,
                 "y": 1080
               },
               "group": "nodes",
@@ -1575,7 +1522,7 @@
                 "idUnique": "31w82ae734"
               },
               "position": {
-                "x": 244,
+                "x": 240,
                 "y": 1230
               },
               "group": "nodes",
@@ -1608,7 +1555,7 @@
                 }
               },
               "position": {
-                "x": 304,
+                "x": 330,
                 "y": 2700
               },
               "group": "nodes",
@@ -1627,7 +1574,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 424,
+                "x": 450,
                 "y": 2700
               },
               "group": "nodes",
@@ -1660,7 +1607,7 @@
                 }
               },
               "position": {
-                "x": 1204,
+                "x": 1230,
                 "y": 690
               },
               "group": "nodes",
@@ -1717,7 +1664,7 @@
                 "idUnique": "6ymcsgz021"
               },
               "position": {
-                "x": 244,
+                "x": 240,
                 "y": 1290
               },
               "group": "nodes",
@@ -1735,7 +1682,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1024,
+                "x": 1050,
                 "y": 480
               },
               "group": "nodes",
@@ -1760,7 +1707,7 @@
                 "type": "action",
                 "properties": {
                   "errorMessage": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \" Invalid username and/or password\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"Invalid username and/or password\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeTitle": {
                     "value": "Password check failed"
@@ -1781,8 +1728,8 @@
                 "idUnique": "30gdqzg51v"
               },
               "position": {
-                "x": 1804,
-                "y": 690
+                "x": 2130,
+                "y": 840
               },
               "group": "nodes",
               "removed": false,
@@ -1831,7 +1778,7 @@
                 "status": "configured"
               },
               "position": {
-                "x": 218,
+                "x": 210,
                 "y": 2520
               },
               "group": "nodes",
@@ -1881,7 +1828,7 @@
                 "status": "configured"
               },
               "position": {
-                "x": 214,
+                "x": 210,
                 "y": 3600
               },
               "group": "nodes",
@@ -1920,6 +1867,13 @@
                         "label": "p1UserId (string - flowInstance)",
                         "type": "string",
                         "nameDefault": "p1UserId"
+                      },
+                      {
+                        "name": "authMethod",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"pwd\"\n      }\n    ]\n  }\n]",
+                        "key": 0.5510569545803072,
+                        "label": "authMethod (string - flowInstance)",
+                        "type": "string"
                       }
                     ]
                   },
@@ -1930,7 +1884,7 @@
                 "idUnique": "00surhcg33"
               },
               "position": {
-                "x": 634,
+                "x": 630,
                 "y": 3810
               },
               "group": "nodes",
@@ -1962,7 +1916,7 @@
                     "value": "PingOne Sign On with Registration, Password Reset and Recovery"
                   },
                   "width": {
-                    "value": 2300
+                    "value": 3000
                   },
                   "fontStyle": {
                     "value": "bold"
@@ -1980,7 +1934,7 @@
                 "status": "configured"
               },
               "position": {
-                "x": 244,
+                "x": 240,
                 "y": 270
               },
               "group": "nodes",
@@ -2013,7 +1967,7 @@
                 }
               },
               "position": {
-                "x": 304,
+                "x": 330,
                 "y": 360
               },
               "group": "nodes",
@@ -2031,7 +1985,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 424,
+                "x": 450,
                 "y": 360
               },
               "group": "nodes",
@@ -2049,7 +2003,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1024,
+                "x": 1050,
                 "y": 690
               },
               "group": "nodes",
@@ -2105,7 +2059,7 @@
                 "status": "configured"
               },
               "position": {
-                "x": 514,
+                "x": 510,
                 "y": 3720
               },
               "group": "nodes",
@@ -2157,7 +2111,7 @@
                 "idUnique": "qdjikxg105"
               },
               "position": {
-                "x": 1204,
+                "x": 1230,
                 "y": 480
               },
               "group": "nodes",
@@ -2186,7 +2140,7 @@
                 }
               },
               "position": {
-                "x": 1324,
+                "x": 1350,
                 "y": 480
               },
               "group": "nodes",
@@ -2205,11 +2159,14 @@
                 "properties": {
                   "79aiikhgtb": {
                     "value": "anyTriggersFalse"
+                  },
+                  "83vu4kprq4": {
+                    "value": "anyTriggersFalse"
                   }
                 }
               },
               "position": {
-                "x": 1624,
+                "x": 1650,
                 "y": 480
               },
               "group": "nodes",
@@ -2240,29 +2197,14 @@
                     "value": {}
                   },
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">\n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                        <h1 id=\"title\" class=\"text-center mb-4\">\n                            {{title}}\n                        </h1>\n                        <p class=\"text-muted text-center\">{{text}}</p>\n\n                        <!-- Generic Error Message -->\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\"\n                            data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n                        <!-- Field Validation Error Messages -->\n                        <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"passcode\"\n                            data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n                        <p id=\"resendMessage\" class=\"text-success mdi mdi-check-circle text-center\"  \n                            style=\"display: {{#if resendMessage}} block; {{else}} none; {{/if}}\"aria-live=\"assertive\">{{resendMessage}}</p>\n\n                        <form id=\"otp-form\" data-id=\"otp-form\">\n                            <div class=\"mb-4 form-floating\">\n                                <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"8\" aria-required=\"true\" placeholder=\"Verification Code\" />\n                                <label class=\"form-label\" for=\"passcode\">Verification Code</label>\n                            </div>\n                           \n                            <div class=\"d-flex flex-column\">\n                                <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"VERIFY\">\n                                    Continue\n                                </button>\n                                <button id=\"resend\" type=\"button\" class=\"btn btn-link mb-3\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                                    Resend verification code\n                                </button>\n                            </div>\n                        </form>\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">\n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n                        <h1 id=\"title\" class=\"text-center mb-4\">\n                            {{title}}\n                        </h1>\n                        <p class=\"text-muted text-center\">{{text}}</p>\n\n                        <!-- Generic Error Message -->\n                        <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" data-id=\"feedback\"\n                            data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n                        <p id=\"resendMessage\" class=\"text-success mdi mdi-check-circle text-center\"  \n                            style=\"display: {{#if resendMessage}} block; {{else}} none; {{/if}}\" aria-live=\"assertive\">\n                            <span class=\"ms-2\">{{resendMessage}}</span></p>\n\n                        <form id=\"otp-form\" data-id=\"otp-form\">\n                            <div class=\"mb-4 form-floating\">\n                                <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"on\" maxlength=\"8\" aria-required=\"true\" placeholder=\"Verification Code\" />\n                                <label class=\"form-label\" for=\"passcode\">Verification Code</label>\n                            </div>\n                           \n                            <div class=\"d-flex flex-column\">\n                                <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"VERIFY\">\n                                    Continue\n                                </button>\n                                <button id=\"resend\" type=\"button\" class=\"btn btn-link mb-3\" data-skcomponent=\"skbutton\"\n                                    data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                                    Resend verification code\n                                </button>\n                            </div>\n                        </form>\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
                   },
                   "customCSS": {},
                   "customScript": {
                     "value": "/**\n * Sets focus to the DOM element specified by its ID.\n * @param {string} id - The ID of the DOM element to focus.\n */\nconst setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    } else {\n        console.log(`Element with ID ${id} not found.`);\n    }\n};\n\n/**\n * Initializes the application by setting the focus to a specific field.\n */\nconst start = () => {\n    setFieldFocus(\"passcode\");\n    createChangeObserver(\"resendMessage\");\n};\n\nconst createChangeObserver = (id) => {\n    const targetNode = document.getElementById(id);\n\n    if (targetNode) {\n        // Observer options\n        const config = { childList: true, characterData: true, subtree: true };\n\n        const callback = function (mutationsList, observer) {\n            for (let mutation of mutationsList) {\n                if (mutation.type === 'characterData' || (mutation.type === 'childList' && mutation.addedNodes.length > 0)) {\n                    // Form has reloaded, set focus\n                    setFieldFocus(\"passcode\");\n                }\n            }\n        };\n\n        const observer = new MutationObserver(callback);\n\n        observer.observe(targetNode, config);\n    }\n}\n\n// Ensure the script runs after the DOM is fully loaded\nif (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    start();\n}\n\n"
                   },
                   "validationRules": {
-                    "value": [
-                      {
-                        "propertyName": "passcode",
-                        "rules": [
-                          {
-                            "ruleName": "presence",
-                            "message": "Enter the 8-character verification code."
-                          },
-                          {
-                            "ruleName": "length",
-                            "is": "8",
-                            "wrongLength": "The verification code must be eight characters."
-                          }
-                        ]
-                      }
-                    ]
+                    "value": []
                   },
                   "nodeTitle": {
                     "value": "Prompt For Verification Code"
@@ -2305,7 +2247,7 @@
                 "idUnique": "mc0qvitm1n"
               },
               "position": {
-                "x": 604,
+                "x": 630,
                 "y": 3210
               },
               "group": "nodes",
@@ -2355,7 +2297,7 @@
                 "status": "configured"
               },
               "position": {
-                "x": 214,
+                "x": 210,
                 "y": 3030
               },
               "group": "nodes",
@@ -2418,6 +2360,10 @@
                           {
                             "key": "invalidValue",
                             "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Invalid verification code\"\n      }\n    ]\n  }\n]"
+                          },
+                          {
+                            "key": "emptyValue",
+                            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter verification code\"\n      }\n    ]\n  }\n]"
                           }
                         ]
                       }
@@ -2426,7 +2372,7 @@
                 }
               },
               "position": {
-                "x": 1204,
+                "x": 1230,
                 "y": 3210
               },
               "group": "nodes",
@@ -2483,7 +2429,7 @@
                 "idUnique": "twyb3s51b1"
               },
               "position": {
-                "x": 214,
+                "x": 210,
                 "y": 3090
               },
               "group": "nodes",
@@ -2502,7 +2448,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1024,
+                "x": 1050,
                 "y": 3510
               },
               "group": "nodes",
@@ -2544,7 +2490,7 @@
                 }
               },
               "position": {
-                "x": 1504,
+                "x": 1530,
                 "y": 3510
               },
               "group": "nodes",
@@ -2562,7 +2508,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 424,
+                "x": 450,
                 "y": 3210
               },
               "group": "nodes",
@@ -2595,7 +2541,7 @@
                 }
               },
               "position": {
-                "x": 304,
+                "x": 330,
                 "y": 3210
               },
               "group": "nodes",
@@ -2614,7 +2560,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1354,
+                "x": 1380,
                 "y": 3510
               },
               "group": "nodes",
@@ -2665,7 +2611,7 @@
                 }
               },
               "position": {
-                "x": 904,
+                "x": 930,
                 "y": 3210
               },
               "group": "nodes",
@@ -2722,7 +2668,7 @@
                 "idUnique": "940rm8qjb1"
               },
               "position": {
-                "x": 244,
+                "x": 240,
                 "y": 1890
               },
               "group": "nodes",
@@ -2740,7 +2686,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 754,
+                "x": 750,
                 "y": 1410
               },
               "group": "nodes",
@@ -2759,7 +2705,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1054,
+                "x": 1050,
                 "y": 1410
               },
               "group": "nodes",
@@ -2849,7 +2795,7 @@
                 }
               },
               "position": {
-                "x": 1534,
+                "x": 1530,
                 "y": 1410
               },
               "group": "nodes",
@@ -2873,7 +2819,7 @@
                 }
               },
               "position": {
-                "x": 1654,
+                "x": 1650,
                 "y": 1410
               },
               "group": "nodes",
@@ -2898,7 +2844,7 @@
                 "type": "action",
                 "properties": {
                   "errorMessage": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \" \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.0c41v9ejkb.payload.error.message}}\",\n        \"tooltip\": \"{{local.0c41v9ejkb.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.0c41v9ejkb.payload.error.message}}\",\n        \"tooltip\": \"{{local.0c41v9ejkb.payload.error.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
                   "errorCallbackSuppress": {
                     "value": true
@@ -2909,9 +2855,6 @@
                   "errorCode": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"httpResponseCode\",\n        \"data\": \"{{local.0c41v9ejkb.payload.error.httpResponseCode}}\",\n        \"tooltip\": \"{{local.0c41v9ejkb.payload.error.httpResponseCode}}\",\n        \"children\": [\n          {\n            \"text\": \"httpResponseCode\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
-                  "errorReason": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"details\",\n        \"data\": \"{{local.0c41v9ejkb.payload.error.details}}\",\n        \"tooltip\": \"{{local.0c41v9ejkb.payload.error.details}}\",\n        \"children\": [\n          {\n            \"text\": \"details\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
                   "nodeTitle": {
                     "value": "Password update failed"
                   },
@@ -2921,7 +2864,7 @@
                 }
               },
               "position": {
-                "x": 1834,
+                "x": 1830,
                 "y": 1620
               },
               "group": "nodes",
@@ -2939,7 +2882,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1954,
+                "x": 1950,
                 "y": 1410
               },
               "group": "nodes",
@@ -2957,7 +2900,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 424,
+                "x": 450,
                 "y": 480
               },
               "group": "nodes",
@@ -3009,7 +2952,7 @@
                 "idUnique": "mbb1ucl3yi"
               },
               "position": {
-                "x": 304,
+                "x": 330,
                 "y": 480
               },
               "group": "nodes",
@@ -3037,7 +2980,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Welcome to \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"companyName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\">\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"feedbackError\" data-id=\"feedback\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"usernameError\" data-skerrorid=\"username\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"passwordError\" data-skerrorid=\"password\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            <form id=\"signonForm\" aria-labelledby=\"title\" data-id=\"signonForm\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control\" id=\"username\" name=\"username\" placeholder=\"Username\"\n                  autocomplete=\"\"  data-id=\"username-input\" aria-required=\"true\"\n                  aria-describedby=\"usernameLabel\" />\n                <label id=\"usernameLabel\" for=\"username\">Username</label>\n              </div>\n              <div id=\"passwordDiv\" class=\"mb-4 form-floating\">\n                <input class=\"form-control\" type=\"password\" id=\"password\" name=\"password\" placeholder=\"Password\"\n                  autocomplete=\"\" data-id=\"password-input\" aria-required=\"true\"\n                  aria-describedby=\"passwordLabel\" />\n                <label id=\"passwordLabel\" for=\"password\">Password</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" id=\"btnSignIn\" data-skform=\"signonForm\"\n                  data-skbuttonvalue=\"SIGNON\">\n                  Sign On\n                </button>\n                <button data-id=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                  id=\"btnRegister\" data-skbuttonvalue=\"REGISTER\">\n                  No account? Register now!\n                </button>\n                <button data-id=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                  id=\"btnTrouble\" data-skbuttonvalue=\"TROUBLE\">\n                  Having trouble signing on?\n                </button>\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>\n"
+                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-2\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\">\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" id=\"feedbackError\" data-id=\"feedback\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <form id=\"signonForm\" aria-labelledby=\"title\" data-id=\"signonForm\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control\" id=\"username\" name=\"username\" placeholder=\"Username\"\n                  autocomplete=\"\"  data-id=\"username-input\" aria-required=\"true\"\n                  aria-describedby=\"usernameLabel\" />\n                <label id=\"usernameLabel\" for=\"username\">Username</label>\n              </div>\n              <div id=\"passwordDiv\" class=\"mb-4 form-floating\">\n                <input class=\"form-control\" type=\"password\" id=\"password\" name=\"password\" placeholder=\"Password\"\n                  autocomplete=\"\" data-id=\"password-input\" aria-required=\"true\"\n                  aria-describedby=\"passwordLabel\" />\n                <label id=\"passwordLabel\" for=\"password\">Password</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" id=\"btnSignIn\" data-skform=\"signonForm\"\n                  data-skbuttonvalue=\"SIGNON\">\n                  Sign On\n                </button>\n                <button data-id=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                  id=\"btnRegister\" data-skbuttonvalue=\"REGISTER\">\n                  No account? Register now!\n                </button>\n                <button data-id=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                  id=\"btnTrouble\" data-skbuttonvalue=\"TROUBLE\">\n                  Having trouble signing on?\n                </button>\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>\n"
                   },
                   "formFieldsList": {
                     "value": [
@@ -3071,26 +3014,7 @@
                     "value": ""
                   },
                   "validationRules": {
-                    "value": [
-                      {
-                        "propertyName": "username",
-                        "rules": [
-                          {
-                            "ruleName": "presence",
-                            "message": "Enter your username"
-                          }
-                        ]
-                      },
-                      {
-                        "propertyName": "password",
-                        "rules": [
-                          {
-                            "ruleName": "presence",
-                            "message": "Enter your password"
-                          }
-                        ]
-                      }
-                    ]
+                    "value": []
                   },
                   "backgroundColor": {
                     "value": "#afd5ffff"
@@ -3114,7 +3038,7 @@
                 "isDisabled": false
               },
               "position": {
-                "x": 604,
+                "x": 630,
                 "y": 480
               },
               "group": "nodes",
@@ -3132,7 +3056,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 724,
+                "x": 750,
                 "y": 480
               },
               "group": "nodes",
@@ -3188,7 +3112,7 @@
                 "isDisabled": false
               },
               "position": {
-                "x": 904,
+                "x": 930,
                 "y": 480
               },
               "group": "nodes",
@@ -3238,7 +3162,7 @@
                 "status": "configured"
               },
               "position": {
-                "x": 244,
+                "x": 240,
                 "y": 1830
               },
               "group": "nodes",
@@ -3271,7 +3195,7 @@
                 }
               },
               "position": {
-                "x": 304,
+                "x": 330,
                 "y": 2070
               },
               "group": "nodes",
@@ -3290,7 +3214,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 424,
+                "x": 450,
                 "y": 2070
               },
               "group": "nodes",
@@ -3323,7 +3247,7 @@
                 }
               },
               "position": {
-                "x": 1504,
+                "x": 1530,
                 "y": 2070
               },
               "group": "nodes",
@@ -3346,7 +3270,7 @@
                 }
               },
               "position": {
-                "x": 1624,
+                "x": 1650,
                 "y": 2070
               },
               "group": "nodes",
@@ -3416,42 +3340,14 @@
                     "value": "Password Recovery Form"
                   },
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"\n              aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"recoveryCode\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"newPassword\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"verifyNewPassword\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            <p id=\"resendMessage\" class=\"text-success mdi mdi-check-circle text-center\"  \n              style=\"display: {{#if resendMessage}} block; {{else}} none; {{/if}}\"aria-live=\"assertive\">{{resendMessage}}</p>\n\n            <form id=\"recoveryCodeForm\" data-id=\"recoveryCodeForm\">\n              <div class=\"mb-4 form-floating\">\n                <input id=\"recoveryCode\" data-id=\"recoveryCode\" class=\"form-control\" type=\"text\" name=\"recoveryCode\"\n                    placeholder=\"Recovery Code\" autocomplete=\"one-time-code\" aria-describedby=\"recoveryCodeLabel\" />\n                <label id=\"recoveryCodeLabel\" data-id=\"recoveryCodeLabel\" class=\"form-label\" for=\"recoveryCode\">\n                    Recovery Code\n                  </label>\n              </div>\n              <div id=\"newPasswordContainer\" class=\"mb-4 form-floating\">\n                <input id=\"newPassword\" data-id=\"newPassword\" class=\"form-control\" type=\"password\" name=\"newPassword\"\n                    placeholder=\"New Password\" autocomplete=\"new-password\" aria-describedby=\"newPasswordLabel\" />\n                <label id=\"newPasswordLabel\" data-id=\"newPasswordLabel\" class=\"form-label\" for=\"newPassword\">\n                    New Password\n                  </label>\n              </div>\n              <div id=\"verifyPasswordContainer\" class=\"mb-4 form-floating\">\n                <input id=\"verifyNewPassword\" data-id=\"verifyNewPassword\" class=\"form-control\" type=\"password\"\n                    name=\"verifyNewPassword\" placeholder=\"Verify New Password\" autocomplete=\"new-password\"\n                    aria-describedby=\"verifyNewPasswordLabel\" />\n                <label id=\"verifyNewPasswordLabel\" class=\"form-label\" for=\"verifyNewPassword\">Verify New\n                    Password</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                <button id=\"submitBtn\" type=\"submit\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"form-submit\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"UPDATE\">\n                    Continue\n                </button>\n                <button id=\"resendBtn\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\" type=\"button\">\n                    Resend recovery code\n                </button>\n                <button id=\"backBtn\" data-id=\"backBtn\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"next-event\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"CANCEL\" type=\"button\">\n                    Cancel\n                </button>\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" data-id=\"feedback\" data-skcomponent=\"skerror\"\n              aria-live=\"assertive\"></p>\n\n            <p id=\"resendMessage\" class=\"text-success mdi mdi-check-circle text-center\"  \n              style=\"display: {{#if resendMessage}} block; {{else}} none; {{/if}}\" aria-live=\"assertive\">\n              <span class=\"ms-2\">{{resendMessage}}</span></p>\n\n            <form id=\"recoveryCodeForm\" data-id=\"recoveryCodeForm\">\n              <div class=\"mb-4 form-floating\">\n                <input id=\"recoveryCode\" data-id=\"recoveryCode\" class=\"form-control\" type=\"text\" name=\"recoveryCode\"\n                    placeholder=\"Recovery Code\" autocomplete=\"one-time-code\" aria-describedby=\"recoveryCodeLabel\" />\n                <label id=\"recoveryCodeLabel\" data-id=\"recoveryCodeLabel\" class=\"form-label\" for=\"recoveryCode\">\n                    Recovery Code\n                  </label>\n              </div>\n              <div id=\"newPasswordContainer\" class=\"mb-4 form-floating\">\n                <input id=\"newPassword\" data-id=\"newPassword\" class=\"form-control\" type=\"password\" name=\"newPassword\"\n                    placeholder=\"New Password\" autocomplete=\"new-password\" aria-describedby=\"newPasswordLabel\" />\n                <label id=\"newPasswordLabel\" data-id=\"newPasswordLabel\" class=\"form-label\" for=\"newPassword\">\n                    New Password\n                  </label>\n              </div>\n              <div id=\"verifyPasswordContainer\" class=\"mb-4 form-floating\">\n                <input id=\"verifyNewPassword\" data-id=\"verifyNewPassword\" class=\"form-control\" type=\"password\"\n                    name=\"verifyNewPassword\" placeholder=\"Verify New Password\" autocomplete=\"new-password\"\n                    aria-describedby=\"verifyNewPasswordLabel\" />\n                <label id=\"verifyNewPasswordLabel\" class=\"form-label\" for=\"verifyNewPassword\">Verify New\n                    Password</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                <button id=\"submitBtn\" type=\"submit\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"form-submit\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"UPDATE\">\n                    Continue\n                </button>\n                <button id=\"resendBtn\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\" type=\"button\">\n                    Resend recovery code\n                </button>\n                <button id=\"backBtn\" data-id=\"backBtn\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"next-event\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"CANCEL\" type=\"button\">\n                    Cancel\n                </button>\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
                   },
                   "customCSS": {},
                   "customScript": {
                     "value": "const setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    }\n}\n\nconst makePasswordToggle = (id) => {\n    let container = document.getElementById(id);\n\n    if (container) {\n        let password = container.getElementsByTagName(\"input\")[0];\n        let toggler = document.createElement(\"button\");\n        toggler.setAttribute(\"type\", \"button\");\n        toggler.setAttribute(\"aria-label\", \"Show/Hide Password\");\n        toggler.className = \"btn mdi mdi-eye-off-outline position-absolute end-0 top-50 translate-middle-y\";\n        container.appendChild(toggler);\n\n        function showHidePassword() {\n            if (password.type == \"password\") {\n                password.setAttribute(\"type\", \"text\");\n                toggler.classList.add(\"mdi-eye-outline\");\n                toggler.classList.remove(\"mdi-eye-off-outline\");\n            } else {\n                toggler.classList.add(\"mdi-eye-off-outline\");\n                toggler.classList.remove(\"mdi-eye-outline\");\n                password.setAttribute(\"type\", \"password\");\n            }\n            password.focus();\n        };\n\n        toggler.addEventListener(\"click\", showHidePassword);\n    }\n}\n\nconst createChangeObserver = (id) => {\n    const targetNode = document.getElementById(id);\n\n    if (targetNode) {\n        // Observer options\n        const config = { childList: true, characterData: true, subtree: true };\n\n        const callback = function (mutationsList, observer) {\n            for (let mutation of mutationsList) {\n                if (mutation.type === 'characterData' || (mutation.type === 'childList' && mutation.addedNodes.length > 0)) {\n                    // Form has reloaded, recreate the password toggle icons\n                    makePasswordToggle(\"newPasswordContainer\");\n                    makePasswordToggle(\"verifyPasswordContainer\");\n                    setFieldFocus(\"recoveryCode\");\n                }\n            }\n        };\n\n        const observer = new MutationObserver(callback);\n\n        observer.observe(targetNode, config);\n    }\n}\n\nconst start = () => {\n    makePasswordToggle(\"newPasswordContainer\");\n    makePasswordToggle(\"verifyPasswordContainer\");\n    setFieldFocus(\"recoveryCode\");\n    createChangeObserver('resendMessage');\n}\n\nif (document.readyState === \"loading\") {\n    // Loading hasn't finished yet\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    // `DOMContentLoaded` has already fired\n    start();\n}\n"
                   },
                   "validationRules": {
-                    "value": [
-                      {
-                        "propertyName": "recoveryCode",
-                        "rules": [
-                          {
-                            "ruleName": "presence",
-                            "message": "Enter recovery code"
-                          }
-                        ]
-                      },
-                      {
-                        "propertyName": "newPassword",
-                        "rules": [
-                          {
-                            "ruleName": "presence",
-                            "message": "Enter new password"
-                          }
-                        ]
-                      },
-                      {
-                        "propertyName": "verifyNewPassword",
-                        "rules": [
-                          {
-                            "ruleName": "presence",
-                            "message": "Verify new password"
-                          }
-                        ]
-                      }
-                    ]
+                    "value": []
                   },
                   "nodeDescription": {
                     "value": "Enter The Recovery Code and Set New Password"
@@ -3473,7 +3369,7 @@
                 "idUnique": "ao8b3p5f11"
               },
               "position": {
-                "x": 1804,
+                "x": 1830,
                 "y": 2070
               },
               "group": "nodes",
@@ -3530,7 +3426,7 @@
                 "idUnique": "liwkdm3vgm"
               },
               "position": {
-                "x": 2104,
+                "x": 2130,
                 "y": 2070
               },
               "group": "nodes",
@@ -3548,7 +3444,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1924,
+                "x": 1950,
                 "y": 2070
               },
               "group": "nodes",
@@ -3567,7 +3463,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 2224,
+                "x": 2250,
                 "y": 2400
               },
               "group": "nodes",
@@ -3600,7 +3496,7 @@
                 }
               },
               "position": {
-                "x": 2404,
+                "x": 2430,
                 "y": 2400
               },
               "group": "nodes",
@@ -3619,7 +3515,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 2224,
+                "x": 2250,
                 "y": 2250
               },
               "group": "nodes",
@@ -3655,7 +3551,7 @@
                 }
               },
               "position": {
-                "x": 2404,
+                "x": 2430,
                 "y": 2250
               },
               "group": "nodes",
@@ -3748,7 +3644,7 @@
                 "idUnique": "nezyzu3twg"
               },
               "position": {
-                "x": 3304,
+                "x": 3330,
                 "y": 2070
               },
               "group": "nodes",
@@ -3789,7 +3685,7 @@
                 "idUnique": "8am3fknso1"
               },
               "position": {
-                "x": 3604,
+                "x": 3630,
                 "y": 2250
               },
               "group": "nodes",
@@ -3812,7 +3708,7 @@
                 }
               },
               "position": {
-                "x": 3424,
+                "x": 3450,
                 "y": 2070
               },
               "group": "nodes",
@@ -3865,7 +3761,7 @@
                 }
               },
               "position": {
-                "x": 2704,
+                "x": 2730,
                 "y": 2070
               },
               "group": "nodes",
@@ -3889,7 +3785,7 @@
                 }
               },
               "position": {
-                "x": 2824,
+                "x": 2850,
                 "y": 2070
               },
               "group": "nodes",
@@ -3922,7 +3818,7 @@
                 }
               },
               "position": {
-                "x": 3004,
+                "x": 3030,
                 "y": 2250
               },
               "group": "nodes",
@@ -3940,7 +3836,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 2224,
+                "x": 2250,
                 "y": 2070
               },
               "group": "nodes",
@@ -3968,7 +3864,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter your username to receive a recovery code that will let you change your password.\"\n      }\n    ]\n  }\n]"
                   },
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\">\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"feedbackError\" data-id=\"feedback\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"usernameError\" data-skerrorid=\"username\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            {{#if userMessage}}\n            <p class=\"text-info text-center fade\" aria-live=\"assertive\">{{userMessage}}</p>\n            {{/if}}\n\n            <form id=\"usernameForm\" aria-labelledby=\"title\" data-id=\"usernameForm\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control\" id=\"username\" name=\"username\" placeholder=\"Username\"\n                  data-id=\"username-input\" aria-required=\"true\"\n                  aria-describedby=\"usernameLabel\" />\n                <label id=\"usernameLabel\" for=\"username\">Username</label>\n              </div>\n              <div class=\"d-flex flex-column\">          \n                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" id=\"btnContinue\" data-skform=\"usernameForm\"\n                  data-skbuttonvalue=\"CONTINUE\">\n                  Continue\n                </button>\n                <button class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                  data-skbuttonvalue=\"CANCEL\" id=\"btnCancel\">\n                  Back\n                </button>\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>\n"
+                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\">\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"feedbackError\" data-id=\"feedback\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <!-- Username Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" data-skerrorid=\"username\" data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            {{#if userMessage}}\n            <p class=\"text-info text-center fade\" aria-live=\"assertive\">{{userMessage}}</p>\n            {{/if}}\n\n            <form id=\"usernameForm\" aria-labelledby=\"title\" data-id=\"usernameForm\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control\" id=\"username\" name=\"username\" placeholder=\"Username\"\n                  data-id=\"username-input\" aria-required=\"true\"\n                  aria-describedby=\"usernameLabel\" />\n                <label id=\"usernameLabel\" for=\"username\">Username</label>\n              </div>\n              <div class=\"d-flex flex-column\">          \n                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" id=\"btnContinue\" data-skform=\"usernameForm\"\n                  data-skbuttonvalue=\"CONTINUE\">\n                  Continue\n                </button>\n                <button class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                  data-skbuttonvalue=\"CANCEL\" id=\"btnCancel\">\n                  Back\n                </button>\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>\n"
                   },
                   "formFieldsList": {
                     "value": [
@@ -4000,7 +3896,7 @@
                         "rules": [
                           {
                             "ruleName": "presence",
-                            "message": "Enter your username"
+                            "message": "Please enter your username"
                           }
                         ]
                       }
@@ -4028,7 +3924,7 @@
                 "idUnique": "4ku0h03hy3"
               },
               "position": {
-                "x": 604,
+                "x": 630,
                 "y": 2070
               },
               "group": "nodes",
@@ -4081,7 +3977,7 @@
                 "idUnique": "xu159txkrp"
               },
               "position": {
-                "x": 904,
+                "x": 930,
                 "y": 2070
               },
               "group": "nodes",
@@ -4099,7 +3995,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 724,
+                "x": 750,
                 "y": 2070
               },
               "group": "nodes",
@@ -4138,7 +4034,7 @@
                 "idUnique": "576fmtfv7p"
               },
               "position": {
-                "x": 1204,
+                "x": 1230,
                 "y": 2070
               },
               "group": "nodes",
@@ -4156,7 +4052,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1024,
+                "x": 1050,
                 "y": 2070
               },
               "group": "nodes",
@@ -4182,7 +4078,7 @@
                 }
               },
               "position": {
-                "x": 1324,
+                "x": 1350,
                 "y": 2070
               },
               "group": "nodes",
@@ -4201,7 +4097,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1024,
+                "x": 1050,
                 "y": 2250
               },
               "group": "nodes",
@@ -4231,7 +4127,7 @@
                 }
               },
               "position": {
-                "x": 1204,
+                "x": 1230,
                 "y": 2250
               },
               "group": "nodes",
@@ -4256,7 +4152,7 @@
                 "type": "trigger",
                 "properties": {
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n\n                    <div class=\"mx-auto mt-3 mb-4\">\n                        <svg class=\"checkmark\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 52 52\">\n                            <circle class=\"checkmarkCircle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\" />\n                            <path class=\"checkmarkCheck\" fill=\"none\" d=\"M14.1 27.2l7.1 7.2 16.7-16.8\" />\n                        </svg>\n                    </div>\n\n                    {{#if textOne}}\n                    <p class=\"text-muted text-center\">{{textOne}}</p>\n                    {{/if}}\n\n                    {{#if textTwo}}\n                    <p class=\"text-muted text-center\">{{textTwo}}</p>\n                    {{/if}}\n\n                    <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n                    <div class=\"d-flex flex-column\">\n                        <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                        data-skbuttontype=\"next-event\" data-skbuttonvalue=\"NEXT\" >\n                        Continue\n                        </button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n\n                    <div class=\"mx-auto mt-3 mb-4\">\n                        <svg class=\"checkmark\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 52 52\">\n                            <circle class=\"checkmarkCircle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\" />\n                            <path class=\"checkmarkCheck\" fill=\"none\" d=\"M14.1 27.2l7.1 7.2 16.7-16.8\" />\n                        </svg>\n                    </div>\n\n                    {{#if textOne}}\n                    <p class=\"text-muted text-center\">{{textOne}}</p>\n                    {{/if}}\n\n                    {{#if textTwo}}\n                    <p class=\"text-muted text-center\">{{textTwo}}</p>\n                    {{/if}}\n\n                    <p class=\"text-danger mdi mdi-alert-circle icon-padding\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n                    <div class=\"d-flex flex-column\">\n                        <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                        data-skbuttontype=\"next-event\" data-skbuttonvalue=\"NEXT\" >\n                        Continue\n                        </button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
                   },
                   "formFieldsList": {
                     "value": [
@@ -4296,7 +4192,7 @@
                 "idUnique": "tcoqrlkb25"
               },
               "position": {
-                "x": 3604,
+                "x": 3630,
                 "y": 2070
               },
               "group": "nodes",
@@ -4315,7 +4211,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 3724,
+                "x": 3750,
                 "y": 2070
               },
               "group": "nodes",
@@ -4348,7 +4244,7 @@
                 }
               },
               "position": {
-                "x": 3904,
+                "x": 3930,
                 "y": 2070
               },
               "group": "nodes",
@@ -4405,7 +4301,7 @@
                 "idUnique": "d2mbrib33f"
               },
               "position": {
-                "x": 214,
+                "x": 210,
                 "y": 3660
               },
               "group": "nodes",
@@ -4423,7 +4319,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1024,
+                "x": 1050,
                 "y": 3210
               },
               "group": "nodes",
@@ -4456,7 +4352,7 @@
                 }
               },
               "position": {
-                "x": 1504,
+                "x": 1530,
                 "y": 3360
               },
               "group": "nodes",
@@ -4474,7 +4370,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 724,
+                "x": 750,
                 "y": 3210
               },
               "group": "nodes",
@@ -4500,7 +4396,7 @@
                 }
               },
               "position": {
-                "x": 1324,
+                "x": 1350,
                 "y": 3210
               },
               "group": "nodes",
@@ -4530,7 +4426,7 @@
                 }
               },
               "position": {
-                "x": 1504,
+                "x": 1530,
                 "y": 3210
               },
               "group": "nodes",
@@ -4563,7 +4459,7 @@
                 }
               },
               "position": {
-                "x": 1204,
+                "x": 1230,
                 "y": 3510
               },
               "group": "nodes",
@@ -4603,7 +4499,7 @@
                 "idUnique": "bdzfpuqvez"
               },
               "position": {
-                "x": 1534,
+                "x": 1530,
                 "y": 2700
               },
               "group": "nodes",
@@ -4621,7 +4517,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1654,
+                "x": 1650,
                 "y": 2700
               },
               "group": "nodes",
@@ -4640,7 +4536,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1924,
+                "x": 1920,
                 "y": 2700
               },
               "group": "nodes",
@@ -4673,7 +4569,7 @@
                 }
               },
               "position": {
-                "x": 2134,
+                "x": 2130,
                 "y": 2700
               },
               "group": "nodes",
@@ -4698,7 +4594,7 @@
                 "type": "trigger",
                 "properties": {
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n\n                    <div class=\"mx-auto mt-3 mb-4\">\n                        <svg class=\"checkmark\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 52 52\">\n                            <circle class=\"checkmarkCircle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\" />\n                            <path class=\"checkmarkCheck\" fill=\"none\" d=\"M14.1 27.2l7.1 7.2 16.7-16.8\" />\n                        </svg>\n                    </div>\n\n                    {{#if textOne}}\n                    <p class=\"text-muted text-center\">{{textOne}}</p>\n                    {{/if}}\n\n                    {{#if textTwo}}\n                    <p class=\"text-muted text-center\">{{textTwo}}</p>\n                    {{/if}}\n\n                    <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n                    <div class=\"d-flex flex-column\">\n                        <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"NEXT\" >\n                            Continue  \n                        </button>\n                    </div>\n                    \n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n\n                    <div class=\"mx-auto mt-3 mb-4\">\n                        <svg class=\"checkmark\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 52 52\">\n                            <circle class=\"checkmarkCircle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\" />\n                            <path class=\"checkmarkCheck\" fill=\"none\" d=\"M14.1 27.2l7.1 7.2 16.7-16.8\" />\n                        </svg>\n                    </div>\n\n                    {{#if textOne}}\n                    <p class=\"text-muted text-center\">{{textOne}}</p>\n                    {{/if}}\n\n                    {{#if textTwo}}\n                    <p class=\"text-muted text-center\">{{textTwo}}</p>\n                    {{/if}}\n\n                    <p class=\"text-danger mdi mdi-alert-circle icon-padding\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n                    <div class=\"d-flex flex-column\">\n                        <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"next-event\" data-skbuttonvalue=\"NEXT\" >\n                            Continue  \n                        </button>\n                    </div>\n                    \n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
                   },
                   "formFieldsList": {
                     "value": [
@@ -4738,7 +4634,7 @@
                 "idUnique": "bx2zrn8tre"
               },
               "position": {
-                "x": 1834,
+                "x": 1830,
                 "y": 1410
               },
               "group": "nodes",
@@ -4763,7 +4659,7 @@
                 "type": "trigger",
                 "properties": {
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n  <div\n      class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n      <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n          <div class=\"card shadow mb-5\">\n              <main aria-labelledby=\"title\">\n                  <div class=\"card-body p-5 d-flex flex-column\">\n                      <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                      {{#if title}}\n                      <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n                      {{/if}}\n\n                      {{#if textOne}}\n                      <p class=\"text-muted text-center\">{{textOne}}</p>\n                      {{/if}}\n                      \n                      <!-- Generic Error Message -->\n                      <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\"\n                          data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n                      <!-- Field Validation Error Messages -->\n                      <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"currentPassword\"\n                          data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n                      <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"newPassword\"\n                          data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n                      <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"verifyNewPassword\"\n                          data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n                      <form id=\"resetPasswordForm\" aria-labelledby=\"title\" data-id=\"resetPasswordForm\">\n                          <div id=\"currentPasswordContainer\" class=\"mb-4 form-floating\">\n                              <input id=\"currentPassword\" data-id=\"currentPassword\" class=\"form-control\"\n                                  type=\"password\" name=\"currentPassword\" placeholder=\"Current Password\"\n                                  autocomplete=\"current-password\" aria-describedby=\"passwordLabel\" />\n                              <label id=\"passwordLabel\" class=\"form-label\" for=\"currentPassword\">Current\n                                  Password</label>\n                          </div>\n                          <div id=\"newPasswordContainer\" class=\"mb-4 form-floating mt-lg-4\">\n                              <input id=\"newPassword\" data-id=\"newPassword\" class=\"form-control\" type=\"password\"\n                                  name=\"newPassword\" placeholder=\"New Password\" autocomplete=\"new-password\"\n                                  aria-describedby=\"newPasswordLabel\" />\n                              <label id=\"newPasswordLabel\" class=\"form-label\" for=\"newPassword\">New Password</label>\n                          </div>\n                          <div id=\"verifyPasswordContainer\" class=\"mb-4 form-floating\">\n                              <input id=\"verifyNewPassword\" data-id=\"verifyNewPassword\" class=\"form-control\"\n                                  type=\"password\" name=\"verifyNewPassword\" placeholder=\"Verify New Password\"\n                                  autocomplete=\"new-password\" aria-describedby=\"verifyNewPasswordLabel\" />\n                              <label id=\"verifyNewPasswordLabel\" class=\"form-label\" for=\"verifyNewPassword\">Verify New\n                                  Password</label>\n                          </div>\n                          <div class=\"d-flex flex-column\">                 \n                              <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\"\n                                  type=\"submit\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                                  data-skform=\"resetPasswordForm\" data-skbuttonvalue=\"UPDATE\">\n                                  Continue\n                              </button>\n                              <button id=\"cancelBtn\" data-id=\"cancelBtn\" class=\"btn btn-link\"\n                                  data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                                  data-skform=\"resetPasswordForm\" data-skbuttonvalue=\"CANCEL\">\n                                  Cancel\n                              </button>\n                          </div>\n                      </form>\n                  </div>\n              </main>\n          </div>\n      </div>\n  </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n  <div\n      class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n      <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n          <div class=\"card shadow mb-5\">\n              <main aria-labelledby=\"title\">\n                  <div class=\"card-body p-5 d-flex flex-column\">\n                      <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                      {{#if title}}\n                      <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n                      {{/if}}\n\n                      {{#if textOne}}\n                      <p class=\"text-muted text-center\">{{textOne}}</p>\n                      {{/if}}\n                      \n                      <!-- Generic Error Message -->\n                      <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" data-id=\"feedback\"\n                          data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n                      <form id=\"resetPasswordForm\" aria-labelledby=\"title\" data-id=\"resetPasswordForm\">\n                          <div id=\"currentPasswordContainer\" class=\"mb-4 form-floating\">\n                              <input id=\"currentPassword\" data-id=\"currentPassword\" class=\"form-control\"\n                                  type=\"password\" name=\"currentPassword\" placeholder=\"Current Password\"\n                                  autocomplete=\"current-password\" aria-describedby=\"passwordLabel\" />\n                              <label id=\"passwordLabel\" class=\"form-label\" for=\"currentPassword\">Current\n                                  Password</label>\n                          </div>\n                          <div id=\"newPasswordContainer\" class=\"mb-4 form-floating mt-lg-4\">\n                              <input id=\"newPassword\" data-id=\"newPassword\" class=\"form-control\" type=\"password\"\n                                  name=\"newPassword\" placeholder=\"New Password\" autocomplete=\"new-password\"\n                                  aria-describedby=\"newPasswordLabel\" />\n                              <label id=\"newPasswordLabel\" class=\"form-label\" for=\"newPassword\">New Password</label>\n                          </div>\n                          <div id=\"verifyPasswordContainer\" class=\"mb-4 form-floating\">\n                              <input id=\"verifyNewPassword\" data-id=\"verifyNewPassword\" class=\"form-control\"\n                                  type=\"password\" name=\"verifyNewPassword\" placeholder=\"Verify New Password\"\n                                  autocomplete=\"new-password\" aria-describedby=\"verifyNewPasswordLabel\" />\n                              <label id=\"verifyNewPasswordLabel\" class=\"form-label\" for=\"verifyNewPassword\">Verify New\n                                  Password</label>\n                          </div>\n                          <div class=\"d-flex flex-column\">                 \n                              <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\"\n                                  type=\"submit\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                                  data-skform=\"resetPasswordForm\" data-skbuttonvalue=\"UPDATE\">\n                                  Continue\n                              </button>\n                              <button id=\"cancelBtn\" data-id=\"cancelBtn\" class=\"btn btn-link\"\n                                  data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                                  data-skform=\"resetPasswordForm\" data-skbuttonvalue=\"CANCEL\">\n                                  Cancel\n                              </button>\n                          </div>\n                      </form>\n                  </div>\n              </main>\n          </div>\n      </div>\n  </div>\n</div>"
                   },
                   "formFieldsList": {
                     "value": [
@@ -4806,35 +4702,7 @@
                     "value": "const setFieldFocus = (id) => {\r\n    const element = document.getElementById(id);\r\n    if (element) {\r\n        element.focus();\r\n    }\r\n}\r\n\r\nfunction makePasswordToggle(id) {\r\n  var container = document.getElementById(id);\r\n  var password = container.getElementsByTagName(\"input\")[0];\r\n  var toggler = document.createElement(\"button\");\r\n  toggler.setAttribute(\"type\", \"button\");\r\n  toggler.setAttribute(\"aria-label\", \"Show/Hide Password\");\r\n  toggler.className = \"btn mdi mdi-eye-off-outline position-absolute end-0 top-50 translate-middle-y\";\r\n  container.appendChild(toggler);\r\n\r\n  function showHidePassword() {\r\n    if (password.type == \"password\") {\r\n      password.setAttribute(\"type\", \"text\");\r\n      toggler.classList.add(\"mdi-eye-outline\");\r\n      toggler.classList.remove(\"mdi-eye-off-outline\");\r\n    } else {\r\n      toggler.classList.add(\"mdi-eye-off-outline\");\r\n      toggler.classList.remove(\"mdi-eye-outline\");\r\n      password.setAttribute(\"type\", \"password\");\r\n    }\r\n    password.focus();\r\n  };\r\n\r\n  toggler.addEventListener(\"click\", showHidePassword);\r\n}\r\n\r\nfunction start() {\r\n  makePasswordToggle(\"currentPasswordContainer\");\r\n  makePasswordToggle(\"newPasswordContainer\");\r\n  makePasswordToggle(\"verifyPasswordContainer\");\r\n  setFieldFocus(\"currentPassword\");\r\n}\r\n\r\nif (document.readyState === \"loading\") {\r\n  // Loading hasn't finished yet\r\n  document.addEventListener(\"DOMContentLoaded\", start);\r\n} else {\r\n  // `DOMContentLoaded` has already fired\r\n  start();\r\n}\r\n"
                   },
                   "validationRules": {
-                    "value": [
-                      {
-                        "propertyName": "currentPassword",
-                        "rules": [
-                          {
-                            "ruleName": "presence",
-                            "message": "Enter your current password"
-                          }
-                        ]
-                      },
-                      {
-                        "propertyName": "newPassword",
-                        "rules": [
-                          {
-                            "ruleName": "presence",
-                            "message": "Enter your new password"
-                          }
-                        ]
-                      },
-                      {
-                        "propertyName": "verifyNewPassword",
-                        "rules": [
-                          {
-                            "ruleName": "presence",
-                            "message": "Verify your new password"
-                          }
-                        ]
-                      }
-                    ]
+                    "value": []
                   },
                   "nodeDescription": {
                     "value": "Prompt for existing and new password"
@@ -4852,7 +4720,7 @@
                 "idUnique": "u7ffu4j917"
               },
               "position": {
-                "x": 634,
+                "x": 630,
                 "y": 1410
               },
               "group": "nodes",
@@ -4905,7 +4773,7 @@
                 "idUnique": "liwkdm3vgm"
               },
               "position": {
-                "x": 934,
+                "x": 930,
                 "y": 1410
               },
               "group": "nodes",
@@ -4924,7 +4792,7 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 1054,
+                "x": 1050,
                 "y": 1620
               },
               "group": "nodes",
@@ -4954,7 +4822,7 @@
                 }
               },
               "position": {
-                "x": 1234,
+                "x": 1230,
                 "y": 1620
               },
               "group": "nodes",
@@ -5008,7 +4876,7 @@
                 "idUnique": "t2tbl0eily"
               },
               "position": {
-                "x": 1234,
+                "x": 1230,
                 "y": 1410
               },
               "group": "nodes",
@@ -5031,7 +4899,7 @@
                 }
               },
               "position": {
-                "x": 1354,
+                "x": 1350,
                 "y": 1410
               },
               "group": "nodes",
@@ -5065,7 +4933,7 @@
                 "idUnique": "1t533qsfsz"
               },
               "position": {
-                "x": 1534,
+                "x": 1530,
                 "y": 1620
               },
               "group": "nodes",
@@ -5094,7 +4962,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: July 29th, 2024"
+                    "value": "Last Updated: August 15th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -5122,8 +4990,8 @@
                 "idUnique": "o2v5xhdcbc"
               },
               "position": {
-                "x": 238,
-                "y": 214
+                "x": 240,
+                "y": 210
               },
               "group": "nodes",
               "removed": false,
@@ -5179,7 +5047,7 @@
                 "idUnique": "xlr493ohx3"
               },
               "position": {
-                "x": 218,
+                "x": 210,
                 "y": 2580
               },
               "group": "nodes",
@@ -5212,7 +5080,7 @@
                 }
               },
               "position": {
-                "x": 1204,
+                "x": 1230,
                 "y": 1920
               },
               "group": "nodes",
@@ -5230,7 +5098,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1324,
+                "x": 1350,
                 "y": 1920
               },
               "group": "nodes",
@@ -5282,7 +5150,7 @@
                 "idUnique": "sxnpkmd89m"
               },
               "position": {
-                "x": 3004,
+                "x": 3030,
                 "y": 2070
               },
               "group": "nodes",
@@ -5309,7 +5177,7 @@
                 }
               },
               "position": {
-                "x": 3124,
+                "x": 3150,
                 "y": 2070
               },
               "group": "nodes",
@@ -5334,7 +5202,7 @@
                 "type": "trigger",
                 "properties": {
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n\n                    <div class=\"mx-auto mt-3 mb-4\">\n                        <svg class=\"checkmark\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 52 52\">\n                            <circle class=\"checkmarkCircle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\" />\n                            <path class=\"checkmarkCheck\" fill=\"none\" d=\"M14.1 27.2l7.1 7.2 16.7-16.8\" />\n                        </svg>\n                    </div>\n\n                    {{#if textOne}}\n                    <p class=\"text-muted text-center\">{{textOne}}</p>\n                    {{/if}}\n\n                    {{#if textTwo}}\n                    <p class=\"text-muted text-center\">{{textTwo}}</p>\n                    {{/if}}\n\n                    <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n                    <div class=\"d-flex flex-column\">\n                        <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                        data-skbuttontype=\"next-event\" data-skbuttonvalue=\"NEXT\" >\n                        Continue\n                        </button>\n                    </div>\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n\n                    <div class=\"mx-auto mt-3 mb-4\">\n                        <svg class=\"checkmark\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 52 52\">\n                            <circle class=\"checkmarkCircle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\" />\n                            <path class=\"checkmarkCheck\" fill=\"none\" d=\"M14.1 27.2l7.1 7.2 16.7-16.8\" />\n                        </svg>\n                    </div>\n\n                    {{#if textOne}}\n                    <p class=\"text-muted text-center\">{{textOne}}</p>\n                    {{/if}}\n\n                    {{#if textTwo}}\n                    <p class=\"text-muted text-center\">{{textTwo}}</p>\n                    {{/if}}\n\n                    <p class=\"text-danger mdi mdi-alert-circle icon-padding\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n\n                    <div class=\"d-flex flex-column\">\n                        <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                        data-skbuttontype=\"next-event\" data-skbuttonvalue=\"NEXT\" >\n                        Continue\n                        </button>\n                    </div>\n\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
                   },
                   "formFieldsList": {
                     "value": [
@@ -5362,7 +5230,7 @@
                     "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n\t\"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n\t\"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        }\n    }\n}"
                   },
                   "title": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success!\"\n      }\n    ]\n  }\n]"
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeDescription": {
                     "value": "Notify User Account Is Successfully Created"
@@ -5377,7 +5245,7 @@
                 "idUnique": "p3z6662uwb"
               },
               "position": {
-                "x": 1804,
+                "x": 1800,
                 "y": 2700
               },
               "group": "nodes",
@@ -5446,7 +5314,7 @@
                     ]
                   },
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\">\n    <div style=\"max-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle text-center\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"email\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"password\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            <form id=\"registrationForm\" data-id=\"registrationForm\" class=\"form\">\n              <div class=\"mb-4 form-floating\">\n                <input id=\"email\" data-id=\"email\" class=\"form-control\" type=\"text\" name=\"email\" placeholder=\"Email\"\n                autocomplete=\"off\" aria-required=\"true\" />\n                <label id=\"emailLabel\" data-id=\"emailLabel\" class=\"form-label\" for=\"email\">Email</label>\n              </div>\n              <div class=\"mb-4 form-floating\">\n                <input id=\"givenName\" data-id=\"givenName\" class=\"form-control\" type=\"text\" name=\"givenName\" placeholder=\"First Name\" autocomplete=\"given-name\" />\n                <label id=\"givenNameLabel\" data-id=\"givenNameLabel\" class=\"form-label\" for=\"givenName\">First Name</label>\n              </div>\n              <div class=\"mb-4 form-floating\">\n                <input id=\"familyName\" data-id=\"familyName\" class=\"form-control\" type=\"text\" placeholder=\"Last Name\" autocomplete=\"family-name\" name=\"familyName\" />\n                <label id=\"familyNameLabel\" data-id=\"familyNameLabel\" class=\"form-label\" for=\"familyName\">Last Name</label>\n              </div>\n              <div id=\"passwordContainer\" class=\"mb-4 form-floating\">\n                <input id=\"password\" data-id=\"password\" class=\"form-control\" type=\"password\" placeholder=\"Password\"\n                autocomplete=\"off\" name=\"password\" aria-required=\"true\" />\n                <label id=\"passwordLabel\" data-id=\"passwordLabel\" class=\"form-label\" for=\"password\">Password</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n              \n                <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\"\n                  data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"registrationForm\"\n                  data-skbuttonvalue=\"REGISTER\">\n                  Continue\n                </button>\n               \n                <button class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                  data-skbuttonvalue=\"CANCEL\" id=\"btnCancel\">\n                  Already have an account? Sign On\n                </button>\n               \n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\">\n    <div style=\"max-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle text-center icon-padding\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" data-skerrorid=\"password\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            <form id=\"registrationForm\" data-id=\"registrationForm\" class=\"form\">\n              <div class=\"mb-4 form-floating\">\n                <input id=\"email\" data-id=\"email\" class=\"form-control\" type=\"text\" name=\"email\" placeholder=\"Email\"\n                autocomplete=\"off\" aria-required=\"true\" />\n                <label id=\"emailLabel\" data-id=\"emailLabel\" class=\"form-label\" for=\"email\">Email</label>\n              </div>\n              <div class=\"mb-4 form-floating\">\n                <input id=\"givenName\" data-id=\"givenName\" class=\"form-control\" type=\"text\" name=\"givenName\" placeholder=\"First Name\" autocomplete=\"given-name\" />\n                <label id=\"givenNameLabel\" data-id=\"givenNameLabel\" class=\"form-label\" for=\"givenName\">First Name</label>\n              </div>\n              <div class=\"mb-4 form-floating\">\n                <input id=\"familyName\" data-id=\"familyName\" class=\"form-control\" type=\"text\" placeholder=\"Last Name\" autocomplete=\"family-name\" name=\"familyName\" />\n                <label id=\"familyNameLabel\" data-id=\"familyNameLabel\" class=\"form-label\" for=\"familyName\">Last Name</label>\n              </div>\n              <div id=\"passwordContainer\" class=\"mb-4 form-floating\">\n                <input id=\"password\" data-id=\"password\" class=\"form-control\" type=\"password\" placeholder=\"Password\"\n                autocomplete=\"off\" name=\"password\" aria-required=\"true\" />\n                <label id=\"passwordLabel\" data-id=\"passwordLabel\" class=\"form-label\" for=\"password\">Password</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n              \n                <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\"\n                  data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"registrationForm\"\n                  data-skbuttonvalue=\"REGISTER\">\n                  Continue\n                </button>\n               \n                <button class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                  data-skbuttonvalue=\"CANCEL\" id=\"btnCancel\">\n                  Already have an account? Sign On\n                </button>\n               \n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
                   },
                   "customCSS": {},
                   "customScript": {
@@ -5454,19 +5322,6 @@
                   },
                   "validationRules": {
                     "value": [
-                      {
-                        "propertyName": "email",
-                        "rules": [
-                          {
-                            "ruleName": "presence",
-                            "message": "Enter your email address"
-                          },
-                          {
-                            "ruleName": "email",
-                            "message": "Enter a valid email address"
-                          }
-                        ]
-                      },
                       {
                         "propertyName": "password",
                         "rules": [
@@ -5491,7 +5346,7 @@
                 "idUnique": "l8yfg8n7hn"
               },
               "position": {
-                "x": 634,
+                "x": 630,
                 "y": 2700
               },
               "group": "nodes",
@@ -5544,7 +5399,7 @@
                 "idUnique": "r2yv077j8r"
               },
               "position": {
-                "x": 934,
+                "x": 930,
                 "y": 2700
               },
               "group": "nodes",
@@ -5562,7 +5417,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 754,
+                "x": 750,
                 "y": 2700
               },
               "group": "nodes",
@@ -5596,7 +5451,7 @@
                 "idUnique": "hjvenu0wl7"
               },
               "position": {
-                "x": 1234,
+                "x": 1230,
                 "y": 2910
               },
               "group": "nodes",
@@ -5614,7 +5469,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1054,
+                "x": 1050,
                 "y": 2910
               },
               "group": "nodes",
@@ -5651,7 +5506,7 @@
                 "idUnique": "f6c6klxo7e"
               },
               "position": {
-                "x": 1534,
+                "x": 1530,
                 "y": 2910
               },
               "group": "nodes",
@@ -5675,7 +5530,7 @@
                 }
               },
               "position": {
-                "x": 1354,
+                "x": 1350,
                 "y": 2700
               },
               "group": "nodes",
@@ -5756,6 +5611,10 @@
                           {
                             "key": "invalidValue",
                             "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"User password did not satisfy password policy requirements\"\n      }\n    ]\n  }\n]"
+                          },
+                          {
+                            "key": "invalidInput",
+                            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter a valid email address\"\n      }\n    ]\n  }\n]"
                           }
                         ]
                       }
@@ -5770,7 +5629,7 @@
                 }
               },
               "position": {
-                "x": 1234,
+                "x": 1230,
                 "y": 2700
               },
               "group": "nodes",
@@ -5788,8 +5647,205 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 1054,
+                "x": 1050,
                 "y": 2700
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "83vu4kprq4",
+                "nodeType": "CONNECTION",
+                "connectionId": "de650ca45593b82c49064ead10b9fe17",
+                "connectorId": "functionsConnector",
+                "name": "Functions",
+                "label": "Functions",
+                "status": "configured",
+                "capabilityName": "AEqualsB",
+                "type": "trigger",
+                "properties": {
+                  "leftValueA": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"code\",\n        \"data\": \"{{local.dnu7jt3sjz.payload.error.code}}\",\n        \"tooltip\": \"{{local.dnu7jt3sjz.payload.error.code}}\",\n        \"children\": [\n          {\n            \"text\": \"code\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  },
+                  "rightValueB": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"passwordLockedOut\"\n      }\n    ]\n  }\n]"
+                  },
+                  "nodeTitle": {
+                    "value": "Is Locked Out?"
+                  }
+                }
+              },
+              "position": {
+                "x": 1830,
+                "y": 630
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "f5gokcacx1",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "properties": {
+                  "79aiikhgtb": {
+                    "value": "anyTriggersFalse"
+                  }
+                }
+              },
+              "position": {
+                "x": 1950,
+                "y": 630
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "o43vpz4na3",
+                "nodeType": "CONNECTION",
+                "connectionId": "de650ca45593b82c49064ead10b9fe17",
+                "connectorId": "functionsConnector",
+                "name": "Functions",
+                "label": "Functions",
+                "status": "configured",
+                "capabilityName": "customFunction",
+                "type": "trigger",
+                "properties": {
+                  "variableInputList": {
+                    "value": [
+                      {
+                        "name": "details",
+                        "preferredDataType": "object",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"details\",\n        \"data\": \"{{local.dnu7jt3sjz.payload.error.details}}\",\n        \"tooltip\": \"{{local.dnu7jt3sjz.payload.error.details}}\",\n        \"children\": [\n          {\n            \"text\": \"details\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                      }
+                    ]
+                  },
+                  "code": {
+                    "value": "module.exports = a = async ({params}) => {\n    const details = params.details;\n\n    const secondsUntilUnlock = details[0]?.rawResponse?.details?.[0]?.innerError?.secondsUntilUnlock ?? null;\n\n    // If secondsUntilUnlock is not available, return a specific message\n    const formattedTime = secondsUntilUnlock !== null ? formatTime(secondsUntilUnlock) : null;\n\n    const message = formattedTime \n        ? `Too many unsuccessful sign-on attempts. Your account will unlock in ${formattedTime}.`\n        : \"Too many unsuccessful sign-on attempts. Your account is currently locked.\";\n\n    return { 'message': message };\n}\n\n// Function to format time into a human-readable string\nconst formatTime = (seconds) => {\n    const years = Math.floor(seconds / (365 * 24 * 3600));\n    const days = Math.floor((seconds % (365 * 24 * 3600)) / (24 * 3600));\n    const hours = Math.floor((seconds % (24 * 3600)) / 3600);\n    const minutes = Math.ceil((seconds % 3600) / 60);\n\n    const parts = [];\n    if (years > 0) parts.push(`${years} year${years > 1 ? 's' : ''}`);\n    if (days > 0) parts.push(`${days} day${days > 1 ? 's' : ''}`);\n    if (hours > 0) parts.push(`${hours} hour${hours > 1 ? 's' : ''}`);\n    if (minutes > 0) parts.push(`${minutes} minute${minutes > 1 ? 's' : ''}`);\n\n    return parts.join(', ');\n}\n"
+                  },
+                  "nodeTitle": {
+                    "value": "Calculate Expiration"
+                  },
+                  "outputSchema": {
+                    "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"message\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
+                  },
+                  "nodeDescription": {
+                    "value": "Parse expiration and convert to readable duration"
+                  }
+                }
+              },
+              "position": {
+                "x": 2130,
+                "y": 630
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "458pe5w5g4",
+                "nodeType": "EVAL",
+                "label": "Evaluator"
+              },
+              "position": {
+                "x": 2250,
+                "y": 630
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "7mtr7zq5h6",
+                "nodeType": "CONNECTION",
+                "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+                "connectorId": "httpConnector",
+                "name": "Http",
+                "label": "Http",
+                "status": "configured",
+                "capabilityName": "customHTMLTemplate",
+                "type": "trigger",
+                "properties": {
+                  "inputSchema": {
+                    "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n\t\t\"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n\t\t\"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        }\n    }\n}"
+                  },
+                  "outputSchema": {
+                    "value": {}
+                  },
+                  "customHTML": {
+                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n          {{#if title}}\n          <h1 class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          <div class=\"align-self-center mb-5 mt-3\">\n            <svg width=\"153\" height=\"133\" viewBox=\"0 0 153 133\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n              <g clip-path=\"url(#clip0_734_3343)\">\n                <path\n                  d=\"M6.30669 132.565C5.16116 132.565 4.17364 132.289 3.34412 131.775C2.47509 131.262 1.80358 130.551 1.32956 129.682C0.816049 128.892 0.539542 127.983 0.500041 126.996C0.46054 126.008 0.737047 124.981 1.32956 123.994L71.6019 2.80457C72.1944 1.85655 72.9055 1.18503 73.735 0.711019C74.5645 0.237006 75.5125 0 76.5 0C77.4876 0 78.4356 0.237006 79.2651 0.711019C80.0946 1.18503 80.8057 1.85655 81.3982 2.80457L151.671 123.994C152.263 124.981 152.54 126.008 152.5 126.996C152.461 127.983 152.184 128.892 151.671 129.682C151.197 130.551 150.525 131.262 149.656 131.775C148.787 132.289 147.799 132.565 146.693 132.565H6.30669ZM11.9553 123.599H141.045L76.5 12.2453L11.9553 123.599ZM77.0926 111.748C78.5146 111.748 79.6601 111.274 80.6082 110.326C81.5562 109.378 81.9907 108.193 81.9907 106.771C81.9907 105.349 81.5167 104.204 80.5687 103.256C79.6206 102.308 78.4356 101.873 77.0136 101.873C75.5915 101.873 74.446 102.347 73.498 103.295C72.5499 104.243 72.1154 105.428 72.1154 106.85C72.1154 108.272 72.5894 109.418 73.5375 110.366C74.4855 111.314 75.6705 111.748 77.0926 111.748ZM77.0926 92.3929C78.3566 92.3929 79.4231 91.9584 80.2921 91.0894C81.1217 90.2204 81.5562 89.1538 81.5562 87.8898V53.8399C81.5562 52.5759 81.1217 51.5094 80.2526 50.6403C79.3836 49.7713 78.3171 49.3368 77.0136 49.3368C75.71 49.3368 74.683 49.7713 73.814 50.6403C72.9845 51.5094 72.5499 52.5759 72.5499 53.8399V87.8898C72.5499 89.1538 72.9845 90.2204 73.8535 91.0894C74.7225 91.9584 75.789 92.3929 77.0926 92.3929Z\"\n                  fill=\"#A31300\" />\n              </g>\n              <defs>\n                <clipPath id=\"clip0_734_3343\">\n                  <rect width=\"152\" height=\"132.565\" fill=\"white\" transform=\"translate(0.5)\" />\n                </clipPath>\n              </defs>\n            </svg>\n          </div>\n\n          {{#if textOne}}\n          <p class=\"text-muted text-center\">{{textOne}}</p>\n          {{/if}}\n\n          {{#if textTwo}}\n          <p class=\"text-muted text-center\">{{textTwo}}</p>\n          {{/if}}\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+                  },
+                  "customCSS": {
+                    "value": ""
+                  },
+                  "customScript": {
+                    "value": ""
+                  },
+                  "validationRules": {
+                    "value": []
+                  },
+                  "title": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Account Locked\"\n      }\n    ]\n  }\n]"
+                  },
+                  "textOne": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"message\",\n        \"data\": \"{{local.o43vpz4na3.payload.output.message}}\",\n        \"tooltip\": \"{{local.o43vpz4na3.payload.output.message}}\",\n        \"children\": [\n          {\n            \"text\": \"message\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  },
+                  "formFieldsList": {
+                    "value": [
+                      {
+                        "preferredControlType": "textField",
+                        "preferredDataType": "string",
+                        "propertyName": "buttonValue"
+                      }
+                    ]
+                  },
+                  "nodeTitle": {
+                    "value": "Account Locked Message"
+                  },
+                  "nodeDescription": {
+                    "value": "Notify when account will unlock"
+                  },
+                  "oeInteractionCacheExpire": {
+                    "value": false
+                  }
+                },
+                "idUnique": "8rsda1hj30"
+              },
+              "position": {
+                "x": 2430,
+                "y": 630
               },
               "group": "nodes",
               "removed": false,
@@ -5802,6 +5858,274 @@
             }
           ],
           "edges": [
+            {
+              "data": {
+                "id": "zix3tqfi1g",
+                "source": "1k5y98i1v1",
+                "target": "m2ey3u07aj"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "xow1pai316",
+                "source": "6p6muqqewx",
+                "target": "t3gotwkiy8",
+                "multiValueSourceId": "-1"
+              },
+              "position": {
+                "x": 64,
+                "y": 172
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "2gvihap4ny",
+                "source": "f5gokcacx1",
+                "target": "o43vpz4na3"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "qeuueo7f5k",
+                "source": "458pe5w5g4",
+                "target": "7mtr7zq5h6"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "oxtm8ho61l",
+                "source": "f5gokcacx1",
+                "target": "79aiikhgtb"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "o6tlo7vj7z",
+                "source": "83vu4kprq4",
+                "target": "f5gokcacx1"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "t6b7gqlowe",
+                "source": "usfhtwgo7x",
+                "target": "83vu4kprq4"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "1q0yiwnr3p",
+                "source": "r810hd9rp9",
+                "target": "vqo96knyuj"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "cqh2254y6a",
+                "source": "yx7qjbsw3i",
+                "target": "vl9mxvo9nn",
+                "multiValueSourceId": "vgii63uk2p"
+              },
+              "position": {
+                "x": 64,
+                "y": 52
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "5b6ct5kpmr",
+                "source": "x0txd3bdfn",
+                "target": "uhekj7f0vs"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "8wpjy5fr4m",
+                "source": "usfhtwgo7x",
+                "target": "6p6muqqewx"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "s0oj2r71x1",
+                "source": "o43vpz4na3",
+                "target": "458pe5w5g4"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "m30wzx20l6",
+                "source": "m2ey3u07aj",
+                "target": "yx7qjbsw3i"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "gbbc1gk3j3",
+                "source": "flfi8l5inc",
+                "target": "79aiikhgtb"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
             {
               "data": {
                 "id": "k4ae67mny2",
@@ -6148,9 +6472,9 @@
             },
             {
               "data": {
-                "id": "k4luaby9uh",
-                "source": "usfhtwgo7x",
-                "target": "6p6muqqewx"
+                "id": "2678mp2ugh",
+                "source": "hhnqmctxod",
+                "target": "1k5y98i1v1"
               },
               "position": {
                 "x": 0,
@@ -7064,13 +7388,14 @@
             },
             {
               "data": {
-                "id": "egv1zmjgn8",
-                "source": "zkumd1hvz",
-                "target": "ez2jj0j1q7"
+                "id": "454uyt4906",
+                "source": "yx7qjbsw3i",
+                "target": "r810hd9rp9",
+                "multiValueSourceId": "js0k5824y5"
               },
               "position": {
-                "x": 0,
-                "y": 0
+                "x": 64,
+                "y": 92
               },
               "group": "edges",
               "removed": false,
@@ -7316,9 +7641,9 @@
             },
             {
               "data": {
-                "id": "7rsh7qqwyb",
-                "source": "usfhtwgo7x",
-                "target": "79aiikhgtb"
+                "id": "is4qaa4cw6",
+                "source": "uhekj7f0vs",
+                "target": "4p1hxq7p98"
               },
               "position": {
                 "x": 0,
@@ -7449,9 +7774,9 @@
             },
             {
               "data": {
-                "id": "ygw87yehmr",
-                "source": "flfi8l5inc",
-                "target": "79aiikhgtb"
+                "id": "gm5pjmri1s",
+                "source": "vl9mxvo9nn",
+                "target": "x0txd3bdfn"
               },
               "position": {
                 "x": 0,
@@ -7701,183 +8026,9 @@
             },
             {
               "data": {
-                "id": "xow1pai316",
-                "source": "6p6muqqewx",
-                "target": "t3gotwkiy8",
-                "multiValueSourceId": "-1"
-              },
-              "position": {
-                "x": 64,
-                "y": 172
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "m30wzx20l6",
-                "source": "m2ey3u07aj",
-                "target": "yx7qjbsw3i"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "zix3tqfi1g",
-                "source": "1k5y98i1v1",
-                "target": "m2ey3u07aj"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "5b6ct5kpmr",
-                "source": "x0txd3bdfn",
-                "target": "uhekj7f0vs"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "454uyt4906",
-                "source": "yx7qjbsw3i",
-                "target": "r810hd9rp9",
-                "multiValueSourceId": "js0k5824y5"
-              },
-              "position": {
-                "x": 64,
-                "y": 92
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "cqh2254y6a",
-                "source": "yx7qjbsw3i",
-                "target": "vl9mxvo9nn",
-                "multiValueSourceId": "vgii63uk2p"
-              },
-              "position": {
-                "x": 64,
-                "y": 52
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "1q0yiwnr3p",
-                "source": "r810hd9rp9",
-                "target": "vqo96knyuj"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "is4qaa4cw6",
-                "source": "uhekj7f0vs",
-                "target": "4p1hxq7p98"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "gm5pjmri1s",
-                "source": "vl9mxvo9nn",
-                "target": "x0txd3bdfn"
-              },
-              "position": {
-                "x": 0,
-                "y": 0
-              },
-              "group": "edges",
-              "removed": false,
-              "selected": false,
-              "selectable": true,
-              "locked": false,
-              "grabbable": true,
-              "pannable": true,
-              "classes": ""
-            },
-            {
-              "data": {
-                "id": "2678mp2ugh",
-                "source": "hhnqmctxod",
-                "target": "1k5y98i1v1"
+                "id": "qf76yz9774",
+                "source": "zkumd1hvz",
+                "target": "ez2jj0j1q7"
               },
               "position": {
                 "x": 0,
@@ -7913,7 +8064,7 @@
       },
       "inputSchema": [],
       "flowColor": "#CACED3",
-      "savedDate": 1722254930753,
+      "savedDate": 1723731633737,
       "variables": [
         {
           "context": "flowInstance",
@@ -7929,7 +8080,7 @@
           "type": "property",
           "visibility": "private",
           "name": "companyLogo##SK##flowInstance",
-          "companyId": "77d51b0f-6ea7-41fc-a852-e335697f6a0e"
+          "companyId": ""
         },
         {
           "context": "flowInstance",
@@ -7945,39 +8096,7 @@
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
-          "companyId": "77d51b0f-6ea7-41fc-a852-e335697f6a0e"
-        },
-        {
-          "context": "flowInstance",
-          "createdDate": 1718715614925,
-          "fields": {
-            "type": "string",
-            "displayName": "",
-            "mutable": true,
-            "min": 0,
-            "max": 2000
-          },
-          "id": "d4bc38a5-8cb0-4285-8f21-cee82a4e357c",
-          "type": "property",
-          "visibility": "private",
-          "name": "p1PopulationId##SK##flowInstance",
-          "companyId": "77d51b0f-6ea7-41fc-a852-e335697f6a0e"
-        },
-        {
-          "context": "flowInstance",
-          "createdDate": 1718715614928,
-          "fields": {
-            "type": "string",
-            "displayName": "",
-            "mutable": true,
-            "min": 0,
-            "max": 2000
-          },
-          "id": "75182d1f-09e9-444d-9f42-847f7bbfaa17",
-          "type": "property",
-          "visibility": "private",
-          "name": "populationId##SK##flowInstance",
-          "companyId": "77d51b0f-6ea7-41fc-a852-e335697f6a0e"
+          "companyId": ""
         }
       ]
     }
