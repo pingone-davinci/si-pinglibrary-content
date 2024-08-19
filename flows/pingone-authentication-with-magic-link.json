@@ -11,25 +11,25 @@
         "pingOneSSOConnector",
         "nodeConnector"
       ],
-      "createdDate": 1718304728356,
-      "currentVersion": 1,
+      "createdDate": 1724077773656,
+      "currentVersion": 5,
       "customerId": "",
-      "description": "Last Updated: May 2nd, 2024",
+      "description": "Last Updated: August 19th, 2024",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Authentication with Magic Link",
-      "publishedVersion": 1,
+      "publishedVersion": 5,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
         "intermediateLoadingScreenHTML": "",
         "debugMode": true,
         "cssLinks": [
-          "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css",
+          "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.9/end-user-nano.css",
           "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.11/icons.css"
         ],
         "useCustomCSS": true,
-        "css": ".companyLogo {\n    height: 65px;\n}",
+        "css": ".companyLogo {\n    height: 65px;\n}\n\n.icon-padding::before {\n  padding-right: 5px;\n}",
         "useCustomScript": false,
         "jsLinks": [],
         "useBetaAlgorithm": true,
@@ -40,9 +40,9 @@
         "logLevel": 2
       },
       "timeouts": "null",
-      "updatedDate": 1718304783816,
-      "flowId": "b3797f97704578ae173b5594ed7c51e2",
-      "versionId": 1,
+      "updatedDate": 1724077775187,
+      "flowId": "11f7d8d2ac4b02e0c04e2ea26a40b54c",
+      "versionId": 5,
       "graphData": {
         "elements": {
           "nodes": [
@@ -61,7 +61,7 @@
                   "subFlowId": {
                     "value": {
                       "label": "Magic Link Authentication Subflow ",
-                      "value": "94a645540569018e7a35479a5cb3ea25"
+                      "value": "6a7c361b8364c983f29da94da53655aa"
                     }
                   },
                   "subFlowVersionId": {
@@ -286,7 +286,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Welcome to \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"companyName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \".\"\n      }\n    ]\n  }\n]"
                   },
                   "customHTML": {
-                    "value": "\n<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\">\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"feedbackError\" data-id=\"feedback\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"emailError\" data-skerrorid=\"email\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"passwordError\" data-skerrorid=\"password\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            {{#if userMessage}}\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" aria-live=\"assertive\">{{userMessage}}</p>\n            {{/if}}\n\n            <form id=\"emailForm\" aria-labelledby=\"title\" data-id=\"emailForm\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control\" type=\"email\" id=\"email\" name=\"email\" placeholder=\"Email Address\"\n                  autocomplete=\"email\" value=\"\" data-id=\"email-input\" aria-required=\"true\"\n                  aria-describedby=\"emailLabel\" />\n                <label id=\"emailLabel\" for=\"email\">Email Address</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                {{#if continueButtonLabel}}\n                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" id=\"btnContinue\" data-skform=\"emailForm\"\n                  data-skbuttonvalue=\"CONTINUE\">\n                  {{continueButtonLabel}}\n                </button>\n                {{/if}}\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
+                    "value": "\n<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\">\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" id=\"feedbackError\" data-id=\"feedback\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" id=\"emailError\" data-skerrorid=\"email\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" id=\"passwordError\" data-skerrorid=\"password\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            {{#if userMessage}}\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" aria-live=\"assertive\">{{userMessage}}</p>\n            {{/if}}\n\n            <form id=\"emailForm\" aria-labelledby=\"title\" data-id=\"emailForm\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control\" type=\"email\" id=\"email\" name=\"email\" placeholder=\"Email Address\"\n                  autocomplete=\"email\" value=\"\" data-id=\"email-input\" aria-required=\"true\"\n                  aria-describedby=\"emailLabel\" />\n                <label id=\"emailLabel\" for=\"email\">Email Address</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                {{#if continueButtonLabel}}\n                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" id=\"btnContinue\" data-skform=\"emailForm\"\n                  data-skbuttonvalue=\"CONTINUE\">\n                  {{continueButtonLabel}}\n                </button>\n                {{/if}}\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
                   },
                   "formFieldsList": {
                     "value": [
@@ -463,7 +463,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: June 13th, 2024"
+                    "value": "Last Updated: August 19th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -936,11 +936,11 @@
         }
       },
       "flowColor": "#ff661c",
-      "savedDate": 1718304728264,
+      "savedDate": 1724077773568,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1711542060985,
+          "createdDate": 1723733673806,
           "fields": {
             "type": "string",
             "displayName": "Url for company's logo image",
@@ -948,14 +948,15 @@
             "min": 0,
             "max": 2000
           },
+          "id": "70e8e6ee-0ced-4a23-b113-6c0149c018cc",
           "type": "property",
           "visibility": "private",
           "name": "companyLogo##SK##flowInstance",
-          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
+          "companyId": ""
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711541872878,
+          "createdDate": 1723733618022,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -963,14 +964,15 @@
             "min": 0,
             "max": 2000
           },
+          "id": "ae3faac6-277a-436d-b3c9-30dd49cedb2d",
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
-          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
+          "companyId": ""
         }
       ],
       "connections": [],
-      "parentFlowId": "b3797f97704578ae173b5594ed7c51e2"
+      "parentFlowId": "11f7d8d2ac4b02e0c04e2ea26a40b54c"
     },
     {
       "companyId": "",
@@ -985,10 +987,10 @@
         "pingOneSSOConnector",
         "variablesConnector"
       ],
-      "createdDate": 1718304779160,
-      "currentVersion": 18,
+      "createdDate": 1724078086955,
+      "currentVersion": 1,
       "customerId": "",
-      "description": "Imported on Thu May 02 2024 15:07:36 GMT+0000 (Coordinated Universal Time)",
+      "description": "Last Updated: August 19th, 2024",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -1026,7 +1028,7 @@
       },
       "isInputSchemaSaved": true,
       "isOutputSchemaSaved": false,
-      "name": "Magic Link Authentication Subflow ",
+      "name": "Magic Link Authentication Subflow",
       "publishedVersion": 1,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
@@ -1044,8 +1046,8 @@
         "customTitle": "Magic Link Authentication"
       },
       "timeouts": "null",
-      "updatedDate": 1718304781145,
-      "flowId": "94a645540569018e7a35479a5cb3ea25",
+      "updatedDate": 1724078089092,
+      "flowId": "6a7c361b8364c983f29da94da53655aa",
       "versionId": 1,
       "graphData": {
         "elements": {
@@ -1165,7 +1167,7 @@
               "data": {
                 "id": "fy5swslv5o",
                 "nodeType": "CONNECTION",
-                "connectionId": "f406865144b788ec1d29ade61c93e394",
+                "connectionId": "580e5460368eac55ea8d66a295cb98c9",
                 "connectorId": "challengeConnector",
                 "name": "Challenge",
                 "label": "Challenge",
@@ -1583,7 +1585,7 @@
               "data": {
                 "id": "0kjuaaufrp",
                 "nodeType": "CONNECTION",
-                "connectionId": "f406865144b788ec1d29ade61c93e394",
+                "connectionId": "580e5460368eac55ea8d66a295cb98c9",
                 "connectorId": "challengeConnector",
                 "name": "Challenge",
                 "label": "Challenge [2023-02-06]",
@@ -1777,6 +1779,9 @@
                   },
                   "returnRequestParameters": {
                     "value": false
+                  },
+                  "oeInteractionCacheExpire": {
+                    "value": true
                   }
                 },
                 "idUnique": "h1gsoqlhle"
@@ -1974,7 +1979,7 @@
                 "type": "trigger",
                 "properties": {
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n    <div class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">\n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                        {{#if title}}\n                        <h1 id=\"title\" class=\"text-center mb-4\">\n                            <i class=\"mdi mdi-auto-fix text-dark fs-1\" aria-hidden=\"true\"></i>\n                            {{title}}\n                        </h1>\n                        {{/if}}\n\n                        {{#if textOne}}\n                        <p class=\"text-muted text-center\">{{textOne}}</p>\n                        {{/if}}\n\n                        {{#if textTwo}}\n                        <p class=\"text-muted text-center\">{{textTwo}}</p>\n                        {{/if}}\n                        \n                        <div class=\"align-self-center\" data-skcomponent=\"skpolling\" data-skpollInterval=\"2000\"\n                            data-skpollRetries=\"100\" data-skpollChallengeStatus=\"true\" aria-live=\"assertive\"></div>\n\n                        <p class=\"text-danger mdi mdi-alert-circle\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                        <div class=\"d-flex flex-column\">\n                            {{#if cancelButtonLabel}}\n                            <button type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                                data-skbuttonvalue=\"CANCEL\" id=\"btnCancel\">\n                                {{cancelButtonLabel}}\n                            </button>\n                            {{/if}}\n                        </div>\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n    <div class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">\n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                        {{#if title}}\n                        <h1 id=\"title\" class=\"text-center mb-4\">\n                            <i class=\"mdi mdi-auto-fix text-dark fs-1\" aria-hidden=\"true\"></i>\n                            {{title}}\n                        </h1>\n                        {{/if}}\n\n                        {{#if textOne}}\n                        <p class=\"text-muted text-center\">{{textOne}}</p>\n                        {{/if}}\n\n                        {{#if textTwo}}\n                        <p class=\"text-muted text-center\">{{textTwo}}</p>\n                        {{/if}}\n                        \n                        <div class=\"align-self-center\" data-skcomponent=\"skpolling\" data-skpollInterval=\"2000\"\n                            data-skpollRetries=\"100\" data-skpollChallengeStatus=\"true\" aria-live=\"assertive\"></div>\n\n                        <p class=\"text-danger mdi mdi-alert-circle icon-padding\" data-id=\"feedback\" data-skcomponent=\"skerror\"></p>\n                        <div class=\"d-flex flex-column\">\n                            {{#if cancelButtonLabel}}\n                            <button type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                                data-skbuttonvalue=\"CANCEL\" id=\"btnCancel\">\n                                {{cancelButtonLabel}}\n                            </button>\n                            {{/if}}\n                        </div>\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
                   },
                   "formFieldsList": {
                     "value": [
@@ -2149,7 +2154,7 @@
               "data": {
                 "id": "d96uc5iw4b",
                 "nodeType": "CONNECTION",
-                "connectionId": "f406865144b788ec1d29ade61c93e394",
+                "connectionId": "580e5460368eac55ea8d66a295cb98c9",
                 "connectorId": "challengeConnector",
                 "name": "Challenge",
                 "label": "Challenge",
@@ -2215,7 +2220,7 @@
               "data": {
                 "id": "gdfdr4a4se",
                 "nodeType": "CONNECTION",
-                "connectionId": "f406865144b788ec1d29ade61c93e394",
+                "connectionId": "580e5460368eac55ea8d66a295cb98c9",
                 "connectorId": "challengeConnector",
                 "name": "Challenge",
                 "label": "Challenge",
@@ -2472,7 +2477,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: May 8th, 2024"
+                    "value": "Last Updated: August 19th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -3275,11 +3280,11 @@
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1718304779006,
+      "savedDate": 1724078086748,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1711542060985,
+          "createdDate": 1723733673806,
           "fields": {
             "type": "string",
             "displayName": "Url for company's logo image",
@@ -3287,14 +3292,15 @@
             "min": 0,
             "max": 2000
           },
+          "id": "70e8e6ee-0ced-4a23-b113-6c0149c018cc",
           "type": "property",
           "visibility": "private",
           "name": "companyLogo##SK##flowInstance",
-          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
+          "companyId": ""
         },
         {
           "context": "flowInstance",
-          "createdDate": 1711541872878,
+          "createdDate": 1723733618022,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -3302,10 +3308,11 @@
             "min": 0,
             "max": 2000
           },
+          "id": "ae3faac6-277a-436d-b3c9-30dd49cedb2d",
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
-          "companyId": "4a06fc22-df57-44e4-9805-a9c19cb96212"
+          "companyId": ""
         }
       ]
     }
