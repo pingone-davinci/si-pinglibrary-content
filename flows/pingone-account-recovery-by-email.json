@@ -10,10 +10,11 @@
     "functionsConnector",
     "errorConnector"
   ],
-  "createdDate": 1719241264562,
+  "createdDate": 1724072191091,
   "currentVersion": 1,
   "customerId": "",
-  "description": "Last Updated: June 24th, 2024",
+  "deployedDate": 1724072192778,
+  "description": "Last Updated: August 19th, 2024",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
   "name": "PingOne Account Recovery by Email",
@@ -23,9 +24,9 @@
     "intermediateLoadingScreenCSS": "",
     "intermediateLoadingScreenHTML": "",
     "useCustomCSS": true,
-    "css": ".companyLogo {\n    height: 65px;\n}",
+    "css": ".companyLogo {\n    height: 65px;\n}\n\n.icon-padding::before {\n  padding-right: 5px;\n}",
     "cssLinks": [
-      "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css",
+      "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.9/end-user-nano.css",
       "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.11/icons.css"
     ],
     "customTitle": "Account Recovery by Email",
@@ -33,7 +34,8 @@
     "logLevel": 2
   },
   "timeouts": "null",
-  "flowId": "b9414d85425cdeab50f59008fe4017d5",
+  "updatedDate": 1724072192833,
+  "flowId": "8583c20b51859d12a9160bf675d749de",
   "versionId": 1,
   "graphData": {
     "elements": {
@@ -154,7 +156,7 @@
                 "value": "#000000"
               },
               "annotation": {
-                "value": "Last Updated: June 24, 2024"
+                "value": "Last Updated: August 19th, 2024"
               },
               "width": {
                 "value": 240
@@ -210,7 +212,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter your email address to receive a recovery code that will let you change your password.\"\n      }\n    ]\n  }\n]"
               },
               "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\">\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"feedbackError\" data-id=\"feedback\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"emailError\" data-skerrorid=\"email\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"passwordError\" data-skerrorid=\"password\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            {{#if userMessage}}\n            <p class=\"text-info text-center fade\" aria-live=\"assertive\">{{userMessage}}</p>\n            {{/if}}\n\n            <form id=\"emailForm\" aria-labelledby=\"title\" data-id=\"emailForm\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control\" type=\"email\" id=\"email\" name=\"email\" placeholder=\"Email Address\"\n                  autocomplete=\"email\" value=\"\" data-id=\"email-input\" aria-required=\"true\"\n                  aria-describedby=\"emailLabel\" />\n                <label id=\"emailLabel\" for=\"email\">Email Address</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                {{#if continueButtonLabel}}\n                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" id=\"btnContinue\" data-skform=\"emailForm\"\n                  data-skbuttonvalue=\"CONTINUE\">\n                  {{continueButtonLabel}}\n                </button>\n                {{/if}}\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>\n"
+                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\">\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" id=\"feedbackError\" data-id=\"feedback\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" id=\"emailError\" data-skerrorid=\"email\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" id=\"passwordError\" data-skerrorid=\"password\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            {{#if userMessage}}\n            <p class=\"text-info text-center fade\" aria-live=\"assertive\">{{userMessage}}</p>\n            {{/if}}\n\n            <form id=\"emailForm\" aria-labelledby=\"title\" data-id=\"emailForm\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control\" type=\"email\" id=\"email\" name=\"email\" placeholder=\"Email Address\"\n                  autocomplete=\"email\" value=\"\" data-id=\"email-input\" aria-required=\"true\"\n                  aria-describedby=\"emailLabel\" />\n                <label id=\"emailLabel\" for=\"email\">Email Address</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                {{#if continueButtonLabel}}\n                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" id=\"btnContinue\" data-skform=\"emailForm\"\n                  data-skbuttonvalue=\"CONTINUE\">\n                  {{continueButtonLabel}}\n                </button>\n                {{/if}}\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>\n"
               },
               "formFieldsList": {
                 "value": [
@@ -687,7 +689,7 @@
                 "value": "Password Recovery Form"
               },
               "customHTML": {
-                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"\n              aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"recoveryCode\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"newPassword\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-skerrorid=\"verifyNewPassword\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            <p id=\"resendMessage\" class=\"text-success mdi mdi-check-circle text-center\"  \n              style=\"display: {{#if resendMessage}} block; {{else}} none; {{/if}}\"aria-live=\"assertive\">{{resendMessage}}</p>\n\n            <form id=\"recoveryCodeForm\" data-id=\"recoveryCodeForm\">\n              <div class=\"mb-4 form-floating\">\n                <input id=\"recoveryCode\" data-id=\"recoveryCode\" class=\"form-control\" type=\"text\" name=\"recoveryCode\"\n                    placeholder=\"Recovery Code\" autocomplete=\"one-time-code\" aria-describedby=\"recoveryCodeLabel\" />\n                <label id=\"recoveryCodeLabel\" data-id=\"recoveryCodeLabel\" class=\"form-label\" for=\"recoveryCode\">\n                    Recovery Code\n                  </label>\n              </div>\n              <div id=\"newPasswordContainer\" class=\"mb-4 form-floating\">\n                <input id=\"newPassword\" data-id=\"newPassword\" class=\"form-control\" type=\"password\" name=\"newPassword\"\n                    placeholder=\"New Password\" autocomplete=\"new-password\" aria-describedby=\"newPasswordLabel\" />\n                <label id=\"newPasswordLabel\" data-id=\"newPasswordLabel\" class=\"form-label\" for=\"newPassword\">\n                    New Password\n                  </label>\n              </div>\n              <div id=\"verifyPasswordContainer\" class=\"mb-4 form-floating\">\n                <input id=\"verifyNewPassword\" data-id=\"verifyNewPassword\" class=\"form-control\" type=\"password\"\n                    name=\"verifyNewPassword\" placeholder=\"Verify New Password\" autocomplete=\"new-password\"\n                    aria-describedby=\"verifyNewPasswordLabel\" />\n                <label id=\"verifyNewPasswordLabel\" class=\"form-label\" for=\"verifyNewPassword\">Verify New\n                    Password</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                {{#if continueButtonLabel}}\n                <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"form-submit\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"UPDATE\">\n                    {{continueButtonLabel}}\n                </button>\n                {{/if}}\n                {{#if resendButtonLabel}}\n                <button id=\"resendBtn\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\" type=\"button\">\n                    {{resendButtonLabel}}\n                </button>\n                {{/if}}\n                {{#if cancelButtonLabel}}\n                <button id=\"backBtn\" data-id=\"backBtn\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"next-event\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"CANCEL\" type=\"button\">\n                    {{cancelButtonLabel}}\n                </button>\n                {{/if}}\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
+                "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" data-id=\"feedback\" data-skcomponent=\"skerror\"\n              aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" data-skerrorid=\"recoveryCode\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" data-skerrorid=\"newPassword\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" data-skerrorid=\"verifyNewPassword\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            <p id=\"resendMessage\" class=\"text-success mdi mdi-check-circle text-center\"  \n              style=\"display: {{#if resendMessage}} block; {{else}} none; {{/if}}\"aria-live=\"assertive\">\n              <span class=\"ms-2\">{{resendMessage}}</span></p>\n\n            <form id=\"recoveryCodeForm\" data-id=\"recoveryCodeForm\">\n              <div class=\"mb-4 form-floating\">\n                <input id=\"recoveryCode\" data-id=\"recoveryCode\" class=\"form-control\" type=\"text\" name=\"recoveryCode\"\n                    placeholder=\"Recovery Code\" autocomplete=\"one-time-code\" aria-describedby=\"recoveryCodeLabel\" />\n                <label id=\"recoveryCodeLabel\" data-id=\"recoveryCodeLabel\" class=\"form-label\" for=\"recoveryCode\">\n                    Recovery Code\n                  </label>\n              </div>\n              <div id=\"newPasswordContainer\" class=\"mb-4 form-floating\">\n                <input id=\"newPassword\" data-id=\"newPassword\" class=\"form-control\" type=\"password\" name=\"newPassword\"\n                    placeholder=\"New Password\" autocomplete=\"new-password\" aria-describedby=\"newPasswordLabel\" />\n                <label id=\"newPasswordLabel\" data-id=\"newPasswordLabel\" class=\"form-label\" for=\"newPassword\">\n                    New Password\n                  </label>\n              </div>\n              <div id=\"verifyPasswordContainer\" class=\"mb-4 form-floating\">\n                <input id=\"verifyNewPassword\" data-id=\"verifyNewPassword\" class=\"form-control\" type=\"password\"\n                    name=\"verifyNewPassword\" placeholder=\"Verify New Password\" autocomplete=\"new-password\"\n                    aria-describedby=\"verifyNewPasswordLabel\" />\n                <label id=\"verifyNewPasswordLabel\" class=\"form-label\" for=\"verifyNewPassword\">Verify New\n                    Password</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                {{#if continueButtonLabel}}\n                <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"form-submit\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"UPDATE\">\n                    {{continueButtonLabel}}\n                </button>\n                {{/if}}\n                {{#if resendButtonLabel}}\n                <button id=\"resendBtn\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\" type=\"button\">\n                    {{resendButtonLabel}}\n                </button>\n                {{/if}}\n                {{#if cancelButtonLabel}}\n                <button id=\"backBtn\" data-id=\"backBtn\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"next-event\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"CANCEL\" type=\"button\">\n                    {{cancelButtonLabel}}\n                </button>\n                {{/if}}\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
               },
               "customCSS": {},
               "customScript": {
@@ -1428,12 +1430,6 @@
             "capabilityName": "customFunction",
             "type": "trigger",
             "properties": {
-              "leftValueA": {
-                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"populationId\",\n        \"data\": \"{{global.variables.populationId}}\",\n        \"tooltip\": \"{{global.variables.populationId}}\",\n        \"children\": [\n          {\n            \"text\": \"populationId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-              },
-              "checkNullORUndefined": {
-                "value": true
-              },
               "nodeTitle": {
                 "value": "Verify User Found"
               },
@@ -2109,11 +2105,11 @@
     }
   },
   "flowColor": "#E3F0FF",
-  "savedDate": 1719241264379,
+  "savedDate": 1724072190891,
   "variables": [
     {
       "context": "flowInstance",
-      "createdDate": 1718715614928,
+      "createdDate": 1723733673806,
       "fields": {
         "type": "string",
         "displayName": "Url for company's logo image",
@@ -2121,7 +2117,7 @@
         "min": 0,
         "max": 2000
       },
-      "id": "454da928-c543-4aac-b6b3-c233400c1d32",
+      "id": "70e8e6ee-0ced-4a23-b113-6c0149c018cc",
       "type": "property",
       "visibility": "private",
       "name": "companyLogo##SK##flowInstance",
@@ -2129,7 +2125,7 @@
     },
     {
       "context": "flowInstance",
-      "createdDate": 1718715505632,
+      "createdDate": 1723733618022,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -2137,26 +2133,10 @@
         "min": 0,
         "max": 2000
       },
-      "id": "3245a456-c70f-4cb8-bc33-7c7b14c1f479",
+      "id": "ae3faac6-277a-436d-b3c9-30dd49cedb2d",
       "type": "property",
       "visibility": "private",
       "name": "companyName##SK##flowInstance",
-      "companyId": ""
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1718715614928,
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "id": "75182d1f-09e9-444d-9f42-847f7bbfaa17",
-      "type": "property",
-      "visibility": "private",
-      "name": "populationId##SK##flowInstance",
       "companyId": ""
     }
   ],
