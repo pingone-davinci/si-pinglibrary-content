@@ -9,10 +9,10 @@
         "pingOneAuthenticationConnector",
         "nodeConnector"
       ],
-      "createdDate": 1723731558075,
+      "createdDate": 1724157705219,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: August 15th, 2024",
+      "description": "Last Updated: August 20th, 2024",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Session Main Flow",
@@ -40,8 +40,8 @@
       "trigger": {
         "type": "AUTHENTICATION"
       },
-      "updatedDate": 1723731559928,
-      "flowId": "346f5b70d9e1a664375b8cea6a5e0ad1",
+      "updatedDate": 1724157709167,
+      "flowId": "576d6684de1d3f05ca603eba13cae156",
       "versionId": 1,
       "graphData": {
         "elements": {
@@ -307,7 +307,7 @@
                   "subFlowId": {
                     "value": {
                       "label": "PingOne Sign On with Registration, Password Reset and Recovery",
-                      "value": "d37b16b39ea0b01816ae231e602ef35d"
+                      "value": "5d070d9308fb16e82e376aff0e2f4ca5"
                     }
                   },
                   "subFlowVersionId": {
@@ -640,7 +640,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: August 15th, 2024"
+                    "value": "Last Updated: August 20th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -835,10 +835,10 @@
         }
       },
       "flowColor": "#ff661c",
-      "savedDate": 1723731558018,
+      "savedDate": 1724157705061,
       "variables": [],
       "connections": [],
-      "parentFlowId": "346f5b70d9e1a664375b8cea6a5e0ad1"
+      "parentFlowId": "576d6684de1d3f05ca603eba13cae156"
     },
     {
       "companyId": "",
@@ -852,10 +852,10 @@
         "httpConnector",
         "variablesConnector"
       ],
-      "createdDate": 1723731634731,
+      "createdDate": 1724157455666,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: August 15th, 2024",
+      "description": "Last Updated: August 20th, 2024",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -890,8 +890,7 @@
       },
       "timeouts": "null",
       "trigger": {},
-      "updatedDate": 1723731636372,
-      "flowId": "d37b16b39ea0b01816ae231e602ef35d",
+      "flowId": "5d070d9308fb16e82e376aff0e2f4ca5",
       "versionId": 1,
       "graphData": {
         "elements": {
@@ -1046,7 +1045,7 @@
                 }
               },
               "position": {
-                "x": 3030,
+                "x": 2760,
                 "y": 1080
               },
               "group": "nodes",
@@ -1080,7 +1079,7 @@
               },
               "position": {
                 "x": 330,
-                "y": 3810
+                "y": 4200
               },
               "group": "nodes",
               "removed": false,
@@ -1098,7 +1097,7 @@
               },
               "position": {
                 "x": 450,
-                "y": 3810
+                "y": 4200
               },
               "group": "nodes",
               "removed": false,
@@ -1115,7 +1114,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 2850,
+                "x": 2580,
                 "y": 480
               },
               "group": "nodes",
@@ -1167,7 +1166,7 @@
                 }
               },
               "position": {
-                "x": 2730,
+                "x": 2460,
                 "y": 480
               },
               "group": "nodes",
@@ -1204,7 +1203,7 @@
                 "idUnique": "efipo9nts6"
               },
               "position": {
-                "x": 3030,
+                "x": 2760,
                 "y": 690
               },
               "group": "nodes",
@@ -1240,7 +1239,7 @@
                 }
               },
               "position": {
-                "x": 3030,
+                "x": 2760,
                 "y": 480
               },
               "group": "nodes",
@@ -1310,7 +1309,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 2850,
+                "x": 2580,
                 "y": 690
               },
               "group": "nodes",
@@ -1435,7 +1434,7 @@
                 "idUnique": "efipo9nts6"
               },
               "position": {
-                "x": 3030,
+                "x": 2760,
                 "y": 870
               },
               "group": "nodes",
@@ -1453,7 +1452,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 2850,
+                "x": 2580,
                 "y": 870
               },
               "group": "nodes",
@@ -1471,7 +1470,7 @@
                 "nodeType": "EVAL"
               },
               "position": {
-                "x": 2850,
+                "x": 2580,
                 "y": 1080
               },
               "group": "nodes",
@@ -1829,7 +1828,7 @@
               },
               "position": {
                 "x": 210,
-                "y": 3600
+                "y": 3990
               },
               "group": "nodes",
               "removed": false,
@@ -1885,7 +1884,7 @@
               },
               "position": {
                 "x": 630,
-                "y": 3810
+                "y": 4200
               },
               "group": "nodes",
               "removed": false,
@@ -1916,7 +1915,7 @@
                     "value": "PingOne Sign On with Registration, Password Reset and Recovery"
                   },
                   "width": {
-                    "value": 3000
+                    "value": 2700
                   },
                   "fontStyle": {
                     "value": "bold"
@@ -2060,7 +2059,7 @@
               },
               "position": {
                 "x": 510,
-                "y": 3720
+                "y": 4110
               },
               "group": "nodes",
               "removed": false,
@@ -4302,7 +4301,7 @@
               },
               "position": {
                 "x": 210,
-                "y": 3660
+                "y": 4050
               },
               "group": "nodes",
               "removed": false,
@@ -4962,7 +4961,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: August 15th, 2024"
+                    "value": "Last Updated: August 20th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -4990,8 +4989,8 @@
                 "idUnique": "o2v5xhdcbc"
               },
               "position": {
-                "x": 240,
-                "y": 210
+                "x": 244,
+                "y": 214
               },
               "group": "nodes",
               "removed": false,
@@ -5122,9 +5121,6 @@
                 "capabilityName": "customFunction",
                 "type": "trigger",
                 "properties": {
-                  "leftValueA": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"populationId\",\n        \"data\": \"{{global.variables.populationId}}\",\n        \"tooltip\": \"{{global.variables.populationId}}\",\n        \"children\": [\n          {\n            \"text\": \"populationId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
                   "checkNullORUndefined": {
                     "value": true
                   },
@@ -5736,7 +5732,7 @@
                       {
                         "name": "details",
                         "preferredDataType": "object",
-                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"details\",\n        \"data\": \"{{local.dnu7jt3sjz.payload.error.details}}\",\n        \"tooltip\": \"{{local.dnu7jt3sjz.payload.error.details}}\",\n        \"children\": [\n          {\n            \"text\": \"details\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"errorDetails\",\n        \"data\": \"{{local.2xzcvx1gll.payload.output.errorDetails}}\",\n        \"tooltip\": \"{{local.2xzcvx1gll.payload.output.errorDetails}}\",\n        \"children\": [\n          {\n            \"text\": \"errorDetails\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                       }
                     ]
                   },
@@ -5755,8 +5751,8 @@
                 }
               },
               "position": {
-                "x": 2130,
-                "y": 630
+                "x": 630,
+                "y": 3810
               },
               "group": "nodes",
               "removed": false,
@@ -5774,8 +5770,8 @@
                 "label": "Evaluator"
               },
               "position": {
-                "x": 2250,
-                "y": 630
+                "x": 750,
+                "y": 3810
               },
               "group": "nodes",
               "removed": false,
@@ -5805,7 +5801,7 @@
                     "value": {}
                   },
                   "customHTML": {
-                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n          {{#if title}}\n          <h1 class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          <div class=\"align-self-center mb-5 mt-3\">\n            <svg width=\"153\" height=\"133\" viewBox=\"0 0 153 133\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n              <g clip-path=\"url(#clip0_734_3343)\">\n                <path\n                  d=\"M6.30669 132.565C5.16116 132.565 4.17364 132.289 3.34412 131.775C2.47509 131.262 1.80358 130.551 1.32956 129.682C0.816049 128.892 0.539542 127.983 0.500041 126.996C0.46054 126.008 0.737047 124.981 1.32956 123.994L71.6019 2.80457C72.1944 1.85655 72.9055 1.18503 73.735 0.711019C74.5645 0.237006 75.5125 0 76.5 0C77.4876 0 78.4356 0.237006 79.2651 0.711019C80.0946 1.18503 80.8057 1.85655 81.3982 2.80457L151.671 123.994C152.263 124.981 152.54 126.008 152.5 126.996C152.461 127.983 152.184 128.892 151.671 129.682C151.197 130.551 150.525 131.262 149.656 131.775C148.787 132.289 147.799 132.565 146.693 132.565H6.30669ZM11.9553 123.599H141.045L76.5 12.2453L11.9553 123.599ZM77.0926 111.748C78.5146 111.748 79.6601 111.274 80.6082 110.326C81.5562 109.378 81.9907 108.193 81.9907 106.771C81.9907 105.349 81.5167 104.204 80.5687 103.256C79.6206 102.308 78.4356 101.873 77.0136 101.873C75.5915 101.873 74.446 102.347 73.498 103.295C72.5499 104.243 72.1154 105.428 72.1154 106.85C72.1154 108.272 72.5894 109.418 73.5375 110.366C74.4855 111.314 75.6705 111.748 77.0926 111.748ZM77.0926 92.3929C78.3566 92.3929 79.4231 91.9584 80.2921 91.0894C81.1217 90.2204 81.5562 89.1538 81.5562 87.8898V53.8399C81.5562 52.5759 81.1217 51.5094 80.2526 50.6403C79.3836 49.7713 78.3171 49.3368 77.0136 49.3368C75.71 49.3368 74.683 49.7713 73.814 50.6403C72.9845 51.5094 72.5499 52.5759 72.5499 53.8399V87.8898C72.5499 89.1538 72.9845 90.2204 73.8535 91.0894C74.7225 91.9584 75.789 92.3929 77.0926 92.3929Z\"\n                  fill=\"#A31300\" />\n              </g>\n              <defs>\n                <clipPath id=\"clip0_734_3343\">\n                  <rect width=\"152\" height=\"132.565\" fill=\"white\" transform=\"translate(0.5)\" />\n                </clipPath>\n              </defs>\n            </svg>\n          </div>\n\n          {{#if textOne}}\n          <p class=\"text-muted text-center\">{{textOne}}</p>\n          {{/if}}\n\n          {{#if textTwo}}\n          <p class=\"text-muted text-center\">{{textTwo}}</p>\n          {{/if}}\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+                    "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n          {{#if title}}\n          <h1 class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          <div class=\"align-self-center mb-5 mt-3\">\n            <svg width=\"153\" height=\"133\" viewBox=\"0 0 153 133\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n              <g clip-path=\"url(#clip0_734_3343)\">\n                <path\n                  d=\"M6.30669 132.565C5.16116 132.565 4.17364 132.289 3.34412 131.775C2.47509 131.262 1.80358 130.551 1.32956 129.682C0.816049 128.892 0.539542 127.983 0.500041 126.996C0.46054 126.008 0.737047 124.981 1.32956 123.994L71.6019 2.80457C72.1944 1.85655 72.9055 1.18503 73.735 0.711019C74.5645 0.237006 75.5125 0 76.5 0C77.4876 0 78.4356 0.237006 79.2651 0.711019C80.0946 1.18503 80.8057 1.85655 81.3982 2.80457L151.671 123.994C152.263 124.981 152.54 126.008 152.5 126.996C152.461 127.983 152.184 128.892 151.671 129.682C151.197 130.551 150.525 131.262 149.656 131.775C148.787 132.289 147.799 132.565 146.693 132.565H6.30669ZM11.9553 123.599H141.045L76.5 12.2453L11.9553 123.599ZM77.0926 111.748C78.5146 111.748 79.6601 111.274 80.6082 110.326C81.5562 109.378 81.9907 108.193 81.9907 106.771C81.9907 105.349 81.5167 104.204 80.5687 103.256C79.6206 102.308 78.4356 101.873 77.0136 101.873C75.5915 101.873 74.446 102.347 73.498 103.295C72.5499 104.243 72.1154 105.428 72.1154 106.85C72.1154 108.272 72.5894 109.418 73.5375 110.366C74.4855 111.314 75.6705 111.748 77.0926 111.748ZM77.0926 92.3929C78.3566 92.3929 79.4231 91.9584 80.2921 91.0894C81.1217 90.2204 81.5562 89.1538 81.5562 87.8898V53.8399C81.5562 52.5759 81.1217 51.5094 80.2526 50.6403C79.3836 49.7713 78.3171 49.3368 77.0136 49.3368C75.71 49.3368 74.683 49.7713 73.814 50.6403C72.9845 51.5094 72.5499 52.5759 72.5499 53.8399V87.8898C72.5499 89.1538 72.9845 90.2204 73.8535 91.0894C74.7225 91.9584 75.789 92.3929 77.0926 92.3929Z\"\n                  fill=\"#A31300\" />\n              </g>\n              <defs>\n                <clipPath id=\"clip0_734_3343\">\n                  <rect width=\"152\" height=\"132.565\" fill=\"white\" transform=\"translate(0.5)\" />\n                </clipPath>\n              </defs>\n            </svg>\n          </div>\n\n          {{#if textOne}}\n          <p class=\"text-muted text-center\">{{textOne}}</p>\n          {{/if}}\n\n          {{#if textTwo}}\n          <p class=\"text-muted text-center\">{{textTwo}}</p>\n          {{/if}}\n\n          <div class=\"d-flex flex-column\">\n            <button data-id=\"back-button\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n              data-skbuttontype=\"next-event\" data-skbuttonvalue=\"BACK\" id=\"btnBack\">\n              Back\n            </button>\n          </div>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
                   },
                   "customCSS": {
                     "value": ""
@@ -5844,8 +5840,252 @@
                 "idUnique": "8rsda1hj30"
               },
               "position": {
-                "x": 2430,
+                "x": 930,
+                "y": 3810
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "gfn4owly2t",
+                "nodeType": "EVAL",
+                "label": "Evaluator"
+              },
+              "position": {
+                "x": 1050,
+                "y": 3810
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "ofbbj58kbk",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Node",
+                "status": "configured",
+                "capabilityName": "goToNode",
+                "type": "action",
+                "properties": {
+                  "nodeInstanceId": {
+                    "value": "dpo5892st9"
+                  },
+                  "nodeTitle": {
+                    "value": "Sign On Start"
+                  }
+                }
+              },
+              "position": {
+                "x": 1230,
+                "y": 3810
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "2xzcvx1gll",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Node",
+                "status": "configured",
+                "capabilityName": "startNode",
+                "type": "trigger",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "Account Locked"
+                  },
+                  "inputSchema": {
+                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"errorDetails\": {\n\t\t\t\"type\": \"object\",\n\t\t\t\"displayName\": \"Error Details\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"errorDetails\"\n\t\t}\n\t}\n}"
+                  }
+                }
+              },
+              "position": {
+                "x": 330,
+                "y": 3810
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "rbflsn7loz",
+                "nodeType": "EVAL"
+              },
+              "position": {
+                "x": 420,
+                "y": 3810
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "h2zhng35ze",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Node",
+                "status": "configured",
+                "capabilityName": "goToNode",
+                "type": "action",
+                "properties": {
+                  "nodeInstanceId": {
+                    "value": "2xzcvx1gll"
+                  },
+                  "errorDetails": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"details\",\n        \"data\": \"{{local.dnu7jt3sjz.payload.error.details}}\",\n        \"tooltip\": \"{{local.dnu7jt3sjz.payload.error.details}}\",\n        \"children\": [\n          {\n            \"text\": \"details\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                }
+              },
+              "position": {
+                "x": 2130,
                 "y": 630
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "un1zrx67xr",
+                "nodeType": "ANNOTATION",
+                "name": "Annotation",
+                "connectionId": "921bfae85c38ed45045e07be703d86b8",
+                "connectorId": "annotationConnector",
+                "capabilityName": "updateAnnotationProperties",
+                "type": "action",
+                "properties": {
+                  "backgroundColor": {
+                    "value": "#5D00D6ff"
+                  },
+                  "annotationTextColor": {
+                    "value": "#ffffffff"
+                  },
+                  "annotation": {
+                    "value": "Account Locked"
+                  },
+                  "width": {
+                    "value": 1200
+                  },
+                  "fontStyle": {
+                    "value": "bold"
+                  },
+                  "fontSize": {
+                    "value": 14
+                  },
+                  "fontFamily": {
+                    "value": "sans-serif"
+                  },
+                  "cornerRadius": {
+                    "value": 8
+                  }
+                },
+                "status": "configured",
+                "idUnique": "x0q2semx5h"
+              },
+              "position": {
+                "x": 210,
+                "y": 3630
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "ud0vht8qd1",
+                "nodeType": "ANNOTATION",
+                "name": "Annotation",
+                "connectionId": "921bfae85c38ed45045e07be703d86b8",
+                "connectorId": "annotationConnector",
+                "capabilityName": "updateAnnotationProperties",
+                "type": "action",
+                "properties": {
+                  "backgroundColor": {
+                    "value": "#f7f7adff"
+                  },
+                  "annotationTextColor": {
+                    "value": "#000000"
+                  },
+                  "annotation": {
+                    "value": "Input Schema: errorDetails"
+                  },
+                  "width": {
+                    "value": 400
+                  },
+                  "fontSize": {
+                    "value": 14
+                  },
+                  "fontFamily": {
+                    "value": "sans-serif"
+                  },
+                  "cornerRadius": {
+                    "value": 8
+                  },
+                  "strokeEnabled": {
+                    "value": false
+                  },
+                  "strokeWidth": {
+                    "value": 1
+                  },
+                  "strokeColor": {
+                    "value": "#181818ff"
+                  }
+                },
+                "status": "configured",
+                "idUnique": "a0qg4993t2"
+              },
+              "position": {
+                "x": 210,
+                "y": 3690
               },
               "group": "nodes",
               "removed": false,
@@ -5899,9 +6139,9 @@
             },
             {
               "data": {
-                "id": "2gvihap4ny",
-                "source": "f5gokcacx1",
-                "target": "o43vpz4na3"
+                "id": "3duducvr3u",
+                "source": "gfn4owly2t",
+                "target": "ofbbj58kbk"
               },
               "position": {
                 "x": 0,
@@ -8042,6 +8282,82 @@
               "grabbable": true,
               "pannable": true,
               "classes": ""
+            },
+            {
+              "data": {
+                "id": "vf8yl042pr",
+                "source": "7mtr7zq5h6",
+                "target": "gfn4owly2t"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "5b94ntvo7r",
+                "source": "2xzcvx1gll",
+                "target": "rbflsn7loz"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "409qhbfowd",
+                "source": "rbflsn7loz",
+                "target": "o43vpz4na3"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "7cv868n4ik",
+                "source": "f5gokcacx1",
+                "target": "h2zhng35ze"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
             }
           ]
         },
@@ -8064,11 +8380,11 @@
       },
       "inputSchema": [],
       "flowColor": "#CACED3",
-      "savedDate": 1723731633737,
+      "savedDate": 1724157455275,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1718715614928,
+          "createdDate": 1723733673806,
           "fields": {
             "type": "string",
             "displayName": "Url for company's logo image",
@@ -8076,7 +8392,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "454da928-c543-4aac-b6b3-c233400c1d32",
+          "id": "70e8e6ee-0ced-4a23-b113-6c0149c018cc",
           "type": "property",
           "visibility": "private",
           "name": "companyLogo##SK##flowInstance",
@@ -8084,7 +8400,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1718715505632,
+          "createdDate": 1723733618022,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -8092,7 +8408,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "3245a456-c70f-4cb8-bc33-7c7b14c1f479",
+          "id": "ae3faac6-277a-436d-b3c9-30dd49cedb2d",
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
