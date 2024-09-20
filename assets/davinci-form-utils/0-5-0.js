@@ -397,13 +397,17 @@ class DaVinciFormUtils {
       if (passwordPolicy.maxRepeatedCharacters) {
         const consecutiveRepeats = password.match(/(.)\1*/g) || [];
         const maxConsecutiveRepeat = Math.max(...consecutiveRepeats.map((group) => group.length));
-        const repeatValid = maxConsecutiveRepeat <= passwordPolicy.maxRepeatedCharacters;
+
+        // Check both the repeated characters and password length
+        const repeatValid = maxConsecutiveRepeat <= passwordPolicy.maxRepeatedCharacters && password.length > passwordPolicy.maxRepeatedCharacters;
+
         const repeatIcon = document.getElementById("policy-repeat").querySelector("i");
         repeatIcon.classList.toggle("mdi-check-circle", repeatValid);
         repeatIcon.classList.toggle("mdi-alert-circle", !repeatValid);
         document.getElementById("policy-repeat").classList.toggle("text-success", repeatValid);
         document.getElementById("policy-repeat").classList.toggle("text-danger", !repeatValid);
       }
+
     };
 
     // Inject default styles for password policy popup if not present
