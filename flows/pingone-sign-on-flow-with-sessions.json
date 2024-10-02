@@ -12,7 +12,7 @@
       "createdDate": 1726605702337,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: September 17th, 2024",
+      "description": "Last Updated: October 2nd, 2024",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Session Main Flow",
@@ -640,7 +640,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: September 17th, 2024"
+                    "value": "Last Updated: October 2nd, 2024"
                   },
                   "width": {
                     "value": 240
@@ -855,7 +855,7 @@
       "createdDate": 1726605616333,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: September 17th, 2024",
+      "description": "Last Updated: October 2nd, 2024",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -2207,7 +2207,7 @@
                     "value": []
                   },
                   "nodeTitle": {
-                    "value": "Prompt For Verification Code"
+                    "value": "Verify Email"
                   },
                   "formFieldsList": {
                     "value": [
@@ -2241,7 +2241,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter the code that was emailed to you to verify your email address.\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeDescription": {
-                    "value": "Capture Verification Code Or Resend"
+                    "value": "Enter the verification code or resend if verification code is not received"
                   }
                 },
                 "idUnique": "mc0qvitm1n"
@@ -3008,7 +3008,7 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "Sign On Form"
+                    "value": "Sign On"
                   },
                   "customCSS": {
                     "value": ""
@@ -3032,7 +3032,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Sign On\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeDescription": {
-                    "value": "Prompt for username and password"
+                    "value": "Enter username and password"
                   }
                 },
                 "isDisabled": false
@@ -3337,7 +3337,7 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "Password Recovery Form"
+                    "value": "Forgot Password"
                   },
                   "customHTML": {
                     "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center icon-padding\" data-id=\"feedback\" data-skcomponent=\"skerror\"\n              aria-live=\"assertive\"></p>\n\n            <p id=\"resendMessage\" class=\"text-success mdi mdi-check-circle text-center\"  \n              style=\"display: {{#if resendMessage}} block; {{else}} none; {{/if}}\" aria-live=\"assertive\">\n              <span class=\"ms-2\">{{resendMessage}}</span></p>\n\n            <form id=\"recoveryCodeForm\" data-id=\"recoveryCodeForm\">\n              <div class=\"mb-4 form-floating\">\n                <input id=\"recoveryCode\" data-id=\"recoveryCode\" class=\"form-control\" type=\"text\" name=\"recoveryCode\"\n                    placeholder=\"Recovery Code\" autocomplete=\"one-time-code\" aria-describedby=\"recoveryCodeLabel\" />\n                <label id=\"recoveryCodeLabel\" data-id=\"recoveryCodeLabel\" class=\"form-label\" for=\"recoveryCode\">\n                    Recovery Code\n                  </label>\n              </div>\n              <div id=\"newPasswordContainer\" class=\"mb-4 form-floating\">\n                <input id=\"newPassword\" data-id=\"newPassword\" class=\"form-control\" type=\"password\" name=\"newPassword\"\n                    placeholder=\"New Password\" autocomplete=\"new-password\" aria-describedby=\"newPasswordLabel\" />\n                <label id=\"newPasswordLabel\" data-id=\"newPasswordLabel\" class=\"form-label\" for=\"newPassword\">\n                    New Password\n                  </label>\n              </div>\n              <div id=\"verifyPasswordContainer\" class=\"mb-4 form-floating\">\n                <input id=\"verifyNewPassword\" data-id=\"verifyNewPassword\" class=\"form-control\" type=\"password\"\n                    name=\"verifyNewPassword\" placeholder=\"Verify New Password\" autocomplete=\"new-password\"\n                    aria-describedby=\"verifyNewPasswordLabel\" />\n                <label id=\"verifyNewPasswordLabel\" class=\"form-label\" for=\"verifyNewPassword\">Verify New\n                    Password</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                <button id=\"submitBtn\" type=\"submit\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"form-submit\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"UPDATE\">\n                    Continue\n                </button>\n                <button id=\"resendBtn\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\" type=\"button\">\n                    Resend recovery code\n                </button>\n                <button id=\"backBtn\" data-id=\"backBtn\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                    data-skbuttontype=\"next-event\" data-skform=\"recoveryCodeForm\" data-skbuttonvalue=\"CANCEL\" type=\"button\">\n                    Cancel\n                </button>\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
@@ -3350,7 +3350,7 @@
                     "value": []
                   },
                   "nodeDescription": {
-                    "value": "Enter The Recovery Code and Set New Password"
+                    "value": "Enter the recovery code and a set a new password to complete the reset."
                   },
                   "inputSchema": {
                     "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"resendMessage\": {\n      \"type\": \"string\",\n      \"displayName\": \"Resend Message\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
@@ -3884,7 +3884,7 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "User Identifier Form"
+                    "value": "Enter Username"
                   },
                   "customCSS": {
                     "value": "@keyframes fadeOut {\n    0% {\n        opacity: 1;\n        visibility: visible;\n    }\n    80% {\n        opacity: .8;\n        visibility: visible;\n    }\n\n    100% {\n        opacity: 0;\n        visibility: hidden;\n        max-height: 0;\n    }\n}\n\n.fade {\n    overflow: hidden;\n    animation: fadeOut 20s forwards;\n}"
@@ -3918,7 +3918,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Recover Your Account\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeDescription": {
-                    "value": "Prompt For Email To Send Instructions To Reset Password"
+                    "value": "Enter registered username to receive password reset instructions"
                   }
                 },
                 "idUnique": "4ku0h03hy3"
@@ -4164,7 +4164,7 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "Password Reset Success"
+                    "value": "Password Reset Successful"
                   },
                   "customCSS": {
                     "value": ":root {\n  --animation-dimension: 120px;\n  --animation-start-color: #71e171;\n  --animation-midway-color: #67d067;\n  --animation-finish-color: #59b259;\n}\n\n.checkmark {\n  width: var(--animation-dimension);\n  height: var(--animation-dimension);\n  border-radius: 50%;\n  display: block;\n  stroke-width: 5;\n  stroke: #ffffff;\n  stroke-miterlimit: 10;\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);\n  animation: fill 0.4s ease-in-out 0.4s forwards,\n    scale 0.3s ease-in-out 0.9s both;\n}\n\n.checkmarkCircle {\n  stroke-dasharray: 166;\n  stroke-dashoffset: 166;\n  stroke-width: 5;\n  stroke-miterlimit: 10;\n  stroke: var(--animation-finish-color);\n  fill: none;\n  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards,\n    colorChange 1.2s ease-in-out forwards;\n}\n\n.checkmarkCheck {\n  transform-origin: 50% 50%;\n  stroke-dasharray: 48;\n  stroke-dashoffset: 48;\n  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards,\n    colorChange 0.6s ease-in-out 0.8s forwards;\n}\n\n@keyframes colorChange {\n  0% {\n    stroke: var(--animation-start-color);\n  }\n  50% {\n    stroke: var(--animation-midway-color);\n  } \n  100% {\n    stroke: var(--animation-finish-color);\n  }\n}\n\n@keyframes stroke {\n  100% {\n    stroke-dashoffset: 0;\n  }\n}\n@keyframes scale {\n  0%,\n  100% {\n    transform: none;\n  }\n  50% {\n    transform: scale3d(1.1, 1.1, 1);\n  }\n  70% {\n    transform: scale3d(0.98, 0.98, 1);\n  }\n  85% {\n    transform: scale3d(1.02, 1.02, 1);\n  }\n}\n@keyframes fill {\n  100% {\n    box-shadow: inset 0px 0px 0px 0px var(--animation-finish-color);\n  }\n}"
@@ -4183,7 +4183,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeDescription": {
-                    "value": "Success Message With Animated Checkmark"
+                    "value": "Password has been reset successfully!"
                   },
                   "textOne": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your password has been successfully updated.\"\n      }\n    ]\n  }\n]"
@@ -4606,7 +4606,7 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "Password Reset Success"
+                    "value": "Password Reset Successful"
                   },
                   "customCSS": {
                     "value": ":root {\n  --animation-dimension: 100px;\n  --animation-start-color: #71e171;\n  --animation-midway-color: #67d067;\n  --animation-finish-color: #59b259;\n}\n\n.checkmark {\n  width: var(--animation-dimension);\n  height: var(--animation-dimension);\n  border-radius: 50%;\n  display: block;\n  stroke-width: 5;\n  stroke: #ffffff;\n  stroke-miterlimit: 10;\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);\n  animation: fill 0.4s ease-in-out 0.4s forwards,\n    scale 0.3s ease-in-out 0.9s both;\n}\n\n.checkmarkCircle {\n  stroke-dasharray: 166;\n  stroke-dashoffset: 166;\n  stroke-width: 5;\n  stroke-miterlimit: 10;\n  stroke: var(--animation-finish-color);\n  fill: none;\n  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards,\n    colorChange 1.2s ease-in-out forwards;\n}\n\n.checkmarkCheck {\n  transform-origin: 50% 50%;\n  stroke-dasharray: 48;\n  stroke-dashoffset: 48;\n  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards,\n    colorChange 0.6s ease-in-out 0.8s forwards;\n}\n\n@keyframes colorChange {\n  0% {\n    stroke: var(--animation-start-color);\n  }\n  50% {\n    stroke: var(--animation-midway-color);\n  } \n  100% {\n    stroke: var(--animation-finish-color);\n  }\n}\n\n@keyframes stroke {\n  100% {\n    stroke-dashoffset: 0;\n  }\n}\n@keyframes scale {\n  0%,\n  100% {\n    transform: none;\n  }\n  50% {\n    transform: scale3d(1.1, 1.1, 1);\n  }\n  70% {\n    transform: scale3d(0.98, 0.98, 1);\n  }\n  85% {\n    transform: scale3d(1.02, 1.02, 1);\n  }\n}\n@keyframes fill {\n  100% {\n    box-shadow: inset 0px 0px 0px 0px var(--animation-finish-color);\n  }\n}"
@@ -4625,7 +4625,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeDescription": {
-                    "value": "Success message with animated checkmark"
+                    "value": "Password has been reset successfully!"
                   },
                   "textOne": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your password has been successfully updated.\"\n      }\n    ]\n  }\n]"
@@ -4695,7 +4695,7 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "Change Password Form"
+                    "value": "Change Password"
                   },
                   "customCSS": {},
                   "customScript": {
@@ -4705,7 +4705,7 @@
                     "value": []
                   },
                   "nodeDescription": {
-                    "value": "Prompt for existing and new password"
+                    "value": "Enter current password and new password"
                   },
                   "inputSchema": {
                     "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
@@ -4962,7 +4962,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: September 17th, 2024"
+                    "value": "Last Updated: October 2nd, 2024"
                   },
                   "width": {
                     "value": 240
@@ -5211,7 +5211,7 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "Registration Complete"
+                    "value": "Registration Successful"
                   },
                   "customCSS": {
                     "value": ":root {\n  --animation-dimension: 100px;\n  --animation-start-color: #71e171;\n  --animation-midway-color: #67d067;\n  --animation-finish-color: #59b259;\n}\n\n.checkmark {\n  width: var(--animation-dimension);\n  height: var(--animation-dimension);\n  border-radius: 50%;\n  display: block;\n  stroke-width: 5;\n  stroke: #ffffff;\n  stroke-miterlimit: 10;\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);\n  animation: fill 0.4s ease-in-out 0.4s forwards,\n    scale 0.3s ease-in-out 0.9s both;\n}\n\n.checkmarkCircle {\n  stroke-dasharray: 166;\n  stroke-dashoffset: 166;\n  stroke-width: 5;\n  stroke-miterlimit: 10;\n  stroke: var(--animation-finish-color);\n  fill: none;\n  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards,\n    colorChange 1.2s ease-in-out forwards;\n}\n\n.checkmarkCheck {\n  transform-origin: 50% 50%;\n  stroke-dasharray: 48;\n  stroke-dashoffset: 48;\n  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards,\n    colorChange 0.6s ease-in-out 0.8s forwards;\n}\n\n@keyframes colorChange {\n  0% {\n    stroke: var(--animation-start-color);\n  }\n  50% {\n    stroke: var(--animation-midway-color);\n  } \n  100% {\n    stroke: var(--animation-finish-color);\n  }\n}\n\n@keyframes stroke {\n  100% {\n    stroke-dashoffset: 0;\n  }\n}\n@keyframes scale {\n  0%,\n  100% {\n    transform: none;\n  }\n  50% {\n    transform: scale3d(1.1, 1.1, 1);\n  }\n  70% {\n    transform: scale3d(0.98, 0.98, 1);\n  }\n  85% {\n    transform: scale3d(1.02, 1.02, 1);\n  }\n}\n@keyframes fill {\n  100% {\n    box-shadow: inset 0px 0px 0px 0px var(--animation-finish-color);\n  }\n}"
@@ -5230,7 +5230,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeDescription": {
-                    "value": "Notify User Account Is Successfully Created"
+                    "value": "Account has been successfully created"
                   },
                   "oeInteractionCacheExpire": {
                     "value": false
@@ -5267,7 +5267,7 @@
                 "type": "trigger",
                 "properties": {
                   "nodeTitle": {
-                    "value": "Registration Form"
+                    "value": "Create Profile"
                   },
                   "formFieldsList": {
                     "value": [
@@ -5331,7 +5331,7 @@
                     ]
                   },
                   "nodeDescription": {
-                    "value": "Collect Name, Email, Password"
+                    "value": "Enter name, email, and password to create a new account"
                   },
                   "inputSchema": {
                     "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"title\"\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"textOne\"\n    },\n    \"textTwo\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text Two\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
@@ -5826,10 +5826,10 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "Account Locked Message"
+                    "value": "Account Locked"
                   },
                   "nodeDescription": {
-                    "value": "Notify when account will unlock"
+                    "value": "Account is locked. Please wait until it unlocks or contact support."
                   },
                   "oeInteractionCacheExpire": {
                     "value": false
