@@ -9,10 +9,10 @@
         "pingOneAuthenticationConnector",
         "nodeConnector"
       ],
-      "createdDate": 1726605702337,
+      "createdDate": 1728388521271,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: October 2nd, 2024",
+      "description": "Last Updated: October 9th, 2024",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Session Main Flow",
@@ -40,8 +40,8 @@
       "trigger": {
         "type": "AUTHENTICATION"
       },
-      "updatedDate": 1726605705019,
-      "flowId": "e02bdc51904228ec156d7782ddbc59f2",
+      "updatedDate": 1728388523259,
+      "flowId": "c5b1f18bbc31994d68fced4174081e8e",
       "versionId": 1,
       "graphData": {
         "elements": {
@@ -307,7 +307,7 @@
                   "subFlowId": {
                     "value": {
                       "label": "PingOne Sign On with Registration, Password Reset and Recovery",
-                      "value": "5266b98ae6b91bb48fcf5ca661a76ca8"
+                      "value": "db64cda1e86bf4578c0f5af29b5a50d7"
                     }
                   },
                   "subFlowVersionId": {
@@ -640,7 +640,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: October 2nd, 2024"
+                    "value": "Last Updated: October 9th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -835,10 +835,10 @@
         }
       },
       "flowColor": "#ff661c",
-      "savedDate": 1726605702190,
+      "savedDate": 1728388521159,
       "variables": [],
       "connections": [],
-      "parentFlowId": "e02bdc51904228ec156d7782ddbc59f2"
+      "parentFlowId": "c5b1f18bbc31994d68fced4174081e8e"
     },
     {
       "companyId": "",
@@ -852,10 +852,10 @@
         "httpConnector",
         "variablesConnector"
       ],
-      "createdDate": 1726605616333,
+      "createdDate": 1728388484340,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: October 2nd, 2024",
+      "description": "Last Updated: October 9th, 2024",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -890,8 +890,8 @@
       },
       "timeouts": "null",
       "trigger": {},
-      "updatedDate": 1726605620126,
-      "flowId": "5266b98ae6b91bb48fcf5ca661a76ca8",
+      "updatedDate": 1728388488615,
+      "flowId": "db64cda1e86bf4578c0f5af29b5a50d7",
       "versionId": 1,
       "graphData": {
         "elements": {
@@ -2207,7 +2207,7 @@
                     "value": []
                   },
                   "nodeTitle": {
-                    "value": "Verify Email"
+                    "value": "Verification Code"
                   },
                   "formFieldsList": {
                     "value": [
@@ -2241,7 +2241,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter the code that was emailed to you to verify your email address.\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeDescription": {
-                    "value": "Enter the verification code or resend if verification code is not received"
+                    "value": "Enter the code that was emailed to verify your email address"
                   }
                 },
                 "idUnique": "mc0qvitm1n"
@@ -3350,7 +3350,7 @@
                     "value": []
                   },
                   "nodeDescription": {
-                    "value": "Enter the recovery code and a set a new password to complete the reset."
+                    "value": "Enter the recovery code and create a password to complete the reset"
                   },
                   "inputSchema": {
                     "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"resendMessage\": {\n      \"type\": \"string\",\n      \"displayName\": \"Resend Message\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
@@ -3918,7 +3918,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Recover Your Account\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeDescription": {
-                    "value": "Enter registered username to receive password reset instructions"
+                    "value": "Enter username to receive password reset instructions"
                   }
                 },
                 "idUnique": "4ku0h03hy3"
@@ -4164,7 +4164,7 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "Password Reset Successful"
+                    "value": "Password Reset Success"
                   },
                   "customCSS": {
                     "value": ":root {\n  --animation-dimension: 120px;\n  --animation-start-color: #71e171;\n  --animation-midway-color: #67d067;\n  --animation-finish-color: #59b259;\n}\n\n.checkmark {\n  width: var(--animation-dimension);\n  height: var(--animation-dimension);\n  border-radius: 50%;\n  display: block;\n  stroke-width: 5;\n  stroke: #ffffff;\n  stroke-miterlimit: 10;\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);\n  animation: fill 0.4s ease-in-out 0.4s forwards,\n    scale 0.3s ease-in-out 0.9s both;\n}\n\n.checkmarkCircle {\n  stroke-dasharray: 166;\n  stroke-dashoffset: 166;\n  stroke-width: 5;\n  stroke-miterlimit: 10;\n  stroke: var(--animation-finish-color);\n  fill: none;\n  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards,\n    colorChange 1.2s ease-in-out forwards;\n}\n\n.checkmarkCheck {\n  transform-origin: 50% 50%;\n  stroke-dasharray: 48;\n  stroke-dashoffset: 48;\n  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards,\n    colorChange 0.6s ease-in-out 0.8s forwards;\n}\n\n@keyframes colorChange {\n  0% {\n    stroke: var(--animation-start-color);\n  }\n  50% {\n    stroke: var(--animation-midway-color);\n  } \n  100% {\n    stroke: var(--animation-finish-color);\n  }\n}\n\n@keyframes stroke {\n  100% {\n    stroke-dashoffset: 0;\n  }\n}\n@keyframes scale {\n  0%,\n  100% {\n    transform: none;\n  }\n  50% {\n    transform: scale3d(1.1, 1.1, 1);\n  }\n  70% {\n    transform: scale3d(0.98, 0.98, 1);\n  }\n  85% {\n    transform: scale3d(1.02, 1.02, 1);\n  }\n}\n@keyframes fill {\n  100% {\n    box-shadow: inset 0px 0px 0px 0px var(--animation-finish-color);\n  }\n}"
@@ -4183,7 +4183,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeDescription": {
-                    "value": "Password has been reset successfully!"
+                    "value": "Password has been reset successfully"
                   },
                   "textOne": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your password has been successfully updated.\"\n      }\n    ]\n  }\n]"
@@ -4606,7 +4606,7 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "Password Reset Successful"
+                    "value": "Password Reset Success"
                   },
                   "customCSS": {
                     "value": ":root {\n  --animation-dimension: 100px;\n  --animation-start-color: #71e171;\n  --animation-midway-color: #67d067;\n  --animation-finish-color: #59b259;\n}\n\n.checkmark {\n  width: var(--animation-dimension);\n  height: var(--animation-dimension);\n  border-radius: 50%;\n  display: block;\n  stroke-width: 5;\n  stroke: #ffffff;\n  stroke-miterlimit: 10;\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);\n  animation: fill 0.4s ease-in-out 0.4s forwards,\n    scale 0.3s ease-in-out 0.9s both;\n}\n\n.checkmarkCircle {\n  stroke-dasharray: 166;\n  stroke-dashoffset: 166;\n  stroke-width: 5;\n  stroke-miterlimit: 10;\n  stroke: var(--animation-finish-color);\n  fill: none;\n  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards,\n    colorChange 1.2s ease-in-out forwards;\n}\n\n.checkmarkCheck {\n  transform-origin: 50% 50%;\n  stroke-dasharray: 48;\n  stroke-dashoffset: 48;\n  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards,\n    colorChange 0.6s ease-in-out 0.8s forwards;\n}\n\n@keyframes colorChange {\n  0% {\n    stroke: var(--animation-start-color);\n  }\n  50% {\n    stroke: var(--animation-midway-color);\n  } \n  100% {\n    stroke: var(--animation-finish-color);\n  }\n}\n\n@keyframes stroke {\n  100% {\n    stroke-dashoffset: 0;\n  }\n}\n@keyframes scale {\n  0%,\n  100% {\n    transform: none;\n  }\n  50% {\n    transform: scale3d(1.1, 1.1, 1);\n  }\n  70% {\n    transform: scale3d(0.98, 0.98, 1);\n  }\n  85% {\n    transform: scale3d(1.02, 1.02, 1);\n  }\n}\n@keyframes fill {\n  100% {\n    box-shadow: inset 0px 0px 0px 0px var(--animation-finish-color);\n  }\n}"
@@ -4625,7 +4625,7 @@
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success\"\n      }\n    ]\n  }\n]"
                   },
                   "nodeDescription": {
-                    "value": "Password has been reset successfully!"
+                    "value": "Password has been reset successfully"
                   },
                   "textOne": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Your password has been successfully updated.\"\n      }\n    ]\n  }\n]"
@@ -4962,7 +4962,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: October 2nd, 2024"
+                    "value": "Last Updated: October 9th, 2024"
                   },
                   "width": {
                     "value": 240
@@ -5211,7 +5211,7 @@
                     ]
                   },
                   "nodeTitle": {
-                    "value": "Registration Successful"
+                    "value": "Registration Success"
                   },
                   "customCSS": {
                     "value": ":root {\n  --animation-dimension: 100px;\n  --animation-start-color: #71e171;\n  --animation-midway-color: #67d067;\n  --animation-finish-color: #59b259;\n}\n\n.checkmark {\n  width: var(--animation-dimension);\n  height: var(--animation-dimension);\n  border-radius: 50%;\n  display: block;\n  stroke-width: 5;\n  stroke: #ffffff;\n  stroke-miterlimit: 10;\n  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);\n  animation: fill 0.4s ease-in-out 0.4s forwards,\n    scale 0.3s ease-in-out 0.9s both;\n}\n\n.checkmarkCircle {\n  stroke-dasharray: 166;\n  stroke-dashoffset: 166;\n  stroke-width: 5;\n  stroke-miterlimit: 10;\n  stroke: var(--animation-finish-color);\n  fill: none;\n  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards,\n    colorChange 1.2s ease-in-out forwards;\n}\n\n.checkmarkCheck {\n  transform-origin: 50% 50%;\n  stroke-dasharray: 48;\n  stroke-dashoffset: 48;\n  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards,\n    colorChange 0.6s ease-in-out 0.8s forwards;\n}\n\n@keyframes colorChange {\n  0% {\n    stroke: var(--animation-start-color);\n  }\n  50% {\n    stroke: var(--animation-midway-color);\n  } \n  100% {\n    stroke: var(--animation-finish-color);\n  }\n}\n\n@keyframes stroke {\n  100% {\n    stroke-dashoffset: 0;\n  }\n}\n@keyframes scale {\n  0%,\n  100% {\n    transform: none;\n  }\n  50% {\n    transform: scale3d(1.1, 1.1, 1);\n  }\n  70% {\n    transform: scale3d(0.98, 0.98, 1);\n  }\n  85% {\n    transform: scale3d(1.02, 1.02, 1);\n  }\n}\n@keyframes fill {\n  100% {\n    box-shadow: inset 0px 0px 0px 0px var(--animation-finish-color);\n  }\n}"
@@ -5829,7 +5829,7 @@
                     "value": "Account Locked"
                   },
                   "nodeDescription": {
-                    "value": "Account is locked. Please wait until it unlocks or contact support."
+                    "value": "Account has been locked due to too many unsuccessful sign-on attempts"
                   },
                   "oeInteractionCacheExpire": {
                     "value": false
@@ -8381,7 +8381,7 @@
       },
       "inputSchema": [],
       "flowColor": "#CACED3",
-      "savedDate": 1726605615932,
+      "savedDate": 1728388484203,
       "variables": [
         {
           "context": "flowInstance",
@@ -8397,7 +8397,7 @@
           "type": "property",
           "visibility": "private",
           "name": "companyLogo##SK##flowInstance",
-          "companyId": ""
+          "companyId": "79182d86-c7c1-44c5-8b8e-45119b67791d"
         },
         {
           "context": "flowInstance",
@@ -8413,7 +8413,7 @@
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
-          "companyId": ""
+          "companyId": "79182d86-c7c1-44c5-8b8e-45119b67791d"
         }
       ]
     }
