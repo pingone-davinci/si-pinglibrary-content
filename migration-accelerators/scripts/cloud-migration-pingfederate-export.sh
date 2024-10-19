@@ -11,8 +11,8 @@
 #  1. URI of the PingFederate Admin API
 #  2. API Username (Example: api-admin)
 #  3. API Password
+#  4. Password to encrypt signing certificates
 #
-
 # Copyright © 2024 Ping Identity Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,11 +27,31 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ###################################################################
+check_command() {
+    if ! command -v $1 &> /dev/null; then
+        error "$1 command not found. Please install '$1'."
+    fi
+}
+
+check_command jq
+check_command curl
+check_command tr
+check_command fold
+check_command head
+check_command grep
+check_command sed
+check_command sort
+check_command printf
+check_command cat
+check_command zip
+check_command mktemp
+
 TMP_DIR=$(mktemp -d) &&
+    DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
     EXPORT_DIR="${TMP_DIR}/${PRODUCT}" && mkdir -p "${EXPORT_DIR}" &&
     KEYS_DIR="${EXPORT_DIR}/signingKeys" && mkdir -p "${KEYS_DIR}" &&
-    ZIP_FILE="${PRODUCT}-$(date +"%y%m%d-%H%M%S").zip"
+    ZIP_FILE="${PRODUCT}-${DATE}.zip"
 
 MIN_PF_VERSION="11.3"
 
@@ -44,12 +64,27 @@ error() {
     exit 1
 }
 
+# Function to generate a random alphanumeric string of length 12
+generate_password() {
+    pw=""
+
+    while true; do
+        pw=$(LC_ALL=C tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 12 | head -n 1)
+
+        if grep -q '[A-Z]' <<<"$pw" && grep -q '[a-z]' <<<"$pw" && grep -q '[0-9]' <<<"$pw"; then
+            break
+        fi
+    done
+
+    echo "$pw"
+}
+
 echo "
 ###################################################################
 #                    Cloud Migration Tool                         #
 #     https://library.pingidentity.com/page/cloud-migration       #
 #                                                                 #
-#       Extract PingFederate Configuration & Signing Keys         #
+#       Extract PingFederate Configuration & Signing Certs        #
 #                                                                 #
 # This script exports a PingFederate configuration and signing    #
 # keys from the PingFederate Admin API.                           #
@@ -59,9 +94,12 @@ echo "
 # 1. URI of the PingFederate Admin API                            #
 # 2. API Username (Example: api-admin)                            #
 # 3. API Password                                                 #
+# 4. Password to encrypt signing certificates                     #
 #                                                                 #
 # The script will then extract the configuration and signing keys #
 # and save them to a zip file in the current directory.           #
+# To protect the security of encrypted signing certs, a password  #
+# will be generated or you can enter one for each cert.           #
 ###################################################################
 "
 
@@ -73,14 +111,11 @@ if [ -z "${uri}" ] || [ -z "${apiUsername}" ] || [ -z "${apiPassword}" ]; then
     error "Missing required input"
 fi
 
-uri="https://pingfederate-admin-facile-migration-assistant.ping-devops.com"
-apiUsername="api-admin"
-apiPassword="2FederateM0re"
-
 curl_cmd() {
-    echo "     extracting: ${2}..."
+    printf "."
+    #echo "     extracting: ${2}..."
     url="${uri}/pf-admin-api/v1${2}"
-    curl -X $1 "${url}" \
+    curl -k -X $1 "${url}" \
         --connect-timeout 5 --max-time 20 \
         -H "Content-Type: application/json" \
         -H "X-XSRF-Header: pingfederate" \
@@ -105,13 +140,15 @@ isValidVersion() {
 
 echo
 echo "Exporting configuration..."
-echo "  connecting to: ${uri}"
+echo "      URL: ${uri}"
 curl_cmd GET "/version" "" "${EXPORT_DIR}/version.json"
 
 pfVersion=$(cat "${EXPORT_DIR}/version.json" | grep -o '"version":"[^"]*"' | sed 's/"version":"\([^"]*\)"/\1/')
-echo "pfVersion = ${pfVersion}"
+
 if ! isValidVersion "${pfVersion}"; then
     error "PingFederate version must be ${MIN_PF_VERSION} or higher.  Current Version: $pfVersion"
+else
+    printf "\r  Version: ${pfVersion}\n"
 fi
 
 curl_cmd GET "/bulk/export" "" "${EXPORT_DIR}/bulk-export.json"
@@ -121,14 +158,106 @@ curl_cmd GET "/configStore/cors-configuration" "" "${EXPORT_DIR}/cors-configurat
 
 curl_cmd GET "/keyPairs/signing" "" "${EXPORT_DIR}/signingKeys.json"
 
+echo "
+###################################################################
+#                     Signing Certificates
+#"
+
+printf "#  %-8s  %-60s\n" "STATUS" "Signing Certificate Subject DN"
+printf "#  %-8s  %-60s\n" "========" "================================================="
 for id in $(cat "${EXPORT_DIR}/signingKeys.json" | jq -r .items[].id); do
-    curl_cmd POST "/keyPairs/signing/$id/pkcs12" "{\"password\":\"${apiPassword}\"}" "${KEYS_DIR}/$id.p12"
+    subjectDN=$(cat "${EXPORT_DIR}/signingKeys.json" | jq -r ".items[] | select(.id == \"$id\") | .subjectDN")
+    certStatus=$(cat "${EXPORT_DIR}/signingKeys.json" | jq -r ".items[] | select(.id == \"$id\") | .status")
+
+    printf "#  %-8s  %-60s\n" "${certStatus}" "${subjectDN}"
 done
+echo "###################################################################"
+
+echo "
+###################################################################
+# Valid signing certs will be exported to migrate SAML apps.      #
+#                                                                 #
+# A password will be required to protect the certs.               #
+# Protect and store your password securely.                       #
+#                                                                 #
+# A password will be generated or you can enter one as long       #
+# as it meets the following policy.  To accept generated password #
+# simply press enter.  The password entered below will be         #
+# displayed in summary so they can be copied for later use.       #
+#                                                                 #
+# PASSWORD POLICY: Must contain:                                  #
+#   - at least 8 characters                                       #
+#   - at least one uppercase letter                               #
+#   - at least one lowercase letter                               #
+#   - at least one numeric character                              #
+#                                                                 #
+# IMPORTANT: You will be prompted for the password when           #
+#            the signing certificates are created in PingOne.     #
+#            The migration process will not save passwords.       #
+###################################################################
+"
+
+generatedPassword=$(generate_password)
+signingPassword="${generatedPassword}"
+
+while true; do
+    read -r -p "Enter a password to encrypt signing cerficates [${signingPassword}] ? " signingPassword
+    echo # For newline after the password input
+
+    if [ "${signingPassword}" = "" ]; then
+        signingPassword="${generatedPassword}"
+    else
+        generatedPassword="${signingPassword}"
+    fi
+
+    # Check for lowercase
+    if ! echo "$signingPassword" | grep -q '[a-z]'; then
+        echo "Password must contain at least one lowercase letter."
+    # Check for uppercase
+    elif ! echo "$signingPassword" | grep -q '[A-Z]'; then
+        echo "Password must contain at least one uppercase letter."
+    # Check for digits
+    elif ! echo "$signingPassword" | grep -q '[0-9]'; then
+        echo "Password must contain at least one digit."
+    # Check for length
+    elif [[ ${#signingPassword} -lt 8 ]]; then
+        echo "Password must be at least 8 characters long."
+    else
+        break
+    fi
+done
+
+printf "Exporting encrypted signing certificates"
+
+for id in $(cat "${EXPORT_DIR}/signingKeys.json" | jq -r .items[].id); do
+    subjectDN=$(cat "${EXPORT_DIR}/signingKeys.json" | jq -r ".items[] | select(.id == \"$id\") | .subjectDN")
+    certStatus=$(cat "${EXPORT_DIR}/signingKeys.json" | jq -r ".items[] | select(.id == \"$id\") | .status")
+
+    if [ "${certStatus}" != "VALID" ]; then
+        continue
+    fi
+
+    curl_cmd POST "/keyPairs/signing/$id/pkcs12" "{\"password\":\"${signingPassword}\"}" "${KEYS_DIR}/$id.p12"
+
+    grep -q "validation_error" "${KEYS_DIR}/$id.p12" || continue
+
+    echo "Password doesn't meet policy for ${subjectDN}.  Unable to export certificate."
+    echo
+done
+
+echo
+echo "
+###################################################################
+#                  Cloud Migration Tool Summary
+#"
+printf "#    Configuration File: %-40s\n" "${ZIP_FILE}"
+printf "# Singing Cert Password: %s\n" "${signingPassword}"
+echo "#
+# Passwords generated/entered for each Signing Certificate
+# are displayed below. Copy these passwords for later use.
+#"
+
+echo "###################################################################"
 
 (cd "${EXPORT_DIR}/.." && zip -rq "${ZIP_FILE}" "${PRODUCT}")
 cp "${EXPORT_DIR}/../${ZIP_FILE}" .
-echo
-echo "Save configration to: ${ZIP_FILE}"
-echo
-echo "You can now upload this to the Ping Library Cloud Migration tool"
-
