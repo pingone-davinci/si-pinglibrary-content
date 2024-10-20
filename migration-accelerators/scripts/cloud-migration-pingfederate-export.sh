@@ -29,7 +29,7 @@
 ###################################################################
 check_command() {
     if
-        ! command -v $1 &
+        ! command -v "$1" &
         > /dev/null
     then
         error "$1 command not found. Please install '$1'."
@@ -125,7 +125,7 @@ curl_cmd() {
         -H "Content-Type: application/json" \
         -H "X-XSRF-Header: pingfederate" \
         -d "$3" \
-        -u ${apiUsername}:${apiPassword} 1> "${4}" 2> ${CURL_ERROR_FILE}
+        -u "${apiUsername}:${apiPassword}" 1> "${4}" 2> "${CURL_ERROR_FILE}"
 
     if [ $? -ne 0 ]; then
         error "Failed to extract ${url}
@@ -141,8 +141,8 @@ curl_cmd() {
 isValidVersion() {
     version=$1
 
-    printf "%s\n%s\n" "$MIN_PF_VERSION" "$version" > $TMP_DIR/versions
-    if [ "$(cat $TMP_DIR/versions | sort -V | head -n1)" = "$MIN_PF_VERSION" ]; then
+    printf "%s\n%s\n" "$MIN_PF_VERSION" "$version" > "$TMP_DIR/versions"
+    if [ "$(sort -V "$TMP_DIR/versions" | head -n1)" = "$MIN_PF_VERSION" ]; then
         return 0 # Version is greater than or equal to min_version
     else
         return 1 # Version is less than min_version
@@ -154,12 +154,12 @@ echo "Exporting configuration..."
 echo "      URL: ${uri}"
 curl_cmd GET "/version" "" "${EXPORT_DIR}/version.json"
 
-pfVersion=$(cat "${EXPORT_DIR}/version.json" | grep -o '"version":"[^"]*"' | sed 's/"version":"\([^"]*\)"/\1/')
+pfVersion=$(grep -o '"version":"[^"]*"' "${EXPORT_DIR}/version.json" | sed 's/"version":"\([^"]*\)"/\1/')
 
 if ! isValidVersion "${pfVersion}"; then
     error "PingFederate version must be ${MIN_PF_VERSION} or higher.  Current Version: $pfVersion"
 else
-    printf "\r  Version: ${pfVersion}\n"
+    printf "\r  Version: %s\n" "${pfVersion}"
 fi
 
 curl_cmd GET "/oauth/clients" "" "${EXPORT_DIR}/oauth-clients.json"
@@ -175,9 +175,9 @@ echo "
 
 printf "#  %-8s  %-60s\n" "STATUS" "Signing Certificate Subject DN"
 printf "#  %-8s  %-60s\n" "========" "================================================="
-for id in $(cat "${EXPORT_DIR}/signingKeys.json" | jq -r .items[].id); do
-    subjectDN=$(cat "${EXPORT_DIR}/signingKeys.json" | jq -r ".items[] | select(.id == \"$id\") | .subjectDN")
-    certStatus=$(cat "${EXPORT_DIR}/signingKeys.json" | jq -r ".items[] | select(.id == \"$id\") | .status")
+for id in $(jq -r .items[].id "${EXPORT_DIR}/signingKeys.json"); do
+    subjectDN=$(jq -r ".items[] | select(.id == \"$id\") | .subjectDN" "${EXPORT_DIR}/signingKeys.json")
+    certStatus=$(jq -r ".items[] | select(.id == \"$id\") | .status" "${EXPORT_DIR}/signingKeys.json")
 
     printf "#  %-8s  %-60s\n" "${certStatus}" "${subjectDN}"
 done
@@ -235,9 +235,9 @@ done
 
 printf "Exporting encrypted signing certificates"
 
-for id in $(cat "${EXPORT_DIR}/signingKeys.json" | jq -r .items[].id); do
-    subjectDN=$(cat "${EXPORT_DIR}/signingKeys.json" | jq -r ".items[] | select(.id == \"$id\") | .subjectDN")
-    certStatus=$(cat "${EXPORT_DIR}/signingKeys.json" | jq -r ".items[] | select(.id == \"$id\") | .status")
+for id in $(jq -r .items[].id "${EXPORT_DIR}/signingKeys.json"); do
+    subjectDN=$(jq -r ".items[] | select(.id == \"$id\") | .subjectDN" "${EXPORT_DIR}/signingKeys.json")
+    certStatus=$(jq -r ".items[] | select(.id == \"$id\") | .status" "${EXPORT_DIR}/signingKeys.json")
 
     if [ "${certStatus}" != "VALID" ]; then
         continue
