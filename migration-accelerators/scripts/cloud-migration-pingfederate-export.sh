@@ -28,7 +28,10 @@
 # limitations under the License.
 ###################################################################
 check_command() {
-    if ! command -v $1 &> /dev/null; then
+    if
+        ! command -v $1 &
+        > /dev/null
+    then
         error "$1 command not found. Please install '$1'."
     fi
 }
@@ -73,7 +76,7 @@ generate_password() {
     while true; do
         pw=$(LC_ALL=C tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 12 | head -n 1)
 
-        if grep -q '[A-Z]' <<<"$pw" && grep -q '[a-z]' <<<"$pw" && grep -q '[0-9]' <<<"$pw"; then
+        if echo "$pw" | grep -q '[A-Z]' && echo "$pw" | grep -q '[a-z]' && echo "$pw" | grep -q '[0-9]'; then
             break
         fi
     done
