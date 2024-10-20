@@ -49,6 +49,7 @@ check_command mktemp
 TMP_DIR=$(mktemp -d) &&
     DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
+    CURL_ERROR_FILE="${TMP_DIR}/curl-error" && touch "${CURL_ERROR_FILE}" &&
     EXPORT_DIR="${TMP_DIR}/${PRODUCT}" && mkdir -p "${EXPORT_DIR}" &&
     KEYS_DIR="${EXPORT_DIR}/signingKeys" && mkdir -p "${KEYS_DIR}" &&
     ZIP_FILE="${PRODUCT}-${DATE}.zip"
@@ -61,6 +62,7 @@ error() {
     echo
     echo "ERROR: ${1}"
     echo
+    cat "${CURL_ERROR_FILE}"
     exit 1
 }
 
@@ -115,15 +117,21 @@ curl_cmd() {
     printf "."
     #echo "     extracting: ${2}..."
     url="${uri}/pf-admin-api/v1${2}"
-    curl -k -X $1 "${url}" \
+    curl -sS -X $1 "${url}" \
         --connect-timeout 5 --max-time 20 \
         -H "Content-Type: application/json" \
         -H "X-XSRF-Header: pingfederate" \
         -d "$3" \
-        -u ${apiUsername}:${apiPassword} 1> "${4}" 2> /dev/null
+        -u ${apiUsername}:${apiPassword} 1> "${4}" 2> ${CURL_ERROR_FILE}
 
     if [ $? -ne 0 ]; then
-        error "Failed to extract ${url}"
+        error "Failed to extract ${url}
+    Possble issues:
+      - Invalid URI
+      - Invalid API Username or Password
+      - PingFederate Admin API is not enabled
+      - Network connectivity issues (i.e. vpn)
+      - Certificate issues (use ~/.curlrc with insecure option)"
     fi
 }
 
@@ -151,7 +159,6 @@ else
     printf "\r  Version: ${pfVersion}\n"
 fi
 
-curl_cmd GET "/bulk/export" "" "${EXPORT_DIR}/bulk-export.json"
 curl_cmd GET "/oauth/clients" "" "${EXPORT_DIR}/oauth-clients.json"
 curl_cmd GET "/idp/spConnections" "" "${EXPORT_DIR}/idp-spConnections.json"
 curl_cmd GET "/configStore/cors-configuration" "" "${EXPORT_DIR}/cors-configuration.json"
@@ -210,16 +217,12 @@ while true; do
         generatedPassword="${signingPassword}"
     fi
 
-    # Check for lowercase
     if ! echo "$signingPassword" | grep -q '[a-z]'; then
         echo "Password must contain at least one lowercase letter."
-    # Check for uppercase
     elif ! echo "$signingPassword" | grep -q '[A-Z]'; then
         echo "Password must contain at least one uppercase letter."
-    # Check for digits
     elif ! echo "$signingPassword" | grep -q '[0-9]'; then
         echo "Password must contain at least one digit."
-    # Check for length
     elif [[ ${#signingPassword} -lt 8 ]]; then
         echo "Password must be at least 8 characters long."
     else
