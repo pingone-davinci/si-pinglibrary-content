@@ -27,28 +27,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ###################################################################
-check_command() {
-    if
-        ! command -v "$1" &
-        > /dev/null
-    then
-        error "$1 command not found. Please install '$1'."
-    fi
-}
-
-check_command jq
-check_command curl
-check_command tr
-check_command fold
-check_command head
-check_command grep
-check_command sed
-check_command sort
-check_command printf
-check_command cat
-check_command zip
-check_command mktemp
-
 TMP_DIR=$(mktemp -d) &&
     DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
@@ -68,6 +46,25 @@ error() {
     cat "${CURL_ERROR_FILE}"
     exit 1
 }
+check_command() {
+    command -v "$1" 1> /dev/null 2> /dev/null
+    if [ $? -ne 0 ]; then
+        error "$1 command not found. Please install '$1'."
+    fi
+}
+
+check_command jq
+check_command curl
+check_command tr
+check_command fold
+check_command head
+check_command grep
+check_command sed
+check_command sort
+check_command printf
+check_command cat
+check_command zip
+check_command mktemp
 
 # Function to generate a random alphanumeric string of length 12
 generate_password() {
