@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.9/end-user-nano.css" />
+<div class="end-user-nano" style="background-color: var(--PINGONE-BLUE-WHITE)">
+  <div>
+    <div style="max-width: 400px; min-width: 400px; width: 100%">
+      <div style="position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-53%, 20%) rotate(-30deg);
+        font-size: 40px;
+        color: red;
+        font-weight: bold;
+        font-size: xx-large;
+        z-index: 1;
+        pointer-events: none;">EXAMPLE</div>
+      <div class="card shadow mb-5">
+        <main aria-labelledby="title">
+          <div class="card-body p-5 d-flex flex-column">
+            <img class="companyLogo align-self-center mb-5" id="_signOnExampleCompanyLogo"
+              src="${branding.companyLogo}" />
+
+            <h1 id="title" class="text-center mb-4">Sign On</h1>
+
+            <p class="text-muted text-center">
+              Welcome to
+              <span id="_signOnExampleCompanyName">${branding.companyName}</span>
+            </p>
+
+            <div class="mb-4 form-floating">
+              <input class="form-control" type="email" placeholder="Email Address" value="" aria-required="true"
+                aria-describedby="emailLabel" />
+              <label id="emailLabel" for="email">Email Address</label>
+            </div>
+            <div id="passwordDiv" class="mb-4 form-floating">
+              <input class="form-control" type="password" placeholder="Password" value="" aria-required="true"
+                aria-describedby="passwordLabel" />
+              <label id="passwordLabel" for="password">Password</label>
+            </div>
+            <div class="d-flex flex-column">
+              <button type="submit" class="btn btn-primary mb-3" id="btnSignIn">
+                Sign On
+              </button>
+              <button class="btn btn-link ${branding.accountRecovery ? '' : 'hide'}" id="_signOnExampleAccountRecovery">
+                Having Trouble Signing On?
+              </button>
+              <button class="btn btn-link ${branding.accountRegistration ? '' : 'hide'}"
+                id="_signOnExampleAccountRegistration">
+                No account ? Register now!
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>
