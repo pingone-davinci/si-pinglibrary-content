@@ -254,7 +254,7 @@ echo "
 #                  Cloud Migration Tool Summary
 #"
 printf "#    Configuration File: %-40s\n" "${ZIP_FILE}"
-printf "# Singing Cert Password: %s\n" "${signingPassword}"
+printf "# Signing Cert Password: %s\n" "${signingPassword}"
 echo "#
 # Passwords generated/entered for each Signing Certificate
 # are displayed below. Copy these passwords for later use.
