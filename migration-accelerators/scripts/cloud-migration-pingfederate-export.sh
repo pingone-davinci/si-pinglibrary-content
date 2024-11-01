@@ -30,10 +30,13 @@
 TMP_DIR=$(mktemp -d) &&
     DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
+    SCRIPT="$0" &&
+    SCRIPT_VERSION="1.0.0" &&
     CURL_ERROR_FILE="${TMP_DIR}/curl-error" && touch "${CURL_ERROR_FILE}" &&
-    EXPORT_DIR="${TMP_DIR}/${PRODUCT}" && mkdir -p "${EXPORT_DIR}" &&
+    EXPORT_DIR="${TMP_DIR}/export/${PRODUCT}" && mkdir -p "${EXPORT_DIR}" &&
     KEYS_DIR="${EXPORT_DIR}/signingKeys" && mkdir -p "${KEYS_DIR}" &&
-    ZIP_FILE="${PRODUCT}-${DATE}.zip"
+    ZIP_FILE="${PRODUCT}-${DATE}.zip" &&
+    SUMMARY_JSON="${EXPORT_DIR}/../summary.json" && touch "${SUMMARY_JSON}"
 
 MIN_PF_VERSION="11.3"
 
@@ -65,6 +68,7 @@ check_command printf
 check_command cat
 check_command zip
 check_command mktemp
+check_command uname
 
 # Function to generate a random alphanumeric string of length 12
 generate_password() {
@@ -262,5 +266,21 @@ echo "#
 
 echo "###################################################################"
 
-(cd "${EXPORT_DIR}/.." && zip -rq "${ZIP_FILE}" "${PRODUCT}")
+cat << EOSUMMARY > "${SUMMARY_JSON}"
+{
+    "script": {
+        "file": "${SCRIPT}",
+        "version": "${SCRIPT_VERSION}",
+        "uname": "$(uname -v)",
+        "minVersion": "${MIN_PF_VERSION}"
+    },
+    "zipFile": "${ZIP_FILE}",
+    "pingfederate": {
+        "uri": "${uri}",
+        "apiUsername": "${apiUsername}"
+    }
+}
+EOSUMMARY
+
+(cd "${EXPORT_DIR}/.." && zip -rq "${ZIP_FILE}" .)
 cp "${EXPORT_DIR}/../${ZIP_FILE}" .
