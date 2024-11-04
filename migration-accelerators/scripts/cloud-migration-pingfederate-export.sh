@@ -69,6 +69,7 @@ check_command cat
 check_command zip
 check_command mktemp
 check_command uname
+check_command shasum
 
 # Function to generate a random alphanumeric string of length 12
 generate_password() {
@@ -266,13 +267,16 @@ echo "#
 
 echo "###################################################################"
 
+SHA=$(shasum -U -a 256 "$0" | sed 's/ .*//')
+
 cat << EOSUMMARY > "${SUMMARY_JSON}"
 {
     "script": {
         "file": "${SCRIPT}",
         "version": "${SCRIPT_VERSION}",
         "uname": "$(uname -v)",
-        "minVersion": "${MIN_PF_VERSION}"
+        "minVersion": "${MIN_PF_VERSION}",
+        "sha": "${SHA}"
     },
     "zipFile": "${ZIP_FILE}",
     "pingfederate": {
