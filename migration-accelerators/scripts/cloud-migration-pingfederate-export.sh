@@ -118,6 +118,61 @@ if [ -z "${uri}" ] || [ -z "${apiUsername}" ] || [ -z "${apiPassword}" ]; then
     error "Missing required input"
 fi
 
+echo "
+###################################################################
+# Protection of your configuration is IMPORTANT. This includes    #
+#   - PingFederate configuration                                  #
+#   - Signing Certificates                                        #
+#                                                                 #
+# A Migration Ppassword will be required to protect and           #
+# validate the .zip file created by this script.                  #
+#                                                                 #
+# A password will be generated or you can enter one as long       #
+# as it meets the following policy.  To accept generated password #
+# simply press enter.  The password entered below will be         #
+# displayed in summary so they can be copied for later use.       #
+#                                                                 #
+# PASSWORD POLICY: Must contain:                                  #
+#   - at least 8 characters                                       #
+#   - at least one uppercase letter                               #
+#   - at least one lowercase letter                               #
+#   - at least one numeric character                              #
+#                                                                 #
+# IMPORTANT: You will be prompted for the this password:          #
+#               - To upload the .zip file created by this tool    #
+#               - Eventual import of any signing certifications   #
+#                 crated in PingOne.                              #
+#                                                                 #
+#            The migratio process will NOT save this password     #
+###################################################################
+"
+
+generatedPassword=$(generate_password)
+migPassword="${generatedPassword}"
+
+while true; do
+    read -r -p "Enter a Migration password [${migPassword}] ? " migPassword
+    echo # For newline after the password input
+
+    if [ "${migPassword}" = "" ]; then
+        migPassword="${generatedPassword}"
+    else
+        generatedPassword="${migPassword}"
+    fi
+
+    if ! echo "$migPassword" | grep -q '[a-z]'; then
+        echo "Password must contain at least one lowercase letter."
+    elif ! echo "$migPassword" | grep -q '[A-Z]'; then
+        echo "Password must contain at least one uppercase letter."
+    elif ! echo "$migPassword" | grep -q '[0-9]'; then
+        echo "Password must contain at least one digit."
+    elif [[ ${#migPassword} -lt 8 ]]; then
+        echo "Password must be at least 8 characters long."
+    else
+        break
+    fi
+done
+
 curl_cmd() {
     printf "."
     #echo "     extracting: ${2}..."
@@ -170,73 +225,6 @@ curl_cmd GET "/configStore/cors-configuration" "" "${EXPORT_DIR}/cors-configurat
 
 curl_cmd GET "/keyPairs/signing" "" "${EXPORT_DIR}/signingKeys.json"
 
-echo "
-###################################################################
-#                     Signing Certificates
-#"
-
-printf "#  %-8s  %-60s\n" "STATUS" "Signing Certificate Subject DN"
-printf "#  %-8s  %-60s\n" "========" "================================================="
-for id in $(jq -r .items[].id "${EXPORT_DIR}/signingKeys.json"); do
-    subjectDN=$(jq -r ".items[] | select(.id == \"$id\") | .subjectDN" "${EXPORT_DIR}/signingKeys.json")
-    certStatus=$(jq -r ".items[] | select(.id == \"$id\") | .status" "${EXPORT_DIR}/signingKeys.json")
-
-    printf "#  %-8s  %-60s\n" "${certStatus}" "${subjectDN}"
-done
-echo "###################################################################"
-
-echo "
-###################################################################
-# Valid signing certs will be exported to migrate SAML apps.      #
-#                                                                 #
-# A password will be required to protect the certs.               #
-# Protect and store your password securely.                       #
-#                                                                 #
-# A password will be generated or you can enter one as long       #
-# as it meets the following policy.  To accept generated password #
-# simply press enter.  The password entered below will be         #
-# displayed in summary so they can be copied for later use.       #
-#                                                                 #
-# PASSWORD POLICY: Must contain:                                  #
-#   - at least 8 characters                                       #
-#   - at least one uppercase letter                               #
-#   - at least one lowercase letter                               #
-#   - at least one numeric character                              #
-#                                                                 #
-# IMPORTANT: You will be prompted for the password when           #
-#            the signing certificates are created in PingOne.     #
-#            The migration process will not save passwords.       #
-###################################################################
-"
-
-generatedPassword=$(generate_password)
-signingPassword="${generatedPassword}"
-
-while true; do
-    read -r -p "Enter a password to encrypt signing cerficates [${signingPassword}] ? " signingPassword
-    echo # For newline after the password input
-
-    if [ "${signingPassword}" = "" ]; then
-        signingPassword="${generatedPassword}"
-    else
-        generatedPassword="${signingPassword}"
-    fi
-
-    if ! echo "$signingPassword" | grep -q '[a-z]'; then
-        echo "Password must contain at least one lowercase letter."
-    elif ! echo "$signingPassword" | grep -q '[A-Z]'; then
-        echo "Password must contain at least one uppercase letter."
-    elif ! echo "$signingPassword" | grep -q '[0-9]'; then
-        echo "Password must contain at least one digit."
-    elif [[ ${#signingPassword} -lt 8 ]]; then
-        echo "Password must be at least 8 characters long."
-    else
-        break
-    fi
-done
-
-printf "Exporting encrypted signing certificates"
-
 for id in $(jq -r .items[].id "${EXPORT_DIR}/signingKeys.json"); do
     subjectDN=$(jq -r ".items[] | select(.id == \"$id\") | .subjectDN" "${EXPORT_DIR}/signingKeys.json")
     certStatus=$(jq -r ".items[] | select(.id == \"$id\") | .status" "${EXPORT_DIR}/signingKeys.json")
@@ -245,7 +233,7 @@ for id in $(jq -r .items[].id "${EXPORT_DIR}/signingKeys.json"); do
         continue
     fi
 
-    curl_cmd POST "/keyPairs/signing/$id/pkcs12" "{\"password\":\"${signingPassword}\"}" "${KEYS_DIR}/$id.p12"
+    curl_cmd POST "/keyPairs/signing/$id/pkcs12" "{\"password\":\"${migPassword}\"}" "${KEYS_DIR}/$id.p12"
 
     grep -q "validation_error" "${KEYS_DIR}/$id.p12" || continue
 
@@ -259,15 +247,11 @@ echo "
 #                  Cloud Migration Tool Summary
 #"
 printf "#    Configuration File: %-40s\n" "${ZIP_FILE}"
-printf "# Signing Cert Password: %s\n" "${signingPassword}"
-echo "#
-# Passwords generated/entered for each Signing Certificate
-# are displayed below. Copy these passwords for later use.
-#"
-
+printf "#    Migration Password: %s\n" "${migPassword}"
 echo "###################################################################"
 
-SHA=$(shasum -U -a 256 "$0" | sed 's/ .*//')
+SCRIPT_SHA=$(shasum -U -a 256 "$0" | sed 's/ .*//')
+MIG_PW_SHA=$(printf "%s" "${migPassword}" | shasum -U -a 256 | sed 's/ .*//')
 
 cat << EOSUMMARY > "${SUMMARY_JSON}"
 {
@@ -276,8 +260,9 @@ cat << EOSUMMARY > "${SUMMARY_JSON}"
         "version": "${SCRIPT_VERSION}",
         "uname": "$(uname -v)",
         "minVersion": "${MIN_PF_VERSION}",
-        "sha": "${SHA}"
+        "sha": "${SCRIPT_SHA}"
     },
+    "migPWSHA": "${MIG_PW_SHA}",
     "zipFile": "${ZIP_FILE}",
     "pingfederate": {
         "uri": "${uri}",
