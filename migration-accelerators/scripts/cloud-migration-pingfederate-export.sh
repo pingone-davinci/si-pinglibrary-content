@@ -87,7 +87,7 @@ generate_password() {
 
 echo "
 ###################################################################
-#                    Cloud Migration Tool                         #
+#                Cloud Migration Tool (v ${SCRIPT_VERSION})                   #
 #     https://library.pingidentity.com/page/cloud-migration       #
 #                                                                 #
 #       Extract PingFederate Configuration & Signing Certs        #
