@@ -143,7 +143,7 @@ echo "
 #               - Eventual import of any signing certifications   #
 #                 crated in PingOne.                              #
 #                                                                 #
-#            The migratio process will NOT save this password     #
+#            The migration process will NOT save this password    #
 ###################################################################
 "
 
