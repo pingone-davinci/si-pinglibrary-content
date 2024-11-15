@@ -124,7 +124,7 @@ echo "
 #   - PingFederate configuration                                  #
 #   - Signing Certificates                                        #
 #                                                                 #
-# A Migration Ppassword will be required to protect and           #
+# A Migration Password will be required to protect and           #
 # validate the .zip file created by this script.                  #
 #                                                                 #
 # A password will be generated or you can enter one as long       #
@@ -138,12 +138,12 @@ echo "
 #   - at least one lowercase letter                               #
 #   - at least one numeric character                              #
 #                                                                 #
-# IMPORTANT: You will be prompted for the this password:          #
+# IMPORTANT: You will be later prompted for this password:        #
 #               - To upload the .zip file created by this tool    #
-#               - Eventual import of any signing certifications   #
-#                 crated in PingOne.                              #
+#               - Import of any signing certificates              #
+#                 created in PingOne.                             #
 #                                                                 #
-#            The migration process will NOT save this password    #
+#            Make note of this password as it will NOT be saved.  #
 ###################################################################
 "
 
