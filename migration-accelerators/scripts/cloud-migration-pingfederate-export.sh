@@ -124,7 +124,7 @@ echo "
 #   - PingFederate configuration                                  #
 #   - Signing Certificates                                        #
 #                                                                 #
-# A Migration Password will be required to protect and           #
+# A Migration Password will be required to protect and            #
 # validate the .zip file created by this script.                  #
 #                                                                 #
 # A password will be generated or you can enter one as long       #
