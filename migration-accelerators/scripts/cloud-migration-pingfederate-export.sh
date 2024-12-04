@@ -31,7 +31,7 @@ TMP_DIR=$(mktemp -d) &&
     DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
     SCRIPT="$0" &&
-    SCRIPT_VERSION="1.0.0" &&
+    SCRIPT_VERSION="1.0.1" &&
     CURL_ERROR_FILE="${TMP_DIR}/curl-error" && touch "${CURL_ERROR_FILE}" &&
     EXPORT_DIR="${TMP_DIR}/export/${PRODUCT}" && mkdir -p "${EXPORT_DIR}" &&
     KEYS_DIR="${EXPORT_DIR}/signingKeys" && mkdir -p "${KEYS_DIR}" &&
@@ -220,6 +220,7 @@ else
 fi
 
 curl_cmd GET "/oauth/clients" "" "${EXPORT_DIR}/oauth-clients.json"
+curl_cmd GET "/oauth/authServerSettings/scopes/commonScopes" "" "${EXPORT_DIR}/commonScopes.json"
 curl_cmd GET "/idp/spConnections" "" "${EXPORT_DIR}/idp-spConnections.json"
 curl_cmd GET "/configStore/cors-configuration" "" "${EXPORT_DIR}/cors-configuration.json"
 
