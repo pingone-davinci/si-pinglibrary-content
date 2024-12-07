@@ -56,6 +56,14 @@ check_command() {
     fi
 }
 
+if [[ "$(uname)" == "Darwin" ]]; then
+    check_command shasum
+    SHASUM="shasum -a 256"
+else
+    check_command sha256sum
+    SHASUM="sha256sum"
+fi
+
 check_command jq
 check_command curl
 check_command tr
@@ -69,7 +77,6 @@ check_command cat
 check_command zip
 check_command mktemp
 check_command uname
-check_command shasum
 
 # Function to generate a random alphanumeric string of length 12
 generate_password() {
@@ -251,8 +258,8 @@ printf "#    Configuration File: %-40s\n" "${ZIP_FILE}"
 printf "#    Migration Password: %s\n" "${migPassword}"
 echo "###################################################################"
 
-SCRIPT_SHA=$(shasum -U -a 256 "$0" | sed 's/ .*//')
-MIG_PW_SHA=$(printf "%s" "${migPassword}" | shasum -U -a 256 | sed 's/ .*//')
+SCRIPT_SHA=$($SHASUM "$0" | sed 's/ .*//')
+MIG_PW_SHA=$(printf "%s" "${migPassword}" | $SHASUM | sed 's/ .*//')
 
 cat << EOSUMMARY > "${SUMMARY_JSON}"
 {
