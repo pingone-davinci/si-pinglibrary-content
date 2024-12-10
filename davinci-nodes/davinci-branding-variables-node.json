@@ -1,0 +1,57 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "ckd67kijie",
+        "nodeType": "CONNECTION",
+        "connectionId": "06922a684039827499bdbdd97f49827b",
+        "connectorId": "variablesConnector",
+        "name": "Variables",
+        "label": "Variables",
+        "status": "configured",
+        "capabilityName": "saveValue",
+        "type": "trigger",
+        "properties": {
+          "saveVariables": {
+            "value": [
+              {
+                "name": "companyName",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Ping Identity\"\n      }\n    ]\n  }\n]",
+                "key": 0.2827866731051578,
+                "label": "companyName (string - flowInstance)",
+                "type": "string"
+              },
+              {
+                "name": "companyLogo",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                "key": 0.3651977481717872,
+                "label": "companyLogo (string - flowInstance)",
+                "type": "string"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Set Company & Logo"
+          },
+          "nodeDescription": {
+            "value": "Used for Form Logo and Text"
+          }
+        },
+        "idUnique": "3ugzhfz3ne"
+      },
+      "position": {
+        "x": 360,
+        "y": 240
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": []
+}

@@ -1,0 +1,208 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "0hdlkfl6xr",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "customHTML": {
+            "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"width:500px\">\n            <div class=\"card shadow mb-5\">\n                <main aria-labelledby=\"title\">\n                    <div class=\"card-body p-5 d-flex flex-column\">\n                        <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                        {{#if title}}\n                        <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n                        {{/if}}\n\n                        {{#if textOne}}\n                        <p class=\"text-muted text-center\">{{textOne}}</p>\n                        {{/if}}\n\n                        <!-- Generic Error Message -->\n                        <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle\"\n                            data-skcomponent=\"skerror\"></p>\n\n                        <div class=\"border overflow-auto\" style=\"max-height: 300px\" data-id=\"textblock\">\n                            <div id=\"agreementTextDiv\" class=\"p-3 prewrap\" tabindex=\"0\" role=\"document\">\n                                {{agreementText}}</div>\n                        </div>\n                        <form id='agreementForm' data-id=\"agreementForm\">\n                            <div class=\"mt-4 form-check d-flex justify-content-center\">\n                                <input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"agreeCheckBox\" aria-describedby=\"agreeCheckBoxLabel\">\n                                <label id=\"agreeCheckBoxLabel\" class=\"form-check-label ms-3 fs-5\" for=\"agreeCheckBox\">{{agreementCheckboxText}}</label>\n                            </div>\n                            <div class=\"d-flex flex-column mt-4\">\n                                <button id=\"acceptBtn\" data-id=\"accept-button\" type=\"accept\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                            data-skrequiredinputs=\"agreeCheckBox\" data-skform=\"agreementForm\" data-skbuttonvalue=\"ACCEPT\" class=\"btn btn-primary mb-3\" >\n                            {{#if acceptButtonLabel}}\n                                {{acceptButtonLabel}}\n                            {{else}}\n                                Accept \n                            {{/if}}\n                        </button>\n                                <button id=\"declineBtn\" data-id=\"decline-button\" type=\"\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                            data-skform=\"agreementForm\" data-skbuttonvalue=\"DECLINE\" class=\"btn\" >\n                            {{#if declineButtonLabel}}\n                                {{declineButtonLabel}}\n                            {{else}}\n                                Decline \n                            {{/if}}    \n                        </button>\n                            </div>\n                        </form>\n                    </div>\n                </main>\n            </div>\n        </div>\n    </div>\n</div>"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "PingOne Agreement Form"
+          },
+          "nodeDescription": {
+            "value": "Display PingOne Agreement"
+          },
+          "sktemplate": {
+            "uiId": "88cc7377c3b98cbc14c0ed0a60b1c970",
+            "createdDate": 1678722350806,
+            "customerId": "f3e47d945ae971a4b4142ec75012d155",
+            "description": "",
+            "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n\t\t\"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n\t\t\"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n        \"agreementText\": {\n            \"type\": \"string\",\n            \"displayName\": \"Agreement Text\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"agreementText\"\n        },\n        \"acceptButtonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Accept Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"acceptButtonLabel\"\n        },\n        \"declineButtonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Decline Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"declineButtonLabel\"\n        }\n    }\n}",
+            "name": "Agreements",
+            "outputSchema": null,
+            "script": "",
+            "style": "",
+            "template": "",
+            "updatedDate": 1678722565557,
+            "validationRules": [],
+            "version": "1.0",
+            "visibility": "private",
+            "companyId": "ee43f700-c751-494d-9dbf-70946a85b328",
+            "value": "88cc7377c3b98cbc14c0ed0a60b1c970"
+          },
+          "inputSchema": {
+            "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n\t\t\"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n        \"agreementText\": {\n            \"type\": \"string\",\n            \"displayName\": \"Agreement Text\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"agreementText\"\n        },\n        \"agreementCheckboxText\": {\n            \"type\": \"string\",\n            \"displayName\": \"Agreement Checkbox Text\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"agreementCheckboxText\"\n        },\n        \"acceptButtonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Accept Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"acceptButtonLabel\"\n        },\n        \"declineButtonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Decline Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"declineButtonLabel\"\n        }\n    }\n}"
+          },
+          "outputSchema": {
+            "value": {}
+          },
+          "customCSS": {
+            "value": " .prewrap {\n     white-space: pre-wrap\n }"
+          },
+          "customScript": {
+            "value": ""
+          },
+          "validationRules": {
+            "value": []
+          },
+          "agreementTitle": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"End User Agreement\"\n      }\n    ]\n  }\n]"
+          },
+          "title": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"End User Agreement\"\n      }\n    ]\n  }\n]"
+          },
+          "textOne": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please review and accept the agreement before proceeding.\"\n      }\n    ]\n  }\n]"
+          },
+          "acceptButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Accept\"\n      }\n    ]\n  }\n]"
+          },
+          "declineButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Decline\"\n      }\n    ]\n  }\n]"
+          },
+          "agreementCheckboxText": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"I have read and agree to the terms and conditions.\"\n      }\n    ]\n  }\n]"
+          }
+        },
+        "idUnique": "a0yf1wqul8"
+      },
+      "position": {
+        "x": 960,
+        "y": 390
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "kzjah6jv0k",
+        "nodeType": "EVAL",
+        "label": "Evaluator"
+      },
+      "position": {
+        "x": 1080,
+        "y": 390
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "868sfq9vuq",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "AEqualsMultipleB",
+        "type": "trigger",
+        "properties": {
+          "leftValueA": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.0hdlkfl6xr.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.0hdlkfl6xr.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "rightValueMultiple": {
+            "value": [
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"ACCEPT\"\n      }\n    ]\n  }\n]",
+                "id": "2g9thzfz95"
+              },
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"DECLINE\"\n      }\n    ]\n  }\n]",
+                "id": "rxepjxwnpt"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Agreement Button Check"
+          },
+          "nodeDescription": {
+            "value": "Determine if user accepted agreement"
+          }
+        }
+      },
+      "position": {
+        "x": 1260,
+        "y": 390
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": [
+    {
+      "data": {
+        "id": "lwj096j8xr",
+        "source": "0hdlkfl6xr",
+        "target": "kzjah6jv0k"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "pddn4n2xk5",
+        "source": "kzjah6jv0k",
+        "target": "868sfq9vuq"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    }
+  ]
+}

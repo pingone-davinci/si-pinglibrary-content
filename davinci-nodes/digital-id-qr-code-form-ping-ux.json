@@ -1,0 +1,96 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "0xvb6t482g",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "qrcode": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://cdn.glitch.global/044fcec8-c2d6-464d-a123-016eb6092f6f/qr-code-example.png?v=1692972587517\"\n      }\n    ]\n  }\n]"
+          },
+          "customHTML": {
+            "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n          {{#if title}}\n          <h1 class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          {{#if textOne}}\n          <p class=\"text-muted text-center\">{{textOne}}</p>\n          {{/if}}\n\n          {{#if textTwo}}\n          <p class=\"text-muted text-center\">{{textTwo}}</p>\n          {{/if}}\n\n          <!-- Generic Error Message Handler -->\n          <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle\" data-skcomponent=\"skerror\"></p>\n\n          <div class=\"align-self-center mb-5\">\n            <img id=\"qrImage\" src=\"{{qrcode}}\" alt=\"QR Code\" style=\"height:200px\"/>\n          </div>\n\n          {{#if cancelButtonLabel}}\n          <div class=\"d-flex flex-column\">\n            <button type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n              data-skbuttonvalue=\"CANCEL\" id=\"btnCancel\">\n             {{cancelButtonLabel}}\n          </button>\n          </div>\n          {{/if}}\n        </div>\n\n      </div>\n    </div>\n  </div>\n</div>"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "customCSS": {
+            "value": ""
+          },
+          "nodeTitle": {
+            "value": "Scan Digital Wallet QR"
+          },
+          "nodeDescription": {
+            "value": "Present QR for user to scan"
+          },
+          "sktemplate": {
+            "uiId": "3d4c0803f73142705831650d2069a29a",
+            "createdDate": 1692972655232,
+            "customerId": "f3e47d945ae971a4b4142ec75012d155",
+            "description": "",
+            "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"qrcode\": {\n            \"type\": \"string\",\n            \"displayName\": \"QR Code URL/Source\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"qrcode\"\n        },\n\t\t\"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n\t\t\"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n\t\t\"buttonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"buttonLabel\"\n        }\n    }\n}",
+            "name": "qr-code",
+            "outputSchema": null,
+            "script": "",
+            "style": "",
+            "template": "",
+            "updatedDate": 1692972701435,
+            "validationRules": [],
+            "version": "1.0",
+            "visibility": "private",
+            "companyId": "50451ff2-2ed6-4c10-90ed-0e138623955c",
+            "value": "3d4c0803f73142705831650d2069a29a"
+          },
+          "inputSchema": {
+            "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n        \"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n        \"qrcode\": {\n            \"type\": \"string\",\n            \"displayName\": \"QR Code URL/Source\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"qrcode\"\n        },\n        \"cancelButtonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Cancel Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"cancelButtonLabel\"\n        }\n    }\n}"
+          },
+          "outputSchema": {
+            "value": null
+          },
+          "customScript": {
+            "value": ""
+          },
+          "validationRules": {
+            "value": []
+          },
+          "textOne": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Scan this QR Code with your mobile phone or digital wallet and follow the instructions.\"\n      }\n    ]\n  }\n]"
+          },
+          "title": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Digital ID\"\n      }\n    ]\n  }\n]"
+          },
+          "cancelButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Cancel\"\n      }\n    ]\n  }\n]"
+          }
+        },
+        "idUnique": "d3gsoikszg"
+      },
+      "position": {
+        "x": 1186,
+        "y": 315
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": []
+}

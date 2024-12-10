@@ -1,0 +1,259 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "jhbemtnsvp",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "textOne": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Welcome to \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"companyName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "customHTML": {
+            "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\">\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"feedbackError\" data-id=\"feedback\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"emailError\" data-skerrorid=\"email\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"passwordError\" data-skerrorid=\"password\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            <form id=\"emailPasswordForm\" aria-labelledby=\"title\" data-id=\"emailPasswordForm\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control\" type=\"email\" id=\"email\" name=\"email\" placeholder=\"Email Address\"\n                  autocomplete=\"email\" value=\"\" data-id=\"email-input\" aria-required=\"true\"\n                  aria-describedby=\"emailLabel\" />\n                <label id=\"emailLabel\" for=\"email\">Email Address</label>\n              </div>\n              <div id=\"passwordDiv\" class=\"mb-4 form-floating\">\n                <input class=\"form-control\" type=\"password\" id=\"password\" name=\"password\" placeholder=\"Password\"\n                  autocomplete=\"current-password\" value=\"\" data-id=\"password-input\" aria-required=\"true\"\n                  aria-describedby=\"passwordLabel\" />\n                <label id=\"passwordLabel\" for=\"password\">Password</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                {{#if signonButtonLabel}}\n                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" id=\"btnSignIn\" data-skform=\"emailPasswordForm\"\n                  data-skbuttonvalue=\"SIGNON\">\n                  {{signonButtonLabel}}\n                </button>\n                {{/if}}\n\n                {{#if resetButtonLabel}}\n                <button data-id=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                  id=\"btnTrouble\" data-skbuttonvalue=\"TROUBLE\">\n                  {{resetButtonLabel}}\n                </button>\n                {{/if}}\n\n                {{#if registerButtonLabel}}\n                <button data-id=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                  id=\"btnRegister\" data-skbuttonvalue=\"REGISTER\">\n                  {{registerButtonLabel}}\n                </button>\n                {{/if}}\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>\n"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "email",
+                "displayName": "Email Address",
+                "hashedVisibility": false,
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              {
+                "propertyName": "password",
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                "hashedVisibility": true,
+                "displayName": "Password"
+              },
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Sign On Form"
+          },
+          "customCSS": {
+            "value": ""
+          },
+          "validationRules": {
+            "value": [
+              {
+                "propertyName": "email",
+                "rules": [
+                  {
+                    "ruleName": "presence",
+                    "message": "Enter your email address"
+                  },
+                  {
+                    "ruleName": "email",
+                    "message": "Enter a valid email address"
+                  }
+                ]
+              },
+              {
+                "propertyName": "password",
+                "rules": [
+                  {
+                    "ruleName": "presence",
+                    "message": "Enter your password"
+                  }
+                ]
+              }
+            ]
+          },
+          "backgroundColor": {
+            "value": "#afd5ffff"
+          },
+          "customScript": {
+            "value": "const setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    }\n}\n\nconst makePasswordToggle = (id) => {\n    let container = document.getElementById(id);\n\n    if (container) {\n        let password = container.getElementsByTagName(\"input\")[0];\n        let toggler = document.createElement(\"button\");\n        toggler.setAttribute(\"type\", \"button\");\n        toggler.setAttribute(\"aria-label\", \"Show/Hide Password\");\n        toggler.className = \"btn mdi mdi-eye-off-outline position-absolute end-0 top-50 translate-middle-y\";\n        container.appendChild(toggler);\n\n        function showHidePassword() {\n            if (password.type == \"password\") {\n                password.setAttribute(\"type\", \"text\");\n                toggler.classList.add(\"mdi-eye-outline\");\n                toggler.classList.remove(\"mdi-eye-off-outline\");\n            } else {\n                toggler.classList.add(\"mdi-eye-off-outline\");\n                toggler.classList.remove(\"mdi-eye-outline\");\n                password.setAttribute(\"type\", \"password\");\n            }\n            password.focus();\n        };\n\n        toggler.addEventListener(\"click\", showHidePassword);\n    }\n}\n\nconst start = () => {\n    makePasswordToggle(\"passwordDiv\");\n    setFieldFocus(\"email\")\n}\n\nif (document.readyState === \"loading\") {\n    // Loading hasn't finished yet\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    // `DOMContentLoaded` has already fired\n    start();\n}"
+          },
+          "sktemplate": {
+            "uiId": "285c9d55f6886242da17a6dcb6a504da",
+            "createdDate": 1694687041166,
+            "customerId": "f3e47d945ae971a4b4142ec75012d155",
+            "description": "",
+            "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"title\"\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"textOne\"\n    },\n    \"textTwo\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text Two\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"textTwo\"\n    },\n    \"signonButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Sign On Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"signonButtonLabel\"\n    },\n    \"forgotButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Forgot Password Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"resetButtonLabel\"\n    },\n    \"registerButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Register Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"registerButtonLabel\"\n    }\n  }\n}",
+            "name": "Sign On Form",
+            "outputSchema": null,
+            "script": "",
+            "style": "",
+            "template": "",
+            "updatedDate": 1694687155750,
+            "validationRules": [],
+            "version": "1.0",
+            "visibility": "private",
+            "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
+            "value": "285c9d55f6886242da17a6dcb6a504da"
+          },
+          "inputSchema": {
+            "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"title\"\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"textOne\"\n    },\n    \"textTwo\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text Two\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"textTwo\"\n    },\n    \"signonButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Sign On Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"signonButtonLabel\"\n    },\n    \"forgotButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Forgot Password Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"resetButtonLabel\"\n    },\n    \"registerButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Register Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true,\n      \"propertyName\": \"registerButtonLabel\"\n    }\n  }\n}"
+          },
+          "outputSchema": {
+            "value": {}
+          },
+          "title": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Sign On\"\n      }\n    ]\n  }\n]"
+          },
+          "nodeDescription": {
+            "value": "Prompt for email and password"
+          },
+          "textTwo": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please enter your account credentials to continue.\"\n      }\n    ]\n  }\n]"
+          },
+          "buttonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
+          },
+          "registerButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"No account? Register Now!\"\n      }\n    ]\n  }\n]"
+          },
+          "resetButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Having trouble signing on?\"\n      }\n    ]\n  }\n]"
+          },
+          "signonButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Sign On\"\n      }\n    ]\n  }\n]"
+          }
+        }
+      },
+      "position": {
+        "x": 360,
+        "y": 180
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "ckef8nqgnj",
+        "nodeType": "EVAL"
+      },
+      "position": {
+        "x": 480,
+        "y": 180
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "mm2nn7jrgt",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "AEqualsMultipleB",
+        "type": "trigger",
+        "properties": {
+          "leftValueA": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.jhbemtnsvp.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.jhbemtnsvp.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "rightValueB": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"submit\"\n      }\n    ]\n  }\n]"
+          },
+          "nodeTitle": {
+            "value": "Sign On Form Button Action"
+          },
+          "rightValueMultiple": {
+            "value": [
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"SIGNON\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                "id": "vgii63uk2p"
+              },
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"REGISTER\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                "id": "js0k5824y5"
+              },
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"TROUBLE\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                "id": "qtli5t2v0s"
+              }
+            ]
+          },
+          "nodeDescription": {
+            "value": "Check which button was clicked"
+          }
+        },
+        "isDisabled": false
+      },
+      "position": {
+        "x": 660,
+        "y": 180
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": [
+    {
+      "data": {
+        "id": "um5ggyy1s7",
+        "source": "ckef8nqgnj",
+        "target": "mm2nn7jrgt"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "xbgo07p4c0",
+        "source": "jhbemtnsvp",
+        "target": "ckef8nqgnj"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    }
+  ]
+}
