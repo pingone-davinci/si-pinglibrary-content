@@ -1,0 +1,214 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "9pxpi35095",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "textOne": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Welcome to \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"companyName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "customHTML": {
+            "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\">\n\n            {{#if title}}\n            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n            {{/if}}\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"feedbackError\" data-id=\"feedback\"\n              data-skcomponent=\"skerror\" aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"usernameError\" data-skerrorid=\"username\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            <form id=\"usernameForm\" aria-labelledby=\"title\" data-id=\"usernameForm\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control\" type=\"text\" id=\"username\" name=\"username\" placeholder=\"Username\"\n                  data-id=\"username-input\" aria-required=\"true\"\n                  aria-describedby=\"usernameLabel\" />\n                <label id=\"usernameLabel\" for=\"username\">Username</label>\n              </div>\n              <div class=\"d-flex flex-column\">\n                {{#if continueButtonLabel}}\n                <button data-id=\"button\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" id=\"btnContinue\" data-skform=\"usernameForm\"\n                  data-skbuttonvalue=\"CONTINUE\">\n                  {{continueButtonLabel}}\n                </button>\n                {{/if}}\n                {{#if registerButtonLabel}}\n                <button data-id=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                  id=\"btnRegister\" data-skbuttonvalue=\"REGISTER\">\n                  {{registerButtonLabel}}\n                </button>\n                {{/if}}\n                {{#if forgotButtonLabel}}\n                <button data-id=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                  id=\"btnTrouble\" data-skbuttonvalue=\"TROUBLE\">\n                  {{forgotButtonLabel}}\n                </button>\n                {{/if}}\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>\n"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "username",
+                "displayName": "Username",
+                "hashedVisibility": false,
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "User Identifier Form"
+          },
+          "customCSS": {
+            "value": ""
+          },
+          "validationRules": {
+            "value": [
+              {
+                "propertyName": "username",
+                "rules": [
+                  {
+                    "ruleName": "presence",
+                    "message": "Enter your username"
+                  }
+                ]
+              }
+            ]
+          },
+          "backgroundColor": {
+            "value": "#afd5ffff"
+          },
+          "customScript": {
+            "value": "/**\n * Sets focus to the DOM element specified by its ID.\n * @param {string} id - The ID of the DOM element to focus.\n */\nconst setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    } else {\n        console.log(`Element with ID ${id} not found.`);\n    }\n};\n\n/**\n * Initializes the application by setting the focus to a specific field.\n */\nconst start = () => {\n    setFieldFocus(\"username\");\n};\n\n// Ensure the script runs after the DOM is fully loaded\nif (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    start();\n}\n\n"
+          },
+          "inputSchema": {
+            "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textTwo\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text Two\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"continueButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Continue Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"registerButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Register Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"forgotButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Forgot Password Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
+          },
+          "outputSchema": {
+            "value": {}
+          },
+          "title": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Sign On\"\n      }\n    ]\n  }\n]"
+          },
+          "nodeDescription": {
+            "value": "Prompt for username"
+          },
+          "registerButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"No account? Register Now!\"\n      }\n    ]\n  }\n]"
+          },
+          "forgotButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Having trouble signing on?\"\n      }\n    ]\n  }\n]"
+          },
+          "continueButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
+          }
+        }
+      },
+      "position": {
+        "x": 660,
+        "y": 510
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "1crl9vuaug",
+        "nodeType": "EVAL"
+      },
+      "position": {
+        "x": 780,
+        "y": 510
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "k6o163wruz",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "AEqualsMultipleB",
+        "type": "trigger",
+        "properties": {
+          "leftValueA": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.9pxpi35095.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.9pxpi35095.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "rightValueB": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"submit\"\n      }\n    ]\n  }\n]"
+          },
+          "nodeTitle": {
+            "value": "Sign On Form Button Action"
+          },
+          "rightValueMultiple": {
+            "value": [
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"CONTINUE\"\n      }\n    ]\n  }\n]",
+                "id": "vgii63uk2p"
+              },
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"REGISTER\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                "id": "js0k5824y5"
+              },
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"TROUBLE\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                "id": "qtli5t2v0s"
+              }
+            ]
+          },
+          "nodeDescription": {
+            "value": "Check which button was clicked"
+          }
+        },
+        "isDisabled": false
+      },
+      "position": {
+        "x": 960,
+        "y": 510
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": [
+    {
+      "data": {
+        "id": "fxkweub2ni",
+        "source": "1crl9vuaug",
+        "target": "k6o163wruz"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "o5g5yqtb5z",
+        "source": "9pxpi35095",
+        "target": "1crl9vuaug"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    }
+  ]
+}

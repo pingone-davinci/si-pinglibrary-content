@@ -1,0 +1,226 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "ofobvbrhb8",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "title": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Welcome\"\n      }\n    ]\n  }\n]"
+          },
+          "description": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please enter your email to continue\"\n      }\n    ]\n  }\n]"
+          },
+          "customHTML": {
+            "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n          {{#if title}}\n          <h1 class=\"text-center mb-4\">{{title}}</h1>\n          {{/if}}\n\n          {{#if textOne}}\n          <p class=\"text-muted text-center\">{{textOne}}</p>\n          {{/if}}\n\n          <!-- Generic Error Message -->\n          <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle\" data-skcomponent=\"skerror\"></p>\n\n          <!-- Form Validation Error Message -->\n          <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"email\" data-skcomponent=\"skerrormessage\"></p>\n\n          <form id=\"emailForm\" data-id=\"emailForm\">\n            <div class=\"mb-4 form-floating\">\n              <input id=\"email\" data-id=\"email\" class=\"form-control\" type=\"text\" name=\"email\" placeholder=\"Email Address\"\n              autocomplete=\"off\" value=\"\" />\n              <label class=\"form-label\" for=\"email\">Email Address</label>\n            </div>\n\n            {{#if buttonLabel}}\n            <div class=\"d-flex flex-column\">\n              <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\" type=\"submit\"\n                data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"emailForm\"\n                data-skrequiredinputs=\"email\" data-skbuttonvalue=\"EMAIL\">\n                {{buttonLabel}}\n              </button>\n            </div>\n            {{/if}}\n\n            <div class=\"d-flex flex-row align-items-center my-4\">\n              <hr class=\"flex-grow-1\" />\n              <span class=\"fs-5 fw-bold px-3\">OR</span>\n              <hr class=\"flex-grow-1\" />\n            </div>\n\n            {{#if textTwo}}\n            <p class=\"text-muted text-center\">{{textTwo}}</p>\n            {{/if}}\n\n            {{#if scanIdButtonLabel}}\n            <div class=\"d-flex flex-column\">\n              <button id=\"digitalCredsBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3 btn-green\" type=\"submit\"\n                data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\" data-skform=\"emailForm\"\n                data-skbuttonvalue=\"DIGITALCREDS\">\n                <i class=\"fa fa-qrcode\"></i> {{scanIdButtonLabel}}\n              </button>\n            </div>\n            {{/if}}\n\n            {{#if cancelButtonLabel}}\n            <div class=\"d-flex flex-column\">\n              <button type=\"submit\" class=\"btn btn-link\" data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                data-skform=\"emailForm\" data-skbuttonvalue=\"CANCEL\" id=\"btnCancel\">\n                {{cancelButtonLabel}}\n              </button>\n            </div>\n            {{/if}}\n\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "email",
+                "displayName": "email",
+                "hashedVisibility": false
+              },
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "User Identifier First Form"
+          },
+          "customCSS": {
+            "value": "@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);\n.btn-green {\nbackground-color: #07833d !important;\n}\n\n.btn-green:hover {\n   background-color: #22a65b!important;\n}"
+          },
+          "customScript": {
+            "value": "// Focus on the first input element on the page\nconst focusOnFirstInputElement = () => {\n    const element = document.querySelector(\"input\");\n\n    // Set focus on the first input element, if it exists\n    if (element) {\n        element.focus();\n    }\n};\n\n// If the page is still loading, wait for it to finish before calling the function\nif (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", focusOnFirstInputElement);\n} else {\n    // If the page has already finished loading, call the function immediately\n    focusOnFirstInputElement();\n}\n"
+          },
+          "validationRules": {
+            "value": []
+          },
+          "nodeDescription": {
+            "value": "Email or Digital Id"
+          },
+          "sktemplate": {
+            "uiId": "f0278a8ddca082f38c7741636477706e",
+            "createdDate": 1689165082540,
+            "customerId": "f3e47d945ae971a4b4142ec75012d155",
+            "description": "",
+            "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n        \"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n        \"buttonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"buttonLabel\"\n        },\n        \"scanIdButtonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Scan Id Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"scanIdButtonLabel\"\n        },\n        \"cancelButtonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Cancel Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"cancelButtonLabel\"\n        }\n    }\n}",
+            "name": "Username form",
+            "outputSchema": null,
+            "script": "",
+            "style": "",
+            "template": "",
+            "updatedDate": 1689165187330,
+            "validationRules": [],
+            "version": "1.0",
+            "visibility": "private",
+            "companyId": "50451ff2-2ed6-4c10-90ed-0e138623955c",
+            "value": "f0278a8ddca082f38c7741636477706e"
+          },
+          "inputSchema": {
+            "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n        \"textTwo\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text Two\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textTwo\"\n        },\n        \"buttonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"buttonLabel\"\n        },\n        \"scanIdButtonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Scan Id Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"scanIdButtonLabel\"\n        },\n        \"cancelButtonLabel\": {\n            \"type\": \"string\",\n            \"displayName\": \"Cancel Button Label\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"cancelButtonLabel\"\n        }\n    }\n}"
+          },
+          "outputSchema": {
+            "value": {}
+          },
+          "textOne": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please enter your email to continue.\"\n      }\n    ]\n  }\n]"
+          },
+          "textTwo": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Do you already have a Digital ID? If so, click here.\"\n      }\n    ]\n  }\n]"
+          },
+          "buttonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
+          },
+          "cancelButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Cancel\"\n      }\n    ]\n  }\n]"
+          },
+          "scanIdButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Scan Your Digital Credential\"\n      }\n    ]\n  }\n]"
+          }
+        },
+        "idUnique": "tm3j9z88ta"
+      },
+      "position": {
+        "x": 1290,
+        "y": 450
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "ex6s1k23v6",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "AEqualsMultipleB",
+        "type": "trigger",
+        "properties": {
+          "leftValueA": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.ofobvbrhb8.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.ofobvbrhb8.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "rightValueB": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"submit\"\n      }\n    ]\n  }\n]"
+          },
+          "nodeTitle": {
+            "value": "User Identifier Form Button Action"
+          },
+          "rightValueMultiple": {
+            "value": [
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"EMAIL\"\n      }\n    ]\n  }\n]",
+                "id": "js0k5824y5"
+              },
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"DIGITALCREDS\"\n      }\n    ]\n  }\n]",
+                "id": "qtli5t2v0s"
+              },
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"CANCEL\"\n      }\n    ]\n  }\n]",
+                "id": "26ve3otnun"
+              }
+            ]
+          },
+          "nodeDescription": {
+            "value": "Check which button was clicked"
+          }
+        },
+        "isDisabled": false,
+        "idUnique": "k7b2vqp99u"
+      },
+      "position": {
+        "x": 1590,
+        "y": 450
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "12b257w159",
+        "nodeType": "EVAL"
+      },
+      "position": {
+        "x": 1410,
+        "y": 450
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": [
+    {
+      "data": {
+        "id": "5f3x96fwrw",
+        "source": "12b257w159",
+        "target": "ex6s1k23v6"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "hhi48hf7gk",
+        "source": "ofobvbrhb8",
+        "target": "12b257w159"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    }
+  ]
+}

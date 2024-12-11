@@ -1,0 +1,234 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "a4co0aaxqj",
+        "nodeType": "CONNECTION",
+        "connectionId": "481e952e6b11db8360587b8711620786",
+        "connectorId": "httpConnector",
+        "name": "HTTP",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "messageTitle": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success\"\n      }\n    ]\n  }\n]"
+          },
+          "customHTML": {
+            "value": "<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div class=\"mh-100\" style=\"max-width: 400px; width: 100%;\">\n      <div class=\"card shadow mb-5\">\n        <main aria-labelledby=\"title\">\n          <div class=\"card-body p-5 d-flex flex-column\">\n            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n            <h1 id=\"title\" class=\"text-center mb-4\">\n              {{#ifEquals type \"SMS\"}}\n              <i class=\"mdi mdi-comment-text-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n              Text message\n              {{/ifEquals}}\n\n              {{#ifEquals type \"EMAIL\"}}\n              <i class=\"mdi mdi-email-outline text-dark fs-1\" aria-hidden=\"true\"></i>\n              Email\n              {{/ifEquals}}\n\n              {{#ifEquals type \"TOTP\"}}\n              <i class=\"mdi mdi-cellphone-key text-dark fs-1\" aria-hidden=\"true\"></i>\n              Authenticator App\n              {{/ifEquals}}\n\n              {{#ifEquals type \"VOICE\"}}\n              <i class=\"mdi mdi-face-agent text-dark fs-1\" aria-hidden=\"true\"></i>\n              Voice\n              {{/ifEquals}}\n            </h1>\n\n            {{#if textOne}}\n            <p class=\"text-muted text-center\">{{textOne}}</p>\n            {{/if}}\n\n            <!-- Generic Error Message -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" data-id=\"feedback\" data-skcomponent=\"skerror\"\n              aria-live=\"assertive\"></p>\n\n            <!-- Field Validation Error Messages -->\n            <p class=\"text-danger mdi mdi-alert-circle text-center\" id=\"passcodeError\" data-skerrorid=\"passcode\"\n              data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n            {{#if resendMessage}}\n            <p class=\"text-info text-center\">{{resendMessage}}</p>\n            {{/if}}\n\n            <form id=\"otp-form\" data-id=\"otp-form\">\n              <div class=\"mb-4 form-floating\">\n                <input class=\"form-control text-center otp-control\" id=\"passcode\" type=\"text\" autocomplete=\"one-time-code\" maxlength=\"6\"\n                  aria-required=\"true\" aria-describedby=\"passcodeLabel\" placeholder=\"Passcode\" />\n                <label id=\"passcodeLabel\" class=\"form-label\" for=\"passcode\">Passcode</label>\n              </div>\n              <p class=\"text-muted text-center\" id=\"contact\">\n                {{#ifEquals type \"SMS\"}}\n                Message sent to:<br>\n                {{maskedContact}}\n                {{/ifEquals}}\n\n                {{#ifEquals type \"Voice\"}}\n                Calling:<br>\n                {{maskedContact}}\n                {{/ifEquals}}\n\n                {{#ifEquals type \"EMAIL\"}}\n                Email sent to:<br>\n                {{maskedContact}}\n                {{/ifEquals}}\n              </p>\n              <div class=\"d-flex flex-column\">\n                {{#ifEquals type \"TOTP\"}}\n                <!-- exclude resend option -->\n                {{else}}\n                <button id=\"resend\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"next-event\" data-skbuttonvalue=\"RESEND\">\n                  {{resendButtonLabel}}\n                </button>\n                {{/ifEquals}}\n                {{#if verifyButtonLabel}}\n                <button id=\"submit\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"form-submit\" data-skform=\"otp-form\" data-skbuttonvalue=\"VERIFY\">\n                  {{verifyButtonLabel}}\n                </button>\n                {{/if}}\n                {{#if canChangeDevice}}\n                <button id=\"cancel\" type=\"button\" class=\"btn btn-link\" data-skcomponent=\"skbutton\"\n                  data-skbuttontype=\"next-event\" data-skform=\"otp-form\" data-skbuttonvalue=\"CANCEL\">\n                  Cancel\n                </button>\n                {{/if}}\n              </div>\n            </form>\n          </div>\n        </main>\n      </div>\n    </div>\n  </div>\n</div>"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "propertyName": "passcode",
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "value": "",
+                "hashedVisibility": false
+              },
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Passcode Verification (OTP)"
+          },
+          "customScript": {
+            "value": "const setFieldFocus = (id) => {\n    const element = document.getElementById(id);\n    if (element) {\n        element.focus();\n    }\n}\n\nconst start = () => {\n    setFieldFocus(\"passcode\");\n}\n\nif (document.readyState === \"loading\") {\n    // Loading hasn't finished yet\n    document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n    // `DOMContentLoaded` has already fired\n    start();\n}\n"
+          },
+          "nodeDescription": {
+            "value": "One-time Passcode entry"
+          },
+          "customCSS": {
+            "value": ".otp-control {\n    padding-top: 0rem !important;\n    padding-bottom: 0rem !important;\n    font-size: 17px;\n}"
+          },
+          "inputSchema": {
+            "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"type\": {\n\t\t\t\"displayName\": \"Device Type [EMAIL|SMS|VOICE|TOTP]\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n    \"textOne\": {\n\t\t\t\"displayName\": \"Text One\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"maskedContact\": {\n\t\t\t\"displayName\": \"Masked Contact\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"canChangeDevice\": {\n\t\t\t\"displayName\": \"Can change Device\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"resendMessage\": {\n\t\t\t\"displayName\": \"Resend Message\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"resendButtonLabel\": {\n\t\t\t\"displayName\": \"Resend Button Label\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t},\n\t\t\"verifyButtonLabel\": {\n\t\t\t\"displayName\": \"Verify Button Label\",\n\t\t\t\"preferedControlType\": \"textField\",\n\t\t\t\"enableParameters\": true\n\t\t}\n\t}\n}"
+          },
+          "title": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Passcode Verification\"\n      }\n    ]\n  }\n]"
+          },
+          "textOne": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Enter the passcode you received to complete authentication.\"\n      }\n    ]\n  }\n]"
+          },
+          "iconClass": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"mdi-comment-text-outline\"\n      }\n    ]\n  }\n]"
+          },
+          "codeMaxLength": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"6\"\n      }\n    ]\n  }\n]"
+          },
+          "buttonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
+          },
+          "resendButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Resend\"\n      }\n    ]\n  }\n]"
+          },
+          "type": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"EMAIL\"\n      }\n    ]\n  }\n]"
+          },
+          "canChangeDevice": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"true\"\n      }\n    ]\n  }\n]"
+          },
+          "verifyButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Verify Passcode\"\n      }\n    ]\n  }\n]"
+          },
+          "validationRules": {
+            "value": [
+              {
+                "propertyName": "passcode",
+                "rules": [
+                  {
+                    "ruleName": "presence",
+                    "message": "Enter the one-time passcode"
+                  },
+                  {
+                    "ruleName": "length",
+                    "wrongLength": "The one-time passcode must be six digits.",
+                    "is": "6"
+                  },
+                  {
+                    "ruleName": "format",
+                    "pattern": "^[0-9]+$",
+                    "message": "The one-time passcode must be six digits."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "idUnique": "w1js97gxg2"
+      },
+      "position": {
+        "x": 2730,
+        "y": 1170
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "b719e7du92",
+        "nodeType": "EVAL",
+        "label": "Evaluator"
+      },
+      "position": {
+        "x": 2850,
+        "y": 1170
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "vkzjcjirzu",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "AEqualsMultipleB",
+        "type": "trigger",
+        "properties": {
+          "leftValueA": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.a4co0aaxqj.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.a4co0aaxqj.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "rightValueB": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"submit\"\n      }\n    ]\n  }\n]"
+          },
+          "nodeTitle": {
+            "value": "OTP Form Button Action"
+          },
+          "rightValueMultiple": {
+            "value": [
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"VERIFY\"\n      }\n    ]\n  }\n]",
+                "id": "js0k5824y5"
+              },
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"RESEND\"\n      }\n    ]\n  }\n]",
+                "id": "qtli5t2v0s"
+              },
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"CANCEL\"\n      }\n    ]\n  }\n]",
+                "id": "zb1ojca8u"
+              }
+            ]
+          },
+          "nodeDescription": {
+            "value": "Check which button was clicked"
+          }
+        },
+        "isDisabled": false
+      },
+      "position": {
+        "x": 3030,
+        "y": 1170
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": [
+    {
+      "data": {
+        "id": "pt1c0ompj5",
+        "source": "b719e7du92",
+        "target": "vkzjcjirzu"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "3l99stx2ii",
+        "source": "a4co0aaxqj",
+        "target": "b719e7du92"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    }
+  ]
+}

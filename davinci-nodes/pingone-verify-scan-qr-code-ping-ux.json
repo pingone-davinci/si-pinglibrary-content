@@ -1,0 +1,114 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "to6mmdrvxd",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "subtitle": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please have a valid government ID ready for identity verification.\"\n      }\n    ]\n  }\n]"
+          },
+          "pollingMessage": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Waiting for you to complete verification\"\n      }\n    ]\n  }\n]"
+          },
+          "webVerificationCode": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "messageTitle": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please Verify yourself\"\n      }\n    ]\n  }\n]"
+          },
+          "message": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:i585p7f1n8\",\n        \"url\": \"generatedQr\",\n        \"data\": \"{{local.9mth1vknb1.payload.output.generatedQr}}\",\n        \"tooltip\": \"{{local.9mth1vknb1.payload.output.generatedQr}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.9mth1vknb1.payload.output.generatedQr}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n\\nVerify Code: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:f93w9r1ccf\",\n        \"url\": \"webVerificationCode\",\n        \"data\": \"{{local.f7rajqo8ws.payload.output.rawResponse.body.webVerificationCode}}\",\n        \"tooltip\": \"{{local.f7rajqo8ws.payload.output.rawResponse.body.webVerificationCode}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.f7rajqo8ws.payload.output.rawResponse.body.webVerificationCode}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n\\n\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrZXJyb3JtZXNzYWdlIiAgY2xhc3M9IiIgZXJyb3JJZD0iIg==###eyJuYW1lIjoic2tlcnJvcm1lc3NhZ2UiLCJvcHRpb25zIjp7ImNsYXNzIjoiIiwiZXJyb3JJZCI6IiJ9LCJjb21wb25lbnRQcm9wcyI6eyJjbGFzcyI6eyJuYW1lIjoiY2xhc3MiLCJkaXNwbGF5TmFtZSI6IkNsYXNzIn0sImVycm9ySWQiOnsibmFtZSI6ImVycm9ySWQiLCJkaXNwbGF5TmFtZSI6IklEIG9mIGlucHV0IGZpZWxkIGFzc29jaWF0ZWQgd2l0aCBlcnJvciBtZXNzYWdlIn19fQ==]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skerrormessage\",\n        \"children\": [\n          {\n            \"text\": \"skerrormessage\"\n          }\n        ],\n        \"component\": \"skerrormessage\",\n        \"options\": {\n          \"class\": \"\",\n          \"errorId\": \"\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"Class\"\n          },\n          \"errorId\": {\n            \"name\": \"errorId\",\n            \"displayName\": \"ID of input field associated with error message\"\n          }\n        },\n        \"tooltip\": \"{{component.skerrormessage}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "nodeTitle": {
+            "value": "Verify QR Scan"
+          },
+          "nodeDescription": {
+            "value": "Present QR Code"
+          },
+          "showFooter": {
+            "value": false
+          },
+          "enablePolling": {
+            "value": true
+          },
+          "pollChallengeStatus": {
+            "value": false
+          },
+          "customHTML": {
+            "value": "<div class=\"end-user-nano\">\n    <div\n        class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n        <div class=\"mh-100\" style=\"max-width: 400px; width: 100%\">\n            <div class=\"card shadow mb-5\">\n                <div class=\"card-body p-5 d-flex flex-column\">\n                    <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                    {{#if title}}\n                    <h1 class=\"text-center mb-4\">{{title}}</h1>\n                    {{/if}}\n\n                    {{#if textOne}}\n                    <p class=\"text-muted text-center\">{{textOne}}</p>\n                    {{/if}}\n\n                    <!-- Generic Error Message -->\n                    <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle\"\n                        data-skcomponent=\"skerror\"></p>\n\n                    <div class=\"row p-2 row justify-content-center\">\n                        <img alt=\"Verify QR Code\" class=\"w-50 mx-auto my-2 p-4 border border-gray border-2\" src=\"{{qrUrl}}\" />\n                    </div>\n                    <div class=\"d-flex flex-row align-items-center my-4\">\n                        <hr class=\"flex-grow-1\" />\n                        <span class=\"fs-5 fw-bold px-3\">OR</span>\n                        <hr class=\"flex-grow-1\" />\n                    </div>\n                    <a href=\"{{webVerificationUrl}}&dt=1\" class=\"btn btn-outline-primary\" target=\"_blank\">Verify with\n                        Your Browser</a>\n                    <div class=\"text-center mt-5\">\n                        <p class=\"mb-2 fw-bold\">Verification Code</p>\n                        <p class=\"fs-1 mb-3\">{{webVerificationCode}}</p>\n                        <p class=\"text-muted\">Check that your phone shows the same verification code.</p>\n                    </div>\n                    <div data-skcomponent=\"skerror\" class=\"text-center sk-alert sk-alert-danger text-danger\"\n                        data-skvisibility=\"\"></div>\n\n                    <div class=\"text-center\">\n                        <span>[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iMjAwMCIgcG9sbFJldHJpZXM9IjIwIiBwb2xsQ2hhbGxlbmdlU3RhdHVzPSJmYWxzZSI=###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6MjAwMCwicG9sbFJldHJpZXMiOiIyMCIsInBvbGxDaGFsbGVuZ2VTdGF0dXMiOiJmYWxzZSJ9LCJjb21wb25lbnRQcm9wcyI6eyJjbGFzcyI6eyJuYW1lIjoiY2xhc3MiLCJkaXNwbGF5TmFtZSI6IkNTUyBDbGFzcyJ9LCJwb2xsSW50ZXJ2YWwiOnsibmFtZSI6InBvbGxJbnRlcnZhbCIsImRpc3BsYXlOYW1lIjoiUG9sbCBJbnRlcnZhbCIsInZhbHVlIjoyMDAwfSwicG9sbFJldHJpZXMiOnsibmFtZSI6InBvbGxSZXRyaWVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIFJldHJpZXMiLCJ2YWx1ZSI6NjB9LCJwb2xsQ2hhbGxlbmdlU3RhdHVzIjp7Im5hbWUiOiJwb2xsQ2hhbGxlbmdlU3RhdHVzIiwiZGlzcGxheU5hbWUiOiJQb2xsIENoYWxsZW5nZSBTdGF0dXMiLCJ0eXBlIjoic2VsZWN0IiwidmFsdWUiOiJ0cnVlIiwib3B0aW9ucyI6W3sibmFtZSI6IlRydWUiLCJ2YWx1ZSI6InRydWUifSx7Im5hbWUiOiJGYWxzZSIsInZhbHVlIjoiZmFsc2UifV19fX0=]]]</span>\n                        <p class=\"text-muted mt-2 fs-5\">\n                            {{pollingMessage}}\n                        </p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+          },
+          "customScript": {
+            "value": ""
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "sktemplate": {
+            "uiId": "e6e1bb56db7fa43d0bb18721a55fc694",
+            "createdDate": 1687889267333,
+            "customerId": "f3e47d945ae971a4b4142ec75012d155",
+            "description": "",
+            "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        },\n        \"qrUrl\": {\n            \"type\": \"string\",\n            \"displayName\": \"QR URL\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"qrUrl\"\n        },\n\t\t\"webVerificationUrl\": {\n            \"type\": \"string\",\n            \"displayName\": \"Web Verification URL\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"webVerificationUrl\"\n        },\n\t\t\"webVerificationCode\": {\n            \"type\": \"string\",\n            \"displayName\": \"Web Verification Code\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"webVerificationCode\"\n        }\n    }\n}",
+            "name": "VerifyPolling",
+            "outputSchema": {},
+            "script": "",
+            "style": "",
+            "template": "",
+            "updatedDate": 1687889792920,
+            "validationRules": [],
+            "version": "1.0",
+            "visibility": "private",
+            "companyId": "edcc3f46-49cc-4176-bfcb-849afb268c1b",
+            "value": "e6e1bb56db7fa43d0bb18721a55fc694"
+          },
+          "inputSchema": {
+            "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n        \"textOne\": {\n            \"type\": \"string\",\n            \"displayName\": \"Text One\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"textOne\"\n        },\n        \"pollingMessage\": {\n            \"type\": \"string\",\n            \"displayName\": \"Polling Message\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"pollingMessage\"\n        },\n        \"qrUrl\": {\n            \"type\": \"string\",\n            \"displayName\": \"QR URL\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"qrUrl\"\n        },\n\t\t\"webVerificationUrl\": {\n            \"type\": \"string\",\n            \"displayName\": \"Web Verification URL\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"webVerificationUrl\"\n        },\n\t\t\"webVerificationCode\": {\n            \"type\": \"string\",\n            \"displayName\": \"Web Verification Code\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"webVerificationCode\"\n        }\n    }\n}"
+          },
+          "outputSchema": {
+            "value": {}
+          },
+          "customCSS": {
+            "value": ""
+          },
+          "validationRules": {
+            "value": []
+          },
+          "textOne": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Scan this QR Code with your mobile phone and follow the instructions.\"\n      }\n    ]\n  }\n]"
+          },
+          "title": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Verify Your Identity\"\n      }\n    ]\n  }\n]"
+          }
+        },
+        "idUnique": "i31z7sch2k"
+      },
+      "position": {
+        "x": 1410,
+        "y": 330
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": []
+}

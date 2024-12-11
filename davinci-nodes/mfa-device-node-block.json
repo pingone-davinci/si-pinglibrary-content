@@ -1,0 +1,1430 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "esnpfazufh",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http (Use this for form + custom messages)",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "undefined": {
+            "value": "[{\"children\": [{\"text\": \"true\"}]}]"
+          },
+          "title": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Device Selection\"\n      }\n    ]\n  }\n]"
+          },
+          "description": {
+            "value": null
+          },
+          "primaryButtonText": {
+            "value": null
+          },
+          "nodeTitle": {
+            "value": "Device Selection"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "customHTML": {
+            "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\">\n    <div style=\"max-width: 460px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n                <h1 id=\"header\" class=\"text-center mb-4\">{{title}}</h1>\n                <p class=\"text-muted text-center\">{{subtitle}}</p>\n                <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle\" data-skcomponent=\"skerror\">\n                </p>\n                <form id=\"deviceSelectionForm\" data-id=\"deviceSelectionForm\" class=\"form\">\n                    <div class=\"d-flex flex-column gap-4 mb-4\">\n                        {{#each devices}}                  \n                            <button class=\"btn btn-outline-light flex-grow-1 d-flex align-items-center gap-4 w-100 {{disabledCSS}}\"\n                                type=\"submit\" data-skbuttontype=\"form-submit\" data-skcomponent=\"skbutton\"\n                                data-skbuttonvalue=\"{{id}}\" id=\"btnDevice-{{id}}\" data-skform=\"deviceSelectionForm\">\n                                <i class=\"mdi {{displayIcon}} text-dark fs-2\" aria-hidden=\"true\"></i> \n                                <div class=\"d-flex flex-column text-start gap-1\">\n                                    <div class=\"fw-semibold text-primary\">{{displayType}}</div>\n                                    <div class=\"fs-5 text-secondary\">\n                                        {{displayText}}\n                                    </div>\n                                    {{#if disabledMessage}}\n                                    <div class=\"fs-5 text-secondary text-danger\">\n                                        {{disabledMessage}}\n                                    </div>\n                                    {{/if}}\n                                </div>\n                            </button>\n                        {{/each}}\n                    </div>\n                    <div class=\"d-flex flex-column\">\n                        <button id=\"cancelBtn\" data-id=\"cancelBtn\" class=\"btn btn-link\" type=\"submit\"\n                            data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\" data-skform=\"deviceSelectionForm\"\n                            data-skbuttonvalue=\"CANCEL\">\n                            Cancel\n                        </button>\n                    </div> \n                </form>\n            </div>\n        </div>\n    </div>\n</div>\n\n"
+          },
+          "customCSS": {
+            "value": "/* \n  This selector class is required as DV\n  injects a div into any data-skcomponent=\"skbutton\",\n  which alters layout\n*/\nbutton > div:first-child {\n display: contents;\n}  \n"
+          },
+          "customScript": {
+            "value": "// Focus on the first input element on the page\nconst disableButtons = () => {\n    const elements = document.querySelectorAll(\".DISABLED_DEVICE\");\n    \n\n    elements.forEach(element => {\n        element.disabled = true;\n        console.log(\"disabling button \", element.id);\n    });\n\n};\n\n// If the page is still loading, wait for it to finish before calling the function\nif (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", disableButtons);\n} else {\n    // If the page has already finished loading, call the function immediately\n    disableButtons();\n}"
+          },
+          "validationRules": {
+            "value": []
+          },
+          "nodeDescription": {
+            "value": "Select Authentication Device"
+          },
+          "inputSchema": {
+            "value": "{\n  \"type\": \"object\",\n   \"properties\": {\n        \"devices\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"id\": {\n                    \"displayName\": \"id\",\n                        \"preferedControlType\": \"textField\",\n                        \"enableParameters\": true\n                },\n                \"type\": {\n                    \"displayName\": \"type\",\n                        \"preferedControlType\": \"textField\",\n                        \"enableParameters\": true\n                },\n                \"status\": {\n                    \"displayName\": \"status\",\n                        \"preferedControlType\": \"textField\",\n                        \"enableParameters\": true\n                }\n            }\n        },\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Page Title\",\n            \"preferedControlType\": \"textField\",\n            \"enableParameters\": true\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Page Title\",\n            \"preferedControlType\": \"textField\",\n            \"enableParameters\": true\n        }\n    }\n}"
+          },
+          "sktemplate": {
+            "uiId": "8cc2b19c89ba5ed0e59edd34debea782",
+            "createdDate": 1692187330538,
+            "customerId": "f3e47d945ae971a4b4142ec75012d155",
+            "description": "",
+            "inputSchema": "{\n  \"type\": \"object\",\n   \"properties\": {\n        \"devices\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"id\": {\n                    \"displayName\": \"id\",\n                        \"preferedControlType\": \"textField\",\n                        \"enableParameters\": true\n                },\n                \"type\": {\n                    \"displayName\": \"type\",\n                        \"preferedControlType\": \"textField\",\n                        \"enableParameters\": true\n                },\n                \"status\": {\n                    \"displayName\": \"status\",\n                        \"preferedControlType\": \"textField\",\n                        \"enableParameters\": true\n                }\n            }\n        },\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Page Title\",\n            \"preferedControlType\": \"textField\",\n            \"enableParameters\": true\n        },\n        \"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Page Title\",\n            \"preferedControlType\": \"textField\",\n            \"enableParameters\": true\n        }\n    }\n}",
+            "name": "devices",
+            "outputSchema": null,
+            "script": "",
+            "style": "",
+            "template": "",
+            "updatedDate": 1692187504831,
+            "validationRules": [],
+            "version": "1.0",
+            "visibility": "private",
+            "companyId": "50451ff2-2ed6-4c10-90ed-0e138623955c",
+            "value": "8cc2b19c89ba5ed0e59edd34debea782"
+          },
+          "outputSchema": {
+            "value": {}
+          },
+          "subtitle": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Choose from your available devices.\"\n      }\n    ]\n  }\n]"
+          },
+          "devices": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"devices\",\n        \"data\": \"{{local.a35bsvybz1.payload.output.devices}}\",\n        \"tooltip\": \"{{local.a35bsvybz1.payload.output.devices}}\",\n        \"children\": [\n          {\n            \"text\": \"devices\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          }
+        },
+        "idUnique": "0a0z6pkpxi"
+      },
+      "position": {
+        "x": 1530,
+        "y": 960
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "j7hxxke4c6",
+        "nodeType": "EVAL",
+        "label": "Evaluator",
+        "properties": {
+          "q5mytepz8u": {
+            "value": "allTriggersFalse"
+          }
+        }
+      },
+      "position": {
+        "x": 1650,
+        "y": 960
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "k2c5meq1ln",
+        "nodeType": "CONNECTION",
+        "connectionId": "b72bd44e6be8180bd5988ac74cd9c949",
+        "connectorId": "pingOneMfaConnector",
+        "name": "PingOne MFA",
+        "label": "PingOne MFA",
+        "status": "configured",
+        "capabilityName": "readAllDevices",
+        "type": "action",
+        "properties": {
+          "userId": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"userid\",\n        \"data\": \"{{local.nguq1k44kt.payload.output.userid}}\",\n        \"tooltip\": \"{{local.nguq1k44kt.payload.output.userid}}\",\n        \"children\": [\n          {\n            \"text\": \"userid\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "setFilterFlag": {
+            "value": true
+          },
+          "deviceTypes": {
+            "value": [
+              "EMAIL",
+              "SMS",
+              "VOICE",
+              "TOTP",
+              "FIDO2",
+              "MOBILE"
+            ]
+          },
+          "statusFilter": {
+            "value": "ACTIVE"
+          }
+        }
+      },
+      "position": {
+        "x": 630,
+        "y": 960
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "b7ehn69lwq",
+        "nodeType": "EVAL",
+        "label": "Evaluator",
+        "properties": {
+          "pvv3baves8": {
+            "value": "anyTriggersFalse"
+          },
+          "4x5n80pim4": {
+            "value": "allTriggersTrue"
+          },
+          "2wusxma8u9": {
+            "value": "allTriggersFalse"
+          },
+          "14qub077gw": {
+            "value": "allTriggersTrue"
+          }
+        }
+      },
+      "position": {
+        "x": 750,
+        "y": 960
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "8b69htw57s",
+        "nodeType": "EVAL",
+        "properties": {
+          "ij8t5hlern": {
+            "value": "allTriggersFalse"
+          },
+          "n07yhaeair": {
+            "value": "anyTriggersFalse"
+          },
+          "esnpfazufh": {
+            "value": "allTriggersTrue"
+          }
+        }
+      },
+      "position": {
+        "x": 1350,
+        "y": 960
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "a35bsvybz1",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "customFunction",
+        "type": "trigger",
+        "properties": {
+          "variableInputList": {
+            "value": [
+              {
+                "name": "devices",
+                "preferredDataType": "object",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"devices\",\n        \"data\": \"{{local.k2c5meq1ln.payload.output.rawResponse._embedded.devices}}\",\n        \"tooltip\": \"{{local.k2c5meq1ln.payload.output.rawResponse._embedded.devices}}\",\n        \"children\": [\n          {\n            \"text\": \"devices\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              {
+                "name": "webAuthnSupport",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"webAuthnSupport\",\n        \"data\": \"{{local.4x5n80pim4.payload.output.webAuthnSupport}}\",\n        \"tooltip\": \"{{local.4x5n80pim4.payload.output.webAuthnSupport}}\",\n        \"children\": [\n          {\n            \"text\": \"webAuthnSupport\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              {
+                "name": "allowedtypes",
+                "preferredDataType": "object",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"allowedtypes\",\n        \"data\": \"{{local.k2c5meq1ln.payload.output.rawResponse._embedded.allowedtypes}}\",\n        \"tooltip\": \"{{local.k2c5meq1ln.payload.output.rawResponse._embedded.allowedtypes}}\",\n        \"children\": [\n          {\n            \"text\": \"allowedtypes\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            ]
+          },
+          "code": {
+            "value": "/*\n Update the devices array to include a new properties \n used when rendering device list.\n*/\n\n// Titles and icons\nconst deviceTypes = {\n\tSMS: { title: \"Text Message\", icon: \"mdi-comment-text-outline\" },\n\tVOICE: { title: \"Voice\", icon: \"mdi-phone-outline\" },\n\tEMAIL: { title: \"Email\", icon: \"mdi-email-outline\" },\n\tTOTP: { title: \"Authenticator App\", icon: \"mdi-cellphone\" },\n\tFIDO2: { title: \"Passkey\", icon: \"mdi-fingerprint\" },\n\tPLATFORM: { title: \"Biometrics\", icon: \"mdi-fingerprint\" },\n\tMOBILE: { title: \"Mobile\", icon: \"mdi-cellphone\" },\n\tSECURITY_KEY: { title: \"Security Key\", icon: \"mdi-usb-flash-drive\" }\n}\n\n// Device types that require masking\nconst SMS = \"SMS\";\nconst VOICE = \"VOICE\";\nconst EMAIL = \"EMAIL\";\nconst SEPARATOR = \" - \";\n\n/**\n * Filters and processes a list of devices based on various criteria.\n * \n * @param {Array<Object>} params.devices - An array of existing devices retrieved from PingOne MFA `Read all devices`.\n * @param {string} params.webAuthnSupport - The level of WebAuthn support (\"NONE\", \"SECURITY_KEY_ONLY\", etc.).\n * @param {string[]} params.allowedtypes (OPTIONAL) - An array of allowed device types retrieved from PingOne MFA `Read all devices`.\n * \n * @returns {Object|boolean} - An object containing processed device information or `false` if no devices are available.\n */\n\nmodule.exports = a = async ({ params }) => {\n\tlet devices = params.devices;\n\tconst webAuthnSupport = params.webAuthnSupport;\n\tconst allowedtypes = params.allowedtypes;\n\n\t// If devices is not passed, head to error branch in flow\n\tif (!devices || devices.length === 0) {\n\t\treturn false;\n\t}\n\n\tfor (const d of devices) {\n\t\tif (d.type === SMS || d.type === VOICE) {\n\t\t\td.maskedValue = maskPhone(d.phone);\n\t\t} else if (d.type === EMAIL) {\n\t\t\td.maskedValue = maskEmail(d.email);\n\t\t}\n\t\tconst nickname = d.nickname || \"\";\n\t\tconst maskedValue = d.maskedValue || \"\";\n\n\t\t// Format nickname and masked value if available\n\t\tif (nickname && maskedValue) {\n\t\t\td.displayText = `${nickname}${SEPARATOR}${maskedValue}`;\n\t\t} else if (!nickname && !maskedValue) {\n\t\t\td.displayText = \"\";\n\t\t} else {\n\t\t\td.displayText = `${nickname}${maskedValue}`;\n\t\t}\n\n\t\t// If too many requests have been made (daily), disable the device\n\t\tif (d.coolDownExpiresAt || d.lock?.status === \"LOCKED\" || d.block?.status === \"BLOCKED\") {\n\t\t\td.disabledCSS = \"DISABLED_DEVICE\";\n\t\t\tif (d.coolDownExpiresAt) {\n\t\t\t\td.disabledMessage = \"You have exceeded the limit\";\n\t\t\t} else if (d.lock?.status === \"LOCKED\") {\n\t\t\t\td.disabledMessage = `Device is locked`;\n\t\t\t} else if (d.block?.status === \"BLOCKED\") {\n\t\t\t\td.disabledMessage = `Device is blocked`;\n\t\t\t}\n\t\t}\n\n\t\t// Set the icon\n\t\td.displayIcon = deviceTypes[d.type].icon || \"\";\n\t\t// Set the device type\n\t\td.displayType = deviceTypes[d.type].title || \"Unkown Device Type\";\n\t}\n\n\t// Filter out devices if not supported by the running browser\n\tdevices = filterWebAuthnSupportedDevices(webAuthnSupport, devices);\n\n\t// If allowed types is passed, filter out devices types that are not permitted\n\tif (allowedtypes) {\n\t\tdevices = devices.filter(device => allowedtypes.includes(device.type));\n\t}\n\t// No devices\n\tif (devices.length === 0) {\n\t\treturn false;\n\t}\n\n\t// Sort the devices based on type\n\tdevices.sort((a, b) => a.displayType.localeCompare(b.displayType));\n\n\treturn { 'devices': devices }\n}\n\n// Mask email\nconst maskEmail = (email) => {\n\tconst [username, domain] = email.split(\"@\");\n\tconst maskedUsername =\n\t\tusername.charAt(0) + \"*\".repeat(username.length - 2) + username.slice(-1);\n\treturn maskedUsername + \"@\" + domain;\n};\n\n//Mask phone number\nconst maskPhone = (phone) => {\n\tconst numericPhoneNumber = phone.replace(/[^\\d+]/g, \"\");\n\n\t// Mask the first six digits of the phone number\n\tconst maskedPhoneNumber = \"***-***-\" + numericPhoneNumber.slice(-4);\n\n\treturn maskedPhoneNumber;\n};\n\n//Filter webAuthnSupport devices\nconst filterWebAuthnSupportedDevices = (webAuthnSupport, devices) => {\n\t// Filter out devices if not supported by the running browser\n\tif (webAuthnSupport === \"NONE\") {\n\t\tdevices = devices.filter(\n\t\t\t(d) =>\n\t\t\t\td.type !== \"SECURITY_KEY\" &&\n\t\t\t\td.type !== \"PLATFORM\" &&\n\t\t\t\td.type !== \"TOTP\" &&\n\t\t\t\td.type !== \"OTP\"\n\t\t);\n\t} else if (webAuthnSupport === \"SECURITY_KEY_ONLY\") {\n\t\tdevices = devices.filter((d) => d.type !== \"PLATFORM\");\n\t}\n\n\treturn devices;\n};\n\n\n"
+          },
+          "outputSchema": {
+            "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"devices\": {\n\t\t\t\t\"type\": \"object\"\n\t\t\t}\n\t\t}\n\t}\n}"
+          },
+          "nodeTitle": {
+            "value": "Auth Devices List Prep"
+          },
+          "nodeDescription": {
+            "value": "Prepare the available devices for display"
+          }
+        }
+      },
+      "position": {
+        "x": 1230,
+        "y": 960
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "3nylbebbgo",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "customFunction",
+        "type": "trigger",
+        "properties": {
+          "variableInputList": {
+            "value": [
+              {
+                "name": "devices",
+                "preferredDataType": "object",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"devices\",\n        \"data\": \"{{local.a35bsvybz1.payload.output.devices}}\",\n        \"tooltip\": \"{{local.a35bsvybz1.payload.output.devices}}\",\n        \"children\": [\n          {\n            \"text\": \"devices\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              {
+                "name": "selectedDeviceId",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.esnpfazufh.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.esnpfazufh.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            ]
+          },
+          "code": {
+            "value": "// Filter the selected device from the devices list\nmodule.exports = a = async ({params}) => {\n\tconst devices = params.devices;\n\tconst selectedDeviceId = params.selectedDeviceId;\n\n\tif (!selectedDeviceId || !devices) {\n\t\treturn false;\n\t}\n\n\tconst device = devices.filter((d) => d.id === selectedDeviceId);\n  \n\tif (device.length === 0) {\n\t\treturn false;\n\t}\n  return {'device': device}\n};\n\n"
+          },
+          "nodeTitle": {
+            "value": "Filter Device"
+          },
+          "outputSchema": {
+            "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"device\": {\n\t\t\t\t\"type\": \"object\"\n\t\t\t}\n\t\t}\n\t}\n}"
+          },
+          "nodeDescription": {
+            "value": "Retrieve the selected device"
+          }
+        }
+      },
+      "position": {
+        "x": 2130,
+        "y": 1170
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "ss7tws2q0c",
+        "nodeType": "EVAL",
+        "properties": {
+          "037mcho7e1": {
+            "value": "anyTriggersFalse"
+          }
+        }
+      },
+      "position": {
+        "x": 2250,
+        "y": 1170
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "037mcho7e1",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "customHTML": {
+            "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n        <h1 class=\"text-center mb-4\">Error</h1>\n        <p class=\"text-danger text-center\">Unable to find selected device.</p>\n        <p class=\"text-muted text-center\">id: {{local.esnpfazufh.payload.output.buttonValue}}</p>\n      </div>\n    </div>\n  </div>\n</div>"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Filter Device Error"
+          },
+          "nodeDescription": {
+            "value": "Unable to find device"
+          },
+          "backgroundColor": {
+            "value": "#ffc8c1ff"
+          }
+        },
+        "idUnique": "88t3s8eqy4"
+      },
+      "position": {
+        "x": 2430,
+        "y": 1350
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "gw2pj2q16a",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "AEqualsMultipleB",
+        "type": "trigger",
+        "properties": {
+          "leftValueA": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.esnpfazufh.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.esnpfazufh.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "rightValueMultiple": {
+            "value": [
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"CANCEL\"\n      }\n    ]\n  }\n]",
+                "id": "7qqrki105m"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Form Button Check"
+          }
+        }
+      },
+      "position": {
+        "x": 1830,
+        "y": 960
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "oi4tof4f6f",
+        "nodeType": "EVAL"
+      },
+      "position": {
+        "x": 1950,
+        "y": 960
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "0jj62sc4b9",
+        "nodeType": "EVAL"
+      },
+      "position": {
+        "x": 1950,
+        "y": 1170
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "n07yhaeair",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "customHTML": {
+            "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n        <h1 class=\"text-center mb-4\">Error</h1>\n        <p class=\"text-danger text-center\">No available authentication devices.</p>\n      </div>\n    </div>\n  </div>\n</div>"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "No Devices Retrieved"
+          },
+          "nodeDescription": {
+            "value": "User doesn't have devices."
+          },
+          "backgroundColor": {
+            "value": "#ffc8c1ff"
+          }
+        },
+        "idUnique": "0u6rkq6q9f"
+      },
+      "position": {
+        "x": 1530,
+        "y": 1170
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "nguq1k44kt",
+        "nodeType": "CONNECTION",
+        "connectionId": "40308198837a97ff2be91afcc974d267",
+        "connectorId": "nodeConnector",
+        "name": "Teleport",
+        "label": "Teleport",
+        "status": "configured",
+        "capabilityName": "startNode",
+        "type": "trigger",
+        "properties": {
+          "inputSchema": {
+            "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"userid\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"User Id\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"userid\"\n\t\t}\n\t}\n}"
+          },
+          "nodeTitle": {
+            "value": "Device Selection"
+          }
+        }
+      },
+      "position": {
+        "x": 300,
+        "y": 960
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "fcd4uqmvro",
+        "nodeType": "EVAL"
+      },
+      "position": {
+        "x": 450,
+        "y": 960
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "bgf43utxro",
+        "nodeType": "ANNOTATION",
+        "name": "Annotation",
+        "connectionId": "921bfae85c38ed45045e07be703d86b8",
+        "connectorId": "annotationConnector",
+        "capabilityName": "updateAnnotationProperties",
+        "type": "action",
+        "properties": {
+          "backgroundColor": {
+            "value": "#5D00D6ff"
+          },
+          "annotationTextColor": {
+            "value": "#ffffffff"
+          },
+          "annotation": {
+            "value": "MFA Auth Device Selection"
+          },
+          "width": {
+            "value": 2400
+          },
+          "fontStyle": {
+            "value": "bold"
+          },
+          "fontSize": {
+            "value": 14
+          },
+          "fontFamily": {
+            "value": "sans-serif"
+          },
+          "cornerRadius": {
+            "value": 8
+          }
+        },
+        "status": "configured"
+      },
+      "position": {
+        "x": 210,
+        "y": 780
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "0a9q82bscl",
+        "nodeType": "ANNOTATION",
+        "name": "Annotation",
+        "connectionId": "921bfae85c38ed45045e07be703d86b8",
+        "connectorId": "annotationConnector",
+        "capabilityName": "updateAnnotationProperties",
+        "type": "action",
+        "properties": {
+          "backgroundColor": {
+            "value": "#f7f7adff"
+          },
+          "annotationTextColor": {
+            "value": "#000000"
+          },
+          "annotation": {
+            "value": "Input Schema: userid"
+          },
+          "width": {
+            "value": 400
+          },
+          "fontSize": {
+            "value": 14
+          },
+          "fontFamily": {
+            "value": "sans-serif"
+          },
+          "cornerRadius": {
+            "value": 8
+          },
+          "strokeEnabled": {
+            "value": false
+          },
+          "strokeWidth": {
+            "value": 1
+          },
+          "strokeColor": {
+            "value": "#181818ff"
+          }
+        },
+        "status": "configured",
+        "idUnique": "d2mbrib33f"
+      },
+      "position": {
+        "x": 210,
+        "y": 840
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "3c79fa0j9g",
+        "nodeType": "ANNOTATION",
+        "name": "Annotation",
+        "connectionId": "921bfae85c38ed45045e07be703d86b8",
+        "connectorId": "annotationConnector",
+        "capabilityName": "updateAnnotationProperties",
+        "type": "action",
+        "properties": {
+          "backgroundColor": {
+            "value": "#f2f3f4ff"
+          },
+          "annotationTextColor": {
+            "value": "#000000"
+          },
+          "annotation": {
+            "value": "Cancel Sign On"
+          },
+          "width": {
+            "value": 240
+          },
+          "fontSize": {
+            "value": 14
+          },
+          "fontFamily": {
+            "value": "sans-serif"
+          },
+          "cornerRadius": {
+            "value": 8
+          },
+          "strokeEnabled": {
+            "value": true
+          },
+          "strokeWidth": {
+            "value": 1
+          },
+          "strokeColor": {
+            "value": "#181818ff"
+          }
+        },
+        "status": "configured",
+        "idUnique": "1y8x4mrs8c"
+      },
+      "position": {
+        "x": 2010,
+        "y": 870
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "4x5n80pim4",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "customHTML": {
+            "value": "<!-- Check whether the end-user browser is supporting WebAuthn to understand if security keys and platform biomentic method are usable -->\n<form id=\"webAuthnSupportForm\" method=\"post\">\n    <input type=\"hidden\" name=\"webAuthnSupport\" id=\"webAuthnSupport\">\n    <button type=\"hidden\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" class=\"hidden-button\"  data-skbuttonvalue=\"submit\" data-skform=\"webAuthnSupportForm\" id=\"autoSubmit\">Next</button>\n</form>"
+          },
+          "customScript": {
+            "value": "function isWebAuthnSupported() {\n  try {\n    if (!window.PublicKeyCredential) {\n          console.log(\"Web Authentication API is not supported on this browser.\");\n          return false;\n      }\n      return true;\n  } catch (error) {\n    console.log(error);\n    return false;\n  }\n}\n\nfunction isWebAuthnPlatformAuthenticatorAvailableV2() {\n\n    var timer;\n\n    var isTimeout = false;\n\n    var p1 = new Promise(function(resolve) {\n        timer = setTimeout(function() {\n            console.log(\"isWebAuthnPlatformAuthenticatorAvailable - Timeout\");\n            isTimeout = true;\n            resolve(false);\n        }, 1500);\n    });\n\n    var p2 = new Promise(function(resolve) {\n\n        if (isWebAuthnSupported() && window.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable) {\n\n            resolve(\n                window.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable().catch(function(err) {\n                    console.log(err);\n                    return false;\n                }));\n        }\n        else {\n            resolve(false);\n        }\n    });\n\n    return Promise.race([p1, p2]).then(function (res) {\n        clearTimeout(timer);\n        console.log(\"isWebAuthnPlatformAuthenticatorAvailable - \" +  res);\n\n        return {supported: res, timeout: isTimeout};\n    });\n}\n\nsetTimeout(function() {\n    const authSuported = isWebAuthnSupported();\n    const webAuthnSupport = document.getElementById(\"webAuthnSupport\");\n    isWebAuthnPlatformAuthenticatorAvailableV2().then(function (result) {\n        webAuthnSupport.value = result.supported ? \"FULL\" : (authSuported ? \"SECURITY_KEY_ONLY\" : \"NONE\");\n        document.getElementById('autoSubmit').click();\n    }).catch(function (err) {\n        webAuthnSupport.value = authSuported ? \"SECURITY_KEY_ONLY\" : \"NONE\";\n        document.getElementById('autoSubmit').click();\n    });\n}, 400);\n\n"
+          },
+          "nodeTitle": {
+            "value": "Get WebAuthn Browser Compatibility"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "propertyName": "webAuthnSupport",
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "value": "",
+                "hashedVisibility": false,
+                "displayName": ""
+              },
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "sktemplate": {
+            "customerId": "50a0de8b585e95ff04f40f30f8ffd219",
+            "visibility": "private",
+            "version": "1.0",
+            "name": "Browser computability check - meirav",
+            "description": "",
+            "createdDate": 1641819181546,
+            "inputSchema": null,
+            "outputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"buttonValue\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"propertyName\": \"buttonValue\"\n\t\t},\n\t\t\"webAuthenSupport\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"propertyName\": \"webAuthenSupport\"\n\t\t}\n\t}\n}",
+            "script": "function isWebAuthnSupported() {\n  try {\n    if (!window.PublicKeyCredential) {\n          console.log(\"Web Authentication API is not supported on this browser.\");\n          return false;\n      }\n      return true;\n  } catch (error) {\n    console.log(error);\n    return false;\n  }\n}\n\nsetTimeout(function() {\n  document.forms['webAuthenSupportForm'].elements[\"webAuthenSupport\"].value = isWebAuthnSupported();\n  document.getElementById('autoSubmit').click();\n}, 200);",
+            "style": ".hidden-button{\n    display: none;\n}",
+            "template": "<form id=\"webAuthenSupportForm\" method=\"post\">\n    <input type=\"hidden\" name=\"webAuthenSupport\" id=\"webAuthenSupport\">\n    <button type=\"hidden\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" class=\"hidden-button\"  data-skbuttonvalue=\"submit\" data-skform=\"webAuthenSupportForm\" id=\"autoSubmit\">Next</button>\n</form>",
+            "updatedDate": 1641889117353,
+            "validationRules": [],
+            "uiId": "8pFQopGGttGoUHoy31b0qT7AgofhTszG",
+            "companyId": "6cQlNujpNKr8Rx50NwxbdnenYSPAW14d",
+            "value": "8pFQopGGttGoUHoy31b0qT7AgofhTszG"
+          },
+          "inputSchema": {
+            "value": null
+          },
+          "outputSchema": {},
+          "customCSS": {
+            "value": ".hidden-button{\n    display: none;\n}"
+          },
+          "validationRules": {
+            "value": []
+          }
+        },
+        "idUnique": "2wx8pbva9t"
+      },
+      "position": {
+        "x": 930,
+        "y": 960
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "twhiae4uch",
+        "nodeType": "EVAL"
+      },
+      "position": {
+        "x": 1050,
+        "y": 960
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "5sfz2mk2w3",
+        "nodeType": "ANNOTATION",
+        "name": "Annotation",
+        "connectionId": "921bfae85c38ed45045e07be703d86b8",
+        "connectorId": "annotationConnector",
+        "capabilityName": "updateAnnotationProperties",
+        "type": "action",
+        "properties": {
+          "backgroundColor": {
+            "value": "#f2f3f4ff"
+          },
+          "annotationTextColor": {
+            "value": "#000000"
+          },
+          "annotation": {
+            "value": "Create Auth Request"
+          },
+          "width": {
+            "value": 240
+          },
+          "fontSize": {
+            "value": 14
+          },
+          "fontFamily": {
+            "value": "sans-serif"
+          },
+          "cornerRadius": {
+            "value": 8
+          },
+          "strokeEnabled": {
+            "value": true
+          },
+          "strokeWidth": {
+            "value": 1
+          },
+          "strokeColor": {
+            "value": "#181818ff"
+          }
+        },
+        "status": "configured",
+        "idUnique": "4cxhqhiing"
+      },
+      "position": {
+        "x": 2310,
+        "y": 1080
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "09gtrt0ly3",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "customHTML": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n    <div style=\\\"width: 600px\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img class=\\\"companyLogo align-self-center mb-5\\\" alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"/>\\n                <h1 class=\\\"text-center mb-4\\\">Not Implemented</h1>\\n                <p class=\\\"fw-bolder text-center\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"featureName\",\n        \"data\": \"{{featureName}}\",\n        \"tooltip\": \"{{featureName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{featureName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</p>\\n                <p class=\\\"text-muted text-center\\\">This feature has not been implemented yet</p>\\n                <h2 class=\\\"text-center mt-3 mb-4\\\">Selected Device Details</h2>\\n                <pre>\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"device\",\n        \"data\": \"{{local.3nylbebbgo.payload.output.device}}\",\n        \"tooltip\": \"{{local.3nylbebbgo.payload.output.device}}\",\n        \"children\": [\n          {\n            \"text\": \"device\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</pre>\\n                    \\n            </div>\\n        </div>\\n    </div>\\n</div>\"\n      }\n    ]\n  }\n]"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Create Auth Request"
+          },
+          "nodeDescription": {
+            "value": "Display not implemented message"
+          },
+          "sktemplate": {
+            "uiId": "b7e39a4633e1ab8ef0258db96857d2b8",
+            "createdDate": 1678881838676,
+            "customerId": "f3e47d945ae971a4b4142ec75012d155",
+            "description": "",
+            "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"featureName\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Feature Name\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"featureName\"\n\t\t}\n\t}\n}",
+            "name": "Feature template",
+            "outputSchema": {},
+            "script": "",
+            "style": "",
+            "template": "",
+            "updatedDate": 1678881878036,
+            "validationRules": [],
+            "version": "1.0",
+            "visibility": "private",
+            "companyId": "ee43f700-c751-494d-9dbf-70946a85b328",
+            "value": "b7e39a4633e1ab8ef0258db96857d2b8"
+          },
+          "inputSchema": {
+            "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"featureName\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Feature Name\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"featureName\"\n\t\t}\n\t}\n}"
+          },
+          "outputSchema": {
+            "value": {}
+          },
+          "customCSS": {
+            "value": "pre {\n  font-family: courier;\n  overflow: hidden;\n  background-color: #f3f7fa;\n  padding: 7px;\n  border: solid 1px #cfd0d2;\n}"
+          },
+          "customScript": {
+            "value": ""
+          },
+          "validationRules": {
+            "value": []
+          },
+          "featureName": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Create Auth for Device`\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.esnpfazufh.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.esnpfazufh.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"`\"\n      }\n    ]\n  }\n]"
+          },
+          "backgroundColor": {
+            "value": "#50e3c280"
+          }
+        },
+        "idUnique": "zkzquhbhk3"
+      },
+      "position": {
+        "x": 2430,
+        "y": 1170
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "vulkjtc56n",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "customHTML": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\">\\n    <div style=\\\"width: 400px\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img class=\\\"companyLogo align-self-center mb-5\\\" alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"/>\\n                <h1 class=\\\"text-center mb-4\\\">Not Implemented</h1>\\n                <p class=\\\"fw-bolder text-center\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:undefined\",\n        \"url\": \"featureName\",\n        \"data\": \"{{featureName}}\",\n        \"tooltip\": \"{{featureName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{featureName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</p>\\n                <p class=\\\"text-muted text-center\\\">This feature has not been implemented yet</p>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"\n      }\n    ]\n  }\n]"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Cancel Auth Request"
+          },
+          "nodeDescription": {
+            "value": "Display not implemented message"
+          },
+          "sktemplate": {
+            "uiId": "b7e39a4633e1ab8ef0258db96857d2b8",
+            "createdDate": 1678881838676,
+            "customerId": "f3e47d945ae971a4b4142ec75012d155",
+            "description": "",
+            "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"featureName\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Feature Name\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"featureName\"\n\t\t}\n\t}\n}",
+            "name": "Feature template",
+            "outputSchema": {},
+            "script": "",
+            "style": "",
+            "template": "",
+            "updatedDate": 1678881878036,
+            "validationRules": [],
+            "version": "1.0",
+            "visibility": "private",
+            "companyId": "ee43f700-c751-494d-9dbf-70946a85b328",
+            "value": "b7e39a4633e1ab8ef0258db96857d2b8"
+          },
+          "inputSchema": {
+            "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"featureName\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Feature Name\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"featureName\"\n\t\t}\n\t}\n}"
+          },
+          "outputSchema": {
+            "value": {}
+          },
+          "customCSS": {
+            "value": "pre {\n  font-family: courier;\n  overflow: hidden;\n  background-color: #f3f7fa;\n  padding: 7px;\n  border: solid 1px #cfd0d2;\n}"
+          },
+          "customScript": {
+            "value": ""
+          },
+          "validationRules": {
+            "value": []
+          },
+          "featureName": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"Cancel Auth Request\"\n      }\n    ]\n  }\n]"
+          },
+          "backgroundColor": {
+            "value": "#50e3c280"
+          }
+        },
+        "idUnique": "zkzquhbhk3"
+      },
+      "position": {
+        "x": 2130,
+        "y": 960
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": [
+    {
+      "data": {
+        "id": "z2ce2g8n01",
+        "source": "oi4tof4f6f",
+        "target": "vulkjtc56n"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "3vd31efqtj",
+        "source": "b7ehn69lwq",
+        "target": "4x5n80pim4"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "5b0bysz0xo",
+        "source": "4x5n80pim4",
+        "target": "twhiae4uch"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "er5lq4c7fj",
+        "source": "twhiae4uch",
+        "target": "a35bsvybz1"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "tzqyoyrmqj",
+        "source": "8b69htw57s",
+        "target": "n07yhaeair"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "lbel4fufc5",
+        "source": "gw2pj2q16a",
+        "target": "0jj62sc4b9",
+        "multiValueSourceId": "-1"
+      },
+      "position": {
+        "x": 64,
+        "y": 92
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "dwi16szguh",
+        "source": "0jj62sc4b9",
+        "target": "3nylbebbgo"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "c784bfnkgo",
+        "source": "ss7tws2q0c",
+        "target": "09gtrt0ly3"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "t4uk7nacr2",
+        "source": "j7hxxke4c6",
+        "target": "gw2pj2q16a"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "rdz690uglx",
+        "source": "gw2pj2q16a",
+        "target": "oi4tof4f6f",
+        "multiValueSourceId": "7qqrki105m"
+      },
+      "position": {
+        "x": 64,
+        "y": 52
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "7y3u2n8ugl",
+        "source": "ss7tws2q0c",
+        "target": "037mcho7e1"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "s71mbfm6eo",
+        "source": "3nylbebbgo",
+        "target": "ss7tws2q0c"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "vp9uvi8oen",
+        "source": "k2c5meq1ln",
+        "target": "b7ehn69lwq"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "21ijtw36ac",
+        "source": "a35bsvybz1",
+        "target": "8b69htw57s"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "m1wsuklche",
+        "source": "8b69htw57s",
+        "target": "esnpfazufh"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "qhw1gzqy3g",
+        "source": "esnpfazufh",
+        "target": "j7hxxke4c6"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "rdw2mw3x2u",
+        "source": "fcd4uqmvro",
+        "target": "k2c5meq1ln"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "16zazqe8d4",
+        "source": "nguq1k44kt",
+        "target": "fcd4uqmvro"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    }
+  ]
+}
