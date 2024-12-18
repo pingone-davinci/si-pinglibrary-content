@@ -1,0 +1,92 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "kzwyvsxqca",
+        "nodeType": "CONNECTION",
+        "connectionId": "06922a684039827499bdbdd97f49827b",
+        "connectorId": "variablesConnector",
+        "name": "Variables",
+        "label": "Variables",
+        "status": "configured",
+        "capabilityName": "saveValue",
+        "type": "trigger",
+        "properties": {
+          "saveVariables": {
+            "value": [
+              {
+                "name": "companyName",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Ping Identity\"\n      }\n    ]\n  }\n]",
+                "key": 0.8558926100565449,
+                "label": "companyName (string - flowInstance)",
+                "type": "string"
+              },
+              {
+                "name": "companyLogo",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                "key": 0.3085086155646495,
+                "label": "companyLogo (string - flowInstance)",
+                "type": "string"
+              },
+              {
+                "name": "populationId",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                "key": 0.9673372774789002,
+                "type": "string",
+                "label": "populationId (string - flowInstance)"
+              },
+              {
+                "name": "origin",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"auth.pingone.com\"\n      }\n    ]\n  }\n]",
+                "key": 0.38383064124643007,
+                "label": "origin (string - flowInstance)",
+                "type": "string"
+              },
+              {
+                "name": "originURL",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://auth.pingone.com\"\n      }\n    ]\n  }\n]",
+                "key": 0.3895964400152929,
+                "label": "originURL (string - flowInstance)",
+                "type": "string"
+              },
+              {
+                "name": "relyingParty",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"PingOne\"\n      }\n    ]\n  }\n]",
+                "key": 0.8294031869442895,
+                "label": "relyingParty (string - flowInstance)",
+                "type": "string"
+              },
+              {
+                "name": "relyingPartyId",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"auth.pingone.com\"\n      }\n    ]\n  }\n]",
+                "key": 0.33706413004714153,
+                "label": "relyingPartyId (string - flowInstance)",
+                "type": "string"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Flow Variables"
+          },
+          "nodeDescription": {
+            "value": "Initialize runtime variables"
+          }
+        },
+        "idUnique": "ipp1n97l52"
+      },
+      "position": {
+        "x": 1336,
+        "y": 249
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": []
+}

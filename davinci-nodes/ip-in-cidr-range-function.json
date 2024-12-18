@@ -1,0 +1,218 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "mavlqu089u",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHtmlMessage",
+        "type": "trigger",
+        "properties": {
+          "nodeTitle": {
+            "value": "Out of Range"
+          },
+          "messageTitle": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Not in Range\"\n      }\n    ]\n  }\n]"
+          },
+          "message": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"ip\",\n        \"data\": \"{{global.ip}}\",\n        \"tooltip\": \"{{global.ip}}\",\n        \"children\": [\n          {\n            \"text\": \"ip\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "backgroundColor": {
+            "value": "#ffc8c1ff"
+          }
+        }
+      },
+      "position": {
+        "x": 600,
+        "y": 390
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "ndzb7wiiny",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHtmlMessage",
+        "type": "trigger",
+        "properties": {
+          "message": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"ip\",\n        \"data\": \"{{global.ip}}\",\n        \"tooltip\": \"{{global.ip}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.ip}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "messageTitle": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"In Range\"\n      }\n    ]\n  }\n]"
+          },
+          "nodeTitle": {
+            "value": "In Range"
+          },
+          "backgroundColor": {
+            "value": "#9dc967ff"
+          }
+        }
+      },
+      "position": {
+        "x": 600,
+        "y": 240
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "cfwwejmgrg",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Function",
+        "status": "configured",
+        "capabilityName": "customFunction",
+        "type": "trigger",
+        "properties": {
+          "code": {
+            "value": "/**\n * Determines if an IP address is within a given set of CIDR ranges.\n * Supports both IPv4 and IPv6 addresses.\n * \n * @see {@link https://codepen.io/gmorgan-ping/pen/ZEVqaoM | CodePen: IPv4 IPv6 address in CIDR Range (Incl. test cases)}\n *\n * @param {Object} params - An object containing ipRanges (comma-separated CIDR strings) and incomingIp (the IP to check).\n * @returns {boolean} - Returns true if the IP is within any of the CIDR ranges; otherwise, false.\n */\n\nmodule.exports = a = async ({params}) => {\n    const { ipRanges, incomingIp } = params;\n  \n    // Explicit check for null or empty strings\n    if (!ipRanges || !incomingIp) {\n        return false;\n    }\n  \n    const ipRangeArray = ipRanges.split(',');\n\n    // Convert the incoming IP to its integer (or BigInt for IPv6) representation\n    const incoming = isIPv6(incomingIp) ? ipToBigIntIPv6(incomingIp) : ipToInt(incomingIp);\n    const maxPrefix = isIPv6(incomingIp) ? 128 : 32;\n\n    for (const range of ipRangeArray) {\n        const [rangeIp, prefix] = range.split('/');\n        const prefixNum = Number(prefix);\n\n        // Invalid CIDR prefix check\n        if (prefixNum < 0 || prefixNum > maxPrefix) {\n            return false;\n        }\n\n        // Calculate the netmask for CIDR prefix\n        const mask = isIPv6(incomingIp) ? \n                     ~(BigInt(2) ** BigInt(128 - prefixNum) - BigInt(1)) : \n                     ~(2 ** (32 - prefixNum) - 1);\n\n        // Check if IP is within the current range\n        if (isIPv6(incomingIp)) {\n            if ((ipToBigIntIPv6(rangeIp) & mask) === (incoming & mask)) {\n                return;\n            }\n        } else {\n            if ((ipToInt(rangeIp) & mask) === (incoming & mask)) {\n                return;\n            }\n        }\n    }\n\n    return false;\n}\n\n/**\n * Converts an IPv4 address string to its integer representation.\n * @param {string} ip - The IPv4 address string.\n * @returns {number} - The integer representation of the IPv4 address.\n */\nfunction ipToInt(ip) {\n    return ip.split('.').reduce((int, octet) => (int << 8) + parseInt(octet, 10), 0);\n}\n\n/**\n * Checks if an IP address is an IPv6.\n * @param {string} ip - The IP address to check.\n * @returns {boolean} - Returns true if the IP is IPv6; otherwise, false.\n */\nfunction isIPv6(ip) {\n    return ip.includes(':');\n}\n\n/**\n * Converts an IPv6 address string to its BigInt representation.\n * @param {string} ip - The IPv6 address string.\n * @returns {BigInt} - The BigInt representation of the IPv6 address.\n */\nfunction ipToBigIntIPv6(ip) {\n    const segments = ip.split(':').map(segment => parseInt(segment || '0', 16));\n    while (segments.length < 8) {\n        const zeroIndex = segments.indexOf(0);\n        segments.splice(zeroIndex, 1, 0, 0);\n    }\n    return segments.reduce((int, segment) => (int << 16n) + BigInt(segment), 0n);\n}"
+          },
+          "outputSchema": {
+            "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"result\": {\n\t\t\t\t\"type\": \"boolean\"\n\t\t\t}\n\t\t}\n\t}\n}"
+          },
+          "variableInputList": {
+            "value": [
+              {
+                "name": "incomingIp",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"ip\",\n        \"data\": \"{{global.ip}}\",\n        \"tooltip\": \"{{global.ip}}\",\n        \"children\": [\n          {\n            \"text\": \"ip\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              {
+                "name": "ipRanges",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"2001:0db8::/32,47.54.82.0/24\"\n      }\n    ]\n  }\n]"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Check IP in CIDR Range"
+          },
+          "nodeDescription": {
+            "value": "Function to determine if user IP is in IPv4/IPv6 CIDR range"
+          }
+        }
+      },
+      "position": {
+        "x": 270,
+        "y": 240
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "qke18fph24",
+        "nodeType": "EVAL",
+        "label": "Evaluator",
+        "properties": {
+          "mavlqu089u": {
+            "value": "anyTriggersFalse"
+          }
+        }
+      },
+      "position": {
+        "x": 390,
+        "y": 240
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": [
+    {
+      "data": {
+        "id": "y869vuw8la",
+        "source": "cfwwejmgrg",
+        "target": "qke18fph24"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "m5jljq8lqs",
+        "source": "qke18fph24",
+        "target": "ndzb7wiiny"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "nr17vxkd6",
+        "source": "qke18fph24",
+        "target": "mavlqu089u"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    }
+  ]
+}

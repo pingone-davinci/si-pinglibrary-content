@@ -1,0 +1,54 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "9rjcv09oqz",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "idUnique": "2oqf8z814o",
+        "capabilityName": "customFunction",
+        "type": "trigger",
+        "properties": {
+          "variableInputList": {
+            "value": [
+              {
+                "name": "incomingGroups",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            ]
+          },
+          "code": {
+            "value": "// Write your code here\n// Supported language: Javascript \nmodule.exports = a = async ({params}) => {\n  \n    var groupArr= JSON.parse(params.incomingGroups);\n    \n    // Initialize an empty array\n    const groups = [];\n    //loop through each group object and add the name to an array\n    groupArr.forEach((group) => {\n    groups.push(group.name);\n    });\n    //return array of group names that the pingid connector can understand.\n    return {'groupsOutput': groups}\n\t\n}"
+          },
+          "outputSchema": {
+            "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"groupsOutput\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
+          },
+          "nodeTitle": {
+            "value": "Parse Group Memberships"
+          },
+          "nodeDescription": {
+            "value": "To be used by PingID's Initialize MFA capability"
+          }
+        }
+      },
+      "position": {
+        "x": 471,
+        "y": 313
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": []
+}

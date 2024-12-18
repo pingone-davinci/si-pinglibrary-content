@@ -1,0 +1,59 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "ymb8mkyd91",
+        "nodeType": "CONNECTION",
+        "connectionId": "3422cfa808df068b0468926cd3fb359e",
+        "connectorId": "functionsConnector",
+        "name": "Function",
+        "label": "Function",
+        "status": "configured",
+        "capabilityName": "customFunction",
+        "type": "trigger",
+        "properties": {
+          "code": {
+            "value": "/**\n * Encodes or decodes a string based on the provided parameters.\n *\n * @param {string} stringToEncode - The string to encode (if provided).\n * @param {string} stringToDecode - The string to decode (if provided).\n * @returns {string} The encoded or decoded string, or an empty string if neither parameter is provided.\n * @throws {Error} If both parameters are provided.\n */\nmodule.exports = a = async ({ params }) => {\n  const stringToEncode = params.stringToEncode;\n  const stringToDecode = params.stringToDecode;\n\n  let urlEncodedString;\n  let urlDecodedString;\n\n  if (!stringToEncode && !stringToDecode) {\n    return false;\n  }\n\n  if (stringToEncode) {\n    urlEncodedString = encodeURIComponent(stringToEncode);\n  }\n\n  if (stringToDecode) {\n    try {\n      urlDecodedString = decodeURIComponent(stringToDecode);\n    } catch (error) {\n      // Unable to decode, proceed to false branch\n      return false;\n    }\n  }\n\n  return { \"urlEncodedString\": urlEncodedString, \"urlDecodedString\": urlDecodedString };\n}\n"
+          },
+          "variableInputList": {
+            "value": [
+              {
+                "name": "stringToEncode",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              {
+                "name": "stringToDecode",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            ]
+          },
+          "outputSchema": {
+            "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"urlEncodedString\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t},\n\t\t\t\"urlDecodedString\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
+          },
+          "nodeTitle": {
+            "value": "URL Encode/Decode String Util"
+          },
+          "nodeDescription": {
+            "value": "URL Encode or Decode a String"
+          }
+        },
+        "idUnique": "ysqritofuy"
+      },
+      "position": {
+        "x": 420,
+        "y": 330
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": []
+}

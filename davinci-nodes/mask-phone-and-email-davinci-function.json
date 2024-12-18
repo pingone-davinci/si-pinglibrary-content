@@ -1,0 +1,59 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "bqnywha5d9",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "customFunction",
+        "type": "trigger",
+        "properties": {
+          "variableInputList": {
+            "value": [
+              {
+                "name": "input",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"+1(902) 401.3252\"\n      }\n    ]\n  }\n]"
+              },
+              {
+                "name": "inputType",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"phone\"\n      }\n    ]\n  }\n]"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Mask Phone/Email"
+          },
+          "nodeDescription": {
+            "value": "Mask a phone or email for display."
+          },
+          "code": {
+            "value": "/**\n * Masks sensitive information like phone numbers or email addresses.\n * @param {Object} params - The input parameters.\n * @param {string} params.input - The input value to be masked.\n * @param {string} params.inputType - The type of the input. Available types are SMS, VOICE, PHONE, or EMAIL.\n * @returns {string} The masked value or an original value if masking is unsuccessful.\n */\nmodule.exports = a = async ({ params }) => {\n\tconst input = params.input;\n\tlet inputType = params.inputType;\n\n\tconst PHONE_TYPES = [\"SMS\", \"VOICE\", \"PHONE\"];\n\tconst PHONE = \"PHONE\";\n\tconst EMAIL = \"EMAIL\";\n\tlet result = \"\";\n\n\tif (!input || !inputType) {\n\t\treturn { 'maskedValue': input }\n\t}\n\n\t// Determine if inputType is email or phone, otherwise just return\n\tif (PHONE_TYPES.includes(inputType.toUpperCase())) {\n\t\tinputType = PHONE;\n\t} else if (inputType.toUpperCase() === EMAIL) {\n\t\tinputType = EMAIL;\n\t} else {\n\t\treturn { 'maskedValue': input }\n\t}\n\n\tconst phoneRegex = /^\\+?[0-9\\s-]+$/; // Updated phone regex to allow +, digits, spaces, and hyphens\n\tconst emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/;\n\n\tconst numericInput = input.replace(/[^\\d+]/g, \"\");\n\n\t// Check if input is valid email or phone, otherwise just return\n\tif (inputType === PHONE && phoneRegex.test(numericInput)) {\n\t\tresult = maskPhone(numericInput);\n\t} else if (inputType === EMAIL && emailRegex.test(input)) {\n\t\tresult = maskEmail(input);\n\t} else {\n\t\tresult = input;\n\t}\n\n\treturn { 'maskedValue': result }\n}\n\n// Mask email\nconst maskEmail = (email) => {\n  const [username, domain] = email.split(\"@\");\n  const maskedUsername =\n    username.charAt(0) + \"*\".repeat(username.length - 2) + username.slice(-1);\n  return maskedUsername + \"@\" + domain;\n};\n\n//Mask phone number\nconst maskPhone = (phone) => {\n  const numericPhoneNumber = phone.replace(/[^\\d+]/g, \"\");\n\n  // Mask the first six digits of the phone number\n  const maskedPhoneNumber = \"***-***-\" + numericPhoneNumber.slice(-4);\n\n  return maskedPhoneNumber;\n};"
+          },
+          "outputSchema": {
+            "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"maskedValue\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
+          }
+        },
+        "idUnique": "qw9jw1svjl"
+      },
+      "position": {
+        "x": 360,
+        "y": 210
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": []
+}

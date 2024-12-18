@@ -1,0 +1,260 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "xu8ri3iw8o",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "customFunction",
+        "type": "trigger",
+        "properties": {
+          "nodeTitle": {
+            "value": "Flow Configuration Check"
+          },
+          "variableInputList": {
+            "value": [
+              {
+                "name": "testVariable",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            ]
+          },
+          "code": {
+            "value": "// Iterate over params object, return false if any\n// passed in parameters are null/empty\nmodule.exports = a = async ({ params }) => {\n\n\tfor (var key in params) {\n\t\tif (!params[key]) {\n\t\t\treturn false; \n\t\t}\n\t}\n\n\treturn \n}"
+          },
+          "outputSchema": {
+            "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\n\t\t}\n\t}\n}"
+          },
+          "nodeDescription": {
+            "value": "Add input variables to check for null/empty"
+          }
+        }
+      },
+      "position": {
+        "x": 390,
+        "y": 390
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "qz44vu5xzm",
+        "nodeType": "EVAL",
+        "properties": {
+          "undefined": {
+            "value": "allTriggersTrue"
+          },
+          "i5mednpghm": {
+            "value": "anyTriggersFalse"
+          }
+        }
+      },
+      "position": {
+        "x": 510,
+        "y": 390
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "i5mednpghm",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "customHTML": {
+            "value": "<div\n  class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n  <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n      <div class=\"card-body p-5 d-flex flex-column\">\n        <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n        <h1 class=\"text-center mb-4\">Flow Configuration Error</h1>\n        <p class=\"text-muted text-center\">{{errorMessage}}</p>\n      </div>\n    </div>\n  </div>\n</div>"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Error Message"
+          },
+          "nodeDescription": {
+            "value": "Configuration value not set error"
+          },
+          "backgroundColor": {
+            "value": "#ffc8c1ff"
+          },
+          "sktemplate": {
+            "uiId": "4283c0de636208a4273efe1c9fda225f",
+            "createdDate": 1678116166705,
+            "customerId": "f3e47d945ae971a4b4142ec75012d155",
+            "description": "",
+            "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"errorMessage\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Error Message\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"errorMessage\"\n\t\t}\n\t}\n}",
+            "name": "Error Template",
+            "outputSchema": {},
+            "script": "",
+            "style": "",
+            "template": "",
+            "updatedDate": 1678116321755,
+            "validationRules": [],
+            "version": "1.0",
+            "visibility": "private",
+            "companyId": "ee43f700-c751-494d-9dbf-70946a85b328",
+            "value": "4283c0de636208a4273efe1c9fda225f"
+          },
+          "inputSchema": {
+            "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"errorMessage\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Error Message\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"errorMessage\"\n\t\t}\n\t}\n}"
+          },
+          "outputSchema": {
+            "value": {}
+          },
+          "customCSS": {
+            "value": ""
+          },
+          "customScript": {
+            "value": ""
+          },
+          "validationRules": {
+            "value": []
+          },
+          "errorMessage": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Unable to execute the flow due to missing parameter values.\"\n      }\n    ]\n  }\n]"
+          }
+        },
+        "idUnique": "3nm07rhtek"
+      },
+      "position": {
+        "x": 690,
+        "y": 630
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "5h5aslu3k9",
+        "nodeType": "ANNOTATION",
+        "name": "Annotation",
+        "connectionId": "921bfae85c38ed45045e07be703d86b8",
+        "connectorId": "annotationConnector",
+        "capabilityName": "updateAnnotationProperties",
+        "type": "action",
+        "properties": {
+          "backgroundColor": {
+            "value": "#50e3c280"
+          },
+          "annotationTextColor": {
+            "value": "#000000"
+          },
+          "annotation": {
+            "value": "Add variables to check"
+          },
+          "width": {
+            "value": 240
+          },
+          "height": {
+            "value": 0
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fontFamily": {
+            "value": "sans-serif"
+          },
+          "strokeColor": {
+            "value": "#4a4a4aff"
+          },
+          "strokeEnabled": {
+            "value": true
+          },
+          "strokeWidth": {
+            "value": 1
+          }
+        },
+        "status": "configured",
+        "idUnique": "orltt3d32b"
+      },
+      "position": {
+        "x": 270,
+        "y": 270
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": [
+    {
+      "data": {
+        "id": "fg2gy37o39",
+        "source": "xu8ri3iw8o",
+        "target": "qz44vu5xzm"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "nsmty8cplz",
+        "source": "qz44vu5xzm",
+        "target": "i5mednpghm"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    }
+  ]
+}

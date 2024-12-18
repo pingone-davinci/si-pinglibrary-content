@@ -1,0 +1,52 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "gmwlun8cih",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "customFunction",
+        "type": "trigger",
+        "properties": {
+          "variableInputList": {
+            "value": [
+              {
+                "name": "dn",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n  {\n \"text\": \"cn=John Doe,uid=jdoe.1,ou=people,dc=accel-lab-ping,dc=com\"\n      }\n    ]\n  }\n]"
+              }
+            ]
+          },
+          "code": {
+            "value": "module.exports = a = async ({ params }) => {\n  const dn = params.dn;\n\n  // Define a regular expression with named groups for 'cn' and 'uid'\n  const regex = /(?:cn=(?<cn>\"(?:[^\"]|\"\")+\"|[^,]+))?(?:,\\s?|)(?:uid=(?<uid>\"(?:[^\"]|\"\")+\"|[^,]+))?/gi;\n\n  // Ensure that 'dn' property exists\n  if (!dn) {\n    return { cn: \"\", uid: \"\" };\n  }\n\n  const matchGroups = regex.exec(dn);\n\n  if (!matchGroups || (matchGroups.groups.cn === undefined && matchGroups.groups.uid === undefined)) {\n    // No match found or insufficient data, return an object with 'cn' and 'uid' as empty strings\n    return { cn: \"\", uid: \"\" };\n  }\n\n  return {\n    cn: matchGroups.groups.cn || \"\",\n    uid: matchGroups.groups.uid || \"\",\n  };\n};\n"
+          },
+          "outputSchema": {
+            "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"uid\": {\n\t\t\t\t\"type\":\"string\"\n\t\t\t},\n\t\t\t\"cn\": {\n\t\t\t\t\"type\":\"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
+          },
+          "nodeTitle": {
+            "value": "Extract UID from DN Function"
+          },
+          "nodeDescription": {}
+        },
+        "idUnique": "f5t88422gw"
+      },
+      "position": {
+        "x": 993,
+        "y": 564
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": []
+}

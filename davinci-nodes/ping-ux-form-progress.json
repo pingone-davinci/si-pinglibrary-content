@@ -1,0 +1,59 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "6gbfm8ftss",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "customFunction",
+        "type": "trigger",
+        "properties": {
+          "variableInputList": {
+            "value": [
+              {
+                "name": "progressItems",
+                "preferredDataType": "object",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"[\\\"Welcome\\\", \"\n      },\n      {\n        \"text\": \" \\\"Terms\\\", \"\n      },\n      {\n        \"text\": \"\\\"Register\\\", \\\"Verify\\\", \\\"Success\\\"]\"\n      }\n    ]\n  }\n]"
+              },
+              {
+                "name": "showLabels",
+                "preferredDataType": "boolean",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"true\"\n      }\n    ]\n  }\n]"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Create Form Progress Control"
+          },
+          "outputSchema": {
+            "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"progressPages\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
+          },
+          "code": {
+            "value": "/**\n * Generate HTML for form progress control.\n * \n * Note: This HTML relies on CSS classes that are not present within Ping's standard CSS (yet)\n *       Add the following CSS document to your flow\n *       https://pingone-davinci.github.io/si-pinglibrary-content/assets/progress-style.css\n * \n *       The CSS attributes are compliant with themeing via flow runner and the chrome extension\n * \n *       If you wish to override the finished background and border color, add the following override CSS\n *       within Flow -> Customizations\n *       \n *       div.stepper-item.finished .step-counter {\n *         background-color: rgb(255, 0, 0) !important;\n *         border: 1px solid rgb(255,0,0) !important;\n *       }\n * \n * @param {Array} progressItems - Array of strings for progress items.\n * @returns {object} - HTML string for the each page's progress control.\n */\nmodule.exports = ({ params }) => {\n  const { progressItems, showLabels } = params;\n\n  if (!Array.isArray(progressItems)) {\n    throw new Error('Invalid progressItems parameter. Expected an array.');\n  }\n\n  let progressPages = {};\n  progressItems.forEach((page, index) => {\n    const pageKey = page.replace(/\\s/g, \"\").toLowerCase();\n    if (!progressPages[pageKey]) { \n      progressPages[pageKey] = buildProgressPage(index, progressItems, showLabels);\n    }\n  });\n\n  return { \"progressPages\": progressPages };\n}\n\nconst buildProgressPage = (activeIndex, progressItems, showLabels) => {\n  let progressHTML = `<div class=\"stepper-wrapper\">`;\n  const labelClass = showLabels ? \"\" : \"d-none\";\n\n  const itemsHTML = progressItems.map((item, index) => {\n    let itemState = getItemState(activeIndex, index, progressItems.length);\n    return `\n        <div class=\"stepper-item ${itemState}\" title=\"${item}\">\n          <div class=\"step-counter\">${index + 1}</div>\n          <div class=\"step-name ${labelClass}\">${item}</div>\n        </div>\n      `;\n  }).join('');\n\n  progressHTML += itemsHTML + `</div>`;\n  return progressHTML;\n}\n\nconst getItemState = (activeIndex, currentIndex, totalItems) => {\n  if (activeIndex === currentIndex && currentIndex === totalItems - 1) {\n    return \"finished\";\n  } else if (activeIndex === currentIndex) {\n    return \"active\";\n  } else if (activeIndex > currentIndex) {\n    return \"completed\";\n  }\n  return \"\"; \n}\n"
+          },
+          "nodeDescription": {
+            "value": "Build Progress Progress HTML"
+          }
+        },
+        "idUnique": "0trfiq41g5"
+      },
+      "position": {
+        "x": 330,
+        "y": 390
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": []
+}
