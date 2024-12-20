@@ -1,0 +1,90 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "w4if4cpiln",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "title": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Timer Form\"\n      }\n    ]\n  }\n]"
+          },
+          "subtitle": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Form that self closes after X seconds.\"\n      }\n    ]\n  }\n]"
+          },
+          "customHTML": {
+            "value": "<div class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n   <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img class=\"companyLogo align-self-center mb-5\" alt=\"{{global.variables.companyName}}\" />\n                <h1 class=\"text-center mb-4\">{{title}}</h1>\n                <p class=\"text-center\">{{subtitle}}</p>\n                <p class=\"text-muted text-center\" id=\"timerMsg\"></p>\n            </div>\n        </div>\n    </div>\n</div>"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Auto Close Window"
+          },
+          "nodeDescription": {
+            "value": "Closes window after X seconds"
+          },
+          "customScript": {
+            "value": "const WINDOW_CLOSE_DURATION = 10;\n\nfunction autoCloseWindow(count) {\n\n  let label = document.getElementById(\"timerMsg\");\n  label.innerHTML = `This window will attempt to close in <br/><strong>${count}</strong> seconds.`\n\n  const countdown = setInterval(function () {\n    count--;\n\n    const secondsText = count === 1 ? \"second\" : \"seconds\";\n    label.innerHTML = `This window will attempt to close in <br/><strong>${count}</strong> ${secondsText}.`;\n\n    if (count <= 0) {\n      clearInterval(countdown);\n      window.close();\n      // Msg in the event the window cannot be closed programmatically \n      label.innerHTML = `You may now safely close this window.`;\n    }\n  }, 1000);\n}\n\nfunction start() {\n  // Close window in 10 seconds\n  autoCloseWindow(WINDOW_CLOSE_DURATION);\n}\n\nif (document.readyState === \"loading\") {\n  // Loading hasn't finished yet\n  document.addEventListener(\"DOMContentLoaded\", start);\n} else {\n  // `DOMContentLoaded` has already fired\n  start();\n}\n\n"
+          },
+          "sktemplate": {
+            "uiId": "55e2695827cf08212336f68ff818c8eb",
+            "createdDate": 1688143524735,
+            "customerId": "f3e47d945ae971a4b4142ec75012d155",
+            "description": "",
+            "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n\t\t\"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        }\n    }\n}",
+            "name": "Countdown",
+            "outputSchema": {},
+            "script": "",
+            "style": "",
+            "template": "",
+            "updatedDate": 1688143565233,
+            "validationRules": [],
+            "version": "1.0",
+            "visibility": "private",
+            "companyId": "edcc3f46-49cc-4176-bfcb-849afb268c1b",
+            "value": "55e2695827cf08212336f68ff818c8eb"
+          },
+          "inputSchema": {
+            "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        },\n\t\t\"subtitle\": {\n            \"type\": \"string\",\n            \"displayName\": \"Subtitle\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"subtitle\"\n        }\n    }\n}"
+          },
+          "outputSchema": {
+            "value": {}
+          },
+          "customCSS": {
+            "value": ""
+          },
+          "validationRules": {
+            "value": []
+          }
+        },
+        "idUnique": "6bgnsiv7dm"
+      },
+      "position": {
+        "x": 335,
+        "y": 245
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": []
+}
