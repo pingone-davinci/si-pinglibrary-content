@@ -12,7 +12,7 @@
       "createdDate": 1728388521271,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: October 8th, 2024",
+      "description": "Last Updated: January 8th, 2025",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Session Main Flow",
@@ -271,9 +271,6 @@
                 "nodeType": "EVAL",
                 "label": "Evaluator",
                 "properties": {
-                  "howu8n9hsc": {
-                    "value": "anyTriggersFalse"
-                  },
                   "z98ot8mzk7": {
                     "value": "anyTriggersFalse"
                   }
@@ -640,7 +637,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: October 8th, 2024"
+                    "value": "Last Updated: January 8th, 2025"
                   },
                   "width": {
                     "value": 240
@@ -855,7 +852,7 @@
       "createdDate": 1728388484340,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: October 8th, 2024",
+      "description": "Last Updated: January 8th, 2025",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -2083,12 +2080,10 @@
                 "capabilityName": "userLookup",
                 "type": "action",
                 "properties": {
-                  "identifier": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.howu8n9hsc.payload.output.username}}\",\n        \"tooltip\": \"{{local.howu8n9hsc.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
                   "matchAttributes": {
                     "value": [
-                      "username"
+                      "username",
+                      "email"
                     ]
                   },
                   "nodeTitle": {
@@ -2102,7 +2097,7 @@
                     }
                   },
                   "nodeDescription": {
-                    "value": "Attempts to find the user in PingOne by the submitted username"
+                    "value": "Attempts to find the user in PingOne by the submitted username/email"
                   },
                   "userIdentifierForFindUser": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.65u7m8cm28.payload.output.username}}\",\n        \"tooltip\": \"{{local.65u7m8cm28.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
@@ -4962,7 +4957,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: October 8th, 2024"
+                    "value": "Last Updated: January 8th, 2025"
                   },
                   "width": {
                     "value": 240
