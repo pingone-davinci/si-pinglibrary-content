@@ -12,7 +12,7 @@
       "createdDate": 1728388521271,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: October 8th, 2024",
+      "description": "Last Updated: January 8th, 2025",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Session Main Flow",
@@ -271,9 +271,6 @@
                 "nodeType": "EVAL",
                 "label": "Evaluator",
                 "properties": {
-                  "howu8n9hsc": {
-                    "value": "anyTriggersFalse"
-                  },
                   "z98ot8mzk7": {
                     "value": "anyTriggersFalse"
                   }
@@ -315,6 +312,9 @@
                   },
                   "nodeTitle": {
                     "value": "Sign On Flow"
+                  },
+                  "nodeDescription": {
+                    "value": "Launch Sign On Flow"
                   }
                 },
                 "idUnique": "vfcvshnz3c"
@@ -481,6 +481,9 @@
                   },
                   "nodeTitle": {
                     "value": "Sign On Success"
+                  },
+                  "nodeDescription": {
+                    "value": "Sign On Success Method"
                   }
                 }
               },
@@ -640,7 +643,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: October 8th, 2024"
+                    "value": "Last Updated: January 8th, 2025"
                   },
                   "width": {
                     "value": 240
@@ -855,7 +858,7 @@
       "createdDate": 1728388484340,
       "currentVersion": 1,
       "customerId": "",
-      "description": "Last Updated: October 8th, 2024",
+      "description": "Last Updated: January 8th, 2025",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -954,9 +957,6 @@
                 "capabilityName": "checkPassword",
                 "type": "action",
                 "properties": {
-                  "userId": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.icv9ot1nro.payload.output.matchedUser.id}}\",\n        \"tooltip\": \"{{local.icv9ot1nro.payload.output.matchedUser.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
                   "password": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"password\",\n        \"data\": \"{{local.65u7m8cm28.payload.output.password}}\",\n        \"tooltip\": \"{{local.65u7m8cm28.payload.output.password}}\",\n        \"children\": [\n          {\n            \"text\": \"password\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
@@ -1075,6 +1075,9 @@
                   },
                   "nodeTitle": {
                     "value": "Sign On Success"
+                  },
+                  "nodeDescription": {
+                    "value": "Sign On Success Method"
                   }
                 }
               },
@@ -1339,6 +1342,9 @@
                   },
                   "nodeTitle": {
                     "value": "Reset Password"
+                  },
+                  "nodeDescription": {
+                    "value": "Resets the password for the user associated with the provided PingOne User Id"
                   }
                 }
               },
@@ -1551,6 +1557,9 @@
                   },
                   "nodeTitle": {
                     "value": "Registration"
+                  },
+                  "nodeDescription": {
+                    "value": "Registers a new user in PingOne"
                   }
                 }
               },
@@ -1855,6 +1864,9 @@
                   "nodeTitle": {
                     "value": "Success"
                   },
+                  "nodeDescription": {
+                    "value": "Return success to calling flow"
+                  },
                   "backgroundColor": {
                     "value": "#9dc967ff"
                   },
@@ -1963,6 +1975,9 @@
                   },
                   "nodeTitle": {
                     "value": "Sign On Start"
+                  },
+                  "nodeDescription": {
+                    "value": "Restart the flow"
                   }
                 }
               },
@@ -2083,12 +2098,10 @@
                 "capabilityName": "userLookup",
                 "type": "action",
                 "properties": {
-                  "identifier": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.howu8n9hsc.payload.output.username}}\",\n        \"tooltip\": \"{{local.howu8n9hsc.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
                   "matchAttributes": {
                     "value": [
-                      "username"
+                      "username",
+                      "email"
                     ]
                   },
                   "nodeTitle": {
@@ -2102,7 +2115,7 @@
                     }
                   },
                   "nodeDescription": {
-                    "value": "Attempts to find the user in PingOne by the submitted username"
+                    "value": "Attempts to find the user in PingOne by the submitted username/email"
                   },
                   "userIdentifierForFindUser": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.65u7m8cm28.payload.output.username}}\",\n        \"tooltip\": \"{{local.65u7m8cm28.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
@@ -2537,6 +2550,9 @@
                   },
                   "nodeTitle": {
                     "value": "Account Verification"
+                  },
+                  "nodeDescription": {
+                    "value": "Verify the email address of the user"
                   }
                 }
               },
@@ -3189,6 +3205,9 @@
                   "nodeTitle": {
                     "value": "Forgot Password"
                   },
+                  "nodeDescription": {
+                    "value": "Starts the Forgot Password process"
+                  },
                   "inputSchema": {
                     "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \n  }\n}"
                   }
@@ -3243,6 +3262,9 @@
                   },
                   "nodeTitle": {
                     "value": "Send Recovery Code"
+                  },
+                  "nodeDescription": {
+                    "value": "Sends a recovery code to the user's email"
                   }
                 }
               },
@@ -3581,9 +3603,6 @@
                       "email"
                     ]
                   },
-                  "userIdentifierForFindUser": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.1teos2506v.payload.output.username}}\",\n        \"tooltip\": \"{{local.1teos2506v.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
                   "matchAttribute": {
                     "value": "id"
                   },
@@ -3599,7 +3618,9 @@
                   "nodeTitle": {
                     "value": "Validates code and update password"
                   },
-                  "nodeDescription": {},
+                  "nodeDescription": {
+                    "value": "Update password if code is valid"
+                  },
                   "recoverPassword_localizedErrors": {
                     "properties": {
                       "en": {
@@ -3668,13 +3689,12 @@
                 "capabilityName": "customErrorMessage",
                 "type": "action",
                 "properties": {
-                  "errorCode": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"httpResponseCode\",\n        \"data\": \"{{local.fe51hat32b.payload.error.httpResponseCode}}\",\n        \"tooltip\": \"{{local.fe51hat32b.payload.error.httpResponseCode}}\",\n        \"children\": [\n          {\n            \"text\": \"httpResponseCode\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
                   "nodeTitle": {
                     "value": "Passcode mismatch or new password violation"
                   },
-                  "nodeDescription": {},
+                  "nodeDescription": {
+                    "value": "Password mismatch error message"
+                  },
                   "errorMessage": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Invalid recovery code and/or password\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
@@ -3814,6 +3834,9 @@
                   },
                   "nodeTitle": {
                     "value": "Passwords do not match error"
+                  },
+                  "nodeDescription": {
+                    "value": "Error message for when passwords do not match"
                   }
                 }
               },
@@ -4021,7 +4044,8 @@
                 "properties": {
                   "matchAttributes": {
                     "value": [
-                      "username"
+                      "username",
+                      "email"
                     ]
                   },
                   "userIdentifierForFindUser": {
@@ -4029,6 +4053,9 @@
                   },
                   "nodeTitle": {
                     "value": "Lookup User"
+                  },
+                  "nodeDescription": {
+                    "value": "Lookup user by username/email"
                   }
                 },
                 "idUnique": "576fmtfv7p"
@@ -4348,6 +4375,9 @@
                   },
                   "nodeTitle": {
                     "value": "Error Validating Code"
+                  },
+                  "nodeDescription": {
+                    "value": "Error validating verification code message"
                   }
                 }
               },
@@ -4455,6 +4485,9 @@
                   },
                   "nodeTitle": {
                     "value": "Resend Verification Code"
+                  },
+                  "nodeDescription": {
+                    "value": "Resend verification code to user"
                   }
                 }
               },
@@ -4928,6 +4961,9 @@
                   },
                   "nodeTitle": {
                     "value": "Passwords do not match error"
+                  },
+                  "nodeDescription": {
+                    "value": "Error message when passwords do not match"
                   }
                 },
                 "idUnique": "1t533qsfsz"
@@ -4962,7 +4998,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: October 8th, 2024"
+                    "value": "Last Updated: January 8th, 2025"
                   },
                   "width": {
                     "value": 240
@@ -5073,6 +5109,9 @@
                 "properties": {
                   "nodeTitle": {
                     "value": "Resend Recovery"
+                  },
+                  "nodeDescription": {
+                    "value": "Resend Recovery Email"
                   },
                   "inputSchema": {
                     "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"resendMessage\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Resend Message\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"resendMessage\"\n\t\t}\n\t}\n}"
@@ -5563,9 +5602,6 @@
                   "nodeTitle": {
                     "value": "Create the PingOne user"
                   },
-                  "password": {
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"password\",\n        \"data\": \"{{local.fuil2gnc5f.payload.output.password}}\",\n        \"tooltip\": \"{{local.fuil2gnc5f.payload.output.password}}\",\n        \"children\": [\n          {\n            \"text\": \"password\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
-                  },
                   "passwordForCreateUser": {
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"password\",\n        \"data\": \"{{local.1k5y98i1v1.payload.output.password}}\",\n        \"tooltip\": \"{{local.1k5y98i1v1.payload.output.password}}\",\n        \"children\": [\n          {\n            \"text\": \"password\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   },
@@ -5673,6 +5709,9 @@
                   },
                   "nodeTitle": {
                     "value": "Is Locked Out?"
+                  },
+                  "nodeDescription": {
+                    "value": "Check if the user is locked out"
                   }
                 }
               },
@@ -5919,6 +5958,9 @@
                 "properties": {
                   "nodeTitle": {
                     "value": "Account Locked"
+                  },
+                  "nodeDescription": {
+                    "value": "Account locked method"
                   },
                   "inputSchema": {
                     "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"errorDetails\": {\n\t\t\t\"type\": \"object\",\n\t\t\t\"displayName\": \"Error Details\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"errorDetails\"\n\t\t}\n\t}\n}"
