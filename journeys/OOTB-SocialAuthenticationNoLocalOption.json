@@ -1,0 +1,455 @@
+{
+  "meta": {
+    "origin": "https://openam-bnagansur4.forgeblocks.com/platform/?realm=alpha#/journeys/Social%20authentication%20-%20no%20local%20option",
+    "exportedBy": "bnagansur@pingidentity.com",
+    "exportDate": "2024-12-17T06:14:21.200Z",
+    "exportTool": "platform-admin ui tree export",
+    "exportToolVersion": "1.0",
+    "treesSelectedForExport": [
+      "Social authentication - no local option"
+    ],
+    "innerTreesIncluded": []
+  },
+  "trees": {
+    "Social authentication - no local option": {
+      "tree": {
+        "_id": "Social authentication - no local option",
+        "_rev": "-2116409654",
+        "identityResource": "managed/alpha_user",
+        "uiConfig": {
+          "categories": "[\"social login\"]"
+        },
+        "entryNodeId": "ff282a09-7276-493b-9aed-7d1150b7df24",
+        "innerTreeOnly": false,
+        "nodes": {
+          "18976efa-55f7-482d-ab91-dd9568c330eb": {
+            "x": 478.375,
+            "y": 117.015625,
+            "connections": {
+              "ACCOUNT_EXISTS": "a00149f5-27ee-4225-bd55-ed0912784a5f",
+              "NO_ACCOUNT": "37dbdf67-ea13-4527-ab59-39779a21bf9b",
+              "SOCIAL_AUTH_INTERRUPTED": "e301438c-0bd0-429c-ab0c-66126501069a"
+            },
+            "nodeType": "SocialProviderHandlerNodeV2",
+            "displayName": "Social Provider Handler Node"
+          },
+          "26dd5667-2227-4b32-a974-98503edcdfba": {
+            "x": 1021,
+            "y": 317.015625,
+            "connections": {
+              "CREATED": "a00149f5-27ee-4225-bd55-ed0912784a5f",
+              "FAILURE": "e301438c-0bd0-429c-ab0c-66126501069a"
+            },
+            "nodeType": "CreateObjectNode",
+            "displayName": "Create Object"
+          },
+          "37dbdf67-ea13-4527-ab59-39779a21bf9b": {
+            "x": 450.15625,
+            "y": 287.015625,
+            "connections": {
+              "false": "fc70c678-ecae-4bc2-9033-37121c9d533e",
+              "true": "f45d1e08-1632-458f-b16e-83a2c285c93e"
+            },
+            "nodeType": "RequiredAttributesDecisionNode",
+            "displayName": "Required Attributes Present"
+          },
+          "6955eaa7-98db-476b-b951-f02bfe965b4c": {
+            "x": 882,
+            "y": 553.015625,
+            "connections": {
+              "true": "26dd5667-2227-4b32-a974-98503edcdfba"
+            },
+            "nodeType": "ScriptedDecisionNode",
+            "displayName": "Shared to transient state."
+          },
+          "9c82cd83-f3e9-4f94-b3b2-cada75062391": {
+            "x": 631,
+            "y": 530.015625,
+            "connections": {
+              "outcome": "6955eaa7-98db-476b-b951-f02bfe965b4c"
+            },
+            "nodeType": "PageNode",
+            "displayName": "Page Node"
+          },
+          "a00149f5-27ee-4225-bd55-ed0912784a5f": {
+            "x": 995,
+            "y": 149.015625,
+            "connections": {
+              "outcome": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+            },
+            "nodeType": "IncrementLoginCountNode",
+            "displayName": "Increment Login Count"
+          },
+          "f45d1e08-1632-458f-b16e-83a2c285c93e": {
+            "x": 773,
+            "y": 312.015625,
+            "connections": {
+              "outcome": "26dd5667-2227-4b32-a974-98503edcdfba"
+            },
+            "nodeType": "PageNode",
+            "displayName": "Page Node"
+          },
+          "fc70c678-ecae-4bc2-9033-37121c9d533e": {
+            "x": 443,
+            "y": 441.015625,
+            "connections": {
+              "true": "9c82cd83-f3e9-4f94-b3b2-cada75062391"
+            },
+            "nodeType": "ScriptedDecisionNode",
+            "displayName": "Transient to shared state."
+          },
+          "ff282a09-7276-493b-9aed-7d1150b7df24": {
+            "x": 191,
+            "y": 127.015625,
+            "connections": {
+              "socialAuthentication": "18976efa-55f7-482d-ab91-dd9568c330eb"
+            },
+            "nodeType": "PageNode",
+            "displayName": "Page Node"
+          }
+        },
+        "staticNodes": {
+          "startNode": {
+            "x": 50,
+            "y": 144
+          },
+          "70e691a5-1e33-4ac3-a356-e7b6d60d92e0": {
+            "x": 1366,
+            "y": 146
+          },
+          "e301438c-0bd0-429c-ab0c-66126501069a": {
+            "x": 1385,
+            "y": 473
+          }
+        },
+        "mustRun": false,
+        "enabled": true
+      },
+      "nodes": {
+        "18976efa-55f7-482d-ab91-dd9568c330eb": {
+          "_id": "18976efa-55f7-482d-ab91-dd9568c330eb",
+          "_rev": "-2090977209",
+          "clientType": "BROWSER",
+          "script": "58c824ae-84ed-4724-82cd-db128fc3f6c",
+          "usernameAttribute": "userName",
+          "storeTokens": false,
+          "_type": {
+            "_id": "SocialProviderHandlerNodeV2",
+            "name": "Social Provider Handler Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "ACCOUNT_EXISTS",
+              "displayName": "Account exists"
+            },
+            {
+              "id": "NO_ACCOUNT",
+              "displayName": "No account exists"
+            },
+            {
+              "id": "SOCIAL_AUTH_INTERRUPTED",
+              "displayName": "Social auth interrupted"
+            }
+          ]
+        },
+        "26dd5667-2227-4b32-a974-98503edcdfba": {
+          "_id": "26dd5667-2227-4b32-a974-98503edcdfba",
+          "_rev": "1163266741",
+          "identityResource": "managed/alpha_user",
+          "_type": {
+            "_id": "CreateObjectNode",
+            "name": "Create Object",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "CREATED",
+              "displayName": "Created"
+            },
+            {
+              "id": "FAILURE",
+              "displayName": "Failed"
+            }
+          ]
+        },
+        "37dbdf67-ea13-4527-ab59-39779a21bf9b": {
+          "_id": "37dbdf67-ea13-4527-ab59-39779a21bf9b",
+          "_rev": "54500209",
+          "identityResource": "managed/alpha_user",
+          "_type": {
+            "_id": "RequiredAttributesDecisionNode",
+            "name": "Required Attributes Present",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "True"
+            },
+            {
+              "id": "false",
+              "displayName": "False"
+            }
+          ]
+        },
+        "6955eaa7-98db-476b-b951-f02bfe965b4c": {
+          "_id": "6955eaa7-98db-476b-b951-f02bfe965b4c",
+          "_rev": "1808535015",
+          "script": "da0ba338-0780-4092-a606-95e78eb9e934",
+          "outcomes": [
+            "true"
+          ],
+          "outputs": [
+            "*"
+          ],
+          "inputs": [
+            "*"
+          ],
+          "_type": {
+            "_id": "ScriptedDecisionNode",
+            "name": "Scripted Decision",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        },
+        "9c82cd83-f3e9-4f94-b3b2-cada75062391": {
+          "_id": "9c82cd83-f3e9-4f94-b3b2-cada75062391",
+          "_rev": "-1282831390",
+          "nodes": [
+            {
+              "_id": "c1c7f3db-42dc-4c64-aec5-3729bbdff89f",
+              "nodeType": "AttributeCollectorNode",
+              "displayName": "Attribute Collector"
+            },
+            {
+              "_id": "59ecc1e7-a2f7-441c-bd12-326cf49760f6",
+              "nodeType": "ValidatedPasswordNode",
+              "displayName": "Platform Password"
+            }
+          ],
+          "pageDescription": {},
+          "pageHeader": {},
+          "_type": {
+            "_id": "PageNode",
+            "name": "Page Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "a00149f5-27ee-4225-bd55-ed0912784a5f": {
+          "_id": "a00149f5-27ee-4225-bd55-ed0912784a5f",
+          "_rev": "2047380377",
+          "identityAttribute": "userName",
+          "_type": {
+            "_id": "IncrementLoginCountNode",
+            "name": "Increment Login Count",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "f45d1e08-1632-458f-b16e-83a2c285c93e": {
+          "_id": "f45d1e08-1632-458f-b16e-83a2c285c93e",
+          "_rev": "1395229238",
+          "nodes": [
+            {
+              "_id": "0736fdec-f198-47bf-bb67-130fe449fde7",
+              "nodeType": "ValidatedPasswordNode",
+              "displayName": "Platform Password"
+            }
+          ],
+          "pageDescription": {},
+          "pageHeader": {},
+          "_type": {
+            "_id": "PageNode",
+            "name": "Page Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "fc70c678-ecae-4bc2-9033-37121c9d533e": {
+          "_id": "fc70c678-ecae-4bc2-9033-37121c9d533e",
+          "_rev": "-385630148",
+          "script": "5b4afaff-3938-45d6-a7aa-8a4ca3c033d7",
+          "outcomes": [
+            "true"
+          ],
+          "outputs": [
+            "*"
+          ],
+          "inputs": [
+            "*"
+          ],
+          "_type": {
+            "_id": "ScriptedDecisionNode",
+            "name": "Scripted Decision",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "true",
+              "displayName": "true"
+            }
+          ]
+        },
+        "ff282a09-7276-493b-9aed-7d1150b7df24": {
+          "_id": "ff282a09-7276-493b-9aed-7d1150b7df24",
+          "_rev": "1293507165",
+          "nodes": [
+            {
+              "_id": "43e9a6a3-93dc-44e7-9d69-605a52bbc6b5",
+              "nodeType": "SelectIdPNode",
+              "displayName": "Select Identity Provider"
+            }
+          ],
+          "pageDescription": {},
+          "pageHeader": {},
+          "_type": {
+            "_id": "PageNode",
+            "name": "Page Node",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "socialAuthentication",
+              "displayName": "Social Authentication"
+            }
+          ]
+        }
+      },
+      "innerNodes": {
+        "c1c7f3db-42dc-4c64-aec5-3729bbdff89f": {
+          "_id": "c1c7f3db-42dc-4c64-aec5-3729bbdff89f",
+          "_rev": "1466347504",
+          "attributesToCollect": [
+            "givenName",
+            "sn"
+          ],
+          "identityAttribute": "userName",
+          "validateInputs": true,
+          "required": true,
+          "_type": {
+            "_id": "AttributeCollectorNode",
+            "name": "Attribute Collector",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "59ecc1e7-a2f7-441c-bd12-326cf49760f6": {
+          "_id": "59ecc1e7-a2f7-441c-bd12-326cf49760f6",
+          "_rev": "626081467",
+          "passwordAttribute": "password",
+          "validateInput": false,
+          "_type": {
+            "_id": "ValidatedPasswordNode",
+            "name": "Platform Password",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "0736fdec-f198-47bf-bb67-130fe449fde7": {
+          "_id": "0736fdec-f198-47bf-bb67-130fe449fde7",
+          "_rev": "550337780",
+          "passwordAttribute": "password",
+          "validateInput": false,
+          "_type": {
+            "_id": "ValidatedPasswordNode",
+            "name": "Platform Password",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "outcome",
+              "displayName": "Outcome"
+            }
+          ]
+        },
+        "43e9a6a3-93dc-44e7-9d69-605a52bbc6b5": {
+          "_id": "43e9a6a3-93dc-44e7-9d69-605a52bbc6b5",
+          "_rev": "-1172151354",
+          "includeLocalAuthentication": false,
+          "filteredProviders": [],
+          "identityAttribute": "mail",
+          "passwordAttribute": "password",
+          "offerOnlyExisting": false,
+          "_type": {
+            "_id": "SelectIdPNode",
+            "name": "Select Identity Provider",
+            "collection": true
+          },
+          "_outcomes": [
+            {
+              "id": "socialAuthentication",
+              "displayName": "Social Authentication"
+            }
+          ]
+        }
+      },
+      "scripts": {
+        "da0ba338-0780-4092-a606-95e78eb9e934": {
+          "_id": "da0ba338-0780-4092-a606-95e78eb9e934",
+          "name": "Shared to transient",
+          "description": null,
+          "script": "\"/*\\n  - Data made available by nodes that have already executed are available in the sharedState variable.\\n  - The script should set outcome to either \\\"true\\\" or \\\"false\\\".\\n */\\n\\nvar objectAttributes = nodeState.getObject(\\\"objectAttributes\\\");\\nif (objectAttributes) {        \\n         nodeState.putTransient(\\\"objectAttributes\\\", objectAttributes);\\n    } \\n\\noutcome = \\\"true\\\";\\n\"",
+          "default": false,
+          "language": "JAVASCRIPT",
+          "context": "AUTHENTICATION_TREE_DECISION_NODE",
+          "createdBy": "id=ce0aacee-a730-4803-8e8a-7df89d0c281f,ou=user,ou=am-config",
+          "creationDate": 1733764290531,
+          "lastModifiedBy": "id=ce0aacee-a730-4803-8e8a-7df89d0c281f,ou=user,ou=am-config",
+          "lastModifiedDate": 1733764401191,
+          "evaluatorVersion": "2.0"
+        },
+        "5b4afaff-3938-45d6-a7aa-8a4ca3c033d7": {
+          "_id": "5b4afaff-3938-45d6-a7aa-8a4ca3c033d7",
+          "name": "Transient to shared state",
+          "description": null,
+          "script": "\"// /*\\n//   - Data made available by nodes that have already executed are available in the sharedState variable.\\n//   - The script should set outcome to either \\\"true\\\" or \\\"false\\\".\\n//  */\\nvar objectAttributes = nodeState.getObject(\\\"objectAttributes\\\");\\nif (objectAttributes) {        \\n         nodeState.putShared(\\\"objectAttributes\\\", objectAttributes);\\n    nodeState.putTransient(\\\"objectAttributes\\\",null);\\n    } \\n\\noutcome = \\\"true\\\";\\n\"",
+          "default": false,
+          "language": "JAVASCRIPT",
+          "context": "AUTHENTICATION_TREE_DECISION_NODE",
+          "createdBy": "id=ce0aacee-a730-4803-8e8a-7df89d0c281f,ou=user,ou=am-config",
+          "creationDate": 1733136386996,
+          "lastModifiedBy": "id=ce0aacee-a730-4803-8e8a-7df89d0c281f,ou=user,ou=am-config",
+          "lastModifiedDate": 1733924431921,
+          "evaluatorVersion": "2.0"
+        }
+      },
+      "emailTemplates": {},
+      "socialIdentityProviders": {},
+      "themes": [],
+      "saml2Entities": {},
+      "circlesOfTrust": {}
+    }
+  }
+}
