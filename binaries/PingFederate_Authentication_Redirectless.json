@@ -1,0 +1,382 @@
+{
+  "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "pingFederateConnectorV2",
+    "httpConnector",
+    "annotationConnector"
+  ],
+  "createdDate": 1672183019803,
+  "currentVersion": 14,
+  "customerId": "b23f4463beaa44cbd75e1d20a97bc369",
+  "description": "Imported on Wed Nov 30 2022 23:41:02 GMT+0000 (Coordinated Universal Time)",
+  "flowStatus": "enabled",
+  "name": "PingFederate - Authentication (Redirectless)",
+  "orx": "{\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"45f94f9668f1a482655158733b14c307\",\"flowVersionId\":14,\"version\":\"4.0.0\",\"states\":[\"initialize\",\"start_0\",\"end_0\"],\"currentState\":[\"initialize\"],\"transitions\":[{\"from\":[\"initialize\"],\"to\":\"start_0\",\"conditions\":{\"$and\":[{\"initializeFlow\":true}]},\"signals\":[{\"name\":\"Ping Federate Co [2022-11-30]\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"45f94f9668f1a482655158733b14c307\",\"flowVersionId\":14,\"id\":\"d6k5w5gxd8\",\"connectionId\":\"3d6c1d782da3adccaa916f1f467489c3\",\"connectorId\":\"pingFederateConnectorV2\",\"capabilityName\":\"authenticate\",\"properties\":{\"skipButtonPress\":{\"value\":true},\"button\":{\"displayName\":\"Sign on with PingFederate\"},\"showPoweredBy\":{\"value\":true},\"nodeTitle\":{\"value\":\"PingFederate\"},\"nodeDescription\":{\"value\":\"Prompt the user to authenticate by showing an HTML page with the PingFederate authentication widget embedded in it.\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":0,\"signalId\":0}],\"transitionId\":0},{\"from\":[\"start_0\"],\"to\":\"end_0\",\"conditions\":{\"$and\":[{\"id\":\"d6k5w5gxd8\",\"connectionId\":\"3d6c1d782da3adccaa916f1f467489c3\",\"connectorId\":\"pingFederateConnectorV2\",\"capabilityName\":\"authenticate\",\"success\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"45f94f9668f1a482655158733b14c307\",\"flowVersionId\":14,\"id\":\"zoubiqmxvg\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHtmlMessage\",\"properties\":{\"messageTitle\":{\"value\":\"Sign on complete\"},\"nodeTitle\":{\"value\":\"Sign on complete\"},\"message\":{\"value\":\"{{local.d6k5w5gxd8.payload.output}}\"},\"nodeDescription\":{\"value\":\"Show the result of the flow.\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[\"global.error\"],\"respondToUser\":true,\"transitionId\":1,\"signalId\":0}],\"evalNodeId\":\"9hqgpmeyay\",\"transitionId\":1}],\"history\":[],\"outputs\":{\"pingFederateConnectorV2_authenticate\":{\"localOutputs\":[\"output\"]}},\"outputParameters\":[\"local.d6k5w5gxd8.payload.output\"],\"global\":{},\"local\":{},\"idMapping\":{},\"nodeMappingForTids\":{\"d6k5w5gxd8\":\"initialize\",\"d6k5w5gxd8_authenticate\":\"initialize\",\"zoubiqmxvg\":\"d6k5w5gxd8\",\"zoubiqmxvg_customHtmlMessage\":\"d6k5w5gxd8_authenticate\"},\"tids\":{},\"delayedConditionalStateChangeMappings\":{},\"delayedConditionalStateChangeMappingsReverse\":{},\"delayedConditionalStatesList\":[],\"lbsTransitionIdsToIgnore\":[],\"lbsTransitionIdsMapping\":{},\"outputParametersDefault\":{\"local.d6k5w5gxd8.payload.output\":\"\"},\"outputParametersDefaultBlacklist\":[],\"historyThreshold\":70,\"errorRewindBlackListIds\":[],\"nodeMappingForTidsNew\":{\"d6k5w5gxd8\":\"initialize\",\"zoubiqmxvg\":[\"d6k5w5gxd8\"]},\"nodeStates\":{\"d6k5w5gxd8\":\"start_0\",\"zoubiqmxvg\":\"end_0\"}}",
+  "publishedVersion": 14,
+  "updatedDate": 1672183025317,
+  "flowId": "45f94f9668f1a482655158733b14c307",
+  "versionId": 14,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "d6k5w5gxd8",
+            "nodeType": "CONNECTION",
+            "connectionId": "3d6c1d782da3adccaa916f1f467489c3",
+            "connectorId": "pingFederateConnectorV2",
+            "name": "Ping Federate Co [2022-11-30]",
+            "label": "My PingFederate",
+            "status": "configured",
+            "capabilityName": "authenticate",
+            "type": "action",
+            "properties": {
+              "skipButtonPress": {
+                "value": true
+              },
+              "button": {
+                "displayName": "Sign on with PingFederate"
+              },
+              "showPoweredBy": {
+                "value": true
+              },
+              "nodeTitle": {
+                "value": "PingFederate"
+              },
+              "nodeDescription": {
+                "value": "Prompt the user to authenticate by showing an HTML page with the PingFederate authentication widget embedded in it."
+              }
+            }
+          },
+          "position": {
+            "x": 398,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9hqgpmeyay",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 578,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zoubiqmxvg",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Sign on complete\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Sign on complete"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"ping-logo-circle.svg\",\n        \"url\": \"output\",\n        \"data\": \"{{local.d6k5w5gxd8.payload.output}}\",\n        \"tooltip\": \"{{local.d6k5w5gxd8.payload.output}}\",\n        \"children\": [\n          {\n            \"text\": \"output\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeDescription": {
+                "value": "Show the result of the flow."
+              }
+            }
+          },
+          "position": {
+            "x": 758,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "psq2llver9",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotation": {
+                "value": "PingFederate authentication"
+              },
+              "width": {
+                "value": 180
+              },
+              "height": {
+                "value": 50
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 308,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "fplrafbta7",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Show authentication result"
+              },
+              "strokeWidth": {
+                "value": 0
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "width": {
+                "value": 240
+              },
+              "height": {
+                "value": 0
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 638,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tpui5mzeoe",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4462edff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "width": {
+                "value": 680
+              },
+              "cornerRadius": {
+                "value": 20
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "annotation": {
+                "value": "Redirectless Authentication"
+              },
+              "fontStyle": {
+                "value": "bold"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 248,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6h63mog6ea",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffffffff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "PingFederate - Authentication (Redirectless) Flow                                                                                                                                                                                                  Created by: Ping Identity                                                           Version: 1.0                                                                           Release Date: December 27, 2022                                          Documentation: https://support.pingidentity.com/s/marketplace-integration/a7iDo0000010xbbIAA/pingfederate-authentication-redirectless"
+              },
+              "width": {
+                "value": 600
+              },
+              "height": {
+                "value": 240
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 3
+              },
+              "strokeColor": {
+                "value": "#d0021bff"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "cornerRadius": {
+                "value": 5
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 214,
+            "y": 570
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "nppjasvvvr",
+            "source": "9hqgpmeyay",
+            "target": "zoubiqmxvg"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "4hedsgv12t",
+            "source": "d6k5w5gxd8",
+            "target": "9hqgpmeyay"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#E4E2E1",
+  "savedDate": 1672183019719,
+  "variables": []
+}

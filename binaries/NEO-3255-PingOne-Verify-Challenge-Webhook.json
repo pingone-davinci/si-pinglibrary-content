@@ -1,0 +1,2415 @@
+{
+  "companyId": "5449eab6-3fe4-481f-8d43-678ad69a9b11",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "annotationConnector",
+    "nodeConnector",
+    "pingOneSSOConnector",
+    "pingOneVerifyConnector",
+    "httpConnector",
+    "functionsConnector",
+    "screenConnector",
+    "devicePolicyConnector"
+  ],
+  "createdDate": 1699041765397,
+  "currentVersion": 4,
+  "customerId": "d996e977b7583ad09ce251befa77fb58",
+  "description": "",
+  "flowStatus": "enabled",
+  "isOutputSchemaSaved": false,
+  "name": "PingOne Verify Official Quickstart (Challenge & Webhook)",
+  "publishedVersion": 4,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "useBetaAlgorithm": true,
+    "logLevel": 2,
+    "cssLinks": [
+      "https://assets.pingone.com/ux/end-user/1.7.0/end-user.css"
+    ],
+    "useCustomCSS": true
+  },
+  "timeouts": "null",
+  "updatedDate": 1699041775094,
+  "flowId": "90fb9a2f02e9d440e59d0590c0bae003",
+  "versionId": 4,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "yfzdbjgpp3",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#5D00D6ff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "Perform Identity Verification"
+              },
+              "width": {
+                "value": 2100
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontSize": {
+                "value": 14
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 8
+              }
+            },
+            "status": "configured",
+            "idUnique": "k9a9futmgx"
+          },
+          "position": {
+            "x": 224,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5b0xbygtqj",
+            "nodeType": "EVAL",
+            "idUnique": "px4nuxts02"
+          },
+          "position": {
+            "x": 4076.4682824103256,
+            "y": 1950.1290385331085
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1lzzh3hcd0",
+            "nodeType": "CONNECTION",
+            "connectionId": "f5a17454db1b80e4d53275dc99d6debc",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "a5n8kfherm"
+              }
+            },
+            "idUnique": "2d3c85timi"
+          },
+          "position": {
+            "x": 4171.543861725246,
+            "y": 1950.1290385331085
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "f2lw1ch0sp",
+            "nodeType": "CONNECTION",
+            "connectionId": "3648f041dbf0c0ee7c3cb7a11dd3601a",
+            "connectorId": "pingOneSSOConnector",
+            "name": "PingOne",
+            "label": "PingOne SSO - vtest",
+            "status": "configured",
+            "capabilityName": "createUser",
+            "type": "action",
+            "properties": {
+              "username": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"test\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"eventTimestamp\",\n        \"data\": \"{{global.eventTimestamp}}\",\n        \"tooltip\": \"{{global.eventTimestamp}}\",\n        \"children\": [\n          {\n            \"text\": \"eventTimestamp\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"@pingidentity.com\"\n      }\n    ]\n  }\n]"
+              },
+              "populationId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"a5612fe0-775c-495e-8bad-ad2ceb3cbdf4\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Create User"
+              },
+              "additionalUserProperties": {
+                "value": []
+              },
+              "population": {
+                "value": "useDefaultPopulation"
+              },
+              "nodeDescription": {}
+            },
+            "idUnique": "bbii2hm2xf"
+          },
+          "position": {
+            "x": 314,
+            "y": 454
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "q5qe4p48wg",
+            "nodeType": "CONNECTION",
+            "connectionId": "14e73ac293bcd296d82233e23d05bd96",
+            "connectorId": "pingOneVerifyConnector",
+            "name": "PingOne Verify",
+            "label": "PingOne Verify - vtest",
+            "status": "configured",
+            "capabilityName": "createVerifyTransaction",
+            "type": "action",
+            "properties": {
+              "userId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"tooltip\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Create Verify Transaction"
+              },
+              "verifyPolicy": {}
+            },
+            "idUnique": "3jajc56uy1"
+          },
+          "position": {
+            "x": 584,
+            "y": 454
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "807fv1u3og",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "customHTML": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div id=\\\"container\\\" class=\\\"reactSingularKey_hftMain styles_hftMain__1rrse\\\">\\n\\n<form id=\\\"skForm\\\">\\n<img style=\\\"width: 50%; margin-bottom: 25px;\\\" src=\\\"https://www.pingidentity.com/content/dam/picr/nav/Ping-Logo-2.svg\\\"/>\\n<br>\\n    <p class=\\\"dialog-form-message\\\">\\n         Please scan the QR code below with your smart phone's camera to\\n        start the ID verification process, <tr><td><a href=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:q5qe4p48wg\",\n        \"url\": \"webVerificationUrl\",\n        \"data\": \"{{local.q5qe4p48wg.payload.output.transaction.webVerificationUrl}}\",\n        \"tooltip\": \"{{local.q5qe4p48wg.payload.output.transaction.webVerificationUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.q5qe4p48wg.payload.output.transaction.webVerificationUrl}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"&dt=1\\\" target=\\\"_blank\\\">or click on this link for Desktop browser experience. </a></td></tr>    <p>\\n        <br>\\n        <img id=\\\"qr\\\" src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:q5qe4p48wg\",\n        \"url\": \"qrUrl\",\n        \"data\": \"{{local.q5qe4p48wg.payload.output.transaction.qrUrl}}\",\n        \"tooltip\": \"{{local.q5qe4p48wg.payload.output.transaction.qrUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.q5qe4p48wg.payload.output.transaction.qrUrl}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"/>\\n        <br>\\nEnsure that this code is displayed on your mobile browser page:\\n<br>\\n<br><span id=\\\"code\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:q5qe4p48wg\",\n        \"url\": \"webVerificationCode\",\n        \"data\": \"{{local.q5qe4p48wg.payload.output.transaction.webVerificationCode}}\",\n        \"tooltip\": \"{{local.q5qe4p48wg.payload.output.transaction.webVerificationCode}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.q5qe4p48wg.payload.output.transaction.webVerificationCode}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span></br>\\n    </p>\\n    \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrYnV0dG9uIiAgaWQ9InFyQ29kZUNsYWltZWQiIGNsYXNzPSJidG4tLWhpZGUiIGxhYmVsPSJCdXR0b24iIHZhbHVlPSJTdWJtaXQiIGJ1dHRvbkltYWdlPSIiIGJ1dHRvbkltYWdlQ2xhc3M9IiIgYnV0dG9uSW1hZ2VQbGFjZW1lbnQ9IiIgYnV0dG9uVHlwZT0ibmV4dC1ldmVudCIgZm9ybT0ic2tGb3JtIiBvdHBJbnB1dD0iIiBkZWZhdWx0TG9hZGluZ0NvbG9yPSIiIGN1c3RvbUxvYWRpbmdJbmRpY2F0b3I9IiIgY3VzdG9tTG9hZGluZ0luZGljYXRvckNsYXNzPSIi###eyJuYW1lIjoic2tidXR0b24iLCJvcHRpb25zIjp7ImlkIjoicXJDb2RlQ2xhaW1lZCIsImNsYXNzIjoiYnRuLS1oaWRlIiwibGFiZWwiOiJCdXR0b24iLCJ2YWx1ZSI6IlN1Ym1pdCIsImJ1dHRvbkltYWdlIjoiIiwiYnV0dG9uSW1hZ2VDbGFzcyI6IiIsImJ1dHRvbkltYWdlUGxhY2VtZW50IjoiIiwiYnV0dG9uVHlwZSI6Im5leHQtZXZlbnQiLCJmb3JtIjoic2tGb3JtIiwib3RwSW5wdXQiOiIiLCJkZWZhdWx0TG9hZGluZ0NvbG9yIjoiIiwiY3VzdG9tTG9hZGluZ0luZGljYXRvciI6IiIsImN1c3RvbUxvYWRpbmdJbmRpY2F0b3JDbGFzcyI6IiJ9LCJjb21wb25lbnRQcm9wcyI6eyJpZCI6eyJuYW1lIjoiaWQiLCJkaXNwbGF5TmFtZSI6IkJ1dHRvbiBJRCIsImluZm8iOiJUaGUgaWQgdXNlZCB0byByZXByZXNlbnQgYnV0dG9ucyBpbiB0aGUgdGVtcGxhdGUuIFRoaXMgc2hvdWxkIGJlIHVuaXF1ZS4ifSwiY2xhc3MiOnsibmFtZSI6ImNsYXNzIiwiZGlzcGxheU5hbWUiOiJDU1MgQ2xhc3MiLCJpbmZvIjoiVGhlIGNsYXNzIG5hbWUgYXBwbGllZCB0byBidXR0b25zLiJ9LCJsYWJlbCI6eyJuYW1lIjoibGFiZWwiLCJkaXNwbGF5TmFtZSI6IkxhYmVsIiwidmFsdWUiOiJCdXR0b24iLCJpbmZvIjoiVGhlIGJ1dHRvbiBsYWJlbCB0aGF0IHdpbGwgYmUgc2VlbiBpbiB0aGUgdGVtcGxhdGUifSwidmFsdWUiOnsibmFtZSI6InZhbHVlIiwiZGlzcGxheU5hbWUiOiJCdXR0b24gVmFsdWUiLCJpbmZvIjoiVGhlIHZhbHVlIHRoYXQgaXMgYXNzaWduZWQgdG8gdGhlIGJ1dHRvbi4gVGhpcyB2YWx1ZSB3aWxsIGJlIHNlbnQgdG8gdGhlIGJhY2tlbmQgdG8gaWRlbnRpZnkgd2hpY2ggYnV0dG9uIHdhcyBwcmVzc2VkIn0sImJ1dHRvbkltYWdlIjp7Im5hbWUiOiJidXR0b25JbWFnZSIsImRpc3BsYXlOYW1lIjoiQnV0dG9uIEltYWdlIChVUkwgZm9yIGFuIGltYWdlKSIsImluZm8iOiJBbiBpbWFnZSB0byBzaG93IGFsb25nc2lkZSB0aGUgbGFiZWwiLCJncm91cCI6IkltYWdlIn0sImJ1dHRvbkltYWdlQ2xhc3MiOnsibmFtZSI6ImJ1dHRvbkltYWdlQ2xhc3MiLCJkaXNwbGF5TmFtZSI6IkJ1dHRvbiBJbWFnZSBDbGFzcyIsImluZm8iOiJUaGUgY2xhc3MgbmFtZSBhc3NpZ25lZCB0byB0aGUgYnV0dG9uIGltYWdlIiwiZ3JvdXAiOiJJbWFnZSJ9LCJidXR0b25JbWFnZVBsYWNlbWVudCI6eyJuYW1lIjoiYnV0dG9uSW1hZ2VQbGFjZW1lbnQiLCJkaXNwbGF5TmFtZSI6IkJ1dHRvbiBJbWFnZSBQbGFjZW1lbnQiLCJ0eXBlIjoic2VsZWN0Iiwib3B0aW9ucyI6W3sibmFtZSI6IkxlZnQiLCJ2YWx1ZSI6ImxlZnQifSx7Im5hbWUiOiJSaWdodCIsInZhbHVlIjoicmlnaHQifV0sImluZm8iOiJUaGUgcGxhY2VtZW50IG9mIHRoZSBpbWFnZSB3aXRoIHJlc3BlY3QgdG8gdGhlIGJ1dHRvbiBsYWJlbCIsImdyb3VwIjoiSW1hZ2UifSwiYnV0dG9uVHlwZSI6eyJuYW1lIjoiYnV0dG9uVHlwZSIsImRpc3BsYXlOYW1lIjoiQnV0dG9uIFR5cGUiLCJ0eXBlIjoiYnV0dG9uVHlwZSIsIm9wdGlvbnMiOlt7Im5hbWUiOiJGb3JtIFN1Ym1pdCIsInZhbHVlIjoiZm9ybS1zdWJtaXQifSx7Im5hbWUiOiJDbGVhciBNRkEgQXV0aGVudGljYXRpb24iLCJ2YWx1ZSI6Im1mYS1yZXNldCJ9LHsibmFtZSI6Ik9UUCIsInZhbHVlIjoib3RwIn0seyJuYW1lIjoiTmV4dCBFdmVudCIsInZhbHVlIjoibmV4dC1ldmVudCJ9LHsibmFtZSI6Ik51YW5jZSBBdWRpbyBSZWNvcmRpbmcgQnV0dG9uIiwidmFsdWUiOiJudWFuY2UtYXVkaW8ifSx7Im5hbWUiOiJCYWNrIHRvIFByZXZpb3VzIE5vZGUiLCJ2YWx1ZSI6ImJhY2stdG8tcHJldmlvdXMifV0sImluZm8iOiJUaGUgdHlwZSBvZiBhY3Rpb24gdGhhdCB0cmlnZ2VycyB3aGVuIHRoZSBidXR0b24gaXMgcHJlc3NlZCIsImdyb3VwIjoiRXZlbnQifSwiZm9ybSI6eyJuYW1lIjoiZm9ybSIsImRpc3BsYXlOYW1lIjoiRm9ybSBJRCIsImluZm8iOiJXaGVuIGEgZm9ybS1zdWJtaXQgdHlwZSBidXR0b24gaXMgcHJlc3NlZCwgdGhpcyBmb3JtIGlkIHdpbGwgYmUgdXNlZCB0byBnZXQgdGhlIGZvcm0gdmFsdWVzLiIsImdyb3VwIjoiRXZlbnQifSwib3RwSW5wdXQiOnsibmFtZSI6Im90cElucHV0IiwiZGlzcGxheU5hbWUiOiJPVFAgSW5wdXQgSUQiLCJpbmZvIjoiV2hlbiBhIG90cCB0eXBlIGJ1dHRvbiBpcyBwcmVzc2VkLCB0aGlzIGlucHV0IGZpZWxkIGlkIHdpbGwgYmUgdXNlZCB0byBnZXQgb3RwIHZhbHVlLiIsImdyb3VwIjoiRXZlbnQifSwiZGVmYXVsdExvYWRpbmdDb2xvciI6eyJuYW1lIjoiZGVmYXVsdExvYWRpbmdDb2xvciIsImRpc3BsYXlOYW1lIjoiQ29sb3Igb2YgRGVmYXVsdCBMb2FkaW5nIEluZGljYXRvciIsImluZm8iOiJUaGUgY29sb3Igb2YgdGhlIGRlZmF1bHQgbG9hZGluZyBhY3Rpdml0eSBpbmRpY2F0b3IgaWNvbi4iLCJncm91cCI6IkxvYWRpbmcifSwiY3VzdG9tTG9hZGluZ0luZGljYXRvciI6eyJuYW1lIjoiY3VzdG9tTG9hZGluZ0luZGljYXRvciIsImRpc3BsYXlOYW1lIjoiQ3VzdG9tIExvYWRpbmcgSW5kaWNhdG9yIEltYWdlIFVSTCIsImluZm8iOiJVcmwgb2YgYSBsb2FkaW5nIGluZGljYXRvciBpbWFnZS4gVGhpcyB3aWxsIHJlcGxhY2UgdGhlIGRlZmF1bHQgbG9hZGluZyBpbmRpY2F0b3IgaW1hZ2UuIiwiZ3JvdXAiOiJMb2FkaW5nIn0sImN1c3RvbUxvYWRpbmdJbmRpY2F0b3JDbGFzcyI6eyJuYW1lIjoiY3VzdG9tTG9hZGluZ0luZGljYXRvckNsYXNzIiwiZGlzcGxheU5hbWUiOiJDdXN0b20gTG9hZGluZyBJbmRpY2F0b3IgSW1hZ2UgQ2xhc3MiLCJpbmZvIjoiVGhlIGNsYXNzIG5hbWUgYXNzaWduZWQgdG8gdGhlIGN1c3RvbSBsb2FkaW5nIGluZGljYXRvciBpbWFnZSIsImdyb3VwIjoiTG9hZGluZyJ9fX0=]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skbutton\",\n        \"children\": [\n          {\n            \"text\": \"skbutton\"\n          }\n        ],\n        \"component\": \"skbutton\",\n        \"options\": {\n          \"id\": \"qrCodeClaimed\",\n          \"class\": \"btn--hide\",\n          \"label\": \"Button\",\n          \"value\": \"Submit\",\n          \"buttonImage\": \"\",\n          \"buttonImageClass\": \"\",\n          \"buttonImagePlacement\": \"\",\n          \"buttonType\": \"next-event\",\n          \"form\": \"skForm\",\n          \"otpInput\": \"\",\n          \"defaultLoadingColor\": \"\",\n          \"customLoadingIndicator\": \"\",\n          \"customLoadingIndicatorClass\": \"\"\n        },\n        \"componentProps\": {\n          \"id\": {\n            \"name\": \"id\",\n            \"displayName\": \"Button ID\",\n            \"info\": \"The id used to represent buttons in the template. This should be unique.\"\n          },\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"CSS Class\",\n            \"info\": \"The class name applied to buttons.\"\n          },\n          \"label\": {\n            \"name\": \"label\",\n            \"displayName\": \"Label\",\n            \"value\": \"Button\",\n            \"info\": \"The button label that will be seen in the template\"\n          },\n          \"value\": {\n            \"name\": \"value\",\n            \"displayName\": \"Button Value\",\n            \"info\": \"The value that is assigned to the button. This value will be sent to the backend to identify which button was pressed\"\n          },\n          \"buttonImage\": {\n            \"name\": \"buttonImage\",\n            \"displayName\": \"Button Image (URL for an image)\",\n            \"info\": \"An image to show alongside the label\",\n            \"group\": \"Image\"\n          },\n          \"buttonImageClass\": {\n            \"name\": \"buttonImageClass\",\n            \"displayName\": \"Button Image Class\",\n            \"info\": \"The class name assigned to the button image\",\n            \"group\": \"Image\"\n          },\n          \"buttonImagePlacement\": {\n            \"name\": \"buttonImagePlacement\",\n            \"displayName\": \"Button Image Placement\",\n            \"type\": \"select\",\n            \"options\": [\n              {\n                \"name\": \"Left\",\n                \"value\": \"left\"\n              },\n              {\n                \"name\": \"Right\",\n                \"value\": \"right\"\n              }\n            ],\n            \"info\": \"The placement of the image with respect to the button label\",\n            \"group\": \"Image\"\n          },\n          \"buttonType\": {\n            \"name\": \"buttonType\",\n            \"displayName\": \"Button Type\",\n            \"type\": \"buttonType\",\n            \"options\": [\n              {\n                \"name\": \"Form Submit\",\n                \"value\": \"form-submit\"\n              },\n              {\n                \"name\": \"Clear MFA Authentication\",\n                \"value\": \"mfa-reset\"\n              },\n              {\n                \"name\": \"OTP\",\n                \"value\": \"otp\"\n              },\n              {\n                \"name\": \"Next Event\",\n                \"value\": \"next-event\"\n              },\n              {\n                \"name\": \"Nuance Audio Recording Button\",\n                \"value\": \"nuance-audio\"\n              },\n              {\n                \"name\": \"Back to Previous Node\",\n                \"value\": \"back-to-previous\"\n              }\n            ],\n            \"info\": \"The type of action that triggers when the button is pressed\",\n            \"group\": \"Event\"\n          },\n          \"form\": {\n            \"name\": \"form\",\n            \"displayName\": \"Form ID\",\n            \"info\": \"When a form-submit type button is pressed, this form id will be used to get the form values.\",\n            \"group\": \"Event\"\n          },\n          \"otpInput\": {\n            \"name\": \"otpInput\",\n            \"displayName\": \"OTP Input ID\",\n            \"info\": \"When a otp type button is pressed, this input field id will be used to get otp value.\",\n            \"group\": \"Event\"\n          },\n          \"defaultLoadingColor\": {\n            \"name\": \"defaultLoadingColor\",\n            \"displayName\": \"Color of Default Loading Indicator\",\n            \"info\": \"The color of the default loading activity indicator icon.\",\n            \"group\": \"Loading\"\n          },\n          \"customLoadingIndicator\": {\n            \"name\": \"customLoadingIndicator\",\n            \"displayName\": \"Custom Loading Indicator Image URL\",\n            \"info\": \"Url of a loading indicator image. This will replace the default loading indicator image.\",\n            \"group\": \"Loading\"\n          },\n          \"customLoadingIndicatorClass\": {\n            \"name\": \"customLoadingIndicatorClass\",\n            \"displayName\": \"Custom Loading Indicator Image Class\",\n            \"info\": \"The class name assigned to the custom loading indicator image\",\n            \"group\": \"Loading\"\n          }\n        },\n        \"tooltip\": \"{{component.skbutton}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iNTAwMCIgcG9sbFJldHJpZXM9IjE4MCIgcG9sbENoYWxsZW5nZVN0YXR1cz0idHJ1ZSI=###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6IjUwMDAiLCJwb2xsUmV0cmllcyI6IjE4MCIsInBvbGxDaGFsbGVuZ2VTdGF0dXMiOiJ0cnVlIn0sImNvbXBvbmVudFByb3BzIjp7ImNsYXNzIjp7Im5hbWUiOiJjbGFzcyIsImRpc3BsYXlOYW1lIjoiQ1NTIENsYXNzIn0sInBvbGxJbnRlcnZhbCI6eyJuYW1lIjoicG9sbEludGVydmFsIiwiZGlzcGxheU5hbWUiOiJQb2xsIEludGVydmFsIiwidmFsdWUiOjIwMDB9LCJwb2xsUmV0cmllcyI6eyJuYW1lIjoicG9sbFJldHJpZXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgUmV0cmllcyIsInZhbHVlIjo2MH0sInBvbGxDaGFsbGVuZ2VTdGF0dXMiOnsibmFtZSI6InBvbGxDaGFsbGVuZ2VTdGF0dXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgQ2hhbGxlbmdlIFN0YXR1cyIsInR5cGUiOiJzZWxlY3QiLCJ2YWx1ZSI6InRydWUiLCJvcHRpb25zIjpbeyJuYW1lIjoiVHJ1ZSIsInZhbHVlIjoidHJ1ZSJ9LHsibmFtZSI6IkZhbHNlIiwidmFsdWUiOiJmYWxzZSJ9XX19fQ==]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skpolling\",\n        \"children\": [\n          {\n            \"text\": \"skpolling\"\n          }\n        ],\n        \"component\": \"skpolling\",\n        \"options\": {\n          \"class\": \"\",\n          \"pollInterval\": \"5000\",\n          \"pollRetries\": \"180\",\n          \"pollChallengeStatus\": \"true\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"CSS Class\"\n          },\n          \"pollInterval\": {\n            \"name\": \"pollInterval\",\n            \"displayName\": \"Poll Interval\",\n            \"value\": 2000\n          },\n          \"pollRetries\": {\n            \"name\": \"pollRetries\",\n            \"displayName\": \"Poll Retries\",\n            \"value\": 60\n          },\n          \"pollChallengeStatus\": {\n            \"name\": \"pollChallengeStatus\",\n            \"displayName\": \"Poll Challenge Status\",\n            \"type\": \"select\",\n            \"value\": \"true\",\n            \"options\": [\n              {\n                \"name\": \"True\",\n                \"value\": \"true\"\n              },\n              {\n                \"name\": \"False\",\n                \"value\": \"false\"\n              }\n            ]\n          }\n        },\n        \"tooltip\": \"{{component.skpolling}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n<div id=\\\"footer-text\\\">Powered by Ping Identity</div>\\n</form>\\n</div>\"\n      }\n    ]\n  }\n]"
+              },
+              "customScript": {},
+              "customCSS": {
+                "value": ".btn--hide {\n    display:none;\n}\n\nspan#code {\n    font-size: 35px;\n    font-weight: bold;\n}\n\nimg#qr {\n    margin-top: 40px;\n    margin-bottom: 40px;\n    border: solid 5px #B3282D;\n}\n\ndiv#container {\n    text-align: center;\n    display: flex;\n    padding: 70px;\n    justify-content: center;\n    align-items: center;\n    font-size: 25px;\n}\n\nspan#status {\n    font-size: 30px;\n    font-weight: bold;\n    color: #B3282D;\n}\n\ndiv#footer-text {\n   text-align: center;\n    font-size: 15px;\n    color: #acacb4;\n    margin-top: 20px; \n}"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Display QR Code"
+              },
+              "nodeDescription": {
+                "value": "Device is Desktop Web"
+              },
+              "challenge": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"challenge\",\n        \"data\": \"{{local.q5qe4p48wg.payload.output.challenge}}\",\n        \"tooltip\": \"{{local.q5qe4p48wg.payload.output.challenge}}\",\n        \"children\": [\n          {\n            \"text\": \"challenge\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "isDisabled": false,
+            "idUnique": "eghm91n68t"
+          },
+          "position": {
+            "x": 1394,
+            "y": 364
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ngt94dvwvs",
+            "nodeType": "CONNECTION",
+            "connectionId": "14e73ac293bcd296d82233e23d05bd96",
+            "connectorId": "pingOneVerifyConnector",
+            "name": "PingOne Verify",
+            "label": "PingOne Verify - vtest",
+            "status": "configured",
+            "capabilityName": "readVerifyTransaction",
+            "type": "action",
+            "properties": {
+              "userId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"tooltip\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "transactionId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.q5qe4p48wg.payload.output.transaction.id}}\",\n        \"tooltip\": \"{{local.q5qe4p48wg.payload.output.transaction.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Return Verify Result"
+              }
+            },
+            "idUnique": "ispz6fnipg"
+          },
+          "position": {
+            "x": 1664,
+            "y": 454
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "eos3hq8bb4",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Functions [2021-12-31]",
+            "status": "configured",
+            "capabilityName": "AEqualsMultipleB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"status\",\n        \"data\": \"{{local.ngt94dvwvs.payload.output.transaction.transactionStatus.status}}\",\n        \"tooltip\": \"{{local.ngt94dvwvs.payload.output.transaction.transactionStatus.status}}\",\n        \"children\": [\n          {\n            \"text\": \"status\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueMultiple": {
+                "value": [
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"FAIL\"\n      }\n    ]\n  }\n]",
+                    "id": "dlnhw4yg1s"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"SUCCESS\"\n      }\n    ]\n  }\n]",
+                    "id": "myivmztn6p"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Check Transaction Status"
+              }
+            },
+            "idUnique": "yytrhfzusa"
+          },
+          "position": {
+            "x": 1934,
+            "y": 454
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "r6ysndbf9j",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"id: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"id\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.id}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.id}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.id}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nstatus: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"status\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.transactionStatus.status}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.transactionStatus.status}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.transactionStatus.status}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nfirstname: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"firstName\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.firstName}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.firstName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.firstName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nlastname: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"lastName\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.lastName}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.lastName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.lastName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\ngender: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"gender\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.gender}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.gender}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.gender}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nexpirationdate: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"expirationDate\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.expirationDate}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.expirationDate}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.expirationDate}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nidnumber: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"idNumber\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.idNumber}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.idNumber}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.idNumber}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\naddressstreet: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"addressStreet\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.addressStreet}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.addressStreet}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.addressStreet}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\naddresscity: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"addressCity\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.addressCity}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.addressCity}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.addressCity}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\naddressstate: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"addressState\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.addressState}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.addressState}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.addressState}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\naddresszip: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"addressZip\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.addressZip}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.addressZip}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.addressZip}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\ncountry: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"country\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.country}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.country}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.country}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nissuedate: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"issueDate\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.issueDate}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.issueDate}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.issueDate}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nidtype: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:rjssl0hqsw\",\n        \"url\": \"idType\",\n        \"data\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.idType}}\",\n        \"tooltip\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.idType}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.rjssl0hqsw.payload.output.userData.verifiedUserData.idType}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Display Verification Message"
+              },
+              "customHTML": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div id=\\\"container\\\" class=\\\"reactSingularKey_hftMain styles_hftMain__1rrse\\\">\\n\\n<form id=\\\"skForm\\\">\\n<img style=\\\"text-align: center; width: 50%; margin-bottom: 25px;\\\" src=\\\"https://www.pingidentity.com/content/dam/picr/nav/Ping-Logo-2.svg\\\"/>\\n<div id=\\\"user-data\\\">\\n<div>Verification status: <span id=\\\"status\\\"> \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:ngt94dvwvs\",\n        \"url\": \"status\",\n        \"data\": \"{{local.ngt94dvwvs.payload.output.transaction.transactionStatus.status}}\",\n        \"tooltip\": \"{{local.ngt94dvwvs.payload.output.transaction.transactionStatus.status}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.ngt94dvwvs.payload.output.transaction.transactionStatus.status}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span></div>\\n<div> <span id=\\\"error\\\"> {{local.ngt94dvwvs.payload.output.transaction.transactionStatus.providerMessagesList[0].messages}}</span></div>\\n<div id=\\\"selfie-container\\\">\\n\"\n      },\n      {\n        \"text\": \"<img id=\\\"selfie\\\" src=\\\"data:image/jpeg;base64,{{local.9c1cp03djo.payload.output.selfie._embedded.verifiedData[0].data.IMAGE}}\\\"/></div>\\n\"\n      },\n      {\n        \"text\": \"<div id=\\\"first\\\"><span class=\\\"key\\\">First Name:<span class=\\\"value\\\"> {{local.hsx7wyjrpj.payload.output.governmentID._embedded.verifiedData[0].data.firstName}}</div>\\n<div id=\\\"last\\\"><span class=\\\"key\\\">Last Name:<span class=\\\"value\\\"> {{local.hsx7wyjrpj.payload.output.governmentID._embedded.verifiedData[0].data.lastName}}</div>\\n<div id=\\\"expiry\\\"><span class=\\\"key\\\">ID's Expiration Date:<span class=\\\"value\\\"> {{local.hsx7wyjrpj.payload.output.governmentID._embedded.verifiedData[0].data.expirationDate}}</div>\\n<div id=\\\"country\\\"><span class=\\\"key\\\">Country:<span class=\\\"value\\\">{{local.hsx7wyjrpj.payload.output.governmentID._embedded.verifiedData[0].data.country}}</div>\\n<br>\\n<div id=\\\"transactionID\\\"><span class=\\\"key\\\">Transaction ID:<span class=\\\"value\\\"> \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:ngt94dvwvs\",\n        \"url\": \"id\",\n        \"data\": \"{{local.ngt94dvwvs.payload.output.transaction.id}}\",\n        \"tooltip\": \"{{local.ngt94dvwvs.payload.output.transaction.id}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.ngt94dvwvs.payload.output.transaction.id}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</div>\\n<div id=\\\"userID\\\"><span class=\\\"key\\\">User ID:<span class=\\\"value\\\"> \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:f2lw1ch0sp\",\n        \"url\": \"id\",\n        \"data\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"tooltip\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</div>\\n<br>\\n</div>\\n<div id=\\\"id-container\\\">\\n\"\n      },\n      {\n        \"text\": \"  <img id=\\\"docFront\\\" src=\\\"data:image/jpeg;base64, {{local.llh1untwyq.payload.output.documents._embedded.documents[0].value}}\\\"/>\\n\"\n      },\n      {\n        \"text\": \"</div>\\n<div id=\\\"id-container\\\">\\n\"\n      },\n      {\n        \"text\": \"  <img id=\\\"docBack\\\" src=\\\"data:image/jpeg;base64, {{local.llh1untwyq.payload.output.documents._embedded.documents[1].value}}\\\"/>\\n\"\n      },\n      {\n        \"text\": \"</div>\\n<br>\\n               <div class=\\\"control\\\">\\n                  <button class=\\\"field is-primary mt-2 button file-input--button button--primary brand-primary-bg\\\"\\n                     data-id=\\\"button\\\" type=\\\"submit\\\" data-skcomponent=\\\"skbutton\\\" data-skbuttontype=\\\"form-submit\\\"\\n                     data-skform=\\\"usernameForm\\\" data-skbuttonvalue=\\\"continue\\\">\\n                     Click for more Transaction details\\n                     <i class=\\\"fas fa-forward ml-2\\\"></i>\\n                  </button>\\n               </div>\\n    \\n      </div>\\n   </div>\\n</div>\\n</form>\\n</div>\"\n      }\n    ]\n  }\n]"
+              },
+              "customCSS": {
+                "value": "div#container {\n    text-align: center;\n    display: flex;\n    padding: 70px;\n    justify-content: center;\n    align-items: center;\n    font-size: 20px;\n}\n\ndiv#selfie-container {\n    margin-top: 20px !important;\n    text-align: center;\n}\n\nimg#selfie {\n    height: 100px;\n}\n\nimg#docFront {\n    height: 100px;\n}\n\nimg#docBack{\n    height: 100px;\n}\n\nspan.key {\n    font-weight: bold;\n    font-size: 13px;\n}\n\nspan.value {\n    font-weight: normal;\n    font-size: 10px;\n}\n\nspan#status {\n    color: #0b44c0!important;\n    font-size: 25px;\n    font-weight: bold;\n}\n\nspan#error {\n    color: #031130!important;\n    font-size: 13px;\n    font-weight: normal;\n}\n\ndiv#user-data {\n    text-align: left;\n}\n\ndiv#footer-text {\n    font-size: 15px;\n    color: #acacb4;\n    margin-top: 20px; \n}\n\n\n"
+              },
+              "customScript": {
+                "value": "const outputElem = document.getElementById('output');\nconst output = JSON.parse(outputElem.textContent);\nconsole.log('output', output);\nconst hiddenSelfie = document.getElementById('hiddenSelfie').textContent;\n\n// hide information not collected\nif (hiddenSelfie === '') {\n  document.getElementById('gender').style.display = \"none\";\n}\nif (output.gender === '') {\n  document.getElementById('gender').style.display = \"none\";\n}\nif (output.first === '') {\n  document.getElementById('first').style.display = \"none\";\n}\nif (output.last === '') {\n  document.getElementById('last').style.display = \"none\";\n}\nif (output.expiry === '') {\n  document.getElementById('expiry').style.display = \"none\";\n}\nif (output.number === '') {\n  document.getElementById('number').style.display = \"none\";\n}\nif (output.street === '') {\n  document.getElementById('street').style.display = \"none\";\n}\nif (output.city === '') {\n  document.getElementById('city').style.display = \"none\";\n}\nif (output.state === '') {\n  document.getElementById('state').style.display = \"none\";\n}\nif (output.zip === '') {\n  document.getElementById('zip').style.display = \"none\";\n}\nif (output.country === '') {\n  document.getElementById('country').style.display = \"none\";\n}\nif (output.country === '') {\n  document.getElementById('issueDate').style.display = \"issueDate\";\n}\n\nlet messages = document.getElementById('messages')?.textContent;\nlet messagesObj = JSON.parse(messages);\nconsole.log('messagesArr', Object.values(messagesObj));\n\nlet errorsLst = document.getElementById('errorsLst');\n\nObject.values(messagesObj).forEach((value) => {\n  const li = document.createElement('li');\n  li.innerHTML = value;\n  errorsLst.appendChild(li);\n});\n"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              }
+            },
+            "isDisabled": false,
+            "idUnique": "zpke8zu79j"
+          },
+          "position": {
+            "x": 1387,
+            "y": 990
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "2rlhg9p880",
+            "nodeType": "EVAL",
+            "idUnique": "8d6pi1j8p6"
+          },
+          "position": {
+            "x": 434,
+            "y": 454
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "dykbtno97m",
+            "nodeType": "EVAL",
+            "idUnique": "9bmbw0p7gn"
+          },
+          "position": {
+            "x": 1514,
+            "y": 454
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "t5npshpoe5",
+            "nodeType": "CONNECTION",
+            "connectionId": "62ea9cddd855205de29501e46fffb5a9",
+            "connectorId": "screenConnector",
+            "name": "Screen",
+            "label": "Screen",
+            "status": "configured",
+            "capabilityName": "createView",
+            "type": "trigger",
+            "properties": {
+              "screen0Config": {
+                "properties": {
+                  "screenComponentList": {
+                    "value": [
+                      {
+                        "propertyName": "Verification Output Data",
+                        "preferredControlType": "label",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Select a PingOne Verify Transaction data type to display:\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "alignment": "center",
+                          "variant": "title"
+                        }
+                      },
+                      {
+                        "propertyName": "PingOne Verify Data Type",
+                        "preferredControlType": "dropdown",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Select a PingOne Verify Transaction's type of data to display:\"\n      }\n    ]\n  }\n]",
+                        "attributes": {
+                          "options": [
+                            "Read Metadata",
+                            "Read User Verified Data"
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "validationRules": {
+                    "value": []
+                  },
+                  "navTitle": {}
+                }
+              },
+              "nodeTitle": {
+                "value": "PingOne Verify Type of Verification"
+              }
+            },
+            "idUnique": "tfkbxe2srt"
+          },
+          "position": {
+            "x": 1657,
+            "y": 990
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "kpwcjd139o",
+            "nodeType": "CONNECTION",
+            "connectionId": "f5a17454db1b80e4d53275dc99d6debc",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Display Result of Verification"
+              },
+              "backgroundColor": {
+                "value": "#000006ff"
+              }
+            },
+            "idUnique": "hw9dx2rcim"
+          },
+          "position": {
+            "x": 277,
+            "y": 930
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "bm5ik3toki",
+            "nodeType": "EVAL",
+            "idUnique": "u7dz5s5p3y"
+          },
+          "position": {
+            "x": 1507,
+            "y": 990
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tatxn2nmft",
+            "nodeType": "EVAL",
+            "idUnique": "y91i8qiaw6"
+          },
+          "position": {
+            "x": 1777,
+            "y": 990
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "vounj0ducf",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Functions",
+            "status": "configured",
+            "capabilityName": "AEqualsMultipleB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"screen.svg\",\n        \"url\": \"PingOne Verify Data Type\",\n        \"data\": \"{{local.t5npshpoe5.payload.output.PingOne Verify Data Type}}\",\n        \"tooltip\": \"{{local.t5npshpoe5.payload.output.PingOne Verify Data Type}}\",\n        \"children\": [\n          {\n            \"text\": \"PingOne Verify Data Type\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueMultiple": {
+                "value": [
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Read Metadata\"\n      }\n    ]\n  }\n]",
+                    "id": "9vivzj7bk6"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Read User Verified Data\"\n      }\n    ]\n  }\n]",
+                    "id": "13n2zy1z0b"
+                  }
+                ]
+              }
+            },
+            "idUnique": "mt046tojej"
+          },
+          "position": {
+            "x": 1957,
+            "y": 990
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9ex5uq0wwl",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"metaData\",\n        \"data\": \"{{local.08597p9949.payload.output.metaData}}\",\n        \"tooltip\": \"{{local.08597p9949.payload.output.metaData}}\",\n        \"children\": [\n          {\n            \"text\": \"metaData\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Read MetaData"
+              },
+              "showContinueButton": {
+                "value": true
+              },
+              "button": {
+                "displayName": "Return"
+              },
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Read Metadata\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "idUnique": "pvenueblpd",
+            "isDisabled": false
+          },
+          "position": {
+            "x": 2287,
+            "y": 1050
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ugz0x19ngh",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"verifiedData\",\n        \"data\": \"{{local.hsx7wyjrpj.payload.output.governmentID._embedded.verifiedData}}\",\n        \"tooltip\": \"{{local.hsx7wyjrpj.payload.output.governmentID._embedded.verifiedData}}\",\n        \"children\": [\n          {\n            \"text\": \"verifiedData\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Read User Verified Data"
+              },
+              "showContinueButton": {
+                "value": true
+              },
+              "button": {
+                "displayName": "Return"
+              },
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Read User Verified Data\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "idUnique": "s1v542h4fb",
+            "isDisabled": false
+          },
+          "position": {
+            "x": 2287,
+            "y": 1170
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "llh1untwyq",
+            "nodeType": "CONNECTION",
+            "connectionId": "14e73ac293bcd296d82233e23d05bd96",
+            "connectorId": "pingOneVerifyConnector",
+            "name": "PingOne Verify",
+            "label": "PingOne Verify - Test 30 - Internal",
+            "status": "configured",
+            "capabilityName": "readDocuments",
+            "type": "action",
+            "properties": {
+              "transactionId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.q5qe4p48wg.payload.output.transaction.id}}\",\n        \"tooltip\": \"{{local.q5qe4p48wg.payload.output.transaction.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "userId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"tooltip\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "documentTypes": {
+                "value": [
+                  "Driver License Front",
+                  "Driver License Back",
+                  "Passport Front",
+                  "Passport Card Front",
+                  "Passport Card Back"
+                ]
+              },
+              "nodeTitle": {
+                "value": "Return Document Images"
+              }
+            },
+            "idUnique": "x8sl3z55o9",
+            "isDisabled": false
+          },
+          "position": {
+            "x": 637,
+            "y": 840
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "08597p9949",
+            "nodeType": "CONNECTION",
+            "connectionId": "14e73ac293bcd296d82233e23d05bd96",
+            "connectorId": "pingOneVerifyConnector",
+            "name": "PingOne Verify",
+            "label": "PingOne Verify - Test 30 - Internal",
+            "status": "configured",
+            "capabilityName": "readMetaData",
+            "type": "action",
+            "properties": {
+              "transactionId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.q5qe4p48wg.payload.output.transaction.id}}\",\n        \"tooltip\": \"{{local.q5qe4p48wg.payload.output.transaction.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "userId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"tooltip\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Return MetaData"
+              }
+            },
+            "idUnique": "0rfwqyn8uo"
+          },
+          "position": {
+            "x": 637,
+            "y": 960
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "hsx7wyjrpj",
+            "nodeType": "CONNECTION",
+            "connectionId": "14e73ac293bcd296d82233e23d05bd96",
+            "connectorId": "pingOneVerifyConnector",
+            "name": "PingOne Verify",
+            "label": "PingOne Verify - Test 30 - Internal",
+            "status": "configured",
+            "capabilityName": "readGovernmentID",
+            "type": "action",
+            "properties": {
+              "userId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"tooltip\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "transactionId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.q5qe4p48wg.payload.output.transaction.id}}\",\n        \"tooltip\": \"{{local.q5qe4p48wg.payload.output.transaction.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Return Verified Data"
+              }
+            },
+            "idUnique": "kbwujvpq1m"
+          },
+          "position": {
+            "x": 637,
+            "y": 1080
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "s8cmiyen8o",
+            "nodeType": "CONNECTION",
+            "connectionId": "7342d1805e69c12462e49d25f445b8f6",
+            "connectorId": "devicePolicyConnector",
+            "name": "Device Policy",
+            "label": "Device Policy",
+            "status": "configured",
+            "capabilityName": "getPlatform",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Determine Device Type"
+              }
+            },
+            "idUnique": "127ws4k1uz"
+          },
+          "position": {
+            "x": 854,
+            "y": 454
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "w4xfanojfk",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Function",
+            "status": "configured",
+            "capabilityName": "AEqualsB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"devicePolicy.svg\",\n        \"url\": \"platform\",\n        \"data\": \"{{local.s8cmiyen8o.payload.output.platform}}\",\n        \"tooltip\": \"{{local.s8cmiyen8o.payload.output.platform}}\",\n        \"children\": [\n          {\n            \"text\": \"platform\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueMultiple": {
+                "value": [
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"mobile\"\n      }\n    ]\n  }\n]",
+                    "id": "t8mkvmtoiw"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"desktop\"\n      }\n    ]\n  }\n]",
+                    "id": "h8atojgdng"
+                  }
+                ]
+              },
+              "rightValueB": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"mobile\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Is Mobile Device?"
+              }
+            },
+            "idUnique": "pkihd8m90y"
+          },
+          "position": {
+            "x": 1124,
+            "y": 454
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "hb6rxpkxgf",
+            "nodeType": "EVAL",
+            "properties": {
+              "807fv1u3og": {
+                "value": "allTriggersFalse"
+              }
+            },
+            "idUnique": "s77xvf0q57"
+          },
+          "position": {
+            "x": 1244,
+            "y": 454
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "nccrc1g1ml",
+            "nodeType": "EVAL",
+            "idUnique": "m9xpl9la2r"
+          },
+          "position": {
+            "x": 974,
+            "y": 454
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ybq313b83t",
+            "nodeType": "EVAL",
+            "idUnique": "kzrw390ebv"
+          },
+          "position": {
+            "x": 674,
+            "y": 454
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "b47yjgf7q6",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "customHTML": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div id=\\\"container\\\" class=\\\"reactSingularKey_hftMain styles_hftMain__1rrse\\\">\\n\\n<form id=\\\"skForm\\\">\\n<img style=\\\"width: 50%; margin-bottom: 25px;\\\" src=\\\"https://www.pingidentity.com/content/dam/picr/nav/Ping-Logo-2.svg\\\"/>\\n<br>\\n    <p class=\\\"dialog-form-message\\\">\\n         Please  <tr><td><a href=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:q5qe4p48wg\",\n        \"url\": \"webVerificationUrl\",\n        \"data\": \"{{local.q5qe4p48wg.payload.output.transaction.webVerificationUrl}}\",\n        \"tooltip\": \"{{local.q5qe4p48wg.payload.output.transaction.webVerificationUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.q5qe4p48wg.payload.output.transaction.webVerificationUrl}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" target=\\\"_blank\\\"> click on this link here on your mobile browser. </a></td></tr>    <p>\\n<br>\\nEnsure that this code is displayed on the new mobile browser page after starting the experience:\\n<br>\\n<br><span id=\\\"code\\\">\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:q5qe4p48wg\",\n        \"url\": \"webVerificationCode\",\n        \"data\": \"{{local.q5qe4p48wg.payload.output.transaction.webVerificationCode}}\",\n        \"tooltip\": \"{{local.q5qe4p48wg.payload.output.transaction.webVerificationCode}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.q5qe4p48wg.payload.output.transaction.webVerificationCode}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"</span></br>\\n    </p>\\n    \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrYnV0dG9uIiAgaWQ9InFyQ29kZUNsYWltZWQiIGNsYXNzPSJidG4tLWhpZGUiIGxhYmVsPSJCdXR0b24iIHZhbHVlPSJTdWJtaXQiIGJ1dHRvbkltYWdlPSIiIGJ1dHRvbkltYWdlQ2xhc3M9IiIgYnV0dG9uSW1hZ2VQbGFjZW1lbnQ9IiIgYnV0dG9uVHlwZT0ibmV4dC1ldmVudCIgZm9ybT0ic2tGb3JtIiBvdHBJbnB1dD0iIiBkZWZhdWx0TG9hZGluZ0NvbG9yPSIiIGN1c3RvbUxvYWRpbmdJbmRpY2F0b3I9IiIgY3VzdG9tTG9hZGluZ0luZGljYXRvckNsYXNzPSIi###eyJuYW1lIjoic2tidXR0b24iLCJvcHRpb25zIjp7ImlkIjoicXJDb2RlQ2xhaW1lZCIsImNsYXNzIjoiYnRuLS1oaWRlIiwibGFiZWwiOiJCdXR0b24iLCJ2YWx1ZSI6IlN1Ym1pdCIsImJ1dHRvbkltYWdlIjoiIiwiYnV0dG9uSW1hZ2VDbGFzcyI6IiIsImJ1dHRvbkltYWdlUGxhY2VtZW50IjoiIiwiYnV0dG9uVHlwZSI6Im5leHQtZXZlbnQiLCJmb3JtIjoic2tGb3JtIiwib3RwSW5wdXQiOiIiLCJkZWZhdWx0TG9hZGluZ0NvbG9yIjoiIiwiY3VzdG9tTG9hZGluZ0luZGljYXRvciI6IiIsImN1c3RvbUxvYWRpbmdJbmRpY2F0b3JDbGFzcyI6IiJ9LCJjb21wb25lbnRQcm9wcyI6eyJpZCI6eyJuYW1lIjoiaWQiLCJkaXNwbGF5TmFtZSI6IkJ1dHRvbiBJRCIsImluZm8iOiJUaGUgaWQgdXNlZCB0byByZXByZXNlbnQgYnV0dG9ucyBpbiB0aGUgdGVtcGxhdGUuIFRoaXMgc2hvdWxkIGJlIHVuaXF1ZS4ifSwiY2xhc3MiOnsibmFtZSI6ImNsYXNzIiwiZGlzcGxheU5hbWUiOiJDU1MgQ2xhc3MiLCJpbmZvIjoiVGhlIGNsYXNzIG5hbWUgYXBwbGllZCB0byBidXR0b25zLiJ9LCJsYWJlbCI6eyJuYW1lIjoibGFiZWwiLCJkaXNwbGF5TmFtZSI6IkxhYmVsIiwidmFsdWUiOiJCdXR0b24iLCJpbmZvIjoiVGhlIGJ1dHRvbiBsYWJlbCB0aGF0IHdpbGwgYmUgc2VlbiBpbiB0aGUgdGVtcGxhdGUifSwidmFsdWUiOnsibmFtZSI6InZhbHVlIiwiZGlzcGxheU5hbWUiOiJCdXR0b24gVmFsdWUiLCJpbmZvIjoiVGhlIHZhbHVlIHRoYXQgaXMgYXNzaWduZWQgdG8gdGhlIGJ1dHRvbi4gVGhpcyB2YWx1ZSB3aWxsIGJlIHNlbnQgdG8gdGhlIGJhY2tlbmQgdG8gaWRlbnRpZnkgd2hpY2ggYnV0dG9uIHdhcyBwcmVzc2VkIn0sImJ1dHRvbkltYWdlIjp7Im5hbWUiOiJidXR0b25JbWFnZSIsImRpc3BsYXlOYW1lIjoiQnV0dG9uIEltYWdlIChVUkwgZm9yIGFuIGltYWdlKSIsImluZm8iOiJBbiBpbWFnZSB0byBzaG93IGFsb25nc2lkZSB0aGUgbGFiZWwiLCJncm91cCI6IkltYWdlIn0sImJ1dHRvbkltYWdlQ2xhc3MiOnsibmFtZSI6ImJ1dHRvbkltYWdlQ2xhc3MiLCJkaXNwbGF5TmFtZSI6IkJ1dHRvbiBJbWFnZSBDbGFzcyIsImluZm8iOiJUaGUgY2xhc3MgbmFtZSBhc3NpZ25lZCB0byB0aGUgYnV0dG9uIGltYWdlIiwiZ3JvdXAiOiJJbWFnZSJ9LCJidXR0b25JbWFnZVBsYWNlbWVudCI6eyJuYW1lIjoiYnV0dG9uSW1hZ2VQbGFjZW1lbnQiLCJkaXNwbGF5TmFtZSI6IkJ1dHRvbiBJbWFnZSBQbGFjZW1lbnQiLCJ0eXBlIjoic2VsZWN0Iiwib3B0aW9ucyI6W3sibmFtZSI6IkxlZnQiLCJ2YWx1ZSI6ImxlZnQifSx7Im5hbWUiOiJSaWdodCIsInZhbHVlIjoicmlnaHQifV0sImluZm8iOiJUaGUgcGxhY2VtZW50IG9mIHRoZSBpbWFnZSB3aXRoIHJlc3BlY3QgdG8gdGhlIGJ1dHRvbiBsYWJlbCIsImdyb3VwIjoiSW1hZ2UifSwiYnV0dG9uVHlwZSI6eyJuYW1lIjoiYnV0dG9uVHlwZSIsImRpc3BsYXlOYW1lIjoiQnV0dG9uIFR5cGUiLCJ0eXBlIjoiYnV0dG9uVHlwZSIsIm9wdGlvbnMiOlt7Im5hbWUiOiJGb3JtIFN1Ym1pdCIsInZhbHVlIjoiZm9ybS1zdWJtaXQifSx7Im5hbWUiOiJDbGVhciBNRkEgQXV0aGVudGljYXRpb24iLCJ2YWx1ZSI6Im1mYS1yZXNldCJ9LHsibmFtZSI6Ik9UUCIsInZhbHVlIjoib3RwIn0seyJuYW1lIjoiTmV4dCBFdmVudCIsInZhbHVlIjoibmV4dC1ldmVudCJ9LHsibmFtZSI6Ik51YW5jZSBBdWRpbyBSZWNvcmRpbmcgQnV0dG9uIiwidmFsdWUiOiJudWFuY2UtYXVkaW8ifSx7Im5hbWUiOiJCYWNrIHRvIFByZXZpb3VzIE5vZGUiLCJ2YWx1ZSI6ImJhY2stdG8tcHJldmlvdXMifV0sImluZm8iOiJUaGUgdHlwZSBvZiBhY3Rpb24gdGhhdCB0cmlnZ2VycyB3aGVuIHRoZSBidXR0b24gaXMgcHJlc3NlZCIsImdyb3VwIjoiRXZlbnQifSwiZm9ybSI6eyJuYW1lIjoiZm9ybSIsImRpc3BsYXlOYW1lIjoiRm9ybSBJRCIsImluZm8iOiJXaGVuIGEgZm9ybS1zdWJtaXQgdHlwZSBidXR0b24gaXMgcHJlc3NlZCwgdGhpcyBmb3JtIGlkIHdpbGwgYmUgdXNlZCB0byBnZXQgdGhlIGZvcm0gdmFsdWVzLiIsImdyb3VwIjoiRXZlbnQifSwib3RwSW5wdXQiOnsibmFtZSI6Im90cElucHV0IiwiZGlzcGxheU5hbWUiOiJPVFAgSW5wdXQgSUQiLCJpbmZvIjoiV2hlbiBhIG90cCB0eXBlIGJ1dHRvbiBpcyBwcmVzc2VkLCB0aGlzIGlucHV0IGZpZWxkIGlkIHdpbGwgYmUgdXNlZCB0byBnZXQgb3RwIHZhbHVlLiIsImdyb3VwIjoiRXZlbnQifSwiZGVmYXVsdExvYWRpbmdDb2xvciI6eyJuYW1lIjoiZGVmYXVsdExvYWRpbmdDb2xvciIsImRpc3BsYXlOYW1lIjoiQ29sb3Igb2YgRGVmYXVsdCBMb2FkaW5nIEluZGljYXRvciIsImluZm8iOiJUaGUgY29sb3Igb2YgdGhlIGRlZmF1bHQgbG9hZGluZyBhY3Rpdml0eSBpbmRpY2F0b3IgaWNvbi4iLCJncm91cCI6IkxvYWRpbmcifSwiY3VzdG9tTG9hZGluZ0luZGljYXRvciI6eyJuYW1lIjoiY3VzdG9tTG9hZGluZ0luZGljYXRvciIsImRpc3BsYXlOYW1lIjoiQ3VzdG9tIExvYWRpbmcgSW5kaWNhdG9yIEltYWdlIFVSTCIsImluZm8iOiJVcmwgb2YgYSBsb2FkaW5nIGluZGljYXRvciBpbWFnZS4gVGhpcyB3aWxsIHJlcGxhY2UgdGhlIGRlZmF1bHQgbG9hZGluZyBpbmRpY2F0b3IgaW1hZ2UuIiwiZ3JvdXAiOiJMb2FkaW5nIn0sImN1c3RvbUxvYWRpbmdJbmRpY2F0b3JDbGFzcyI6eyJuYW1lIjoiY3VzdG9tTG9hZGluZ0luZGljYXRvckNsYXNzIiwiZGlzcGxheU5hbWUiOiJDdXN0b20gTG9hZGluZyBJbmRpY2F0b3IgSW1hZ2UgQ2xhc3MiLCJpbmZvIjoiVGhlIGNsYXNzIG5hbWUgYXNzaWduZWQgdG8gdGhlIGN1c3RvbSBsb2FkaW5nIGluZGljYXRvciBpbWFnZSIsImdyb3VwIjoiTG9hZGluZyJ9fX0=]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skbutton\",\n        \"children\": [\n          {\n            \"text\": \"skbutton\"\n          }\n        ],\n        \"component\": \"skbutton\",\n        \"options\": {\n          \"id\": \"qrCodeClaimed\",\n          \"class\": \"btn--hide\",\n          \"label\": \"Button\",\n          \"value\": \"Submit\",\n          \"buttonImage\": \"\",\n          \"buttonImageClass\": \"\",\n          \"buttonImagePlacement\": \"\",\n          \"buttonType\": \"next-event\",\n          \"form\": \"skForm\",\n          \"otpInput\": \"\",\n          \"defaultLoadingColor\": \"\",\n          \"customLoadingIndicator\": \"\",\n          \"customLoadingIndicatorClass\": \"\"\n        },\n        \"componentProps\": {\n          \"id\": {\n            \"name\": \"id\",\n            \"displayName\": \"Button ID\",\n            \"info\": \"The id used to represent buttons in the template. This should be unique.\"\n          },\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"CSS Class\",\n            \"info\": \"The class name applied to buttons.\"\n          },\n          \"label\": {\n            \"name\": \"label\",\n            \"displayName\": \"Label\",\n            \"value\": \"Button\",\n            \"info\": \"The button label that will be seen in the template\"\n          },\n          \"value\": {\n            \"name\": \"value\",\n            \"displayName\": \"Button Value\",\n            \"info\": \"The value that is assigned to the button. This value will be sent to the backend to identify which button was pressed\"\n          },\n          \"buttonImage\": {\n            \"name\": \"buttonImage\",\n            \"displayName\": \"Button Image (URL for an image)\",\n            \"info\": \"An image to show alongside the label\",\n            \"group\": \"Image\"\n          },\n          \"buttonImageClass\": {\n            \"name\": \"buttonImageClass\",\n            \"displayName\": \"Button Image Class\",\n            \"info\": \"The class name assigned to the button image\",\n            \"group\": \"Image\"\n          },\n          \"buttonImagePlacement\": {\n            \"name\": \"buttonImagePlacement\",\n            \"displayName\": \"Button Image Placement\",\n            \"type\": \"select\",\n            \"options\": [\n              {\n                \"name\": \"Left\",\n                \"value\": \"left\"\n              },\n              {\n                \"name\": \"Right\",\n                \"value\": \"right\"\n              }\n            ],\n            \"info\": \"The placement of the image with respect to the button label\",\n            \"group\": \"Image\"\n          },\n          \"buttonType\": {\n            \"name\": \"buttonType\",\n            \"displayName\": \"Button Type\",\n            \"type\": \"buttonType\",\n            \"options\": [\n              {\n                \"name\": \"Form Submit\",\n                \"value\": \"form-submit\"\n              },\n              {\n                \"name\": \"Clear MFA Authentication\",\n                \"value\": \"mfa-reset\"\n              },\n              {\n                \"name\": \"OTP\",\n                \"value\": \"otp\"\n              },\n              {\n                \"name\": \"Next Event\",\n                \"value\": \"next-event\"\n              },\n              {\n                \"name\": \"Nuance Audio Recording Button\",\n                \"value\": \"nuance-audio\"\n              },\n              {\n                \"name\": \"Back to Previous Node\",\n                \"value\": \"back-to-previous\"\n              }\n            ],\n            \"info\": \"The type of action that triggers when the button is pressed\",\n            \"group\": \"Event\"\n          },\n          \"form\": {\n            \"name\": \"form\",\n            \"displayName\": \"Form ID\",\n            \"info\": \"When a form-submit type button is pressed, this form id will be used to get the form values.\",\n            \"group\": \"Event\"\n          },\n          \"otpInput\": {\n            \"name\": \"otpInput\",\n            \"displayName\": \"OTP Input ID\",\n            \"info\": \"When a otp type button is pressed, this input field id will be used to get otp value.\",\n            \"group\": \"Event\"\n          },\n          \"defaultLoadingColor\": {\n            \"name\": \"defaultLoadingColor\",\n            \"displayName\": \"Color of Default Loading Indicator\",\n            \"info\": \"The color of the default loading activity indicator icon.\",\n            \"group\": \"Loading\"\n          },\n          \"customLoadingIndicator\": {\n            \"name\": \"customLoadingIndicator\",\n            \"displayName\": \"Custom Loading Indicator Image URL\",\n            \"info\": \"Url of a loading indicator image. This will replace the default loading indicator image.\",\n            \"group\": \"Loading\"\n          },\n          \"customLoadingIndicatorClass\": {\n            \"name\": \"customLoadingIndicatorClass\",\n            \"displayName\": \"Custom Loading Indicator Image Class\",\n            \"info\": \"The class name assigned to the custom loading indicator image\",\n            \"group\": \"Loading\"\n          }\n        },\n        \"tooltip\": \"{{component.skbutton}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrcG9sbGluZyIgIGNsYXNzPSIiIHBvbGxJbnRlcnZhbD0iNTAwMCIgcG9sbFJldHJpZXM9IjE4MCIgcG9sbENoYWxsZW5nZVN0YXR1cz0idHJ1ZSI=###eyJuYW1lIjoic2twb2xsaW5nIiwib3B0aW9ucyI6eyJjbGFzcyI6IiIsInBvbGxJbnRlcnZhbCI6IjUwMDAiLCJwb2xsUmV0cmllcyI6IjE4MCIsInBvbGxDaGFsbGVuZ2VTdGF0dXMiOiJ0cnVlIn0sImNvbXBvbmVudFByb3BzIjp7ImNsYXNzIjp7Im5hbWUiOiJjbGFzcyIsImRpc3BsYXlOYW1lIjoiQ1NTIENsYXNzIn0sInBvbGxJbnRlcnZhbCI6eyJuYW1lIjoicG9sbEludGVydmFsIiwiZGlzcGxheU5hbWUiOiJQb2xsIEludGVydmFsIiwidmFsdWUiOjIwMDB9LCJwb2xsUmV0cmllcyI6eyJuYW1lIjoicG9sbFJldHJpZXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgUmV0cmllcyIsInZhbHVlIjo2MH0sInBvbGxDaGFsbGVuZ2VTdGF0dXMiOnsibmFtZSI6InBvbGxDaGFsbGVuZ2VTdGF0dXMiLCJkaXNwbGF5TmFtZSI6IlBvbGwgQ2hhbGxlbmdlIFN0YXR1cyIsInR5cGUiOiJzZWxlY3QiLCJ2YWx1ZSI6InRydWUiLCJvcHRpb25zIjpbeyJuYW1lIjoiVHJ1ZSIsInZhbHVlIjoidHJ1ZSJ9LHsibmFtZSI6IkZhbHNlIiwidmFsdWUiOiJmYWxzZSJ9XX19fQ==]]]\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skpolling\",\n        \"children\": [\n          {\n            \"text\": \"skpolling\"\n          }\n        ],\n        \"component\": \"skpolling\",\n        \"options\": {\n          \"class\": \"\",\n          \"pollInterval\": \"5000\",\n          \"pollRetries\": \"180\",\n          \"pollChallengeStatus\": \"true\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"CSS Class\"\n          },\n          \"pollInterval\": {\n            \"name\": \"pollInterval\",\n            \"displayName\": \"Poll Interval\",\n            \"value\": 2000\n          },\n          \"pollRetries\": {\n            \"name\": \"pollRetries\",\n            \"displayName\": \"Poll Retries\",\n            \"value\": 60\n          },\n          \"pollChallengeStatus\": {\n            \"name\": \"pollChallengeStatus\",\n            \"displayName\": \"Poll Challenge Status\",\n            \"type\": \"select\",\n            \"value\": \"true\",\n            \"options\": [\n              {\n                \"name\": \"True\",\n                \"value\": \"true\"\n              },\n              {\n                \"name\": \"False\",\n                \"value\": \"false\"\n              }\n            ]\n          }\n        },\n        \"tooltip\": \"{{component.skpolling}}\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n<div id=\\\"footer-text\\\">Powered by Ping Identity</div>\\n</form>\\n</div>\"\n      }\n    ]\n  }\n]"
+              },
+              "customScript": {},
+              "customCSS": {
+                "value": ".btn--hide {\n    display:none;\n}\n\nspan#code {\n    font-size: 35px;\n    font-weight: bold;\n}\n\nimg#qr {\n    margin-top: 40px;\n    margin-bottom: 40px;\n    border: solid 5px #B3282D;\n}\n\ndiv#container {\n    text-align: center;\n    display: flex;\n    padding: 70px;\n    justify-content: center;\n    align-items: center;\n    font-size: 25px;\n}\n\nspan#status {\n    font-size: 30px;\n    font-weight: bold;\n    color: #B3282D;\n}\n\ndiv#footer-text {\n   text-align: center;\n    font-size: 15px;\n    color: #acacb4;\n    margin-top: 20px; \n}"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Display Link Only "
+              },
+              "nodeDescription": {
+                "value": "Device is Mobile"
+              },
+              "challenge": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"challenge\",\n        \"data\": \"{{local.q5qe4p48wg.payload.output.challenge}}\",\n        \"tooltip\": \"{{local.q5qe4p48wg.payload.output.challenge}}\",\n        \"children\": [\n          {\n            \"text\": \"challenge\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "isDisabled": false,
+            "idUnique": "hg15azgaat"
+          },
+          "position": {
+            "x": 1394,
+            "y": 514
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "k2giufdqta",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "idUnique": "sp0374u0vx"
+          },
+          "position": {
+            "x": 2024,
+            "y": 604
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ssi1snxf07",
+            "nodeType": "CONNECTION",
+            "connectionId": "f5a17454db1b80e4d53275dc99d6debc",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "miumgym5p1"
+              }
+            },
+            "idUnique": "5urilly2q0"
+          },
+          "position": {
+            "x": 2557,
+            "y": 1050
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "miumgym5p1",
+            "nodeType": "CONNECTION",
+            "connectionId": "f5a17454db1b80e4d53275dc99d6debc",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "View Another Result"
+              },
+              "backgroundColor": {
+                "value": "#bd10e0ff"
+              }
+            },
+            "idUnique": "3w068wr076"
+          },
+          "position": {
+            "x": 1387,
+            "y": 870
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "e74x9qhogz",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#5D00D6ff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "Display Result of Verification (Only for Demo Purposes)"
+              },
+              "width": {
+                "value": 2100
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontSize": {
+                "value": 14
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 8
+              }
+            },
+            "status": "configured",
+            "idUnique": "iquoslamvo"
+          },
+          "position": {
+            "x": 224,
+            "y": 724
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "pknsxqn4ul",
+            "nodeType": "CONNECTION",
+            "connectionId": "f5a17454db1b80e4d53275dc99d6debc",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "kpwcjd139o"
+              },
+              "nodeTitle": {
+                "value": "Go to Display Output"
+              }
+            },
+            "idUnique": "6cnkddadlk"
+          },
+          "position": {
+            "x": 2257,
+            "y": 450
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "xfus838kac",
+            "nodeType": "EVAL",
+            "idUnique": "v8rnlj28wa"
+          },
+          "position": {
+            "x": 2077,
+            "y": 480
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0f8618fwz4",
+            "nodeType": "EVAL",
+            "idUnique": "kshicxw7u6"
+          },
+          "position": {
+            "x": 900,
+            "y": 990
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "hrkr33ev1u",
+            "nodeType": "CONNECTION",
+            "connectionId": "f5a17454db1b80e4d53275dc99d6debc",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "kpwcjd139o"
+              },
+              "nodeTitle": {
+                "value": "Go to Display Output"
+              }
+            },
+            "idUnique": "gfj2wfjrl0"
+          },
+          "position": {
+            "x": 2257,
+            "y": 540
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "sco6h7xqwb",
+            "nodeType": "EVAL",
+            "idUnique": "e8axclzzej"
+          },
+          "position": {
+            "x": 2107,
+            "y": 1080
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mi39ed6awv",
+            "nodeType": "EVAL",
+            "idUnique": "2cb219jchc"
+          },
+          "position": {
+            "x": 2107,
+            "y": 1170
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "feuyttfky3",
+            "nodeType": "EVAL",
+            "idUnique": "ijzv7zalqn"
+          },
+          "position": {
+            "x": 397,
+            "y": 930
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "hs4roqkcru",
+            "nodeType": "EVAL",
+            "idUnique": "bft4wkvxe0"
+          },
+          "position": {
+            "x": 2077,
+            "y": 540
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "a6rsz5tav9",
+            "nodeType": "EVAL",
+            "idUnique": "v4h68uay4t"
+          },
+          "position": {
+            "x": 2407,
+            "y": 1050
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "gzch85e175",
+            "nodeType": "EVAL",
+            "idUnique": "ncikmzxqud"
+          },
+          "position": {
+            "x": 1507,
+            "y": 870
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "2p042cmb4j",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "idUnique": "i9i9hqwv2y"
+          },
+          "position": {
+            "x": 2407,
+            "y": 1170
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "m5fxsvu1c5",
+            "nodeType": "CONNECTION",
+            "connectionId": "f5a17454db1b80e4d53275dc99d6debc",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "miumgym5p1"
+              }
+            },
+            "idUnique": "mhgukdqvgd"
+          },
+          "position": {
+            "x": 2557,
+            "y": 1170
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9c1cp03djo",
+            "nodeType": "CONNECTION",
+            "connectionId": "14e73ac293bcd296d82233e23d05bd96",
+            "connectorId": "pingOneVerifyConnector",
+            "name": "PingOne Verify",
+            "label": "PingOne Verify",
+            "status": "configured",
+            "capabilityName": "readSelfie",
+            "type": "action",
+            "properties": {
+              "userId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"tooltip\": \"{{local.f2lw1ch0sp.payload.output.user.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "transactionId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.q5qe4p48wg.payload.output.transaction.id}}\",\n        \"tooltip\": \"{{local.q5qe4p48wg.payload.output.transaction.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Return Selfie Image"
+              }
+            },
+            "idUnique": "sao4scnvrq"
+          },
+          "position": {
+            "x": 638,
+            "y": 1189.5
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "08ibpfyuec",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Polling Timeout"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Polling timed out.\"\n      }\n    ]\n  }\n]"
+              }
+            },
+            "idUnique": "49w8t6fgv6"
+          },
+          "position": {
+            "x": 2250,
+            "y": 630
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "511aahb133",
+            "nodeType": "EVAL",
+            "idUnique": "1ym06o62ka"
+          },
+          "position": {
+            "x": 1800,
+            "y": 450
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "1wlui2wp7g",
+            "source": "k2giufdqta",
+            "target": "08ibpfyuec"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "849y93ykrd",
+            "source": "eos3hq8bb4",
+            "target": "hs4roqkcru",
+            "multiValueSourceId": "myivmztn6p"
+          },
+          "position": {
+            "x": 64,
+            "y": 92
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "j96nukkx3k",
+            "source": "807fv1u3og",
+            "target": "dykbtno97m"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "36svzk37zc",
+            "source": "2rlhg9p880",
+            "target": "q5qe4p48wg"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "x4uxp9z2c4",
+            "source": "r6ysndbf9j",
+            "target": "bm5ik3toki"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "56770zeeer",
+            "source": "9ex5uq0wwl",
+            "target": "a6rsz5tav9"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "okndtnhy7w",
+            "source": "sco6h7xqwb",
+            "target": "9ex5uq0wwl"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9x6prsmdtx",
+            "source": "hsx7wyjrpj",
+            "target": "0f8618fwz4"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7cmw2nyibx",
+            "source": "vounj0ducf",
+            "target": "sco6h7xqwb",
+            "multiValueSourceId": "9vivzj7bk6"
+          },
+          "position": {
+            "x": 64,
+            "y": 52
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "t2dnuklbdf",
+            "source": "a6rsz5tav9",
+            "target": "ssi1snxf07"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "etffduhbz",
+            "source": "s8cmiyen8o",
+            "target": "nccrc1g1ml"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "177f67emx8",
+            "source": "kpwcjd139o",
+            "target": "feuyttfky3"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zeym5lvn7t",
+            "source": "llh1untwyq",
+            "target": "0f8618fwz4"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ebd5k5j6hh",
+            "source": "vounj0ducf",
+            "target": "mi39ed6awv",
+            "multiValueSourceId": "13n2zy1z0b"
+          },
+          "position": {
+            "x": 64,
+            "y": 92
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ow5if93me9",
+            "source": "mi39ed6awv",
+            "target": "ugz0x19ngh"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mrwy9k7nu2",
+            "source": "feuyttfky3",
+            "target": "08597p9949"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "18e3pbcmt6",
+            "source": "eos3hq8bb4",
+            "target": "xfus838kac",
+            "multiValueSourceId": "dlnhw4yg1s"
+          },
+          "position": {
+            "x": 64,
+            "y": 52
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "uievr6p3f4",
+            "source": "08597p9949",
+            "target": "0f8618fwz4"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "flqozm8reg",
+            "source": "feuyttfky3",
+            "target": "9c1cp03djo"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "v9405a2w20",
+            "source": "t5npshpoe5",
+            "target": "tatxn2nmft"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "csncetev1v",
+            "source": "2p042cmb4j",
+            "target": "m5fxsvu1c5"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5dxzzsk6ai",
+            "source": "eos3hq8bb4",
+            "target": "k2giufdqta",
+            "multiValueSourceId": "-1"
+          },
+          "position": {
+            "x": 64,
+            "y": 132
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "dpqnx26jbt",
+            "source": "feuyttfky3",
+            "target": "llh1untwyq"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "307iopg7nv",
+            "source": "miumgym5p1",
+            "target": "gzch85e175"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zug2l1ukzj",
+            "source": "feuyttfky3",
+            "target": "hsx7wyjrpj"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "u0m0qoprzu",
+            "source": "q5qe4p48wg",
+            "target": "ybq313b83t"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "483ju8j11o",
+            "source": "ugz0x19ngh",
+            "target": "2p042cmb4j"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ebsanentmv",
+            "source": "dykbtno97m",
+            "target": "ngt94dvwvs"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "p3a886r8rl",
+            "source": "hb6rxpkxgf",
+            "target": "b47yjgf7q6"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "677dlm1ydk",
+            "source": "b47yjgf7q6",
+            "target": "dykbtno97m"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "r0hvgfzmhz",
+            "source": "511aahb133",
+            "target": "eos3hq8bb4"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1t9ns7syof",
+            "source": "hb6rxpkxgf",
+            "target": "807fv1u3og"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "si5z8sptuh",
+            "source": "hs4roqkcru",
+            "target": "hrkr33ev1u"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "u9ixs7lbnd",
+            "source": "ybq313b83t",
+            "target": "s8cmiyen8o"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "kmc4oi8vpd",
+            "source": "w4xfanojfk",
+            "target": "hb6rxpkxgf"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7ue04jnk7l",
+            "source": "tatxn2nmft",
+            "target": "vounj0ducf"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "sf4qhg7srj",
+            "source": "0f8618fwz4",
+            "target": "r6ysndbf9j"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5nuwkbmcn8",
+            "source": "nccrc1g1ml",
+            "target": "w4xfanojfk"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "2nheab2heo",
+            "source": "gzch85e175",
+            "target": "r6ysndbf9j"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ta6ukxoj5n",
+            "source": "f2lw1ch0sp",
+            "target": "2rlhg9p880"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mdozxp9ens",
+            "source": "bm5ik3toki",
+            "target": "t5npshpoe5"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "22kq0bs7a1",
+            "source": "9c1cp03djo",
+            "target": "0f8618fwz4"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "giht9ntmqy",
+            "source": "xfus838kac",
+            "target": "pknsxqn4ul"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "cfpwzduuc0",
+            "source": "5b0xbygtqj",
+            "target": "1lzzh3hcd0"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0lzifptrhx",
+            "source": "ngt94dvwvs",
+            "target": "511aahb133"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#ff661c",
+  "savedDate": 1716409314356,
+  "variables": [],
+  "connections": []
+}
