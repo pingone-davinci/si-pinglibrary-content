@@ -1,0 +1,634 @@
+{
+  "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "httpConnector",
+    "tutloxpConnector",
+    "annotationConnector"
+  ],
+  "createdDate": 1672167949358,
+  "currentVersion": 101,
+  "customerId": "b23f4463beaa44cbd75e1d20a97bc369",
+  "deployedDate": 1672168168812,
+  "description": "Imported on Wed Nov 30 2022 23:43:03 GMT+0000 (Coordinated Universal Time)",
+  "flowStatus": "enabled",
+  "name": "TransUnion TLOxp - VerifyPlus identity lookup",
+  "orx": "{\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"a1d87b53885db01fc21d07f46ef05d5b\",\"flowVersionId\":101,\"version\":\"4.0.0\",\"states\":[\"initialize\",\"start_0\",\"inside_0\",\"end_0\"],\"currentState\":[\"initialize\"],\"transitions\":[{\"from\":[\"initialize\"],\"to\":\"start_0\",\"conditions\":{\"$and\":[{\"initializeFlow\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"a1d87b53885db01fc21d07f46ef05d5b\",\"flowVersionId\":101,\"id\":\"lcrsj78fj0\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"messageTitle\":{\"value\":\"Welcome\"},\"message\":{\"value\":\"Click Continue.\"},\"button\":{\"displayName\":\"Continue\"},\"showContinueButton\":{\"value\":true},\"title\":{\"value\":\"Verification Form\"},\"formFieldsList\":{\"value\":[{\"propertyName\":\"ssn\",\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"value\":\"\",\"hashedVisibility\":false,\"displayName\":\"Social Security Number (SSN)\"},{\"propertyName\":\"fname\",\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"value\":\"\",\"hashedVisibility\":false,\"displayName\":\"First Name\"},{\"propertyName\":\"lastname\",\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"value\":\"\",\"hashedVisibility\":false,\"displayName\":\"Last Name\"},{\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"propertyName\":\"buttonValue\"}]},\"nextButtonText\":{\"value\":\"Check my information\"},\"nodeTitle\":{\"value\":\"Verification Form\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                    class=\\\"align-self-center mb-5\\\"\\n                    src=\\\"{{global.variables.logoUrl}}\\\"\\n                    alt=\\\"{{global.variables.companyName}}\\\"\\n                    style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Verification Form</h1>\\n                <p\\n                    class=\\\"text-danger mdi mdi-alert-circle\\\"\\n                    data-id=\\\"feedback\\\"\\n                    data-skcomponent=\\\"skerror\\\"\\n                ></p>\\n                <form id=\\\"verificationForm\\\" data-id=\\\"verificationForm\\\">\\n                    <div class=\\\"mb-4 form-floating\\\">\\n                        <input\\n                            class=\\\"form-control\\\"\\n                            type=\\\"text\\\"\\n                            id=\\\"ssn\\\"\\n                            name=\\\"ssn\\\"\\n                            placeholder=\\\"Social Security Number (SSN)\\\"\\n                            autocomplete=\\\"off\\\"\\n                            value=\\\"\\\"\\n                            data-id=\\\"ssn-input\\\"\\n                        /><label class=\\\"form-label\\\" for=\\\"ssn\\\"\\n                            >Social Security Number (SSN)</label\\n                        >\\n                    </div>\\n                    <div class=\\\"mb-4 form-floating\\\">\\n                        <input\\n                            class=\\\"form-control\\\"\\n                            type=\\\"text\\\"\\n                            id=\\\"fname\\\"\\n                            name=\\\"fname\\\"\\n                            placeholder=\\\"First Name\\\"\\n                            autocomplete=\\\"off\\\"\\n                            data-id=\\\"fname-input\\\"\\n                        /><label class=\\\"form-label\\\" for=\\\"fname\\\"\\n                            >First Name</label\\n                        >\\n                    </div>\\n                     <div class=\\\"mb-4 form-floating\\\">\\n                        <input\\n                            class=\\\"form-control\\\"\\n                            type=\\\"text\\\"\\n                            id=\\\"lastname\\\"\\n                            name=\\\"lastname\\\"\\n                            placeholder=\\\"Last Name\\\"\\n                            autocomplete=\\\"off\\\"\\n                            data-id=\\\"lastname-input\\\"\\n                        /><label class=\\\"form-label\\\" for=\\\"lastname\\\"\\n                            >Last Name</label\\n                        >\\n                    </div>\\n                    <div class=\\\"d-flex flex-column mt-5\\\">\\n                        <button\\n                            data-id=\\\"button\\\"\\n                            type=\\\"submit\\\"\\n                            class=\\\"btn btn-primary mb-3\\\"\\n                            data-skcomponent=\\\"skbutton\\\"\\n                            data-skbuttontype=\\\"form-submit\\\"\\n                            data-skform=\\\"verificationForm\\\"\\n                            data-skbuttonvalue=\\\"submit\\\"\\n                        >\\n                            Check my information\\n                        </button>\\n                    </div>\\n                </form>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"},\"nodeDescription\":{\"value\":\"Prompts the user to enter their SSN, given name, and family name\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":0,\"signalId\":0,\"largePayload\":[\"customHTML\"]}],\"transitionId\":0},{\"from\":[\"start_0\"],\"to\":\"inside_0\",\"conditions\":{\"$and\":[{\"id\":\"lcrsj78fj0\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"success\":true}]},\"signals\":[{\"name\":\"Tutloxp [2022-11-30]\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"a1d87b53885db01fc21d07f46ef05d5b\",\"flowVersionId\":101,\"id\":\"fbk271uojr\",\"connectionId\":\"389c1ad9499f3051a71746497c315375\",\"connectorId\":\"tutloxpConnector\",\"capabilityName\":\"verifyPlus\",\"properties\":{\"firstName\":{\"value\":\"{{local.lcrsj78fj0.payload.output.fname}}\"},\"ssn\":{\"value\":\"{{local.lcrsj78fj0.payload.output.ssn}}\"},\"lastName\":{\"value\":\"{{local.lcrsj78fj0.payload.output.lastname}}\"},\"nodeDescription\":{\"value\":\"Sends the SSN and name to TransUnion and get a verification result\"},\"nodeTitle\":{\"value\":\"TransUnion TLOxp\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"transitionId\":1,\"signalId\":0}],\"evalNodeId\":\"lqi4qz438n\",\"transitionId\":1},{\"from\":[\"inside_0\"],\"to\":\"end_0\",\"conditions\":{\"$and\":[{\"id\":\"fbk271uojr\",\"connectionId\":\"389c1ad9499f3051a71746497c315375\",\"connectorId\":\"tutloxpConnector\",\"capabilityName\":\"verifyPlus\",\"success\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"a1d87b53885db01fc21d07f46ef05d5b\",\"flowVersionId\":101,\"id\":\"1meeteqp7e\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"message\":{\"value\":\"Error code: {{local.fbk271uojr.payload.output.errorCode}}\\nNumber of records found: {{local.fbk271uojr.payload.output.numberOfRecordsFound}}\\nSearch synopsis: {{local.fbk271uojr.payload.output.searchSynopsis}}\\nTotal score: {{local.fbk271uojr.payload.output.totalScore}}\\nSSN score: {{local.fbk271uojr.payload.output.ssnScore}}\\nFull SSN matches: {{local.fbk271uojr.payload.output.fullSsnMatches}}\\nName score: {{local.fbk271uojr.payload.output.nameScore}}\\nFirst name matches: {{local.fbk271uojr.payload.output.firstNameMatches}}\\nLast name matches: {{local.fbk271uojr.payload.output.lastNameMatches}}\"},\"messageTitle\":{\"value\":\"Verify Plus Results\"},\"nodeTitle\":{\"value\":\"Verify Plus results\"},\"showContinueButton\":{\"value\":true},\"button\":{\"displayName\":\"Get more information\"},\"nodeDescription\":{\"value\":\"Shows a breakdown of the person's Verify Plus results and get a unique report token\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                  class=\\\"align-self-center mb-5\\\"\\n                  src=\\\"{{global.variables.logoUrl}}\\\"\\n                  alt=\\\"{{global.variables.companyName}}\\\"\\n                  style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Verify Plus Results</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                    Error code: {{local.fbk271uojr.payload.output.errorCode}}\\n                    Number of records found: {{local.fbk271uojr.payload.output.numberOfRecordsFound}}\\n                    Search synopsis: {{local.fbk271uojr.payload.output.searchSynopsis}}\\n                    Total score: {{local.fbk271uojr.payload.output.totalScore}}\\n                    SSN score: {{local.fbk271uojr.payload.output.ssnScore}}\\n                    Full SSN matches: {{local.fbk271uojr.payload.output.fullSsnMatches}}\\n                    Name score: {{local.fbk271uojr.payload.output.nameScore}}\\n                    First name matches: {{local.fbk271uojr.payload.output.firstNameMatches}}\\n                    Last name matches: {{local.fbk271uojr.payload.output.lastNameMatches}}\\n                </p>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":2,\"signalId\":0,\"largePayload\":[\"customHTML\"]}],\"evalNodeId\":\"pyoqjeomme\",\"transitionId\":2}],\"history\":[],\"outputs\":{\"httpConnector_customHTMLTemplate\":{\"localOutputs\":[\"output\"]},\"tutloxpConnector_verifyPlus\":{\"localOutputs\":[\"output\"]}},\"outputParameters\":[\"global.variables.logoUrl\",\"global.variables.companyName\",\"global.variables.logoStyle\",\"local.lcrsj78fj0.payload.output.fname\",\"local.lcrsj78fj0.payload.output.ssn\",\"local.lcrsj78fj0.payload.output.lastname\",\"local.fbk271uojr.payload.output.errorCode\",\"local.fbk271uojr.payload.output.numberOfRecordsFound\",\"local.fbk271uojr.payload.output.searchSynopsis\",\"local.fbk271uojr.payload.output.totalScore\",\"local.fbk271uojr.payload.output.ssnScore\",\"local.fbk271uojr.payload.output.fullSsnMatches\",\"local.fbk271uojr.payload.output.nameScore\",\"local.fbk271uojr.payload.output.firstNameMatches\",\"local.fbk271uojr.payload.output.lastNameMatches\"],\"global\":{},\"local\":{},\"idMapping\":{},\"nodeMappingForTids\":{\"lcrsj78fj0\":\"initialize\",\"lcrsj78fj0_customHTMLTemplate\":\"initialize\",\"1meeteqp7e\":\"lcrsj78fj0\",\"1meeteqp7e_customHTMLTemplate\":\"lcrsj78fj0_customHTMLTemplate\"},\"tids\":{},\"delayedConditionalStateChangeMappings\":{},\"delayedConditionalStateChangeMappingsReverse\":{},\"delayedConditionalStatesList\":[],\"lbsTransitionIdsToIgnore\":[],\"lbsTransitionIdsMapping\":{},\"outputParametersDefault\":{\"global.variables.logoUrl\":\"\",\"global.variables.companyName\":\"\",\"global.variables.logoStyle\":\"\",\"local.lcrsj78fj0.payload.output.fname\":\"\",\"local.lcrsj78fj0.payload.output.ssn\":\"\",\"local.lcrsj78fj0.payload.output.lastname\":\"\",\"local.fbk271uojr.payload.output.errorCode\":\"\",\"local.fbk271uojr.payload.output.numberOfRecordsFound\":\"\",\"local.fbk271uojr.payload.output.searchSynopsis\":\"\",\"local.fbk271uojr.payload.output.totalScore\":\"\",\"local.fbk271uojr.payload.output.ssnScore\":\"\",\"local.fbk271uojr.payload.output.fullSsnMatches\":\"\",\"local.fbk271uojr.payload.output.nameScore\":\"\",\"local.fbk271uojr.payload.output.firstNameMatches\":\"\",\"local.fbk271uojr.payload.output.lastNameMatches\":\"\"},\"outputParametersDefaultBlacklist\":[],\"historyThreshold\":70,\"errorRewindBlackListIds\":[],\"nodeMappingForTidsNew\":{\"lcrsj78fj0\":\"initialize\",\"1meeteqp7e\":[\"lcrsj78fj0\"]},\"nodeStates\":{\"lcrsj78fj0\":\"start_0\",\"fbk271uojr\":\"inside_0\",\"1meeteqp7e\":\"end_0\"}}",
+  "publishedVersion": 101,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "cssLinks": [
+      "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.0/end-user-nano.css",
+      "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.3/icons.css"
+    ],
+    "useCustomCSS": true
+  },
+  "updatedDate": 1672168168812,
+  "flowId": "a1d87b53885db01fc21d07f46ef05d5b",
+  "versionId": 101,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "lcrsj78fj0",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Welcome\"\n      }\n    ]\n  }\n]"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Click Continue.\"\n      }\n    ]\n  }\n]"
+              },
+              "button": {
+                "displayName": "Continue"
+              },
+              "showContinueButton": {
+                "value": true
+              },
+              "title": {
+                "value": "Verification Form"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "propertyName": "ssn",
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "value": "",
+                    "hashedVisibility": false,
+                    "displayName": "Social Security Number (SSN)"
+                  },
+                  {
+                    "propertyName": "fname",
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "value": "",
+                    "hashedVisibility": false,
+                    "displayName": "First Name"
+                  },
+                  {
+                    "propertyName": "lastname",
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "value": "",
+                    "hashedVisibility": false,
+                    "displayName": "Last Name"
+                  },
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "nextButtonText": {
+                "value": "Check my information"
+              },
+              "nodeTitle": {
+                "value": "Verification Form"
+              },
+              "customHTML": {
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\"\n>\n    <div style=\"max-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img\n                    class=\"align-self-center mb-5\"\n                    src=\"{{global.variables.logoUrl}}\"\n                    alt=\"{{global.variables.companyName}}\"\n                    style=\"{{global.variables.logoStyle}}\"\n                />\n                <h1 class=\"text-center mb-4\">Verification Form</h1>\n                <p\n                    class=\"text-danger mdi mdi-alert-circle\"\n                    data-id=\"feedback\"\n                    data-skcomponent=\"skerror\"\n                ></p>\n                <form id=\"verificationForm\" data-id=\"verificationForm\">\n                    <div class=\"mb-4 form-floating\">\n                        <input\n                            class=\"form-control\"\n                            type=\"text\"\n                            id=\"ssn\"\n                            name=\"ssn\"\n                            placeholder=\"Social Security Number (SSN)\"\n                            autocomplete=\"off\"\n                            value=\"\"\n                            data-id=\"ssn-input\"\n                        /><label class=\"form-label\" for=\"ssn\"\n                            >Social Security Number (SSN)</label\n                        >\n                    </div>\n                    <div class=\"mb-4 form-floating\">\n                        <input\n                            class=\"form-control\"\n                            type=\"text\"\n                            id=\"fname\"\n                            name=\"fname\"\n                            placeholder=\"First Name\"\n                            autocomplete=\"off\"\n                            data-id=\"fname-input\"\n                        /><label class=\"form-label\" for=\"fname\"\n                            >First Name</label\n                        >\n                    </div>\n                     <div class=\"mb-4 form-floating\">\n                        <input\n                            class=\"form-control\"\n                            type=\"text\"\n                            id=\"lastname\"\n                            name=\"lastname\"\n                            placeholder=\"Last Name\"\n                            autocomplete=\"off\"\n                            data-id=\"lastname-input\"\n                        /><label class=\"form-label\" for=\"lastname\"\n                            >Last Name</label\n                        >\n                    </div>\n                    <div class=\"d-flex flex-column mt-5\">\n                        <button\n                            data-id=\"button\"\n                            type=\"submit\"\n                            class=\"btn btn-primary mb-3\"\n                            data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\"\n                            data-skform=\"verificationForm\"\n                            data-skbuttonvalue=\"submit\"\n                        >\n                            Check my information\n                        </button>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+              },
+              "nodeDescription": {
+                "value": "Prompts the user to enter their SSN, given name, and family name"
+              }
+            }
+          },
+          "position": {
+            "x": 390,
+            "y": 390
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "lqi4qz438n",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 540,
+            "y": 390
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "fbk271uojr",
+            "nodeType": "CONNECTION",
+            "connectionId": "389c1ad9499f3051a71746497c315375",
+            "connectorId": "tutloxpConnector",
+            "name": "Tutloxp [2022-11-30]",
+            "label": "My TransUnion TLOxp",
+            "status": "configured",
+            "capabilityName": "verifyPlus",
+            "type": "action",
+            "properties": {
+              "firstName": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"fname\",\n        \"data\": \"{{local.lcrsj78fj0.payload.output.fname}}\",\n        \"tooltip\": \"{{local.lcrsj78fj0.payload.output.fname}}\",\n        \"children\": [\n          {\n            \"text\": \"fname\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "ssn": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"ssn\",\n        \"data\": \"{{local.lcrsj78fj0.payload.output.ssn}}\",\n        \"tooltip\": \"{{local.lcrsj78fj0.payload.output.ssn}}\",\n        \"children\": [\n          {\n            \"text\": \"ssn\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "lastName": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"lastname\",\n        \"data\": \"{{local.lcrsj78fj0.payload.output.lastname}}\",\n        \"tooltip\": \"{{local.lcrsj78fj0.payload.output.lastname}}\",\n        \"children\": [\n          {\n            \"text\": \"lastname\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeDescription": {
+                "value": "Sends the SSN and name to TransUnion and get a verification result"
+              },
+              "nodeTitle": {
+                "value": "TransUnion TLOxp"
+              }
+            }
+          },
+          "position": {
+            "x": 750,
+            "y": 390
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "pyoqjeomme",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 900,
+            "y": 390
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1meeteqp7e",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Error code: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:fbk271uojr\",\n        \"url\": \"errorCode\",\n        \"data\": \"{{local.fbk271uojr.payload.output.errorCode}}\",\n        \"tooltip\": \"{{local.fbk271uojr.payload.output.errorCode}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.fbk271uojr.payload.output.errorCode}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nNumber of records found: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:fbk271uojr\",\n        \"url\": \"numberOfRecordsFound\",\n        \"data\": \"{{local.fbk271uojr.payload.output.numberOfRecordsFound}}\",\n        \"tooltip\": \"{{local.fbk271uojr.payload.output.numberOfRecordsFound}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.fbk271uojr.payload.output.numberOfRecordsFound}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nSearch synopsis: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:fbk271uojr\",\n        \"url\": \"searchSynopsis\",\n        \"data\": \"{{local.fbk271uojr.payload.output.searchSynopsis}}\",\n        \"tooltip\": \"{{local.fbk271uojr.payload.output.searchSynopsis}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.fbk271uojr.payload.output.searchSynopsis}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nTotal score: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:fbk271uojr\",\n        \"url\": \"totalScore\",\n        \"data\": \"{{local.fbk271uojr.payload.output.totalScore}}\",\n        \"tooltip\": \"{{local.fbk271uojr.payload.output.totalScore}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.fbk271uojr.payload.output.totalScore}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nSSN score: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:fbk271uojr\",\n        \"url\": \"ssnScore\",\n        \"data\": \"{{local.fbk271uojr.payload.output.ssnScore}}\",\n        \"tooltip\": \"{{local.fbk271uojr.payload.output.ssnScore}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.fbk271uojr.payload.output.ssnScore}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nFull SSN matches: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:fbk271uojr\",\n        \"url\": \"fullSsnMatches\",\n        \"data\": \"{{local.fbk271uojr.payload.output.fullSsnMatches}}\",\n        \"tooltip\": \"{{local.fbk271uojr.payload.output.fullSsnMatches}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.fbk271uojr.payload.output.fullSsnMatches}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nName score: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:fbk271uojr\",\n        \"url\": \"nameScore\",\n        \"data\": \"{{local.fbk271uojr.payload.output.nameScore}}\",\n        \"tooltip\": \"{{local.fbk271uojr.payload.output.nameScore}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.fbk271uojr.payload.output.nameScore}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nFirst name matches: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:fbk271uojr\",\n        \"url\": \"firstNameMatches\",\n        \"data\": \"{{local.fbk271uojr.payload.output.firstNameMatches}}\",\n        \"tooltip\": \"{{local.fbk271uojr.payload.output.firstNameMatches}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.fbk271uojr.payload.output.firstNameMatches}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\nLast name matches: \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:fbk271uojr\",\n        \"url\": \"lastNameMatches\",\n        \"data\": \"{{local.fbk271uojr.payload.output.lastNameMatches}}\",\n        \"tooltip\": \"{{local.fbk271uojr.payload.output.lastNameMatches}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.fbk271uojr.payload.output.lastNameMatches}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Verify Plus Results\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Verify Plus results"
+              },
+              "showContinueButton": {
+                "value": true
+              },
+              "button": {
+                "displayName": "Get more information"
+              },
+              "nodeDescription": {
+                "value": "Shows a breakdown of the person's Verify Plus results and get a unique report token"
+              },
+              "customHTML": {
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\"\n>\n    <div style=\"max-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img\n                  class=\"align-self-center mb-5\"\n                  src=\"{{global.variables.logoUrl}}\"\n                  alt=\"{{global.variables.companyName}}\"\n                  style=\"{{global.variables.logoStyle}}\"\n                />\n                <h1 class=\"text-center mb-4\">Verify Plus Results</h1>\n                <p class=\"text-muted text-center\">\n                    Error code: {{local.fbk271uojr.payload.output.errorCode}}\n                    Number of records found: {{local.fbk271uojr.payload.output.numberOfRecordsFound}}\n                    Search synopsis: {{local.fbk271uojr.payload.output.searchSynopsis}}\n                    Total score: {{local.fbk271uojr.payload.output.totalScore}}\n                    SSN score: {{local.fbk271uojr.payload.output.ssnScore}}\n                    Full SSN matches: {{local.fbk271uojr.payload.output.fullSsnMatches}}\n                    Name score: {{local.fbk271uojr.payload.output.nameScore}}\n                    First name matches: {{local.fbk271uojr.payload.output.firstNameMatches}}\n                    Last name matches: {{local.fbk271uojr.payload.output.lastNameMatches}}\n                </p>\n            </div>\n        </div>\n    </div>\n</div>"
+              }
+            }
+          },
+          "position": {
+            "x": 1110,
+            "y": 390
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "p8ih04ot3g",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Get information from the user"
+              },
+              "width": {
+                "value": 240
+              },
+              "height": {
+                "value": 50
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 274,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8oup9zypjx",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Show the results"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 1024,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "grnpk81zkm",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotation": {
+                "value": "Match info with TransUnion"
+              },
+              "width": {
+                "value": 180
+              },
+              "height": {
+                "value": 50
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 664,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "86ajtyh5eh",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4462edff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "Verify identity information with TransUnion"
+              },
+              "width": {
+                "value": 1075
+              },
+              "cornerRadius": {
+                "value": 20
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "fontStyle": {
+                "value": "bold"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 214,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "lvzs1dqhvz",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffffffff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "TransUnion TLOxp - VerifyPlus identity lookup Flow                                                                                                                                                                                                  Created by: Ping Identity                                                           Version: 1.0                                                                           Release Date: December 27, 2022                                          Documentation: https://support.pingidentity.com/s/marketplace-integration/a7iDo0000010x01IAA/transunion-tloxp-verifyplus-identity-lookup"
+              },
+              "width": {
+                "value": 600
+              },
+              "height": {
+                "value": 240
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 3
+              },
+              "strokeColor": {
+                "value": "#d0021bff"
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 240,
+            "y": 600
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "xjo4x3bvd4",
+            "source": "fbk271uojr",
+            "target": "pyoqjeomme"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9gp4adtunb",
+            "source": "lqi4qz438n",
+            "target": "fbk271uojr"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "okj4cht9a3",
+            "source": "pyoqjeomme",
+            "target": "1meeteqp7e"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ij640cmjzb",
+            "source": "lcrsj78fj0",
+            "target": "lqi4qz438n"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#AFD5FF",
+  "savedDate": 1672167949217,
+  "variables": [
+    {
+      "context": "flowInstance",
+      "createdDate": 1667404096868,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "companyName##SK##flowInstance",
+      "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1667404096868,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000,
+        "value": "width: 65px; height: 65px;"
+      },
+      "type": "property",
+      "updatedDate": 1667950646585,
+      "visibility": "private",
+      "name": "logoStyle##SK##flowInstance",
+      "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1667832920919,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000,
+        "value": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
+      },
+      "type": "property",
+      "updatedDate": 1667950505469,
+      "visibility": "private",
+      "name": "logoUrl##SK##flowInstance",
+      "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b"
+    }
+  ]
+}
