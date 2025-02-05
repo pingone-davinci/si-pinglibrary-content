@@ -1,0 +1,1031 @@
+{
+  "companyId": "c40b6508-863e-4437-9b1c-b62f25ee2583",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "pingOneScopeConsentConnector",
+    "httpConnector",
+    "functionsConnector",
+    "annotationConnector",
+    "variablesConnector"
+  ],
+  "createdDate": 1708725670996,
+  "currentVersion": 2,
+  "customerId": "fbd98380ee4bb7f118c3787eae30ad7b",
+  "deployedDate": 1708725674921,
+  "description": "",
+  "flowStatus": "enabled",
+  "inputSchemaCompiled": {
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "description": "",
+          "preferredDataType": "string",
+          "isExpanded": true,
+          "type": "string",
+          "name": "username"
+        },
+        "applicationId": {
+          "description": "",
+          "preferredDataType": "string",
+          "isExpanded": true,
+          "type": "string",
+          "name": "applicationId"
+        }
+      },
+      "additionalProperties": false,
+      "required": []
+    }
+  },
+  "isInputSchemaSaved": true,
+  "isOutputSchemaSaved": false,
+  "name": "PingOne Scope Consent - Subflow",
+  "publishedVersion": 2,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "pingOneFlow": false
+  },
+  "timeouts": "null",
+  "trigger": {},
+  "updatedDate": 1708725674922,
+  "flowId": "9832ad9d6fbdcccfd0c5caaee046248f",
+  "versionId": 2,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "uqus19rgky",
+            "nodeType": "CONNECTION",
+            "connectionId": "418a83f02bf08c272886d18484c04e6f",
+            "connectorId": "pingOneScopeConsentConnector",
+            "name": "PingOne Scope Consent",
+            "label": "PingOne Scope Consent",
+            "status": "configured",
+            "capabilityName": "appConsent",
+            "properties": {
+              "matchUserAttribute": {
+                "value": "username"
+              },
+              "userIdentifier": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{global.parameters.username}}\",\n        \"tooltip\": \"{{global.parameters.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "matchApplicationAttributeForAppConsent": {
+                "value": "id"
+              },
+              "promptConsent": {
+                "value": true
+              },
+              "applicationIdentifierIDForAppConsent": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"applicationId\",\n        \"data\": \"{{global.parameters.applicationId}}\",\n        \"tooltip\": \"{{global.parameters.applicationId}}\",\n        \"children\": [\n          {\n            \"text\": \"applicationId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "appConsentHtmlConfig_appConsentScreen": {
+                "properties": {
+                  "customHTML": {
+                    "value": "<div\nclass=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\"\n>\n<div class=\"mh-100\" style=\"max-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img src=\"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\" alt=\"Ping logo\" />\n          <span class=\"consent-title margin\">\n            Application Consent\n          </span>\n          <span>\n            <strong>{{applicationName}}</strong> wants to access your account.\n          </span>\n          <span>\n            Do you approve the request?\n          </span>\n          <span class=\"margin\">\n            You are signed on as <strong>{{username}}</strong>.\n          </span>\n\n          <button class=\"approve\" data-skbuttontype=\"next-event\" data-skbuttonvalue=\"ACCEPTED\" data-skcomponent=\"skbutton\" id=\"approve\" class=\"button\">Approve</button>\n          <button class=\"decline\" data-skbuttontype=\"next-event\" data-skbuttonvalue=\"DECLINED\" data-skcomponent=\"skbutton\" id=\"decline\" class=\"button\">Decline</button>\n        </div>\n\n    </div>\n</div>\n</div>"
+                  },
+                  "customCSS": {
+                    "value": "@import \"https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css\";\n\nimg {\n  width: 80px;\n  height: 80px;\n  margin: auto;\n}\n\n.card {\n  font-size: 15px;\n  text-align: center;\n}\n\n.card strong {\n  font-weight: 600;\n}\n\n.consent-title {\n  font-weight: 400;\n  font-size: 22px;\n  color: #595959;\n  text-align: center;\n}\n\n.margin {\n  margin: 25px 0;\n}\n\nbutton {\n  border: none;\n  height: 35px;\n}\n\nbutton.approve {\n  background-color: #277BA5;\n  border-radius: 2px;\n  color: white;\n}\n\nbutton.decline {\n  background-color: transparent;\n}"
+                  },
+                  "customScript": {
+                    "value": "  const approveButton = document.getElementById(\"approve\");\n  const declineButton = document.getElementById(\"decline\");\n\n  approveButton.addEventListener(\"click\", event => {\n    approveButton.disabled = true;\n    declineButton.disabled = true;\n  });\n\n  declineButton.addEventListener(\"click\", event => {\n    approveButton.disabled = true;\n    declineButton.disabled = true;\n  });"
+                  }
+                }
+              }
+            },
+            "idUnique": "547hndi3vq",
+            "type": "action"
+          },
+          "position": {
+            "x": 634,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8gmvditb3i",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "createSuccessResponse",
+            "type": "action",
+            "properties": {
+              "claimsNameValuePairs": {
+                "value": [
+                  {
+                    "name": "consentStatus",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"consentStatus\",\n        \"data\": \"{{local.uqus19rgky.payload.output.consentStatus}}\",\n        \"tooltip\": \"{{local.uqus19rgky.payload.output.consentStatus}}\",\n        \"children\": [\n          {\n            \"text\": \"consentStatus\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.34588393360847114,
+                    "type": "string",
+                    "label": "consentStatus (string - flowInstance)",
+                    "nameDefault": "consentStatus"
+                  },
+                  {
+                    "name": null,
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"consentScopes\",\n        \"data\": \"{{local.uqus19rgky.payload.output.consentScopes}}\",\n        \"tooltip\": \"{{local.uqus19rgky.payload.output.consentScopes}}\",\n        \"children\": [\n          {\n            \"text\": \"consentScopes\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.22478503282774054,
+                    "type": "string",
+                    "nameDefault": "consentScopes"
+                  }
+                ]
+              },
+              "additionalFieldsName": {
+                "value": "additionalProperties"
+              },
+              "backgroundColor": {
+                "value": "#9dc967ff"
+              },
+              "nodeTitle": {
+                "value": "Return consent status and granted scopes"
+              }
+            },
+            "idUnique": "jq625p8x7u",
+            "isDisabled": false
+          },
+          "position": {
+            "x": 1230,
+            "y": 390
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "81v0ew0lxb",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "customHTML": {
+                "value": "<div\nclass=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\"\n>\n<div class=\"mh-100\" style=\"max-width: 400px; width: 100%\">\n    <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n            <img src=\"{{global.variables.pingLogo}}\" alt=\"Ping logo\" />      \n            <span class=\"consent-title margin\">\n                Application Consent\n            </span>    \n            <p>{{local.uqus19rgky.payload.error.message}}.</p>\n        </div>\n    </div>\n</div>\n</div>"
+              },
+              "customCSS": {
+                "value": "@import \"https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css\";\n@import \"https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.7/icons.css\";\n\nimg {\n  width: 80px;\n  height: 80px;\n  margin: auto;\n}\n\n.card {\n  font-size: 15px;\n  text-align: center;\n}\n\n.card strong {\n  font-weight: 600;\n}\n\n.consent-title {\n  font-weight: 400;\n  font-size: 22px;\n  color: #595959;\n  text-align: center;\n}\n\n.margin {\n  margin: 25px 0;\n}\n\nbutton {\n  border: none;\n  height: 35px;\n}\n\n.text-danger {\n  margin-top: 10px;\n}"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Error\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"error\",\n        \"data\": \"{{local.uqus19rgky.payload.error}}\",\n        \"tooltip\": \"{{local.uqus19rgky.payload.error}}\",\n        \"children\": [\n          {\n            \"text\": \"error\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "formFieldsList": {
+                "value": []
+              },
+              "backgroundColor": {
+                "value": "#ffc8c1ff"
+              },
+              "nodeTitle": {
+                "value": "Unexpected error"
+              }
+            },
+            "idUnique": "5fxx4iwffo"
+          },
+          "position": {
+            "x": 930,
+            "y": 720
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "v2hxashfc9",
+            "nodeType": "EVAL",
+            "properties": {
+              "81v0ew0lxb": {
+                "value": "anyTriggersFalse"
+              }
+            },
+            "idUnique": "elr1grgwrt"
+          },
+          "position": {
+            "x": 780,
+            "y": 720
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8pscuigwic",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "idUnique": "yy77w4x26k"
+          },
+          "position": {
+            "x": 784,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7mvg50unjq",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Functions",
+            "status": "configured",
+            "capabilityName": "AEqualsMultipleB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"consentStatus\",\n        \"data\": \"{{local.uqus19rgky.payload.output.consentStatus}}\",\n        \"tooltip\": \"{{local.uqus19rgky.payload.output.consentStatus}}\",\n        \"children\": [\n          {\n            \"text\": \"consentStatus\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueMultiple": {
+                "value": [
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"ACCEPTED\"\n      }\n    ]\n  }\n]",
+                    "id": "0z9sov59dc"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"DECLINED\"\n      }\n    ]\n  }\n]",
+                    "id": "2x3yz1ueik"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Did the user accepts the request"
+              }
+            },
+            "idUnique": "7f4u7ms7j6"
+          },
+          "position": {
+            "x": 934,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "rosy8e83pt",
+            "nodeType": "EVAL",
+            "idUnique": "bzlgsns2in"
+          },
+          "position": {
+            "x": 1084,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "yal5z7xnib",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "customHTML": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div\\nclass=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\\\"\\n>\\n<div class=\\\"mh-100\\\" style=\\\"max-width: 400px; width: 100%\\\">\\n    <div class=\\\"card shadow mb-5\\\">\\n        <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n            <img src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"pingLogo\",\n        \"data\": \"{{global.variables.pingLogo}}\",\n        \"tooltip\": \"{{global.variables.pingLogo}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.pingLogo}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\" alt=\\\"Ping logo\\\" />          \\n            <span class=\\\"consent-title margin\\\">\\n                Application Consent\\n            </span>\\n            <p>You have declined the request.</p>\\n        </div>\\n    </div>\\n</div>\\n</div>\"\n      }\n    ]\n  }\n]"
+              },
+              "customCSS": {
+                "value": "@import \"https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css\";\n@import \"https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.7/icons.css\";\n\nimg {\n  width: 80px;\n  height: 80px;\n  margin: auto;\n}\n\n.card {\n  font-size: 15px;\n  text-align: center;  \n}\n\n.card strong {\n  font-weight: 600;\n}\n\n.consent-title {\n  font-weight: 400;\n  font-size: 22px;\n  color: #595959;\n  text-align: center;\n}\n\n.margin {\n  margin: 25px 0;\n}\n\nbutton {\n  border: none;\n  height: 35px;\n}\n\n.text-danger {\n  margin-top: 10px;\n}"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Error\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"error\",\n        \"data\": \"{{local.uqus19rgky.payload.error}}\",\n        \"tooltip\": \"{{local.uqus19rgky.payload.error}}\",\n        \"children\": [\n          {\n            \"text\": \"error\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "formFieldsList": {
+                "value": []
+              },
+              "backgroundColor": {
+                "value": "#ffc8c1ff"
+              },
+              "nodeTitle": {
+                "value": "User declined request"
+              }
+            },
+            "idUnique": "9w6x359oh8"
+          },
+          "position": {
+            "x": 1230,
+            "y": 720
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "hwn969ylsm",
+            "nodeType": "EVAL",
+            "idUnique": "xxdy434u94"
+          },
+          "position": {
+            "x": 1080,
+            "y": 720
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tha3fikey8",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "User accepts the application request"
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 1
+              },
+              "strokeColor": {
+                "value": "#000000ff"
+              },
+              "cornerRadius": {
+                "value": 8
+              },
+              "fontSize": {
+                "value": 14
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "width": {
+                "value": 300
+              }
+            },
+            "status": "configured",
+            "idUnique": "l7jeu1nwps"
+          },
+          "position": {
+            "x": 1080,
+            "y": 300
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6gijs2m7eq",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "User declines the application request"
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 1
+              },
+              "strokeColor": {
+                "value": "#000000ff"
+              },
+              "cornerRadius": {
+                "value": 8
+              },
+              "fontSize": {
+                "value": 14
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "width": {
+                "value": 300
+              }
+            },
+            "status": "configured",
+            "idUnique": "e9uebua0zw"
+          },
+          "position": {
+            "x": 1080,
+            "y": 630
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "uhy1cehzs5",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4462edff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "PingOne - Get User Consent"
+              },
+              "width": {
+                "value": 1200
+              },
+              "cornerRadius": {
+                "value": 8
+              },
+              "fontSize": {
+                "value": 16
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured",
+            "idUnique": "fcoklfw4pl"
+          },
+          "position": {
+            "x": 214,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "yenmq2mlsg",
+            "nodeType": "CONNECTION",
+            "connectionId": "06922a684039827499bdbdd97f49827b",
+            "connectorId": "variablesConnector",
+            "name": "Variables",
+            "label": "Variables",
+            "status": "configured",
+            "capabilityName": "saveValue",
+            "type": "trigger",
+            "properties": {
+              "saveVariables": {
+                "value": [
+                  {
+                    "name": "pingLogo",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png\"\n      }\n    ]\n  }\n]",
+                    "key": 0.9163783319513457,
+                    "type": "string",
+                    "label": "pingLogo (string - flowInstance)"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Set flow instance variables"
+              },
+              "nodeDescription": {
+                "value": "Initialize common values used in the flow so that they're easier to update in one place"
+              }
+            },
+            "idUnique": "28u8kl1qbs"
+          },
+          "position": {
+            "x": 334,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "hedvisk4pr",
+            "nodeType": "EVAL",
+            "idUnique": "hnlnp90q7t"
+          },
+          "position": {
+            "x": 484,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "l1v5vyxf24",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Additional error handling"
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 1
+              },
+              "strokeColor": {
+                "value": "#000000ff"
+              },
+              "cornerRadius": {
+                "value": 8
+              },
+              "fontSize": {
+                "value": 14
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "width": {
+                "value": 225
+              }
+            },
+            "status": "configured",
+            "idUnique": "pr2qhjs6cm"
+          },
+          "position": {
+            "x": 810,
+            "y": 630
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mpck5p6v4a",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f7f7adff"
+              },
+              "annotationTextColor": {
+                "value": "#4a4a4aff"
+              },
+              "width": {
+                "value": 200
+              },
+              "height": {
+                "value": 100
+              },
+              "cornerRadius": {
+                "value": 8
+              },
+              "fontSize": {
+                "value": 14
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "annotation": {
+                "value": "The parent flow must authenticate the user and pass the user and application information into this subflow."
+              }
+            },
+            "status": "configured",
+            "idUnique": "mmswwjmf2i"
+          },
+          "position": {
+            "x": 240,
+            "y": 510
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0a8qt9jxud",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f7f7adff"
+              },
+              "annotationTextColor": {
+                "value": "#4a4a4aff"
+              },
+              "width": {
+                "value": 200
+              },
+              "height": {
+                "value": 150
+              },
+              "cornerRadius": {
+                "value": 8
+              },
+              "fontSize": {
+                "value": 14
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "annotation": {
+                "value": "This action includes the HTML template and other resources like CSS. You can customize them under the Custom Screens tab. "
+              }
+            },
+            "status": "configured",
+            "idUnique": "uexan7w4vr"
+          },
+          "position": {
+            "x": 540,
+            "y": 480
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "bfrhgl8nud",
+            "source": "yenmq2mlsg",
+            "target": "hedvisk4pr"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "rfrd49lxfz",
+            "source": "v2hxashfc9",
+            "target": "81v0ew0lxb"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tusjwif3j1",
+            "source": "rosy8e83pt",
+            "target": "8gmvditb3i"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6771358rgb",
+            "source": "7mvg50unjq",
+            "target": "rosy8e83pt",
+            "multiValueSourceId": "0z9sov59dc"
+          },
+          "position": {
+            "x": 64,
+            "y": 52
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zd3up7r12z",
+            "source": "hedvisk4pr",
+            "target": "uqus19rgky"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "iq6xb5vlyr",
+            "source": "7mvg50unjq",
+            "target": "hwn969ylsm",
+            "multiValueSourceId": "2x3yz1ueik"
+          },
+          "position": {
+            "x": 64,
+            "y": 92
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "gu3fxrwfz9",
+            "source": "uqus19rgky",
+            "target": "v2hxashfc9"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ascmioammk",
+            "source": "uqus19rgky",
+            "target": "8pscuigwic"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0wp9w7j0kw",
+            "source": "8pscuigwic",
+            "target": "7mvg50unjq"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "46vix4r8tt",
+            "source": "hwn969ylsm",
+            "target": "yal5z7xnib"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "inputSchema": [
+    {
+      "propertyName": "username",
+      "description": "",
+      "preferredDataType": "string",
+      "preferredControlType": "textField",
+      "isExpanded": true,
+      "required": false
+    },
+    {
+      "propertyName": "applicationId",
+      "description": "",
+      "preferredDataType": "string",
+      "preferredControlType": "textField",
+      "isExpanded": true,
+      "required": false
+    }
+  ],
+  "flowColor": "#ff661c",
+  "savedDate": 1708725670763,
+  "variables": [
+    {
+      "context": "flowInstance",
+      "createdDate": 1698701424493,
+      "customerId": "fbd98380ee4bb7f118c3787eae30ad7b",
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "value": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png",
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "pingLogo##SK##flowInstance",
+      "companyId": "c40b6508-863e-4437-9b1c-b62f25ee2583"
+    }
+  ],
+  "connections": []
+}
