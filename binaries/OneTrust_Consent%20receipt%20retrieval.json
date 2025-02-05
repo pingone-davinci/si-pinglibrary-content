@@ -1,0 +1,594 @@
+{
+  "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "oneTrustConnector",
+    "httpConnector",
+    "annotationConnector"
+  ],
+  "createdDate": 1671573813480,
+  "currentVersion": 47,
+  "customerId": "b23f4463beaa44cbd75e1d20a97bc369",
+  "deployedDate": 1671573814446,
+  "description": "Imported on Wed Nov 30 2022 23:40:42 GMT+0000 (Coordinated Universal Time)",
+  "flowStatus": "enabled",
+  "name": "OneTrust - Consent receipt retrieval",
+  "orx": "{\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"bacd819363a053cfcc7bf6c023a6e198\",\"flowVersionId\":47,\"version\":\"4.0.0\",\"states\":[\"initialize\",\"start_0\",\"inside_0\",\"end_0\"],\"currentState\":[\"initialize\"],\"transitions\":[{\"from\":[\"initialize\"],\"to\":\"start_0\",\"conditions\":{\"$and\":[{\"initializeFlow\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"bacd819363a053cfcc7bf6c023a6e198\",\"flowVersionId\":47,\"id\":\"xxq25ebt97\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"formFieldsList\":{\"value\":[{\"propertyName\":\"receiptId\",\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"value\":\"\",\"hashedVisibility\":false,\"displayName\":\"Receipt ID\"},{\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"propertyName\":\"buttonValue\"}]},\"nodeTitle\":{\"value\":\"Enter Receipt ID\"},\"title\":{\"value\":\"Enter Receipt ID\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                    class=\\\"align-self-center mb-5\\\"\\n                    src=\\\"{{global.variables.logoUrl}}\\\"\\n                    alt=\\\"{{global.variables.companyName}}\\\"\\n                    style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Enter Receipt ID</h1>\\n                <p\\n                    class=\\\"text-danger mdi mdi-alert-circle\\\"\\n                    data-id=\\\"feedback\\\"\\n                    data-skcomponent=\\\"skerror\\\"\\n                ></p>\\n                <form id=\\\"receiptidForm\\\" data-id=\\\"receiptidForm\\\">\\n                    <div class=\\\"mb-4 form-floating\\\">\\n                        <input\\n                            class=\\\"form-control\\\"\\n                            type=\\\"text\\\"\\n                            id=\\\"receiptid\\\"\\n                            name=\\\"receiptid\\\"\\n                            placeholder=\\\"Receipt ID\\\"\\n                            autocomplete=\\\"off\\\"\\n                            value=\\\"\\\"\\n                            data-id=\\\"receiptid-input\\\"\\n                        /><label class=\\\"form-label\\\" for=\\\"receiptid\\\"\\n                            >Receipt ID</label\\n                        >\\n                    </div>\\n                    <div class=\\\"d-flex flex-column mt-5\\\">\\n                        <button\\n                            data-id=\\\"button\\\"\\n                            type=\\\"submit\\\"\\n                            class=\\\"btn btn-primary mb-3\\\"\\n                            data-skcomponent=\\\"skbutton\\\"\\n                            data-skbuttontype=\\\"form-submit\\\"\\n                            data-skform=\\\"receiptidForm\\\"\\n                            data-skbuttonvalue=\\\"submit\\\"\\n                        >\\n                            Submit\\n                        </button>\\n                    </div>\\n                </form>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"},\"nodeDescription\":{\"value\":\"Prompts for a consent receipt ID\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":0,\"signalId\":0,\"largePayload\":[\"customHTML\"]}],\"transitionId\":0},{\"from\":[\"start_0\"],\"to\":\"inside_0\",\"conditions\":{\"$and\":[{\"id\":\"xxq25ebt97\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"success\":true}]},\"signals\":[{\"name\":\"One Trust [2022-11-30]\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"bacd819363a053cfcc7bf6c023a6e198\",\"flowVersionId\":47,\"id\":\"gvkmdbzzsi\",\"connectionId\":\"b56eba599b0d0b5a563ae175454e5446\",\"connectorId\":\"oneTrustConnector\",\"capabilityName\":\"getReceiptInformation\",\"properties\":{\"applicationDomain\":{\"value\":\"{{global.company.variables.oneTrustApplicationDomain}}\"},\"receiptId\":{\"value\":\"{{local.xxq25ebt97.payload.output.receiptId}}\"},\"nodeTitle\":{\"value\":\"OneTrust\"},\"nodeDescription\":{\"value\":\"Sends the consent receipt ID to OneTrust and checks whether the user has a consent agreement that matches the receipt ID\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":1,\"signalId\":0}],\"evalNodeId\":\"yc889ionot\",\"transitionId\":1},{\"from\":[\"inside_0\"],\"to\":\"end_0\",\"conditions\":{\"$and\":[{\"id\":\"gvkmdbzzsi\",\"connectionId\":\"b56eba599b0d0b5a563ae175454e5446\",\"connectorId\":\"oneTrustConnector\",\"capabilityName\":\"getReceiptInformation\",\"success\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"bacd819363a053cfcc7bf6c023a6e198\",\"flowVersionId\":47,\"id\":\"si91abovdt\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"message\":{\"value\":\"{{local.gvkmdbzzsi.payload.output}}\"},\"nodeTitle\":{\"value\":\"Receipt Information\"},\"messageTitle\":{\"value\":\"Receipt Information\"},\"nodeDescription\":{\"value\":\"Shows the result of the flow\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                  class=\\\"align-self-center mb-5\\\"\\n                  src=\\\"{{global.variables.logoUrl}}\\\"\\n                  alt=\\\"{{global.variables.companyName}}\\\"\\n                  style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Receipt Information</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                   {{local.gvkmdbzzsi.payload.output}}\\n                </p>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":2,\"signalId\":0,\"largePayload\":[\"customHTML\"]}],\"evalNodeId\":\"2nmy336zsv\",\"transitionId\":2}],\"history\":[],\"outputs\":{\"httpConnector_customHTMLTemplate\":{\"localOutputs\":[\"output\"]},\"oneTrustConnector_getReceiptInformation\":{\"localOutputs\":[\"output\"]}},\"outputParameters\":[\"global.company.variables.oneTrustApplicationDomain\",\"local.xxq25ebt97.payload.output.receiptId\",\"local.gvkmdbzzsi.payload.output\",\"global.variables.logoUrl\",\"global.variables.companyName\",\"global.variables.logoStyle\"],\"global\":{},\"local\":{},\"idMapping\":{},\"nodeMappingForTids\":{\"xxq25ebt97\":\"initialize\",\"xxq25ebt97_customHTMLTemplate\":\"initialize\",\"gvkmdbzzsi\":\"xxq25ebt97\",\"gvkmdbzzsi_getReceiptInformation\":\"xxq25ebt97_customHTMLTemplate\",\"si91abovdt\":\"gvkmdbzzsi\",\"si91abovdt_customHTMLTemplate\":\"gvkmdbzzsi_getReceiptInformation\"},\"tids\":{},\"delayedConditionalStateChangeMappings\":{},\"delayedConditionalStateChangeMappingsReverse\":{},\"delayedConditionalStatesList\":[],\"lbsTransitionIdsToIgnore\":[],\"lbsTransitionIdsMapping\":{},\"outputParametersDefault\":{\"global.company.variables.oneTrustApplicationDomain\":\"\",\"local.xxq25ebt97.payload.output.receiptId\":\"\",\"local.gvkmdbzzsi.payload.output\":\"\",\"global.variables.logoUrl\":\"\",\"global.variables.companyName\":\"\",\"global.variables.logoStyle\":\"\"},\"outputParametersDefaultBlacklist\":[],\"historyThreshold\":70,\"errorRewindBlackListIds\":[],\"nodeMappingForTidsNew\":{\"xxq25ebt97\":\"initialize\",\"gvkmdbzzsi\":[\"xxq25ebt97\"],\"si91abovdt\":[\"xxq25ebt97\",\"gvkmdbzzsi\"]},\"nodeStates\":{\"xxq25ebt97\":\"start_0\",\"gvkmdbzzsi\":\"inside_0\",\"si91abovdt\":\"end_0\"}}",
+  "publishedVersion": 47,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "flowHttpTimeoutInSeconds": 15,
+    "cssLinks": [
+      "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.0/end-user-nano.css",
+      "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.3/icons.css"
+    ],
+    "useCustomCSS": true
+  },
+  "updatedDate": 1671573814446,
+  "flowId": "bacd819363a053cfcc7bf6c023a6e198",
+  "versionId": 47,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "gvkmdbzzsi",
+            "nodeType": "CONNECTION",
+            "connectionId": "b56eba599b0d0b5a563ae175454e5446",
+            "connectorId": "oneTrustConnector",
+            "name": "One Trust [2022-11-30]",
+            "label": "DH OneTrust 2",
+            "status": "configured",
+            "capabilityName": "getReceiptInformation",
+            "type": "action",
+            "properties": {
+              "applicationDomain": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"oneTrustApplicationDomain\",\n        \"data\": \"{{global.company.variables.oneTrustApplicationDomain}}\",\n        \"tooltip\": \"{{global.company.variables.oneTrustApplicationDomain}}\",\n        \"children\": [\n          {\n            \"text\": \"oneTrustApplicationDomain\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "receiptId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"receiptId\",\n        \"data\": \"{{local.xxq25ebt97.payload.output.receiptId}}\",\n        \"tooltip\": \"{{local.xxq25ebt97.payload.output.receiptId}}\",\n        \"children\": [\n          {\n            \"text\": \"receiptId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "OneTrust"
+              },
+              "nodeDescription": {
+                "value": "Sends the consent receipt ID to OneTrust and checks whether the user has a consent agreement that matches the receipt ID"
+              }
+            },
+            "idUnique": "mkjvr689bn"
+          },
+          "position": {
+            "x": 724,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "2nmy336zsv",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 904,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "si91abovdt",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:gvkmdbzzsi\",\n        \"url\": \"output\",\n        \"data\": \"{{local.gvkmdbzzsi.payload.output}}\",\n        \"tooltip\": \"{{local.gvkmdbzzsi.payload.output}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.gvkmdbzzsi.payload.output}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Receipt Information"
+              },
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Receipt Information\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeDescription": {
+                "value": "Shows the result of the flow"
+              },
+              "customHTML": {
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\"\n>\n    <div style=\"max-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img\n                  class=\"align-self-center mb-5\"\n                  src=\"{{global.variables.logoUrl}}\"\n                  alt=\"{{global.variables.companyName}}\"\n                  style=\"{{global.variables.logoStyle}}\"\n                />\n                <h1 class=\"text-center mb-4\">Receipt Information</h1>\n                <p class=\"text-muted text-center\">\n                   {{local.gvkmdbzzsi.payload.output}}\n                </p>\n            </div>\n        </div>\n    </div>\n</div>"
+              }
+            },
+            "isDisabled": false
+          },
+          "position": {
+            "x": 1084,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "xxq25ebt97",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "formFieldsList": {
+                "value": [
+                  {
+                    "propertyName": "receiptId",
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "value": "",
+                    "hashedVisibility": false,
+                    "displayName": "Receipt ID"
+                  },
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Enter Receipt ID"
+              },
+              "title": {
+                "value": "Enter Receipt ID"
+              },
+              "customHTML": {
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\"\n>\n    <div style=\"max-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img\n                    class=\"align-self-center mb-5\"\n                    src=\"{{global.variables.logoUrl}}\"\n                    alt=\"{{global.variables.companyName}}\"\n                    style=\"{{global.variables.logoStyle}}\"\n                />\n                <h1 class=\"text-center mb-4\">Enter Receipt ID</h1>\n                <p\n                    class=\"text-danger mdi mdi-alert-circle\"\n                    data-id=\"feedback\"\n                    data-skcomponent=\"skerror\"\n                ></p>\n                <form id=\"receiptidForm\" data-id=\"receiptidForm\">\n                    <div class=\"mb-4 form-floating\">\n                        <input\n                            class=\"form-control\"\n                            type=\"text\"\n                            id=\"receiptid\"\n                            name=\"receiptid\"\n                            placeholder=\"Receipt ID\"\n                            autocomplete=\"off\"\n                            value=\"\"\n                            data-id=\"receiptid-input\"\n                        /><label class=\"form-label\" for=\"receiptid\"\n                            >Receipt ID</label\n                        >\n                    </div>\n                    <div class=\"d-flex flex-column mt-5\">\n                        <button\n                            data-id=\"button\"\n                            type=\"submit\"\n                            class=\"btn btn-primary mb-3\"\n                            data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\"\n                            data-skform=\"receiptidForm\"\n                            data-skbuttonvalue=\"submit\"\n                        >\n                            Submit\n                        </button>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+              },
+              "nodeDescription": {
+                "value": "Prompts for a consent receipt ID"
+              }
+            },
+            "isDisabled": false
+          },
+          "position": {
+            "x": 375,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "yc889ionot",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 544,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "3a0grdpx5q",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Get the receipt ID"
+              },
+              "width": {
+                "value": 180
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 5
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 274,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6d3yjosw3n",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotation": {
+                "value": "Send receipt ID to OneTrust"
+              },
+              "width": {
+                "value": 180
+              },
+              "height": {
+                "value": 50
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 5
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 634,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "d416pcptjb",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Show the result"
+              },
+              "width": {
+                "value": 180
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 5
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 994,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7i5soato0o",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4462edff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "width": {
+                "value": 1075
+              },
+              "annotation": {
+                "value": "Consent Receipt Retrieval with OneTrust"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 20
+              },
+              "fontStyle": {
+                "value": "bold"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 214,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "oisynwyzrn",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffffffff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "OneTrust - Consent receipt retrieval Flow                                                                                                                                                                                                  Created by: Ping Identity                                                           Version: 1.0                                                                           Release Date: December 20, 2022                                          Documentation: https://support.pingidentity.com/s/marketplace-integration/a7iDo0000010x06IAA/onetrust-consent-receipt-retrieval"
+              },
+              "width": {
+                "value": 600
+              },
+              "height": {
+                "value": 240
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 3
+              },
+              "strokeColor": {
+                "value": "#d0021bff"
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 300,
+            "y": 600
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "jgy749shta",
+            "source": "xxq25ebt97",
+            "target": "yc889ionot"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6rp4sviovn",
+            "source": "gvkmdbzzsi",
+            "target": "2nmy336zsv"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ny13tj9rzp",
+            "source": "yc889ionot",
+            "target": "gvkmdbzzsi"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "jkez7468pn",
+            "source": "2nmy336zsv",
+            "target": "si91abovdt"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#AFD5FF",
+  "savedDate": 1671573813431,
+  "variables": [
+    {
+      "context": "flowInstance",
+      "createdDate": 1667832920919,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000,
+        "value": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
+      },
+      "type": "property",
+      "updatedDate": 1667950505469,
+      "visibility": "private",
+      "name": "logoUrl##SK##flowInstance",
+      "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1667404096868,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "companyName##SK##flowInstance",
+      "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1667404096868,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000,
+        "value": "width: 65px; height: 65px;"
+      },
+      "type": "property",
+      "updatedDate": 1667950646585,
+      "visibility": "private",
+      "name": "logoStyle##SK##flowInstance",
+      "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b"
+    }
+  ]
+}
