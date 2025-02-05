@@ -1,0 +1,377 @@
+{
+  "customerId": "87edc65287244c732cf26d43e590d8e1",
+  "flowStatus": "enabled",
+  "currentVersion": 1,
+  "publishedVersion": null,
+  "name": "Duo",
+  "description": "Use Duo for multi-factor authentication (MFA).",
+  "createdDate": 1647377397974,
+  "updatedDate": 1647377397977,
+  "flowId": "05ff3754ad78c3ddc0f731628d48c037",
+  "companyId": "YQ3Us00m3Dw5XipROon1SVjiWfiGLNf8",
+  "versionId": 1,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "jejji5jr6c",
+            "nodeType": "CONNECTION",
+            "connectionId": "Zk0YP4jRuujVALe2srTAIO4Pf9gRviXX",
+            "connectorId": "httpConnector",
+            "name": "httpConnector",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "htmlFormInput",
+            "type": "trigger",
+            "properties": {
+              "title": {
+                "value": "Sign On"
+              },
+              "nodeTitle": {
+                "value": "Sign On Form"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "propertyName": "username",
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "value": "",
+                    "hashedVisibility": false,
+                    "displayName": "Username"
+                  }
+                ]
+              },
+              "nextButtonText": {
+                "value": "Sign On"
+              }
+            }
+          },
+          "position": {
+            "x": 304,
+            "y": 304
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "z5p1oinncy",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 424,
+            "y": 304
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zif0oi3vq7",
+            "nodeType": "CONNECTION",
+            "connectionId": "b0ec580e9a129e05e13f5474d4c890be",
+            "connectorId": "duoConnector",
+            "name": "Duo [2022-03-15]",
+            "label": "MB - Duo MFA",
+            "status": "configured",
+            "capabilityName": "initializeMfa",
+            "type": "action",
+            "properties": {
+              "nodeTitle": {
+                "value": "Duo"
+              },
+              "button": {
+                "displayName": "Sign on with Duo"
+              },
+              "userId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.jejji5jr6c.payload.output.username}}\",\n        \"tooltip\": \"{{local.jejji5jr6c.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            }
+          },
+          "position": {
+            "x": 574,
+            "y": 304
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "cz8dhddhy9",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 694,
+            "y": 304
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ke74oavsfg",
+            "nodeType": "CONNECTION",
+            "connectionId": "Zk0YP4jRuujVALe2srTAIO4Pf9gRviXX",
+            "connectorId": "httpConnector",
+            "name": "httpConnector",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Sign on complete\"\n      }\n    ]\n  }\n]"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"duo.svg\",\n        \"url\": \"rawResponse\",\n        \"data\": \"{{local.zif0oi3vq7.payload.output.rawResponse}}\",\n        \"tooltip\": \"{{local.zif0oi3vq7.payload.output.rawResponse}}\",\n        \"children\": [\n          {\n            \"text\": \"rawResponse\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Sign on complete"
+              }
+            }
+          },
+          "position": {
+            "x": 844,
+            "y": 304
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "qeb7jkh9qi",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#B5DFFF"
+              },
+              "annotation": {
+                "value": "Get username"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 214,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "gyomf2v989",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#B5DFFF"
+              },
+              "annotation": {
+                "value": "Duo MFA"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 484,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zsmchysgi6",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#B5DFFF"
+              },
+              "annotation": {
+                "value": "Show MFA result"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 754,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "0vlnvrvfmf",
+            "source": "jejji5jr6c",
+            "target": "z5p1oinncy"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "xg9lkqihg2",
+            "source": "z5p1oinncy",
+            "target": "zif0oi3vq7"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6h3eqpj4s7",
+            "source": "zif0oi3vq7",
+            "target": "cz8dhddhy9"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9qmwjjk0qr",
+            "source": "cz8dhddhy9",
+            "target": "ke74oavsfg"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "inputSchema": null,
+  "settings": null,
+  "flowColor": "#CACED3",
+  "connectorIds": [
+    "httpConnector",
+    "duoConnector",
+    "annotationConnector"
+  ],
+  "savedDate": 1647377397949,
+  "variables": []
+}
