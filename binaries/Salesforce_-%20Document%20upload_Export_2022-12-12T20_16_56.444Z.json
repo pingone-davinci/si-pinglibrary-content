@@ -1,0 +1,616 @@
+{
+  "companyId": "db542ef4-3016-4990-9a48-38d6c832711e",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "httpConnector",
+    "annotationConnector",
+    "salesforceConnector"
+  ],
+  "createdDate": 1670876165997,
+  "currentVersion": 6,
+  "customerId": "cbedb487563e86ddb94c04fb3d3dae61",
+  "deployedDate": 1670876212897,
+  "description": "Publish Date: December 12, 2022",
+  "flowStatus": "enabled",
+  "name": "Salesforce - Document upload",
+  "orx": "{\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"5e61c24816186496289f6d36b18b6b88\",\"flowVersionId\":6,\"version\":\"4.0.0\",\"states\":[\"initialize\",\"start_0\",\"inside_0\",\"end_0\"],\"currentState\":[\"initialize\"],\"transitions\":[{\"from\":[\"initialize\"],\"to\":\"start_0\",\"conditions\":{\"$and\":[{\"initializeFlow\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"5e61c24816186496289f6d36b18b6b88\",\"flowVersionId\":6,\"id\":\"uutjjja4v5\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                    class=\\\"align-self-center mb-5\\\"\\n                    src=\\\"{{global.variables.logoUrl}}\\\"\\n                    alt=\\\"{{global.variables.companyName}}\\\"\\n                    style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Upload a document</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                Select a file to upload to Salesforce.\\n                </p>\\n                <p\\n                    class=\\\"text-danger mdi mdi-alert-circle\\\"\\n                    data-id=\\\"feedback\\\"\\n                    data-skcomponent=\\\"skerror\\\"\\n                ></p>\\n                <form id=\\\"uploadDocForm\\\" data-id=\\\"uploadDocForm\\\">\\n                    <div class=\\\"mb-4 form-floating\\\">\\n                        <input\\n                            class=\\\"form-control\\\"\\n                            type=\\\"text\\\"\\n                            id=\\\"documentname\\\"\\n                            name=\\\"documentname\\\"\\n                            placeholder=\\\"Document Name\\\"\\n                            autocomplete=\\\"off\\\"\\n                            value=\\\"\\\"\\n                            data-id=\\\"documentname-input\\\"\\n                        /><label class=\\\"form-label\\\" for=\\\"documentname\\\"\\n                            >Document Name</label\\n                        >\\n                    </div>\\n                         <div class=\\\"mb-4 form-floating\\\">\\n                        <input\\n                            class=\\\"form-control\\\"\\n                            type=\\\"text\\\"\\n                            id=\\\"description\\\"\\n                            name=\\\"description\\\"\\n                            placeholder=\\\"Description\\\"\\n                            autocomplete=\\\"off\\\"\\n                            value=\\\"\\\"\\n                            data-id=\\\"description-input\\\"\\n                        /><label class=\\\"form-label\\\" for=\\\"description\\\"\\n                            >Description</label\\n                        >\\n                    </div>\\n\\n                    <div class=\\\"mb-3\\\">\\n                    <label for=\\\"formFile\\\" class=\\\"form-label\\\"></label>\\n                    <input class=\\\"form-control\\\" type=\\\"file\\\" id=\\\"formFile\\\">\\n                    </div>\\n\\n\\n                    <div class=\\\"d-flex flex-column mt-5\\\">\\n                        <button\\n                            data-id=\\\"button\\\"\\n                            type=\\\"submit\\\"\\n                            class=\\\"btn btn-primary mb-3\\\"\\n                            data-skcomponent=\\\"skbutton\\\"\\n                            data-skbuttontype=\\\"form-submit\\\"\\n                            data-skform=\\\"uploadDocForm\\\"\\n                            data-skbuttonvalue=\\\"submit\\\"\\n                        >\\n                            Upload\\n                        </button>\\n                    </div>\\n                </form>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"},\"formFieldsList\":{\"value\":[{\"propertyName\":\"file\",\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"value\":\"\",\"hashedVisibility\":false,\"displayName\":\"\"},{\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"propertyName\":\"buttonValue\"},{\"propertyName\":\"documentname\",\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"value\":\"\",\"hashedVisibility\":false,\"displayName\":\"Document Name\"},{\"propertyName\":\"description\",\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"value\":\"\",\"hashedVisibility\":false,\"displayName\":\"Description\"}]},\"customCSS\":{},\"nodeTitle\":{\"value\":\"Upload Form\"},\"nodeDescription\":{\"value\":\"Prompt the user to upload a file with a name and description\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":0,\"signalId\":0,\"largePayload\":[\"customHTML\",\"customCSS\"]}],\"transitionId\":0},{\"from\":[\"start_0\"],\"to\":\"inside_0\",\"conditions\":{\"$and\":[{\"id\":\"uutjjja4v5\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"success\":true}]},\"signals\":[{\"name\":\"Salesforce\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"5e61c24816186496289f6d36b18b6b88\",\"flowVersionId\":6,\"id\":\"asjfpnd8mu\",\"connectionId\":\"dab81a4761575c93d48b0ca74b8aaae2\",\"connectorId\":\"salesforceConnector\",\"capabilityName\":\"uploadDocument\",\"properties\":{\"documentName\":{\"value\":\"{{local.uutjjja4v5.payload.output.name}}\"},\"file\":{\"value\":\"{{local.uutjjja4v5.payload.output.file}}\"},\"documentDescription\":{\"value\":\"{{local.uutjjja4v5.payload.output.description}}\"},\"documentKeywords\":{\"value\":[\"document\",\"user upload\"]},\"nodeTitle\":{\"value\":\"Salesforce\"},\"nodeDescription\":{\"value\":\"Upload the document to Salesforce\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":1,\"signalId\":0}],\"evalNodeId\":\"d6h73c6iku\",\"transitionId\":1},{\"from\":[\"inside_0\"],\"to\":\"end_0\",\"conditions\":{\"$and\":[{\"id\":\"asjfpnd8mu\",\"connectionId\":\"dab81a4761575c93d48b0ca74b8aaae2\",\"connectorId\":\"salesforceConnector\",\"capabilityName\":\"uploadDocument\",\"success\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"5e61c24816186496289f6d36b18b6b88\",\"flowVersionId\":6,\"id\":\"p9lktwijxa\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"message\":{\"value\":\"Document uploaded. Result:\\n\\n{{local.fhgempgns8.payload.output}}\"},\"messageTitle\":{\"value\":\"Result\"},\"nodeTitle\":{\"value\":\"Result\"},\"nodeDescription\":{\"value\":\"Show the result of the flow\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                  class=\\\"align-self-center mb-5\\\"\\n                  src=\\\"{{global.variables.logoUrl}}\\\"\\n                  alt=\\\"{{global.variables.companyName}}\\\"\\n                  style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Result</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                    Document uploaded. Result:\\n                    {{local.fhgempgns8.payload.output}}\\n                </p>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":2,\"signalId\":0,\"largePayload\":[\"customHTML\"]}],\"evalNodeId\":\"wxkoraj5vc\",\"transitionId\":2}],\"history\":[],\"outputs\":{\"httpConnector_customHTMLTemplate\":{\"localOutputs\":[\"output\"]},\"salesforceConnector_uploadDocument\":{\"localOutputs\":[\"output\"]}},\"outputParameters\":[\"global.variables.logoUrl\",\"global.variables.companyName\",\"global.variables.logoStyle\",\"local.fhgempgns8.payload.output\",\"local.uutjjja4v5.payload.output.name\",\"local.uutjjja4v5.payload.output.file\",\"local.uutjjja4v5.payload.output.description\"],\"global\":{},\"local\":{},\"idMapping\":{},\"nodeMappingForTids\":{\"uutjjja4v5\":\"initialize\",\"uutjjja4v5_customHTMLTemplate\":\"initialize\",\"asjfpnd8mu\":\"uutjjja4v5\",\"asjfpnd8mu_uploadDocument\":\"uutjjja4v5_customHTMLTemplate\",\"p9lktwijxa\":\"asjfpnd8mu\",\"p9lktwijxa_customHTMLTemplate\":\"asjfpnd8mu_uploadDocument\"},\"tids\":{},\"delayedConditionalStateChangeMappings\":{},\"delayedConditionalStateChangeMappingsReverse\":{},\"delayedConditionalStatesList\":[],\"lbsTransitionIdsToIgnore\":[],\"lbsTransitionIdsMapping\":{},\"outputParametersDefault\":{\"global.variables.logoUrl\":\"\",\"global.variables.companyName\":\"\",\"global.variables.logoStyle\":\"\",\"local.fhgempgns8.payload.output\":\"\",\"local.uutjjja4v5.payload.output.name\":\"\",\"local.uutjjja4v5.payload.output.file\":\"\",\"local.uutjjja4v5.payload.output.description\":\"\"},\"outputParametersDefaultBlacklist\":[],\"historyThreshold\":70,\"errorRewindBlackListIds\":[],\"nodeMappingForTidsNew\":{\"uutjjja4v5\":\"initialize\",\"asjfpnd8mu\":[\"uutjjja4v5\"],\"p9lktwijxa\":[\"uutjjja4v5\",\"asjfpnd8mu\"]},\"nodeStates\":{\"uutjjja4v5\":\"start_0\",\"asjfpnd8mu\":\"inside_0\",\"p9lktwijxa\":\"end_0\"}}",
+  "publishedVersion": 6,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "useCustomCSS": true,
+    "cssLinks": [
+      "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.0/end-user-nano.css",
+      "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.3/icons.css"
+    ]
+  },
+  "updatedDate": 1670876212897,
+  "flowId": "5e61c24816186496289f6d36b18b6b88",
+  "versionId": 6,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "d6h73c6iku",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 578,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "uutjjja4v5",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http2",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "customHTML": {
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\"\n>\n    <div style=\"max-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img\n                    class=\"align-self-center mb-5\"\n                    src=\"{{global.variables.logoUrl}}\"\n                    alt=\"{{global.variables.companyName}}\"\n                    style=\"{{global.variables.logoStyle}}\"\n                />\n                <h1 class=\"text-center mb-4\">Upload a document</h1>\n                <p class=\"text-muted text-center\">\n                Select a file to upload to Salesforce.\n                </p>\n                <p\n                    class=\"text-danger mdi mdi-alert-circle\"\n                    data-id=\"feedback\"\n                    data-skcomponent=\"skerror\"\n                ></p>\n                <form id=\"uploadDocForm\" data-id=\"uploadDocForm\">\n                    <div class=\"mb-4 form-floating\">\n                        <input\n                            class=\"form-control\"\n                            type=\"text\"\n                            id=\"documentname\"\n                            name=\"documentname\"\n                            placeholder=\"Document Name\"\n                            autocomplete=\"off\"\n                            value=\"\"\n                            data-id=\"documentname-input\"\n                        /><label class=\"form-label\" for=\"documentname\"\n                            >Document Name</label\n                        >\n                    </div>\n                         <div class=\"mb-4 form-floating\">\n                        <input\n                            class=\"form-control\"\n                            type=\"text\"\n                            id=\"description\"\n                            name=\"description\"\n                            placeholder=\"Description\"\n                            autocomplete=\"off\"\n                            value=\"\"\n                            data-id=\"description-input\"\n                        /><label class=\"form-label\" for=\"description\"\n                            >Description</label\n                        >\n                    </div>\n\n                    <div class=\"mb-3\">\n                    <label for=\"formFile\" class=\"form-label\"></label>\n                    <input class=\"form-control\" type=\"file\" id=\"formFile\">\n                    </div>\n\n\n                    <div class=\"d-flex flex-column mt-5\">\n                        <button\n                            data-id=\"button\"\n                            type=\"submit\"\n                            class=\"btn btn-primary mb-3\"\n                            data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\"\n                            data-skform=\"uploadDocForm\"\n                            data-skbuttonvalue=\"submit\"\n                        >\n                            Upload\n                        </button>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "propertyName": "file",
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "value": "",
+                    "hashedVisibility": false,
+                    "displayName": ""
+                  },
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  },
+                  {
+                    "propertyName": "documentname",
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "value": "",
+                    "hashedVisibility": false,
+                    "displayName": "Document Name"
+                  },
+                  {
+                    "propertyName": "description",
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "value": "",
+                    "hashedVisibility": false,
+                    "displayName": "Description"
+                  }
+                ]
+              },
+              "customCSS": {},
+              "nodeTitle": {
+                "value": "Upload Form"
+              },
+              "nodeDescription": {
+                "value": "Prompt the user to upload a file with a name and description"
+              }
+            },
+            "isDisabled": false
+          },
+          "position": {
+            "x": 398,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "wxkoraj5vc",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 968,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "p9lktwijxa",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "Http2",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Document uploaded. Result:\\n\\n\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:fhgempgns8\",\n        \"url\": \"output\",\n        \"data\": \"{{local.fhgempgns8.payload.output}}\",\n        \"tooltip\": \"{{local.fhgempgns8.payload.output}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.fhgempgns8.payload.output}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Result\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Result"
+              },
+              "nodeDescription": {
+                "value": "Show the result of the flow"
+              },
+              "customHTML": {
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\"\n>\n    <div style=\"max-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img\n                  class=\"align-self-center mb-5\"\n                  src=\"{{global.variables.logoUrl}}\"\n                  alt=\"{{global.variables.companyName}}\"\n                  style=\"{{global.variables.logoStyle}}\"\n                />\n                <h1 class=\"text-center mb-4\">Result</h1>\n                <p class=\"text-muted text-center\">\n                    Document uploaded. Result:\n                    {{local.fhgempgns8.payload.output}}\n                </p>\n            </div>\n        </div>\n    </div>\n</div>"
+              }
+            },
+            "isDisabled": false
+          },
+          "position": {
+            "x": 1178,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "67pztlf6jx",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Get document information"
+              },
+              "width": {
+                "value": 180
+              },
+              "height": {
+                "value": 50
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 5
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 308,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "l6tai9cdly",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotation": {
+                "value": "Upload document"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 698,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "24gaer041n",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Show result"
+              },
+              "width": {
+                "value": 180
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 5
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 1088,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "asjfpnd8mu",
+            "nodeType": "CONNECTION",
+            "connectionId": "dab81a4761575c93d48b0ca74b8aaae2",
+            "connectorId": "salesforceConnector",
+            "name": "Salesforce",
+            "label": "Salesforce",
+            "status": "configured",
+            "capabilityName": "uploadDocument",
+            "properties": {
+              "documentName": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"name\",\n        \"data\": \"{{local.uutjjja4v5.payload.output.name}}\",\n        \"tooltip\": \"{{local.uutjjja4v5.payload.output.name}}\",\n        \"children\": [\n          {\n            \"text\": \"name\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "file": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"file\",\n        \"data\": \"{{local.uutjjja4v5.payload.output.file}}\",\n        \"tooltip\": \"{{local.uutjjja4v5.payload.output.file}}\",\n        \"children\": [\n          {\n            \"text\": \"file\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "documentDescription": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"description\",\n        \"data\": \"{{local.uutjjja4v5.payload.output.description}}\",\n        \"tooltip\": \"{{local.uutjjja4v5.payload.output.description}}\",\n        \"children\": [\n          {\n            \"text\": \"description\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "documentKeywords": {
+                "value": [
+                  "document",
+                  "user upload"
+                ]
+              },
+              "nodeTitle": {
+                "value": "Salesforce"
+              },
+              "nodeDescription": {
+                "value": "Upload the document to Salesforce"
+              }
+            },
+            "idUnique": "7d7a77gkr9"
+          },
+          "position": {
+            "x": 788,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "pj0wxtn8dd",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4462edff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "Salesforce - Document Upload"
+              },
+              "width": {
+                "value": 1150
+              },
+              "cornerRadius": {
+                "value": 20
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "fontStyle": {
+                "value": "bold"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 214,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "rlvfroa7fi",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffffffff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Salesforce - Document upload Flow                                                                                                                                                                                                  Created by: Ping Identity                                                           Version: 1.0                                                                           Release Date: December 12, 2022                                          Documentation: https://support.pingidentity.com/s/marketplace-integration/a7iDo0000010wzwIAA/salesforce-document-upload"
+              },
+              "width": {
+                "value": 600
+              },
+              "height": {
+                "value": 240
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 3
+              },
+              "strokeColor": {
+                "value": "#d0021bff"
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 270,
+            "y": 570
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "h9ee6pz408",
+            "source": "d6h73c6iku",
+            "target": "asjfpnd8mu"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "epujxxu2bu",
+            "source": "asjfpnd8mu",
+            "target": "wxkoraj5vc"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5etgwvuye6",
+            "source": "uutjjja4v5",
+            "target": "d6h73c6iku"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "emj6gztxir",
+            "source": "wxkoraj5vc",
+            "target": "p9lktwijxa"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#AFD5FF",
+  "savedDate": 1670876165894,
+  "variables": [
+    {
+      "context": "flowInstance",
+      "createdDate": 1670362886624,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "companyName##SK##flowInstance",
+      "companyId": "db542ef4-3016-4990-9a48-38d6c832711e"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1670873601685,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000,
+        "value": "width: 65px; height: 65px;"
+      },
+      "type": "property",
+      "updatedDate": 1667950646585,
+      "visibility": "private",
+      "name": "logoStyle##SK##flowInstance",
+      "companyId": "db542ef4-3016-4990-9a48-38d6c832711e"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1670873601688,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000,
+        "value": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
+      },
+      "type": "property",
+      "updatedDate": 1667950505469,
+      "visibility": "private",
+      "name": "logoUrl##SK##flowInstance",
+      "companyId": "db542ef4-3016-4990-9a48-38d6c832711e"
+    }
+  ]
+}
