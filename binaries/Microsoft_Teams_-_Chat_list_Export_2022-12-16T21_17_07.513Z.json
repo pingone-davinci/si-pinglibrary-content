@@ -1,0 +1,519 @@
+{
+  "companyId": "db542ef4-3016-4990-9a48-38d6c832711e",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "microsoftTeamsConnector",
+    "httpConnector",
+    "annotationConnector"
+  ],
+  "createdDate": 1671225424870,
+  "currentVersion": 3,
+  "customerId": "cbedb487563e86ddb94c04fb3d3dae61",
+  "description": "Published Date: December 16, 2022",
+  "flowStatus": "enabled",
+  "name": "Microsoft Teams - Chat list",
+  "orx": "{\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"0750b9a8ef498f91d5be15ab065728db\",\"flowVersionId\":1,\"version\":\"4.0.0\",\"states\":[\"initialize\",\"start_0\",\"inside_0\",\"end_0\"],\"currentState\":[\"initialize\"],\"transitions\":[{\"from\":[\"initialize\"],\"to\":\"start_0\",\"conditions\":{\"$and\":[{\"initializeFlow\":true}]},\"signals\":[{\"name\":\"Microsoft Teams [2022-12-16]\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"0750b9a8ef498f91d5be15ab065728db\",\"flowVersionId\":1,\"id\":\"go6wu1lsiw\",\"connectionId\":\"e00da68c2de226491abcdd6b7f18851b\",\"connectorId\":\"microsoftTeamsConnector\",\"capabilityName\":\"initializeAuthorizationRequest\",\"properties\":{\"nodeTitle\":{\"value\":\"Microsoft Teams\"},\"nodeDescription\":{\"value\":\"Prompt the user to sign on with Microsoft. Get a user access token.\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":0,\"signalId\":0}],\"transitionId\":0},{\"from\":[\"start_0\"],\"to\":\"inside_0\",\"conditions\":{\"$and\":[{\"id\":\"go6wu1lsiw\",\"connectionId\":\"e00da68c2de226491abcdd6b7f18851b\",\"connectorId\":\"microsoftTeamsConnector\",\"capabilityName\":\"initializeAuthorizationRequest\",\"success\":true}]},\"signals\":[{\"name\":\"Microsoft Teams [2022-12-16]\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"0750b9a8ef498f91d5be15ab065728db\",\"flowVersionId\":1,\"id\":\"v9mf2wulrg\",\"connectionId\":\"e00da68c2de226491abcdd6b7f18851b\",\"connectorId\":\"microsoftTeamsConnector\",\"capabilityName\":\"listChats\",\"properties\":{\"userAccessToken\":{\"value\":\"{{local.go6wu1lsiw.payload.output.tokens}}\"},\"nodeTitle\":{\"value\":\"Microsoft Teams\"},\"nodeDescription\":{\"value\":\"Use the user access token to request a list of the user's chats.\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"transitionId\":1,\"signalId\":0}],\"evalNodeId\":\"b9qhw7s2nh\",\"transitionId\":1},{\"from\":[\"inside_0\"],\"to\":\"end_0\",\"conditions\":{\"$and\":[{\"id\":\"v9mf2wulrg\",\"connectionId\":\"e00da68c2de226491abcdd6b7f18851b\",\"connectorId\":\"microsoftTeamsConnector\",\"capabilityName\":\"listChats\",\"success\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"0750b9a8ef498f91d5be15ab065728db\",\"flowVersionId\":1,\"id\":\"v6h264l3w2\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"message\":{\"value\":\"Copy the ID of the chat that you want to target with the Send a Message in a Chat capability:\\n{{local.v9mf2wulrg.payload.output}}\"},\"messageTitle\":{\"value\":\"List of chats\"},\"showFooter\":{\"value\":false},\"customHTML\":{\"value\":\"<div style=\\\"padding: 50px;\\\">\\n  <div class=\\\"page brand-background\\\" data-id=\\\"page\\\">\\n    <div class=\\\"page__content\\\">\\n      <style>\\n        .brand-background {\\n        background-color: #ffffff;\\n        }\\n        undefined\\n        undefined\\n        undefined\\n      </style>\\n      <div class=\\\"card card--no-padding\\\" style=\\\"max-width:700px\\\">\\n        <div class=\\\"card__content\\\" style=\\\"word-wrap: break-word;\\\">\\n            <h2>List of chats</h2>\\n            <br>\\n            <p>To use the <strong>Send a Message in a Chat</strong> capability:</p>\\n            <ol style=\\\"margin-left:20px\\\">\\n                <li>Copy the <tt>id</tt> value of the chat that you want to target.</li>\\n                <li>In the <strong>Microsoft Teams - Send a Message in a Chat</strong> flow template, paste the chat ID in the <strong>Chat ID</strong> field of the <strong>Send a Message in a Chat</strong> node.</li>\\n            </ol>\\n            <br>\\n            <hr>\\n            <br>\\n            <pre style=\\\"overflow-x:auto;\\\">{{local.v9mf2wulrg.payload.output}}</pre>\\n            </div>\\n      </div>\\n    </div>\\n  </div>\\n</div>\"},\"customCSS\":{\"value\":\"@import \\\"https://assets.pingone.com/ux/end-user/0.36.1/end-user.css\\\";\\n\"},\"nodeTitle\":{\"value\":\"HTTP\"},\"nodeDescription\":{\"value\":\"Show the list of channels.\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":2,\"signalId\":0,\"largePayload\":[\"customHTML\",\"customCSS\"]}],\"evalNodeId\":\"tcusjmf4gq\",\"transitionId\":2}],\"history\":[],\"outputs\":{\"microsoftTeamsConnector_initializeAuthorizationRequest\":{\"localOutputs\":[\"output\"]},\"microsoftTeamsConnector_listChats\":{\"localOutputs\":[\"output\"]}},\"outputParameters\":[\"local.go6wu1lsiw.payload.output.tokens\",\"local.v9mf2wulrg.payload.output\"],\"global\":{},\"local\":{},\"idMapping\":{},\"nodeMappingForTids\":{\"go6wu1lsiw\":\"initialize\",\"go6wu1lsiw_initializeAuthorizationRequest\":\"initialize\",\"v6h264l3w2\":\"go6wu1lsiw\",\"v6h264l3w2_customHTMLTemplate\":\"go6wu1lsiw_initializeAuthorizationRequest\"},\"tids\":{},\"delayedConditionalStateChangeMappings\":{},\"delayedConditionalStateChangeMappingsReverse\":{},\"delayedConditionalStatesList\":[],\"lbsTransitionIdsToIgnore\":[],\"lbsTransitionIdsMapping\":{},\"outputParametersDefault\":{\"local.go6wu1lsiw.payload.output.tokens\":\"\",\"local.v9mf2wulrg.payload.output\":\"\"},\"outputParametersDefaultBlacklist\":[],\"historyThreshold\":70,\"errorRewindBlackListIds\":[],\"nodeMappingForTidsNew\":{\"go6wu1lsiw\":\"initialize\",\"v6h264l3w2\":[\"go6wu1lsiw\"]},\"nodeStates\":{\"go6wu1lsiw\":\"start_0\",\"v9mf2wulrg\":\"inside_0\",\"v6h264l3w2\":\"end_0\"}}",
+  "publishedVersion": 1,
+  "updatedDate": 1671225424892,
+  "flowId": "0750b9a8ef498f91d5be15ab065728db",
+  "versionId": 3,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "go6wu1lsiw",
+            "nodeType": "CONNECTION",
+            "connectionId": "e00da68c2de226491abcdd6b7f18851b",
+            "connectorId": "microsoftTeamsConnector",
+            "name": "Microsoft Teams [2022-12-16]",
+            "label": "My Microsoft Teams",
+            "status": "configured",
+            "capabilityName": "initializeAuthorizationRequest",
+            "type": "action",
+            "properties": {
+              "nodeTitle": {
+                "value": "Microsoft Teams"
+              },
+              "nodeDescription": {
+                "value": "Prompt the user to sign on with Microsoft. Get a user access token."
+              }
+            }
+          },
+          "position": {
+            "x": 394,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "b9qhw7s2nh",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 544,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "v9mf2wulrg",
+            "nodeType": "CONNECTION",
+            "connectionId": "e00da68c2de226491abcdd6b7f18851b",
+            "connectorId": "microsoftTeamsConnector",
+            "name": "Microsoft Teams [2022-12-16]",
+            "label": "My Microsoft Teams",
+            "status": "configured",
+            "capabilityName": "listChats",
+            "type": "trigger",
+            "properties": {
+              "userAccessToken": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"microsoft-teams.svg\",\n        \"url\": \"tokens\",\n        \"data\": \"{{local.go6wu1lsiw.payload.output.tokens}}\",\n        \"tooltip\": \"{{local.go6wu1lsiw.payload.output.tokens}}\",\n        \"children\": [\n          {\n            \"text\": \"tokens\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Microsoft Teams"
+              },
+              "nodeDescription": {
+                "value": "Use the user access token to request a list of the user's chats."
+              }
+            }
+          },
+          "position": {
+            "x": 754,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tcusjmf4gq",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 934,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "v6h264l3w2",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Copy the ID of the chat that you want to target with the Send a Message in a Chat capability:\"\n      }\n    ]\n  },\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:v9mf2wulrg\",\n        \"url\": \"output\",\n        \"data\": \"{{local.v9mf2wulrg.payload.output}}\",\n        \"tooltip\": \"{{local.v9mf2wulrg.payload.output}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.v9mf2wulrg.payload.output}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"List of chats\"\n      }\n    ]\n  }\n]"
+              },
+              "showFooter": {
+                "value": false
+              },
+              "customHTML": {
+                "value": "<div style=\"padding: 50px;\">\n  <div class=\"page brand-background\" data-id=\"page\">\n    <div class=\"page__content\">\n      <style>\n        .brand-background {\n        background-color: #ffffff;\n        }\n        undefined\n        undefined\n        undefined\n      </style>\n      <div class=\"card card--no-padding\" style=\"max-width:700px\">\n        <div class=\"card__content\" style=\"word-wrap: break-word;\">\n            <h2>List of chats</h2>\n            <br>\n            <p>To use the <strong>Send a Message in a Chat</strong> capability:</p>\n            <ol style=\"margin-left:20px\">\n                <li>Copy the <tt>id</tt> value of the chat that you want to target.</li>\n                <li>In the <strong>Microsoft Teams - Send a Message in a Chat</strong> flow template, paste the chat ID in the <strong>Chat ID</strong> field of the <strong>Send a Message in a Chat</strong> node.</li>\n            </ol>\n            <br>\n            <hr>\n            <br>\n            <pre style=\"overflow-x:auto;\">{{local.v9mf2wulrg.payload.output}}</pre>\n            </div>\n      </div>\n    </div>\n  </div>\n</div>"
+              },
+              "customCSS": {
+                "value": "@import \"https://assets.pingone.com/ux/end-user/0.36.1/end-user.css\";\n"
+              },
+              "nodeTitle": {
+                "value": "HTTP"
+              },
+              "nodeDescription": {
+                "value": "Show the list of channels."
+              }
+            }
+          },
+          "position": {
+            "x": 1114,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "qrzdl961eh",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Prompt user to sign on"
+              },
+              "width": {
+                "value": 180
+              },
+              "height": {
+                "value": 50
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 304,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "iw5fwlt15e",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Get list of chats"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 664,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1sdr3gabhs",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Show list of chats"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 1024,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "iaimtmsym1",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4462edff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "width": {
+                "value": 1075
+              },
+              "cornerRadius": {
+                "value": 20
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "annotation": {
+                "value": "Listing a user's chats in Microsoft Teams"
+              },
+              "fontStyle": {
+                "value": "bold"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 214,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7zxidtbb34",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffffffff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Microsoft Teams - Chat List Flow                                                                                                                                                                                                  Created by: Ping Identity                                                           Version: 1.0                                                                           Release Date: December 16, 2022                                          Documentation: https://support.pingidentity.com/s/marketplace-integration/a7iDo0000010xQXIAY/microsoft-teams-chat-list"
+              },
+              "width": {
+                "value": 600
+              },
+              "height": {
+                "value": 240
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 3
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "strokeColor": {
+                "value": "#d0021bff"
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 270,
+            "y": 596
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "68mqt0lhj0",
+            "source": "go6wu1lsiw",
+            "target": "b9qhw7s2nh"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ydmf4i37z5",
+            "source": "b9qhw7s2nh",
+            "target": "v9mf2wulrg"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zg8qkjqbfq",
+            "source": "v9mf2wulrg",
+            "target": "tcusjmf4gq"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "la22snur6y",
+            "source": "tcusjmf4gq",
+            "target": "v6h264l3w2"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#52BE80",
+  "savedDate": 1671225424749,
+  "variables": []
+}
