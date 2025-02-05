@@ -1,0 +1,1701 @@
+{
+  "companyId": "db542ef4-3016-4990-9a48-38d6c832711e",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "httpConnector",
+    "securIdConnector",
+    "annotationConnector",
+    "functionsConnector"
+  ],
+  "createdDate": 1671559093524,
+  "currentVersion": 2,
+  "customerId": "cbedb487563e86ddb94c04fb3d3dae61",
+  "deployedDate": 1671559095491,
+  "description": "Published Date: December 20, 2022",
+  "flowStatus": "enabled",
+  "name": "SecurID - MFA",
+  "orx": "{\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"version\":\"4.0.0\",\"states\":[\"initialize\",\"start_0\",\"inside_0\",\"inside_1\",\"inside_2\",\"end_0\",\"inside_3\",\"inside_4\",\"inside_5_1_anyTriggersTrue\",\"inside_6_1_allTriggersTrue\",\"end_1\"],\"currentState\":[\"initialize\"],\"transitions\":[{\"from\":[\"initialize\"],\"to\":\"start_0\",\"conditions\":{\"$and\":[{\"initializeFlow\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"g3zblx1c4t\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"title\":{\"value\":\"Sign On\"},\"nodeTitle\":{\"value\":\"Sign On\"},\"formFieldsList\":{\"value\":[{\"propertyName\":\"username\",\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"value\":\"\",\"hashedVisibility\":false,\"displayName\":\"Username\"},{\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"propertyName\":\"buttonValue\"}]},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                    class=\\\"align-self-center mb-5\\\"\\n                    src=\\\"{{global.variables.logoUrl}}\\\"\\n                    alt=\\\"{{global.variables.companyName}}\\\"\\n                    style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Sign On</h1>\\n                <p\\n                    class=\\\"text-danger mdi mdi-alert-circle\\\"\\n                    data-id=\\\"feedback\\\"\\n                    data-skcomponent=\\\"skerror\\\"\\n                ></p>\\n                <form id=\\\"signOnForm\\\" data-id=\\\"signOnForm\\\">\\n                    <div class=\\\"mb-4 form-floating\\\">\\n                        <input\\n                            class=\\\"form-control\\\"\\n                            type=\\\"text\\\"\\n                            id=\\\"username\\\"\\n                            name=\\\"username\\\"\\n                            placeholder=\\\"Username\\\"\\n                            autocomplete=\\\"off\\\"\\n                            value=\\\"\\\"\\n                            data-id=\\\"username-input\\\"\\n                        /><label class=\\\"form-label\\\" for=\\\"username\\\"\\n                            >Username</label\\n                        >\\n                    </div>\\n                    <div class=\\\"d-flex flex-column mt-5\\\">\\n                        <button\\n                            data-id=\\\"button\\\"\\n                            type=\\\"submit\\\"\\n                            class=\\\"btn btn-primary mb-3\\\"\\n                            data-skcomponent=\\\"skbutton\\\"\\n                            data-skbuttontype=\\\"form-submit\\\"\\n                            data-skform=\\\"signOnForm\\\"\\n                            data-skbuttonvalue=\\\"submit\\\"\\n                        >\\n                            Sign on\\n                        </button>\\n                     \\n                        </button>\\n                    </div>\\n                </form>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"},\"nextButtonText\":{\"value\":\"Sign on\"},\"nodeDescription\":{\"value\":\"Prompt the user to enter their username.\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":0,\"signalId\":0,\"largePayload\":[\"customHTML\"]}],\"transitionId\":0},{\"from\":[\"start_0\"],\"to\":\"inside_0\",\"conditions\":{\"$and\":[{\"id\":\"g3zblx1c4t\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"success\":true}]},\"signals\":[{\"name\":\"Secur Id [2022-12-20]\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"0bn4hxq6re\",\"connectionId\":\"945caa024fa5ea7fa527b62f236583e7\",\"connectorId\":\"securIdConnector\",\"capabilityName\":\"initializeRSA\",\"properties\":{\"subjectName\":{\"value\":\"{{local.g3zblx1c4t.payload.output.username}}\"},\"assurancePolicyId\":{\"value\":\"All Users Low Assurance Level\"},\"nodeTitle\":{\"value\":\"SecurID\"},\"nodeDescription\":{\"value\":\"Send the user ID to SecurID and get the user's list of authentication methods.\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"transitionId\":1,\"signalId\":0,\"pollingPath\":true}],\"evalNodeId\":\"h1p9uapamb\",\"transitionId\":1},{\"from\":[\"inside_0\"],\"to\":\"inside_1\",\"conditions\":{\"$and\":[{\"id\":\"0bn4hxq6re\",\"connectionId\":\"945caa024fa5ea7fa527b62f236583e7\",\"connectorId\":\"securIdConnector\",\"capabilityName\":\"initializeRSA\",\"success\":true}]},\"signals\":[{\"name\":\"Secur Id [2022-12-20]\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"umbtd9a5vu\",\"connectionId\":\"945caa024fa5ea7fa527b62f236583e7\",\"connectorId\":\"securIdConnector\",\"capabilityName\":\"verifyRSA\",\"properties\":{\"nodeTitle\":{\"value\":\"SecurID\"},\"nodeDescription\":{\"value\":\"Prompt the user to select an authentication method. For tokens, prompt the user to authenticate with their token.\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":2,\"signalId\":0,\"pollingPath\":true}],\"evalNodeId\":\"0j8vf675fc\",\"transitionId\":2},{\"from\":[\"inside_1\"],\"to\":\"inside_2\",\"conditions\":{\"$and\":[{\"id\":\"umbtd9a5vu\",\"connectionId\":\"945caa024fa5ea7fa527b62f236583e7\",\"connectorId\":\"securIdConnector\",\"capabilityName\":\"verifyRSA\",\"success\":true}]},\"signals\":[{\"name\":\"Functions\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"68l43p8m4n\",\"connectionId\":\"de650ca45593b82c49064ead10b9fe17\",\"connectorId\":\"functionsConnector\",\"capabilityName\":\"AEqualsMultipleB\",\"properties\":{\"leftValueA\":{\"value\":\"{{local.umbtd9a5vu.payload.output.challenge}}\"},\"rightValueMultiple\":{\"value\":[{\"value\":\"APPROVE\",\"id\":\"4ik3znxr2z\"},{\"value\":\"FINGERPRINT\",\"id\":\"5yhj7rg6hg\"},{\"value\":\"TOKEN\",\"id\":\"4k7psdpsjw\"}]},\"nodeTitle\":{\"value\":\"Check Auth Method\"},\"nodeDescription\":{\"value\":\"Branch the flow based on the selected authentication method.\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"to\":\"oe\",\"transitionId\":3,\"signalId\":0,\"pollingPath\":true}],\"evalNodeId\":\"tstciaj164\",\"transitionId\":3},{\"from\":[\"inside_2\"],\"to\":\"end_0\",\"conditions\":{\"$and\":[{\"id\":\"68l43p8m4n\",\"connectionId\":\"de650ca45593b82c49064ead10b9fe17\",\"connectorId\":\"functionsConnector\",\"capabilityName\":\"AEqualsMultipleB\",\"logic\":{\"useEval\":false,\"customEval\":true,\"type\":\"where\",\"leftSide\":\"'{{local.umbtd9a5vu.payload.output.challenge}}'\",\"rightSide\":\"'TOKEN'\",\"operator\":\"equal\",\"expr\":\"'{{local.umbtd9a5vu.payload.output.challenge}}' == 'TOKEN'\"}}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"5rq6yte11f\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"messageTitle\":{\"value\":\"Success Result\"},\"nodeTitle\":{\"value\":\"Result\"},\"message\":{\"value\":\"Authentication succeeded:\\n{{local.ia29mhgsun.payload.output.result}}\"},\"nodeDescription\":{\"value\":\"Show a success message.\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                  class=\\\"align-self-center mb-5\\\"\\n                  src=\\\"{{global.variables.logoUrl}}\\\"\\n                  alt=\\\"{{global.variables.companyName}}\\\"\\n                  style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Success Result</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                    Authentication succeeded:\\n                   {{local.ia29mhgsun.payload.output.result}}\\n                </p>\\n            </div>\\n        </div>\\n    </div>\\n</div>\\n\\n\\n\\n\\n\\n\\n\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":4,\"signalId\":0,\"largePayload\":[\"customHTML\"]}],\"evalNodeId\":\"4cptjttgyx\",\"transitionId\":4},{\"from\":[\"inside_2\"],\"to\":\"inside_3\",\"conditions\":{\"$and\":[{\"id\":\"68l43p8m4n\",\"connectionId\":\"de650ca45593b82c49064ead10b9fe17\",\"connectorId\":\"functionsConnector\",\"capabilityName\":\"AEqualsMultipleB\",\"logic\":{\"useEval\":false,\"customEval\":true,\"type\":\"where\",\"leftSide\":\"'{{local.umbtd9a5vu.payload.output.challenge}}'\",\"rightSide\":\"'FINGERPRINT'\",\"operator\":\"equal\",\"expr\":\"'{{local.umbtd9a5vu.payload.output.challenge}}' == 'FINGERPRINT'\"}}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"rf8zjti1h8\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"message\":{\"value\":\"Complete authentication on your mobile device.\\n\"},\"messageTitle\":{\"value\":\"Check Your Device\"},\"nodeTitle\":{\"value\":\"Check Your Device\"},\"enablePolling\":{\"value\":true},\"pollChallengeStatus\":{\"value\":false},\"pollRetries\":{\"value\":6},\"nodeDescription\":{\"value\":\"Tell the user to check their authentication device (such as a mobile phone) to complete the authentication process.\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                  class=\\\"align-self-center mb-5\\\"\\n                  src=\\\"{{global.variables.logoUrl}}\\\"\\n                  alt=\\\"{{global.variables.companyName}}\\\"\\n                  style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Check Your Device</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                    Complete authentication on your mobile device.\\n                </p>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":5,\"signalId\":0,\"pollingPath\":true,\"largePayload\":[\"customHTML\"]}],\"evalNodeId\":\"ppcchmpgur\",\"transitionId\":5},{\"from\":[\"inside_2\"],\"to\":\"inside_3\",\"conditions\":{\"$and\":[{\"id\":\"68l43p8m4n\",\"connectionId\":\"de650ca45593b82c49064ead10b9fe17\",\"connectorId\":\"functionsConnector\",\"capabilityName\":\"AEqualsMultipleB\",\"logic\":{\"useEval\":false,\"customEval\":true,\"type\":\"where\",\"leftSide\":\"'{{local.umbtd9a5vu.payload.output.challenge}}'\",\"rightSide\":\"'APPROVE'\",\"operator\":\"equal\",\"expr\":\"'{{local.umbtd9a5vu.payload.output.challenge}}' == 'APPROVE'\"}}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"rf8zjti1h8\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"message\":{\"value\":\"Complete authentication on your mobile device.\\n\"},\"messageTitle\":{\"value\":\"Check Your Device\"},\"nodeTitle\":{\"value\":\"Check Your Device\"},\"enablePolling\":{\"value\":true},\"pollChallengeStatus\":{\"value\":false},\"pollRetries\":{\"value\":6},\"nodeDescription\":{\"value\":\"Tell the user to check their authentication device (such as a mobile phone) to complete the authentication process.\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                  class=\\\"align-self-center mb-5\\\"\\n                  src=\\\"{{global.variables.logoUrl}}\\\"\\n                  alt=\\\"{{global.variables.companyName}}\\\"\\n                  style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Check Your Device</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                    Complete authentication on your mobile device.\\n                </p>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":6,\"signalId\":0,\"pollingPath\":true,\"largePayload\":[\"customHTML\"]}],\"evalNodeId\":\"qz5gy82mzp\",\"transitionId\":6},{\"from\":[\"inside_2\"],\"to\":\"inside_4\",\"conditions\":{\"$and\":[{\"id\":\"68l43p8m4n\",\"connectionId\":\"de650ca45593b82c49064ead10b9fe17\",\"connectorId\":\"functionsConnector\",\"capabilityName\":\"AEqualsMultipleB\",\"logic\":{\"useEval\":false,\"customEval\":true,\"type\":\"where\",\"leftSide\":\"'{{local.umbtd9a5vu.payload.output.challenge}}'\",\"rightSide\":\"'undefined'\",\"operator\":\"notEqual\",\"expr\":\"'{{local.umbtd9a5vu.payload.output.challenge}}' == 'undefined'\",\"varType\":\"string\"}}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"k4md8sgn4r\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHtmlMessage\",\"properties\":{\"messageTitle\":{\"value\":\"Authentication Failed\"},\"nodeTitle\":{\"value\":\"Authentication Failed\"},\"message\":{\"value\":\"Authentication failed with the following output:\\n\\n{{local.ia29mhgsun.payload.output}}\"},\"showContinueButton\":{\"value\":true},\"button\":{\"displayName\":\"Select another authentication method\"},\"backgroundColor\":{\"value\":\"#ffc8c1ff\"},\"nodeDescription\":{\"value\":\"Show a failure message, and direct the user back to the beginning.\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[\"global.error\"],\"respondToUser\":true,\"transitionId\":7,\"signalId\":0,\"pollingPath\":true}],\"evalNodeId\":\"bo3upcuoa1\",\"transitionId\":7},{\"from\":[\"inside_3\"],\"to\":\"inside_4\",\"conditions\":{\"$or\":[{\"id\":\"rf8zjti1h8\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"success\":false}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"k4md8sgn4r\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHtmlMessage\",\"properties\":{\"messageTitle\":{\"value\":\"Authentication Failed\"},\"nodeTitle\":{\"value\":\"Authentication Failed\"},\"message\":{\"value\":\"Authentication failed with the following output:\\n\\n{{local.ia29mhgsun.payload.output}}\"},\"showContinueButton\":{\"value\":true},\"button\":{\"displayName\":\"Select another authentication method\"},\"backgroundColor\":{\"value\":\"#ffc8c1ff\"},\"nodeDescription\":{\"value\":\"Show a failure message, and direct the user back to the beginning.\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[\"global.error\"],\"respondToUser\":true,\"errorConnectionInstances\":[\"local.rf8zjti1h8.payload.error\"],\"transitionId\":8,\"signalId\":0,\"pollingPath\":true}],\"evalNodeId\":\"7qgm9dgxlp\",\"transitionId\":8},{\"from\":[\"inside_3\"],\"to\":\"inside_5_1_anyTriggersTrue\",\"conditions\":{\"$or\":[{\"id\":\"rf8zjti1h8\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"success\":true}]},\"signals\":[{\"name\":\"Secur Id [2022-12-20]\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"ia29mhgsun\",\"connectionId\":\"945caa024fa5ea7fa527b62f236583e7\",\"connectorId\":\"securIdConnector\",\"capabilityName\":\"pollingVerify\",\"properties\":{\"nodeTitle\":{\"value\":\"SecurID\"},\"nodeDescription\":{\"value\":\"Poll SecurID until the authentication process is completed on the other device.\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"transitionId\":9,\"signalId\":0,\"pollingPath\":true}],\"evalNodeId\":\"7qgm9dgxlp\",\"transitionId\":9},{\"from\":[\"inside_4\"],\"to\":\"inside_0\",\"conditions\":{\"$and\":[{\"id\":\"k4md8sgn4r\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHtmlMessage\",\"success\":true}]},\"signals\":[{\"name\":\"Secur Id [2022-12-20]\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"0bn4hxq6re\",\"connectionId\":\"945caa024fa5ea7fa527b62f236583e7\",\"connectorId\":\"securIdConnector\",\"capabilityName\":\"initializeRSA\",\"properties\":{\"subjectName\":{\"value\":\"{{local.g3zblx1c4t.payload.output.username}}\"},\"assurancePolicyId\":{\"value\":\"All Users Low Assurance Level\"},\"nodeTitle\":{\"value\":\"SecurID\"},\"nodeDescription\":{\"value\":\"Send the user ID to SecurID and get the user's list of authentication methods.\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"transitionId\":10,\"signalId\":0,\"pollingPath\":true}],\"evalNodeId\":\"j62o7h5hvl\",\"transitionId\":10},{\"from\":[\"inside_5_1_anyTriggersTrue\"],\"to\":\"inside_6_1_allTriggersTrue\",\"conditions\":{\"$and\":[{\"id\":\"ia29mhgsun\",\"connectionId\":\"945caa024fa5ea7fa527b62f236583e7\",\"connectorId\":\"securIdConnector\",\"capabilityName\":\"pollingVerify\",\"success\":true}]},\"signals\":[{\"name\":\"Functions\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"xhgualjw8r\",\"connectionId\":\"de650ca45593b82c49064ead10b9fe17\",\"connectorId\":\"functionsConnector\",\"capabilityName\":\"AEqualsMultipleB\",\"properties\":{\"leftValueA\":{\"value\":\"{{local.ia29mhgsun.payload.output.result}}\"},\"rightValueMultiple\":{\"value\":[{\"value\":\"SUCCESS\",\"id\":\"4ik3znxr2z\"},{\"value\":\"FAIL\",\"id\":\"5yhj7rg6hg\"}]},\"nodeTitle\":{\"value\":\"Check Poll Result\"},\"nodeDescription\":{\"value\":\"Branch the flow based on the result of the authentication process.\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"to\":\"oe\",\"transitionId\":11,\"signalId\":0,\"pollingPath\":true}],\"evalNodeId\":\"rrlrg1hcrn\",\"transitionId\":11},{\"from\":[\"inside_6_1_allTriggersTrue\"],\"to\":\"inside_4\",\"conditions\":{\"$and\":[{\"id\":\"xhgualjw8r\",\"connectionId\":\"de650ca45593b82c49064ead10b9fe17\",\"connectorId\":\"functionsConnector\",\"capabilityName\":\"AEqualsMultipleB\",\"logic\":{\"useEval\":false,\"customEval\":true,\"type\":\"where\",\"leftSide\":\"'{{local.ia29mhgsun.payload.output.result}}'\",\"rightSide\":\"'FAIL'\",\"operator\":\"equal\",\"expr\":\"'{{local.ia29mhgsun.payload.output.result}}' == 'FAIL'\"}}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"k4md8sgn4r\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHtmlMessage\",\"properties\":{\"messageTitle\":{\"value\":\"Authentication Failed\"},\"nodeTitle\":{\"value\":\"Authentication Failed\"},\"message\":{\"value\":\"Authentication failed with the following output:\\n\\n{{local.ia29mhgsun.payload.output}}\"},\"showContinueButton\":{\"value\":true},\"button\":{\"displayName\":\"Select another authentication method\"},\"backgroundColor\":{\"value\":\"#ffc8c1ff\"},\"nodeDescription\":{\"value\":\"Show a failure message, and direct the user back to the beginning.\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[\"global.error\"],\"respondToUser\":true,\"transitionId\":12,\"signalId\":0,\"pollingPath\":true}],\"evalNodeId\":\"6q57tdbg6x\",\"transitionId\":12},{\"from\":[\"inside_6_1_allTriggersTrue\"],\"to\":\"end_1\",\"conditions\":{\"$and\":[{\"id\":\"xhgualjw8r\",\"connectionId\":\"de650ca45593b82c49064ead10b9fe17\",\"connectorId\":\"functionsConnector\",\"capabilityName\":\"AEqualsMultipleB\",\"logic\":{\"useEval\":false,\"customEval\":true,\"type\":\"where\",\"leftSide\":\"'{{local.ia29mhgsun.payload.output.result}}'\",\"rightSide\":\"'undefined'\",\"operator\":\"notEqual\",\"expr\":\"'{{local.ia29mhgsun.payload.output.result}}' == 'undefined'\",\"varType\":\"string\"}}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"kk72u0oarn\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"continuePolling\",\"properties\":{\"nodeTitle\":{\"value\":\"Continue polling\"},\"connectionInstanceId\":{\"value\":\"rf8zjti1h8\"},\"nodeDescription\":{\"value\":\"Continue polling SecurID until the authentication process is completed on the other device.\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":13,\"signalId\":0,\"pollingPath\":true}],\"evalNodeId\":\"lfnzb0kilv\",\"transitionId\":13},{\"from\":[\"inside_6_1_allTriggersTrue\"],\"to\":\"end_0\",\"conditions\":{\"$and\":[{\"id\":\"xhgualjw8r\",\"connectionId\":\"de650ca45593b82c49064ead10b9fe17\",\"connectorId\":\"functionsConnector\",\"capabilityName\":\"AEqualsMultipleB\",\"logic\":{\"useEval\":false,\"customEval\":true,\"type\":\"where\",\"leftSide\":\"'{{local.ia29mhgsun.payload.output.result}}'\",\"rightSide\":\"'SUCCESS'\",\"operator\":\"equal\",\"expr\":\"'{{local.ia29mhgsun.payload.output.result}}' == 'SUCCESS'\"}}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"c3678c65330e391a14aab6fb1ddd09f0\",\"flowVersionId\":2,\"id\":\"5rq6yte11f\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"messageTitle\":{\"value\":\"Success Result\"},\"nodeTitle\":{\"value\":\"Result\"},\"message\":{\"value\":\"Authentication succeeded:\\n{{local.ia29mhgsun.payload.output.result}}\"},\"nodeDescription\":{\"value\":\"Show a success message.\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                  class=\\\"align-self-center mb-5\\\"\\n                  src=\\\"{{global.variables.logoUrl}}\\\"\\n                  alt=\\\"{{global.variables.companyName}}\\\"\\n                  style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Success Result</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                    Authentication succeeded:\\n                   {{local.ia29mhgsun.payload.output.result}}\\n                </p>\\n            </div>\\n        </div>\\n    </div>\\n</div>\\n\\n\\n\\n\\n\\n\\n\"}},\"debugMode\":false,\"logLevel\":3,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":14,\"signalId\":0,\"largePayload\":[\"customHTML\"]}],\"evalNodeId\":\"wxw526hbxl\",\"transitionId\":14}],\"history\":[],\"outputs\":{\"httpConnector_customHTMLTemplate\":{\"localOutputs\":[\"output\"]},\"securIdConnector_initializeRSA\":{\"localOutputs\":[\"output\"]},\"securIdConnector_verifyRSA\":{\"localOutputs\":[\"output\"]},\"securIdConnector_pollingVerify\":{\"localOutputs\":[\"output\"]}},\"outputParameters\":[\"global.variables.logoUrl\",\"global.variables.companyName\",\"global.variables.logoStyle\",\"local.g3zblx1c4t.payload.output.username\",\"local.ia29mhgsun.payload.output.result\",\"local.umbtd9a5vu.payload.output.challenge\",\"local.ia29mhgsun.payload.output\"],\"global\":{},\"local\":{},\"idMapping\":{},\"nodeMappingForTids\":{\"g3zblx1c4t\":\"initialize\",\"g3zblx1c4t_customHTMLTemplate\":\"initialize\",\"umbtd9a5vu\":\"g3zblx1c4t\",\"umbtd9a5vu_verifyRSA\":\"g3zblx1c4t_customHTMLTemplate\",\"5rq6yte11f\":\"umbtd9a5vu\",\"5rq6yte11f_customHTMLTemplate\":\"umbtd9a5vu_verifyRSA\",\"rf8zjti1h8\":\"umbtd9a5vu\",\"rf8zjti1h8_customHTMLTemplate\":\"umbtd9a5vu_verifyRSA\",\"k4md8sgn4r\":\"rf8zjti1h8\",\"k4md8sgn4r_customHtmlMessage\":\"rf8zjti1h8_customHTMLTemplate\",\"kk72u0oarn\":\"rf8zjti1h8\",\"kk72u0oarn_continuePolling\":\"rf8zjti1h8_customHTMLTemplate\"},\"tids\":{},\"delayedConditionalStateChangeMappings\":{},\"delayedConditionalStateChangeMappingsReverse\":{},\"delayedConditionalStatesList\":[],\"lbsTransitionIdsToIgnore\":[],\"lbsTransitionIdsMapping\":{},\"outputParametersDefault\":{\"global.variables.logoUrl\":\"\",\"global.variables.companyName\":\"\",\"global.variables.logoStyle\":\"\",\"local.g3zblx1c4t.payload.output.username\":\"\",\"local.ia29mhgsun.payload.output.result\":\"\",\"local.umbtd9a5vu.payload.output.challenge\":\"\",\"local.ia29mhgsun.payload.output\":\"\"},\"outputParametersDefaultBlacklist\":[],\"historyThreshold\":70,\"errorRewindBlackListIds\":[],\"nodeMappingForTidsNew\":{\"g3zblx1c4t\":\"initialize\",\"umbtd9a5vu\":[\"umbtd9a5vu\",\"rf8zjti1h8\",\"k4md8sgn4r\",\"g3zblx1c4t\"],\"5rq6yte11f\":[\"k4md8sgn4r\",\"g3zblx1c4t\",\"rf8zjti1h8\",\"umbtd9a5vu\"],\"rf8zjti1h8\":[\"rf8zjti1h8\",\"k4md8sgn4r\",\"g3zblx1c4t\",\"umbtd9a5vu\"],\"k4md8sgn4r\":[\"k4md8sgn4r\",\"g3zblx1c4t\",\"umbtd9a5vu\",\"rf8zjti1h8\"],\"kk72u0oarn\":[\"k4md8sgn4r\",\"g3zblx1c4t\",\"umbtd9a5vu\",\"rf8zjti1h8\"]},\"nodeStates\":{\"g3zblx1c4t\":\"start_0\",\"0bn4hxq6re\":\"inside_0\",\"umbtd9a5vu\":\"inside_1\",\"68l43p8m4n\":\"inside_2\",\"5rq6yte11f\":\"end_0\",\"rf8zjti1h8\":\"inside_3\",\"k4md8sgn4r\":\"inside_4\",\"ia29mhgsun\":\"inside_5_1_anyTriggersTrue\",\"xhgualjw8r\":\"inside_6_1_allTriggersTrue\",\"kk72u0oarn\":\"end_1\"}}",
+  "publishedVersion": 2,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "useCustomCSS": true,
+    "logLevel": 3,
+    "useBetaAlgorithm": true,
+    "cssLinks": [
+      "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.0/end-user-nano.css",
+      "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.3/icons.css"
+    ]
+  },
+  "updatedDate": 1671559095492,
+  "flowId": "c3678c65330e391a14aab6fb1ddd09f0",
+  "versionId": 2,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "g3zblx1c4t",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "title": {
+                "value": "Sign On"
+              },
+              "nodeTitle": {
+                "value": "Sign On"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "propertyName": "username",
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "value": "",
+                    "hashedVisibility": false,
+                    "displayName": "Username"
+                  },
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "customHTML": {
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\"\n>\n    <div style=\"max-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img\n                    class=\"align-self-center mb-5\"\n                    src=\"{{global.variables.logoUrl}}\"\n                    alt=\"{{global.variables.companyName}}\"\n                    style=\"{{global.variables.logoStyle}}\"\n                />\n                <h1 class=\"text-center mb-4\">Sign On</h1>\n                <p\n                    class=\"text-danger mdi mdi-alert-circle\"\n                    data-id=\"feedback\"\n                    data-skcomponent=\"skerror\"\n                ></p>\n                <form id=\"signOnForm\" data-id=\"signOnForm\">\n                    <div class=\"mb-4 form-floating\">\n                        <input\n                            class=\"form-control\"\n                            type=\"text\"\n                            id=\"username\"\n                            name=\"username\"\n                            placeholder=\"Username\"\n                            autocomplete=\"off\"\n                            value=\"\"\n                            data-id=\"username-input\"\n                        /><label class=\"form-label\" for=\"username\"\n                            >Username</label\n                        >\n                    </div>\n                    <div class=\"d-flex flex-column mt-5\">\n                        <button\n                            data-id=\"button\"\n                            type=\"submit\"\n                            class=\"btn btn-primary mb-3\"\n                            data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\"\n                            data-skform=\"signOnForm\"\n                            data-skbuttonvalue=\"submit\"\n                        >\n                            Sign on\n                        </button>\n                     \n                        </button>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+              },
+              "nextButtonText": {
+                "value": "Sign on"
+              },
+              "nodeDescription": {
+                "value": "Prompt the user to enter their username."
+              }
+            }
+          },
+          "position": {
+            "x": 384.54076813276004,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "h1p9uapamb",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 555.0815362655201,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0bn4hxq6re",
+            "nodeType": "CONNECTION",
+            "connectionId": "945caa024fa5ea7fa527b62f236583e7",
+            "connectorId": "securIdConnector",
+            "name": "Secur Id [2022-12-20]",
+            "label": "My SecurID",
+            "status": "configured",
+            "capabilityName": "initializeRSA",
+            "type": "trigger",
+            "properties": {
+              "subjectName": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.g3zblx1c4t.payload.output.username}}\",\n        \"tooltip\": \"{{local.g3zblx1c4t.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "assurancePolicyId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"All Users Low Assurance Level\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "SecurID"
+              },
+              "nodeDescription": {
+                "value": "Send the user ID to SecurID and get the user's list of authentication methods."
+              }
+            }
+          },
+          "position": {
+            "x": 749.9852712743887,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0j8vf675fc",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 920.5260394071486,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "wxw526hbxl",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "0bn4hxq6re": {
+                "value": "anyTriggersFalse"
+              },
+              "k4md8sgn4r": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 2772.1115219914,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5rq6yte11f",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Success Result\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Result"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Authentication succeeded:\\n\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:ia29mhgsun\",\n        \"url\": \"result\",\n        \"data\": \"{{local.ia29mhgsun.payload.output.result}}\",\n        \"tooltip\": \"{{local.ia29mhgsun.payload.output.result}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.ia29mhgsun.payload.output.result}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeDescription": {
+                "value": "Show a success message."
+              },
+              "customHTML": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                  class=\\\"align-self-center mb-5\\\"\\n                  src=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"logoUrl\",\n        \"data\": \"{{global.variables.logoUrl}}\",\n        \"tooltip\": \"{{global.variables.logoUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.logoUrl}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"\\n                  alt=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"companyName\",\n        \"data\": \"{{global.variables.companyName}}\",\n        \"tooltip\": \"{{global.variables.companyName}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.companyName}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"\\n                  style=\\\"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"logoStyle\",\n        \"data\": \"{{global.variables.logoStyle}}\",\n        \"tooltip\": \"{{global.variables.logoStyle}}\",\n        \"children\": [\n          {\n            \"text\": \"{{global.variables.logoStyle}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Success Result</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                    Authentication succeeded:\\n                   \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:ia29mhgsun\",\n        \"url\": \"result\",\n        \"data\": \"{{local.ia29mhgsun.payload.output.result}}\",\n        \"tooltip\": \"{{local.ia29mhgsun.payload.output.result}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.ia29mhgsun.payload.output.result}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\\n                </p>\\n            </div>\\n        </div>\\n    </div>\\n</div>\\n\\n\\n\\n\\n\\n\\n\"\n      }\n    ]\n  }\n]"
+              }
+            }
+          },
+          "position": {
+            "x": 2991.378223876377,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "r9grr22bw9",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Get user identifier"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 287.08890062832575,
+            "y": 262.7259337522172
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "af5fczkssl",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotation": {
+                "value": "Get authentication methods"
+              },
+              "width": {
+                "value": 180
+              },
+              "height": {
+                "value": 50
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 652.5334037699542,
+            "y": 262.7259337522172
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "qt7k1g1v7r",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotation": {
+                "value": "Authenticate"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 1042.3408737876914,
+            "y": 262.7259337522172
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "r60fox3o7n",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Show result"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 2893.9263563719433,
+            "y": 262.7259337522172
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "68l43p8m4n",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "MB - Function",
+            "status": "configured",
+            "capabilityName": "AEqualsMultipleB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"SecurID.svg\",\n        \"url\": \"challenge\",\n        \"data\": \"{{local.umbtd9a5vu.payload.output.challenge}}\",\n        \"tooltip\": \"{{local.umbtd9a5vu.payload.output.challenge}}\",\n        \"children\": [\n          {\n            \"text\": \"challenge\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueMultiple": {
+                "value": [
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"APPROVE\"\n      }\n    ]\n  }\n]",
+                    "id": "4ik3znxr2z"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"FINGERPRINT\"\n      }\n    ]\n  }\n]",
+                    "id": "5yhj7rg6hg"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"TOKEN\"\n      }\n    ]\n  }\n]",
+                    "id": "4k7psdpsjw"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Check Auth Method"
+              },
+              "nodeDescription": {
+                "value": "Branch the flow based on the selected authentication method."
+              }
+            }
+          },
+          "position": {
+            "x": 1505.2372444337543,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "qz5gy82mzp",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "rf8zjti1h8": {
+                "value": "allTriggersTrue"
+              }
+            }
+          },
+          "position": {
+            "x": 1675.7780125665142,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "rf8zjti1h8",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Complete authentication on your mobile device.\\n\"\n      }\n    ]\n  }\n]"
+              },
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Check Your Device\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Check Your Device"
+              },
+              "enablePolling": {
+                "value": true
+              },
+              "pollChallengeStatus": {
+                "value": false
+              },
+              "pollRetries": {
+                "value": 6
+              },
+              "nodeDescription": {
+                "value": "Tell the user to check their authentication device (such as a mobile phone) to complete the authentication process."
+              },
+              "customHTML": {
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\"\n>\n    <div style=\"max-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img\n                  class=\"align-self-center mb-5\"\n                  src=\"{{global.variables.logoUrl}}\"\n                  alt=\"{{global.variables.companyName}}\"\n                  style=\"{{global.variables.logoStyle}}\"\n                />\n                <h1 class=\"text-center mb-4\">Check Your Device</h1>\n                <p class=\"text-muted text-center\">\n                    Complete authentication on your mobile device.\n                </p>\n            </div>\n        </div>\n    </div>\n</div>"
+              }
+            }
+          },
+          "position": {
+            "x": 1870.681747575383,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7esjj1rmra",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Poll for result"
+              },
+              "width": {
+                "value": 740
+              },
+              "strokeEnabled": {
+                "value": false
+              },
+              "strokeWidth": {
+                "value": 0
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 5
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 1773.2298800709486,
+            "y": 262.7259337522172
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "eux3ira3j3",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Check MFA method"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 1432.1483438054286,
+            "y": 262.7259337522172
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7qgm9dgxlp",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "ia29mhgsun": {
+                "value": "anyTriggersTrue"
+              },
+              "k4md8sgn4r": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 2041.222515708143,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ia29mhgsun",
+            "nodeType": "CONNECTION",
+            "connectionId": "945caa024fa5ea7fa527b62f236583e7",
+            "connectorId": "securIdConnector",
+            "name": "Secur Id [2022-12-20]",
+            "label": "My SecurID",
+            "status": "configured",
+            "capabilityName": "pollingVerify",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "SecurID"
+              },
+              "nodeDescription": {
+                "value": "Poll SecurID until the authentication process is completed on the other device."
+              }
+            }
+          },
+          "position": {
+            "x": 2236.1262507170113,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tstciaj164",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 1310.3335094248857,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "k4md8sgn4r",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Authentication Failed\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Authentication Failed"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Authentication failed with the following output:\"\n      }\n    ]\n  },\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  },\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"securid.svg\",\n        \"url\": \"output\",\n        \"data\": \"{{local.ia29mhgsun.payload.output}}\",\n        \"tooltip\": \"{{local.ia29mhgsun.payload.output}}\",\n        \"children\": [\n          {\n            \"text\": \"output\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "showContinueButton": {
+                "value": true
+              },
+              "button": {
+                "displayName": "Select another authentication method"
+              },
+              "backgroundColor": {
+                "value": "#ffc8c1ff"
+              },
+              "nodeDescription": {
+                "value": "Show a failure message, and direct the user back to the beginning."
+              }
+            },
+            "idUnique": "5r89mlr80l"
+          },
+          "position": {
+            "x": 2991.378223876377,
+            "y": 823.0741719027143
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "j62o7h5hvl",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 555.0815362655201,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "xhgualjw8r",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "MB - Function",
+            "status": "configured",
+            "capabilityName": "AEqualsMultipleB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"securid.svg\",\n        \"url\": \"result\",\n        \"data\": \"{{local.ia29mhgsun.payload.output.result}}\",\n        \"tooltip\": \"{{local.ia29mhgsun.payload.output.result}}\",\n        \"children\": [\n          {\n            \"text\": \"result\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueMultiple": {
+                "value": [
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"SUCCESS\"\n      }\n    ]\n  }\n]",
+                    "id": "4ik3znxr2z"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"FAIL\"\n      }\n    ]\n  }\n]",
+                    "id": "5yhj7rg6hg"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Check Poll Result"
+              },
+              "nodeDescription": {
+                "value": "Branch the flow based on the result of the authentication process."
+              }
+            },
+            "idUnique": "25le0fqmt2"
+          },
+          "position": {
+            "x": 2625.933720734749,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "rrlrg1hcrn",
+            "nodeType": "EVAL",
+            "properties": {
+              "k4md8sgn4r": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 2431.0299857258797,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "lfnzb0kilv",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 2772.1115219914,
+            "y": 506.35560251330287
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "kk72u0oarn",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "continuePolling",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Continue polling"
+              },
+              "connectionInstanceId": {
+                "value": "rf8zjti1h8"
+              },
+              "nodeDescription": {
+                "value": "Continue polling SecurID until the authentication process is completed on the other device."
+              }
+            }
+          },
+          "position": {
+            "x": 2991.378223876377,
+            "y": 579.4445031416286
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6q57tdbg6x",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 2772.1115219914,
+            "y": 628.1704368938457
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "bo3upcuoa1",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 1675.7780125665142,
+            "y": 603.8074700177372
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ppcchmpgur",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 1675.7780125665142,
+            "y": 457.6296687610858
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "umbtd9a5vu",
+            "nodeType": "CONNECTION",
+            "connectionId": "945caa024fa5ea7fa527b62f236583e7",
+            "connectorId": "securIdConnector",
+            "name": "Secur Id [2022-12-20]",
+            "label": "My SecurID",
+            "status": "configured",
+            "capabilityName": "verifyRSA",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "SecurID"
+              },
+              "nodeDescription": {
+                "value": "Prompt the user to select an authentication method. For tokens, prompt the user to authenticate with their token."
+              }
+            }
+          },
+          "position": {
+            "x": 1139.7927412921258,
+            "y": 384.54076813276004
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "4cptjttgyx",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 1675.7780125665142,
+            "y": 530.7185693894115
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1qgsrsdhoj",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4462edff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "width": {
+                "value": 2925
+              },
+              "cornerRadius": {
+                "value": 20
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "annotation": {
+                "value": "Authenticating users with SecurID"
+              },
+              "fontStyle": {
+                "value": "bold"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 214,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "sm594q3sih",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffffffff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "SecurID - MFA Flow                                                                                                                                                                                                  Created by: Ping Identity                                                           Version: 1.0                                                                           Release Date: December 20, 2022                                          Documentation: https://support.pingidentity.com/s/marketplace-integration/a7iDo0000010xSiIAI/securid-mfa"
+              },
+              "width": {
+                "value": 600
+              },
+              "height": {
+                "value": 240
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 3
+              },
+              "strokeColor": {
+                "value": "#d0021bff"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "cornerRadius": {
+                "value": 5
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 335.81483438054283,
+            "y": 969.2519731593658
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "vl2y1dwg9c",
+            "source": "68l43p8m4n",
+            "target": "4cptjttgyx",
+            "multiValueSourceId": "4k7psdpsjw"
+          },
+          "position": {
+            "x": 64,
+            "y": 132
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "cmepybmg0w",
+            "source": "4cptjttgyx",
+            "target": "5rq6yte11f"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "h0kdb0tgn1",
+            "source": "ppcchmpgur",
+            "target": "rf8zjti1h8"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9slxv1hagu",
+            "source": "ia29mhgsun",
+            "target": "rrlrg1hcrn"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "b1b6zrxlpq",
+            "source": "68l43p8m4n",
+            "target": "ppcchmpgur",
+            "multiValueSourceId": "5yhj7rg6hg"
+          },
+          "position": {
+            "x": 64,
+            "y": 92
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "uxhylpo71",
+            "source": "xhgualjw8r",
+            "target": "6q57tdbg6x",
+            "multiValueSourceId": "5yhj7rg6hg"
+          },
+          "position": {
+            "x": 64,
+            "y": 92
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "4jbl7cljiu",
+            "source": "6q57tdbg6x",
+            "target": "k4md8sgn4r"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8en54o9uzh",
+            "source": "7qgm9dgxlp",
+            "target": "k4md8sgn4r"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1ugfd5hxzi",
+            "source": "rrlrg1hcrn",
+            "target": "xhgualjw8r"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "v724gz7p4f",
+            "source": "xhgualjw8r",
+            "target": "lfnzb0kilv",
+            "multiValueSourceId": "-1"
+          },
+          "position": {
+            "x": 64,
+            "y": 132
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "65e581zai8",
+            "source": "0j8vf675fc",
+            "target": "umbtd9a5vu"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "nr3df2rq09",
+            "source": "bo3upcuoa1",
+            "target": "k4md8sgn4r"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "949724kfz7",
+            "source": "rf8zjti1h8",
+            "target": "7qgm9dgxlp"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "vgx5gpkotq",
+            "source": "g3zblx1c4t",
+            "target": "h1p9uapamb"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "abj2i8hrqp",
+            "source": "h1p9uapamb",
+            "target": "0bn4hxq6re"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tkv3309538",
+            "source": "0bn4hxq6re",
+            "target": "0j8vf675fc"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "hbs4thrj4r",
+            "source": "umbtd9a5vu",
+            "target": "tstciaj164"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tccor6pan2",
+            "source": "wxw526hbxl",
+            "target": "5rq6yte11f"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "wlyda8nk75",
+            "source": "7qgm9dgxlp",
+            "target": "ia29mhgsun"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "jmy7dbce2f",
+            "source": "j62o7h5hvl",
+            "target": "0bn4hxq6re"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ianr8ki591",
+            "source": "tstciaj164",
+            "target": "68l43p8m4n"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "hsfe0b0n81",
+            "source": "qz5gy82mzp",
+            "target": "rf8zjti1h8"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "k6kfunwjhe",
+            "source": "68l43p8m4n",
+            "target": "qz5gy82mzp",
+            "multiValueSourceId": "4ik3znxr2z"
+          },
+          "position": {
+            "x": 64,
+            "y": 52
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0k6293g0t9",
+            "source": "xhgualjw8r",
+            "target": "wxw526hbxl",
+            "multiValueSourceId": "4ik3znxr2z"
+          },
+          "position": {
+            "x": 64,
+            "y": 52
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8awd1biab1",
+            "source": "lfnzb0kilv",
+            "target": "kk72u0oarn"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "m4wynw7dyq",
+            "source": "k4md8sgn4r",
+            "target": "j62o7h5hvl"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "vf0id91siw",
+            "source": "68l43p8m4n",
+            "target": "bo3upcuoa1",
+            "multiValueSourceId": "-1"
+          },
+          "position": {
+            "x": 64,
+            "y": 172
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#AFD5FF",
+  "savedDate": 1671559093375,
+  "variables": [
+    {
+      "context": "flowInstance",
+      "createdDate": 1670873601688,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000,
+        "value": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
+      },
+      "type": "property",
+      "updatedDate": 1667950505469,
+      "visibility": "private",
+      "name": "logoUrl##SK##flowInstance",
+      "companyId": "db542ef4-3016-4990-9a48-38d6c832711e"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1670362886624,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "companyName##SK##flowInstance",
+      "companyId": "db542ef4-3016-4990-9a48-38d6c832711e"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1670873601685,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000,
+        "value": "width: 65px; height: 65px;"
+      },
+      "type": "property",
+      "updatedDate": 1667950646585,
+      "visibility": "private",
+      "name": "logoStyle##SK##flowInstance",
+      "companyId": "db542ef4-3016-4990-9a48-38d6c832711e"
+    }
+  ]
+}
