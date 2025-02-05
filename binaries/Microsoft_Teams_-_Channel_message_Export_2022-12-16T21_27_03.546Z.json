@@ -1,0 +1,516 @@
+{
+  "companyId": "db542ef4-3016-4990-9a48-38d6c832711e",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "microsoftTeamsConnector",
+    "httpConnector",
+    "annotationConnector"
+  ],
+  "createdDate": 1671226020556,
+  "currentVersion": 4,
+  "customerId": "cbedb487563e86ddb94c04fb3d3dae61",
+  "description": "Published Date: December 16, 2022",
+  "flowStatus": "enabled",
+  "name": "Microsoft Teams - Channel message",
+  "orx": "{\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"9a46b7b3d9acb97d88cd8b69f0e505fd\",\"flowVersionId\":1,\"version\":\"4.0.0\",\"states\":[\"initialize\",\"start_0\",\"inside_0\",\"end_0\"],\"currentState\":[\"initialize\"],\"transitions\":[{\"from\":[\"initialize\"],\"to\":\"start_0\",\"conditions\":{\"$and\":[{\"initializeFlow\":true}]},\"signals\":[{\"name\":\"Microsoft Teams [2022-12-16]\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"9a46b7b3d9acb97d88cd8b69f0e505fd\",\"flowVersionId\":1,\"id\":\"go6wu1lsiw\",\"connectionId\":\"e00da68c2de226491abcdd6b7f18851b\",\"connectorId\":\"microsoftTeamsConnector\",\"capabilityName\":\"initializeAuthorizationRequest\",\"properties\":{\"nodeTitle\":{\"value\":\"Microsoft Teams\"},\"nodeDescription\":{\"value\":\"Prompt the user to sign on with Microsoft. Get a user access token.\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":0,\"signalId\":0}],\"transitionId\":0},{\"from\":[\"start_0\"],\"to\":\"inside_0\",\"conditions\":{\"$and\":[{\"id\":\"go6wu1lsiw\",\"connectionId\":\"e00da68c2de226491abcdd6b7f18851b\",\"connectorId\":\"microsoftTeamsConnector\",\"capabilityName\":\"initializeAuthorizationRequest\",\"success\":true}]},\"signals\":[{\"name\":\"Microsoft Teams [2022-12-16]\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"9a46b7b3d9acb97d88cd8b69f0e505fd\",\"flowVersionId\":1,\"id\":\"v9mf2wulrg\",\"connectionId\":\"e00da68c2de226491abcdd6b7f18851b\",\"connectorId\":\"microsoftTeamsConnector\",\"capabilityName\":\"sendMessageChannel\",\"properties\":{\"userAccessToken\":{\"value\":\"{{local.go6wu1lsiw.payload.output.tokens}}\"},\"messageBodyData\":{\"value\":\"{\\n  \\\"body\\\": {\\n    \\\"content\\\": \\\"Hello world\\\"\\n  }\\n}\"},\"teams\":{\"value\":\"00b73a96-b0da-4f35-b586-1b3967f01e13\"},\"channels\":{\"value\":\"19:be97b53bd00c48c69cc584f08dd18199@thread.tacv2\"},\"nodeTitle\":{\"value\":\"Microsoft Teams\"},\"nodeDescription\":{\"value\":\"Use the user access token to send the defined message to the selected channel.\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"transitionId\":1,\"signalId\":0}],\"evalNodeId\":\"ci11krw290\",\"transitionId\":1},{\"from\":[\"inside_0\"],\"to\":\"end_0\",\"conditions\":{\"$and\":[{\"id\":\"v9mf2wulrg\",\"connectionId\":\"e00da68c2de226491abcdd6b7f18851b\",\"connectorId\":\"microsoftTeamsConnector\",\"capabilityName\":\"sendMessageChannel\",\"success\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"db542ef4-3016-4990-9a48-38d6c832711e\",\"flowId\":\"9a46b7b3d9acb97d88cd8b69f0e505fd\",\"flowVersionId\":1,\"id\":\"v6h264l3w2\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHtmlMessage\",\"properties\":{\"message\":{\"value\":\"{{local.v9mf2wulrg.payload.output}}\"},\"nodeDescription\":{\"value\":\"Show the result of the flow.\"},\"nodeTitle\":{\"value\":\"HTTP\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[\"global.error\"],\"respondToUser\":true,\"transitionId\":2,\"signalId\":0}],\"evalNodeId\":\"tcusjmf4gq\",\"transitionId\":2}],\"history\":[],\"outputs\":{\"microsoftTeamsConnector_initializeAuthorizationRequest\":{\"localOutputs\":[\"output\"]},\"microsoftTeamsConnector_sendMessageChannel\":{\"localOutputs\":[\"output\"]}},\"outputParameters\":[\"local.go6wu1lsiw.payload.output.tokens\",\"local.v9mf2wulrg.payload.output\"],\"global\":{},\"local\":{},\"idMapping\":{},\"nodeMappingForTids\":{\"go6wu1lsiw\":\"initialize\",\"go6wu1lsiw_initializeAuthorizationRequest\":\"initialize\",\"v6h264l3w2\":\"go6wu1lsiw\",\"v6h264l3w2_customHtmlMessage\":\"go6wu1lsiw_initializeAuthorizationRequest\"},\"tids\":{},\"delayedConditionalStateChangeMappings\":{},\"delayedConditionalStateChangeMappingsReverse\":{},\"delayedConditionalStatesList\":[],\"lbsTransitionIdsToIgnore\":[],\"lbsTransitionIdsMapping\":{},\"outputParametersDefault\":{\"local.go6wu1lsiw.payload.output.tokens\":\"\",\"local.v9mf2wulrg.payload.output\":\"\"},\"outputParametersDefaultBlacklist\":[],\"historyThreshold\":70,\"errorRewindBlackListIds\":[],\"nodeMappingForTidsNew\":{\"go6wu1lsiw\":\"initialize\",\"v6h264l3w2\":[\"go6wu1lsiw\"]},\"nodeStates\":{\"go6wu1lsiw\":\"start_0\",\"v9mf2wulrg\":\"inside_0\",\"v6h264l3w2\":\"end_0\"}}",
+  "publishedVersion": 1,
+  "updatedDate": 1671226020565,
+  "flowId": "9a46b7b3d9acb97d88cd8b69f0e505fd",
+  "versionId": 4,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "go6wu1lsiw",
+            "nodeType": "CONNECTION",
+            "connectionId": "e00da68c2de226491abcdd6b7f18851b",
+            "connectorId": "microsoftTeamsConnector",
+            "name": "Microsoft Teams [2022-12-16]",
+            "label": "My Microsoft Teams",
+            "status": "configured",
+            "capabilityName": "initializeAuthorizationRequest",
+            "type": "action",
+            "properties": {
+              "nodeTitle": {
+                "value": "Microsoft Teams"
+              },
+              "nodeDescription": {
+                "value": "Prompt the user to sign on with Microsoft. Get a user access token."
+              }
+            }
+          },
+          "position": {
+            "x": 398,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "v9mf2wulrg",
+            "nodeType": "CONNECTION",
+            "connectionId": "e00da68c2de226491abcdd6b7f18851b",
+            "connectorId": "microsoftTeamsConnector",
+            "name": "Microsoft Teams [2022-12-16]",
+            "label": "My Microsoft Teams",
+            "status": "configured",
+            "capabilityName": "sendMessageChannel",
+            "type": "trigger",
+            "properties": {
+              "userAccessToken": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"microsoft-teams.svg\",\n        \"url\": \"tokens\",\n        \"data\": \"{{local.go6wu1lsiw.payload.output.tokens}}\",\n        \"tooltip\": \"{{local.go6wu1lsiw.payload.output.tokens}}\",\n        \"children\": [\n          {\n            \"text\": \"tokens\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "messageBodyData": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"{\\n  \\\"body\\\": {\\n    \\\"content\\\": \\\"Hello world\\\"\\n  }\\n}\"\n      }\n    ]\n  }\n]"
+              },
+              "teams": {
+                "value": "00b73a96-b0da-4f35-b586-1b3967f01e13"
+              },
+              "channels": {
+                "value": "19:be97b53bd00c48c69cc584f08dd18199@thread.tacv2"
+              },
+              "nodeTitle": {
+                "value": "Microsoft Teams"
+              },
+              "nodeDescription": {
+                "value": "Use the user access token to send the defined message to the selected channel."
+              }
+            }
+          },
+          "position": {
+            "x": 758,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tcusjmf4gq",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 938,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "v6h264l3w2",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"microsoft-teams.svg\",\n        \"url\": \"output\",\n        \"data\": \"{{local.v9mf2wulrg.payload.output}}\",\n        \"tooltip\": \"{{local.v9mf2wulrg.payload.output}}\",\n        \"children\": [\n          {\n            \"text\": \"output\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeDescription": {
+                "value": "Show the result of the flow."
+              },
+              "nodeTitle": {
+                "value": "HTTP"
+              }
+            }
+          },
+          "position": {
+            "x": 1118,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "qrzdl961eh",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Prompt user to sign on"
+              },
+              "width": {
+                "value": 180
+              },
+              "height": {
+                "value": 50
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 308,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1sdr3gabhs",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Show the result"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "width": {
+                "value": 180
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 1028,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ci11krw290",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 578,
+            "y": 394
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "n161aed9th",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Send the message"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 668,
+            "y": 274
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "jgay8mjozv",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4462edff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "Sending a message to a channel in Microsoft Teams"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "cornerRadius": {
+                "value": 20
+              },
+              "width": {
+                "value": 1077
+              },
+              "fontStyle": {
+                "value": "bold"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 218,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "oul8xhk7b3",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffffffff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "width": {
+                "value": 600
+              },
+              "height": {
+                "value": 240
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "strokeWidth": {
+                "value": 3
+              },
+              "strokeColor": {
+                "value": "#d0021bff"
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "annotation": {
+                "value": "Microsoft Teams - Channel message Flow                                                                                                                                                                                                  Created by: Ping Identity                                                           Version: 1.0                                                                           Release Date: December 16, 2022                                          Documentation: https://support.pingidentity.com/s/marketplace-integration/a7iDo0000010xQcIAI/microsoft-teams-channel-message"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 214,
+            "y": 510
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "la22snur6y",
+            "source": "tcusjmf4gq",
+            "target": "v6h264l3w2"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "xcx0lejxw9",
+            "source": "go6wu1lsiw",
+            "target": "ci11krw290"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zg8qkjqbfq",
+            "source": "v9mf2wulrg",
+            "target": "tcusjmf4gq"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "b5fupj2lk",
+            "source": "ci11krw290",
+            "target": "v9mf2wulrg"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#52BE80",
+  "savedDate": 1671226020501,
+  "variables": []
+}
