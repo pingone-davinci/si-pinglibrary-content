@@ -1,0 +1,600 @@
+{
+  "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "httpConnector",
+    "hyprConnector",
+    "annotationConnector"
+  ],
+  "createdDate": 1670877781114,
+  "currentVersion": 23,
+  "customerId": "b23f4463beaa44cbd75e1d20a97bc369",
+  "deployedDate": 1670878385471,
+  "description": "Imported on Wed Nov 30 2022 23:39:11 GMT+0000 (Coordinated Universal Time)",
+  "flowStatus": "enabled",
+  "name": "HYPR - Authentication",
+  "orx": "{\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"48d6926aed44cdb90f8fd2bd5c72040f\",\"flowVersionId\":23,\"version\":\"4.0.0\",\"states\":[\"initialize\",\"start_0\",\"inside_0\",\"end_0\"],\"currentState\":[\"initialize\"],\"transitions\":[{\"from\":[\"initialize\"],\"to\":\"start_0\",\"conditions\":{\"$and\":[{\"initializeFlow\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"48d6926aed44cdb90f8fd2bd5c72040f\",\"flowVersionId\":23,\"id\":\"jejji5jr6c\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"title\":{\"value\":\"Sign On\"},\"nodeTitle\":{\"value\":\"Sign On Form\"},\"formFieldsList\":{\"value\":[{\"propertyName\":\"username\",\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"value\":\"\",\"hashedVisibility\":false,\"displayName\":\"Username\"},{\"preferredControlType\":\"textField\",\"preferredDataType\":\"string\",\"propertyName\":\"buttonValue\"}]},\"nextButtonText\":{\"value\":\"Sign On\"},\"nodeDescription\":{\"value\":\"Prompt the user to enter their username.\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                    class=\\\"align-self-center mb-5\\\"\\n                    src=\\\"{{global.variables.logoUrl}}\\\"\\n                    alt=\\\"{{global.variables.companyName}}\\\"\\n                    style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Sign On</h1>\\n                <p\\n                    class=\\\"text-danger mdi mdi-alert-circle\\\"\\n                    data-id=\\\"feedback\\\"\\n                    data-skcomponent=\\\"skerror\\\"\\n                ></p>\\n                <form id=\\\"signOnForm\\\" data-id=\\\"signOnForm\\\">\\n                    <div class=\\\"mb-4 form-floating\\\">\\n                        <input\\n                            class=\\\"form-control\\\"\\n                            type=\\\"text\\\"\\n                            id=\\\"username\\\"\\n                            name=\\\"username\\\"\\n                            placeholder=\\\"Username\\\"\\n                            autocomplete=\\\"off\\\"\\n                            value=\\\"\\\"\\n                            data-id=\\\"username-input\\\"\\n                        /><label class=\\\"form-label\\\" for=\\\"username\\\"\\n                            >Username</label\\n                        >\\n                    </div>\\n                    <div class=\\\"d-flex flex-column mt-5\\\">\\n                        <button\\n                            data-id=\\\"button\\\"\\n                            type=\\\"submit\\\"\\n                            class=\\\"btn btn-primary mb-3\\\"\\n                            data-skcomponent=\\\"skbutton\\\"\\n                            data-skbuttontype=\\\"form-submit\\\"\\n                            data-skform=\\\"signOnForm\\\"\\n                            data-skbuttonvalue=\\\"submit\\\"\\n                        >\\n                            Sign on\\n                        </button>\\n                     \\n                        </button>\\n                    </div>\\n                </form>\\n            </div>\\n        </div>\\n    </div>\\n</div>\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":0,\"signalId\":0,\"largePayload\":[\"customHTML\"]}],\"transitionId\":0},{\"from\":[\"start_0\"],\"to\":\"inside_0\",\"conditions\":{\"$and\":[{\"id\":\"jejji5jr6c\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"success\":true}]},\"signals\":[{\"name\":\"Hypr [2022-11-30]\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"48d6926aed44cdb90f8fd2bd5c72040f\",\"flowVersionId\":23,\"id\":\"zif0oi3vq7\",\"connectionId\":\"b28a94220b8e6c97219799f9f6989b4d\",\"connectorId\":\"hyprConnector\",\"capabilityName\":\"initializeAuthorizationRequest\",\"properties\":{\"username\":{\"value\":\"{{local.jejji5jr6c.payload.output.username}}\"},\"skipButtonPress\":{\"value\":true},\"button\":{},\"nodeTitle\":{\"value\":\"HYPR\"},\"nodeDescription\":{\"value\":\"Redirect the browser to Hypr and pass along the username.\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":1,\"signalId\":0}],\"evalNodeId\":\"z5p1oinncy\",\"transitionId\":1},{\"from\":[\"inside_0\"],\"to\":\"end_0\",\"conditions\":{\"$and\":[{\"id\":\"zif0oi3vq7\",\"connectionId\":\"b28a94220b8e6c97219799f9f6989b4d\",\"connectorId\":\"hyprConnector\",\"capabilityName\":\"initializeAuthorizationRequest\",\"success\":true}]},\"signals\":[{\"name\":\"Http\",\"companyId\":\"0c6891f3-2eb8-4017-a7fa-0e01e513e92b\",\"flowId\":\"48d6926aed44cdb90f8fd2bd5c72040f\",\"flowVersionId\":23,\"id\":\"ke74oavsfg\",\"connectionId\":\"867ed4363b2bc21c860085ad2baa817d\",\"connectorId\":\"httpConnector\",\"capabilityName\":\"customHTMLTemplate\",\"properties\":{\"messageTitle\":{\"value\":\"Sign On Complete\"},\"message\":{\"value\":\"{{local.zif0oi3vq7.payload.output}}\"},\"nodeTitle\":{\"value\":\"Sign on complete\"},\"nodeDescription\":{\"value\":\"Show the result of the authentication process.\"},\"customHTML\":{\"value\":\"<div\\n    class=\\\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\\\"\\n>\\n    <div style=\\\"max-width: 400px; width: 100%\\\">\\n        <div class=\\\"card shadow mb-5\\\">\\n            <div class=\\\"card-body p-5 d-flex flex-column\\\">\\n                <img\\n                  class=\\\"align-self-center mb-5\\\"\\n                  src=\\\"{{global.variables.logoUrl}}\\\"\\n                  alt=\\\"{{global.variables.companyName}}\\\"\\n                  style=\\\"{{global.variables.logoStyle}}\\\"\\n                />\\n                <h1 class=\\\"text-center mb-4\\\">Sign On Complete</h1>\\n                <p class=\\\"text-muted text-center\\\">\\n                 {{local.zif0oi3vq7.payload.output}}\\n                </p>\\n            </div>\\n        </div>\\n    </div>\\n</div>\\n\\n\\n\\n\\n\"}},\"debugMode\":false,\"logLevel\":null,\"isDisabled\":false,\"inputs\":[],\"respondToUser\":true,\"transitionId\":2,\"signalId\":0,\"largePayload\":[\"customHTML\"]}],\"evalNodeId\":\"cz8dhddhy9\",\"transitionId\":2}],\"history\":[],\"outputs\":{\"httpConnector_customHTMLTemplate\":{\"localOutputs\":[\"output\"]},\"hyprConnector_initializeAuthorizationRequest\":{\"localOutputs\":[\"output\"]}},\"outputParameters\":[\"global.variables.logoUrl\",\"global.variables.companyName\",\"global.variables.logoStyle\",\"local.jejji5jr6c.payload.output.username\",\"local.zif0oi3vq7.payload.output\"],\"global\":{},\"local\":{},\"idMapping\":{},\"nodeMappingForTids\":{\"jejji5jr6c\":\"initialize\",\"jejji5jr6c_customHTMLTemplate\":\"initialize\",\"zif0oi3vq7\":\"jejji5jr6c\",\"zif0oi3vq7_initializeAuthorizationRequest\":\"jejji5jr6c_customHTMLTemplate\",\"ke74oavsfg\":\"zif0oi3vq7\",\"ke74oavsfg_customHTMLTemplate\":\"zif0oi3vq7_initializeAuthorizationRequest\"},\"tids\":{},\"delayedConditionalStateChangeMappings\":{},\"delayedConditionalStateChangeMappingsReverse\":{},\"delayedConditionalStatesList\":[],\"lbsTransitionIdsToIgnore\":[],\"lbsTransitionIdsMapping\":{},\"outputParametersDefault\":{\"global.variables.logoUrl\":\"\",\"global.variables.companyName\":\"\",\"global.variables.logoStyle\":\"\",\"local.jejji5jr6c.payload.output.username\":\"\",\"local.zif0oi3vq7.payload.output\":\"\"},\"outputParametersDefaultBlacklist\":[],\"historyThreshold\":70,\"errorRewindBlackListIds\":[],\"nodeMappingForTidsNew\":{\"jejji5jr6c\":\"initialize\",\"zif0oi3vq7\":[\"jejji5jr6c\"],\"ke74oavsfg\":[\"jejji5jr6c\",\"zif0oi3vq7\"]},\"nodeStates\":{\"jejji5jr6c\":\"start_0\",\"zif0oi3vq7\":\"inside_0\",\"ke74oavsfg\":\"end_0\"}}",
+  "publishedVersion": 23,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "useCustomCSS": true,
+    "cssLinks": [
+      "https://assets.pingone.com/ux/end-user-nano/0.1.0-alpha.1/end-user-nano.css",
+      "https://assets.pingone.com/ux/astro-nano/0.1.0-alpha.4/icons.css"
+    ]
+  },
+  "updatedDate": 1671223940641,
+  "flowId": "48d6926aed44cdb90f8fd2bd5c72040f",
+  "versionId": 23,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "jejji5jr6c",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "title": {
+                "value": "Sign On"
+              },
+              "nodeTitle": {
+                "value": "Sign On Form"
+              },
+              "formFieldsList": {
+                "value": [
+                  {
+                    "propertyName": "username",
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "value": "",
+                    "hashedVisibility": false,
+                    "displayName": "Username"
+                  },
+                  {
+                    "preferredControlType": "textField",
+                    "preferredDataType": "string",
+                    "propertyName": "buttonValue"
+                  }
+                ]
+              },
+              "nextButtonText": {
+                "value": "Sign On"
+              },
+              "nodeDescription": {
+                "value": "Prompt the user to enter their username."
+              },
+              "customHTML": {
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\"\n>\n    <div style=\"max-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img\n                    class=\"align-self-center mb-5\"\n                    src=\"{{global.variables.logoUrl}}\"\n                    alt=\"{{global.variables.companyName}}\"\n                    style=\"{{global.variables.logoStyle}}\"\n                />\n                <h1 class=\"text-center mb-4\">Sign On</h1>\n                <p\n                    class=\"text-danger mdi mdi-alert-circle\"\n                    data-id=\"feedback\"\n                    data-skcomponent=\"skerror\"\n                ></p>\n                <form id=\"signOnForm\" data-id=\"signOnForm\">\n                    <div class=\"mb-4 form-floating\">\n                        <input\n                            class=\"form-control\"\n                            type=\"text\"\n                            id=\"username\"\n                            name=\"username\"\n                            placeholder=\"Username\"\n                            autocomplete=\"off\"\n                            value=\"\"\n                            data-id=\"username-input\"\n                        /><label class=\"form-label\" for=\"username\"\n                            >Username</label\n                        >\n                    </div>\n                    <div class=\"d-flex flex-column mt-5\">\n                        <button\n                            data-id=\"button\"\n                            type=\"submit\"\n                            class=\"btn btn-primary mb-3\"\n                            data-skcomponent=\"skbutton\"\n                            data-skbuttontype=\"form-submit\"\n                            data-skform=\"signOnForm\"\n                            data-skbuttonvalue=\"submit\"\n                        >\n                            Sign on\n                        </button>\n                     \n                        </button>\n                    </div>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+              }
+            },
+            "idUnique": "iey51x5ai4"
+          },
+          "position": {
+            "x": 394,
+            "y": 398
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "z5p1oinncy",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 574,
+            "y": 398
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zif0oi3vq7",
+            "nodeType": "CONNECTION",
+            "connectionId": "b28a94220b8e6c97219799f9f6989b4d",
+            "connectorId": "hyprConnector",
+            "name": "Hypr [2022-11-30]",
+            "label": "My HYPR",
+            "status": "configured",
+            "idUnique": "5ph0wlxlhb",
+            "capabilityName": "initializeAuthorizationRequest",
+            "type": "trigger",
+            "properties": {
+              "username": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"username\",\n        \"data\": \"{{local.jejji5jr6c.payload.output.username}}\",\n        \"tooltip\": \"{{local.jejji5jr6c.payload.output.username}}\",\n        \"children\": [\n          {\n            \"text\": \"username\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "skipButtonPress": {
+                "value": true
+              },
+              "button": {},
+              "nodeTitle": {
+                "value": "HYPR"
+              },
+              "nodeDescription": {
+                "value": "Redirect the browser to Hypr and pass along the username."
+              }
+            }
+          },
+          "position": {
+            "x": 754,
+            "y": 398
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "cz8dhddhy9",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 934,
+            "y": 398
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ke74oavsfg",
+            "nodeType": "CONNECTION",
+            "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+            "connectorId": "httpConnector",
+            "name": "Http",
+            "label": "My HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "messageTitle": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Sign On Complete\"\n      }\n    ]\n  }\n]"
+              },
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"url:zif0oi3vq7\",\n        \"url\": \"output\",\n        \"data\": \"{{local.zif0oi3vq7.payload.output}}\",\n        \"tooltip\": \"{{local.zif0oi3vq7.payload.output}}\",\n        \"children\": [\n          {\n            \"text\": \"{{local.zif0oi3vq7.payload.output}}\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Sign on complete"
+              },
+              "nodeDescription": {
+                "value": "Show the result of the authentication process."
+              },
+              "customHTML": {
+                "value": "<div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\"\n>\n    <div style=\"max-width: 400px; width: 100%\">\n        <div class=\"card shadow mb-5\">\n            <div class=\"card-body p-5 d-flex flex-column\">\n                <img\n                  class=\"align-self-center mb-5\"\n                  src=\"{{global.variables.logoUrl}}\"\n                  alt=\"{{global.variables.companyName}}\"\n                  style=\"{{global.variables.logoStyle}}\"\n                />\n                <h1 class=\"text-center mb-4\">Sign On Complete</h1>\n                <p class=\"text-muted text-center\">\n                 {{local.zif0oi3vq7.payload.output}}\n                </p>\n            </div>\n        </div>\n    </div>\n</div>\n\n\n\n\n"
+              }
+            }
+          },
+          "position": {
+            "x": 1114,
+            "y": 398
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "qeb7jkh9qi",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Get username"
+              },
+              "width": {
+                "value": 180
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "fontSize": {
+                "value": 0
+              },
+              "cornerRadius": {
+                "value": 5
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 334,
+            "y": 278
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "gyomf2v989",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffb91cff"
+              },
+              "annotation": {
+                "value": "HYPR Authentication"
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "width": {
+                "value": 180
+              },
+              "height": {
+                "value": 50
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 664,
+            "y": 278
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zsmchysgi6",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f2f3f4ff"
+              },
+              "annotation": {
+                "value": "Show MFA result"
+              },
+              "width": {
+                "value": 180
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 1024,
+            "y": 278
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "n8xrtwg5fp",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4462edff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "width": {
+                "value": 1075
+              },
+              "cornerRadius": {
+                "value": 20
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "annotation": {
+                "value": "Authenticating users with HYPR"
+              },
+              "fontStyle": {
+                "value": "bold"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 214,
+            "y": 218
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "vgigj971lt",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffffffff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "HYPR - Authentication Flow                                                                                                                                                                                                  Created by: Ping Identity                                                           Version: 1.0                                                                           Release Date: December 12, 2022                                          Documentation: https://support.pingidentity.com/s/marketplace-integration/a7iDo0000010xEhIAI/hypr-authentication"
+              },
+              "strokeWidth": {
+                "value": 3
+              },
+              "cornerRadius": {
+                "value": 5
+              },
+              "strokeColor": {
+                "value": "#d0021bff"
+              },
+              "width": {
+                "value": 600
+              },
+              "height": {
+                "value": 240
+              },
+              "strokeEnabled": {
+                "value": true
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 300,
+            "y": 570
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "0vlnvrvfmf",
+            "source": "jejji5jr6c",
+            "target": "z5p1oinncy"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "xg9lkqihg2",
+            "source": "z5p1oinncy",
+            "target": "zif0oi3vq7"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6h3eqpj4s7",
+            "source": "zif0oi3vq7",
+            "target": "cz8dhddhy9"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "9qmwjjk0qr",
+            "source": "cz8dhddhy9",
+            "target": "ke74oavsfg"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#AFD5FF",
+  "savedDate": 1670877781071,
+  "variables": [
+    {
+      "context": "flowInstance",
+      "createdDate": 1667404096868,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "type": "property",
+      "visibility": "private",
+      "name": "companyName##SK##flowInstance",
+      "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1667404096868,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000,
+        "value": "width: 65px; height: 65px;"
+      },
+      "type": "property",
+      "updatedDate": 1667950646585,
+      "visibility": "private",
+      "name": "logoStyle##SK##flowInstance",
+      "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b"
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1667832920919,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000,
+        "value": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
+      },
+      "type": "property",
+      "updatedDate": 1667950505469,
+      "visibility": "private",
+      "name": "logoUrl##SK##flowInstance",
+      "companyId": "0c6891f3-2eb8-4017-a7fa-0e01e513e92b"
+    }
+  ]
+}
