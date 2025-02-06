@@ -31,14 +31,14 @@ TMP_DIR=$(mktemp -d) &&
     DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
     SCRIPT="$0" &&
-    SCRIPT_VERSION="1.0.1" &&
+    SCRIPT_VERSION="1.1.0" &&
     CURL_ERROR_FILE="${TMP_DIR}/curl-error" && touch "${CURL_ERROR_FILE}" &&
     EXPORT_DIR="${TMP_DIR}/export/${PRODUCT}" && mkdir -p "${EXPORT_DIR}" &&
     KEYS_DIR="${EXPORT_DIR}/signingKeys" && mkdir -p "${KEYS_DIR}" &&
     ZIP_FILE="${PRODUCT}-${DATE}.zip" &&
     SUMMARY_JSON="${EXPORT_DIR}/../summary.json" && touch "${SUMMARY_JSON}"
 
-MIN_PF_VERSION="11.3"
+MIN_PF_VERSION="10.3"
 
 cleanup() { rm -rf "${TMP_DIR}"; }
 trap cleanup EXIT
@@ -105,7 +105,7 @@ echo "
 #                                                                 #
 # You will be prompted for the following information:             #
 #                                                                 #
-# 1. URI of the PingFederate Admin API                            #
+# 1. URI of the PingFederate Admin API (Example: https://host)    #
 # 2. API Username (Example: api-admin)                            #
 # 3. API Password                                                 #
 # 4. Password to encrypt signing certificates                     #
@@ -194,7 +194,7 @@ curl_cmd() {
     if [ $? -ne 0 ]; then
         error "Failed to extract ${url}
     Possble issues:
-      - Invalid URI
+      - Invalid URI (Must only be the base URI, example: https://host)
       - Invalid API Username or Password
       - PingFederate Admin API is not enabled
       - Network connectivity issues (i.e. vpn)
@@ -229,7 +229,6 @@ fi
 curl_cmd GET "/oauth/clients" "" "${EXPORT_DIR}/oauth-clients.json"
 curl_cmd GET "/oauth/authServerSettings/scopes/commonScopes" "" "${EXPORT_DIR}/commonScopes.json"
 curl_cmd GET "/idp/spConnections" "" "${EXPORT_DIR}/idp-spConnections.json"
-curl_cmd GET "/configStore/cors-configuration" "" "${EXPORT_DIR}/cors-configuration.json"
 
 curl_cmd GET "/keyPairs/signing" "" "${EXPORT_DIR}/signingKeys.json"
 
