@@ -107,9 +107,13 @@ display_pingone_environment() {
 
 }
 
+# Function to perform a terraform init on the terraform directory
+terraform_init() {
+    ${TERRAFORM} init
+}
+
 # Function to perform a terraform plan on the terraform directory
 terraform_plan() {
-    ${TERRAFORM} init
     ${TERRAFORM} plan
 }
 
@@ -146,9 +150,10 @@ top_menu() {
     echo "#  1. Display Terraform Details                              #"
     echo "#  2. Display PingOne Environment                            #"
     echo "#                                                            #"
-    echo "#  3. Check PingOne against plan         > terraform plan    #"
-    echo "#  4. Apply changes to PingOne           > terraform apply   #"
-    echo "#  5. Cleanup PingOne from any changes   > terraform destroy #"
+    echo "#  3. Initialize terraform provider      > terraform init    #"
+    echo "#  4. Check PingOne against plan         > terraform plan    #"
+    echo "#  5. Apply changes to PingOne           > terraform apply   #"
+    echo "#  6. Cleanup PingOne from any changes   > terraform destroy #"
     echo "#                                                            #"
     echo "#  Q: Quit                                                   #"
     echo "##############################################################"
@@ -167,13 +172,17 @@ execute_choice() {
             ;;
         3)
             clear
-            terraform_plan
+            terraform_init
             ;;
         4)
             clear
-            terraform_apply
+            terraform_plan
             ;;
         5)
+            clear
+            terraform_apply
+            ;;
+        6)
             clear
             terraform_destroy
             ;;
