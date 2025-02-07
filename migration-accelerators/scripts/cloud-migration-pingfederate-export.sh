@@ -56,6 +56,7 @@ check_command() {
     fi
 }
 
+# Check for required commands
 if [[ "$(uname)" == "Darwin" ]]; then
     check_command shasum
     SHASUM="shasum -a 256"
@@ -105,10 +106,11 @@ echo "
 #                                                                 #
 # You will be prompted for the following information:             #
 #                                                                 #
-# 1. URI of the PingFederate Admin API (Example: https://host)    #
-# 2. API Username (Example: api-admin)                            #
-# 3. API Password                                                 #
-# 4. Password to encrypt signing certificates                     #
+# 1. Host of the PingFederate Admin API (Example: localhost)      #
+# 2. Port of the PingFederate Admin API (Example: 443)            #
+# 3. API Username (Example: api-admin)                            #
+# 4. API Password                                                 #
+# 5. Password to encrypt signing certificates                     #
 #                                                                 #
 # The script will then extract the configuration and signing keys #
 # and save them to a zip file in the current directory.           #
@@ -117,13 +119,21 @@ echo "
 ###################################################################
 "
 
-read -r -p "          What is your URI? " uri && echo
-read -r -p " What is your api username? " apiUsername && echo
-read -r -sp " What is your api password? " apiPassword && echo
+# Prompt for PingFederate Admin API information
+read -r -p "        What is your PingFederate Host? " pfHost && echo
+read -r -p " What is your PingFederate Port [443] ? " pfPort && echo
+read -r -p "             What is your api username? " apiUsername && echo
+read -r -sp "             What is your api password? " apiPassword && echo
 
-if [ -z "${uri}" ] || [ -z "${apiUsername}" ] || [ -z "${apiPassword}" ]; then
+if [ -z "${pfHost}" ] || [ -z "${apiUsername}" ] || [ -z "${apiPassword}" ]; then
     error "Missing required input"
 fi
+
+if [ "${pfPort}" = "" ]; then
+    pfPort="443"
+fi
+
+pfUrl="https://${pfHost}:${pfPort}/pf-admin-api/v1"
 
 echo "
 ###################################################################
@@ -157,6 +167,7 @@ echo "
 generatedPassword=$(generate_password)
 migPassword="${generatedPassword}"
 
+# Prompt for Migration Password
 while true; do
     read -r -p "Enter a Migration password [${migPassword}] ? " migPassword
     echo # For newline after the password input
@@ -180,51 +191,62 @@ while true; do
     fi
 done
 
+# Function to execute curl commands and handle errors
 curl_cmd() {
+    _method=${1}
+    _path=${2}
+    _auth=${3}
+    _outfile=${4}
+
     printf "."
-    #echo "     extracting: ${2}..."
-    url="${uri}/pf-admin-api/v1${2}"
-    curl -sS -X $1 "${url}" \
+    url="${pfUrl}${_path}"
+    curl -sS -X "${_method}" "${url}" \
         --connect-timeout 5 --max-time 20 \
         -H "Content-Type: application/json" \
         -H "X-XSRF-Header: pingfederate" \
-        -d "$3" \
-        -u "${apiUsername}:${apiPassword}" 1> "${4}" 2> "${CURL_ERROR_FILE}"
+        -d "${_auth}" \
+        -u "${apiUsername}:${apiPassword}" 1> "${_outfile}" 2> "${CURL_ERROR_FILE}"
 
     if [ $? -ne 0 ]; then
         error "Failed to extract ${url}
-    Possble issues:
-      - Invalid URI (Must only be the base URI, example: https://host)
+    Possible issues:
+      - Invalid HOST:PORT
       - Invalid API Username or Password
       - PingFederate Admin API is not enabled
       - Network connectivity issues (i.e. vpn)
-      - Certificate issues (use ~/.curlrc with insecure option)"
+      - Certificate issues (use ~/.curlrc with 'insecure' option)"
     fi
+
+    case "${_outfile}" in
+        *.json)
+            jq . "${_outfile}" > /dev/null 2>&1
+            if [ $? -ne 0 ]; then
+                error "Failed to extract ${url}
+    Possible JSON issues:
+        - Authentication is redirected to a login page (i.e. PingOne AS)"
+            fi
+            ;;
+        *) ;;
+    esac
+
 }
 
-isValidVersion() {
-    version=$1
+# Validate the PingFederate version, erroring out if it does not meet the minimum required version
+validateVersion() {
+    curl_cmd GET "/version" "" "${EXPORT_DIR}/version.json"
 
-    printf "%s\n%s\n" "$MIN_PF_VERSION" "$version" > "$TMP_DIR/versions"
-    if [ "$(sort -V "$TMP_DIR/versions" | head -n1)" = "$MIN_PF_VERSION" ]; then
-        return 0 # Version is greater than or equal to min_version
+    pfVersion=$(grep -o '"version":"[^"]*"' "${EXPORT_DIR}/version.json" | sed 's/"version":"\([^"]*\)"/\1/')
+
+    printf "%s\n%s\n" "$MIN_PF_VERSION" "$pfVersion" > "$TMP_DIR/versions"
+    if [ "$(sort -V "$TMP_DIR/versions" | head -n1)" = "$pfVersion" ]; then
+        error "PingFederate version must be ${MIN_PF_VERSION} or higher.  Current Version: $pfVersion"
     else
-        return 1 # Version is less than min_version
+        printf "\r    Version: %s\n" "${pfVersion}"
     fi
 }
 
-echo
-echo "Exporting configuration..."
-echo "      URL: ${uri}"
-curl_cmd GET "/version" "" "${EXPORT_DIR}/version.json"
-
-pfVersion=$(grep -o '"version":"[^"]*"' "${EXPORT_DIR}/version.json" | sed 's/"version":"\([^"]*\)"/\1/')
-
-if ! isValidVersion "${pfVersion}"; then
-    error "PingFederate version must be ${MIN_PF_VERSION} or higher.  Current Version: $pfVersion"
-else
-    printf "\r  Version: %s\n" "${pfVersion}"
-fi
+printf "\nExporting configuration...\n    PingFederate Admin API: %s\n" "${pfUrl}"
+validateVersion
 
 curl_cmd GET "/oauth/clients" "" "${EXPORT_DIR}/oauth-clients.json"
 curl_cmd GET "/oauth/authServerSettings/scopes/commonScopes" "" "${EXPORT_DIR}/commonScopes.json"
@@ -272,7 +294,7 @@ cat << EOSUMMARY > "${SUMMARY_JSON}"
     "migPWSHA": "${MIG_PW_SHA}",
     "zipFile": "${ZIP_FILE}",
     "pingfederate": {
-        "uri": "${uri}",
+        "uri": "${pfUrl}",
         "apiUsername": "${apiUsername}"
     }
 }
