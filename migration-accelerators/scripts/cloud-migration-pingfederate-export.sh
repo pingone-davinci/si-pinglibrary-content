@@ -32,7 +32,7 @@ TMP_DIR=$(mktemp -d) &&
     DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
     SCRIPT="$0" &&
-    SCRIPT_VERSION="1.2.1" &&
+    SCRIPT_VERSION="1.2.2" &&
     CURL_ERROR_FILE="${TMP_DIR}/curl-error" && touch "${CURL_ERROR_FILE}" &&
     EXPORT_DIR="${TMP_DIR}/export/${PRODUCT}" && mkdir -p "${EXPORT_DIR}" &&
     KEYS_DIR="${EXPORT_DIR}/signingKeys" && mkdir -p "${KEYS_DIR}" &&
@@ -301,7 +301,8 @@ cat << EOSUMMARY > "${SUMMARY_JSON}"
     "zipFile": "${ZIP_FILE}",
     "pingfederate": {
         "uri": "${pfUrl}",
-        "apiUsername": "${apiUsername}"
+        "apiUsername": "${apiUsername}",
+        "version": "${pfVersion}"
     }
 }
 EOSUMMARY
