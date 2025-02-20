@@ -8,10 +8,11 @@
 #   https://library.pingidentity.com/page/cloud-migration
 #
 # The script will prompt for the following information:
-#  1. URI of the PingFederate Admin API
-#  2. API Username (Example: api-admin)
-#  3. API Password
-#  4. Password to encrypt signing certificates
+#  1. Host of the PingFederate Admin API (Example: localhost)
+#  2. Port of the PingFederate Admin API (Example: 443)
+#  3. API Username (Example: api-admin)
+#  4. API Password
+#  5. Password to encrypt signing certificates
 #
 # Copyright © 2024 Ping Identity Corporation
 #
@@ -31,7 +32,7 @@ TMP_DIR=$(mktemp -d) &&
     DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
     SCRIPT="$0" &&
-    SCRIPT_VERSION="1.2.0" &&
+    SCRIPT_VERSION="1.2.1" &&
     CURL_ERROR_FILE="${TMP_DIR}/curl-error" && touch "${CURL_ERROR_FILE}" &&
     EXPORT_DIR="${TMP_DIR}/export/${PRODUCT}" && mkdir -p "${EXPORT_DIR}" &&
     KEYS_DIR="${EXPORT_DIR}/signingKeys" && mkdir -p "${KEYS_DIR}" &&
@@ -255,6 +256,7 @@ curl_cmd GET "/oauth/authServerSettings/scopes/commonScopes" "" "${EXPORT_DIR}/c
 curl_cmd GET "/idp/spConnections" "" "${EXPORT_DIR}/idp-spConnections.json"
 curl_cmd GET "/idp/adapters" "" "${EXPORT_DIR}/idp-adapters.json"
 curl_cmd GET "/idp/adapters/descriptors" "" "${EXPORT_DIR}/idp-adapters-descriptors.json"
+curl_cmd GET "/authenticationPolicies/default" "" "${EXPORT_DIR}/auth-policies-default.json"
 
 curl_cmd GET "/keyPairs/signing" "" "${EXPORT_DIR}/signingKeys.json"
 
