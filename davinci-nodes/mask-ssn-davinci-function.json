@@ -1,0 +1,59 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "1z0rukcn40",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "customFunction",
+        "type": "trigger",
+        "properties": {
+          "nodeTitle": {
+            "value": "Mask SSN"
+          },
+          "nodeDescription": {
+            "value": "Mask US SSN"
+          },
+          "variableInputList": {
+            "value": [
+              {
+                "name": "ssn",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              {
+                "name": "maskChar",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            ]
+          },
+          "code": {
+            "value": "/**\n * Masks a given Social Security Number (SSN) by displaying only the last four digits.\n * \n * @param {Object} params - The input object containing the SSN.\n * @param {string} params.ssn - The Social Security Number to be masked.\n * @returns {Object|boolean} - Returns an object with the masked SSN if valid, otherwise returns false.\n */\nmodule.exports = maskSSN = async ({ params }) => {\n    // Extract 'ssn' and optional 'maskChar' from the input object\n    const { ssn, maskChar = '*' } = params;\n\n    // Validate that maskChar is a single character\n    const validMaskChar = typeof maskChar === 'string' && maskChar.length === 1 ? maskChar : '*';\n\n    // Remove all non-digit characters from the SSN input\n    const cleanedSSN = ssn.replace(/\\D/g, '');\n\n    // Ensure the cleaned SSN contains exactly 9 digits; otherwise, return false\n    if (cleanedSSN.length !== 9) {\n        return false;\n    }\n\n    // Extract the last four digits of the SSN\n    const lastFour = cleanedSSN.slice(-4);\n\n    // Generate masked portion using the provided or default mask character\n    const maskedSSN = `${validMaskChar.repeat(3)}-${validMaskChar.repeat(2)}-${lastFour}`;\n\n    // Return the masked SSN\n    return { maskedSSN };\n};\n"
+          },
+          "outputSchema": {
+            "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"maskedSSN\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
+          }
+        },
+        "idUnique": "sapuvf94rm"
+      },
+      "position": {
+        "x": 600,
+        "y": 450
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": []
+}
