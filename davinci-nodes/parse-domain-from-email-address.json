@@ -1,0 +1,54 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "lz0fkhodew",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "customFunction",
+        "type": "trigger",
+        "properties": {
+          "variableInputList": {
+            "value": [
+              {
+                "name": "email",
+                "preferredDataType": "string",
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              }
+            ]
+          },
+          "code": {
+            "value": "module.exports = a = async ({ params }) => {\n  const email = params.email;\n  if (!email || typeof email !== 'string' || email.trim() === '') {\n    return false;\n  }\n\n  const match = email.match(/^[^@]+@(.+)$/);\n  if (match && match[1]) {\n    return { 'domain': match[1].toLowerCase() };\n  }\n\n  return false;\n}\n"
+          },
+          "outputSchema": {
+            "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"domain\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
+          },
+          "nodeTitle": {
+            "value": "Parse Domain from Email"
+          },
+          "nodeDescription": {
+            "value": "Set email address to extract domain"
+          }
+        },
+        "idUnique": "4d5op33uxc"
+      },
+      "position": {
+        "x": 720,
+        "y": 240
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": []
+}
