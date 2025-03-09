@@ -12,7 +12,7 @@
 #  2. Port of the PingFederate Admin API (Example: 443)
 #  3. API Username (Example: api-admin)
 #  4. API Password
-#  5. Password to encrypt signing certificates
+#  5. Cloud Migration Key to encrypt signing certificates
 #
 # Copyright © 2024 Ping Identity Corporation
 #
@@ -32,7 +32,7 @@ TMP_DIR=$(mktemp -d) &&
     DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
     SCRIPT="$0" &&
-    SCRIPT_VERSION="1.2.2" &&
+    SCRIPT_VERSION="1.2.3" &&
     CURL_ERROR_FILE="${TMP_DIR}/curl-error" && touch "${CURL_ERROR_FILE}" &&
     EXPORT_DIR="${TMP_DIR}/export/${PRODUCT}" && mkdir -p "${EXPORT_DIR}" &&
     KEYS_DIR="${EXPORT_DIR}/signingKeys" && mkdir -p "${KEYS_DIR}" &&
@@ -81,7 +81,7 @@ check_command mktemp
 check_command uname
 
 # Function to generate a random alphanumeric string of length 12
-generate_password() {
+generate_key() {
     pw=""
 
     while true; do
@@ -111,12 +111,10 @@ echo "
 # 2. Port of the PingFederate Admin API (Example: 443)            #
 # 3. API Username (Example: api-admin)                            #
 # 4. API Password                                                 #
-# 5. Password to encrypt configuration                            #
+# 5. Cloud Migration Key to encrypt configuration                 #
 #                                                                 #
 # The script will then extract the configuration and signing keys #
 # and save them to a zip file in the current directory.           #
-# To protect the security of encrypted signing certs, a password  #
-# will be generated or you can enter one for each cert.           #
 ###################################################################
 "
 
@@ -142,51 +140,51 @@ echo "
 #   - PingFederate configuration                                  #
 #   - Signing Certificates                                        #
 #                                                                 #
-# A Migration Password will be required to protect and            #
+# A Cloud Migration Key will be required to protect and           #
 # validate the .zip file created by this script.                  #
 #                                                                 #
-# A password will be generated or you can enter one as long       #
-# as it meets the following policy.  To accept generated password #
-# simply press enter.  The password entered below will be         #
+# A key will be generated or you can enter one as long            #
+# as it meets the following policy.  To accept generated key      #
+# simply press enter.  The key entered below will be              #
 # displayed in summary so they can be copied for later use.       #
 #                                                                 #
-# PASSWORD POLICY: Must contain:                                  #
+# KEY POLICY: Must contain:                                       #
 #   - at least 8 characters                                       #
 #   - at least one uppercase letter                               #
 #   - at least one lowercase letter                               #
 #   - at least one numeric character                              #
 #                                                                 #
-# IMPORTANT: You will be later prompted for this password:        #
+# IMPORTANT: You will be later prompted for this key:             #
 #               - To upload the .zip file created by this tool    #
 #               - Import of any signing certificates              #
 #                 created in PingOne.                             #
 #                                                                 #
-#            Make note of this password as it will NOT be saved.  #
+#            Make note of this key as it will NOT be saved.       #
 ###################################################################
 "
 
-generatedPassword=$(generate_password)
-migPassword="${generatedPassword}"
+generatedKey=$(generate_key)
+migKey="${generatedKey}"
 
-# Prompt for Migration Password
+# Prompt for Cloud Migration Key
 while true; do
-    read -r -p "Enter a Migration password [${migPassword}] ? " migPassword
-    echo # For newline after the password input
+    read -r -p "Enter a Cloud Migration Key [${migKey}] ? " migKey
+    echo # For newline after the key input
 
-    if [ "${migPassword}" = "" ]; then
-        migPassword="${generatedPassword}"
+    if [ "${migKey}" = "" ]; then
+        migKey="${generatedKey}"
     else
-        generatedPassword="${migPassword}"
+        generatedKey="${migKey}"
     fi
 
-    if ! echo "$migPassword" | grep -q '[a-z]'; then
-        echo "Password must contain at least one lowercase letter."
-    elif ! echo "$migPassword" | grep -q '[A-Z]'; then
-        echo "Password must contain at least one uppercase letter."
-    elif ! echo "$migPassword" | grep -q '[0-9]'; then
-        echo "Password must contain at least one digit."
-    elif [[ ${#migPassword} -lt 8 ]]; then
-        echo "Password must be at least 8 characters long."
+    if ! echo "$migKey" | grep -q '[a-z]'; then
+        echo "Key must contain at least one lowercase letter."
+    elif ! echo "$migKey" | grep -q '[A-Z]'; then
+        echo "Key must contain at least one uppercase letter."
+    elif ! echo "$migKey" | grep -q '[0-9]'; then
+        echo "Key must contain at least one digit."
+    elif [[ ${#migKey} -lt 8 ]]; then
+        echo "Key must be at least 8 characters long."
     else
         break
     fi
@@ -268,11 +266,11 @@ for id in $(jq -r .items[].id "${EXPORT_DIR}/signingKeys.json"); do
         continue
     fi
 
-    curl_cmd POST "/keyPairs/signing/$id/pkcs12" "{\"password\":\"${migPassword}\"}" "${KEYS_DIR}/$id.p12"
+    curl_cmd POST "/keyPairs/signing/$id/pkcs12" "{\"password\":\"${migKey}\"}" "${KEYS_DIR}/$id.p12"
 
     grep -q "validation_error" "${KEYS_DIR}/$id.p12" || continue
 
-    echo "Password doesn't meet policy for ${subjectDN}.  Unable to export certificate."
+    echo "Key doesn't meet policy for ${subjectDN}.  Unable to export certificate."
     echo
 done
 
@@ -282,11 +280,11 @@ echo "
 #                  Cloud Migration Tool Summary
 #"
 printf "#    Configuration File: %-40s\n" "${ZIP_FILE}"
-printf "#    Migration Password: %s\n" "${migPassword}"
+printf "#   Cloud Migration Key: %s\n" "${migKey}"
 echo "###################################################################"
 
 SCRIPT_SHA=$($SHASUM "$0" | sed 's/ .*//')
-MIG_PW_SHA=$(printf "%s" "${migPassword}" | $SHASUM | sed 's/ .*//')
+MIG_KEY_SHA=$(printf "%s" "${migKey}" | $SHASUM | sed 's/ .*//')
 
 cat << EOSUMMARY > "${SUMMARY_JSON}"
 {
@@ -297,7 +295,7 @@ cat << EOSUMMARY > "${SUMMARY_JSON}"
         "minVersion": "${MIN_PF_VERSION}",
         "sha": "${SCRIPT_SHA}"
     },
-    "migPWSHA": "${MIG_PW_SHA}",
+    "migKeySHA": "${MIG_KEY_SHA}",
     "zipFile": "${ZIP_FILE}",
     "pingfederate": {
         "uri": "${pfUrl}",
