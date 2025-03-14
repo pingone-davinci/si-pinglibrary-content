@@ -1,0 +1,493 @@
+{
+  "companyId": "c9c4f0ee-a152-49b7-871e-60a54397c553",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "pingOneAuthenticationConnector",
+    "flowConnector",
+    "annotationConnector"
+  ],
+  "createdDate": 1741627084970,
+  "currentVersion": 22,
+  "customerId": "6518c953704fbb2d8f3f830a4ec68a8b",
+  "deployedDate": 1741627092533,
+  "description": "Redirect to Microsoft Entra ID for OIDC authentication",
+  "flowStatus": "enabled",
+  "isOutputSchemaSaved": false,
+  "name": "Entra ID OIDC Authentication Sample Flow",
+  "publishedVersion": 22,
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "pingOneFlow": true,
+    "logLevel": 2,
+    "validateOnSave": true
+  },
+  "timeouts": "null",
+  "trigger": {
+    "type": "AUTHENTICATION"
+  },
+  "updatedDate": 1741627092552,
+  "flowId": "5429a9e51d2b7565ae2d3812a6805039",
+  "versionId": 22,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "av3s2wb650",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 420,
+            "y": 390
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zr6mib7jr1",
+            "nodeType": "CONNECTION",
+            "connectionId": "c3e6a164bde107954e93f5c09f0c8bce",
+            "connectorId": "pingOneAuthenticationConnector",
+            "name": "PingOne Authentication",
+            "label": "PingOne Authentication",
+            "status": "configured",
+            "capabilityName": "returnSuccessResponseRedirect",
+            "type": "action",
+            "properties": {
+              "idleTimeout": {
+                "value": 43200
+              },
+              "userId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.dmefsfqo67.payload.output.user.id}}\",\n        \"tooltip\": \"{{local.dmefsfqo67.payload.output.user.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "authenticationMethods": {
+                "value": "mfa"
+              },
+              "customAuthenticationMethods": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"flow-connector.svg\",\n        \"url\": \"authenticationMethodReference(AMR)\",\n        \"data\": \"{{local.mfhxnowlgb.payload.output.authenticationMethodReference(AMR)}}\",\n        \"tooltip\": \"{{local.mfhxnowlgb.payload.output.authenticationMethodReference(AMR)}}\",\n        \"children\": [\n          {\n            \"text\": \"authenticationMethodReference(AMR)\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Mint Tokens"
+              },
+              "nodeDescription": {
+                "value": "Return to PingOne SSO to mint tokens"
+              }
+            }
+          },
+          "position": {
+            "x": 1530,
+            "y": 390
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "mfhxnowlgb",
+            "nodeType": "CONNECTION",
+            "connectionId": "2581eb287bb1d9bd29ae9886d675f89f",
+            "connectorId": "flowConnector",
+            "name": "Flow Connector",
+            "label": "Flow Connector",
+            "status": "configured",
+            "capabilityName": "startUiSubFlow",
+            "type": "trigger",
+            "properties": {
+              "subFlowId": {
+                "value": {
+                  "label": "PingID - Authentication Subflow",
+                  "value": "8307d4b7b326fb53b868ffd5ec6fd7bc"
+                }
+              },
+              "pingIdUserId": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.dmefsfqo67.payload.output.user.id}}\",\n        \"tooltip\": \"{{local.dmefsfqo67.payload.output.user.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "PingID"
+              },
+              "nodeDescription": {
+                "value": "Invoke PingID for the linked user"
+              },
+              "subFlowVersionId": {
+                "value": -1
+              }
+            }
+          },
+          "position": {
+            "x": 720,
+            "y": 390
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "rxbwvia1yb",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 840,
+            "y": 390
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "dmefsfqo67",
+            "nodeType": "CONNECTION",
+            "connectionId": "c3e6a164bde107954e93f5c09f0c8bce",
+            "connectorId": "pingOneAuthenticationConnector",
+            "name": "PingOne Authentication",
+            "label": "PingOne Authentication",
+            "status": "configured",
+            "capabilityName": "loginFirstFactor",
+            "type": "action",
+            "properties": {
+              "identityProvider": {
+                "value": "19e30871-477d-4672-b724-6ecba2959ee4"
+              },
+              "population": {
+                "value": "056100a3-7034-4766-a4a2-82a6d5e97c4c"
+              },
+              "idTokenHint": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"{{global.parameters.authorizationRequest.id_token_hint}}\"\n      }\n    ]\n  }\n]"
+              },
+              "policyPurpose": {
+                "value": "OAUTH"
+              },
+              "nodeTitle": {
+                "value": "Entra ID OIDC authentication"
+              },
+              "nodeDescription": {
+                "value": "Redirect to Entra ID for OIDC authentication"
+              }
+            }
+          },
+          "position": {
+            "x": 300,
+            "y": 390
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "xofs9gkyyh",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#4462edff"
+              },
+              "annotationTextColor": {
+                "value": "#ffffffff"
+              },
+              "annotation": {
+                "value": "Sample flow to redirect to Microsoft Entra ID for OIDC authentication"
+              },
+              "cornerRadius": {
+                "value": 8
+              },
+              "fontSize": {
+                "value": 16
+              },
+              "fontStyle": {
+                "value": "bold"
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "width": {
+                "value": 1500
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 222,
+            "y": 278
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0rfr0sfjer",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#ffffffff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "cornerRadius": {
+                "value": 8
+              },
+              "fontSize": {
+                "value": 14
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "annotation": {
+                "value": "Last updated: March 5, 2025"
+              }
+            },
+            "status": "configured"
+          },
+          "position": {
+            "x": 218,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "z4keyiao3i",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f7f789ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "cornerRadius": {
+                "value": 8
+              },
+              "fontSize": {
+                "value": 14
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "annotation": {
+                "value": "PingID - Authentication Subflow (a Template Flow)"
+              }
+            },
+            "status": "configured",
+            "idUnique": "y2y0ywizul"
+          },
+          "position": {
+            "x": 630,
+            "y": 480
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0oa87tjo1g",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#f7f789ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "cornerRadius": {
+                "value": 8
+              },
+              "fontSize": {
+                "value": 14
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              },
+              "annotation": {
+                "value": "Policy Purpose: OIDC Authentication"
+              }
+            },
+            "status": "configured",
+            "idUnique": "bxbi6fk5d7"
+          },
+          "position": {
+            "x": 214,
+            "y": 480
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "edj5r352wi",
+            "source": "av3s2wb650",
+            "target": "mfhxnowlgb"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "4460yrex6o",
+            "source": "mfhxnowlgb",
+            "target": "rxbwvia1yb"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0qmkbhn8hk",
+            "source": "dmefsfqo67",
+            "target": "av3s2wb650"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1gqvb7w5ad",
+            "source": "rxbwvia1yb",
+            "target": "zr6mib7jr1"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#e4e2e1",
+  "savedDate": 1741627084832,
+  "variables": [],
+  "connections": []
+}
