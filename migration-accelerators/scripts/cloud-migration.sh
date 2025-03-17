@@ -144,6 +144,7 @@ generate_password() {
 
 # Function to display the top menu
 top_menu() {
+    clear
     echo "##############################################################"
     echo "#  Cloud Migration Tool (v ${SCRIPT_VERSION})                            #"
     echo "##############################################################"
@@ -163,27 +164,21 @@ top_menu() {
 execute_choice() {
     case $1 in
         1)
-            clear
             display_terraform_details
             ;;
         2)
-            clear
             display_pingone_environment
             ;;
         3)
-            clear
             terraform_init
             ;;
         4)
-            clear
             terraform_plan
             ;;
         5)
-            clear
             terraform_apply
             ;;
         6)
-            clear
             terraform_destroy
             ;;
         Q | q)
