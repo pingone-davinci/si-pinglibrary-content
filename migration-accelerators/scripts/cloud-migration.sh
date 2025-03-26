@@ -27,9 +27,8 @@ TMP_DIR=$(mktemp -d) &&
     DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
     SCRIPT="$0" &&
-    SCRIPT_VERSION="1.0.1" &&
-    TERRAFORM_DIR="terraform" && mkdir -p "${TERRAFORM_DIR}" &&
-    TERRAFORM_PLAN="${TERRAFORM_DIR}/migration.tf.json" &&
+    SCRIPT_VERSION="1.3.0" &&
+    TERRAFORM_DIR="terraform" &&
     TERRAFORM="terraform -chdir=${TERRAFORM_DIR}" &&
     CURL_ERROR_FILE="${TMP_DIR}/curl-error" && touch "${CURL_ERROR_FILE}" &&
     EXPORT_DIR="${TMP_DIR}/export/${PRODUCT}" && mkdir -p "${EXPORT_DIR}" &&
@@ -84,8 +83,10 @@ display_terraform_details() {
     echo "#  Terraform Details                      #"
     echo "###########################################"
 
-    cat "${TERRAFORM_PLAN}" | jq -r '[
-  "  Applications: \(.resource.pingone_application | length)",
+    cat "${TERRAFORM_DIR}/pingone_application.tf.json" | jq -r '[
+  "  Applications: \(.resource.pingone_application | length)"
+] | .[]'
+    cat "${TERRAFORM_DIR}/pingone_key.tf.json" | jq -r '[
   " Signing Certs: \(.resource.pingone_key | length)"
 ] | .[]'
 
@@ -99,8 +100,10 @@ display_pingone_environment() {
 
     PINGONE_URL=$(echo 'local.pingone_auth_url' | ${TERRAFORM} console | tr -d '"')
 
-    cat "${TERRAFORM_PLAN}" | jq -r --arg pingoneUrl "$PINGONE_URL" '[
-  "             PingOne URL: " + $pingoneUrl,
+    cat "${TERRAFORM_DIR}/locals.tf.json" | jq -r --arg pingoneUrl "$PINGONE_URL" '[
+  "             PingOne URL: " + $pingoneUrl
+] | .[]'
+    cat "${TERRAFORM_DIR}/variable.tf.json" | jq -r --arg pingoneUrl "$PINGONE_URL" '[
   "          Environment ID: \(.variable.pingone_environment_id.default)",
   "               Client ID: \(.variable.pingone_client_id.default)"
 ] | .[]'
