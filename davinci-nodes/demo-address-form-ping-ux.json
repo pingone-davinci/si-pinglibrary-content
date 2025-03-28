@@ -1,0 +1,291 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "ddruog7l0t",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "title": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Address\"\n      }\n    ]\n  }\n]"
+          },
+          "textOne": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Please provide your mailing address\"\n      }\n    ]\n  }\n]"
+          },
+          "nodeTitle": {
+            "value": "Address Form"
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              },
+              {
+                "propertyName": "streetAddress",
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "value": "",
+                "hashedVisibility": false
+              },
+              {
+                "propertyName": "city",
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "value": "",
+                "hashedVisibility": false
+              },
+              {
+                "propertyName": "state",
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "value": "",
+                "hashedVisibility": false,
+                "displayName": "State"
+              },
+              {
+                "propertyName": "country",
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "value": "",
+                "hashedVisibility": false
+              },
+              {
+                "propertyName": "zip",
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "value": "",
+                "hashedVisibility": false
+              }
+            ]
+          },
+          "customHTML": {
+            "value": "<div class=\"end-user-nano\">\n        <div\n            class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0\">\n            <div style=\"max-width: 400px; width: 100%\">\n                <div class=\"card shadow mb-5\">\n                    <main aria-labelledby=\"title\">\n                        <div class=\"card-body p-5 d-flex flex-column\">\n                            <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n\n                            {{#if title}}\n                            <h1 id=\"title\" class=\"text-center mb-4\">{{title}}</h1>\n                            {{/if}}\n\n                            {{#if textOne}}\n                            <p class=\"text-muted text-center\">{{textOne}}</p>\n                            {{/if}}\n\n                            <!-- Generic Error Message -->\n                            <p id=\"feedback\" data-id=\"feedback\" class=\"text-danger mdi mdi-alert-circle\"\n                                data-skcomponent=\"skerror\"></p>\n\n                            <!-- Field Validation Error Messages -->\n                            <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"streetAddress\"\n                                data-skcomponent=\"skerrormessage\">\n                            </p>\n                            <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"city\"\n                                data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n                            <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"state\"\n                                data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n                            <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"zip\"\n                                data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n                            <p class=\"text-danger mdi mdi-alert-circle\" data-skerrorid=\"country\"\n                                data-skcomponent=\"skerrormessage\" aria-live=\"assertive\"></p>\n\n                            <form id=\"addressForm\" data-id=\"addressForm\" class=\"form\">\n                                <div class=\"mb-4 p-0\">\n                                    <div class=\"mb-4 form-floating\">\n                                        <input id=\"streetAddress\" data-id=\"streetAddress\" class=\"form-control\"\n                                            type=\"text\" name=\"streetAddress\" placeholder=\"Street Address\"\n                                            aria-required=\"true\" autocomplete=\"address-line1\"\n                                            aria-describedby=\"streetAddressLabel\" />\n                                        <label id=\"streetAddressLabel\" data-id=\"streetAddressLabel\" class=\"form-label\"\n                                            for=\"streetAddress\">Street Address</label>\n                                    </div>\n                                    <div class=\"mb-4 form-floating\" style=\"flex:2\">\n                                        <input id=\"city\" data-id=\"city\" class=\"form-control\" type=\"text\" name=\"city\"\n                                            placeholder=\"City\" autocomplete=\"address-line2\" required=\"true\"\n                                            aria-describedby=\"cityLabel\" />\n                                        <label id=\"cityLabel\" data-id=\"cityLabel\" class=\"form-label\"\n                                            for=\"city\">City</label>\n                                    </div>\n                                    <div style=\"display:flex\">\n                                        <div class=\"mb-4 form-floating\" style=\"flex:1\">\n                                            <input id=\"state\" data-id=\"state\" class=\"form-control\" type=\"text\"\n                                                name=\"state\" placeholder=\"State\" autocomplete=\"address-line1\"\n                                                aria-describedby=\"stateLabel\" />\n                                            <label id=\"stateLabel\" data-id=\"stateLabel\" class=\"form-label\"\n                                                for=\"state\">State</label>\n                                        </div>\n                                        <div class=\"mb-4 form-floating ms-3\" style=\"flex:1\">\n                                            <input id=\"zip\" data-id=\"zip\" class=\"form-control\" type=\"text\" name=\"zip\"\n                                                placeholder=\"ZIP Code\" autocomplete=\"postal-code\"\n                                                aria-describedby=\"zipLabel\" />\n                                            <label id=\"zipLabel\" data-id=\"zipLabel\" class=\"form-label\" for=\"zip\">ZIP\n                                                Code</label>\n                                        </div>\n                                    </div>\n                                    <div class=\"mb-4 form-floating\">\n                                        <input id=\"country\" data-id=\"country\" class=\"form-control\" type=\"text\"\n                                            name=\"country\" placeholder=\"Country\" autocomplete=\"country\"\n                                            aria-describedby=\"countryLabel\" />\n                                        <label id=\"countryLabel\" data-id=\"countryLabel\" class=\"form-label\"\n                                            for=\"country\">Country</label>\n                                    </div>\n                                </div>\n\n                                <div class=\"d-flex flex-column\">\n                                    {{#if submitButtonLabel}}\n                                    <button id=\"submitBtn\" data-id=\"submitBtn\" class=\"btn btn-primary mb-3\"\n                                        type=\"submit\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\"\n                                        data-skform=\"addressForm\" data-skbuttonvalue=\"SUBMIT\">\n                                        {{submitButtonLabel}}\n                                    </button>\n                                    {{/if}}\n                                    {{#if cancelButtonLabel}}\n                                    <button id=\"cancelBtn\" data-id=\"cancelBtn\" class=\"btn btn-link\"\n                                        data-skcomponent=\"skbutton\" data-skbuttontype=\"next-event\"\n                                        data-skform=\"emailForm\" data-skbuttonvalue=\"CANCEL\">\n                                        {{cancelButtonLabel}}\n                                    </button>\n                                    {{/if}}\n                                </div>\n\n                            </form>\n                        </div>\n                    </main>\n                </div>\n            </div>\n        </div>\n    </div>"
+          },
+          "customCSS": {
+            "value": ""
+          },
+          "customScript": {
+            "value": "const setFieldFocus = (id) => {\r\n    const element = document.getElementById(id);\r\n    if (element) {\r\n        element.focus();\r\n    }\r\n}\r\n\r\nconst start = () => {\r\n    setFieldFocus(\"streetAddress\");\r\n}\r\n\r\nif (document.readyState === \"loading\") {\r\n    // Loading hasn't finished yet\r\n    document.addEventListener(\"DOMContentLoaded\", start);\r\n} else {\r\n    // `DOMContentLoaded` has already fired\r\n    start();\r\n}"
+          },
+          "validationRules": {
+            "value": [
+              {
+                "propertyName": "streetAddress",
+                "rules": [
+                  {
+                    "ruleName": "presence",
+                    "message": "Enter your street address"
+                  }
+                ]
+              },
+              {
+                "propertyName": "city",
+                "rules": [
+                  {
+                    "ruleName": "presence",
+                    "message": "Enter your city"
+                  }
+                ]
+              },
+              {
+                "propertyName": "state",
+                "rules": [
+                  {
+                    "ruleName": "presence",
+                    "message": "Enter your state"
+                  }
+                ]
+              },
+              {
+                "propertyName": "zip",
+                "rules": [
+                  {
+                    "ruleName": "presence",
+                    "message": "Enter your zip code"
+                  }
+                ]
+              },
+              {
+                "propertyName": "country",
+                "rules": [
+                  {
+                    "ruleName": "presence",
+                    "message": "Enter your country"
+                  }
+                ]
+              }
+            ]
+          },
+          "nodeDescription": {
+            "value": "Collect Address Form"
+          },
+          "sktemplate": {
+            "uiId": "285c9d55f6886242da17a6dcb6a504da",
+            "createdDate": 1694687041166,
+            "customerId": "f3e47d945ae971a4b4142ec75012d155",
+            "description": "",
+            "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"submitButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Submit Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"cancelButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Cancel Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}",
+            "name": "Standard Form",
+            "outputSchema": null,
+            "script": "",
+            "style": "",
+            "template": "",
+            "updatedDate": 1694690201685,
+            "validationRules": [],
+            "version": "1.0",
+            "visibility": "private",
+            "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
+            "value": "285c9d55f6886242da17a6dcb6a504da"
+          },
+          "inputSchema": {
+            "value": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"title\": {\n      \"type\": \"string\",\n      \"displayName\": \"Title\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"textOne\": {\n      \"type\": \"string\",\n      \"displayName\": \"Text One\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"submitButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Submit Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    },\n    \"cancelButtonLabel\": {\n      \"type\": \"string\",\n      \"displayName\": \"Cancel Button Label\",\n      \"preferredControlType\": \"textField\",\n      \"enableParameters\": true\n    }\n  }\n}"
+          },
+          "outputSchema": {
+            "value": null
+          },
+          "buttonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
+          },
+          "cancelButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Cancel\"\n      }\n    ]\n  }\n]"
+          },
+          "submitButtonLabel": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
+          }
+        },
+        "idUnique": "ybtu6fvvhv"
+      },
+      "position": {
+        "x": 900,
+        "y": 510
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "46boj8jkrt",
+        "nodeType": "CONNECTION",
+        "connectionId": "de650ca45593b82c49064ead10b9fe17",
+        "connectorId": "functionsConnector",
+        "name": "Functions",
+        "label": "Functions",
+        "status": "configured",
+        "capabilityName": "AEqualsMultipleB",
+        "type": "trigger",
+        "properties": {
+          "leftValueA": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"buttonValue\",\n        \"data\": \"{{local.ddruog7l0t.payload.output.buttonValue}}\",\n        \"tooltip\": \"{{local.ddruog7l0t.payload.output.buttonValue}}\",\n        \"children\": [\n          {\n            \"text\": \"buttonValue\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+          },
+          "rightValueB": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"submit\"\n      }\n    ]\n  }\n]"
+          },
+          "nodeTitle": {
+            "value": "Address Button Action"
+          },
+          "rightValueMultiple": {
+            "value": [
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"SUBMIT\"\n      }\n    ]\n  }\n]",
+                "id": "vgii63uk2p"
+              },
+              {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"CANCEL\"\n      }\n    ]\n  }\n]",
+                "id": "3a7tpbhtep"
+              }
+            ]
+          },
+          "nodeDescription": {
+            "value": "Check which button was clicked"
+          }
+        },
+        "isDisabled": false,
+        "idUnique": "rqhbbrkqra"
+      },
+      "position": {
+        "x": 1200,
+        "y": 510
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "ltqqqc18ql",
+        "nodeType": "EVAL"
+      },
+      "position": {
+        "x": 1020,
+        "y": 510
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": [
+    {
+      "data": {
+        "id": "vyzj8qsm4d",
+        "source": "ddruog7l0t",
+        "target": "ltqqqc18ql"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    },
+    {
+      "data": {
+        "id": "ktogeud30h",
+        "source": "ltqqqc18ql",
+        "target": "46boj8jkrt"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "group": "edges",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": true,
+      "classes": ""
+    }
+  ]
+}
