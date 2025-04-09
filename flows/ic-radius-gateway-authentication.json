@@ -1,5 +1,5 @@
 {
-  "companyId": "3ffaeb94-4544-4c0a-8eb8-8062762700db",
+  "companyId": "6304a142-087e-43ad-aecd-4c5c2720c3c5",
   "authTokenExpireIds": [],
   "connectorIds": [
     "functionsConnector",
@@ -10,10 +10,10 @@
     "nodeConnector",
     "pingOneMfaConnector"
   ],
-  "createdDate": 1699879260309,
-  "currentVersion": 3,
-  "customerId": "389ebd95c0ba4d084d76122bafc9d7d1",
-  "deployedDate": 1699879263666,
+  "createdDate": 1743945647174,
+  "currentVersion": 21,
+  "customerId": "656c678ea20f19d8845f5ca18a79fafe",
+  "deployedDate": 1743945656249,
   "description": "Imported on Wed Aug 30 2023 11:52:37 GMT+0000 (Coordinated Universal Time)",
   "flowStatus": "enabled",
   "inputSchemaCompiled": {
@@ -52,7 +52,7 @@
   "isInputSchemaSaved": true,
   "isOutputSchemaSaved": false,
   "name": "RADIUS Gateway - Authentication  ",
-  "publishedVersion": 3,
+  "publishedVersion": 21,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": "",
@@ -62,9 +62,9 @@
     "useBetaAlgorithm": true
   },
   "timeouts": "null",
-  "updatedDate": 1699879263671,
-  "flowId": "08071fce06cde3a30c0eae74d9b2a815",
-  "versionId": 3,
+  "updatedDate": 1743945656284,
+  "flowId": "ece1b622b2afc01de4eb27f259c13bcc",
+  "versionId": 21,
   "graphData": {
     "elements": {
       "nodes": [
@@ -116,8 +116,8 @@
             }
           },
           "position": {
-            "x": 3450,
-            "y": 390
+            "x": 3840,
+            "y": 510
           },
           "group": "nodes",
           "removed": false,
@@ -162,7 +162,7 @@
           },
           "position": {
             "x": 570,
-            "y": 3330
+            "y": 3432.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -177,7 +177,7 @@
           "data": {
             "id": "l9ey6m4i93",
             "nodeType": "CONNECTION",
-            "connectionId": "11007e63e739eb5545cf8293570d6f01",
+            "connectionId": "c4dc0ef8bda993814ddb55b24a802bcf",
             "connectorId": "pingOneIntegrationsConnector",
             "name": "PingOne RADIUS Gateway",
             "label": "PingOne RADIUS Gateway",
@@ -200,8 +200,8 @@
             "idUnique": "p3o3jiywuk"
           },
           "position": {
-            "x": 3840,
-            "y": 780
+            "x": 4203.124511367373,
+            "y": 882.04627995243
           },
           "group": "nodes",
           "removed": false,
@@ -241,7 +241,7 @@
           },
           "position": {
             "x": 780,
-            "y": 390
+            "y": 492.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -264,7 +264,7 @@
           },
           "position": {
             "x": 960,
-            "y": 390
+            "y": 492.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -286,8 +286,8 @@
             }
           },
           "position": {
-            "x": 3600,
-            "y": 930
+            "x": 3980.442418049896,
+            "y": 1049.0578499405376
           },
           "group": "nodes",
           "removed": false,
@@ -304,8 +304,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 3600,
-            "y": 660
+            "x": 3980.442418049896,
+            "y": 770.7052332936917
           },
           "group": "nodes",
           "removed": false,
@@ -354,26 +354,8 @@
             }
           },
           "position": {
-            "x": 3060,
-            "y": 390
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "9i22ds8ncz",
-            "nodeType": "EVAL"
-          },
-          "position": {
-            "x": 3270,
-            "y": 390
+            "x": 2640,
+            "y": 510
           },
           "group": "nodes",
           "removed": false,
@@ -403,7 +385,7 @@
           },
           "position": {
             "x": 3192.6838678085646,
-            "y": 2829.731540353043
+            "y": 2932.3904936943045
           },
           "group": "nodes",
           "removed": false,
@@ -445,7 +427,7 @@
           },
           "position": {
             "x": 2848.884708700251,
-            "y": 2829.731540353043
+            "y": 2932.3904936943045
           },
           "group": "nodes",
           "removed": false,
@@ -463,7 +445,7 @@
           },
           "position": {
             "x": 2338.8616231577034,
-            "y": 3007.0294784580497
+            "y": 3109.6884317993113
           },
           "group": "nodes",
           "removed": false,
@@ -480,8 +462,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 3600,
-            "y": 420
+            "x": 3980.442418049896,
+            "y": 520.1878783115304
           },
           "group": "nodes",
           "removed": false,
@@ -530,7 +512,7 @@
           },
           "position": {
             "x": 2161.2863904836236,
-            "y": 2803.285451190865
+            "y": 2905.9444045321266
           },
           "group": "nodes",
           "removed": false,
@@ -545,7 +527,7 @@
           "data": {
             "id": "rfab529w1q",
             "nodeType": "CONNECTION",
-            "connectionId": "11007e63e739eb5545cf8293570d6f01",
+            "connectionId": "c4dc0ef8bda993814ddb55b24a802bcf",
             "connectorId": "pingOneIntegrationsConnector",
             "name": "PingOne RADIUS Gateway",
             "label": "PingOne RADIUS Gateway",
@@ -569,7 +551,7 @@
           },
           "position": {
             "x": 2505.0855495919373,
-            "y": 3014.8541644882885
+            "y": 3117.51311782955
           },
           "group": "nodes",
           "removed": false,
@@ -587,8 +569,8 @@
             "label": "Evaluator"
           },
           "position": {
-            "x": 3600,
-            "y": 510
+            "x": 3980.442418049896,
+            "y": 603.6936633055842
           },
           "group": "nodes",
           "removed": false,
@@ -631,7 +613,7 @@
                 ]
               },
               "code": {
-                "value": "// Write your code here\n// Supported language: Javascript \nmodule.exports = a = async ({params}) => {\n\tconst devices =  params.userDevices;\n\tdevices.map(device =>{\n\t    return device.nickname;\n    })\n\n    const charLimit = 253;\n    var newLine ;\n    switch(params.newLineChar){\n        case \"\\\\n\" : newLine = \"\\n\";\n        break;\n        case \"\\\\r\\n\" : newLine = \"\\r\\n\";\n        break;\n        case \"<br>\" : newLine = \"<br>\";\n        break;\n        default : newLine = \" \";\n        \n    }\n\n\n    // Create a string of devices for the user to select from.\n    // Appropriate message is shown if the user selected wrong device/input.\n    var message ;\n    params.wrongDevice ? message = \"Authentication failed. Try again with a different device:\" + newLine : message = \"Select the authenticating device you want to use:\" + newLine ;\n    var length = 0;\n    for (var i = 0 ; i < devices.length ; i++){\n        message += i + 1 + \". \" + devices[i].nickname + newLine;\n        length += devices[i].nickname.length;\n    }\n\n\n\n    // Create a message for the user to select an authentication device from a list\n    // If the message is larger than 253 characters, apply a truncating algorithm.\n    if (message.length <= charLimit) {\n        return {'message': message}\n    } else {\n        var truncatedMessage = getTruncatedMessage(message, devices, charLimit, length);\n        return {'message': truncatedMessage} \n    }\n\n\n    /* \n        Function to truncate the device list message in case it exceeds 253 characters, to match the RADIUS Reply-Message limit.\n        The algorithm will truncate the device nicknames to a prefix ending with \"..\". \n        Here is an example to explain the change (it does not reach the 253 limit, but helps visualize the modified text):\n        \n        The function will modify the following device list message input:\n        \"Select the authenticating device you want to use:\n        1. My email device \n        2. My mobile app device \n        3. My SMS device\"\n\n        The output of the function will be:\n        \"Select the authenticating device you want to use: \n        1. My email.. \n        2. My mobil.. \n        3. My SMS d..\"\n    */\n    function getTruncatedMessage(originalMessage, devices, charLimit, sumOfNicknames) {\n        var totalDevices = devices.length;\n        var fixedSize;\n        var truncatedMessage;\n        params.wrongDevice ? fixedSize = (originalMessage.length + \"Authentication failed. Try again with a different device:\".length) - sumOfNicknames : fixedSize = originalMessage.length - sumOfNicknames;\n        var availableLengthForNickNames = charLimit - fixedSize;\n        var availableLengthForNickName = availableLengthForNickNames / totalDevices;\n        var totalRemainder = availableLengthForNickNames % totalDevices;\n        params.wrongDevice ? truncatedMessage = \"Authentication failed. Try again with a different device:\" + newLine : truncatedMessage = \"Select the authenticating device you want to use:\" + newLine ;\n        var i = 1;\n\n        for (const device of devices) {\n            var nickname = device.nickname;\n            var truncatedNickName = getTruncatedNickName(nickname, totalRemainder, availableLengthForNickName);\n            truncatedMessage += i + \". \" + truncatedNickName + newLine ;\n            \n            if(nickname != null && nickname.length > availableLengthForNickNames && totalRemainder > 0) {\n                totalRemainder = totalRemainder - 1;\n            }\n            i++;\n        }\n        return truncatedMessage;\n    }\n\n    function getTruncatedNickName(nickname, totalRemainder, availableLengthForNickName) {\n        if (totalRemainder > 0) {\n            availableLengthForNickName = availableLengthForNickName + 1;\n        }\n\n        if (nickname == null || nickname.length <= availableLengthForNickName) {\n            return nickname;\n        }\n\n        return nickname.substring(0, availableLengthForNickName - 2) + \"..\";\n    }\n\n}"
+                "value": "// Write your code here\n// Supported language: Javascript \nmodule.exports = a = async ({params}) => {\n\tconst devices =  params.userDevices;\n\tconst devicesWithNickname = devices.filter(device => 'nickname' in device);\n\n    const charLimit = 253;\n    var newLine ;\n    switch(params.newLineChar){\n        case \"\\\\n\" : newLine = \"\\n\";\n        break;\n        case \"\\\\r\\n\" : newLine = \"\\r\\n\";\n        break;\n        case \"<br>\" : newLine = \"<br>\";\n        break;\n        default : newLine = \" \";\n        \n    }\n\n\n    // Create a string of devices for the user to select from.\n    // Appropriate message is shown if the user selected wrong device/input.\n    var message ;\n    params.wrongDevice ? message = \"Authentication failed. Try again with a different device:\" + newLine : message = \"Select the authenticating device you want to use:\" + newLine ;\n    var length = 0;\n    for (var i = 0 ; i < devicesWithNickname.length ; i++){\n        message += i + 1 + \". \" + devicesWithNickname[i].nickname + newLine;\n        length += devicesWithNickname[i].nickname.length;\n    }\n\n\n\n    // Create a message for the user to select an authentication device from a list\n    // If the message is larger than 253 characters, apply a truncating algorithm.\n    if (message.length <= charLimit) {\n        return {'message': message}\n    } else {\n        var truncatedMessage = getTruncatedMessage(message, devicesWithNickname, charLimit, length);\n        return {'message': truncatedMessage} \n    }\n\n\n    /* \n        Function to truncate the device list message in case it exceeds 253 characters, to match the RADIUS Reply-Message limit.\n        The algorithm will truncate the device nicknames to a prefix ending with \"..\". \n        Here is an example to explain the change (it does not reach the 253 limit, but helps visualize the modified text):\n        \n        The function will modify the following device list message input:\n        \"Select the authenticating device you want to use:\n        1. My email device \n        2. My mobile app device \n        3. My SMS device\"\n\n        The output of the function will be:\n        \"Select the authenticating device you want to use: \n        1. My email.. \n        2. My mobil.. \n        3. My SMS d..\"\n    */\n    function getTruncatedMessage(originalMessage, devices, charLimit, sumOfNicknames) {\n        var totalDevices = devices.length;\n        var fixedSize;\n        var truncatedMessage;\n        params.wrongDevice ? fixedSize = (originalMessage.length + \"Authentication failed. Try again with a different device:\".length) - sumOfNicknames : fixedSize = originalMessage.length - sumOfNicknames;\n        var availableLengthForNickNames = charLimit - fixedSize;\n        var availableLengthForNickName = availableLengthForNickNames / totalDevices;\n        var totalRemainder = availableLengthForNickNames % totalDevices;\n        params.wrongDevice ? truncatedMessage = \"Authentication failed. Try again with a different device:\" + newLine : truncatedMessage = \"Select the authenticating device you want to use:\" + newLine ;\n        var i = 1;\n\n        for (const device of devices) {\n            var nickname = device.nickname;\n            var truncatedNickName = getTruncatedNickName(nickname, totalRemainder, availableLengthForNickName);\n            truncatedMessage += i + \". \" + truncatedNickName + newLine ;\n            \n            if(nickname != null && nickname.length > availableLengthForNickNames && totalRemainder > 0) {\n                totalRemainder = totalRemainder - 1;\n            }\n            i++;\n        }\n        return truncatedMessage;\n    }\n\n    function getTruncatedNickName(nickname, totalRemainder, availableLengthForNickName) {\n        if (totalRemainder > 0) {\n            availableLengthForNickName = availableLengthForNickName + 1;\n        }\n\n        if (nickname == null || nickname.length <= availableLengthForNickName) {\n            return nickname;\n        }\n\n        return nickname.substring(0, availableLengthForNickName - 2) + \"..\";\n    }\n\n}"
               },
               "outputSchema": {
                 "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"message\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
@@ -643,7 +625,7 @@
           },
           "position": {
             "x": 1083.6019158194176,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -661,7 +643,7 @@
           },
           "position": {
             "x": 880.1098523273542,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -680,7 +662,7 @@
           },
           "position": {
             "x": 1287.0939793114812,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -695,7 +677,7 @@
           "data": {
             "id": "skeg5x4nra",
             "nodeType": "CONNECTION",
-            "connectionId": "11007e63e739eb5545cf8293570d6f01",
+            "connectionId": "c4dc0ef8bda993814ddb55b24a802bcf",
             "connectorId": "pingOneIntegrationsConnector",
             "name": "PingOne RADIUS Gateway",
             "label": "PingOne RADIUS Gateway",
@@ -716,7 +698,7 @@
           },
           "position": {
             "x": 1461.5157480189641,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -754,7 +736,7 @@
                 ]
               },
               "code": {
-                "value": "// Write your code here\n// Supported language: Javascript \nmodule.exports = a = async ({params}) => {\n\tconst devices =  params.userDevices;\n\tdevices.map(device =>{\n\t\treturn device.id;\n\t} )\n\n\tvar index = params.text;\n\treturn {'deviceId': devices[index - 1].id}\n\n}"
+                "value": "// Write your code here\n// Supported language: Javascript \nmodule.exports = a = async ({params}) => {\n\tconst devices =  params.userDevices;\n\tconst devicesWithNickname = devices.filter(device => 'nickname' in device);\n\n\tvar index = params.text;\n\treturn {'deviceId': devicesWithNickname[index - 1].id}\n\n}"
               },
               "outputSchema": {
                 "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"deviceId\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
@@ -767,7 +749,7 @@
           },
           "position": {
             "x": 1810.3592854339302,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -785,7 +767,7 @@
           },
           "position": {
             "x": 1635.937516726447,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -826,7 +808,7 @@
           },
           "position": {
             "x": 2159.202822848896,
-            "y": 2142.51972074148
+            "y": 2245.1786740827415
           },
           "group": "nodes",
           "removed": false,
@@ -849,7 +831,7 @@
           },
           "position": {
             "x": 1955.7107593568326,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -868,7 +850,7 @@
           },
           "position": {
             "x": 2333.624591556379,
-            "y": 2142.51972074148
+            "y": 2245.1786740827415
           },
           "group": "nodes",
           "removed": false,
@@ -898,7 +880,7 @@
           },
           "position": {
             "x": 2508.0463602638624,
-            "y": 2142.51972074148
+            "y": 2245.1786740827415
           },
           "group": "nodes",
           "removed": false,
@@ -922,7 +904,7 @@
           },
           "position": {
             "x": 2333.624591556379,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -988,7 +970,7 @@
           },
           "position": {
             "x": 2508.0463602638624,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -1020,7 +1002,7 @@
             }
           },
           "position": {
-            "x": 3060,
+            "x": 3510,
             "y": 720
           },
           "group": "nodes",
@@ -1051,7 +1033,7 @@
           },
           "position": {
             "x": 2827.8196028942475,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -1069,7 +1051,7 @@
           },
           "position": {
             "x": 2682.4681289713453,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -1086,8 +1068,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 3600,
-            "y": 570
+            "x": 3980.442418049896,
+            "y": 687.199448299638
           },
           "group": "nodes",
           "removed": false,
@@ -1109,8 +1091,8 @@
             }
           },
           "position": {
-            "x": 2880,
-            "y": 390
+            "x": 2460,
+            "y": 510
           },
           "group": "nodes",
           "removed": false,
@@ -1157,7 +1139,7 @@
           },
           "position": {
             "x": 233.1531683472079,
-            "y": 214
+            "y": 316.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -1172,7 +1154,7 @@
           "data": {
             "id": "vhe1lah3av",
             "nodeType": "CONNECTION",
-            "connectionId": "11007e63e739eb5545cf8293570d6f01",
+            "connectionId": "c4dc0ef8bda993814ddb55b24a802bcf",
             "connectorId": "pingOneIntegrationsConnector",
             "name": "PingOne RADIUS Gateway",
             "label": "PingOne RADIUS Gateway",
@@ -1195,8 +1177,8 @@
             "idUnique": "6xqxll6ba1"
           },
           "position": {
-            "x": 4560,
-            "y": 1170
+            "x": 4805.876944114098,
+            "y": 1283.5315738950114
           },
           "group": "nodes",
           "removed": false,
@@ -1244,7 +1226,7 @@
           },
           "position": {
             "x": 236.0076747576176,
-            "y": 2249.8655040080007
+            "y": 2352.5244573492623
           },
           "group": "nodes",
           "removed": false,
@@ -1292,7 +1274,7 @@
           },
           "position": {
             "x": 240.56336706658337,
-            "y": 1619.2544146190312
+            "y": 1721.9133679602928
           },
           "group": "nodes",
           "removed": false,
@@ -1307,9 +1289,9 @@
           "data": {
             "id": "3cez1rtb0g",
             "nodeType": "CONNECTION",
-            "connectionId": "86ab6fb5e6ec04080cb72ca50f93f6d5",
+            "connectionId": "7cfb64c2d10f3d4ebe0515639d9c8e6f",
             "connectorId": "pingOneMfaConnector",
-            "name": "PingID (new)",
+            "name": "PingID",
             "label": "PingID",
             "status": "configured",
             "capabilityName": "createDeviceAuthenticationPingID",
@@ -1327,8 +1309,8 @@
             }
           },
           "position": {
-            "x": 2730,
-            "y": 390
+            "x": 2310,
+            "y": 510
           },
           "group": "nodes",
           "removed": false,
@@ -1343,9 +1325,9 @@
           "data": {
             "id": "yzgln4txae",
             "nodeType": "CONNECTION",
-            "connectionId": "86ab6fb5e6ec04080cb72ca50f93f6d5",
+            "connectionId": "7cfb64c2d10f3d4ebe0515639d9c8e6f",
             "connectorId": "pingOneMfaConnector",
-            "name": "PingID (new)",
+            "name": "PingID",
             "label": "PingID",
             "status": "configured",
             "capabilityName": "deviceSelectDeviceAuthentication",
@@ -1364,7 +1346,7 @@
           },
           "position": {
             "x": 2159.202822848896,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -1379,7 +1361,7 @@
           "data": {
             "id": "hewviuo8v0",
             "nodeType": "CONNECTION",
-            "connectionId": "11007e63e739eb5545cf8293570d6f01",
+            "connectionId": "c4dc0ef8bda993814ddb55b24a802bcf",
             "connectorId": "pingOneIntegrationsConnector",
             "name": "PingOne RADIUS Gateway",
             "label": "PingOne RADIUS Gateway",
@@ -1403,7 +1385,7 @@
           },
           "position": {
             "x": 687.1994482996379,
-            "y": 3451.572446420889
+            "y": 3554.2313997621504
           },
           "group": "nodes",
           "removed": false,
@@ -1432,8 +1414,8 @@
             }
           },
           "position": {
-            "x": 3060,
-            "y": 600
+            "x": 2640,
+            "y": 690
           },
           "group": "nodes",
           "removed": false,
@@ -1467,7 +1449,7 @@
           },
           "position": {
             "x": 381.0115699881075,
-            "y": 3451.572446420889
+            "y": 3554.2313997621504
           },
           "group": "nodes",
           "removed": false,
@@ -1485,7 +1467,7 @@
           },
           "position": {
             "x": 492.3526166468459,
-            "y": 3451.572446420889
+            "y": 3554.2313997621504
           },
           "group": "nodes",
           "removed": false,
@@ -1515,7 +1497,7 @@
           },
           "position": {
             "x": 2508.0463602638624,
-            "y": 2026.238541603158
+            "y": 2128.8974949444196
           },
           "group": "nodes",
           "removed": false,
@@ -1532,8 +1514,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 3600,
-            "y": 750
+            "x": 3980.442418049896,
+            "y": 854.2110182877454
           },
           "group": "nodes",
           "removed": false,
@@ -1581,7 +1563,7 @@
           },
           "position": {
             "x": 390,
-            "y": 390
+            "y": 492.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -1603,8 +1585,8 @@
             }
           },
           "position": {
-            "x": 4020,
-            "y": 960
+            "x": 4370.13608135548,
+            "y": 1076.8931116052222
           },
           "group": "nodes",
           "removed": false,
@@ -1622,7 +1604,7 @@
           },
           "position": {
             "x": 570,
-            "y": 390
+            "y": 492.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -1666,8 +1648,8 @@
             }
           },
           "position": {
-            "x": 3840,
-            "y": 960
+            "x": 4203.124511367373,
+            "y": 1076.8931116052222
           },
           "group": "nodes",
           "removed": false,
@@ -1702,8 +1684,8 @@
             }
           },
           "position": {
-            "x": 4230,
-            "y": 960
+            "x": 4537.147651343587,
+            "y": 1076.8931116052222
           },
           "group": "nodes",
           "removed": false,
@@ -1725,8 +1707,8 @@
             }
           },
           "position": {
-            "x": 4410,
-            "y": 960
+            "x": 4668.566174282267,
+            "y": 1063.8343421640811
           },
           "group": "nodes",
           "removed": false,
@@ -1760,7 +1742,7 @@
           },
           "position": {
             "x": 390,
-            "y": 1260
+            "y": 1362.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -1775,7 +1757,7 @@
           "data": {
             "id": "cu07xydkss",
             "nodeType": "CONNECTION",
-            "connectionId": "11007e63e739eb5545cf8293570d6f01",
+            "connectionId": "c4dc0ef8bda993814ddb55b24a802bcf",
             "connectorId": "pingOneIntegrationsConnector",
             "name": "PingOne RADIUS Gateway",
             "label": "PingOne RADIUS Gateway",
@@ -1793,7 +1775,7 @@
           },
           "position": {
             "x": 720,
-            "y": 1260
+            "y": 1362.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -1812,7 +1794,7 @@
           },
           "position": {
             "x": 900,
-            "y": 1260
+            "y": 1362.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -1827,9 +1809,9 @@
           "data": {
             "id": "aw0bwo2z67",
             "nodeType": "CONNECTION",
-            "connectionId": "86ab6fb5e6ec04080cb72ca50f93f6d5",
+            "connectionId": "7cfb64c2d10f3d4ebe0515639d9c8e6f",
             "connectorId": "pingOneMfaConnector",
-            "name": "PingID (new)",
+            "name": "PingID",
             "label": "PingID",
             "status": "configured",
             "capabilityName": "readDeviceAuthentication",
@@ -1846,7 +1828,7 @@
           },
           "position": {
             "x": 1080,
-            "y": 1260
+            "y": 1362.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -1876,7 +1858,7 @@
           },
           "position": {
             "x": 1260,
-            "y": 1260
+            "y": 1362.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -1918,7 +1900,7 @@
           },
           "position": {
             "x": 1410,
-            "y": 1260
+            "y": 1362.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -1936,7 +1918,7 @@
           },
           "position": {
             "x": 510,
-            "y": 1260
+            "y": 1362.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -1955,7 +1937,7 @@
           },
           "position": {
             "x": 1620,
-            "y": 1260
+            "y": 1362.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -1985,7 +1967,7 @@
           },
           "position": {
             "x": 1770,
-            "y": 1260
+            "y": 1362.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -2033,7 +2015,7 @@
           },
           "position": {
             "x": 240,
-            "y": 1080
+            "y": 1182.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -2062,8 +2044,8 @@
             }
           },
           "position": {
-            "x": 3810,
-            "y": 330
+            "x": 4175.289249702688,
+            "y": 436.68209331747664
           },
           "group": "nodes",
           "removed": false,
@@ -2093,7 +2075,7 @@
           },
           "position": {
             "x": 1410,
-            "y": 1470
+            "y": 1572.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -2122,8 +2104,8 @@
             }
           },
           "position": {
-            "x": 3810,
-            "y": 480
+            "x": 4175.289249702688,
+            "y": 575.8584016408996
           },
           "group": "nodes",
           "removed": false,
@@ -2138,9 +2120,9 @@
           "data": {
             "id": "kgldd96fx8",
             "nodeType": "CONNECTION",
-            "connectionId": "86ab6fb5e6ec04080cb72ca50f93f6d5",
+            "connectionId": "7cfb64c2d10f3d4ebe0515639d9c8e6f",
             "connectorId": "pingOneMfaConnector",
-            "name": "PingID (new)",
+            "name": "PingID",
             "label": "PingID",
             "status": "configured",
             "capabilityName": "validateOtpDeviceAuthentication",
@@ -2160,7 +2142,7 @@
           },
           "position": {
             "x": 1794.732479436723,
-            "y": 2462.9003347370694
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -2190,7 +2172,7 @@
           },
           "position": {
             "x": 1966.5627353486116,
-            "y": 2462.9003347370694
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -2210,7 +2192,7 @@
             "name": "Functions",
             "label": "Functions",
             "status": "configured",
-            "capabilityName": "AEqualsB",
+            "capabilityName": "AEqualsMultipleB",
             "type": "trigger",
             "properties": {
               "leftValueA": {
@@ -2221,42 +2203,24 @@
               },
               "nodeTitle": {
                 "value": "Final authentication status"
+              },
+              "rightValueMultiple": {
+                "value": [
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"EXTRA_OTP_REQUIRED\"\n      }\n    ]\n  }\n]",
+                    "id": "yvj6qmvea5"
+                  },
+                  {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"COMPLETED\"\n      }\n    ]\n  }\n]",
+                    "id": "k5xk8s0tn3"
+                  }
+                ]
               }
             }
           },
           "position": {
             "x": 2510.6918790695922,
-            "y": 2462.9003347370694
-          },
-          "group": "nodes",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": false,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "vmy4xgpsa0",
-            "nodeType": "EVAL",
-            "label": "Evaluator",
-            "properties": {
-              "undefined": {
-                "value": "allTriggersFalse"
-              },
-              "rfab529w1q": {
-                "value": "allTriggersFalse"
-              },
-              "sfsxen9y1r": {
-                "value": "allTriggersFalse"
-              }
-            }
-          },
-          "position": {
-            "x": 2682.9821030847365,
-            "y": 2471.5938569729647
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -2299,7 +2263,7 @@
           },
           "position": {
             "x": 2167.031367245815,
-            "y": 2462.9003347370694
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -2317,7 +2281,7 @@
           },
           "position": {
             "x": 2310.2232471723887,
-            "y": 2462.9003347370694
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -2332,7 +2296,7 @@
           "data": {
             "id": "d0uv061t6p",
             "nodeType": "CONNECTION",
-            "connectionId": "11007e63e739eb5545cf8293570d6f01",
+            "connectionId": "c4dc0ef8bda993814ddb55b24a802bcf",
             "connectorId": "pingOneIntegrationsConnector",
             "name": "PingOne RADIUS Gateway",
             "label": "PingOne RADIUS Gateway",
@@ -2353,7 +2317,7 @@
           },
           "position": {
             "x": 1078.773079803854,
-            "y": 2462.9003347370694
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -2376,7 +2340,7 @@
           },
           "position": {
             "x": 1250.6033357157426,
-            "y": 2462.9003347370694
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -2394,7 +2358,7 @@
           },
           "position": {
             "x": 1622.9022235248344,
-            "y": 2462.9003347370694
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -2437,7 +2401,7 @@
           },
           "position": {
             "x": 1479.7103435982606,
-            "y": 2462.9003347370694
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -2470,7 +2434,7 @@
           },
           "position": {
             "x": 1473.6880722669962,
-            "y": 2803.285451190865
+            "y": 2905.9444045321266
           },
           "group": "nodes",
           "removed": false,
@@ -2504,11 +2468,16 @@
                     "name": "devices",
                     "preferredDataType": "object",
                     "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"devices\",\n        \"data\": \"{{local.3cez1rtb0g.payload.output.rawResponse._embedded.devices}}\",\n        \"tooltip\": \"{{local.3cez1rtb0g.payload.output.rawResponse._embedded.devices}}\",\n        \"children\": [\n          {\n            \"text\": \"devices\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  },
+                  {
+                    "name": "status",
+                    "preferredDataType": "string",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"STATUS\",\n        \"data\": \"{{global.variables.STATUS}}\",\n        \"tooltip\": \"{{global.variables.STATUS}}\",\n        \"children\": [\n          {\n            \"text\": \"STATUS\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
                   }
                 ]
               },
               "code": {
-                "value": "// Write your code here\n// Supported language: Javascript \nmodule.exports = a = async ({params}) => {\n\n\tconst devices =  params.devices;\n\tfor (var i = 0 ; i < devices.length ; i++){\n\t\tif (devices[i].id == params.userSelectedDevice) {\n\t\t\tconst type = devices[i].type;\n\t\t\tvar message = \"\";\n\t\t\tswitch(type){\n\t\t\t\tcase \"PINGID_MOBILE\" : message = \"Open PingID mobile app to get a one-time passcode, and enter it here.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"PINGID_DESKTOP\" : message = \"Open PingID desktop app to get a one-time passcode, and enter it here.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"EMAIL\" : message = \"Enter the one-time passcode sent to your Email.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"VOICE\" : message = \"Enter the one-time passcode you received by voice call.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"SMS\" : message = \"Enter the one-time passcode sent to you by SMS.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"TOTP\" : message = \"Open your authenticator app to get a one-time passcode, and enter it here.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"OATH_TOKEN\" : message = \"Enter the one-time passcode displayed on your token.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"YUBIKEY\" : message = \"To generate and enter a one-time passcode, insert your YubiKey and tap it.\"\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\treturn {'message' : message} \n\t\t}\n\t}\n}"
+                "value": "// Write your code here\n// Supported language: Javascript \nmodule.exports = a = async ({params}) => {\n\n\tconst devices =  params.devices;\n\tfor (var i = 0 ; i < devices.length ; i++){\n\t\tif (devices[i].id == params.userSelectedDevice) {\n\t\t\tconst type = devices[i].type;\n\t\t\tvar message = \"\";\n\t\t\tswitch(type){\n\t\t\t\tcase \"PINGID_MOBILE\" : message = \"Open PingID mobile app to get a one-time passcode, and enter it here.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"PINGID_DESKTOP\" : message = \"Open PingID desktop app to get a one-time passcode, and enter it here.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"EMAIL\" : message = \"Enter the one-time passcode sent to your Email.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"VOICE\" : message = \"Enter the one-time passcode you received by voice call.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"SMS\" : message = \"Enter the one-time passcode sent to you by SMS.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"TOTP\" : message = \"Open your authenticator app to get a one-time passcode, and enter it here.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"OATH_TOKEN\" : params.status === \"EXTRA_OTP_REQUIRED\" ? message = \"Let's make sure your token is working correctly. Press the button on your token to get a new passcode and enter it here.\" : message = \"Enter the one-time passcode displayed on your token.\"\n\t\t\t\tbreak;\n\t\t\t\tcase \"YUBIKEY\" : message = \"To generate and enter a one-time passcode, insert your YubiKey and tap it.\"\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\treturn {'message' : message} \n\t\t}\n\t}\n}"
               },
               "outputSchema": {
                 "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"message\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
@@ -2521,7 +2490,7 @@
           },
           "position": {
             "x": 735.1125679800768,
-            "y": 2462.9003347370694
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -2540,7 +2509,7 @@
           },
           "position": {
             "x": 878.3044479066507,
-            "y": 2462.9003347370694
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -2569,8 +2538,8 @@
             }
           },
           "position": {
-            "x": 3810,
-            "y": 630
+            "x": 4175.289249702688,
+            "y": 742.8699716290072
           },
           "group": "nodes",
           "removed": false,
@@ -2603,7 +2572,7 @@
           },
           "position": {
             "x": 362.81368017098504,
-            "y": 2462.9003347370694
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -2621,7 +2590,7 @@
           },
           "position": {
             "x": 534.6439360828736,
-            "y": 2462.9003347370694
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -2650,8 +2619,8 @@
             }
           },
           "position": {
-            "x": 4560,
-            "y": 900
+            "x": 4805.876944114098,
+            "y": 1008.9100342313486
           },
           "group": "nodes",
           "removed": false,
@@ -2669,7 +2638,7 @@
           },
           "position": {
             "x": 2690.208173727183,
-            "y": 2829.731540353043
+            "y": 2932.3904936943045
           },
           "group": "nodes",
           "removed": false,
@@ -2688,7 +2657,7 @@
           },
           "position": {
             "x": 3034.0073328354965,
-            "y": 2829.731540353043
+            "y": 2932.3904936943045
           },
           "group": "nodes",
           "removed": false,
@@ -2712,7 +2681,7 @@
           },
           "position": {
             "x": 2338.8616231577034,
-            "y": 2892.4759745167908
+            "y": 2995.1349278580524
           },
           "group": "nodes",
           "removed": false,
@@ -2727,7 +2696,7 @@
           "data": {
             "id": "32zqjfb169",
             "nodeType": "CONNECTION",
-            "connectionId": "11007e63e739eb5545cf8293570d6f01",
+            "connectionId": "c4dc0ef8bda993814ddb55b24a802bcf",
             "connectorId": "pingOneIntegrationsConnector",
             "name": "PingOne RADIUS Gateway",
             "label": "PingOne RADIUS Gateway",
@@ -2748,7 +2717,7 @@
           },
           "position": {
             "x": 2505.0855495919373,
-            "y": 2829.731540353043
+            "y": 2932.3904936943045
           },
           "group": "nodes",
           "removed": false,
@@ -2792,7 +2761,7 @@
           },
           "position": {
             "x": 298.70395663574436,
-            "y": 282.02085452832824
+            "y": 384.6798078695899
           },
           "group": "nodes",
           "removed": false,
@@ -2840,7 +2809,7 @@
           },
           "position": {
             "x": 720,
-            "y": 270
+            "y": 372.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -2884,8 +2853,8 @@
             "idUnique": "ej7bxyw49m"
           },
           "position": {
-            "x": 2640,
-            "y": 270
+            "x": 2340,
+            "y": 390
           },
           "group": "nodes",
           "removed": false,
@@ -2929,8 +2898,8 @@
             "idUnique": "17bkk1giqk"
           },
           "position": {
-            "x": 3720,
-            "y": 240
+            "x": 4091.7834647086343,
+            "y": 353.176308323423
           },
           "group": "nodes",
           "removed": false,
@@ -2974,8 +2943,8 @@
             "idUnique": "1jqtnihvos"
           },
           "position": {
-            "x": 3720,
-            "y": 390
+            "x": 4091.7834647086343,
+            "y": 492.35261664684583
           },
           "group": "nodes",
           "removed": false,
@@ -3019,8 +2988,8 @@
             "idUnique": "q32d51hynp"
           },
           "position": {
-            "x": 3720,
-            "y": 540
+            "x": 4091.7834647086343,
+            "y": 659.3641866349534
           },
           "group": "nodes",
           "removed": false,
@@ -3064,8 +3033,8 @@
             "idUnique": "bqzirerwih"
           },
           "position": {
-            "x": 3720,
-            "y": 690
+            "x": 4091.7834647086343,
+            "y": 798.5404949583763
           },
           "group": "nodes",
           "removed": false,
@@ -3109,8 +3078,8 @@
             "idUnique": "5h4hp2t2p3"
           },
           "position": {
-            "x": 3750,
-            "y": 870
+            "x": 4119.618726373319,
+            "y": 993.3873266111684
           },
           "group": "nodes",
           "removed": false,
@@ -3154,8 +3123,8 @@
             "idUnique": "xvcsmukteh"
           },
           "position": {
-            "x": 4470,
-            "y": 810
+            "x": 4723.490482214999,
+            "y": 899.0614183658836
           },
           "group": "nodes",
           "removed": false,
@@ -3199,8 +3168,8 @@
             "idUnique": "h8x3b57fkl"
           },
           "position": {
-            "x": 3720,
-            "y": 1050
+            "x": 4091.7834647086343,
+            "y": 1160.398896599276
           },
           "group": "nodes",
           "removed": false,
@@ -3245,7 +3214,7 @@
           },
           "position": {
             "x": 300,
-            "y": 1140
+            "y": 1242.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -3290,7 +3259,7 @@
           },
           "position": {
             "x": 600,
-            "y": 1140
+            "y": 1242.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -3335,7 +3304,7 @@
           },
           "position": {
             "x": 1650,
-            "y": 1140
+            "y": 1242.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -3379,8 +3348,8 @@
             "idUnique": "55lw3i5ngp"
           },
           "position": {
-            "x": 3360,
-            "y": 270
+            "x": 3720,
+            "y": 390
           },
           "group": "nodes",
           "removed": false,
@@ -3425,7 +3394,7 @@
           },
           "position": {
             "x": 960,
-            "y": 1140
+            "y": 1242.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -3470,7 +3439,7 @@
           },
           "position": {
             "x": 310.0601491311656,
-            "y": 2327.2558462716615
+            "y": 2429.914799612923
           },
           "group": "nodes",
           "removed": false,
@@ -3515,7 +3484,7 @@
           },
           "position": {
             "x": 971.2123781856149,
-            "y": 2327.2558462716615
+            "y": 2429.914799612923
           },
           "group": "nodes",
           "removed": false,
@@ -3560,7 +3529,7 @@
           },
           "position": {
             "x": 1711.7028747265979,
-            "y": 2327.2558462716615
+            "y": 2429.914799612923
           },
           "group": "nodes",
           "removed": false,
@@ -3604,8 +3573,8 @@
             "idUnique": "b0u26lx6cs"
           },
           "position": {
-            "x": 2743.1003520515387,
-            "y": 2327.2558462716615
+            "x": 2760,
+            "y": 2502.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -3650,7 +3619,7 @@
           },
           "position": {
             "x": 2399.3011929432255,
-            "y": 2909.0698078395767
+            "y": 3011.7287611808383
           },
           "group": "nodes",
           "removed": false,
@@ -3695,7 +3664,7 @@
           },
           "position": {
             "x": 2055.502033834912,
-            "y": 2697.5010945421527
+            "y": 2800.1600478834143
           },
           "group": "nodes",
           "removed": false,
@@ -3740,7 +3709,7 @@
           },
           "position": {
             "x": 2372.8551037810475,
-            "y": 2697.5010945421527
+            "y": 2800.1600478834143
           },
           "group": "nodes",
           "removed": false,
@@ -3785,7 +3754,7 @@
           },
           "position": {
             "x": 3060.4534219976745,
-            "y": 2697.5010945421527
+            "y": 2800.1600478834143
           },
           "group": "nodes",
           "removed": false,
@@ -3830,7 +3799,7 @@
           },
           "position": {
             "x": 1367.9037156182842,
-            "y": 2697.5010945421527
+            "y": 2800.1600478834143
           },
           "group": "nodes",
           "removed": false,
@@ -3875,7 +3844,7 @@
           },
           "position": {
             "x": 298.70395663574436,
-            "y": 1677.3950041881922
+            "y": 1780.0539575294538
           },
           "group": "nodes",
           "removed": false,
@@ -3920,7 +3889,7 @@
           },
           "position": {
             "x": 2246.413707202638,
-            "y": 1677.3950041881922
+            "y": 1780.0539575294538
           },
           "group": "nodes",
           "removed": false,
@@ -3965,7 +3934,7 @@
           },
           "position": {
             "x": 2420.8354759101207,
-            "y": 1909.957362464836
+            "y": 2012.6163158060976
           },
           "group": "nodes",
           "removed": false,
@@ -4010,7 +3979,7 @@
           },
           "position": {
             "x": 2711.5384237559256,
-            "y": 1677.3950041881922
+            "y": 1780.0539575294538
           },
           "group": "nodes",
           "removed": false,
@@ -4055,7 +4024,7 @@
           },
           "position": {
             "x": 2042.921643710574,
-            "y": 2026.238541603158
+            "y": 2128.8974949444196
           },
           "group": "nodes",
           "removed": false,
@@ -4099,8 +4068,8 @@
             "idUnique": "3spok6v4k6"
           },
           "position": {
-            "x": 2970,
-            "y": 480
+            "x": 2550,
+            "y": 600
           },
           "group": "nodes",
           "removed": false,
@@ -4145,7 +4114,7 @@
           },
           "position": {
             "x": 1350,
-            "y": 1380
+            "y": 1482.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -4190,7 +4159,7 @@
           },
           "position": {
             "x": 627.4132190773012,
-            "y": 2327.2558462716615
+            "y": 2429.914799612923
           },
           "group": "nodes",
           "removed": false,
@@ -4235,7 +4204,7 @@
           },
           "position": {
             "x": 1367.9037156182842,
-            "y": 2327.2558462716615
+            "y": 2429.914799612923
           },
           "group": "nodes",
           "removed": false,
@@ -4280,7 +4249,7 @@
           },
           "position": {
             "x": 2769.5464412137167,
-            "y": 2697.5010945421527
+            "y": 2800.1600478834143
           },
           "group": "nodes",
           "removed": false,
@@ -4325,7 +4294,7 @@
           },
           "position": {
             "x": 792.8989679736128,
-            "y": 1677.3950041881922
+            "y": 1780.0539575294538
           },
           "group": "nodes",
           "removed": false,
@@ -4370,7 +4339,7 @@
           },
           "position": {
             "x": 1345.2345688806422,
-            "y": 1677.3950041881922
+            "y": 1780.0539575294538
           },
           "group": "nodes",
           "removed": false,
@@ -4415,7 +4384,7 @@
           },
           "position": {
             "x": 1694.0781062956082,
-            "y": 1677.3950041881922
+            "y": 1780.0539575294538
           },
           "group": "nodes",
           "removed": false,
@@ -4442,7 +4411,7 @@
                 "value": [
                   {
                     "name": "USER_DEVICE_LIST",
-                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"devices\",\n        \"data\": \"{{local.3cez1rtb0g.payload.output.rawResponse._embedded.devices}}\",\n        \"tooltip\": \"{{local.3cez1rtb0g.payload.output.rawResponse._embedded.devices}}\",\n        \"children\": [\n          {\n            \"text\": \"devices\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"moustache\",\n        \"data\": \"{{local.c3qck8onhr.payload.output.usableDevices}}\",\n        \"name\": \"usableDevices\",\n        \"children\": [\n          {\n            \"text\": \"\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
                     "key": 0.6399113685658793,
                     "label": "USER_DEVICE_LIST (object - flowInstance)",
                     "type": "object",
@@ -4457,7 +4426,7 @@
           },
           "position": {
             "x": 734.7583784044518,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -4491,7 +4460,7 @@
           },
           "position": {
             "x": 385.91484098948587,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -4509,7 +4478,7 @@
           },
           "position": {
             "x": 531.2663149123882,
-            "y": 1822.7464781110946
+            "y": 1925.4054314523562
           },
           "group": "nodes",
           "removed": false,
@@ -4556,7 +4525,7 @@
           },
           "position": {
             "x": 214,
-            "y": 3201.0550914387277
+            "y": 3303.7140447799893
           },
           "group": "nodes",
           "removed": false,
@@ -4589,8 +4558,8 @@
             "idUnique": "lkiknsbhvv"
           },
           "position": {
-            "x": 4290,
-            "y": 1230
+            "x": 4531.255404450435,
+            "y": 1338.455881827744
           },
           "group": "nodes",
           "removed": false,
@@ -4607,8 +4576,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 4380,
-            "y": 1230
+            "x": 4613.641866349534,
+            "y": 1338.455881827744
           },
           "group": "nodes",
           "removed": false,
@@ -4639,7 +4608,7 @@
           },
           "position": {
             "x": 1170,
-            "y": 600
+            "y": 702.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -4669,8 +4638,8 @@
             "idUnique": "t6ygkthdof"
           },
           "position": {
-            "x": 3840,
-            "y": 1140
+            "x": 4203.124511367373,
+            "y": 1243.9046815933298
           },
           "group": "nodes",
           "removed": false,
@@ -4703,8 +4672,8 @@
             "idUnique": "wv8u3jgsno"
           },
           "position": {
-            "x": 3450,
-            "y": 780
+            "x": 3841.266109726473,
+            "y": 882.04627995243
           },
           "group": "nodes",
           "removed": false,
@@ -4734,8 +4703,8 @@
             "idUnique": "8a634s8auq"
           },
           "position": {
-            "x": 2848.884708700251,
-            "y": 2406.5941137581954
+            "x": 2880,
+            "y": 2592.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -4769,7 +4738,7 @@
           },
           "position": {
             "x": 2240.6246579701574,
-            "y": 3147.084610299178
+            "y": 3249.74356364044
           },
           "group": "nodes",
           "removed": false,
@@ -4799,8 +4768,8 @@
             "idUnique": "c9yum01oq4"
           },
           "position": {
-            "x": 2848.884708700251,
-            "y": 2591.716737893441
+            "x": 2880,
+            "y": 2742.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -4844,8 +4813,8 @@
             "idUnique": "wk6z373ny8"
           },
           "position": {
-            "x": 2743.1003520515387,
-            "y": 2512.378470406907
+            "x": 2760,
+            "y": 2652.6589533412616
           },
           "group": "nodes",
           "removed": false,
@@ -4862,8 +4831,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 3270,
-            "y": 390
+            "x": 3630,
+            "y": 720
           },
           "group": "nodes",
           "removed": false,
@@ -4881,7 +4850,7 @@
           },
           "position": {
             "x": 1622.9022235248344,
-            "y": 2462.9003347370694
+            "y": 2565.559288078331
           },
           "group": "nodes",
           "removed": false,
@@ -4899,7 +4868,7 @@
           },
           "position": {
             "x": 2338.8616231577034,
-            "y": 2892.4759745167908
+            "y": 2995.1349278580524
           },
           "group": "nodes",
           "removed": false,
@@ -4917,7 +4886,7 @@
           },
           "position": {
             "x": 2338.8616231577034,
-            "y": 3007.0294784580497
+            "y": 3109.6884317993113
           },
           "group": "nodes",
           "removed": false,
@@ -4934,8 +4903,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 3600,
-            "y": 660
+            "x": 3980.442418049896,
+            "y": 770.7052332936917
           },
           "group": "nodes",
           "removed": false,
@@ -4963,7 +4932,7 @@
                 "value": "#000000"
               },
               "annotation": {
-                "value": "PingOne RADIUS Gateway - Authentication Flow                                                                                                                                                                                                  Created by: Ping Identity                                                           Version: 1.1                                                                           Release Date: November 13, 2023                                          Documentation: https://support.pingidentity.com/s/marketplace-integration/a7iDo0000010xIcIAI/radius-gateway-authentication"
+                "value": "PingOne RADIUS Gateway - Authentication Flow                                                                                                                                                                                                  Created by: Ping Identity                                                           Version: 1.3                                                                           Release Date: April 2025                                        Documentation: https://support.pingidentity.com/s/marketplace-integration/a7iDo0000010xIcIAI/radius-gateway-authentication"
               },
               "width": {
                 "value": 600
@@ -4994,7 +4963,7 @@
           },
           "position": {
             "x": 214,
-            "y": 3702.08980140305
+            "y": 3804.7487547443116
           },
           "group": "nodes",
           "removed": false,
@@ -5009,9 +4978,9 @@
           "data": {
             "id": "by6ndtakey",
             "nodeType": "CONNECTION",
-            "connectionId": "86ab6fb5e6ec04080cb72ca50f93f6d5",
+            "connectionId": "7cfb64c2d10f3d4ebe0515639d9c8e6f",
             "connectorId": "pingOneMfaConnector",
-            "name": "PingID (new)",
+            "name": "PingID",
             "label": "PingOne MFA",
             "status": "configured",
             "capabilityName": "evalPolicyPingID",
@@ -5043,8 +5012,8 @@
             "idUnique": "j948h5u8ip"
           },
           "position": {
-            "x": 1770,
-            "y": 390
+            "x": 1470,
+            "y": 510
           },
           "group": "nodes",
           "removed": false,
@@ -5073,8 +5042,8 @@
             "idUnique": "98qptvm8vx"
           },
           "position": {
-            "x": 1950,
-            "y": 390
+            "x": 1650,
+            "y": 510
           },
           "group": "nodes",
           "removed": false,
@@ -5126,8 +5095,8 @@
             "idUnique": "dbj9s02619"
           },
           "position": {
-            "x": 2250,
-            "y": 390
+            "x": 1950,
+            "y": 510
           },
           "group": "nodes",
           "removed": false,
@@ -5156,8 +5125,8 @@
             }
           },
           "position": {
-            "x": 1260,
-            "y": 390
+            "x": 1140,
+            "y": 510
           },
           "group": "nodes",
           "removed": false,
@@ -5182,8 +5151,8 @@
             }
           },
           "position": {
-            "x": 1500,
-            "y": 390
+            "x": 1290,
+            "y": 510
           },
           "group": "nodes",
           "removed": false,
@@ -5200,8 +5169,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 2430,
-            "y": 420
+            "x": 2130,
+            "y": 540
           },
           "group": "nodes",
           "removed": false,
@@ -5230,8 +5199,8 @@
             }
           },
           "position": {
-            "x": 2593,
-            "y": 596
+            "x": 2310,
+            "y": 720
           },
           "group": "nodes",
           "removed": false,
@@ -5248,8 +5217,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 2430,
-            "y": 510
+            "x": 2130,
+            "y": 630
           },
           "group": "nodes",
           "removed": false,
@@ -5278,8 +5247,8 @@
             }
           },
           "position": {
-            "x": 2593,
-            "y": 716
+            "x": 2310,
+            "y": 840
           },
           "group": "nodes",
           "removed": false,
@@ -5296,8 +5265,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 2430,
-            "y": 630
+            "x": 2130,
+            "y": 750
           },
           "group": "nodes",
           "removed": false,
@@ -5314,8 +5283,8 @@
             "nodeType": "EVAL"
           },
           "position": {
-            "x": 2430,
-            "y": 630
+            "x": 2130,
+            "y": 750
           },
           "group": "nodes",
           "removed": false,
@@ -5362,8 +5331,8 @@
             "idUnique": "qxh22vy9kc"
           },
           "position": {
-            "x": 1680,
-            "y": 270
+            "x": 1380,
+            "y": 390
           },
           "group": "nodes",
           "removed": false,
@@ -5407,8 +5376,8 @@
             "idUnique": "6tzz8q7xdn"
           },
           "position": {
-            "x": 4470,
-            "y": 1050
+            "x": 4723.490482214999,
+            "y": 1146.22080406318
           },
           "group": "nodes",
           "removed": false,
@@ -5438,8 +5407,539 @@
             "idUnique": "0aztupdyvp"
           },
           "position": {
-            "x": 2070,
-            "y": 630
+            "x": 1770,
+            "y": 750
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "dlfnzdkh9w",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 2700,
+            "y": 2742.6589533412616
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6gl134td9z",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 2700,
+            "y": 2592.6589533412616
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "sja10o31m8",
+            "nodeType": "CONNECTION",
+            "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "w7gaqagwiz"
+              }
+            },
+            "idUnique": "lwdiqzerw3"
+          },
+          "position": {
+            "x": 2880,
+            "y": 2442.6589533412616
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "gq6mu1p1d5",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 2695.3459395347963,
+            "y": 2442.6589533412616
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "axbizkfggz",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#e4e6e9ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Resync Oath Token"
+              },
+              "width": {
+                "value": 240
+              },
+              "height": {
+                "value": 0
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured",
+            "idUnique": "e9vnuz4h78"
+          },
+          "position": {
+            "x": 2760,
+            "y": 2382.6589533412616
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "c3qck8onhr",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Functions",
+            "status": "configured",
+            "capabilityName": "customFunction",
+            "type": "trigger",
+            "properties": {
+              "outputSchema": {
+                "value": "{\n  \"output\":{\n    \"type\": \"object\",\n    \"properties\": {\n      \"usableDevices\": {\n        \"type\": \"array\",\n        \"items\":{\n          \"type\":\"string\"\n        }\n      },\n      \"count\":{\n        \"type\": \"number\"\n      },\n      \"canChangeDevice\": {\n        \"type\": \"boolean\"\n      }\n    }\n  }\n}\n"
+              },
+              "code": {
+                "value": "module.exports = a = async ({params}) => {\n\tconsole.log('params: ', params)\n\t\n    var usableDevices = JSON.parse(params.devices);\n\n    usableDevices = usableDevices.filter(device => {\n    const timestampUtc = device.coolDownExpiresAt;\n\n    // Keep devices with no cooldown timestamp\n    if (timestampUtc === undefined) {\n        return true;\n    }\n\n    // Convert to Date object\n    const targetDate = new Date(timestampUtc);\n    const now = new Date();\n\n    // Keep the device if the cooldown has expired\n    return now > targetDate;\n});\n\n\n    return { usableDevices: usableDevices, count: usableDevices.length, canChangeDevice: usableDevices.length > 1 }\n}"
+              },
+              "variableInputList": {
+                "value": [
+                  {
+                    "name": "devices",
+                    "preferredDataType": "string",
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"devices\",\n        \"data\": \"{{local.3cez1rtb0g.payload.output.rawResponse._embedded.devices}}\",\n        \"tooltip\": \"{{local.3cez1rtb0g.payload.output.rawResponse._embedded.devices}}\",\n        \"children\": [\n          {\n            \"text\": \"devices\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "Filter Unusable Devices"
+              }
+            },
+            "idUnique": "5wywuwimx4"
+          },
+          "position": {
+            "x": 3240,
+            "y": 510
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "azhkj4gs99",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Functions",
+            "status": "configured",
+            "capabilityName": "AGreaterThanB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"count\",\n        \"data\": \"{{local.c3qck8onhr.payload.output.count}}\",\n        \"tooltip\": \"{{local.c3qck8onhr.payload.output.count}}\",\n        \"children\": [\n          {\n            \"text\": \"count\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "rightValueB": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"0\"\n      }\n    ]\n  }\n]"
+              },
+              "type": {
+                "value": "string"
+              },
+              "nodeTitle": {
+                "value": "Has Usable Devices"
+              }
+            },
+            "idUnique": "m953lblda9"
+          },
+          "position": {
+            "x": 3540,
+            "y": 510
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8x2d5ptbad",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 3390,
+            "y": 510
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "uwy056r8cj",
+            "nodeType": "EVAL",
+            "properties": {
+              "atx8pyx0m5": {
+                "value": "allTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 3660,
+            "y": 510
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "atx8pyx0m5",
+            "nodeType": "CONNECTION",
+            "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "us9866cmkw"
+              }
+            },
+            "idUnique": "bw6z8s6xoa"
+          },
+          "position": {
+            "x": 3841.266109726473,
+            "y": 297.5057849940538
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "e522c4yntv",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#e4e6e9ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Reject for no devices"
+              },
+              "width": {
+                "value": 180
+              },
+              "height": {
+                "value": 0
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured",
+            "idUnique": "nhbcw97uyf"
+          },
+          "position": {
+            "x": 3757.760324732419,
+            "y": 214
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "wsrx5h035l",
+            "nodeType": "CONNECTION",
+            "connectionId": "de650ca45593b82c49064ead10b9fe17",
+            "connectorId": "functionsConnector",
+            "name": "Functions",
+            "label": "Functions",
+            "status": "configured",
+            "capabilityName": "AEqualsB",
+            "type": "trigger",
+            "properties": {
+              "leftValueA": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"moustache\",\n        \"data\": \"{{global.variables.STATUS}}\",\n        \"name\": \"STATUS\",\n        \"children\": [\n          {\n            \"text\": \"\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "Is status completed"
+              },
+              "rightValueB": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"COMPLETED\"\n      }\n    ]\n  }\n]"
+              }
+            }
+          },
+          "position": {
+            "x": 2940,
+            "y": 510
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "3taord80ux",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 2790,
+            "y": 510
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "0waiwxlpnd",
+            "nodeType": "EVAL",
+            "properties": {
+              "c3qck8onhr": {
+                "value": "allTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 3090,
+            "y": 510
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "e32ze0qc6z",
+            "nodeType": "CONNECTION",
+            "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "goToNode",
+            "type": "action",
+            "properties": {
+              "nodeInstanceId": {
+                "value": "8n49hr1o8f"
+              }
+            },
+            "idUnique": "ix1ivm7yki"
+          },
+          "position": {
+            "x": 3270,
+            "y": 690
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "roj6345wjw",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#e4e6e9ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Authentication succeeded"
+              },
+              "width": {
+                "value": 240
+              },
+              "height": {
+                "value": 0
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured",
+            "idUnique": "orwrs4jamj"
+          },
+          "position": {
+            "x": 3150,
+            "y": 600
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "kzk6bqegr8",
+            "nodeType": "ANNOTATION",
+            "name": "Annotation",
+            "connectionId": "921bfae85c38ed45045e07be703d86b8",
+            "connectorId": "annotationConnector",
+            "capabilityName": "updateAnnotationProperties",
+            "type": "action",
+            "properties": {
+              "backgroundColor": {
+                "value": "#e4e6e9ff"
+              },
+              "annotationTextColor": {
+                "value": "#000000"
+              },
+              "annotation": {
+                "value": "Check usable devices"
+              },
+              "width": {
+                "value": 240
+              },
+              "height": {
+                "value": 50
+              },
+              "fontFamily": {
+                "value": "sans-serif"
+              }
+            },
+            "status": "configured",
+            "idUnique": "wte42mieea"
+          },
+          "position": {
+            "x": 3300,
+            "y": 390
           },
           "group": "nodes",
           "removed": false,
@@ -5452,6 +5952,82 @@
         }
       ],
       "edges": [
+        {
+          "data": {
+            "id": "b5e1y1po0e",
+            "source": "uwy056r8cj",
+            "target": "ibncz8sioa"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "tgqv3jgmtw",
+            "source": "6gl134td9z",
+            "target": "c1rupzz89t"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "3brb63dmw9",
+            "source": "gq6mu1p1d5",
+            "target": "sja10o31m8"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "lhlrcp251z",
+            "source": "ygn9fovlf3",
+            "target": "hpwp3r0g1p"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
         {
           "data": {
             "id": "pvrzzjx5pw",
@@ -5607,13 +6183,14 @@
         },
         {
           "data": {
-            "id": "wt1lsny0x2",
-            "source": "uvauiww9cr",
-            "target": "9i22ds8ncz"
+            "id": "y8tx67h0de",
+            "source": "z6qe8779uk",
+            "target": "gq6mu1p1d5",
+            "multiValueSourceId": "yvj6qmvea5"
           },
           "position": {
-            "x": 0,
-            "y": 0
+            "x": 64,
+            "y": 52
           },
           "group": "edges",
           "removed": false,
@@ -5836,9 +6413,9 @@
         },
         {
           "data": {
-            "id": "aemqthhxs3",
-            "source": "vmy4xgpsa0",
-            "target": "sfsxen9y1r"
+            "id": "stwfeagy1v",
+            "source": "rzshrhluyd",
+            "target": "zkoks8sf7k"
           },
           "position": {
             "x": 0,
@@ -6217,13 +6794,14 @@
         },
         {
           "data": {
-            "id": "c4n980p321",
-            "source": "z6qe8779uk",
-            "target": "vmy4xgpsa0"
+            "id": "tixv6dxqoh",
+            "source": "l28stzztrz",
+            "target": "04zmej7yni",
+            "multiValueSourceId": "7ogxwjv2i6"
           },
           "position": {
-            "x": 0,
-            "y": 0
+            "x": 64,
+            "y": 92
           },
           "group": "edges",
           "removed": false,
@@ -6712,25 +7290,6 @@
         },
         {
           "data": {
-            "id": "7wr5y5fb06",
-            "source": "9i22ds8ncz",
-            "target": "ibncz8sioa"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
             "id": "gubnscg61n",
             "source": "eusiuzdwpz",
             "target": "c1hm5mt2bf"
@@ -6750,9 +7309,9 @@
         },
         {
           "data": {
-            "id": "l0jvpy9omo",
-            "source": "vmy4xgpsa0",
-            "target": "c1rupzz89t"
+            "id": "zd02rlj73a",
+            "source": "04zmej7yni",
+            "target": "4xkdjswh1l"
           },
           "position": {
             "x": 0,
@@ -7404,9 +7963,29 @@
         },
         {
           "data": {
-            "id": "lhlrcp251z",
-            "source": "ygn9fovlf3",
-            "target": "hpwp3r0g1p"
+            "id": "2mpl5ap8p1",
+            "source": "z6qe8779uk",
+            "target": "dlfnzdkh9w",
+            "multiValueSourceId": "-1"
+          },
+          "position": {
+            "x": 64,
+            "y": 132
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "iadwkhze9m",
+            "source": "dlfnzdkh9w",
+            "target": "sfsxen9y1r"
           },
           "position": {
             "x": 0,
@@ -7423,29 +8002,10 @@
         },
         {
           "data": {
-            "id": "stwfeagy1v",
-            "source": "rzshrhluyd",
-            "target": "zkoks8sf7k"
-          },
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "group": "edges",
-          "removed": false,
-          "selected": false,
-          "selectable": true,
-          "locked": false,
-          "grabbable": true,
-          "pannable": true,
-          "classes": ""
-        },
-        {
-          "data": {
-            "id": "tixv6dxqoh",
-            "source": "l28stzztrz",
-            "target": "04zmej7yni",
-            "multiValueSourceId": "7ogxwjv2i6"
+            "id": "42cg2xden0",
+            "source": "z6qe8779uk",
+            "target": "6gl134td9z",
+            "multiValueSourceId": "k5xk8s0tn3"
           },
           "position": {
             "x": 64,
@@ -7462,9 +8022,161 @@
         },
         {
           "data": {
-            "id": "zd02rlj73a",
-            "source": "04zmej7yni",
-            "target": "4xkdjswh1l"
+            "id": "ayot5s21ap",
+            "source": "uwy056r8cj",
+            "target": "atx8pyx0m5"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "k43g7uri8b",
+            "source": "c3qck8onhr",
+            "target": "8x2d5ptbad"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "brnin6lyiv",
+            "source": "8x2d5ptbad",
+            "target": "azhkj4gs99"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "j7vg14ap7m",
+            "source": "azhkj4gs99",
+            "target": "uwy056r8cj"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "q62vfqquu",
+            "source": "uvauiww9cr",
+            "target": "3taord80ux"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "4u1bwb2ccd",
+            "source": "3taord80ux",
+            "target": "wsrx5h035l"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "nr24wrq9x6",
+            "source": "wsrx5h035l",
+            "target": "0waiwxlpnd"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5kmergj9rz",
+            "source": "0waiwxlpnd",
+            "target": "c3qck8onhr"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "905gxigz7h",
+            "source": "0waiwxlpnd",
+            "target": "e32ze0qc6z"
           },
           "position": {
             "x": 0,
@@ -7524,11 +8236,11 @@
     }
   ],
   "flowColor": "#ff661c",
-  "savedDate": 1699879258681,
+  "savedDate": 1743945646841,
   "variables": [
     {
       "context": "flowInstance",
-      "createdDate": 1672402978229,
+      "createdDate": 1737898526911,
       "fields": {
         "type": "string",
         "displayName": "Specify the line separation character to use for RADIUS server challenge messages.",
@@ -7536,14 +8248,15 @@
         "min": 0,
         "max": 2000
       },
+      "id": "15e24ad4-6ea2-4002-9811-21e3620d1b03",
       "type": "property",
       "visibility": "private",
       "name": "NEWLINE_CHARACTER##SK##flowInstance",
-      "companyId": "3ffaeb94-4544-4c0a-8eb8-8062762700db"
+      "companyId": "6304a142-087e-43ad-aecd-4c5c2720c3c5"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1670848590708,
+      "createdDate": 1737878941823,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -7551,14 +8264,15 @@
         "min": 0,
         "max": 2000
       },
+      "id": "48b7577a-08a3-4185-97cf-fd8baef94e2e",
       "type": "property",
       "visibility": "private",
       "name": "OTP##SK##flowInstance",
-      "companyId": "3ffaeb94-4544-4c0a-8eb8-8062762700db"
+      "companyId": "6304a142-087e-43ad-aecd-4c5c2720c3c5"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1672402978225,
+      "createdDate": 1737898526910,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -7566,14 +8280,15 @@
         "min": 0,
         "max": 2000
       },
+      "id": "281f0e1e-471b-49eb-a9ca-6422ad11bf17",
       "type": "property",
       "visibility": "private",
       "name": "OTP_FALLBACK##SK##flowInstance",
-      "companyId": "3ffaeb94-4544-4c0a-8eb8-8062762700db"
+      "companyId": "6304a142-087e-43ad-aecd-4c5c2720c3c5"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1672402978229,
+      "createdDate": 1737898526911,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -7581,28 +8296,30 @@
         "min": 0,
         "max": 2000
       },
+      "id": "180aff6c-df7e-4d92-843c-3d65d77d6e0f",
       "type": "property",
       "visibility": "private",
       "name": "SELECTED_DEVICE##SK##flowInstance",
-      "companyId": "3ffaeb94-4544-4c0a-8eb8-8062762700db"
+      "companyId": "6304a142-087e-43ad-aecd-4c5c2720c3c5"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1672402978223,
+      "createdDate": 1737898526910,
       "fields": {
         "type": "string",
         "displayName": "",
         "min": 0,
         "max": 2000
       },
+      "id": "c7890080-672b-456e-a208-19c4397113cc",
       "type": "property",
       "visibility": "private",
       "name": "STATUS##SK##flowInstance",
-      "companyId": "3ffaeb94-4544-4c0a-8eb8-8062762700db"
+      "companyId": "6304a142-087e-43ad-aecd-4c5c2720c3c5"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1672402978229,
+      "createdDate": 1737898526909,
       "fields": {
         "type": "object",
         "displayName": "",
@@ -7610,14 +8327,15 @@
         "min": 0,
         "max": 2000
       },
+      "id": "2dd76533-9923-4667-a4ba-55f02efc0b13",
       "type": "property",
       "visibility": "private",
       "name": "USER_DEVICE_LIST##SK##flowInstance",
-      "companyId": "3ffaeb94-4544-4c0a-8eb8-8062762700db"
+      "companyId": "6304a142-087e-43ad-aecd-4c5c2720c3c5"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1672402978229,
+      "createdDate": 1737898526459,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -7625,10 +8343,11 @@
         "min": 0,
         "max": 2000
       },
+      "id": "cd817a55-2b42-4b4d-a771-ba6970454b2c",
       "type": "property",
       "visibility": "private",
       "name": "WRONG_SELECTION_MESSAGE##SK##flowInstance",
-      "companyId": "3ffaeb94-4544-4c0a-8eb8-8062762700db"
+      "companyId": "6304a142-087e-43ad-aecd-4c5c2720c3c5"
     }
   ],
   "connections": []
