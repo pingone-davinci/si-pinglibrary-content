@@ -32,7 +32,7 @@ TMP_DIR=$(mktemp -d) &&
     DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
     SCRIPT="$0" &&
-    SCRIPT_VERSION="1.3.0" &&
+    SCRIPT_VERSION="1.3.1" &&
     CURL_ERROR_FILE="${TMP_DIR}/curl-error" && touch "${CURL_ERROR_FILE}" &&
     EXPORT_DIR="${TMP_DIR}/export/${PRODUCT}" && mkdir -p "${EXPORT_DIR}" &&
     KEYS_DIR="${EXPORT_DIR}/signingKeys" && mkdir -p "${KEYS_DIR}" &&
@@ -256,6 +256,7 @@ curl_cmd GET "/idp/adapters" "" "${EXPORT_DIR}/idp-adapters.json"
 curl_cmd GET "/idp/adapters/descriptors" "" "${EXPORT_DIR}/idp-adapters-descriptors.json"
 curl_cmd GET "/authenticationPolicies/default" "" "${EXPORT_DIR}/auth-policies-default.json"
 curl_cmd GET "/sp/idpConnections" "" "${EXPORT_DIR}/sp-idpConnections.json"
+curl_cmd GET "/sp/adapters" "" "${EXPORT_DIR}/sp-adapters.json"
 
 curl_cmd GET "/keyPairs/signing" "" "${EXPORT_DIR}/signingKeys.json"
 
