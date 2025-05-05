@@ -1,0 +1,94 @@
+{
+  "clonedNodes": [
+    {
+      "data": {
+        "id": "r0ih25fybg",
+        "nodeType": "CONNECTION",
+        "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+        "connectorId": "httpConnector",
+        "name": "Http",
+        "label": "Http",
+        "status": "configured",
+        "capabilityName": "customHTMLTemplate",
+        "type": "trigger",
+        "properties": {
+          "sktemplate": {
+            "uiId": "624fbda9a79d412a0e62cc045b410da7",
+            "createdDate": 1693913007853,
+            "customerId": "f3e47d945ae971a4b4142ec75012d155",
+            "description": "",
+            "inputSchema": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        }\n    }\n}",
+            "name": "Custom Message",
+            "outputSchema": null,
+            "script": "",
+            "style": "",
+            "template": "",
+            "updatedDate": 1693913396823,
+            "validationRules": [],
+            "version": "1.0",
+            "visibility": "private",
+            "companyId": "9343c168-20f8-4262-b335-5250b428bd12",
+            "value": "624fbda9a79d412a0e62cc045b410da7"
+          },
+          "inputSchema": {
+            "value": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"title\": {\n            \"type\": \"string\",\n            \"displayName\": \"Title\",\n            \"preferredControlType\": \"textField\",\n            \"enableParameters\": true,\n            \"propertyName\": \"title\"\n        }\n    }\n}"
+          },
+          "outputSchema": {
+            "value": null
+          },
+          "customHTML": {
+            "value": "<!-- Collect PingOne Risk Analytics -->\n<div\n  data-skcomponent=\"skrisk\"\n  data-skenvironmentid=\"{{global.companyId}}\"\n  data-skcollectBehavioralData=\"true\"\n  data-skpropertyname=\"riskfp\"></div>\n \n<div class=\"end-user-nano\">\n  <div\n    class=\"bg-light d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 bottom-0 end-0 overflow-auto\">\n    <div style=\"max-width: 400px; min-width: 400px; width: 100%\">\n      <div class=\"card shadow mb-5\">\n        <div class=\"card-body p-5 d-flex flex-column\">\n          <img class=\"companyLogo align-self-center mb-5\" src=\"{{global.variables.companyLogo}}\" alt=\"{{global.variables.companyName}}\" />\n          <div class=\"d-flex justify-content-center align-items-center mt-4 mb-5\">\n            <div class=\"spinner-border thicker-spinner spinner-color\" role=\"status\">\n              <span class=\"sr-only\"></span>\n            </div>\n          </div>\n          {{#if title}}\n          <h1 class=\"text-center mt-3 mb-4\">{{title}}</h1>\n          {{/if}}\n        </div>\n        <form id=\"riskForm\">\n          <button  data-id=\"button\" style=\"display:none\" type=\"submit\" class=\"btn btn-primary mb-3\" data-skcomponent=\"skbutton\"\n              data-skbuttontype=\"form-submit\" id=\"btnSubmit\" data-skform=\"riskForm\"\n              data-skbuttonvalue=\"SIGNON\">\n              Continue\n          </button>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n"
+          },
+          "customCSS": {
+            "value": " .spinner-border.thicker-spinner {\n     border-width: 0.25em;\n     width: 65px;\n     height: 65px;\n }\n\n .spinner-border {\n     animation-duration: 1.25s;\n }\n\n .spinner-color {\n    --bs-text-opacity: .1;\n    color: rgba(39, 123, 165, 1)\n}"
+          },
+          "customScript": {
+            "value": "/**\n * Clicks the button with the given ID once after the DOM has loaded and a delay.\n *\n * @param {string} buttonId - The ID of the button to click.\n * @param {number} delayMs - Delay in milliseconds after DOM load before attempting the click.\n */\nfunction clickButtonOnceAfterLoad(buttonId, delayMs = 1000) {\n    document.addEventListener('DOMContentLoaded', () => {\n        setTimeout(() => {\n            const button = document.getElementById(buttonId);\n            if (button) {\n                button.click();\n                console.log(`Button \"${buttonId}\" clicked.`);\n            } else {\n                console.error(`Button \"${buttonId}\" not found.`);\n            }\n        }, delayMs);\n    });\n}\n\nclickButtonOnceAfterLoad(\"btnSubmit\");\n"
+          },
+          "validationRules": {
+            "value": []
+          },
+          "formFieldsList": {
+            "value": [
+              {
+                "propertyName": "riskfp",
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "value": "",
+                "hashedVisibility": false
+              },
+              {
+                "preferredControlType": "textField",
+                "preferredDataType": "string",
+                "propertyName": "buttonValue"
+              }
+            ]
+          },
+          "nodeTitle": {
+            "value": "Profile Device"
+          },
+          "nodeDescription": {
+            "value": "Poll to capture risk signals"
+          },
+          "title": {
+            "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Profiling Your Device\"\n      }\n    ]\n  }\n]"
+          }
+        },
+        "idUnique": "c1xe2mq728"
+      },
+      "position": {
+        "x": 630,
+        "y": 450
+      },
+      "group": "nodes",
+      "removed": false,
+      "selected": false,
+      "selectable": true,
+      "locked": false,
+      "grabbable": true,
+      "pannable": false,
+      "classes": ""
+    }
+  ],
+  "clonedEdges": []
+}
