@@ -1,5 +1,5 @@
 {
-  "companyId": "85c9f2d3-d640-40ea-b12d-2822a2912b3c",
+  "companyId": "fb440df4-0ebe-4c5b-9611-7e433abe5c69",
   "authTokenExpireIds": [],
   "connectorIds": [
     "httpConnector",
@@ -11,10 +11,10 @@
     "pingOneMfaConnector",
     "errorConnector"
   ],
-  "createdDate": 1750105705976,
-  "currentVersion": 9,
-  "customerId": "4af3e4374708dd0cfcf672abc7ff7d59",
-  "deployedDate": 1750430405546,
+  "createdDate": 1750969507575,
+  "currentVersion": 5,
+  "customerId": "f3e47d945ae971a4b4142ec75012d155",
+  "deployedDate": 1750969524312,
   "description": "Flow is used to administer users. When an end user logs on, if the user is an identity admin, this flow presents options to manage users.",
   "flowStatus": "enabled",
   "inputSchemaCompiled": {
@@ -27,8 +27,8 @@
   },
   "isInputSchemaSaved": false,
   "isOutputSchemaSaved": false,
-  "name": "User Admin - End User administration ",
-  "publishedVersion": 9,
+  "name": "User Admin - End User Administration  ",
+  "publishedVersion": 5,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": "",
@@ -45,9 +45,9 @@
     "flowTimeoutInSeconds": 1200
   },
   "timeouts": "null",
-  "updatedDate": 1750430405578,
-  "flowId": "14d2555c9edb71a360ba9925b3859ba1",
-  "versionId": 9,
+  "updatedDate": 1750969524378,
+  "flowId": "dbf46abaf278d0590eb99ac9cb2f0cab",
+  "versionId": 5,
   "graphData": {
     "elements": {
       "nodes": [
@@ -329,7 +329,7 @@
                 "value": "body .table {\n  border-collapse: collapse;\n  border: 1px solid gray;\n  \n}\nbody th, td{\n\n    border-bottom: 1px solid gray;\n    padding: 11px;\n\n}\nbody .btn-primary {\n  background-color: #348EE8;\n  border: none;\n  color: white;\n  padding: 4px 10px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 12px;\n  cursor: pointer;\n  font-family:arial;\n  border-radius: 10px;\n\n}\n\n.btn-red {\n  background-color: #ea1e1e !important;\n}\n\n"
               },
               "customHTML": {
-                "value": "    <div class=\"end-user-nano\">\n    <br>\n    <br>\n<center>\n<form id=\"usersel\">\n    <div class=\"w-auto p-3\" style=\"max-width: 85%\">\n<table class=\"table\">\n<tr><th>Name</th><th>Username</th><th>Manage Session</th><th>Edit User</th><th>Manage MFA</th><th>Enable/Disable</th><th>Delete User</th></tr>\n{{local.k80fhythsq.payload.output.users}}\n    </table>\n    </div>\n    <br>\n    <button type=\"submit\" id=\"home\" class=\"btn btn-primary\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"usersel\" data-skbuttonvalue=\"home\">Home</button>\n    <br><br>\n</form>\n</center>\n</div>\n</div>"
+                "value": "    <div class=\"end-user-nano\">\n    <br>\n    <br>\n<center>\n<form id=\"usersel\">\n    <div class=\"w-auto p-3\" style=\"max-width: 85%\">\n<table class=\"table\">\n<tr><th>Name</th><th>Username</th><th>Manage Session</th><th>Edit User</th><th>Manage MFA</th><th>Enable/Disable</th><th>Delete User</th></tr>\n{{local.k80fhythsq.payload.output.users}}\n    </table>\n    </div>\n    <br>\n    <button type=\"submit\" id=\"home\" class=\"btn btn-primary\" data-skcomponent=\"skbutton\" data-skbuttontype=\"form-submit\" data-skform=\"usersel\" data-skbuttonvalue=\"home\">Refresh</button>\n    <br><br>\n</form>\n</center>\n</div>\n</div>"
               },
               "formFieldsList": {
                 "value": [
@@ -10875,41 +10875,41 @@
   },
   "inputSchema": [],
   "flowColor": "#E3F0FF",
-  "savedDate": 1750105705173,
+  "savedDate": 1750969506732,
   "variables": [
     {
       "context": "flowInstance",
-      "createdDate": 1745509013822,
+      "createdDate": 1749126288276,
       "fields": {
         "displayName": "",
         "max": 2000,
         "min": 0,
         "type": "string"
       },
-      "id": "0f0aba95-c4dc-43f1-88d5-e5762ca2046f",
+      "id": "24476a03-a78d-46f1-9bc4-e6b3f66895b4",
       "type": "property",
       "visibility": "private",
       "name": "AppicationsGroupID##SK##flowInstance",
-      "companyId": "85c9f2d3-d640-40ea-b12d-2822a2912b3c"
+      "companyId": "fb440df4-0ebe-4c5b-9611-7e433abe5c69"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1745509013821,
+      "createdDate": 1749126288274,
       "fields": {
         "displayName": "",
         "max": 2000,
         "min": 0,
         "type": "string"
       },
-      "id": "087f0a55-9f51-43e8-89b3-5b50dd80e38c",
+      "id": "691a8f94-4ed8-4bdb-8cd6-a6a9fd5625d5",
       "type": "property",
       "visibility": "private",
       "name": "PingOneEnvID##SK##flowInstance",
-      "companyId": "85c9f2d3-d640-40ea-b12d-2822a2912b3c"
+      "companyId": "fb440df4-0ebe-4c5b-9611-7e433abe5c69"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1745509013822,
+      "createdDate": 1749126288276,
       "fields": {
         "displayName": "",
         "max": 2000,
@@ -10917,15 +10917,15 @@
         "mutable": true,
         "type": "string"
       },
-      "id": "bfbd2f76-d509-4941-950b-85232e4d8ee2",
+      "id": "937302d5-885f-45c9-807d-1ddaf8f8aa6b",
       "type": "property",
       "visibility": "private",
       "name": "clientID##SK##flowInstance",
-      "companyId": "85c9f2d3-d640-40ea-b12d-2822a2912b3c"
+      "companyId": "fb440df4-0ebe-4c5b-9611-7e433abe5c69"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1745509013821,
+      "createdDate": 1749126288276,
       "fields": {
         "displayName": "",
         "max": 2000,
@@ -10933,15 +10933,15 @@
         "mutable": true,
         "type": "string"
       },
-      "id": "53def21d-c71b-4f1a-8d29-25167e011a2f",
+      "id": "e82e1e3e-73cf-459c-879f-9566efa7c480",
       "type": "property",
       "visibility": "private",
       "name": "clientSecret##SK##flowInstance",
-      "companyId": "85c9f2d3-d640-40ea-b12d-2822a2912b3c"
+      "companyId": "fb440df4-0ebe-4c5b-9611-7e433abe5c69"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1745508917512,
+      "createdDate": 1749126201634,
       "fields": {
         "type": "string",
         "displayName": "Url for company's logo image",
@@ -10949,15 +10949,15 @@
         "min": 0,
         "max": 2000
       },
-      "id": "d3249aef-5d28-446f-9659-3fcaee767dd6",
+      "id": "42835f54-10db-462a-9679-7b9ea69b9a58",
       "type": "property",
       "visibility": "private",
       "name": "companyLogo##SK##flowInstance",
-      "companyId": "85c9f2d3-d640-40ea-b12d-2822a2912b3c"
+      "companyId": "fb440df4-0ebe-4c5b-9611-7e433abe5c69"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1745508917511,
+      "createdDate": 1749126201636,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -10965,16 +10965,15 @@
         "min": 0,
         "max": 2000
       },
-      "id": "7d309b4c-5ac9-46e1-955b-85039210133f",
+      "id": "a572a07c-80b7-4f7e-9f42-0ca674991d8d",
       "type": "property",
       "visibility": "private",
       "name": "companyName##SK##flowInstance",
-      "companyId": "85c9f2d3-d640-40ea-b12d-2822a2912b3c"
+      "companyId": "fb440df4-0ebe-4c5b-9611-7e433abe5c69"
     },
     {
       "context": "flowInstance",
-      "createdDate": 1745953061721,
-      "customerId": "4af3e4374708dd0cfcf672abc7ff7d59",
+      "createdDate": 1749126288277,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -10982,11 +10981,11 @@
         "min": 0,
         "max": 2000
       },
-      "id": "172e9385-8c96-410b-9d21-4c572b45697b",
+      "id": "bb16a4ac-df6c-413e-8b43-08319369ef71",
       "type": "property",
       "visibility": "private",
       "name": "identityDataAdminRoleID##SK##flowInstance",
-      "companyId": "85c9f2d3-d640-40ea-b12d-2822a2912b3c"
+      "companyId": "fb440df4-0ebe-4c5b-9611-7e433abe5c69"
     }
   ],
   "connections": []
