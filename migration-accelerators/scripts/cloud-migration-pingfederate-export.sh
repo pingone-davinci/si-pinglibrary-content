@@ -32,7 +32,7 @@ TMP_DIR=$(mktemp -d) &&
     DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
     SCRIPT="$0" &&
-    SCRIPT_VERSION="1.3.1" &&
+    SCRIPT_VERSION="1.4.1" &&
     CURL_ERROR_FILE="${TMP_DIR}/curl-error" && touch "${CURL_ERROR_FILE}" &&
     EXPORT_DIR="${TMP_DIR}/export/${PRODUCT}" && mkdir -p "${EXPORT_DIR}" &&
     KEYS_DIR="${EXPORT_DIR}/signingKeys" && mkdir -p "${KEYS_DIR}" &&
@@ -95,6 +95,99 @@ generate_key() {
     echo "$pw"
 }
 
+# Function to execute curl commands and handle errors
+curl_cmd() {
+    _method=${1}
+    _path=${2}
+    _auth=${3}
+    _outfile=${4}
+    _printCurl=${5:-false}
+
+    printf "."
+    url="${pfUrl}${_path}"
+    _tmpJson="_tmp.json"
+
+    curl -sS -X "${_method}" "${url}" \
+        --connect-timeout 5 --max-time 20 \
+        -H "Content-Type: application/json" \
+        -H "X-XSRF-Header: pingfederate" \
+        -d "${_auth}" \
+        -u "${apiUsername}:${apiPassword}" 1> "${_tmpJson}" 2> "${CURL_ERROR_FILE}"
+
+    if [ $? -ne 0 ]; then
+        error "Failed to extract ${url}
+    Possible issues:
+      - Invalid HOST:PORT
+      - Invalid API Username or Password
+      - PingFederate Admin API is not enabled
+      - Network connectivity issues (i.e. vpn)
+      - Certificate issues (use ~/.curlrc with 'insecure' option)
+
+    To debug issue, you may use the following curl command, entering your password
+    when prompted.  You should see a JSON version response or an error message.
+
+############################# cut/paste ############################
+
+curl -v -sS -X \"${_method}\" \"${url}\" \\
+    -H \"Content-Type: application/json\" \\
+    -H \"X-XSRF-Header: pingfederate\" \\
+    -u \"${apiUsername}\"
+
+####################################################################"
+    fi
+
+    case "${_outfile}" in
+        *.json)
+            jq . "${_tmpJson}" > /dev/null 2>&1
+            if [ $? -ne 0 ]; then
+                error "Failed to extract ${url}
+    Possible JSON issues:
+        - Authentication is redirected to a login page (i.e. PingOne AS)"
+            fi
+
+            # If the output is a JSON file, we can redact sensitive information
+            jq -c '
+walk(
+  if type == "object" then
+    with_entries(
+      if .key == "encryptedPassword" then
+        .value = "********" | .
+      elif (.value | type == "string") and (.value | startswith("OBJ:JWE:")) then
+        .value = "OBF:JWE:********" | .
+      else
+        .
+      end
+    )
+  elif type == "string" and startswith("OBJ:JWE:") then
+    "OBF:JWE:********"
+  else
+    .
+  end
+)' "${_tmpJson}" > "${_outfile}"
+            # jq -c 'walk(if type == "object" and has("encryptedPassword") then .encryptedPassword = "********" | . else . end)' "${_outfile}" > "${_outfile}"
+            rm -f "${_tmpJson}"
+            ;;
+        *)
+            mv "${_tmpJson}" "${_outfile}" 2> /dev/null
+            ;;
+    esac
+
+}
+
+# Validate the PingFederate version, erroring out if it does not meet the minimum required version
+validateVersion() {
+    curl_cmd GET "/version" "" "${EXPORT_DIR}/version.json"
+
+    pfVersion=$(grep -o '"version":"[^"]*"' "${EXPORT_DIR}/version.json" | sed 's/"version":"\([^"]*\)"/\1/')
+
+    printf "%s\n%s\n" "$MIN_PF_VERSION" "$pfVersion" > "$TMP_DIR/versions"
+    if [ "$(sort -V "${EXPORT_DIR}/version.json" | head -n1)" = "$pfVersion" ]; then
+        error "PingFederate version must be ${MIN_PF_VERSION} or higher.  Current Version: $pfVersion"
+    else
+        printf "\r    Version: %s\n" "${pfVersion}"
+    fi
+}
+
 echo "
 ###################################################################
 #                Cloud Migration Tool (v ${SCRIPT_VERSION})                   #
@@ -133,6 +226,9 @@ if [ "${pfPort}" = "" ]; then
 fi
 
 pfUrl="https://${pfHost}:${pfPort}/pf-admin-api/v1"
+
+printf "\nValidating Connectivity/Version...\n    PingFederate Admin API: %s\n" "${pfUrl}"
+validateVersion
 
 echo "
 ###################################################################
@@ -190,63 +286,6 @@ while true; do
     fi
 done
 
-# Function to execute curl commands and handle errors
-curl_cmd() {
-    _method=${1}
-    _path=${2}
-    _auth=${3}
-    _outfile=${4}
-
-    printf "."
-    url="${pfUrl}${_path}"
-    curl -sS -X "${_method}" "${url}" \
-        --connect-timeout 5 --max-time 20 \
-        -H "Content-Type: application/json" \
-        -H "X-XSRF-Header: pingfederate" \
-        -d "${_auth}" \
-        -u "${apiUsername}:${apiPassword}" 1> "${_outfile}" 2> "${CURL_ERROR_FILE}"
-
-    if [ $? -ne 0 ]; then
-        error "Failed to extract ${url}
-    Possible issues:
-      - Invalid HOST:PORT
-      - Invalid API Username or Password
-      - PingFederate Admin API is not enabled
-      - Network connectivity issues (i.e. vpn)
-      - Certificate issues (use ~/.curlrc with 'insecure' option)"
-    fi
-
-    case "${_outfile}" in
-        *.json)
-            jq . "${_outfile}" > /dev/null 2>&1
-            if [ $? -ne 0 ]; then
-                error "Failed to extract ${url}
-    Possible JSON issues:
-        - Authentication is redirected to a login page (i.e. PingOne AS)"
-            fi
-            ;;
-        *) ;;
-    esac
-
-}
-
-# Validate the PingFederate version, erroring out if it does not meet the minimum required version
-validateVersion() {
-    curl_cmd GET "/version" "" "${EXPORT_DIR}/version.json"
-
-    pfVersion=$(grep -o '"version":"[^"]*"' "${EXPORT_DIR}/version.json" | sed 's/"version":"\([^"]*\)"/\1/')
-
-    printf "%s\n%s\n" "$MIN_PF_VERSION" "$pfVersion" > "$TMP_DIR/versions"
-    if [ "$(sort -V "$TMP_DIR/versions" | head -n1)" = "$pfVersion" ]; then
-        error "PingFederate version must be ${MIN_PF_VERSION} or higher.  Current Version: $pfVersion"
-    else
-        printf "\r    Version: %s\n" "${pfVersion}"
-    fi
-}
-
-printf "\nExporting configuration...\n    PingFederate Admin API: %s\n" "${pfUrl}"
-validateVersion
-
 curl_cmd GET "/oauth/clients" "" "${EXPORT_DIR}/oauth-clients.json"
 curl_cmd GET "/oauth/openIdConnect/policies" "" "${EXPORT_DIR}/oauth-openidconnect-policies.json"
 curl_cmd GET "/oauth/accessTokenManagers" "" "${EXPORT_DIR}/oauth-accesstokenmanagers.json"
@@ -255,8 +294,12 @@ curl_cmd GET "/idp/spConnections" "" "${EXPORT_DIR}/idp-spConnections.json"
 curl_cmd GET "/idp/adapters" "" "${EXPORT_DIR}/idp-adapters.json"
 curl_cmd GET "/idp/adapters/descriptors" "" "${EXPORT_DIR}/idp-adapters-descriptors.json"
 curl_cmd GET "/authenticationPolicies/default" "" "${EXPORT_DIR}/auth-policies-default.json"
+curl_cmd GET "/passwordCredentialValidators" "" "${EXPORT_DIR}/password-credential-validators.json"
+curl_cmd GET "/passwordCredentialValidators/descriptors" "" "${EXPORT_DIR}/password-credential-validators-descriptors.json"
 curl_cmd GET "/sp/idpConnections" "" "${EXPORT_DIR}/sp-idpConnections.json"
 curl_cmd GET "/sp/adapters" "" "${EXPORT_DIR}/sp-adapters.json"
+curl_cmd GET "/dataStores" "" "${EXPORT_DIR}/data-stores.json"
+curl_cmd GET "/dataStores/descriptors" "" "${EXPORT_DIR}/data-stores-descriptors.json"
 
 curl_cmd GET "/keyPairs/signing" "" "${EXPORT_DIR}/signingKeys.json"
 
