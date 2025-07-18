@@ -29,10 +29,10 @@
 # limitations under the License.
 ###################################################################
 TMP_DIR=$(mktemp -d) &&
+    SCRIPT_VERSION="1.4.2" &&
     DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
     SCRIPT="$0" &&
-    SCRIPT_VERSION="1.4.1" &&
     CURL_ERROR_FILE="${TMP_DIR}/curl-error" && touch "${CURL_ERROR_FILE}" &&
     EXPORT_DIR="${TMP_DIR}/export/${PRODUCT}" && mkdir -p "${EXPORT_DIR}" &&
     KEYS_DIR="${EXPORT_DIR}/signingKeys" && mkdir -p "${KEYS_DIR}" &&
@@ -80,16 +80,35 @@ check_command zip
 check_command mktemp
 check_command uname
 
-# Function to generate a random alphanumeric string of length 12
+# OWASP safe special characters (minus any characters that make it difficult
+# to use in a /bin/sh or /bin/bash command)
+OWASP='!%*+,-.:=?@^_~.'
+
+# Function to generate a random alphanumeric string of length 32
 generate_key() {
     pw=""
 
     while true; do
-        pw=$(LC_ALL=C tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 12 | head -n 1)
+        pw=$(LC_ALL=C tr -dc "a-zA-Z0-9${OWASP}" < /dev/urandom | fold -w 32 | head -n 1)
 
-        if echo "$pw" | grep -q '[A-Z]' && echo "$pw" | grep -q '[a-z]' && echo "$pw" | grep -q '[0-9]'; then
-            break
-        fi
+        case "$pw" in
+            *[A-Z]*) : ;;
+            *) continue ;;
+        esac
+        case "$pw" in
+            *[a-z]*) : ;;
+            *) continue ;;
+        esac
+        case "$pw" in
+            *[0-9]*) : ;;
+            *) continue ;;
+        esac
+        case "$pw" in
+            *["$OWASP"]*) : ;;
+            *) continue ;;
+        esac
+        # If we get here, all checks passed
+        break
     done
 
     echo "$pw"
@@ -245,10 +264,12 @@ echo "
 # displayed in summary so they can be copied for later use.       #
 #                                                                 #
 # KEY POLICY: Must contain:                                       #
-#   - at least 8 characters                                       #
+#   - at least 10 characters                                      #
 #   - at least one uppercase letter                               #
 #   - at least one lowercase letter                               #
 #   - at least one numeric character                              #
+#   - may contain special characters                              #
+#      incl: ${OWASP}                                       #
 #                                                                 #
 # IMPORTANT: You will be later prompted for this key:             #
 #               - To upload the .zip file created by this tool    #
@@ -273,14 +294,22 @@ while true; do
         generatedKey="${migKey}"
     fi
 
+    VALID_SET="a-zA-Z0-9${OWASP}"
+    if echo "$migKey" | grep -qv "^[${VALID_SET}]*$"; then
+        echo "Key contains invalid characters. Allowed: a-z, A-Z, 0-9, special chars ${OWASP}"
+        continue
+    fi
+
     if ! echo "$migKey" | grep -q '[a-z]'; then
         echo "Key must contain at least one lowercase letter."
     elif ! echo "$migKey" | grep -q '[A-Z]'; then
         echo "Key must contain at least one uppercase letter."
     elif ! echo "$migKey" | grep -q '[0-9]'; then
         echo "Key must contain at least one digit."
-    elif [[ ${#migKey} -lt 8 ]]; then
-        echo "Key must be at least 8 characters long."
+    # elif ! echo "$migKey" | grep -q "[${OWASP}]"; then
+    #     echo "Key must contain at least one special character: ${OWASP}."
+    elif [ ${#migKey} -lt 10 ]; then
+        echo "Key must be at least 10 characters long."
     else
         break
     fi
@@ -304,7 +333,6 @@ curl_cmd GET "/dataStores/descriptors" "" "${EXPORT_DIR}/data-stores-descriptors
 curl_cmd GET "/keyPairs/signing" "" "${EXPORT_DIR}/signingKeys.json"
 
 for id in $(jq -r .items[].id "${EXPORT_DIR}/signingKeys.json"); do
-    subjectDN=$(jq -r ".items[] | select(.id == \"$id\") | .subjectDN" "${EXPORT_DIR}/signingKeys.json")
     certStatus=$(jq -r ".items[] | select(.id == \"$id\") | .status" "${EXPORT_DIR}/signingKeys.json")
 
     if [ "${certStatus}" != "VALID" ]; then
@@ -315,6 +343,7 @@ for id in $(jq -r .items[].id "${EXPORT_DIR}/signingKeys.json"); do
 
     grep -q "validation_error" "${KEYS_DIR}/$id.p12" || continue
 
+    subjectDN=$(jq -r ".items[] | select(.id == \"$id\") | .subjectDN" "${EXPORT_DIR}/signingKeys.json")
     echo "Key doesn't meet policy for ${subjectDN}.  Unable to export certificate."
     echo
 done
