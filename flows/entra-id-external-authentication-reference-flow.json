@@ -7,15 +7,15 @@
     "functionsConnector",
     "annotationConnector"
   ],
-  "createdDate": 1741627271937,
-  "currentVersion": 44,
-  "customerId": "cb8ba89404ffa6443cec9dec64365b35",
-  "deployedDate": 1741627289822,
+  "createdDate": 1744173394809,
+  "currentVersion": 2,
+  "customerId": "6518c953704fbb2d8f3f830a4ec68a8b",
+  "deployedDate": 1744173404392,
   "description": "Handle external authentication requests from Microsoft Entra ID through its external authentication method framework",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
   "name": "Entra ID External Authentication Method Sample Flow",
-  "publishedVersion": 44,
+  "publishedVersion": 2,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": "",
@@ -27,9 +27,9 @@
   "trigger": {
     "type": "AUTHENTICATION"
   },
-  "updatedDate": 1741627289873,
-  "flowId": "2f481e974777151037aa39232ed1a475",
-  "versionId": 44,
+  "updatedDate": 1744173404420,
+  "flowId": "a6123a30552bb36cc7b04147eaff4f6c",
+  "versionId": 2,
   "graphData": {
     "elements": {
       "nodes": [
@@ -187,7 +187,7 @@
                 ]
               },
               "code": {
-                "value": "const findFirstKeyWithValue = (map, values) => {\n  for (const value of values) {\n    const lowerCaseValue = value.toLowerCase();\n    for (const [key, array] of Object.entries(map)) {\n      if (array.some(item => item.toLowerCase() === lowerCaseValue)) {\n        return key.toLowerCase();\n      }\n    }\n  }\n  return null;\n};\n\nconst entraIdAmrToPingIdAmrMap = {\n  FACE: [],\n  FIDO: [\"FIDO2_BIOMETRICS\"],\n  FPT: [\"MOBILE_APP_BIOMETRICS\"],\n  HWK: [\"YUBIKEY\", \"OATH_TOKEN\"],\n  IRIS: [],\n  OTP: [\"EMAIL\", \"AUTHENTICATOR_APP\", \"MOBILE_APP_OTP\", \"DESKTOP_OTP\"],\n  POP: [\"MOBILE_APP_SWIPE\"],\n  RETINA: [],\n  SC: [],\n  SMS: [\"SMS\"],\n  SWK: [\"SECURITY_KEY\"],\n  TEL: [\"VOICE\"],\n  VBM: [],\n};\n\nmodule.exports = a = async ({params}) => {\n  const pingIdError = params.error;\n\tconst pingIdAmrOutput = params.pingIdAmr;\n  const pingIdAmrArray = pingIdAmrOutput.split(' ');\n\n\tlet entraIdAmr = findFirstKeyWithValue(entraIdAmrToPingIdAmrMap, pingIdAmrArray);\n  if (entraIdAmr == null && !pingIdError) {\n    entraIdAmr = \"pop\";\n  }\n\n\treturn { entraIdAmr };\n};"
+                "value": "const findFirstKeyWithValue = (map, values) => {\n  for (const value of values) {\n    const lowerCaseValue = value.toLowerCase();\n    for (const [key, array] of Object.entries(map)) {\n      if (array.some(item => item.toLowerCase() === lowerCaseValue)) {\n        return key.toLowerCase();\n      }\n    }\n  }\n  return null;\n};\n\nconst entraIdAmrToPingIdAmrMap = {\n  FACE: [],\n  FIDO: [\"fidokey\", \"fidoplat\", \"fido\"],\n  FPT: [],\n  HWK: [\"yupiotp\", \"oath\"],\n  IRIS: [],\n  OTP: [\"mobileotp\", \"pidotp\", \"email\", \"desktop\", \"authapp\"],\n  POP: [],\n  RETINA: [],\n  SC: [],\n  SMS: [\"sms\"],\n  SWK: [\"swk\", \"pidpush\", \"pidnm\"],\n  TEL: [\"tel\"],\n  VBM: [],\n  BIO: [\"pidfpt\", \"pidnm\"]\n};\n\nmodule.exports = a = async ({params}) => {\n  const pingIdError = params.error;\n\tconst pingIdAmrOutput = params.pingIdAmr;\n  const pingIdAmrArray = pingIdAmrOutput.split(' ');\n\n\tlet entraIdAmr = findFirstKeyWithValue(entraIdAmrToPingIdAmrMap, pingIdAmrArray);\n  if (entraIdAmr == null && !pingIdError) {\n    entraIdAmr = \"pop\";\n  }\n\n\treturn { entraIdAmr };\n};"
               },
               "outputSchema": {
                 "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"entraIdAmr\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
@@ -596,7 +596,7 @@
     }
   },
   "flowColor": "#e4e2e1",
-  "savedDate": 1741627271840,
+  "savedDate": 1744173394748,
   "variables": [],
   "connections": []
 }
