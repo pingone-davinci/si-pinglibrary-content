@@ -14,19 +14,19 @@
         "flowConnector",
         "pingOneAuthenticationConnector"
       ],
-      "createdDate": 1724153728308,
-      "currentVersion": 1,
+      "createdDate": 1754577181387,
+      "currentVersion": 4,
       "customerId": "",
-      "description": "Last Updated: August 20th, 2024",
+      "description": "Last Updated: August 7th, 2025",
       "flowStatus": "enabled",
       "isOutputSchemaSaved": false,
       "name": "PingOne Authentication with MFA via OTP or FIDO",
-      "publishedVersion": 1,
+      "publishedVersion": 3,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
         "intermediateLoadingScreenHTML": "",
-        "logLevel": 2,
+        "logLevel": 4,
         "useCustomCSS": true,
         "css": ".companyLogo {\n    height: 65px;\n}\n\n.icon-padding::before {\n  padding-right: 5px;\n}",
         "cssLinks": [
@@ -37,9 +37,8 @@
         "customFaviconLink": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
       },
       "timeouts": "null",
-      "updatedDate": 1724153729932,
-      "flowId": "1faf63b4c419a3ca6efa09cce62f115c",
-      "versionId": 1,
+      "flowId": "c1b29d63c77309d51c662a73f858b96d",
+      "versionId": 4,
       "graphData": {
         "elements": {
           "nodes": [
@@ -335,9 +334,9 @@
               "data": {
                 "id": "sb7lgfar79",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Teleport",
                 "status": "configured",
                 "capabilityName": "startNode",
@@ -368,9 +367,9 @@
               "data": {
                 "id": "mti6wzzsw5",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node [2022-08-26]",
                 "status": "configured",
                 "capabilityName": "startNode",
@@ -555,9 +554,9 @@
               "data": {
                 "id": "mcqwcgay0v",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node [2023-01-09]",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -695,9 +694,9 @@
               "data": {
                 "id": "qqex78y5no",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Teleport",
                 "status": "configured",
                 "capabilityName": "returnBackToCallingNode",
@@ -923,9 +922,9 @@
               "data": {
                 "id": "u3nc0y6sgu",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -1122,7 +1121,7 @@
                   },
                   "nodeDescription": {},
                   "code": {
-                    "value": "// Test to ensure passwords match\nmodule.exports = a = async ({ params }) => {\n\tconst newPassword = params.newPassword;\n\tconst verifyNewPassword = params.verifyNewPassword;\n\n\tif (!newPassword || !verifyNewPassword || (newPassword !== verifyNewPassword)) {\n\t\treturn false;\n\t}\n\n\treturn { \"success\": true};\n}"
+                    "value": "// Test to ensure passwords match\nmodule.exports = async ({ params }) => {\n\tconst newPassword = params.newPassword;\n\tconst verifyNewPassword = params.verifyNewPassword;\n\n\tif (!newPassword || !verifyNewPassword || (newPassword !== verifyNewPassword)) {\n\t\treturn false;\n\t}\n\n\treturn { \"success\": true};\n}"
                   },
                   "outputSchema": {
                     "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"success\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
@@ -1361,9 +1360,9 @@
               "data": {
                 "id": "c8s4as3516",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Teleport",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -1567,9 +1566,9 @@
               "data": {
                 "id": "eajhpunr16",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node [2022-08-26]",
                 "status": "configured",
                 "capabilityName": "startNode",
@@ -1619,9 +1618,9 @@
               "data": {
                 "id": "g93dmrrr5d",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Teleport",
                 "status": "configured",
                 "capabilityName": "returnBackToCallingNode",
@@ -1701,9 +1700,9 @@
               "data": {
                 "id": "ioonogeuza",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "returnBackToCallingNode",
@@ -1839,9 +1838,9 @@
               "data": {
                 "id": "w349wlpj6p",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node [2022-08-26]",
                 "status": "configured",
                 "capabilityName": "startNode",
@@ -2019,9 +2018,9 @@
               "data": {
                 "id": "ux6gq2dyxu",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -2241,9 +2240,9 @@
               "data": {
                 "id": "q59rbwllhe",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -2575,9 +2574,9 @@
               "data": {
                 "id": "ug1tfuvoj8",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -2630,9 +2629,9 @@
               "data": {
                 "id": "54jprd4io8",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "returnBackToCallingNode",
@@ -2729,9 +2728,9 @@
               "data": {
                 "id": "bmfvybco52",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node [2022-08-26]",
                 "status": "configured",
                 "capabilityName": "startNode",
@@ -2818,9 +2817,9 @@
               "data": {
                 "id": "8o5ms7t2gp",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -2865,7 +2864,7 @@
                   "subFlowId": {
                     "value": {
                       "label": "MFA Device Authentication Subflow",
-                      "value": "560efa013466f724e51b825873d3fd51"
+                      "value": "6c99725c2ba5bac98b99db257fb1bebe"
                     }
                   },
                   "subFlowVersionId": {
@@ -3066,9 +3065,9 @@
               "data": {
                 "id": "aumznxljs0",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -3490,7 +3489,7 @@
                     ]
                   },
                   "code": {
-                    "value": "const url = require('url');\nconst pingOneHost = \"auth.pingone.com\";\n\nmodule.exports = a = async ({ params }) => {\n\tconst { skOpenId: { client_id, redirect_uri }, subflow, parameters, origin } = params\n\tconst originUrl = origin ? url.parse(origin) : undefined;\n\tconst redirectUrl = redirect_uri ? url.parse(redirect_uri) : undefined;\n\tconst pingOneApplication = parameters?.application;\n\n\tif (subflow) {\n\t\treturn { flowType: \"SUBFLOW\" };\n\t}\n\n\tif (client_id && client_id === \"tryFlow\") {\n\t\treturn { flowType: \"TRYFLOW\" };\n\t}\n\n\tif (redirectUrl) {\n\t\t// Consider treating External IdP redirect separately in the future\n\t\tif (redirectUrl.host === pingOneHost) {\n\t\t\treturn { flowType: \"REDIRECT\" };\n\t\t}\n\t\treturn { flowType: \"REDIRECT\" };\n\t}\n\n\tif (pingOneApplication && originUrl.host === pingOneHost) {\n\t\treturn { flowType: \"TRIGGER\" };\n\t}\n\n\tif (parameters) {\n\t\tif (origin) {\n\t\t\treturn { flowType: \"WIDGET\" };\n\t\t}\n\t\treturn { flowType: \"API\" };\n\t}\n\n\treturn { 'testVariable': params };\n}"
+                    "value": "const pingOneHost = \"auth.pingone.com\";\n\nmodule.exports = async ({ params }) => {\n\tconst { skOpenId: { client_id, redirect_uri }, subflow, parameters, origin } = params\n\tconst pingOneApplication = parameters?.application;\n\n\tif (subflow) {\n\t\treturn { flowType: \"SUBFLOW\" };\n\t}\n\n\tif (client_id && client_id === \"tryFlow\") {\n\t\treturn { flowType: \"TRYFLOW\" };\n\t}\n\n\tif (redirect_uri) {\n\t\treturn { flowType: \"REDIRECT\" };\n\t}\n\n\tif (pingOneApplication && origin) {\n\t\tconst match = origin.match(/^(?:https?:\\/\\/(?:www\\.)?)?([^/:]+)/);\n\t\tif (match && match[1] && match[1] === pingOneHost) {\n\t\t\treturn { flowType: \"TRIGGER\" };\n\t\t}\t\t\n\t}\n\n\tif (parameters) {\n\t\tif (origin) {\n\t\t\treturn { flowType: \"WIDGET\" };\n\t\t}\n\t\treturn { flowType: \"API\" };\n\t}\n\n\treturn { 'testVariable': params };\n}"
                   },
                   "outputSchema": {
                     "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"testVariable\": {\n\t\t\t\t\"type\": \"object\"\n\t\t\t},\n\t\t\t\"flowType\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
@@ -3554,9 +3553,9 @@
               "data": {
                 "id": "hc4djvxcq3",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Teleport",
                 "status": "configured",
                 "capabilityName": "startNode",
@@ -3964,9 +3963,9 @@
               "data": {
                 "id": "jp7frrosjj",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -4508,7 +4507,7 @@
                     "value": "#000000"
                   },
                   "annotation": {
-                    "value": "Last Updated: August 20th, 2024"
+                    "value": "Last Updated: August 7th, 2025"
                   },
                   "width": {
                     "value": 240
@@ -6571,11 +6570,11 @@
         }
       },
       "flowColor": "#E3F0FF",
-      "savedDate": 1724153727795,
+      "savedDate": 1754577180873,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1723733673806,
+          "createdDate": 1754574124086,
           "fields": {
             "type": "string",
             "displayName": "Url for company's logo image",
@@ -6583,7 +6582,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "70e8e6ee-0ced-4a23-b113-6c0149c018cc",
+          "id": "85a75aa8-7456-4b03-bc6b-b7506cd483b1",
           "type": "property",
           "visibility": "private",
           "name": "companyLogo##SK##flowInstance",
@@ -6591,7 +6590,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1723733618022,
+          "createdDate": 1754574124087,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -6599,7 +6598,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "ae3faac6-277a-436d-b3c9-30dd49cedb2d",
+          "id": "d32724eb-0aa5-4644-b4a5-ea72f4d083f3",
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
@@ -6607,7 +6606,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1724095791478,
+          "createdDate": 1754577124820,
           "fields": {
             "type": "string",
             "displayName": "FIDO2 origin",
@@ -6615,7 +6614,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "b647dac8-a9d0-4b11-b1d6-bed1e64f7008",
+          "id": "b9ce9928-62f8-454c-8d9b-6574e55c9553",
           "type": "property",
           "visibility": "private",
           "name": "origin##SK##flowInstance",
@@ -6623,7 +6622,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1724095791479,
+          "createdDate": 1754577124817,
           "fields": {
             "type": "string",
             "displayName": "Relying Party ID",
@@ -6631,7 +6630,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "cd208e20-002b-43d3-9714-32633b749bad",
+          "id": "f83a41f4-710b-4b6b-9fa4-d9096b67f49f",
           "type": "property",
           "visibility": "private",
           "name": "rpid##SK##flowInstance",
@@ -6639,7 +6638,7 @@
         }
       ],
       "connections": [],
-      "parentFlowId": "1faf63b4c419a3ca6efa09cce62f115c"
+      "parentFlowId": "c1b29d63c77309d51c662a73f858b96d"
     },
     {
       "companyId": "",
@@ -6653,10 +6652,10 @@
         "functionsConnector",
         "errorConnector"
       ],
-      "createdDate": 1724154780720,
-      "currentVersion": 1,
+      "createdDate": 1754577253451,
+      "currentVersion": 6,
       "customerId": "",
-      "description": "Last Updated: August 20th, 2024",
+      "description": "Last Updated: August 7th, 2025",
       "flowStatus": "enabled",
       "inputSchemaCompiled": {
         "parameters": {
@@ -6711,17 +6710,17 @@
       "isInputSchemaSaved": true,
       "isOutputSchemaSaved": false,
       "name": "MFA Device Authentication Subflow",
-      "publishedVersion": 1,
+      "publishedVersion": 6,
       "settings": {
         "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
         "intermediateLoadingScreenCSS": "",
         "intermediateLoadingScreenHTML": "",
-        "logLevel": 2
+        "logLevel": 4
       },
       "timeouts": "null",
-      "updatedDate": 1724154782851,
-      "flowId": "560efa013466f724e51b825873d3fd51",
-      "versionId": 1,
+      "updatedDate": 1754577260861,
+      "flowId": "6c99725c2ba5bac98b99db257fb1bebe",
+      "versionId": 6,
       "graphData": {
         "elements": {
           "nodes": [
@@ -6912,9 +6911,9 @@
               "data": {
                 "id": "etn576tjxn",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "startNode",
@@ -7045,9 +7044,9 @@
               "data": {
                 "id": "g819woyri7",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Teleport",
                 "status": "configured",
                 "capabilityName": "startNode",
@@ -7342,9 +7341,9 @@
               "data": {
                 "id": "jzl1ixsnb4",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -7378,9 +7377,9 @@
               "data": {
                 "id": "lvyk7q8eg8",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -7427,7 +7426,7 @@
                     "value": "{\n  \"output\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"usableDevices\": {\n        \"type\": \"array\",\n        \"items\": {\n          \"type\": \"string\"\n        }\n      },\n      \"count\": {\n        \"type\": \"number\"\n      },\n      \"canChangeDevice\": {\n        \"type\": \"boolean\"\n      }\n    }\n  }\n}"
                   },
                   "code": {
-                    "value": "module.exports = a = async ({ params }) => {\n  let usableDevices = JSON.parse(params.devices);\n\n  usableDevices = usableDevices.map(device => {\n    if (device.type === \"FIDO2\" && device?.attributes?.previousDeviceType) {\n      return { ...device, type: device.attributes.previousDeviceType }\n    }\n    return device;\n  });\n\n  if (params.webAuthenSupport === \"NONE\") {\n    usableDevices = usableDevices.filter(device => {\n      return device.type !== \"FIDO2\";\n    });\n  }\n\n  usableDevices = usableDevices.filter(device => {\n    return params.allowedTypes.includes(device.type);\n  })\n\n  usableDevices = usableDevices.filter(device => {\n    return device.coolDownExpiresAt == undefined;\n  });\n\n  return { usableDevices: usableDevices, count: usableDevices.length, canChangeDevice: usableDevices.length > 1 }\n}"
+                    "value": "module.exports = async ({ params }) => {\n  let usableDevices = JSON.parse(params.devices);\n\n  usableDevices = usableDevices.map(device => {\n    if (device.type === \"FIDO2\" && device?.attributes?.previousDeviceType) {\n      return { ...device, type: device.attributes.previousDeviceType }\n    }\n    return device;\n  });\n\n  if (params.webAuthenSupport === \"NONE\") {\n    usableDevices = usableDevices.filter(device => {\n      return device.type !== \"FIDO2\";\n    });\n  }\n\n  usableDevices = usableDevices.filter(device => {\n    return params.allowedTypes.includes(device.type);\n  })\n\n  usableDevices = usableDevices.filter(device => {\n    return device.coolDownExpiresAt == undefined;\n  });\n\n  return { usableDevices: usableDevices, count: usableDevices.length, canChangeDevice: usableDevices.length > 1 }\n}"
                   },
                   "variableInputList": {
                     "value": [
@@ -7507,7 +7506,7 @@
                     "value": "{\n  \"output\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"maskedUsableDevices\": {\n        \"type\": \"array\",\n        \"items\": {\n          \"type\": \"string\"\n        }\n      }\n    }\n  }\n}"
                   },
                   "code": {
-                    "value": "module.exports = a = async ({ params }) => {\n  String.prototype.maskEmail = function() {\n    const [username, domain] = this.split(\"@\");\n    const maskedUsername =\n      username.charAt(0) + \"*\".repeat(username.length - 2) + username.slice(-1);\n    return maskedUsername + \"@\" + domain;\n  };\n\n  String.prototype.maskPhoneNumber = function() {\n    // Strip all non-numeric characters from the phone number\n    const numericPhoneNumber = this.replace(/\\D/g, '');\n\n    // Mask the first six digits of the phone number\n    const maskedPhoneNumber = '***-***-' + numericPhoneNumber.slice(-4);\n\n    return maskedPhoneNumber;\n  };\n\n  var usableDevices = JSON.parse(params.devices);\n\n  for (let i = 0; i < usableDevices.length; i++) {\n    if (usableDevices[i].type === \"EMAIL\") {\n      usableDevices[i].email = usableDevices[i].email.maskEmail();\n    } else if (usableDevices[i].type === \"SMS\") {\n      usableDevices[i].phone = usableDevices[i].phone.maskPhoneNumber();\n    }\n  }\n\n  return { \n    maskedUsableDevices: usableDevices\n  }\n}"
+                    "value": "module.exports = async ({ params }) => {\n  String.prototype.maskEmail = function() {\n    const [username, domain] = this.split(\"@\");\n    const maskedUsername =\n      username.charAt(0) + \"*\".repeat(username.length - 2) + username.slice(-1);\n    return maskedUsername + \"@\" + domain;\n  };\n\n  String.prototype.maskPhoneNumber = function() {\n    // Strip all non-numeric characters from the phone number\n    const numericPhoneNumber = this.replace(/\\D/g, '');\n\n    // Mask the first six digits of the phone number\n    const maskedPhoneNumber = '***-***-' + numericPhoneNumber.slice(-4);\n\n    return maskedPhoneNumber;\n  };\n\n  var usableDevices = JSON.parse(params.devices);\n\n  for (let i = 0; i < usableDevices.length; i++) {\n    if (usableDevices[i].type === \"EMAIL\") {\n      usableDevices[i].email = usableDevices[i].email.maskEmail();\n    } else if (usableDevices[i].type === \"SMS\") {\n      usableDevices[i].phone = usableDevices[i].phone.maskPhoneNumber();\n    }\n  }\n\n  return { \n    maskedUsableDevices: usableDevices\n  }\n}"
                   },
                   "variableInputList": {
                     "value": [
@@ -7653,9 +7652,9 @@
               "data": {
                 "id": "7r4q2uglw0",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -7754,9 +7753,9 @@
               "data": {
                 "id": "dc4ikrj6va",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -7892,9 +7891,9 @@
               "data": {
                 "id": "k8aha472om",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Teleport",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -8046,9 +8045,9 @@
               "data": {
                 "id": "4v10j3tx0j",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Teleport",
                 "status": "configured",
                 "capabilityName": "startNode",
@@ -8099,9 +8098,9 @@
               "data": {
                 "id": "d49q0zqsyu",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node [2022-12-27]",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -8281,9 +8280,9 @@
               "data": {
                 "id": "mgbn83uyyc",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node [2022-12-27]",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -8378,9 +8377,9 @@
               "data": {
                 "id": "edhz8d0m8u",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -8420,9 +8419,9 @@
               "data": {
                 "id": "yp03nqj0sm",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -8534,7 +8533,7 @@
                     ]
                   },
                   "code": {
-                    "value": "module.exports = a = async ({ params }) => {\n\tvar selected = JSON.parse(params.devices).filter(device => {\n\t\treturn device.id == params.id;\n\t});\n\n\tif (selected && selected.length > 0 && selected[0].hasOwnProperty(\"nickname\")) {\n  \t\tvar deviceName = selected[0].nickname;\n\t}\n\n\tif (selected[0].model) {\n\t\tdeviceName = selected[0].model.marketingName;\n\t}\n\n\tif (selected[0].displayName) {\n\t\tdeviceName = selected[0].displayName;\n\t}\n\n\treturn {\n\t\tselectedDeviceType: selected[0].type,\n\t\tselectedDeviceEmail: selected[0].email,\n\t\tselectedDevicePhone: selected[0].phone,\n\t\tselectedDeviceContact: selected[0].email || selected[0].phone,\n\t\tselectedDeviceName: deviceName,\n\t\tselectedDeviceOtpEnabled: selected[0].otpEnabled\n\t}\n}"
+                    "value": "module.exports = async ({ params }) => {\n\tvar selected = JSON.parse(params.devices).filter(device => {\n\t\treturn device.id == params.id;\n\t});\n\n\tif (selected && selected.length > 0 && selected[0].hasOwnProperty(\"nickname\")) {\n  \t\tvar deviceName = selected[0].nickname;\n\t}\n\n\tif (selected[0].model) {\n\t\tdeviceName = selected[0].model.marketingName;\n\t}\n\n\tif (selected[0].displayName) {\n\t\tdeviceName = selected[0].displayName;\n\t}\n\n\treturn {\n\t\tselectedDeviceType: selected[0].type,\n\t\tselectedDeviceEmail: selected[0].email,\n\t\tselectedDevicePhone: selected[0].phone,\n\t\tselectedDeviceContact: selected[0].email || selected[0].phone,\n\t\tselectedDeviceName: deviceName,\n\t\tselectedDeviceOtpEnabled: selected[0].otpEnabled\n\t}\n}"
                   },
                   "nodeTitle": {
                     "value": "Enrich Device Details"
@@ -8602,9 +8601,9 @@
               "data": {
                 "id": "m0rufm6m80",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "startNode",
@@ -8663,9 +8662,9 @@
               "data": {
                 "id": "e9lmj4jktt",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -8898,9 +8897,9 @@
               "data": {
                 "id": "cj6pxtan53",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Teleport",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -8972,9 +8971,9 @@
               "data": {
                 "id": "1f892rorgf",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Teleport",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -9135,9 +9134,9 @@
               "data": {
                 "id": "m5l2cif5p1",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "startNode",
@@ -9763,9 +9762,9 @@
               "data": {
                 "id": "oc8nhn1hn8",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -9966,9 +9965,9 @@
               "data": {
                 "id": "7qh7dk59mz",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Teleport",
                 "status": "configured",
                 "capabilityName": "startNode",
@@ -10024,9 +10023,9 @@
               "data": {
                 "id": "0r644l3wck",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Teleport",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -10194,9 +10193,9 @@
               "data": {
                 "id": "is8hgaqrhz",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -10273,9 +10272,9 @@
               "data": {
                 "id": "zd2tmmhgvd",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -10572,7 +10571,7 @@
                     ]
                   },
                   "code": {
-                    "value": "module.exports = a = async ({ params }) => {\n\tlet id = params.id\n\n\tif (id) {\n\t\tvar selected = JSON.parse(params.devices).filter(device => {\n\t\t\treturn device.id == params.id;\n\t\t});\n\n\t\tif (selected && selected.length > 0 && selected[0].hasOwnProperty(\"nickname\")) {\n\t\t\tvar deviceName = selected[0].nickname;\n\t\t}\n\n\t\tif (selected[0].model) {\n\t\t\tdeviceName = selected[0].model.marketingName;\n\t\t}\n\n\t\tif (selected[0].displayName) {\n\t\t\tdeviceName = selected[0].displayName;\n\t\t}\n\n\t\treturn {\n\t\t\tselectedDeviceType: selected[0].type,\n\t\t\tselectedDeviceEmail: selected[0].email,\n\t\t\tselectedDevicePhone: selected[0].phone,\n\t\t\tselectedDeviceContact: selected[0].email || selected[0].phone,\n\t\t\tselectedDeviceName: deviceName,\n\t\t\tselectedDeviceOtpEnabled: selected[0].otpEnabled\n\t\t}\n\t}\n}"
+                    "value": "module.exports = async ({ params }) => {\n\tlet id = params.id\n\n\tif (id) {\n\t\tvar selected = JSON.parse(params.devices).filter(device => {\n\t\t\treturn device.id == params.id;\n\t\t});\n\n\t\tif (selected && selected.length > 0 && selected[0].hasOwnProperty(\"nickname\")) {\n\t\t\tvar deviceName = selected[0].nickname;\n\t\t}\n\n\t\tif (selected[0].model) {\n\t\t\tdeviceName = selected[0].model.marketingName;\n\t\t}\n\n\t\tif (selected[0].displayName) {\n\t\t\tdeviceName = selected[0].displayName;\n\t\t}\n\n\t\treturn {\n\t\t\tselectedDeviceType: selected[0].type,\n\t\t\tselectedDeviceEmail: selected[0].email,\n\t\t\tselectedDevicePhone: selected[0].phone,\n\t\t\tselectedDeviceContact: selected[0].email || selected[0].phone,\n\t\t\tselectedDeviceName: deviceName,\n\t\t\tselectedDeviceOtpEnabled: selected[0].otpEnabled\n\t\t}\n\t}\n}"
                   },
                   "nodeTitle": {
                     "value": "Enrich Device Details"
@@ -10597,9 +10596,9 @@
               "data": {
                 "id": "9el3lwtjm0",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -10658,9 +10657,9 @@
               "data": {
                 "id": "hxqtlccqlk",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -10859,9 +10858,9 @@
               "data": {
                 "id": "tz23ookvrc",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "startNode",
@@ -10946,9 +10945,9 @@
               "data": {
                 "id": "fr8ffvqm8q",
                 "nodeType": "CONNECTION",
-                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectionId": "3566e86a35c26e575396dcfb89a3dcc0",
                 "connectorId": "nodeConnector",
-                "name": "Node",
+                "name": "Teleport",
                 "label": "Node",
                 "status": "configured",
                 "capabilityName": "goToNode",
@@ -13419,11 +13418,11 @@
         }
       ],
       "flowColor": "#ff661c",
-      "savedDate": 1724154780620,
+      "savedDate": 1754577252794,
       "variables": [
         {
           "context": "flowInstance",
-          "createdDate": 1724095791479,
+          "createdDate": 1754577124820,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13431,7 +13430,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "175007f4-3bbe-4d60-a9b6-65e8c948b5ba",
+          "id": "f0958f1c-1f48-4d48-a799-9929d6f9a413",
           "type": "property",
           "visibility": "private",
           "name": "webAuthnSupport##SK##flowInstance",
@@ -13439,7 +13438,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1724095791479,
+          "createdDate": 1754577124817,
           "fields": {
             "type": "string",
             "displayName": "Relying Party ID",
@@ -13447,7 +13446,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "cd208e20-002b-43d3-9714-32633b749bad",
+          "id": "f83a41f4-710b-4b6b-9fa4-d9096b67f49f",
           "type": "property",
           "visibility": "private",
           "name": "rpid##SK##flowInstance",
@@ -13455,14 +13454,14 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1724095791479,
+          "createdDate": 1754577124819,
           "fields": {
             "type": "string",
             "displayName": "",
             "min": 0,
             "max": 2000
           },
-          "id": "72c67302-9926-4573-9d69-d766f29bb3f6",
+          "id": "5a3e62a4-0897-4cce-8357-efd8fa99b5d3",
           "type": "property",
           "visibility": "private",
           "name": "p1DeviceAuthenticationId##SK##flowInstance",
@@ -13470,7 +13469,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1724095791478,
+          "createdDate": 1754577124820,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13478,7 +13477,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "ed639a4a-87b8-4cca-95cd-53d6670be426",
+          "id": "1594d8df-605e-400e-a9b4-041a18d2c891",
           "type": "property",
           "visibility": "private",
           "name": "ORIGIN##SK##flowInstance",
@@ -13486,7 +13485,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1723733673806,
+          "createdDate": 1754574124086,
           "fields": {
             "type": "string",
             "displayName": "Url for company's logo image",
@@ -13494,7 +13493,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "70e8e6ee-0ced-4a23-b113-6c0149c018cc",
+          "id": "85a75aa8-7456-4b03-bc6b-b7506cd483b1",
           "type": "property",
           "visibility": "private",
           "name": "companyLogo##SK##flowInstance",
@@ -13502,7 +13501,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1723733618022,
+          "createdDate": 1754574124087,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13510,7 +13509,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "ae3faac6-277a-436d-b3c9-30dd49cedb2d",
+          "id": "d32724eb-0aa5-4644-b4a5-ea72f4d083f3",
           "type": "property",
           "visibility": "private",
           "name": "companyName##SK##flowInstance",
@@ -13518,7 +13517,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1724095791479,
+          "createdDate": 1754577124819,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13526,7 +13525,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "530617ac-2bba-4860-851e-7cb567c01e6b",
+          "id": "a784b1bc-f8e1-4088-958f-50d63c8486d3",
           "type": "property",
           "visibility": "private",
           "name": "maskedUsableDevices##SK##flowInstance",
@@ -13534,7 +13533,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1724095791476,
+          "createdDate": 1754577124819,
           "fields": {
             "type": "boolean",
             "displayName": "",
@@ -13542,7 +13541,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "7b200bc2-90ac-427c-ad9f-0e8a58d6f159",
+          "id": "9023df2d-a22e-4e4c-bd5d-635cf09fe893",
           "type": "property",
           "visibility": "private",
           "name": "canChangeDevice##SK##flowInstance",
@@ -13550,7 +13549,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1724095791478,
+          "createdDate": 1754577124820,
           "fields": {
             "type": "string",
             "displayName": "FIDO2 origin",
@@ -13558,7 +13557,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "b647dac8-a9d0-4b11-b1d6-bed1e64f7008",
+          "id": "b9ce9928-62f8-454c-8d9b-6574e55c9553",
           "type": "property",
           "visibility": "private",
           "name": "origin##SK##flowInstance",
@@ -13566,7 +13565,7 @@
         },
         {
           "context": "flowInstance",
-          "createdDate": 1724095791478,
+          "createdDate": 1754577124821,
           "fields": {
             "type": "string",
             "displayName": "",
@@ -13574,7 +13573,7 @@
             "min": 0,
             "max": 2000
           },
-          "id": "de486804-76c3-492f-a77c-ff7f3238d0d5",
+          "id": "2f02e6a9-99d0-4e96-a3b6-ea8ecca24c88",
           "type": "property",
           "visibility": "private",
           "name": "publicKeyCredentialRequestOptions##SK##flowInstance",
