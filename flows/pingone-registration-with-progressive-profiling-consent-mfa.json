@@ -12,15 +12,15 @@
     "pingOneMfaConnector",
     "pingOneAuthenticationConnector"
   ],
-  "createdDate": 1754576914536,
-  "currentVersion": 1,
+  "createdDate": 1759852787808,
+  "currentVersion": 2,
   "customerId": "f3e47d945ae971a4b4142ec75012d155",
-  "deployedDate": 1754576921151,
-  "description": "Last Updated: August 7th, 2025",
+  "deployedDate": 1759852789863,
+  "description": "Last Updated: October 7th, 2025",
   "flowStatus": "enabled",
   "isOutputSchemaSaved": false,
   "name": "PingOne Registration with Progressive Profiling, Consent, MFA Enrollment",
-  "publishedVersion": 1,
+  "publishedVersion": 2,
   "settings": {
     "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
     "intermediateLoadingScreenCSS": {},
@@ -37,9 +37,9 @@
     "customFaviconLink": "https://assets.pingone.com/ux/ui-library/5.0.2/images/logo-pingidentity.png"
   },
   "timeouts": "null",
-  "updatedDate": 1754576921197,
-  "flowId": "cb7a2ff5c9118a138b39bab86b90cde9",
-  "versionId": 1,
+  "updatedDate": 1759852789904,
+  "flowId": "0c07d4f331a2e9ac98707447bf0e4ea5",
+  "versionId": 2,
   "graphData": {
     "elements": {
       "nodes": [
@@ -78,7 +78,8 @@
                 "value": 8
               }
             },
-            "status": "configured"
+            "status": "configured",
+            "idUnique": "ef0qqr6ata"
           },
           "position": {
             "x": 234,
@@ -144,7 +145,7 @@
                 "value": "Initialize runtime variables"
               }
             },
-            "idUnique": "o9dkvzsnnf"
+            "idUnique": "6ppo1vgcw7"
           },
           "position": {
             "x": 342,
@@ -261,7 +262,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
               }
             },
-            "idUnique": "e9zf5ebk6y"
+            "idUnique": "fwp3kks7g7"
           },
           "position": {
             "x": 934,
@@ -287,7 +288,8 @@
               "p08e8it13s": {
                 "value": "allTriggersTrue"
               }
-            }
+            },
+            "idUnique": "9nexuhk53o"
           },
           "position": {
             "x": 1054,
@@ -305,7 +307,8 @@
         {
           "data": {
             "id": "ge7wrs552s",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "jaiixt4pbx"
           },
           "position": {
             "x": 462,
@@ -323,7 +326,8 @@
         {
           "data": {
             "id": "uxw68rfpf4",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "fsqd2w90x2"
           },
           "position": {
             "x": 1984,
@@ -360,7 +364,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.p08e8it13s.payload.output.user.id}}\",\n        \"tooltip\": \"{{local.p08e8it13s.payload.output.user.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               }
             },
-            "idUnique": "bdzfpuqvez"
+            "idUnique": "0h7ajgwabi"
           },
           "position": {
             "x": 1864,
@@ -394,7 +398,7 @@
                 "value": "Create User Error"
               }
             },
-            "idUnique": "f6c6klxo7e"
+            "idUnique": "o5e3l0e3a8"
           },
           "position": {
             "x": 1864,
@@ -418,7 +422,8 @@
               "9jfmssl1ai": {
                 "value": "anyTriggersFalse"
               }
-            }
+            },
+            "idUnique": "qh37kneqex"
           },
           "position": {
             "x": 1684,
@@ -507,7 +512,8 @@
                   }
                 }
               }
-            }
+            },
+            "idUnique": "mf3rh2pu01"
           },
           "position": {
             "x": 1534,
@@ -564,7 +570,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "6ttoks5717"
+            "idUnique": "kynd18ae53"
           },
           "position": {
             "x": 1744,
@@ -615,7 +621,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "ssxgorenzh"
+            "idUnique": "3x47hkw68y"
           },
           "position": {
             "x": 222,
@@ -649,7 +655,7 @@
                 "value": "Present Agreement"
               }
             },
-            "idUnique": "m3eh084bo8"
+            "idUnique": "uikbvdwhtc"
           },
           "position": {
             "x": 342,
@@ -728,7 +734,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"agreementText\",\n        \"data\": \"{{local.xp4u4o1a5h.payload.output.agreementPresentation.agreementText}}\",\n        \"tooltip\": \"{{local.xp4u4o1a5h.payload.output.agreementPresentation.agreementText}}\",\n        \"children\": [\n          {\n            \"text\": \"agreementText\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               }
             },
-            "idUnique": "a0yf1wqul8"
+            "idUnique": "o6d3x1xmua"
           },
           "position": {
             "x": 942,
@@ -747,7 +753,8 @@
           "data": {
             "id": "zd58jbuql9",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "se1cabz4p2"
           },
           "position": {
             "x": 1062,
@@ -795,7 +802,8 @@
               "nodeDescription": {
                 "value": "Determine if user accepted agreement"
               }
-            }
+            },
+            "idUnique": "tz4zjthyt8"
           },
           "position": {
             "x": 1242,
@@ -830,7 +838,7 @@
               },
               "nodeDescription": {}
             },
-            "idUnique": "ofc4tniyxs"
+            "idUnique": "mpmyb8apwj"
           },
           "position": {
             "x": 642,
@@ -887,7 +895,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "51rs8oxkai"
+            "idUnique": "h6dtiqrwuh"
           },
           "position": {
             "x": 222,
@@ -905,7 +913,8 @@
         {
           "data": {
             "id": "mr9ql5y4u2",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "b5v0xg2sys"
           },
           "position": {
             "x": 462,
@@ -928,7 +937,8 @@
               "y18sts0vg9": {
                 "value": "anyTriggersFalse"
               }
-            }
+            },
+            "idUnique": "e5xbu4uts4"
           },
           "position": {
             "x": 762,
@@ -967,7 +977,8 @@
               "p1AgreementId": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"p1AgreementId\",\n        \"data\": \"{{global.variables.p1AgreementId}}\",\n        \"tooltip\": \"{{global.variables.p1AgreementId}}\",\n        \"children\": [\n          {\n            \"text\": \"p1AgreementId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               }
-            }
+            },
+            "idUnique": "o7w9s5dyy6"
           },
           "position": {
             "x": 2164,
@@ -986,7 +997,8 @@
           "data": {
             "id": "v8dhkgyc9x",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "g0zz5syv0h"
           },
           "position": {
             "x": 1362,
@@ -1022,7 +1034,8 @@
               "nodeTitle": {
                 "value": "Accept Agreement"
               }
-            }
+            },
+            "idUnique": "0anjciueat"
           },
           "position": {
             "x": 1542,
@@ -1041,7 +1054,8 @@
           "data": {
             "id": "nsfbvowpfk",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "h3z06xapq6"
           },
           "position": {
             "x": 1662,
@@ -1071,7 +1085,8 @@
               "nodeTitle": {
                 "value": "Return to Caller"
               }
-            }
+            },
+            "idUnique": "di5o92lk3y"
           },
           "position": {
             "x": 1842,
@@ -1090,7 +1105,8 @@
           "data": {
             "id": "4etpm23lvf",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "kohg54y7c6"
           },
           "position": {
             "x": 1362,
@@ -1123,7 +1139,8 @@
               "nodeTitle": {
                 "value": "Delete User Account"
               }
-            }
+            },
+            "idUnique": "a1lkate5dg"
           },
           "position": {
             "x": 1542,
@@ -1193,7 +1210,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"If you have questions or need assistance, our support team is here to help.\"\n      }\n    ]\n  }\n]"
               }
             },
-            "idUnique": "ydgzw24hej"
+            "idUnique": "jyt7kruzwn"
           },
           "position": {
             "x": 1842,
@@ -1211,7 +1228,8 @@
         {
           "data": {
             "id": "cj09b7htyp",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "kwr5snrzae"
           },
           "position": {
             "x": 1662,
@@ -1240,7 +1258,8 @@
               "5p2eqtvda1": {
                 "value": "anyTriggersFalse"
               }
-            }
+            },
+            "idUnique": "td874xxaza"
           },
           "position": {
             "x": 762,
@@ -1297,7 +1316,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "4xlzke6n1k"
+            "idUnique": "w904liq83h"
           },
           "position": {
             "x": 1422,
@@ -1354,7 +1373,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "0vo3avbo2d"
+            "idUnique": "nxjn9qpssz"
           },
           "position": {
             "x": 2044,
@@ -1386,7 +1405,7 @@
                 "value": "#000000"
               },
               "annotation": {
-                "value": "Last Updated: Aug 7th, 2025"
+                "value": "Last Updated: October 7th, 2025"
               },
               "width": {
                 "value": 240
@@ -1411,7 +1430,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "o2v5xhdcbc"
+            "idUnique": "p9jfapd6bi"
           },
           "position": {
             "x": 238,
@@ -1478,7 +1497,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Unable to execute the flow due to missing parameter values.\"\n      }\n    ]\n  }\n]"
               }
             },
-            "idUnique": "3nm07rhtek"
+            "idUnique": "mwhc44dubz"
           },
           "position": {
             "x": 942,
@@ -1531,7 +1550,8 @@
               "nodeDescription": {
                 "value": "Add input variables to check for null/empty"
               }
-            }
+            },
+            "idUnique": "rvh56ehvkx"
           },
           "position": {
             "x": 642,
@@ -1582,7 +1602,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "i2ni7h1ktw"
+            "idUnique": "6a1gnzshrb"
           },
           "position": {
             "x": 222,
@@ -1616,7 +1636,7 @@
                 "value": "Progressive Profile"
               }
             },
-            "idUnique": "15ceh3lwwd"
+            "idUnique": "vhjl6bbf24"
           },
           "position": {
             "x": 342,
@@ -1673,7 +1693,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "kmk6e3p1r4"
+            "idUnique": "70bjdjeeh2"
           },
           "position": {
             "x": 222,
@@ -1807,7 +1827,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
               }
             },
-            "idUnique": "26h9g91wqe"
+            "idUnique": "hzm2y5ncwv"
           },
           "position": {
             "x": 642,
@@ -1825,7 +1845,8 @@
         {
           "data": {
             "id": "ybrsjqqz88",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "o63o15rdj3"
           },
           "position": {
             "x": 762,
@@ -1843,7 +1864,8 @@
         {
           "data": {
             "id": "r06rec9cf",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "m03u3n19wa"
           },
           "position": {
             "x": 462,
@@ -1891,7 +1913,8 @@
               "nodeTitle": {
                 "value": "Enrich Profile"
               }
-            }
+            },
+            "idUnique": "tsmpo8r5ap"
           },
           "position": {
             "x": 1264,
@@ -1915,7 +1938,8 @@
               "kyc65vjf8u": {
                 "value": "anyTriggersFalse"
               }
-            }
+            },
+            "idUnique": "g51ldkcr90"
           },
           "position": {
             "x": 1384,
@@ -1957,7 +1981,8 @@
               "nodeTitle": {
                 "value": "Return to Caller"
               }
-            }
+            },
+            "idUnique": "cwepu2m2x2"
           },
           "position": {
             "x": 1564,
@@ -1976,7 +2001,8 @@
           "data": {
             "id": "f67r9d5k1o",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "vnkjwe0yuf"
           },
           "position": {
             "x": 2284,
@@ -2015,7 +2041,8 @@
               "nodeTitle": {
                 "value": "Go to Progressive Profile"
               }
-            }
+            },
+            "idUnique": "ow0lqonkfg"
           },
           "position": {
             "x": 2464,
@@ -2066,7 +2093,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "lwq4wj4xl2"
+            "idUnique": "drkkttw2k8"
           },
           "position": {
             "x": 222,
@@ -2123,7 +2150,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "90vlhsr7gm"
+            "idUnique": "y74jlk6f1t"
           },
           "position": {
             "x": 222,
@@ -2157,7 +2184,7 @@
                 "value": "Auto Enroll MFA Email"
               }
             },
-            "idUnique": "v9mh8ozh41"
+            "idUnique": "r2zcf84t03"
           },
           "position": {
             "x": 342,
@@ -2176,7 +2203,8 @@
           "data": {
             "id": "8o9rr63wec",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "0u7kegczay"
           },
           "position": {
             "x": 462,
@@ -2227,7 +2255,8 @@
               "nodeTitle": {
                 "value": "Create Email Device"
               }
-            }
+            },
+            "idUnique": "7ymwdrsol5"
           },
           "position": {
             "x": 642,
@@ -2251,7 +2280,8 @@
               "s8sqkulf3v": {
                 "value": "anyTriggersFalse"
               }
-            }
+            },
+            "idUnique": "8zowy9qc0c"
           },
           "position": {
             "x": 762,
@@ -2284,7 +2314,8 @@
               "nodeTitle": {
                 "value": "Enable MFA"
               }
-            }
+            },
+            "idUnique": "chivcuoe5y"
           },
           "position": {
             "x": 942,
@@ -2303,7 +2334,8 @@
           "data": {
             "id": "jjnz6qkhv1",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "s24rv54o17"
           },
           "position": {
             "x": 1062,
@@ -2333,7 +2365,8 @@
               "nodeTitle": {
                 "value": "Return to Caller"
               }
-            }
+            },
+            "idUnique": "ppg66rh0jx"
           },
           "position": {
             "x": 1242,
@@ -2352,7 +2385,8 @@
           "data": {
             "id": "vqhuz7dmib",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "du91itn89u"
           },
           "position": {
             "x": 2584,
@@ -2391,7 +2425,8 @@
               "nodeTitle": {
                 "value": "Go to Auto Enroll MFA Email"
               }
-            }
+            },
+            "idUnique": "ond9dzafgn"
           },
           "position": {
             "x": 2764,
@@ -2442,7 +2477,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "lwq4wj4xl2"
+            "idUnique": "meuqnyja8k"
           },
           "position": {
             "x": 222,
@@ -2499,7 +2534,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "90vlhsr7gm"
+            "idUnique": "kswxmywoow"
           },
           "position": {
             "x": 222,
@@ -2533,7 +2568,7 @@
                 "value": "Enroll Phone MFA"
               }
             },
-            "idUnique": "v9mh8ozh41"
+            "idUnique": "x9xbm7p9tr"
           },
           "position": {
             "x": 342,
@@ -2552,7 +2587,8 @@
           "data": {
             "id": "bkgo2vgcgn",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "01f4pjs74f"
           },
           "position": {
             "x": 462,
@@ -2585,7 +2621,8 @@
               "nodeTitle": {
                 "value": "Create Device Error"
               }
-            }
+            },
+            "idUnique": "7nb79tevy8"
           },
           "position": {
             "x": 942,
@@ -2643,7 +2680,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"SMS\"\n      }\n    ]\n  }\n]"
               }
             },
-            "idUnique": "w7x8a5sdoy"
+            "idUnique": "fg9is1z3dc"
           },
           "position": {
             "x": 642,
@@ -2688,7 +2725,8 @@
               "nodeTitle": {
                 "value": "Check User Selection "
               }
-            }
+            },
+            "idUnique": "xn7ym8d748"
           },
           "position": {
             "x": 1542,
@@ -2706,7 +2744,8 @@
         {
           "data": {
             "id": "wvmvi5npd9",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "2e0snl9z3j"
           },
           "position": {
             "x": 1362,
@@ -2746,7 +2785,7 @@
                 "value": "Delete the non activated device to create a new one instead"
               }
             },
-            "idUnique": "iqu9fg7yzw"
+            "idUnique": "faklpaannn"
           },
           "position": {
             "x": 1842,
@@ -2775,7 +2814,8 @@
               "pbkfgnyqbi": {
                 "value": "anyTriggersFalse"
               }
-            }
+            },
+            "idUnique": "lv9ncpku2q"
           },
           "position": {
             "x": 1992,
@@ -2879,7 +2919,8 @@
               "resendMessage": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"resendMessage\",\n        \"data\": \"{{local.dg26uv57lk.payload.output.resendMessage}}\",\n        \"tooltip\": \"{{local.dg26uv57lk.payload.output.resendMessage}}\",\n        \"children\": [\n          {\n            \"text\": \"resendMessage\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               }
-            }
+            },
+            "idUnique": "yvl8qrpvhy"
           },
           "position": {
             "x": 1242,
@@ -2897,7 +2938,8 @@
         {
           "data": {
             "id": "m85zf74dww",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "cpt9udgqjf"
           },
           "position": {
             "x": 1062,
@@ -2948,7 +2990,7 @@
                 "value": "/**\n * Masks a phone number or email address.\n * @param  {Object} params - The parameters object containing an email or phone.\n * @returns {Object} An object with a maskedValue property containing the masked email or phone.\n */\nmodule.exports = function maskContactInfo({ params: { email, phone } = {} }) {\n    let maskedValue;\n\n    if (email) {\n        const [username, domain] = email.split(\"@\");\n        const maskedUsername =\n            username.charAt(0) + \"*\".repeat(username.length - 2) + username.slice(-1);\n        maskedValue = `${maskedUsername}@${domain}`;\n    } else if (phone) {\n        const numericPhoneNumber = phone.replace(/\\D/g, '');\n        maskedValue = `***-***-${numericPhoneNumber.slice(-4)}`;\n    }\n\n    return { maskedValue };\n}"
               }
             },
-            "idUnique": "4hh269b7ty"
+            "idUnique": "5zvbumbsdt"
           },
           "position": {
             "x": 942,
@@ -2966,7 +3008,8 @@
         {
           "data": {
             "id": "u9rfyo1xs",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "yannfokcr8"
           },
           "position": {
             "x": 1662,
@@ -3008,7 +3051,8 @@
               "nodeTitle": {
                 "value": "Go to Enroll Phone MFA"
               }
-            }
+            },
+            "idUnique": "ix5hj8xfel"
           },
           "position": {
             "x": 2172,
@@ -3084,7 +3128,7 @@
                 }
               }
             },
-            "idUnique": "0c24903nfo"
+            "idUnique": "8x6exleqfw"
           },
           "position": {
             "x": 1842,
@@ -3107,7 +3151,8 @@
               "j9eo7vgxu1": {
                 "value": "anyTriggersFalse"
               }
-            }
+            },
+            "idUnique": "mza7a8kzbq"
           },
           "position": {
             "x": 762,
@@ -3125,7 +3170,8 @@
         {
           "data": {
             "id": "gpz2jtbzrq",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "08rpxxj35y"
           },
           "position": {
             "x": 1662,
@@ -3149,7 +3195,8 @@
               "gbppuahuzp": {
                 "value": "anyTriggersFalse"
               }
-            }
+            },
+            "idUnique": "ei6m1msr7t"
           },
           "position": {
             "x": 1992,
@@ -3179,7 +3226,8 @@
               "nodeTitle": {
                 "value": "Return to Caller"
               }
-            }
+            },
+            "idUnique": "s0n8ox2sd3"
           },
           "position": {
             "x": 2172,
@@ -3198,7 +3246,8 @@
           "data": {
             "id": "pfgnd6jx0c",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "nt05pqkzj7"
           },
           "position": {
             "x": 2884,
@@ -3237,7 +3286,8 @@
               "nodeTitle": {
                 "value": "Go to Enroll Phone MFA"
               }
-            }
+            },
+            "idUnique": "w5bhsmbqpe"
           },
           "position": {
             "x": 3064,
@@ -3255,7 +3305,8 @@
         {
           "data": {
             "id": "mddh4sn0c1",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "uormdzc85q"
           },
           "position": {
             "x": 3184,
@@ -3297,7 +3348,8 @@
               "nodeTitle": {
                 "value": "Return PingOne Success"
               }
-            }
+            },
+            "idUnique": "si6h6qdgof"
           },
           "position": {
             "x": 1842,
@@ -3336,7 +3388,8 @@
               "oeInteractionCacheExpire": {
                 "value": true
               }
-            }
+            },
+            "idUnique": "ctgjsd3o0l"
           },
           "position": {
             "x": 1542,
@@ -3400,7 +3453,8 @@
               "nodeTitle": {
                 "value": "Select Flow End"
               }
-            }
+            },
+            "idUnique": "qr1lcgwnk"
           },
           "position": {
             "x": 1242,
@@ -3418,7 +3472,8 @@
         {
           "data": {
             "id": "r24b6jbwfe",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "1w6v9abino"
           },
           "position": {
             "x": 1362,
@@ -3436,7 +3491,8 @@
         {
           "data": {
             "id": "kju8f48ceq",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "2bqyqv7331"
           },
           "position": {
             "x": 1362,
@@ -3455,7 +3511,8 @@
           "data": {
             "id": "imn9gx1j4e",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "6jjty9asxw"
           },
           "position": {
             "x": 1362,
@@ -3474,7 +3531,8 @@
           "data": {
             "id": "9j2gqjlp1y",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "0d22j7wdtb"
           },
           "position": {
             "x": 1362,
@@ -3524,7 +3582,8 @@
               "returnRequestParameters": {
                 "value": false
               }
-            }
+            },
+            "idUnique": "g872t7iruv"
           },
           "position": {
             "x": 1542,
@@ -3543,7 +3602,8 @@
           "data": {
             "id": "n26unq93r3",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "x2c92pheiu"
           },
           "position": {
             "x": 1362,
@@ -3562,7 +3622,8 @@
           "data": {
             "id": "fy7jycir5x",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "r0pxpzxi9a"
           },
           "position": {
             "x": 1362,
@@ -3604,7 +3665,8 @@
               "oeInteractionCacheExpire": {
                 "value": true
               }
-            }
+            },
+            "idUnique": "8fak58t4vs"
           },
           "position": {
             "x": 1542,
@@ -3656,7 +3718,7 @@
                 ]
               },
               "code": {
-                "value": "const pingOneHost = \"auth.pingone.com\";\n\nmodule.exports = async ({ params }) => {\n\tconst { skOpenId: { client_id, redirect_uri }, subflow, parameters, origin } = params\n\tconst pingOneApplication = parameters?.application;\n\n\tif (subflow) {\n\t\treturn { flowType: \"SUBFLOW\" };\n\t}\n\n\tif (client_id && client_id === \"tryFlow\") {\n\t\treturn { flowType: \"TRYFLOW\" };\n\t}\n\n\tif (redirect_uri) {\n\t\treturn { flowType: \"REDIRECT\" };\n\t}\n\n\tif (pingOneApplication && origin) {\n\t\tconst match = origin.match(/^(?:https?:\\/\\/(?:www\\.)?)?([^/:]+)/);\n\t\tif (match && match[1] && match[1] === pingOneHost) {\n\t\t\treturn { flowType: \"TRIGGER\" };\n\t\t}\t\t\n\t}\n\n\tif (parameters) {\n\t\tif (origin) {\n\t\t\treturn { flowType: \"WIDGET\" };\n\t\t}\n\t\treturn { flowType: \"API\" };\n\t}\n\n\treturn { 'testVariable': params };\n}"
+                "value": "// Matches any of these: auth.pingone.com, auth.pingone.eu, auth.pingone.com.au, etc.\nconst pingOneHostPattern = /^auth\\.pingone\\.(com|com\\.au|ca|eu|sg|asia)$/i;\n\nmodule.exports = async ({ params }) => {\n  const { skOpenId: { client_id, redirect_uri } = {}, subflow, parameters, origin } = params;\n  const pingOneApplication = parameters?.application;\n\n  if (subflow) {\n    return { flowType: \"SUBFLOW\" };\n  }\n\n  if (client_id && client_id === \"tryFlow\") {\n    return { flowType: \"TRYFLOW\" };\n  }\n\n  if (redirect_uri) {\n    return { flowType: \"REDIRECT\" };\n  }\n\n  if (pingOneApplication && origin) {\n    const match = origin.match(/^(?:https?:\\/\\/(?:www\\.)?)?([^/:]+)/i);\n    const host = match?.[1];\n    if (host && pingOneHostPattern.test(host)) {\n      return { flowType: \"TRIGGER\" };\n    }\n  }\n\n  if (parameters) {\n    if (origin) {\n      return { flowType: \"WIDGET\" };\n    }\n    return { flowType: \"API\" };\n  }\n\n  return { testVariable: params };\n};\n"
               },
               "outputSchema": {
                 "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"testVariable\": {\n\t\t\t\t\"type\": \"object\"\n\t\t\t},\n\t\t\t\"flowType\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
@@ -3664,7 +3726,8 @@
               "nodeTitle": {
                 "value": "Determine Flow Invocation Method"
               }
-            }
+            },
+            "idUnique": "f7sygk2gf4"
           },
           "position": {
             "x": 942,
@@ -3682,7 +3745,8 @@
         {
           "data": {
             "id": "g887vzsfi0",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "e9ifus3v8j"
           },
           "position": {
             "x": 1062,
@@ -3701,7 +3765,8 @@
           "data": {
             "id": "xy7unrfnsv",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "jkepct3j88"
           },
           "position": {
             "x": 462,
@@ -3734,7 +3799,8 @@
               "inputSchema": {
                 "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"p1UserId\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"PingOne User Id\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"p1UserId\"\n\t\t},\n\t\t\"given\": {\n\t\t\t\"type\": \"object\",\n\t\t\t\"displayName\": \"Given Name\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"given\"\n\t\t}\n\t}\n}"
               }
-            }
+            },
+            "idUnique": "eget08jmtk"
           },
           "position": {
             "x": 342,
@@ -3791,7 +3857,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "d2mbrib33f"
+            "idUnique": "xp1ry7ythy"
           },
           "position": {
             "x": 222,
@@ -3841,7 +3907,8 @@
                 "value": 8
               }
             },
-            "status": "configured"
+            "status": "configured",
+            "idUnique": "mg8r1skde6"
           },
           "position": {
             "x": 222,
@@ -3898,7 +3965,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "ez34nkkank"
+            "idUnique": "5vi3tvwu08"
           },
           "position": {
             "x": 222,
@@ -3955,7 +4022,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "lxipbs118u"
+            "idUnique": "9q3fj8hsuw"
           },
           "position": {
             "x": 2344,
@@ -4012,7 +4079,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "0lzq5be6ag"
+            "idUnique": "bahd0i81na"
           },
           "position": {
             "x": 2644,
@@ -4052,7 +4119,7 @@
                 "value": true
               }
             },
-            "idUnique": "3pb0p921bd"
+            "idUnique": "w3ebnzq07k"
           },
           "position": {
             "x": 1842,
@@ -4091,7 +4158,8 @@
               "p1UserId": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.p08e8it13s.payload.output.user.id}}\",\n        \"tooltip\": \"{{local.p08e8it13s.payload.output.user.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
               }
-            }
+            },
+            "idUnique": "cra6j750nt"
           },
           "position": {
             "x": 3364,
@@ -4148,7 +4216,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "fydb037nvo"
+            "idUnique": "4zhqw5tp1z"
           },
           "position": {
             "x": 2944,
@@ -4205,7 +4273,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "8xqv4safnf"
+            "idUnique": "7kuea7uy79"
           },
           "position": {
             "x": 3244,
@@ -4238,7 +4306,8 @@
               "nodeTitle": {
                 "value": "Activate Device Error"
               }
-            }
+            },
+            "idUnique": "fik4r82of5"
           },
           "position": {
             "x": 2172,
@@ -4272,7 +4341,7 @@
                 "value": "Delete Device Error"
               }
             },
-            "idUnique": "jk5rde7tci"
+            "idUnique": "5sdthn87oo"
           },
           "position": {
             "x": 2172,
@@ -4305,7 +4374,8 @@
               "nodeTitle": {
                 "value": "Update User Error"
               }
-            }
+            },
+            "idUnique": "mxilgjg1gb"
           },
           "position": {
             "x": 1564,
@@ -4339,7 +4409,7 @@
                 "value": "Create Device Error"
               }
             },
-            "idUnique": "2kes02mnpl"
+            "idUnique": "3sm8t7jqhc"
           },
           "position": {
             "x": 942,
@@ -4372,7 +4442,8 @@
               "nodeTitle": {
                 "value": "Read Agreement Error"
               }
-            }
+            },
+            "idUnique": "lseet2pmqz"
           },
           "position": {
             "x": 942,
@@ -4441,7 +4512,7 @@
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Continue\"\n      }\n    ]\n  }\n]"
               }
             },
-            "idUnique": "9wi6dhkpi6"
+            "idUnique": "r9gj2tafu1"
           },
           "position": {
             "x": 642,
@@ -4459,7 +4530,8 @@
         {
           "data": {
             "id": "tle0q7bcvy",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "4uzw3cr5cz"
           },
           "position": {
             "x": 762,
@@ -4529,7 +4601,7 @@
                 "value": true
               }
             },
-            "idUnique": "8rsda1hj30"
+            "idUnique": "grewqrq1up"
           },
           "position": {
             "x": 1842,
@@ -4586,7 +4658,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "vtntbkcdvk"
+            "idUnique": "khly4z3cva"
           },
           "position": {
             "x": 218,
@@ -4640,7 +4712,7 @@
                 "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"success\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
               }
             },
-            "idUnique": "n832zrby4p"
+            "idUnique": "h7b7dy1k43"
           },
           "position": {
             "x": 1234,
@@ -4674,7 +4746,7 @@
                 "value": "Passwords do not match error"
               }
             },
-            "idUnique": "cm3qb2ocmg"
+            "idUnique": "msblcg3tr1"
           },
           "position": {
             "x": 1534,
@@ -4697,7 +4769,8 @@
               "ql1n5o9im3": {
                 "value": "anyTriggersFalse"
               }
-            }
+            },
+            "idUnique": "fdmmzve6a6"
           },
           "position": {
             "x": 1354,
@@ -4754,7 +4827,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "0qrhi9meoi"
+            "idUnique": "jtg2puisw4"
           },
           "position": {
             "x": 1414,
@@ -4773,7 +4846,8 @@
           "data": {
             "id": "idu5pf96k7",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "4u124x8ch5"
           },
           "position": {
             "x": 1654,
@@ -4806,7 +4880,8 @@
               "nodeTitle": {
                 "value": "Email Verification"
               }
-            }
+            },
+            "idUnique": "mpvqxl26ml"
           },
           "position": {
             "x": 334,
@@ -4839,7 +4914,8 @@
               "nodeTitle": {
                 "value": "Resend Verification Code"
               }
-            }
+            },
+            "idUnique": "6usgvq21b3"
           },
           "position": {
             "x": 1534,
@@ -4857,7 +4933,8 @@
         {
           "data": {
             "id": "8d45vae9om",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "b38tyoawnr"
           },
           "position": {
             "x": 454,
@@ -4896,7 +4973,8 @@
               "resendMessage": {
                 "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Verification code resent\"\n      }\n    ]\n  }\n]"
               }
-            }
+            },
+            "idUnique": "ombkq3lena"
           },
           "position": {
             "x": 1834,
@@ -4914,7 +4992,8 @@
         {
           "data": {
             "id": "s2if1k9hxr",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "3d3q7nstc6"
           },
           "position": {
             "x": 1054,
@@ -4933,7 +5012,8 @@
           "data": {
             "id": "v927szn04h",
             "nodeType": "EVAL",
-            "label": "Evaluator"
+            "label": "Evaluator",
+            "idUnique": "sdpwyr4he0"
           },
           "position": {
             "x": 1354,
@@ -4990,7 +5070,7 @@
               }
             },
             "status": "configured",
-            "idUnique": "twyb3s51b1"
+            "idUnique": "18jd462d4g"
           },
           "position": {
             "x": 214,
@@ -5016,7 +5096,8 @@
               "rjefsg4ir7": {
                 "value": "anyTriggersFalse"
               }
-            }
+            },
+            "idUnique": "b5ibxbchzr"
           },
           "position": {
             "x": 1654,
@@ -5087,7 +5168,8 @@
                   }
                 }
               }
-            }
+            },
+            "idUnique": "od8l9ne8nt"
           },
           "position": {
             "x": 1534,
@@ -5120,7 +5202,8 @@
               "nodeTitle": {
                 "value": "Error Validating Code"
               }
-            }
+            },
+            "idUnique": "syzqemjdaf"
           },
           "position": {
             "x": 1834,
@@ -5153,7 +5236,8 @@
               "nodeInstanceId": {
                 "value": "85g8t6bdy8"
               }
-            }
+            },
+            "idUnique": "2yf51ta09a"
           },
           "position": {
             "x": 1834,
@@ -5203,7 +5287,8 @@
                 "value": 8
               }
             },
-            "status": "configured"
+            "status": "configured",
+            "idUnique": "2lksqqgqmx"
           },
           "position": {
             "x": 214,
@@ -5254,7 +5339,8 @@
               "nodeDescription": {
                 "value": "Check Which Button Was Clicked"
               }
-            }
+            },
+            "idUnique": "zw07k023uq"
           },
           "position": {
             "x": 934,
@@ -5350,7 +5436,7 @@
                 "value": "Capture Verification Code Or Resend"
               }
             },
-            "idUnique": "mc0qvitm1n"
+            "idUnique": "37m2zpm886"
           },
           "position": {
             "x": 634,
@@ -5368,7 +5454,8 @@
         {
           "data": {
             "id": "e776rqklzn",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "y889lt2ut7"
           },
           "position": {
             "x": 754,
@@ -5407,7 +5494,7 @@
                 "value": []
               }
             },
-            "idUnique": "g9fybbwj88"
+            "idUnique": "3od19z4n80"
           },
           "position": {
             "x": 1234,
@@ -5425,7 +5512,8 @@
         {
           "data": {
             "id": "lpgdxucxti",
-            "nodeType": "EVAL"
+            "nodeType": "EVAL",
+            "idUnique": "qpgwo91cx7"
           },
           "position": {
             "x": 1054,
@@ -5473,7 +5561,7 @@
                 "value": "/**\n     * Validates a phone number given a country code and phone number.\n     * Ensures the country code starts with '+' and then validates\n     * the combined phone number against an international phone number pattern.\n     *\n     * @param {Object} params - The input parameters containing countryCode and phoneNumber.\n     * @param {string} params.countryCode - The country code, e.g., '1' or '+1'.\n     * @param {string} params.phoneNumber - The phone number, e.g., '123-456-7890'.\n     * @returns {boolean|undefined} - Returns false if the phone number is invalid; otherwise, undefined.\n     */\nmodule.exports = a = async ({ params }) => {\n    let { countryCode, phoneNumber } = params;\n\n    // Ensure the country code starts with '+'\n    if (!countryCode.startsWith('+')) {\n        countryCode = '+' + countryCode;\n    }\n\n    // Combine the country code and phone number into a full phone number\n    var fullPhoneNumber = countryCode + phoneNumber;\n\n    // Regular expression pattern for validating international phone numbers\n    var phonePattern = /^\\+\\d{1,3}[-\\s.]?\\(?\\d{1,4}\\)?[-\\s.]?\\d{1,4}[-\\s.]?\\d{1,9}$/;\n\n    // Test the full phone number against the pattern\n    if (phonePattern.test(fullPhoneNumber)) {\n        return; \n    } else {\n        return false; \n    }\n}"
               }
             },
-            "idUnique": "azsz1dq5hw"
+            "idUnique": "nbw43g32dy"
           },
           "position": {
             "x": 934,
@@ -5496,7 +5584,8 @@
               "7uyvvcwbpy": {
                 "value": "anyTriggersFalse"
               }
-            }
+            },
+            "idUnique": "yyg8w0r6t"
           },
           "position": {
             "x": 1054,
@@ -5529,7 +5618,8 @@
               "nodeTitle": {
                 "value": "Error Validating Phone Number"
               }
-            }
+            },
+            "idUnique": "jp9eb6jzi5"
           },
           "position": {
             "x": 1264,
@@ -7611,11 +7701,11 @@
     }
   },
   "flowColor": "#ff661c",
-  "savedDate": 1754576914613,
+  "savedDate": 1759852787324,
   "variables": [
     {
       "context": "flowInstance",
-      "createdDate": 1754574124086,
+      "createdDate": 1736340432856,
       "fields": {
         "type": "string",
         "displayName": "Url for company's logo image",
@@ -7623,7 +7713,7 @@
         "min": 0,
         "max": 2000
       },
-      "id": "85a75aa8-7456-4b03-bc6b-b7506cd483b1",
+      "id": "86408200-5c75-4158-ab1e-bebbd5a05fef",
       "type": "property",
       "visibility": "private",
       "name": "companyLogo##SK##flowInstance",
@@ -7631,7 +7721,7 @@
     },
     {
       "context": "flowInstance",
-      "createdDate": 1754574124087,
+      "createdDate": 1736340432853,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -7639,7 +7729,7 @@
         "min": 0,
         "max": 2000
       },
-      "id": "d32724eb-0aa5-4644-b4a5-ea72f4d083f3",
+      "id": "1d92df15-cf9c-43ef-afdc-dfa64fbd8fa7",
       "type": "property",
       "visibility": "private",
       "name": "companyName##SK##flowInstance",
@@ -7647,7 +7737,7 @@
     },
     {
       "context": "flowInstance",
-      "createdDate": 1754574178390,
+      "createdDate": 1747834433037,
       "fields": {
         "type": "string",
         "displayName": "",
@@ -7655,28 +7745,29 @@
         "min": 0,
         "max": 2000
       },
-      "id": "9c72aff5-b7aa-4a1d-9034-9729cc0a8f51",
-      "type": "property",
-      "visibility": "private",
-      "name": "p1AgreementId##SK##flowInstance",
-      "companyId": ""
-    },
-    {
-      "context": "flowInstance",
-      "createdDate": 1754574178392,
-      "fields": {
-        "type": "string",
-        "displayName": "",
-        "mutable": true,
-        "min": 0,
-        "max": 2000
-      },
-      "id": "1990eab6-c56f-4594-a01b-963b764b0654",
+      "id": "bed72b3d-3c5a-4c8a-a6e4-aa34ee918437",
       "type": "property",
       "visibility": "private",
       "name": "p1PopulationId##SK##flowInstance",
       "companyId": ""
+    },
+    {
+      "context": "flowInstance",
+      "createdDate": 1759852269102,
+      "fields": {
+        "type": "string",
+        "displayName": "",
+        "mutable": true,
+        "min": 0,
+        "max": 2000
+      },
+      "id": "f3435fa9-9a8a-40db-87b3-7916ee215b40",
+      "type": "property",
+      "visibility": "private",
+      "name": "p1AgreementId##SK##flowInstance",
+      "companyId": ""
     }
   ],
+  "forms": {},
   "connections": []
 }
