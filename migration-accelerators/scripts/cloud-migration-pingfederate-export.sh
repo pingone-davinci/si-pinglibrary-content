@@ -29,7 +29,7 @@
 # limitations under the License.
 ###################################################################
 TMP_DIR=$(mktemp -d) &&
-    SCRIPT_VERSION="1.4.2" &&
+    SCRIPT_VERSION="1.4.3" &&
     DATE=$(date +"%y%m%d-%H%M%S") &&
     PRODUCT="pingfederate" &&
     SCRIPT="$0" &&
@@ -200,7 +200,7 @@ validateVersion() {
     pfVersion=$(grep -o '"version":"[^"]*"' "${EXPORT_DIR}/version.json" | sed 's/"version":"\([^"]*\)"/\1/')
 
     printf "%s\n%s\n" "$MIN_PF_VERSION" "$pfVersion" > "$TMP_DIR/versions"
-    if [ "$(sort -V "${EXPORT_DIR}/version.json" | head -n1)" = "$pfVersion" ]; then
+    if [ "$(sort -V "${TMP_DIR}/versions" | head -n1)" = "$pfVersion" ]; then
         error "PingFederate version must be ${MIN_PF_VERSION} or higher.  Current Version: $pfVersion"
     else
         printf "\r    Version: %s\n" "${pfVersion}"
@@ -269,7 +269,7 @@ echo "
 #   - at least one lowercase letter                               #
 #   - at least one numeric character                              #
 #   - may contain special characters                              #
-#      incl: ${OWASP}                                       #
+#      incl: ${OWASP}                                      #
 #                                                                 #
 # IMPORTANT: You will be later prompted for this key:             #
 #               - To upload the .zip file created by this tool    #
