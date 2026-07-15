@@ -256,6 +256,88 @@ run_and_extract() {
   echo "$out" | jq -r "$field"
 }
 
+# Resolves the PingOne management API base URL (e.g. "https://api.pingone.com/v1")
+# for the active profile/environment, by reading it back off the environment's
+# own `self` link rather than hardcoding a domain — works across regions
+# (.com/.eu/.asia/etc.) and custom domains without extra flags.
+get_pingone_api_base_url() {
+  local self_href
+  self_href=$(pingcli pingone environments get --environment-id "$ENV_ID" -O json 2>/dev/null \
+    | jq -r '(.data // .)._links.self.href // empty')
+
+  if [[ -z "$self_href" ]]; then
+    return 1
+  fi
+
+  # Strip the trailing "/environments/$ENV_ID" to get the bare API root.
+  echo "${self_href%/environments/*}"
+}
+
+# Imports a PKCS12 file as a new signing/encryption key via a raw multipart/
+# form-data POST — see:
+# https://developer.pingidentity.com/pingone-api/platform/certificate-management/create-key-with-pkcs12-file.html
+#
+# pingcli's own `pingone api` command only supports a JSON body (--data/
+# --data-raw), not multipart/form-data, so this shells out to curl directly.
+# Auth reuses the active pingcli session's bearer token (`pingcli pingone auth
+# token`) rather than requiring separate credentials.
+#
+# Usage: import_pkcs12_key <label> <base64-pkcs12> <password> [usage-type]
+# usage-type defaults to "SIGNING" (the only key type this migration tool
+# currently emits); pass "ENCRYPTION" explicitly if that ever changes.
+# Echoes the created key's id on success, returns non-zero (with the raw
+# error body on stderr) on failure.
+import_pkcs12_key() {
+  local label="$1" pkcs12_base64="$2" password="$3" usage_type="${4:-SIGNING}"
+  local api_base token tmp_p12 out rc http_status body
+
+  api_base=$(get_pingone_api_base_url)
+  if [[ -z "$api_base" ]]; then
+    echo "  FAILED: $label (could not resolve PingOne API base URL)" >&2
+    FAILURES=$((FAILURES + 1))
+    return 1
+  fi
+
+  token=$(pingcli pingone auth token 2>/dev/null)
+  if [[ -z "$token" ]]; then
+    echo "  FAILED: $label (could not obtain an auth token — run 'pingcli pingone auth login')" >&2
+    FAILURES=$((FAILURES + 1))
+    return 1
+  fi
+
+  tmp_p12=$(mktemp)
+  echo "$pkcs12_base64" | base64 -d > "$tmp_p12" 2>/dev/null
+  if [[ ! -s "$tmp_p12" ]]; then
+    echo "  FAILED: $label (could not decode PKCS12 data)" >&2
+    rm -f "$tmp_p12"
+    FAILURES=$((FAILURES + 1))
+    return 1
+  fi
+
+  out=$(curl -sS -w '\n%{http_code}' \
+    --location \
+    --request POST "${api_base}/environments/${ENV_ID}/keys" \
+    --header "Authorization: Bearer ${token}" \
+    --form "file=@${tmp_p12};type=application/x-pkcs12" \
+    --form "usageType=${usage_type}" \
+    ${password:+--form "password=${password}"} \
+    2>&1)
+  rc=$?
+  rm -f "$tmp_p12"
+
+  http_status="${out##*$'\n'}"
+  body="${out%$'\n'*}"
+
+  if [[ $rc -ne 0 || "$http_status" -lt 200 || "$http_status" -ge 300 ]]; then
+    echo "  FAILED: $label (HTTP ${http_status:-?})" >&2
+    echo "$body" >&2
+    FAILURES=$((FAILURES + 1))
+    return 1
+  fi
+
+  echo "$body" | jq -r '.id'
+}
+
 # Sets MANIFEST_FILE for the currently-selected ENV_ID. Kept per-environment
 # so running against multiple environments from the same downloaded zip
 # doesn't cross-contaminate.
@@ -500,7 +582,15 @@ do_apply() {
     done
   fi
 
-  # ── PHASE 4: Keys (imported via the PingOne API — no dedicated pingcli subcommand) ─
+  # ── PHASE 4: Keys ──────────────────────────────────────────────────────────
+  # Two distinct request shapes, per PingOne's API:
+  #   - A PKCS12 file upload (pkcs12FileBase64 present) is a multipart/form-data
+  #     POST — see import_pkcs12_key() above. pingcli's `pingone api` command has
+  #     no multipart support, so this shells out to curl directly.
+  #   - Generating a brand new key from metadata (no PKCS12) is a plain JSON POST,
+  #     which pingcli's `pingone api` handles natively — no dedicated subcommand
+  #     for keys exists, so this is used as-is.
+  #
   # KEY_NAMES tracks the raw (hyphen-intact) key file names seen, since the
   # __KEY_ID_x__ placeholder tokens embedded in application JSON use the raw
   # resource name — not the bash-safe variable name var_suffix() derives from it.
@@ -512,12 +602,18 @@ do_apply() {
       [[ -e "$f" ]] || continue
       name=$(basename "$f" .json)
 
-      tmp_body=$(mktemp)
-      strip_internal_fields "$f" | sed "s/__MIGRATION_KEY__/${MIGRATION_KEY//\//\\/}/g" > "$tmp_body"
+      pkcs12_base64=$(jq -r '.pkcs12FileBase64 // empty' "$f")
 
-      id=$(run_and_extract "key $name" '(.data // .).id' -- \
-        pingcli pingone api --http-method POST --data "$tmp_body" -O json "environments/$ENV_ID/keys")
-      rm -f "$tmp_body"
+      if [[ -n "$pkcs12_base64" ]]; then
+        id=$(import_pkcs12_key "key $name" "$pkcs12_base64" "$MIGRATION_KEY")
+      else
+        tmp_body=$(mktemp)
+        strip_internal_fields "$f" > "$tmp_body"
+
+        id=$(run_and_extract "key $name" '(.data // .).id' -- \
+          pingcli pingone api --http-method POST --data "$tmp_body" -O json "environments/$ENV_ID/keys")
+        rm -f "$tmp_body"
+      fi
 
       if [[ -n "$id" ]]; then
         set_id KEY_ID "$name" "$id"
