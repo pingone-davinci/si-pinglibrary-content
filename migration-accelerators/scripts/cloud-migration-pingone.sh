@@ -24,7 +24,7 @@
 # limitations under the License.
 ###################################################################
 TMP_DIR=$(mktemp -d) &&
-    SCRIPT_VERSION="1.5.0" &&
+    SCRIPT_VERSION="1.7.1" &&
     TERRAFORM_DIR="terraform" &&
     TERRAFORM="terraform -chdir=${TERRAFORM_DIR}"
 
@@ -50,18 +50,30 @@ check_command printf
 check_command cat
 check_command mktemp
 
-# Function to Display Terraform Details
+display_resource_count() {
+    app=$1
+    name=$2
+
+  # Get the length and name from jq first
+  count=$(jq -r --arg a "$app" '.resource[$a] | length' "${TERRAFORM_DIR}/${app}.tf.json")
+  
+  # Use printf to right-justify the name (%30s) and then print the count
+  printf "%30s: %5d\n" "$name" "$count"
+
+}
+
+# Function to Display Terraform Resource Details
 display_terraform_details() {
     echo "###########################################"
-    echo "#  Terraform Details                      #"
+    echo "#  Terraform Resource Details             #"
     echo "###########################################"
 
-    cat "${TERRAFORM_DIR}/pingone_application.tf.json" | jq -r '[
-  "  Applications: \(.resource.pingone_application | length)"
-] | .[]'
-    cat "${TERRAFORM_DIR}/pingone_key.tf.json" | jq -r '[
-  " Signing Certs: \(.resource.pingone_key | length)"
-] | .[]'
+    display_resource_count "pingone_application" "Applications"
+    display_resource_count "pingone_application_attribute_mapping" "Application Attr Mappings"
+    display_resource_count "pingone_application_resource_grant" "Application Resource Grants"
+    display_resource_count "pingone_image" "Images"
+    display_resource_count "pingone_resource_scope_openid" "Scopes"
+    display_resource_count "pingone_key" "Signing Certs"
 
 }
 

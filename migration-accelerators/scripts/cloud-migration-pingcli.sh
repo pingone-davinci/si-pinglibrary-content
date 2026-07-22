@@ -1,4 +1,24 @@
 #!/usr/bin/env bash
+
+# This script relies on bash-only features (indirect variable expansion,
+# arrays, [[ ]], process substitution, etc.) and will not run correctly under
+# a POSIX shell — including bash itself when invoked as `sh`/`/bin/sh`, which
+# on macOS is bash running in POSIX-compatibility mode (BASH_VERSION is still
+# set there, but process substitution and other extensions are disabled) and
+# on most Linux distros is dash or BusyBox ash (no BASH_VERSION at all). Fail
+# fast with a clear message instead of hitting confusing syntax errors deeper
+# in the script. This check is intentionally written in plain POSIX sh syntax
+# (no [[ ]], no `local`) so it runs correctly under every shell it needs to
+# detect, on macOS, Linux, and BusyBox-based containers alike.
+if [ -z "${BASH_VERSION:-}" ]; then
+  echo "ERROR: this script must be run with bash, not sh/dash/ash. Try: bash $0" >&2
+  exit 1
+fi
+if shopt -q -o posix 2>/dev/null; then
+  echo "ERROR: bash is running in POSIX mode (invoked as 'sh' or '/bin/sh'), which disables features this script needs. Try: bash $0" >&2
+  exit 1
+fi
+
 set -uo pipefail
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -234,6 +254,46 @@ get_id() {
   echo "${!varname:-}"
 }
 
+# Returns the JSON array of existing application-grants for the given
+# application, fetching via `application-grants list` on first use and
+# caching per application name (same set_id/get_id mechanism as ID lookups)
+# so multiple grant files for the same app (e.g. default + custom scopes)
+# only issue the list API call once instead of once per grant file.
+get_app_grants_json() {
+  local parent="$1" app_id="$2" cached json
+  cached=$(get_id GRANTS_JSON "$parent")
+  if [[ -n "$cached" ]]; then
+    echo "$cached"
+    return 0
+  fi
+
+  json=$(pingcli pingone applications application-grants list \
+    --environment-id "$ENV_ID" --application-id "$app_id" -O json 2>/dev/null | jq -c '(.data // .)')
+  [[ -n "$json" ]] || json="[]"
+  set_id GRANTS_JSON "$parent" "$json"
+  echo "$json"
+}
+
+# Returns the JSON array of resource-scopes for the given resource, fetching
+# via `resource-scopes list` on first use and caching per resource ID. Every
+# scope name in every grant file under a given resource (e.g. "openid", which
+# nearly every application grants against) would otherwise re-list the same
+# resource's scopes once per scope name per grant file.
+get_resource_scopes_json() {
+  local resource_id="$1" cached json
+  cached=$(get_id SCOPES_JSON "$resource_id")
+  if [[ -n "$cached" ]]; then
+    echo "$cached"
+    return 0
+  fi
+
+  json=$(pingcli pingone resources resource-scopes list \
+    --environment-id "$ENV_ID" --resource-id "$resource_id" -O json 2>/dev/null | jq -c '(.data // .)')
+  [[ -n "$json" ]] || json="[]"
+  set_id SCOPES_JSON "$resource_id" "$json"
+  echo "$json"
+}
+
 # Runs a pingcli command whose stdout is a `-O json` envelope, prints the
 # raw response and returns non-zero on failure (status != "success" or
 # pingcli's own exit code), otherwise echoes the extracted `.data.<field>`.
@@ -378,6 +438,7 @@ display_pingcli_details() {
   display_resource_count "keys/*.json" "Signing Keys"
   display_resource_count "applications/*.json" "Applications"
   display_resource_count "applications/attributes/*.json" "Attribute Mappings"
+  display_resource_count "applications/metadata/*.json" "Application Metadata"
   display_resource_count "applications/grants/*.json" "Resource Grants"
 }
 
@@ -398,6 +459,77 @@ display_pingone_environment() {
     "               Region: " + (.region // "unknown"),
     "                 Type: " + (.type // "unknown")
   ] | .[]'
+
+  echo ""
+  echo "  Of the export's resources, how many already exist in this environment"
+  echo "  (matched by name — entities not in the export are ignored):"
+  display_bom_match_count \
+    "$SCRIPT_DIR/applications/*.json" \
+    '.oidc.name // .saml.name // .wsfed.name // .externalLink.name // empty' \
+    "pingcli pingone applications list --environment-id \"\$ENV_ID\"" \
+    "Applications"
+  display_bom_match_count \
+    "$SCRIPT_DIR/resources/*.json" \
+    '.name // empty' \
+    "pingcli pingone resources list --environment-id \"\$ENV_ID\"" \
+    "Resources"
+  # PKCS12-import keys have no `.name` (the server assigns one on import,
+  # per cloud-migration-pingcli.sh's key-import notes) so they can never be
+  # name-matched against an existing key — only generated keys are counted.
+  display_bom_match_count \
+    "$SCRIPT_DIR/keys/*.json" \
+    'if .pkcs12FileBase64 then empty else (.name // empty) end' \
+    "pingcli pingone api \"environments/\$ENV_ID/keys\"" \
+    "Signing/Encryption Keys"
+}
+
+# Counts, out of the export files matching $glob, how many have a name (per
+# $name_filter, a jq expression run against each file) that matches an
+# existing entity's name in the live environment (fetched via $list_cmd).
+# Prints "<matched>/<total in export>", or "?/<total>" if the live list call
+# fails. This intentionally ignores anything in the live environment that
+# isn't referenced by the export — the question is "how many of what we're
+# about to apply already exists," not "what's the environment's total count."
+#
+# Handles both response shapes pingcli returns: `... list` commands return
+# .data as a flat array, while `pingone api` (used for resource types with no
+# dedicated list subcommand, e.g. keys) returns a HAL-style .data._embedded
+# object whose single key holds the array.
+display_bom_match_count() {
+  local glob="$1" name_filter="$2" list_cmd="$3" label="$4"
+  local bom_names="" bom_total=0 f n out live_names matched
+
+  for f in $glob; do
+    [[ -e "$f" ]] || continue
+    bom_total=$((bom_total + 1))
+    n=$(jq -r "$name_filter" "$f" 2>/dev/null)
+    [[ -n "$n" ]] && bom_names="$bom_names"$'\n'"$n"
+  done
+
+  if [[ "$bom_total" -eq 0 ]]; then
+    printf "%30s: %5s\n" "$label" "0/0"
+    return 0
+  fi
+
+  out=$(eval "$list_cmd -O json" 2>&1)
+  if ! echo "$out" | jq -e '(.status // "success") == "success"' > /dev/null 2>&1; then
+    printf "%30s: %5s\n" "$label" "?/$bom_total"
+    return 0
+  fi
+
+  live_names=$(echo "$out" | jq -r '
+    (if (.data | type) == "object"
+      then (.data._embedded // {} | to_entries | if length > 0 then .[0].value else [] end)
+      else (.data // [])
+    end) | .[].name // empty')
+
+  matched=0
+  while IFS= read -r n; do
+    [[ -n "$n" ]] || continue
+    echo "$live_names" | grep -qxF "$n" && matched=$((matched + 1))
+  done <<< "$bom_names"
+
+  printf "%30s: %5s\n" "$label" "$matched/$bom_total"
 }
 
 # Lists configured pingcli profiles and lets the user pick one (Enter keeps
@@ -482,18 +614,28 @@ select_environment_interactive() {
   echo ""
 
   local selection
-  read -r -p "Select an environment by number, or paste an environment ID directly: " selection
+  while true; do
+    read -r -p "Select an environment by number, or paste an environment ID directly: " selection
 
-  if [[ "$selection" =~ ^[0-9]+$ ]] && (( selection >= 1 && selection <= count )); then
-    ENV_ID="${ids[$((selection - 1))]}"
-    ENV_NAME="${names[$((selection - 1))]}"
-  elif [[ -n "$selection" ]]; then
-    ENV_ID="$selection"
-    ENV_NAME=""
-  else
+    if [[ "$selection" =~ ^[0-9]+$ ]]; then
+      if (( selection >= 1 && selection <= count )); then
+        ENV_ID="${ids[$((selection - 1))]}"
+        ENV_NAME="${names[$((selection - 1))]}"
+        break
+      fi
+      echo "Invalid selection: $selection is out of range (1-$count). Try again." >&2
+      continue
+    fi
+
+    if [[ -n "$selection" ]]; then
+      ENV_ID="$selection"
+      ENV_NAME=""
+      break
+    fi
+
     echo "No selection made." >&2
     return 1
-  fi
+  done
 
   set_manifest_file
   echo "Target environment set to: ${ENV_NAME:-$ENV_ID} ($ENV_ID)"
@@ -701,6 +843,37 @@ do_apply() {
     done
   fi
 
+  # ── PHASE 6b: Application migration metadata ──────────────────────────────────
+  # Written to the application's /metadata endpoint so migration history (rule
+  # results, auto-cleaned changes, user edits, concerns) is visible from within
+  # PingOne without needing to re-run an assessment. This is a plain PUT — no
+  # dedicated subcommand exists for application metadata.
+  if compgen -G "$SCRIPT_DIR/applications/metadata/*.json" > /dev/null; then
+    echo "── Applying application metadata"
+    for f in "$SCRIPT_DIR"/applications/metadata/*.json; do
+      [[ -e "$f" ]] || continue
+      name=$(basename "$f" .json)
+      parent=$(jq -r '._parentApp // empty' "$f")
+      parent_id=$(get_id APP_ID "$parent")
+
+      if [[ -z "$parent_id" ]]; then
+        echo "  WARNING: Could not resolve parent application '$parent' for metadata '$name'. Skipping." >&2
+        FAILURES=$((FAILURES + 1))
+        continue
+      fi
+
+      tmp_body=$(mktemp)
+      jq 'del(._parentApp) | {metadata: .}' "$f" > "$tmp_body"
+
+      if run_and_extract "metadata $name" '.' -- \
+        pingcli pingone api --http-method PUT --data "$tmp_body" -O json \
+        "environments/$ENV_ID/applications/$parent_id/metadata" > /dev/null; then
+        echo "  Metadata applied: $name (application: $parent)"
+      fi
+      rm -f "$tmp_body"
+    done
+  fi
+
   # ── PHASE 7: Application resource grants ──────────────────────────────────────
   # `application-grants` has no `apply` subcommand (only create/replace), and a
   # grant already exists per (application, resource) pair — attempting to
@@ -733,14 +906,14 @@ do_apply() {
       # Resolve each scope name to its scope ID under the resolved resource, then
       # build the real API payload: { resource: { id }, scopes: [{ id }, ...] }
       scope_names=$(jq -r '.scopes[]?.name' "$f")
+      resource_scopes_json=$(get_resource_scopes_json "$resource_id")
       scope_ids_json="[]"
       scope_lookup_failed=0
 
       while IFS= read -r scope_name; do
         [[ -n "$scope_name" ]] || continue
-        scope_id=$(pingcli pingone resources resource-scopes list \
-          --environment-id "$ENV_ID" --resource-id "$resource_id" -O json \
-          | jq -r --arg name "$scope_name" '(.data // .)[] | select(.name==$name) | .id' | head -n1)
+        scope_id=$(echo "$resource_scopes_json" \
+          | jq -r --arg name "$scope_name" '.[] | select(.name==$name) | .id' | head -n1)
 
         if [[ -z "$scope_id" || "$scope_id" == "null" ]]; then
           echo "  WARNING: Could not resolve scope '$scope_name' under resource '${grant_resource:-openid}' for grant '$name'." >&2
@@ -761,9 +934,9 @@ do_apply() {
       tmp_body=$(mktemp)
       echo "$body" > "$tmp_body"
 
-      existing_grant_id=$(pingcli pingone applications application-grants list \
-        --environment-id "$ENV_ID" --application-id "$parent_id" -O json \
-        | jq -r --arg rid "$resource_id" '(.data // .)[] | select(.resource.id==$rid) | .id' | head -n1)
+      existing_grants_json=$(get_app_grants_json "$parent" "$parent_id")
+      existing_grant_id=$(echo "$existing_grants_json" \
+        | jq -r --arg rid "$resource_id" '.[] | select(.resource.id==$rid) | .id' | head -n1)
 
       applied=0
       if [[ -n "$existing_grant_id" && "$existing_grant_id" != "null" ]]; then
@@ -776,10 +949,15 @@ do_apply() {
         fi
       else
         verb="Grant applied"
-        if run_and_extract "grant $name" '.' -- \
+        new_grant_id=$(run_and_extract "grant $name" '(.data // .).id' -- \
           pingcli pingone applications application-grants create \
-          --environment-id "$ENV_ID" --application-id "$parent_id" --from-file "$tmp_body" -O json > /dev/null; then
+          --environment-id "$ENV_ID" --application-id "$parent_id" --from-file "$tmp_body" -O json)
+        if [[ -n "$new_grant_id" ]]; then
           applied=1
+          # Refresh the cache so a later grant file for the same app (e.g. the
+          # custom-scope grant right after the default-scope one) sees this grant.
+          set_id GRANTS_JSON "$parent" "$(echo "$existing_grants_json" \
+            | jq --arg rid "$resource_id" --arg id "$new_grant_id" '. + [{id: $id, resource: {id: $rid}}]')"
         fi
       fi
 

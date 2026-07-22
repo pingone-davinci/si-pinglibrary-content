@@ -3,36 +3,44 @@
 # pingone-client-secret.sh
 #
 # Bash port of pingone-client-secret.js. Three related actions for PingOne
-# "imported" OIDC applications and custom resources, per DOCS-7493 /
-# P14C-61681 / P14C-68917:
+# "imported" OIDC applications and custom resources:
 #
-#   --action import        Create an application or custom resource with a
+#   --action import        Create a new application or custom resource with a
 #                           custom clientId, so it qualifies as "imported".
 #                           This script never sends a clientSecret on import —
 #                           PingOne always auto-generates one — use
 #                           --action set-secret afterward to assign a custom value.
-#   --action set-secret     (default) Set a custom secret on an app/resource that
-#                           was already imported with a custom clientId.
-#   --action rollback       Delete a previously imported app/resource.
+#   --action set-secret     (default) Set a custom clientSecret value on an
+#                           app/resource that was already imported (created with
+#                           a custom clientId via --action import).
+#   --action rollback       Delete (roll back) a previously imported app/resource,
+#                           e.g. to undo a test import or a failed migration wave.
 #
 # Each action can run once (via --type/--id/--client-id/--secret/--name flags)
 # or in batch against a CSV file (via --csv). See "CSV batch mode" below.
 #
-# Background (from DOCS-7493):
+# Background:
 #   An application or custom resource becomes "imported" when it is created
 #   via POST /applications or POST /resources with a custom `clientId` in the
-#   request body (see P14C-61681). DOCS-7493 documents `clientSecret` as an
-#   optional property on that same import request, but this script deliberately
-#   never sends it — every import lets PingOne auto-generate the secret.
-#   `--action set-secret` then lets you go back and set that secret to a custom
-#   value once you have it — e.g. once a secret recovered from the source
-#   system (PingFederate, etc.) becomes available.
+#   request body. The `clientSecret` property is documented as optional on
+#   that same import request, but this script deliberately never sends it —
+#   every import lets PingOne auto-generate the secret. `--action set-secret`
+#   then lets you go back and set that secret to a custom value once you have
+#   it — e.g. once a secret recovered from the source system (PingFederate,
+#   etc.) becomes available.
 #
 #   Set-secret applies ONLY to imported applications/resources — it cannot be
 #   used to set a custom secret on an app/resource that was created normally
 #   (without a custom clientId) via the admin console or a plain API create
 #   call. PingOne returns an error in that case. `--action import` exists so
 #   you have something import-eligible to test set-secret against.
+#
+#   Setting a custom clientId/clientSecret on import requires the environment
+#   to have the underlying feature flags enabled (P14C-61681 for custom
+#   clientId on import, P14C-68917 for the set-secret capability) — without
+#   them, PingOne rejects the request. Contact your PingOne representative to
+#   confirm these are enabled for the target environment before running
+#   --action import or --action set-secret.
 #
 # Endpoints:
 #   POST   /environments/{envId}/applications                         (import, Content-Type: application/json)
@@ -61,74 +69,114 @@
 #   precedence when both are set, and a warning is printed if --secret is used at all.
 #
 # Usage:
-#   # Set a custom secret on a single already-imported app/resource
+#   # Import: create a single application or custom resource with a custom clientId
+#   # (PingOne auto-generates the secret; follow up with --action set-secret for a custom value)
+#   pingone-client-secret.sh \
+#     --action         import \
+#     --type           application | resource \
+#     --env-id         <pingone-environment-uuid> \
+#     [--profile       <pingcli-profile>]   (uses pingcli's default profile if omitted) \
+#     [--client-id     <custom-client-id>] \
+#     [--name          <display-name>] \
+#     [--description   <description>] \
+#     [--app-type      <WEB_APP|NATIVE_APP|SPA|WORKER|CUSTOM|...>] \
+#     [--dry-run]
+#
+#   # Set-secret: assign a custom clientSecret to a single already-imported app/resource
 #   PINGONE_CLIENT_SECRET=<custom-secret-value> pingone-client-secret.sh \
-#     --type          application | resource \
-#     --id            <applicationId-or-resourceId> \
-#     --env-id        <pingone-environment-uuid> \
-#     --profile       <pingcli-profile> \
+#     --type           application | resource \
+#     --id             <applicationId-or-resourceId> \
+#     --env-id         <pingone-environment-uuid> \
+#     [--profile       <pingcli-profile>]   (uses pingcli's default profile if omitted) \
 #     [--previous-expires-at <ISO-8601-timestamp>] \
 #     [--dry-run]
 #
-#   # Import a single application or custom resource (PingOne auto-generates the secret;
-#   # follow up with --action set-secret if you need a custom value)
+#   # Rollback: delete a single previously imported app/resource
 #   pingone-client-secret.sh \
-#     --action        import \
-#     --type          application | resource \
-#     --env-id        <pingone-environment-uuid> \
-#     --profile       <pingcli-profile> \
-#     [--client-id    <custom-client-id>] \
-#     [--name         <display-name>] \
-#     [--description  <description>] \
-#     [--app-type     <WEB_APP|NATIVE_APP|SPA|WORKER|CUSTOM|...>] \
+#     --action         rollback \
+#     --type           application | resource \
+#     --id             <applicationId-or-resourceId> \
+#     --env-id         <pingone-environment-uuid> \
+#     [--profile       <pingcli-profile>]   (uses pingcli's default profile if omitted) \
 #     [--dry-run]
 #
-#   # Delete a single previously imported app/resource
+#   # CSV batch mode — any action (import, set-secret, or rollback), looping over every row in a CSV file
 #   pingone-client-secret.sh \
-#     --action rollback --type <application|resource> --id <id> \
-#     --env-id <pingone-environment-uuid> --profile <pingcli-profile> [--dry-run]
-#
-#   # CSV batch mode — any action, looping over every row in a CSV file
-#   pingone-client-secret.sh \
-#     --action        import | set-secret | rollback \
-#     --csv           <path-to.csv> \
-#     --env-id        <pingone-environment-uuid> \
-#     --profile       <pingcli-profile> \
-#     [--type         application | resource]   (optional filter — process only matching rows) \
+#     --action         import | set-secret | rollback \
+#     --csv            <path-to.csv> \
+#     --env-id         <pingone-environment-uuid> \
+#     [--profile       <pingcli-profile>]   (uses pingcli's default profile if omitted) \
+#     [--type          application | resource]   (optional filter — process only matching rows) \
 #     [--dry-run]
 #
 # Examples:
-#   # Import a WEB_APP application with a custom clientId (secret is auto-generated)
+#   # Import: create a WEB_APP application with a custom clientId (secret is auto-generated)
 #   pingone-client-secret.sh \
-#     --action import --type application --client-id legacy-crm-app-001 \
-#     --name "Legacy CRM App" --app-type WEB_APP \
-#     --env-id 6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 --profile sandbox
+#     --action        import \
+#     --type          application \
+#     --client-id     legacy-crm-app-001 \
+#     --name          "Legacy CRM App" \
+#     --app-type      WEB_APP \
+#     --env-id        6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 \
+#     --profile       sandbox
 #
-#   # Set a custom secret on an already-imported application (by its PingOne id)
+#   # Import: create a CUSTOM resource with a custom clientId
+#   pingone-client-secret.sh \
+#     --action        import \
+#     --type          resource \
+#     --client-id     billing-api-resource-001 \
+#     --name          "Billing API" \
+#     --env-id        6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 \
+#     --profile       sandbox
+#
+#   # Set-secret: assign a custom clientSecret to an already-imported application (by its PingOne id)
 #   PINGONE_CLIENT_SECRET=S3cr3t-Crm-App-001 pingone-client-secret.sh \
-#     --action set-secret --type application --id b1ad4ce0-f873-4807-9094-9d9b787e7d0f \
-#     --env-id 6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 --profile sandbox
+#     --action        set-secret \
+#     --type          application \
+#     --id            b1ad4ce0-f873-4807-9094-9d9b787e7d0f \
+#     --env-id        6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 \
+#     --profile       sandbox
 #
-#   # Roll back (delete) a previously imported application by its PingOne id
+#   # Set-secret: assign a custom clientSecret and keep the old one valid for 30 more days
+#   PINGONE_CLIENT_SECRET=S3cr3t-Billing-Res-001 pingone-client-secret.sh \
+#     --action        set-secret \
+#     --type          resource \
+#     --id            65316d5c-8dc4-4c74-9251-4bff66c1973d \
+#     --previous-expires-at 2026-08-07T00:00:00Z \
+#     --env-id        6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 \
+#     --profile       sandbox
+#
+#   # Rollback: delete a previously imported application by its PingOne id
 #   pingone-client-secret.sh \
-#     --action rollback --type application --id b1ad4ce0-f873-4807-9094-9d9b787e7d0f \
-#     --env-id 6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 --profile sandbox
+#     --action        rollback \
+#     --type          application \
+#     --id            b1ad4ce0-f873-4807-9094-9d9b787e7d0f \
+#     --env-id        6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 \
+#     --profile       sandbox
 #
-#   # CSV batch: import every row in migration-secrets/pf-secrets.csv (5 apps + 5 resources)
+#   # CSV batch — import: create every row in migration-secrets/pf-secrets.csv (5 apps + 5 resources)
 #   pingone-client-secret.sh \
-#     --action import --csv migration-secrets/pf-secrets.csv \
-#     --env-id 6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 --profile sandbox
+#     --action        import \
+#     --csv           migration-secrets/pf-secrets.csv \
+#     --env-id        6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 \
+#     --profile       sandbox
 #
-#   # CSV batch: set/rotate secrets for every row, resolving each id by its clientId
+#   # CSV batch — set-secret: set/rotate secrets for every row, resolving each id by its clientId
 #   # (each row's clientSecret column supplies the secret — no PINGONE_CLIENT_SECRET needed)
 #   pingone-client-secret.sh \
-#     --action set-secret --csv migration-secrets/pf-secrets.csv \
-#     --env-id 6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 --profile sandbox
+#     --action        set-secret \
+#     --csv           migration-secrets/pf-secrets.csv \
+#     --env-id        6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 \
+#     --profile       sandbox
 #
-#   # CSV batch: roll back only the application rows, previewing first
+#   # CSV batch — rollback: delete only the application rows, previewing first
 #   pingone-client-secret.sh \
-#     --action rollback --csv migration-secrets/pf-secrets.csv --type application \
-#     --env-id 6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 --profile sandbox --dry-run
+#     --action        rollback \
+#     --csv           migration-secrets/pf-secrets.csv \
+#     --type          application \
+#     --env-id        6b3de08f-caaa-4b4c-827a-bfd8b4d93d16 \
+#     --profile       sandbox \
+#     --dry-run
 #
 # CSV batch mode:
 #   Required columns: recordType, name, type, clientId, clientSecret
@@ -175,7 +223,8 @@
 #                             favor of per-row CSV values (--secret/CSV clientSecret still
 #                             only applies to --action set-secret, never --action import).
 #   --env-id                 Required. PingOne environment UUID.
-#   --profile                Required. pingcli profile with worker-app credentials for that env.
+#   --profile                Optional. pingcli profile with worker-app credentials for that env.
+#                             If omitted, pingcli's own configured default profile is used.
 #   --previous-expires-at    Optional, --action set-secret only. ISO-8601 timestamp. If set, the
 #                             app/resource's current secret is retained as a valid "previous"
 #                             secret until this time (max 30 days out) instead of being
@@ -186,9 +235,9 @@
 #
 # Note: the exact request body schema for set-secret (a top-level `secret` property, with an
 # optional `previous: { expiresAt }` object) is inferred from the sibling "Update Application
-# Secret" (rotate) endpoint's documented `previous` behavior, since DOCS-7493 confirms the same
-# `previous` semantics apply here. The sample import payloads use minimal, reasonable defaults
-# per app/resource type — verify field names against the current PingOne Platform API Reference
+# Secret" (rotate) endpoint's documented `previous` behavior, which is expected to apply the
+# same semantics here. The sample import payloads use minimal, reasonable defaults per
+# app/resource type — verify field names against the current PingOne Platform API Reference
 # before relying on this in production, in case anything changed before GA.
 
 # This script relies on bash-only features (arrays, `local`, indirect
@@ -227,6 +276,11 @@ section() { echo >&2; echo "${BOLD}$1${RESET}" >&2; }
 
 print_help() {
   awk '/^#!/{next} /^# ?/{sub(/^# ?/,""); print; next} /^set -euo/{exit}' "$0"
+}
+
+# Omitting --profile lets pingcli fall back to its own configured default profile.
+profile_label() {
+  [ -n "$1" ] && echo "$1" || echo "(pingcli default)"
 }
 
 # ---------------------------------------------------------------------------
@@ -337,10 +391,17 @@ DRY_RUN=0
 
 usage_and_exit() {
   echo "Usage:"
-  echo "  Set secret: PINGONE_CLIENT_SECRET=<value> pingone-client-secret.sh --type <application|resource> --id <id> --env-id <uuid> --profile <profile> [--previous-expires-at <iso8601>] [--dry-run]"
-  echo "  Import:     pingone-client-secret.sh --action import --type <application|resource> --env-id <uuid> --profile <profile> [--client-id <id>] [--name <name>] [--description <text>] [--app-type <type>] [--dry-run]"
-  echo "  Rollback:   pingone-client-secret.sh --action rollback --type <application|resource> --id <id> --env-id <uuid> --profile <profile> [--dry-run]"
-  echo "  CSV batch:  pingone-client-secret.sh --action <import|set-secret|rollback> --csv <path.csv> --env-id <uuid> --profile <profile> [--type <application|resource>] [--dry-run]"
+  echo "  Import:     create a new app/resource with a custom clientId (secret is auto-generated)"
+  echo "    pingone-client-secret.sh --action import --type <application|resource> --env-id <uuid>"
+  echo "      [--profile <profile>] [--client-id <id>] [--name <name>] [--description <text>] [--app-type <type>] [--dry-run]"
+  echo "  Set secret: assign a custom clientSecret to an already-imported app/resource"
+  echo "    PINGONE_CLIENT_SECRET=<value> pingone-client-secret.sh --type <application|resource> --id <id> --env-id <uuid>"
+  echo "      [--profile <profile>] [--previous-expires-at <iso8601>] [--dry-run]"
+  echo "  Rollback:   delete a previously imported app/resource"
+  echo "    pingone-client-secret.sh --action rollback --type <application|resource> --id <id> --env-id <uuid> [--profile <profile>] [--dry-run]"
+  echo "  CSV batch:  run import/set-secret/rollback for every row in a CSV file"
+  echo "    pingone-client-secret.sh --action <import|set-secret|rollback> --csv <path.csv> --env-id <uuid>"
+  echo "      [--profile <profile>] [--type <application|resource>] [--dry-run]"
   for e in "$@"; do echo "  - $e"; done
   exit 1
 }
@@ -383,8 +444,7 @@ case "$ACTION" in
   set-secret|import|rollback) : ;;
   *) ERRORS+=('--action must be "set-secret", "import", or "rollback"') ;;
 esac
-[ -n "$ENV_ID" ]  || ERRORS+=('--env-id is required')
-[ -n "$PROFILE" ] || ERRORS+=('--profile is required')
+[ -n "$ENV_ID" ] || ERRORS+=('--env-id is required')
 
 if [ -n "$CSV" ]; then
   if [ -n "$TYPE" ] && ! is_valid_type "$TYPE"; then
@@ -468,10 +528,11 @@ do_set_secret() {
   local tmp_file; tmp_file=$(mktemp)
   printf '%s' "$payload" > "$tmp_file"
 
+  local profile_args=(); [ -n "$profile" ] && profile_args=(--profile "$profile")
   local err_file; err_file=$(mktemp)
   local out status
   if out=$(PINGCLI_ERR_FILE="$err_file" run_pingcli \
-      --profile "$profile" --output-format json \
+      "${profile_args[@]+"${profile_args[@]}"}" --output-format json \
       pingone api --http-method POST --fail \
       --header 'Content-Type: application/vnd.pingidentity.secret+json' \
       --data "$tmp_file" "$api_path"); then
@@ -499,13 +560,14 @@ print_set_secret_common_causes() {
   echo "    - The ${type} was not imported with a custom clientId (this endpoint only works on imported $(path_segment_for_type "$type"))" >&2
   echo "    - The worker app is missing the $(set_secret_permission_for_type "$type") permission" >&2
   echo "    - The secret is outside the 8-1024 character range" >&2
+  echo "    - The environment may not have the required feature flag enabled for set-secret (see Background above)" >&2
 }
 
 set_secret_single() {
   section "Set ${TYPE} secret"
   info "Target       : $(path_segment_for_type "$TYPE")/${ID}"
   info "Environment  : ${ENV_ID}"
-  info "Profile      : ${PROFILE}"
+  info "Profile      : $(profile_label "$PROFILE")"
   info "Permission   : $(set_secret_permission_for_type "$TYPE") (worker app must be granted this)"
   if [ -n "$PREVIOUS_EXPIRES_AT" ]; then
     info "Previous kept: until ${PREVIOUS_EXPIRES_AT}"
@@ -565,16 +627,16 @@ is_valid_app_type() {
 
 # build_import_payload <recordType> <appType> <clientId> <name> <description>
 # Deliberately has no `secret`/`clientSecret` field — this script never sends a
-# custom secret on import, even though DOCS-7493 documents it as an optional
-# import-request property. PingOne always auto-generates the secret; use
-# --action set-secret afterward to assign a custom value.
+# custom secret on import, even though `clientSecret` is documented as an
+# optional import-request property. PingOne always auto-generates the
+# secret; use --action set-secret afterward to assign a custom value.
 build_import_payload() {
   local record_type="$1" app_type="$2" client_id="$3" name="$4" description="$5"
   local suffix; suffix=$(sample_suffix)
 
   [ -n "$client_id" ] || client_id="sample-imported-${record_type}-${suffix}"
   [ -n "$name" ] || name="Sample imported ${record_type} ${suffix}"
-  [ -n "$description" ] || description="Sample ${record_type} created by pingone-client-secret.sh --action import (DOCS-7493)"
+  [ -n "$description" ] || description="Sample ${record_type} created by pingone-client-secret.sh --action import"
 
   if [ "$record_type" = "application" ]; then
     is_valid_app_type "$app_type" || app_type="WEB_APP"
@@ -610,10 +672,11 @@ do_import() {
   local tmp_file; tmp_file=$(mktemp)
   printf '%s' "$payload" > "$tmp_file"
 
+  local profile_args=(); [ -n "$profile" ] && profile_args=(--profile "$profile")
   local err_file; err_file=$(mktemp)
   local out status
   if out=$(PINGCLI_ERR_FILE="$err_file" run_pingcli \
-      --profile "$profile" --output-format json \
+      "${profile_args[@]+"${profile_args[@]}"}" --output-format json \
       pingone api --http-method POST --fail \
       --header 'Content-Type: application/json' \
       --data "$tmp_file" "$api_path"); then
@@ -644,13 +707,13 @@ print_import_common_causes() {
   echo "  Common causes:" >&2
   echo "    - clientId \"${client_id}\" is already in use in this environment" >&2
   echo "    - The worker app is missing the $(import_permission_for_type "$type") permission" >&2
-  echo "    - This capability may not yet be GA in this environment (see DOCS-7493)" >&2
+  echo "    - The environment may not have the required feature flag enabled for custom clientId on import (see Background above)" >&2
 }
 
 import_single() {
   section "Import ${TYPE}"
   info "Environment  : ${ENV_ID}"
-  info "Profile      : ${PROFILE}"
+  info "Profile      : $(profile_label "$PROFILE")"
   info "Permission   : $(import_permission_for_type "$TYPE") (worker app must be granted this)"
   info "clientSecret : (none sent — PingOne will auto-generate one)"
 
@@ -694,8 +757,9 @@ do_rollback() {
     return 0
   fi
 
+  local profile_args=(); [ -n "$profile" ] && profile_args=(--profile "$profile")
   local err_file; err_file=$(mktemp)
-  if run_pingcli --profile "$profile" --output-format json \
+  if run_pingcli "${profile_args[@]+"${profile_args[@]}"}" --output-format json \
       pingone api --http-method DELETE --fail "$api_path" >/dev/null 2> "$err_file"; then
     rm -f "$err_file"
     echo "OK"
@@ -712,7 +776,7 @@ rollback_single() {
   section "Rollback ${TYPE}"
   info "Target       : $(path_segment_for_type "$TYPE")/${ID}"
   info "Environment  : ${ENV_ID}"
-  info "Profile      : ${PROFILE}"
+  info "Profile      : $(profile_label "$PROFILE")"
 
   local result; result=$(do_rollback "$TYPE" "$ID" "$ENV_ID" "$PROFILE" "$DRY_RUN")
   local status="${result%% *}"
@@ -740,8 +804,9 @@ rollback_single() {
 resolve_id_by_client_id() {
   local record_type="$1" client_id="$2" env_id="$3" profile="$4"
   local path_segment; path_segment=$(path_segment_for_type "$record_type")
+  local profile_args=(); [ -n "$profile" ] && profile_args=(--profile "$profile")
   local out
-  out=$(pingcli --profile "$profile" --output-format json \
+  out=$(pingcli "${profile_args[@]+"${profile_args[@]}"}" --output-format json \
     pingone "$path_segment" list --environment-id "$env_id" \
     --query "data[?clientId=='${client_id}']" 2>/dev/null || echo '[]')
   printf '%s' "$out" | jq -r '.[0].id // empty'
